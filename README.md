@@ -1,6 +1,7 @@
 # Thinking in Java 4e (Refreshed) Code Examples
 for Java 8
-[span class="red"]Initial draft; not working yet[/span]
+
+### *Initial draft; not working yet*
 
 ## Get the Examples ##
 
