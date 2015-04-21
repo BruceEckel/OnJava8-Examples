@@ -32,7 +32,7 @@
      message="You must install the XOM library from http://www.xom.nu"/>
     <echo message="Building 'xml'"/>
     <javac includeantruntime="false"
-     classpath="${basedir}/.."
+     classpath="${java.class.path};${basedir};${basedir}/.."
      debug="true"
      srcdir="${basedir}">
       <compilerarg value="-Xmaxerrs"/>
