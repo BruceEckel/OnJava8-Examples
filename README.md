@@ -12,4 +12,6 @@ for Java 8
 
 1. Install Apache Ant. Follow the instructions [here](https://ant.apache.org/manual/install.html#getting).
 
-1. Start a command prompt in the directory where you installed the examples. If your installation is successful, you should be able to type **ant** and build everything. You may initially get some error messages telling you to install additional packages, but eventually you should get through the whole build process successfully.
+1. Add the path to the directory where you unpacked the examples to your CLASSPATH.
+
+1. Start a command prompt in the directory where you installed the examples. If your installation is successful, you should be able to type **ant build** and build everything. **ant run** will build AND run the examples. You may initially get some error messages telling you to install additional packages, but eventually you should get through the whole build process successfully.
