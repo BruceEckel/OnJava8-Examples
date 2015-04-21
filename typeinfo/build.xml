@@ -21,7 +21,7 @@
   </condition>
 
   <target name="typeinfo_pets">
-    <javac
+    <javac includeantruntime="false"
      classpath="${basedir}/.."
      srcdir="${basedir}/../typeinfo/pets/">
       <compilerarg value="-Xmaxerrs"/>
@@ -30,7 +30,7 @@
   </target>
 
   <target name="net_mindview_util">
-    <javac
+    <javac includeantruntime="false"
      classpath="${basedir}/.."
      srcdir="${basedir}/../net/mindview/util/">
       <compilerarg value="-Xmaxerrs"/>
@@ -44,7 +44,7 @@
    name="build">
     <fail message="J2SE8 required" unless="version1.8"/>
     <echo message="Building 'typeinfo'"/>
-    <javac
+    <javac includeantruntime="false"
      classpath="${basedir}/.."
      debug="true"
      srcdir="${basedir}">

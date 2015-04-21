@@ -20,12 +20,8 @@
     <equals arg1="1.8" arg2="${ant.java.version}"/>
   </condition>
 
-  <available
-   classname="javax.jnlp.FileOpenService"
-   property="javax.jnlp.FileOpenService"/>
-
   <target name="net_mindview_util">
-    <javac
+    <javac includeantruntime="false"
      classpath="${basedir}/.."
      srcdir="${basedir}/../net/mindview/util/">
       <compilerarg value="-Xmaxerrs"/>
@@ -38,11 +34,8 @@
    description="Build all classes in this directory"
    name="build">
     <fail message="J2SE8 required" unless="version1.8"/>
-    <fail
-     Unless="javax.jnlp.FileOpenService"
-     message="You must have javaws.jar in your classpath"/>
     <echo message="Building 'gui'"/>
-    <javac
+    <javac includeantruntime="false"
      classpath="${basedir}/.."
      debug="true"
      srcdir="${basedir}">
@@ -50,28 +43,6 @@
       <compilerarg value="10"/>
     </javac>
     <echo message="Build 'gui' succeeded"/>
-  </target>
-
-  <target name="BangBean2">
-    <java
-     classname="BangBean2"
-     classpath="${java.class.path};${basedir};${basedir}/.."
-     dir="../gui/"
-     failonerror="false"
-     fork="true"
-     timeout="4000"/>
-    <echo message="* Exception was expected *"/>
-  </target>
-
-  <target name="BeanDumper">
-    <java
-     classname="BeanDumper"
-     classpath="${java.class.path};${basedir};${basedir}/.."
-     dir="../gui/"
-     failonerror="false"
-     fork="true"
-     timeout="4000"/>
-    <echo message="* Exception was expected *"/>
   </target>
 
   <target name="BorderLayout1">
@@ -516,24 +487,11 @@
     <echo message="* Exception was expected *"/>
   </target>
 
-  <target name="JnlpFileChooser">
-    <java
-     classname="gui.jnlp.JnlpFileChooser"
-     classpath="${java.class.path};${basedir};${basedir}/.."
-     dir="../gui/jnlp/"
-     failonerror="false"
-     fork="true"
-     timeout="4000"/>
-    <echo message="* Exception was expected *"/>
-  </target>
-
   <target
    depends="build"
    description="Compile and run"
    name="run">
     <touch file="failures"/>
-    <antcall target="BangBean2"/>
-    <antcall target="BeanDumper"/>
     <antcall target="BorderLayout1"/>
     <antcall target="Borders"/>
     <antcall target="Button1"/>
@@ -574,7 +532,6 @@
     <antcall target="TextPane"/>
     <antcall target="TicTacToe"/>
     <antcall target="TrackEvent"/>
-    <antcall target="JnlpFileChooser"/>
     <delete file="failures"/>
   </target>
 

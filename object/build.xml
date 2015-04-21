@@ -26,7 +26,7 @@
    name="build">
     <fail message="J2SE8 required" unless="version1.8"/>
     <echo message="Building 'object'"/>
-    <javac
+    <javac includeantruntime="false"
      classpath="${basedir}/.."
      debug="true"
      srcdir="${basedir}">

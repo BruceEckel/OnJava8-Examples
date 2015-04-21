@@ -41,8 +41,6 @@
       annotations/build.xml
       concurrency/build.xml
       gui/build.xml
-      frogbean/build.xml
-      bangbean/build.xml
       swt/build.xml
       "/>
 

@@ -21,7 +21,7 @@
   </condition>
 
   <target name="typeinfo_pets">
-    <javac
+    <javac includeantruntime="false"
      classpath="${basedir}/.."
      srcdir="${basedir}/../typeinfo/pets/">
       <compilerarg value="-Xmaxerrs"/>
@@ -30,7 +30,7 @@
   </target>
 
   <target name="generics_coffee">
-    <javac
+    <javac includeantruntime="false"
      classpath="${basedir}/.."
      srcdir="${basedir}/../generics/coffee/">
       <compilerarg value="-Xmaxerrs"/>
@@ -39,7 +39,7 @@
   </target>
 
   <target name="net_mindview_util">
-    <javac
+    <javac includeantruntime="false"
      classpath="${basedir}/.."
      srcdir="${basedir}/../net/mindview/util/">
       <compilerarg value="-Xmaxerrs"/>
@@ -53,7 +53,7 @@
    name="build">
     <fail message="J2SE8 required" unless="version1.8"/>
     <echo message="Building 'generics'"/>
-    <javac
+    <javac includeantruntime="false"
      classpath="${basedir}/.."
      debug="true"
      excludes="Erased.java,HijackedInterface.java,Manipulation.java,MultipleInterfaceVariants.java,NonCovariantGenerics.java,UseList.java"

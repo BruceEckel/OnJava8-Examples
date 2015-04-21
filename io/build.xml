@@ -21,7 +21,7 @@
   </condition>
 
   <target name="net_mindview_util">
-    <javac
+    <javac includeantruntime="false"
      classpath="${basedir}/.."
      srcdir="${basedir}/../net/mindview/util/">
       <compilerarg value="-Xmaxerrs"/>
@@ -35,7 +35,7 @@
    name="build">
     <fail message="J2SE8 required" unless="version1.8"/>
     <echo message="Building 'io'"/>
-    <javac
+    <javac includeantruntime="false"
      classpath="${basedir}/.."
      debug="true"
      srcdir="${basedir}">

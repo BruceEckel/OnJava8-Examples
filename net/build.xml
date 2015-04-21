@@ -25,7 +25,7 @@
    property="javassist.bytecode.ClassFile"/>
 
   <target name="net_mindview_util">
-    <javac
+    <javac includeantruntime="false"
      classpath="${basedir}/.."
      srcdir="${basedir}/../net/mindview/util/">
       <compilerarg value="-Xmaxerrs"/>
@@ -40,9 +40,9 @@
     <fail message="J2SE8 required" unless="version1.8"/>
     <fail
      Unless="javassist.bytecode.ClassFile"
-     message="You must install the Javassist library from http://sourceforge.net/projects/jboss/"/>
+     message="You must install the Javassist library from www.javassist.org"/>
     <echo message="Building 'net'"/>
-    <javac
+    <javac includeantruntime="false"
      classpath="${basedir}/.."
      debug="true"
      srcdir="${basedir}">

@@ -4,7 +4,7 @@
 // {Args: ..}
 // {Requires: javassist.bytecode.ClassFile;
 // You must install the Javassist library from
-// http://sourceforge.net/projects/jboss/ }
+// www.javassist.org }
 package net.mindview.atunit;
 import javassist.*;
 import javassist.expr.*;

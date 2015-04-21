@@ -31,7 +31,7 @@
      Unless="nu.xom.Node"
      message="You must install the XOM library from http://www.xom.nu"/>
     <echo message="Building 'xml'"/>
-    <javac
+    <javac includeantruntime="false"
      classpath="${basedir}/.."
      debug="true"
      srcdir="${basedir}">

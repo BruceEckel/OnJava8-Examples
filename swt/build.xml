@@ -25,7 +25,7 @@
    property="org.eclipse.swt.widgets.Display"/>
 
   <target name="net_mindview_util">
-    <javac
+    <javac includeantruntime="false"
      classpath="${basedir}/.."
      srcdir="${basedir}/../net/mindview/util/">
       <compilerarg value="-Xmaxerrs"/>
@@ -42,7 +42,7 @@
      Unless="org.eclipse.swt.widgets.Display"
      message="You must install the SWT library from http://www.eclipse.org"/>
     <echo message="Building 'swt'"/>
-    <javac
+    <javac includeantruntime="false"
      classpath="${basedir}/.."
      debug="true"
      srcdir="${basedir}">

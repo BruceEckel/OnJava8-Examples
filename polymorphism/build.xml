@@ -21,7 +21,7 @@
   </condition>
 
   <target name="net_mindview_util">
-    <javac
+    <javac includeantruntime="false"
      classpath="${basedir}/.."
      srcdir="${basedir}/../net/mindview/util/">
       <compilerarg value="-Xmaxerrs"/>
@@ -30,7 +30,7 @@
   </target>
 
   <target name="polymorphism_music">
-    <javac
+    <javac includeantruntime="false"
      classpath="${basedir}/.."
      srcdir="${basedir}/../polymorphism/music/">
       <compilerarg value="-Xmaxerrs"/>
@@ -44,7 +44,7 @@
    name="build">
     <fail message="J2SE8 required" unless="version1.8"/>
     <echo message="Building 'polymorphism'"/>
-    <javac
+    <javac includeantruntime="false"
      classpath="${basedir}/.."
      debug="true"
      srcdir="${basedir}">

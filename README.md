@@ -8,7 +8,7 @@ for Java 8
 [Click here](https://github.com/BruceEckel/TIJ4-Refreshed-Examples/archive/master.zip) to download the zip file. Unzip the file into a directory of your choice.
 
 ## Build the Examples ##
-1. Install the latest version of Java 8 (JDK8).
+1. Install the latest version of Java 8 (JDK8). (Use 32-bit version on Windows).
 
 1. Install Apache Ant. Follow the instructions [here](https://ant.apache.org/manual/install.html#getting).
 
