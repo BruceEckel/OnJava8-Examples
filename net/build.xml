@@ -26,7 +26,7 @@
 
   <target name="net_mindview_util">
     <javac includeantruntime="false"
-     classpath="${basedir}/.."
+     classpath="${java.class.path};${basedir};${basedir}/.."
      srcdir="${basedir}/../net/mindview/util/">
       <compilerarg value="-Xmaxerrs"/>
       <compilerarg value="10"/>
@@ -43,7 +43,7 @@
      message="You must install the Javassist library from www.javassist.org"/>
     <echo message="Building 'net'"/>
     <javac includeantruntime="false"
-     classpath="${basedir}/.."
+     classpath="${java.class.path};${basedir};${basedir}/.."
      debug="true"
      srcdir="${basedir}">
       <compilerarg value="-Xmaxerrs"/>
