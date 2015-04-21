@@ -46,7 +46,7 @@
      classname="People"
      classpath="${java.class.path};${basedir};${basedir}/.."
      dir="../xml/"
-     failonerror="true"
+     failonerror="false"
      fork="true"/>
   </target>
 

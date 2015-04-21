@@ -45,3 +45,8 @@ Temporary Items
 *.class
 failures
 People.xml
+annotations/Test0.txt
+annotations/Test1.txt
+annotations/Test2.txt
+io/Logon.out
+io/test.zip
