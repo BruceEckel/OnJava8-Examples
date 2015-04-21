@@ -518,6 +518,8 @@
       <fileset dir="${basedir}" includes="**/*Output.txt"/>
       <fileset dir="${basedir}" includes="**/log.txt"/>
       <fileset dir="${basedir}" includes="failures"/>
+      <fileset dir="${basedir}" includes="Logon.out"/>
+      <fileset dir="${basedir}" includes="test.zip"/>
     </delete>
     <echo message="clean successful"/>
   </target>
