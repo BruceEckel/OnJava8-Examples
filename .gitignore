@@ -43,6 +43,12 @@ Temporary Items
 .apdisk
 
 *.class
+*output.txt
+Generated.txt
+*-control.txt
+*-results.txt
+*-out.txt
+OutputErrors.txt
 failures
 People.xml
 annotations/Test0.txt

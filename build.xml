@@ -80,11 +80,12 @@
     <echo message="Errors occurred.  See errors.txt for information."/>
   </target>
 
-  <target name="verify" depends="run"
-    description="Verifies comment output; requires Python 2.3">
-    <exec executable="python">
-      <arg value="OutputVerifier.py"/>
-    </exec>
+  <target name="verify" depends="build"
+    description="Verifies comment output; requires Python 2.3 or newer">
+    <echo message="run program by hand:"/>
+    <echo message="python OutputVerifier.py"/>
+    <echo message="Or:"/>
+    <echo message="py -2 OutputVerifier.py"/>
   </target>
 
   <target name="findbugs" depends="build"
