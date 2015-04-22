@@ -48,5 +48,6 @@ People.xml
 annotations/Test0.txt
 annotations/Test1.txt
 annotations/Test2.txt
-io/Logon.out
+io/*.out
+io/*.txt
 io/test.zip

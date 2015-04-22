@@ -518,9 +518,15 @@
       <fileset dir="${basedir}" includes="**/*Output.txt"/>
       <fileset dir="${basedir}" includes="**/log.txt"/>
       <fileset dir="${basedir}" includes="failures"/>
-      <fileset dir="${basedir}" includes="Logon.out"/>
+      <fileset dir="${basedir}" includes="*.out"/>
+      <fileset dir="${basedir}" includes="*.txt"/>
       <fileset dir="${basedir}" includes="test.zip"/>
+      <fileset dir="${basedir}" includes="X.file"/>
+      <fileset dir="${basedir}" includes="*.dat"/>
+      <fileset dir="${basedir}" includes="*.tmp"/>
+      <fileset dir="${basedir}" includes="test.gz"/>
     </delete>
+    <delete dir="MakeDirectoriesTest" />
     <echo message="clean successful"/>
   </target>
 
