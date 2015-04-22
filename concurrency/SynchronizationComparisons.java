@@ -21,8 +21,7 @@ abstract class Accumulator {
   protected String id = "error";
   protected final static int SIZE = 100000;
   protected static int[] preLoaded = new int[SIZE];
-  static {
-    // Load the array of random numbers:
+  static { // Load the array of random numbers:
     Random rand = new Random(47);
     for(int i = 0; i < SIZE; i++)
       preLoaded[i] = rand.nextInt();
@@ -66,24 +65,14 @@ abstract class Accumulator {
     duration = System.nanoTime() - start;
     printf("%-13s: %13d\n", id, duration);
   }
-  public static void
-  report(Accumulator acc1, Accumulator acc2) {
-    printf("%-22s: %.2f\n", acc1.id + "/" + acc2.id,
-      (double)acc1.duration/(double)acc2.duration);
+  public void report(Accumulator acc2) {
+    printf("%-22s: %.2f\n", this.id + "/" + acc2.id,
+      (double)this.duration/(double)acc2.duration);
   }
-}
-
-class BaseLine extends Accumulator {
-  { id = "BaseLine"; }
-  public void accumulate() {
-    value += preLoaded[index++];
-    if(index >= SIZE) index = 0;
-  }
-  public long read() { return value; }
 }
 
 class SynchronizedTest extends Accumulator {
-  { id = "synchronized"; }
+  { id = "synch"; }
   public synchronized void accumulate() {
     value += preLoaded[index++];
     if(index >= SIZE) index = 0;
@@ -119,36 +108,36 @@ class AtomicTest extends Accumulator {
   { id = "Atomic"; }
   private AtomicInteger index = new AtomicInteger(0);
   private AtomicLong value = new AtomicLong(0);
-  public void accumulate() {
-    // Oops! Relying on more than one Atomic at
-    // a time doesn't work. But it still gives us
-    // a performance indicator:
-    int i = index.getAndIncrement();
+  // Relying on more than one Atomic at a time doesn't
+  // work, so we still have to synchronize. But it gives
+  // a performance indicator:
+  public synchronized void accumulate() {
+    int i;
+    i = index.getAndIncrement();
     value.getAndAdd(preLoaded[i]);
     if(++i >= SIZE)
       index.set(0);
   }
-  public long read() { return value.get(); }
+  public synchronized long read() { return value.get(); }
+  public void report(Accumulator acc2) {
+    printf("%-22s: %.2f\n", "synch/(Atomic-synch)",
+      (double)acc2.duration/
+        ((double)this.duration - (double)acc2.duration));
+  }
 }
 
 public class SynchronizationComparisons {
-  static BaseLine baseLine = new BaseLine();
   static SynchronizedTest synch = new SynchronizedTest();
   static LockTest lock = new LockTest();
   static AtomicTest atomic = new AtomicTest();
   static void test() {
     print("============================");
     printf("%-12s : %13d\n", "Cycles", Accumulator.cycles);
-    baseLine.timedTest();
     synch.timedTest();
     lock.timedTest();
     atomic.timedTest();
-    Accumulator.report(synch, baseLine);
-    Accumulator.report(lock, baseLine);
-    Accumulator.report(atomic, baseLine);
-    Accumulator.report(synch, lock);
-    Accumulator.report(synch, atomic);
-    Accumulator.report(lock, atomic);
+    synch.report(lock);
+    atomic.report(synch);
   }
   public static void main(String[] args) {
     int iterations = 5; // Default
@@ -156,7 +145,7 @@ public class SynchronizationComparisons {
       iterations = new Integer(args[0]);
     // The first time fills the thread pool:
     print("Warmup");
-    baseLine.timedTest();
+    synch.timedTest();
     // Now the initial test doesn't include the cost
     // of starting the threads for the first time.
     // Produce multiple data points:
@@ -166,91 +155,42 @@ public class SynchronizationComparisons {
     }
     Accumulator.exec.shutdown();
   }
-} /* Output: (Sample)
+} /* Output: (Sample) using JDK6u10
 Warmup
-BaseLine     :      34237033
+synch        :     129868038
 ============================
 Cycles       :         50000
-BaseLine     :      20966632
-synchronized :      24326555
-Lock         :      53669950
-Atomic       :      30552487
-synchronized/BaseLine : 1.16
-Lock/BaseLine         : 2.56
-Atomic/BaseLine       : 1.46
-synchronized/Lock     : 0.45
-synchronized/Atomic   : 0.79
-Lock/Atomic           : 1.76
+synch        :     126407922
+Lock         :      51207369
+Atomic       :     141845223
+synch/Lock            : 2.47
+synch/(Atomic-synch)  : 8.19
 ============================
 Cycles       :        100000
-BaseLine     :      41512818
-synchronized :      43843003
-Lock         :      87430386
-Atomic       :      51892350
-synchronized/BaseLine : 1.06
-Lock/BaseLine         : 2.11
-Atomic/BaseLine       : 1.25
-synchronized/Lock     : 0.50
-synchronized/Atomic   : 0.84
-Lock/Atomic           : 1.68
+synch        :     251174061
+Lock         :     105338114
+Atomic       :     279503250
+synch/Lock            : 2.38
+synch/(Atomic-synch)  : 8.87
 ============================
 Cycles       :        200000
-BaseLine     :      80176670
-synchronized :    5455046661
-Lock         :     177686829
-Atomic       :     101789194
-synchronized/BaseLine : 68.04
-Lock/BaseLine         : 2.22
-Atomic/BaseLine       : 1.27
-synchronized/Lock     : 30.70
-synchronized/Atomic   : 53.59
-Lock/Atomic           : 1.75
+synch        :     508778006
+Lock         :     214398402
+Atomic       :     574464795
+synch/Lock            : 2.37
+synch/(Atomic-synch)  : 7.75
 ============================
 Cycles       :        400000
-BaseLine     :     160383513
-synchronized :     780052493
-Lock         :     362187652
-Atomic       :     202030984
-synchronized/BaseLine : 4.86
-Lock/BaseLine         : 2.26
-Atomic/BaseLine       : 1.26
-synchronized/Lock     : 2.15
-synchronized/Atomic   : 3.86
-Lock/Atomic           : 1.79
+synch        :    1027003521
+Lock         :     428342577
+Atomic       :    1115667617
+synch/Lock            : 2.40
+synch/(Atomic-synch)  : 11.58
 ============================
 Cycles       :        800000
-BaseLine     :     322064955
-synchronized :     336155014
-Lock         :     704615531
-Atomic       :     393231542
-synchronized/BaseLine : 1.04
-Lock/BaseLine         : 2.19
-Atomic/BaseLine       : 1.22
-synchronized/Lock     : 0.47
-synchronized/Atomic   : 0.85
-Lock/Atomic           : 1.79
-============================
-Cycles       :       1600000
-BaseLine     :     650004120
-synchronized :   52235762925
-Lock         :    1419602771
-Atomic       :     796950171
-synchronized/BaseLine : 80.36
-Lock/BaseLine         : 2.18
-Atomic/BaseLine       : 1.23
-synchronized/Lock     : 36.80
-synchronized/Atomic   : 65.54
-Lock/Atomic           : 1.78
-============================
-Cycles       :       3200000
-BaseLine     :    1285664519
-synchronized :   96336767661
-Lock         :    2846988654
-Atomic       :    1590545726
-synchronized/BaseLine : 74.93
-Lock/BaseLine         : 2.21
-Atomic/BaseLine       : 1.24
-synchronized/Lock     : 33.84
-synchronized/Atomic   : 60.57
-Lock/Atomic           : 1.79
+synch        :    2179255097
+Lock         :     877216314
+Atomic       :    2371504710
+synch/Lock            : 2.48
+synch/(Atomic-synch)  : 11.34
 *///:~
