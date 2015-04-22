@@ -11,6 +11,9 @@
     Ant available from: http://ant.apache.org/
 
     To see options, type: ant -p
+
+    NOTE: Temporarily excluded
+    annotations/build.xml
   </description>
 
   <condition property="version1.8">
@@ -38,7 +41,6 @@
       io/build.xml
       xml/build.xml
       enumerated/build.xml
-      annotations/build.xml
       concurrency/build.xml
       gui/build.xml
       swt/build.xml

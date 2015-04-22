@@ -136,7 +136,6 @@
      failonerror="true"
      fork="true">
       <arg line='"D.*\.java"'/>
-
     </java>
   </target>
 
@@ -148,7 +147,6 @@
      failonerror="true"
      fork="true">
       <arg line='"D.*\.java"'/>
-
     </java>
   </target>
 
@@ -160,7 +158,6 @@
      failonerror="true"
      fork="true">
       <arg line='"D.*\.java"'/>
-
     </java>
   </target>
 

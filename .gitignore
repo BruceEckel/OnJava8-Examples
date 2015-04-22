@@ -50,4 +50,8 @@ annotations/Test1.txt
 annotations/Test2.txt
 io/*.out
 io/*.txt
+io/*.dat
+io/*.tmp
 io/test.zip
+io/test.gz
+io/X.file
