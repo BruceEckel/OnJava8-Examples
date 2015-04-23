@@ -3,11 +3,12 @@
 // the XOM library from http://www.xom.nu }
 // {RunFirst: Person}
 import nu.xom.*;
+import java.io.File;
 import java.util.*;
 
 public class People extends ArrayList<Person> {
   public People(String fileName) throws Exception  {
-    Document doc = new Builder().build(fileName);
+    Document doc = new Builder().build(new File(fileName));
     Elements elements =
       doc.getRootElement().getChildElements();
     for(int i = 0; i < elements.size(); i++)
