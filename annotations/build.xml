@@ -153,7 +153,7 @@
      fork="true"/>
   </target>
 
-  <!-- <target name="TableCreator">
+  <target name="TableCreator">
     <java
      classname="annotations.database.TableCreator"
      classpath="${java.class.path};${basedir};${basedir}/.."
@@ -184,7 +184,7 @@
       <arg value="-s"/>
       <arg value="database"/>
     </exec>
-  </target> -->
+  </target>
 
   <target
    depends="build"
@@ -203,8 +203,8 @@
     <antcall target="StackLStringTest"/>
     <antcall target="UseCaseTracker"/>
     <antcall target="TableCreator"/>
-    <!-- <antcall target="InterfaceExtractorProcessor"/>
-    <antcall target="TableCreationProcessorFactory"/> -->
+    <antcall target="InterfaceExtractorProcessor"/>
+    <antcall target="TableCreationProcessorFactory"/>
     <delete file="failures"/>
   </target>
 
