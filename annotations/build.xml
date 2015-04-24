@@ -22,7 +22,7 @@
 
   <target name="net_mindview_util">
     <javac includeantruntime="false"
-     classpath="${basedir}/.."
+     classpath="${java.class.path};${basedir};${basedir}/.."
      srcdir="${basedir}/../net/mindview/util/">
       <compilerarg value="-Xmaxerrs"/>
       <compilerarg value="10"/>
@@ -31,7 +31,7 @@
 
   <target name="net_mindview_atunit">
     <javac includeantruntime="false"
-     classpath="${basedir}/.."
+     classpath="${java.class.path};${basedir};${basedir}/.."
      srcdir="${basedir}/../net/mindview/atunit/">
       <compilerarg value="-Xmaxerrs"/>
       <compilerarg value="10"/>
@@ -45,9 +45,10 @@
     <fail message="J2SE8 required" unless="version1.8"/>
     <echo message="Building 'annotations'"/>
     <javac includeantruntime="false"
-     classpath="${basedir}/.."
+     classpath="${java.class.path};${basedir};${basedir}/.."
      debug="true"
-     srcdir="${basedir}">
+     srcdir="${basedir}"
+     excludes="InterfaceExtractorProcessor.java InterfaceExtractorProcessorFactory.java database/TableCreationProcessorFactory.java">
       <compilerarg value="-Xmaxerrs"/>
       <compilerarg value="10"/>
     </javac>
@@ -203,8 +204,8 @@
     <antcall target="StackLStringTest"/>
     <antcall target="UseCaseTracker"/>
     <antcall target="TableCreator"/>
-    <antcall target="InterfaceExtractorProcessor"/>
-    <antcall target="TableCreationProcessorFactory"/>
+    <!-- <antcall target="InterfaceExtractorProcessor"/>
+    <antcall target="TableCreationProcessorFactory"/> -->
     <delete file="failures"/>
   </target>
 

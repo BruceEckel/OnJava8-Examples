@@ -6,14 +6,12 @@
     Main build.xml for the source code for
     Thinking in Java, 4th Edition (Refreshed) by Bruce Eckel
     Code available at http://www.MindView.net
+    See installation instructions in README.md
     See copyright notice in CopyRight.txt
 
-    Ant available from: http://ant.apache.org/
+    Ant available from http://ant.apache.org
 
     To see options, type: ant -p
-
-    NOTE: Temporarily excluded
-    annotations/build.xml
   </description>
 
   <condition property="version1.8">
@@ -41,6 +39,7 @@
       io/build.xml
       xml/build.xml
       enumerated/build.xml
+      annotations/build.xml
       concurrency/build.xml
       gui/build.xml
       swt/build.xml
