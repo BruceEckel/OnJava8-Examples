@@ -1,0 +1,66 @@
+<project basedir="." name="Thinking in Java Director's Cut by Bruce Eckel">
+
+  <property name="chapter" value="CHAPTER?"/>
+
+  <description>
+    Ant build.xml for the source code for chapter ${chapter}
+    Thinking in Java Director's Cut by Bruce Eckel
+    Code available at http://www.MindView.net
+    See installation instructions in README.md
+    See copyright notice in CopyRight.txt
+
+    Ant available from http://ant.apache.org
+
+    To see options, type: ant -p
+  </description>
+
+  <macrodef name="jrun">
+     <attribute name="cls" default="NOT SET"/>
+     <sequential>
+        <echo>Running: @{cls}</echo>
+        <java classname="@{cls}"/>
+        <echo>Finished: @{cls}</echo>
+        <echo>--------------------------------</echo>
+     </sequential>
+  </macrodef>
+
+  <condition property="version1.8">
+    <equals arg1="1.8" arg2="${ant.java.version}"/>
+  </condition>
+
+  <target name="net_mindview_util">
+    <javac includeantruntime="false"
+     classpath="${java.class.path};${basedir};${basedir}/.."
+     srcdir="${basedir}/../net/mindview/util/">
+      <compilerarg value="-Xmaxerrs"/>
+      <compilerarg value="10"/>
+    </javac>
+  </target>
+
+  <target
+   depends="net_mindview_util"
+   description="Build all classes in this directory"
+   name="build">
+    <fail message="Java 8 required" unless="version1.8"/>
+    <echo message="Building '${chapter}'"/>
+    <javac includeantruntime="false"
+     classpath="${java.class.path};${basedir};${basedir}/.."
+     debug="true"
+     srcdir="${basedir}">
+      <compilerarg value="-Xmaxerrs"/>
+      <compilerarg value="10"/>
+    </javac>
+    <echo message="Build '${chapter}' succeeded"/>
+  </target>
+
+  <target description="delete all byproducts" name="clean">
+    <delete>
+      <fileset dir="${basedir}" includes="**/*.class"/>
+      <fileset dir="${basedir}" includes="**/*Output.txt"/>
+      <fileset dir="${basedir}" includes="**/log.txt"/>
+      <fileset dir="${basedir}" includes="failures"/>
+    </delete>
+    <echo message="clean successful"/>
+  </target>
+
+</project>
