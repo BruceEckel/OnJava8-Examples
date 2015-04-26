@@ -7,8 +7,8 @@ package annotations.database;
 import com.sun.mirror.apt.*;
 import com.sun.mirror.declaration.*;
 import com.sun.mirror.util.*;
-import java.util.*;
 import static com.sun.mirror.util.DeclarationVisitors.*;
+import java.util.*;
 
 public class TableCreationProcessorFactory
   implements AnnotationProcessorFactory {

@@ -1,5 +1,6 @@
 # Thinking in Java 4e (Refreshed) Code Examples
-for Java 8
+----------
+(for Java 8)
 
 ### *Initial draft; not working yet*
 
@@ -18,3 +19,6 @@ for Java 8
 
 
 Report bugs in the examples or in the book [here](https://github.com/BruceEckel/TIJ4-Refreshed-Examples/issues).
+
+----------
+**Copyright &copy;2015 Bruce Eckel, MindView LLC. All Rights Reserved. You may use the examples for teaching, as long as they are not republished without permission.**
