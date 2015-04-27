@@ -1,10 +1,10 @@
 <?xml version="1.0" ?>
 
-<project basedir="." default="run" name="Thinking in Java, 4th Edition (Refreshed) by Bruce Eckel">
+<project basedir="." default="run" name="Thinking in Java Director's Cut by Bruce Eckel">
 
   <description>
     Main build.xml for the source code for
-    Thinking in Java, 4th Edition (Refreshed) by Bruce Eckel
+    Thinking in Java Director's Cut by Bruce Eckel
     Code available at http://www.MindView.net
     See installation instructions in README.md
     See copyright notice in CopyRight.txt
@@ -43,6 +43,15 @@
       concurrency/build.xml
       gui/build.xml
       swt/build.xml
+      patterns/build.xml
+      references/build.xml
+      assertions/build.xml
+      database/build.xml
+      unittesting/build.xml
+      debugging/build.xml
+      logging/build.xml
+      network/build.xml
+      remote/build.xml
       "/>
 
   <target name="run" description="Compiles and runs all examples">

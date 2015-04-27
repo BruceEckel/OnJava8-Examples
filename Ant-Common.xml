@@ -1,4 +1,4 @@
-<project basedir="." name="Thinking in Java Director's Cut by Bruce Eckel">
+<project basedir=".">
 
   <property name="chapter" value="CHAPTER?"/>
 
@@ -19,6 +19,22 @@
      <sequential>
         <echo>Running: @{cls}</echo>
         <java classname="@{cls}"/>
+        <echo>Finished: @{cls}</echo>
+        <echo>--------------------------------</echo>
+     </sequential>
+  </macrodef>
+
+  <macrodef name="jrunp">
+     <attribute name="cls" default="NOT SET"/>
+     <attribute name="dirpath" default="NOT SET"/>
+     <sequential>
+        <echo>Running: @{cls}</echo>
+        <java
+         classname="@{cls}"
+         classpath="${java.class.path};${basedir};${basedir}/.."
+         dir="@{dirpath}"
+         failonerror="true"
+         fork="true"/>
         <echo>Finished: @{cls}</echo>
         <echo>--------------------------------</echo>
      </sequential>
@@ -46,6 +62,7 @@
     <javac includeantruntime="false"
      classpath="${java.class.path};${basedir};${basedir}/.."
      debug="true"
+     excludes="${excludedfiles}"
      srcdir="${basedir}">
       <compilerarg value="-Xmaxerrs"/>
       <compilerarg value="10"/>
