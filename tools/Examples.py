@@ -151,6 +151,20 @@ class CodeFile:
             if self.subdirs:
                 self.exclude = '/'.join(self.subdirs) + '/' + self.exclude
             print(self.exclude)
+        self.throwsexception = "{ThrowsException}" in self.code
+
+    def run_command(self):
+        if not self.main:
+            return ""
+        if self.package:
+            if self.cmdargs:
+               return """    <jrun cls="%s" dirpath="%s" arguments='%s'/>\n""" % (self.packageName() + '.' + self.name, self.relpath, self.cmdargs)
+            else:
+               return """    <jrun cls="%s" dirpath="%s"/>\n""" % (self.packageName() + '.' + self.name, self.relpath)
+        if self.cmdargs:
+            return """    <jrun cls="%s" arguments='%s'/>\n""" % (self.name, self.cmdargs)
+        else:
+            return """    <jrun cls="%s"/>\n""" % self.name
 
     def __repr__(self):
         result = self.tagLine
@@ -198,17 +212,7 @@ class Chapter:
         for cf in self.code_files:
             if any([cf.name + ".java" in f for f in self.excludes]) or cf.runbyhand:
                 continue
-            if cf.main:
-                if not cf.package:
-                    if cf.cmdargs:
-                        buildFile += """    <jrun cls="%s" arguments='%s'/>\n""" % (cf.name, cf.cmdargs)
-                    else:
-                        buildFile += """    <jrun cls="%s"/>\n""" % cf.name
-                else:
-                    if cf.cmdargs:
-                       buildFile += """    <jrunp cls ="%s" dirpath="%s" arguments='%s'/>\n""" % (cf.packageName() + '.' + cf.name, cf.relpath, cf.cmdargs)
-                    else:
-                       buildFile += """    <jrunp cls ="%s" dirpath="%s"/>\n""" % (cf.packageName() + '.' + cf.name, cf.relpath)
+            buildFile += cf.run_command()
         buildFile += endBuild
         with (self.dir / "build.xml").open("w") as buildxml:
             buildxml.write(buildFile)
