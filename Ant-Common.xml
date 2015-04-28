@@ -27,7 +27,7 @@
           dir="@{dirpath}"
           failonerror="@{failOnError}"
           fork="true">
-            <arg value="@{arguments}"/>
+            <arg line="@{arguments}"/>
         </java>
         <echo>Finished: ${chapter} @{cls}</echo>
         <echo>--------------------------------</echo>

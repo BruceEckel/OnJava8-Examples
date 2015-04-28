@@ -119,16 +119,20 @@ def copyAntBuildFiles():
     shutil.copy(str(github / "Ant-Common.xml"), str(destination))
 
 
+
+
 class CodeFileOptions(object):
     """docstring for CodeFileOptions"""
     def __init__(self, codeFile):
+        "Should probably use regular expressions for parsing instead"
         self.codeFile = codeFile
 
         self.cmdargs = None
         if "{Args:" in self.codeFile.code:
             for line in self.codeFile.lines:
                 if "{Args:" in line:
-                    self.cmdargs = line.split("{Args:")[1].strip()[:-1]
+                    self.cmdargs = line.split("{Args:")[1].strip()
+                    self.cmdargs = self.cmdargs.rsplit("}", 1)[0]
 
         self.runbyhand = "{RunByHand}" in self.codeFile.code
 
@@ -140,6 +144,43 @@ class CodeFileOptions(object):
             print(self.exclude)
 
         self.throwsexception = "{ThrowsException}" in self.codeFile.code
+
+        self.alternatemainclass = None
+        if "{main: " in self.codeFile.code:
+             for line in self.codeFile.lines:
+                if "{main:" in line:
+                    self.alternatemainclass = line.split("{main:")[1].strip()
+                    self.alternatemainclass = self.alternatemainclass.rsplit("}", 1)[0]
+
+
+    def classFile(self):
+        start = """    <jrun cls="%s" """
+        if self.alternatemainclass:
+            return start % self.alternatemainclass
+        if self.codeFile.package:
+            return start % (self.codeFile.packageName() + '.' + self.codeFile.name)
+        return start % self.codeFile.name
+
+    def dirPath(self):
+        if self.codeFile.package:
+            return """dirpath="%s" """ % self.codeFile.relpath
+        return ""
+
+    def arguments(self):
+        if self.cmdargs:
+            return """arguments='%s' """ % self.cmdargs
+        return ""
+
+    def failOnError(self):
+        if self.throwsexception:
+            return """failOnError='false' """
+        return ""
+
+    def createRunCommand(self):
+        return self.classFile() + self.dirPath() + self.arguments() + self.failOnError() + "/>\n"
+
+
+
 
 class CodeFile:
     def __init__(self, javaFile, chapterDir):
@@ -162,32 +203,11 @@ class CodeFile:
         self.relpath = '../' + '/'.join(self.tagLine.split('/')[:-1])
         self.name = javaFile.name.split('.')[0]
         self.options = CodeFileOptions(self)
-        # self.cmdargs = None
-        # if "{Args:" in self.code:
-        #     for line in self.lines:
-        #         if "{Args:" in line:
-        #             self.cmdargs = line.split("{Args:")[1].strip()[:-1]
-        # self.runbyhand = "{RunByHand}" in self.code
-        # self.exclude = None
-        # if "{CompileTimeError}" in self.code:
-        #     self.exclude = self.name + ".java"
-        #     if self.subdirs:
-        #         self.exclude = '/'.join(self.subdirs) + '/' + self.exclude
-        #     print(self.exclude)
-        # self.throwsexception = "{ThrowsException}" in self.code
 
     def run_command(self):
         if not self.main:
             return ""
-        if self.package:
-            if self.options.cmdargs:
-               return """    <jrun cls="%s" dirpath="%s" arguments='%s'/>\n""" % (self.packageName() + '.' + self.name, self.relpath, self.options.cmdargs)
-            else:
-               return """    <jrun cls="%s" dirpath="%s"/>\n""" % (self.packageName() + '.' + self.name, self.relpath)
-        if self.options.cmdargs:
-            return """    <jrun cls="%s" arguments='%s'/>\n""" % (self.name, self.options.cmdargs)
-        else:
-            return """    <jrun cls="%s"/>\n""" % self.name
+        return self.options.createRunCommand()
 
     def __repr__(self):
         result = self.tagLine
@@ -205,6 +225,8 @@ class CodeFile:
         path = '.'.join(self.tagLine.split('/')[:-1])
         packagePath = self.packageName()
         return path == packagePath
+
+
 
 
 class Chapter:
@@ -239,6 +261,8 @@ class Chapter:
         buildFile += endBuild
         with (self.dir / "build.xml").open("w") as buildxml:
             buildxml.write(buildFile)
+
+
 
 
 def createAntFiles():
