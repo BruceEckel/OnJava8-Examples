@@ -16,15 +16,18 @@
 
   <macrodef name="jrun">
      <attribute name="cls" default="NOT SET"/>
+     <attribute name="dirpath" default=""/>
      <attribute name="arguments" default=""/>
+     <attribute name="failOnError" default="true"/>
      <sequential>
         <echo>Running: ${chapter} @{cls}</echo>
         <java
           classname="@{cls}"
           classpath="${java.class.path};${basedir};${basedir}/.."
-          failonerror="true"
+          dir="@{dirpath}"
+          failonerror="@{failOnError}"
           fork="true">
-          <arg value="@{arguments}"/>
+            <arg value="@{arguments}"/>
         </java>
         <echo>Finished: ${chapter} @{cls}</echo>
         <echo>--------------------------------</echo>
@@ -35,13 +38,14 @@
      <attribute name="cls" default="NOT SET"/>
      <attribute name="dirpath" default="NOT SET"/>
      <attribute name="arguments" default=""/>
+     <attribute name="failOnError" default="true"/>
      <sequential>
         <echo>Running: ${chapter} @{cls}</echo>
         <java
          classname="@{cls}"
          classpath="${java.class.path};${basedir};${basedir}/.."
          dir="@{dirpath}"
-         failonerror="true"
+         failonerror="@{failOnError}"
          fork="true">
           <arg value="@{arguments}"/>
        </java>
