@@ -20,10 +20,7 @@ startBuild = """\
   <property name="excludedfiles" value="%s"/>
   <import file="../Ant-Common.xml"/>
 
-  <target
-   depends="build"
-   description="Compile and run"
-   name="run">
+  <target name="run" description="Compile and run" depends="build">
     <touch file="failures"/>
 """
 
@@ -79,12 +76,14 @@ def compareWithGithub():
     githubfiles = [str(file)[leader:] for file in github.glob("**/*")]
     githubfiles = [ghf for ghf in githubfiles if not ghf.startswith(".git")]
     duplicates = { ghf for ghf in githubfiles if githubfiles.count(ghf) > 1 }
-    print("duplicates = ", duplicates)
+    if duplicates:
+        print("duplicates = ", duplicates)
 
     leader2 = len(str(destination)) + 1
     destfiles = [str(file)[leader2:] for file in destination.glob("**/*")]
     duplicates = { ghf for ghf in destfiles if destfiles.count(ghf) > 1 }
-    print("duplicates = ", duplicates)
+    if duplicates:
+        print("duplicates = ", duplicates)
 
     githubfiles = set(githubfiles)
     destfiles = set(destfiles)
@@ -115,15 +114,16 @@ def copyAntBuildFiles():
     for common in githubDirs().intersection(destDirs()):
         print("->", common)
         build = github / common / "build.xml"
-        # print (str(build), build.exists())
         target = destination / common
-        # print (str(target), target.exists())
         shutil.copy(str(build), str(target))
     shutil.copy(str(github / "Ant-Common.xml"), str(destination))
 
 
 class CodeFile:
-    def __init__(self, javaFile):
+    def __init__(self, javaFile, chapterDir):
+        self.chapter_dir = chapterDir
+        self.java_file = javaFile
+        self.subdirs = str(javaFile.parent).split("\\")[2:]
         with javaFile.open() as j:
             self.code = j.read()
         self.lines = self.code.splitlines()
@@ -139,6 +139,18 @@ class CodeFile:
         self.tagLine = self.lines[0][4:]
         self.relpath = '../' + '/'.join(self.tagLine.split('/')[:-1])
         self.name = javaFile.name.split('.')[0]
+        self.cmdargs = None
+        if "{Args:" in self.code:
+            for line in self.lines:
+                if "{Args:" in line:
+                    self.cmdargs = line.split("{Args:")[1].strip()[:-1]
+        self.runbyhand = "{RunByHand}" in self.code
+        self.exclude = None
+        if "{CompileTimeError}" in self.code:
+            self.exclude = self.name + ".java"
+            if self.subdirs:
+                self.exclude = '/'.join(self.subdirs) + '/' + self.exclude
+            print(self.exclude)
 
     def __repr__(self):
         result = self.tagLine
@@ -146,7 +158,6 @@ class CodeFile:
             result += "\n" + self.package
         result += "\n"
         return result
-        # return "\n".join(self.lines)
 
     def packageName(self):
         return self.package.split()[1][:-1]
@@ -162,8 +173,8 @@ class CodeFile:
 class Chapter:
     def __init__(self, dir):
         self.dir = dir
-        self.code_files = [CodeFile(javaFile) for javaFile in dir.glob("**/*.java")]
-        self.excludes = [cf.name + ".java" for cf in self.code_files if "{CompileTimeError}" in cf.code]
+        self.code_files = [CodeFile(javaFile, dir) for javaFile in dir.glob("**/*.java")]
+        self.excludes = [cf.exclude for cf in self.code_files if cf.exclude]
 
     def __repr__(self):
         result = "-" * 80
@@ -185,25 +196,27 @@ class Chapter:
     def makeBuildFile(self):
         buildFile = startBuild % (self.dir.name, " ".join(self.excludes))
         for cf in self.code_files:
-            if cf.name + ".java" in self.excludes:
+            if any([cf.name + ".java" in f for f in self.excludes]) or cf.runbyhand:
                 continue
-            print(cf.name)
             if cf.main:
                 if not cf.package:
-                    buildFile += '    <jrun cls="%s"/>\n' % cf.name
+                    if cf.cmdargs:
+                        buildFile += """    <jrun cls="%s" arguments='%s'/>\n""" % (cf.name, cf.cmdargs)
+                    else:
+                        buildFile += """    <jrun cls="%s"/>\n""" % cf.name
                 else:
-                    buildFile += '    <jrunp cls ="%s" dirpath="%s"/>\n' % (cf.packageName() + '.' + cf.name, cf.relpath)
+                    if cf.cmdargs:
+                       buildFile += """    <jrunp cls ="%s" dirpath="%s" arguments='%s'/>\n""" % (cf.packageName() + '.' + cf.name, cf.relpath, cf.cmdargs)
+                    else:
+                       buildFile += """    <jrunp cls ="%s" dirpath="%s"/>\n""" % (cf.packageName() + '.' + cf.name, cf.relpath)
         buildFile += endBuild
-        # print(buildFile)
         with (self.dir / "build.xml").open("w") as buildxml:
             buildxml.write(buildFile)
 
 
 def createAntFiles():
     chapters = [Chapter(fd) for fd in destination.glob("*") if fd.is_dir() if not (fd / "build.xml").exists()]
-    # chapters = [Chapter(fd) for fd in destination.glob("*") if fd.is_dir()]
     for chapter in chapters:
-        print(chapter)
         chapter.checkPackages()
         chapter.makeBuildFile()
 

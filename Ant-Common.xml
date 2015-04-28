@@ -1,4 +1,4 @@
-<project basedir=".">
+<project>
 
   <property name="chapter" value="CHAPTER?"/>
 
@@ -16,10 +16,17 @@
 
   <macrodef name="jrun">
      <attribute name="cls" default="NOT SET"/>
+     <attribute name="arguments" default=""/>
      <sequential>
-        <echo>Running: @{cls}</echo>
-        <java classname="@{cls}"/>
-        <echo>Finished: @{cls}</echo>
+        <echo>Running: ${chapter} @{cls}</echo>
+        <java
+          classname="@{cls}"
+          classpath="${java.class.path};${basedir};${basedir}/.."
+          failonerror="true"
+          fork="true">
+          <arg value="@{arguments}"/>
+        </java>
+        <echo>Finished: ${chapter} @{cls}</echo>
         <echo>--------------------------------</echo>
      </sequential>
   </macrodef>
@@ -27,15 +34,18 @@
   <macrodef name="jrunp">
      <attribute name="cls" default="NOT SET"/>
      <attribute name="dirpath" default="NOT SET"/>
+     <attribute name="arguments" default=""/>
      <sequential>
-        <echo>Running: @{cls}</echo>
+        <echo>Running: ${chapter} @{cls}</echo>
         <java
          classname="@{cls}"
          classpath="${java.class.path};${basedir};${basedir}/.."
          dir="@{dirpath}"
          failonerror="true"
-         fork="true"/>
-        <echo>Finished: @{cls}</echo>
+         fork="true">
+          <arg value="@{arguments}"/>
+       </java>
+        <echo>Finished: ${chapter} @{cls}</echo>
         <echo>--------------------------------</echo>
      </sequential>
   </macrodef>
