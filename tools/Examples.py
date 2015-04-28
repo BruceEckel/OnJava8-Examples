@@ -119,6 +119,28 @@ def copyAntBuildFiles():
     shutil.copy(str(github / "Ant-Common.xml"), str(destination))
 
 
+class CodeFileOptions(object):
+    """docstring for CodeFileOptions"""
+    def __init__(self, codeFile):
+        self.codeFile = codeFile
+
+        self.cmdargs = None
+        if "{Args:" in self.codeFile.code:
+            for line in self.codeFile.lines:
+                if "{Args:" in line:
+                    self.cmdargs = line.split("{Args:")[1].strip()[:-1]
+
+        self.runbyhand = "{RunByHand}" in self.codeFile.code
+
+        self.exclude = None
+        if "{CompileTimeError}" in self.codeFile.code:
+            self.exclude = self.codeFile.name + ".java"
+            if self.codeFile.subdirs:
+                self.exclude = '/'.join(self.codeFile.subdirs) + '/' + self.exclude
+            print(self.exclude)
+
+        self.throwsexception = "{ThrowsException}" in self.codeFile.code
+
 class CodeFile:
     def __init__(self, javaFile, chapterDir):
         self.chapter_dir = chapterDir
@@ -139,30 +161,31 @@ class CodeFile:
         self.tagLine = self.lines[0][4:]
         self.relpath = '../' + '/'.join(self.tagLine.split('/')[:-1])
         self.name = javaFile.name.split('.')[0]
-        self.cmdargs = None
-        if "{Args:" in self.code:
-            for line in self.lines:
-                if "{Args:" in line:
-                    self.cmdargs = line.split("{Args:")[1].strip()[:-1]
-        self.runbyhand = "{RunByHand}" in self.code
-        self.exclude = None
-        if "{CompileTimeError}" in self.code:
-            self.exclude = self.name + ".java"
-            if self.subdirs:
-                self.exclude = '/'.join(self.subdirs) + '/' + self.exclude
-            print(self.exclude)
-        self.throwsexception = "{ThrowsException}" in self.code
+        self.options = CodeFileOptions(self)
+        # self.cmdargs = None
+        # if "{Args:" in self.code:
+        #     for line in self.lines:
+        #         if "{Args:" in line:
+        #             self.cmdargs = line.split("{Args:")[1].strip()[:-1]
+        # self.runbyhand = "{RunByHand}" in self.code
+        # self.exclude = None
+        # if "{CompileTimeError}" in self.code:
+        #     self.exclude = self.name + ".java"
+        #     if self.subdirs:
+        #         self.exclude = '/'.join(self.subdirs) + '/' + self.exclude
+        #     print(self.exclude)
+        # self.throwsexception = "{ThrowsException}" in self.code
 
     def run_command(self):
         if not self.main:
             return ""
         if self.package:
-            if self.cmdargs:
-               return """    <jrun cls="%s" dirpath="%s" arguments='%s'/>\n""" % (self.packageName() + '.' + self.name, self.relpath, self.cmdargs)
+            if self.options.cmdargs:
+               return """    <jrun cls="%s" dirpath="%s" arguments='%s'/>\n""" % (self.packageName() + '.' + self.name, self.relpath, self.options.cmdargs)
             else:
                return """    <jrun cls="%s" dirpath="%s"/>\n""" % (self.packageName() + '.' + self.name, self.relpath)
-        if self.cmdargs:
-            return """    <jrun cls="%s" arguments='%s'/>\n""" % (self.name, self.cmdargs)
+        if self.options.cmdargs:
+            return """    <jrun cls="%s" arguments='%s'/>\n""" % (self.name, self.options.cmdargs)
         else:
             return """    <jrun cls="%s"/>\n""" % self.name
 
@@ -188,7 +211,7 @@ class Chapter:
     def __init__(self, dir):
         self.dir = dir
         self.code_files = [CodeFile(javaFile, dir) for javaFile in dir.glob("**/*.java")]
-        self.excludes = [cf.exclude for cf in self.code_files if cf.exclude]
+        self.excludes = [cf.options.exclude for cf in self.code_files if cf.options.exclude]
 
     def __repr__(self):
         result = "-" * 80
@@ -210,7 +233,7 @@ class Chapter:
     def makeBuildFile(self):
         buildFile = startBuild % (self.dir.name, " ".join(self.excludes))
         for cf in self.code_files:
-            if any([cf.name + ".java" in f for f in self.excludes]) or cf.runbyhand:
+            if any([cf.name + ".java" in f for f in self.excludes]) or cf.options.runbyhand:
                 continue
             buildFile += cf.run_command()
         buildFile += endBuild
