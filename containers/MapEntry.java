@@ -22,7 +22,8 @@ public class MapEntry<K,V> implements Map.Entry<K,V> {
   }
   public boolean equals(Object o) {
     if(!(o instanceof MapEntry)) return false;
-    MapEntry me = (MapEntry)o;
+    @SuppressWarnings("unchecked")
+    MapEntry<K,V> me = (MapEntry<K,V>)o;
     return
       (key == null ?
        me.getKey() == null : key.equals(me.getKey())) &&

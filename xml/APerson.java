@@ -1,4 +1,4 @@
-//: xml/Person.java
+//: xml/APerson.java
 // Use the XOM library to write and read XML
 // {Requires: nu.xom.Node; You must install
 // the XOM library from http://www.xom.nu }
@@ -6,13 +6,13 @@ import nu.xom.*;
 import java.io.*;
 import java.util.*;
 
-public class Person {
+public class APerson {
   private String first, last;
-  public Person(String first, String last) {
+  public APerson(String first, String last) {
     this.first = first;
     this.last = last;
   }
-  // Produce an XML Element from this Person object:
+  // Produce an XML Element from this APerson object:
   public Element getXML() {
     Element person = new Element("person");
     Element firstName = new Element("first");
@@ -23,8 +23,8 @@ public class Person {
     person.appendChild(lastName);
     return person;
   }
-  // Constructor to restore a Person from an XML Element:
-  public Person(Element person) {
+  // Constructor to restore a APerson from an XML Element:
+  public APerson(Element person) {
     first= person.getFirstChildElement("first").getValue();
     last = person.getFirstChildElement("last").getValue();
   }
@@ -39,13 +39,13 @@ public class Person {
     serializer.flush();
   }
   public static void main(String[] args) throws Exception {
-    List<Person> people = Arrays.asList(
-      new Person("Dr. Bunsen", "Honeydew"),
-      new Person("Gonzo", "The Great"),
-      new Person("Phillip J.", "Fry"));
+    List<APerson> people = Arrays.asList(
+      new APerson("Dr. Bunsen", "Honeydew"),
+      new APerson("Gonzo", "The Great"),
+      new APerson("Phillip J.", "Fry"));
     System.out.println(people);
     Element root = new Element("people");
-    for(Person p : people)
+    for(APerson p : people)
       root.appendChild(p.getXML());
     Document doc = new Document(root);
     format(System.out, doc);

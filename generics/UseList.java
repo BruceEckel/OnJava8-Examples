@@ -1,5 +1,5 @@
 //: generics/UseList.java
-// {CompileTimeError} (Won't compile)
+// {CompileTimeError} (Will not compile)
 import java.util.*;
 
 public class UseList<W,T> {

@@ -100,7 +100,7 @@ class TellerManager implements Runnable {
   private Queue<Teller> tellersDoingOtherThings =
     new LinkedList<Teller>();
   private int adjustmentPeriod;
-  private static Random rand = new Random(47);
+  
   public TellerManager(ExecutorService e,
     CustomerLine customers, int adjustmentPeriod) {
     exec = e;

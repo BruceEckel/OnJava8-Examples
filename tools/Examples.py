@@ -1,5 +1,7 @@
 #! py -3
 """
+TODO: Make sure there's a newline at the end of the extracted files
+
 Extract code examples from TIJ4 Refreshed. Extracts from plain text file
 """
 from pathlib import Path

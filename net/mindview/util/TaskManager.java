@@ -35,7 +35,7 @@ extends ArrayList<TaskItem<R,C>> {
       // Leave completed tasks for results reporting:
       if(!item.future.isDone()) {
         results.add("Cancelling " + item.task);
-        item.future.cancel(true); // May interrupt
+        item.future.cancel(true); // Can interrupt
         items.remove();
       }
     }

@@ -7,11 +7,9 @@
 // www.javassist.org }
 package net.mindview.atunit;
 import javassist.*;
-import javassist.expr.*;
 import javassist.bytecode.*;
 import javassist.bytecode.annotation.*;
 import java.io.*;
-import java.util.*;
 import net.mindview.util.*;
 import static net.mindview.util.Print.*;
 

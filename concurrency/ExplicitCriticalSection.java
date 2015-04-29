@@ -1,4 +1,5 @@
 //: concurrency/ExplicitCriticalSection.java
+// {ThrowsException} on a multiprocessor machine
 // Using explicit Lock objects to create critical sections.
 package concurrency;
 import java.util.concurrent.locks.*;
@@ -6,7 +7,7 @@ import java.util.concurrent.locks.*;
 // Synchronize the entire method:
 class ExplicitPairManager1 extends PairManager {
   private Lock lock = new ReentrantLock();
-  public synchronized void increment() {
+  public void increment() {
     lock.lock();
     try {
       p.incrementX();
@@ -31,7 +32,7 @@ class ExplicitPairManager2 extends PairManager {
     } finally {
       lock.unlock();
     }
-    store(temp);
+    store(temp);	
   }
 }
 
@@ -42,7 +43,4 @@ public class ExplicitCriticalSection {
       pman2 = new ExplicitPairManager2();
     CriticalSection.testApproaches(pman1, pman2);
   }
-} /* Output: (Sample)
-pm1: Pair: x: 15, y: 15 checkCounter = 174035
-pm2: Pair: x: 16, y: 16 checkCounter = 2608588
-*///:~
+} ///:~

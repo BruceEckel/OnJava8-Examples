@@ -10,7 +10,7 @@ public class Receipt {
   }
   public void print(String name, int qty, double price) {
     f.format("%-15.15s %5d %10.2f\n", name, qty, price);
-    total += price;
+    total += price * qty;
   }
   public void printTotal() {
     f.format("%-15s %5s %10.2f\n", "Tax", "", total*0.06);
@@ -32,7 +32,7 @@ Item              Qty      Price
 Jack's Magic Be     4       4.25
 Princess Peas       3       5.10
 Three Bears Por     1      14.29
-Tax                         1.42
+Tax                         2.80
                            -----
-Total                      25.06
+Total                      49.39
 *///:~

@@ -11,7 +11,7 @@ extends AbstractMap<Integer,String> {
     .split(" ");
   public CountingMapData(int size) {
     if(size < 0) this.size = 0;
-    this.size = size;
+    else this.size = size;
   }
   private static class Entry
   implements Map.Entry<Integer,String> {
