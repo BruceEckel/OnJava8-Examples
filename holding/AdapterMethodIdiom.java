@@ -1,5 +1,5 @@
 //: holding/AdapterMethodIdiom.java
-// The "Adapter Method" idiom allows you to use foreach
+// The "Adapter Method" idiom uses foreach
 // with additional kinds of Iterables.
 import java.util.*;
 

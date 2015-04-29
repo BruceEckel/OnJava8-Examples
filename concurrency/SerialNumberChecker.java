@@ -1,5 +1,5 @@
 //: concurrency/SerialNumberChecker.java
-// Operations that may seem safe are not,
+// Operations that might seem safe are not,
 // when threads are present.
 // {Args: 4}
 import java.util.concurrent.*;

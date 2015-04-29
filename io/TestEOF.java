@@ -9,6 +9,6 @@ public class TestEOF {
       new BufferedInputStream(
         new FileInputStream("TestEOF.java")));
     while(in.available() != 0)
-      System.out.print((char)in.readByte());
+      System.out.write(in.readByte());
   }
 } /* (Execute to see output) *///:~

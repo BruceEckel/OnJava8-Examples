@@ -13,8 +13,8 @@ public class GZIPcompress {
         "the file to test.gz");
       System.exit(1);
     }
-    BufferedReader in = new BufferedReader(
-      new FileReader(args[0]));
+    InputStream in = new BufferedInputStream(
+      new FileInputStream(args[0]));
     BufferedOutputStream out = new BufferedOutputStream(
       new GZIPOutputStream(
         new FileOutputStream("test.gz")));

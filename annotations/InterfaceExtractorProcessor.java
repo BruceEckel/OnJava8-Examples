@@ -1,38 +1,30 @@
 //: annotations/InterfaceExtractorProcessor.java
 // APT-based annotation processing.
+// {CompileTimeError} Not working in Java 8
 // {Exec: apt -factory
 // annotations.InterfaceExtractorProcessorFactory
 // Multiplier.java -s ../annotations}
 package annotations;
-//import com.sun.mirror.apt.*;
-import javax.annotation.processing.*;
-//import com.sun.mirror.declaration.*;
-import javax.lang.model.element.*;
-import javax.lang.model.SourceVersion;
+import com.sun.mirror.apt.*;
+import com.sun.mirror.declaration.*;
 import java.io.*;
 import java.util.*;
 
 public class InterfaceExtractorProcessor
-  implements Processor {
-  private final ProcessingEnvironment env;
-  private ArrayList<ExecutableElement> interfaceMethods =
-    new ArrayList<ExecutableElement>();
-  public void init(ProcessingEnvironment processingEnv) {
-
-  }
-  public SourceVersion getSupportedSourceVersion() {
-    return SourceVersion.RELEASE_7;
-  }
+  implements AnnotationProcessor {
+  private final AnnotationProcessorEnvironment env;
+  private ArrayList<MethodDeclaration> interfaceMethods =
+    new ArrayList<MethodDeclaration>();
   public InterfaceExtractorProcessor(
-    ProcessingEnvironment env) { this.env = env; }
-  public boolean process(Set<? extends TypeElement> annotations,
-              RoundEnvironment roundEnv) {
-    for(TypeElement typeElem : env.getElementUtils()) {
+    AnnotationProcessorEnvironment env) { this.env = env; }
+  public void process() {
+    for(TypeDeclaration typeDecl :
+      env.getSpecifiedTypeDeclarations()) {
       ExtractInterface annot =
-        typeElem.getAnnotation(ExtractInterface.class);
+        typeDecl.getAnnotation(ExtractInterface.class);
       if(annot == null)
         break;
-      for(ExecutableElement m : typeElem.getMethods())
+      for(MethodDeclaration m : typeDecl.getMethods())
         if(m.getModifiers().contains(Modifier.PUBLIC) &&
            !(m.getModifiers().contains(Modifier.STATIC)))
           interfaceMethods.add(m);
@@ -41,17 +33,17 @@ public class InterfaceExtractorProcessor
           PrintWriter writer =
             env.getFiler().createSourceFile(annot.value());
           writer.println("package " +
-            typeElem.getPackage().getQualifiedName() +";");
+            typeDecl.getPackage().getQualifiedName() +";");
           writer.println("public interface " +
             annot.value() + " {");
-          for(ExecutableElement m : interfaceMethods) {
+          for(MethodDeclaration m : interfaceMethods) {
             writer.print("  public ");
             writer.print(m.getReturnType() + " ");
             writer.print(m.getSimpleName() + " (");
             int i = 0;
-            for(VariableElement parm :
+            for(ParameterDeclaration parm :
               m.getParameters()) {
-              writer.print(parm.getKind() + " " +
+              writer.print(parm.getType() + " " +
                 parm.getSimpleName());
               if(++i < m.getParameters().size())
                 writer.print(", ");
@@ -65,17 +57,5 @@ public class InterfaceExtractorProcessor
         }
       }
     }
-  }
-  public Set<String> getSupportedAnnotationTypes() {
-    return
-     Collections.singleton("annotations.ExtractInterface");
-  }
-  public Set<String> getSupportedOptions() {
-    return Collections.emptySet();
-  }
-  public Iterable<? extends Completion> getCompletions(
-    Element element, AnnotationMirror annotation,
-    ExecutableElement member, String userText) {
-      return Collections.emptyList();
   }
 } ///:~

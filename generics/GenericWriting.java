@@ -9,8 +9,7 @@ public class GenericWriting {
   static List<Fruit> fruit = new ArrayList<Fruit>();
   static void f1() {
     writeExact(apples, new Apple());
-    // writeExact(fruit, new Apple()); // Error:
-    // Incompatible types: found Fruit, required Apple
+    writeExact(fruit, new Apple());
   }
   static <T> void
   writeWithWildcard(List<? super T> list, T item) {

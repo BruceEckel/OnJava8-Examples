@@ -19,7 +19,7 @@ class CBox extends JPanel implements Runnable {
   public void run() {
     try {
       while(!Thread.interrupted()) {
-        color = new Color(rand.nextInt(0xFFFFFF));
+        color = new Color(rand.nextInt(0x1000000));
         repaint(); // Asynchronously request a paint()
         TimeUnit.MILLISECONDS.sleep(pause);
       }

@@ -7,9 +7,9 @@ public class NonEnum {
       for(Object en : intClass.getEnumConstants())
         System.out.println(en);
     } catch(Exception e) {
-      System.out.println(e);
+      System.out.println("Expected: " + e);
     }
   }
 } /* Output:
-java.lang.NullPointerException
+Expected: java.lang.NullPointerException
 *///:~

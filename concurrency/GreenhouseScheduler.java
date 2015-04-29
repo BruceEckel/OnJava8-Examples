@@ -77,7 +77,7 @@ public class GreenhouseScheduler {
       System.out.println("Terminating");
       scheduler.shutdownNow();
       // Must start a separate task to do this job,
-      // since the scheduler has been shut down:
+      // since the scheduler was shut down:
       new Thread() {
         public void run() {
           for(DataPoint d : data)

@@ -8,6 +8,9 @@ import re
 import argparse
 import shutil
 import pprint
+import difflib
+from sortedcontainers import SortedSet
+
 destination = Path('.') / "ExtractedExamples"
 sourceText = Path('.') / "TIJDirectorsCut.txt"
 github = Path(r'C:\Users\Bruce\Documents\GitHub\TIJ-Directors-Cut')
@@ -71,7 +74,7 @@ def clean():
         shutil.rmtree(str(destination))
 
 
-def compareWithGithub():
+def compareWithGithub(shortForm=True):
     leader = len(str(github)) + 1
     githubfiles = [str(file)[leader:] for file in github.glob("**/*")]
     githubfiles = [ghf for ghf in githubfiles if not ghf.startswith(".git")]
@@ -85,18 +88,62 @@ def compareWithGithub():
     if duplicates:
         print("duplicates = ", duplicates)
 
-    githubfiles = set(githubfiles)
-    destfiles = set(destfiles)
+    githubfiles = SortedSet(githubfiles)
+    destfiles = SortedSet(destfiles)
 
-    print("in githubfiles but not destfiles:")
-    for f in githubfiles.difference(destfiles):
-        print("\t", f)
+    # print("in githubfiles but not destfiles:")
+    # for f in [f for f in githubfiles.difference(destfiles) if not f.endswith(".py") if not f.endswith(".xml")]:
+    #     print("\t", f)
 
-    print("#" * 80)
+    # print("#" * 80)
 
-    print("in destfiles but not githubfiles:")
-    for f in destfiles.difference(githubfiles):
-        print("\t", f)
+    # print("in destfiles but not githubfiles:")
+    # for f in [f for f in destfiles.difference(githubfiles) if f.endswith(".java")]:
+    #         # if not f.endswith(".class")
+    #         # if not f.endswith(".xml")
+    #         # if not f.endswith(".dat")
+    #         # if not f.endswith(".txt")
+    #         # if not f.endswith(".zip")
+    #         # if not f.endswith(".out")
+    #         # if not f.endswith(".file")
+    #         # if not f.endswith(".gz")
+    #         # ]:
+    #     print("\t", f)
+
+    # print("in destfiles and in githubfiles:")
+    runOutput = re.compile("/\* Output:.*///:~", re.DOTALL)
+    differ = difflib.Differ()
+
+    def rstrip(lines):
+        return [line.rstrip() for line in lines]
+
+    def show(lines, sep="#"):
+        sys.stdout.writelines(lines)
+        print("\n" + sep * 80)
+
+
+    inBoth = [f for f in destfiles.intersection(githubfiles) if f.endswith(".java")]
+    for f in inBoth:
+        with (github / f).open() as ghf:
+            with (destination / f).open() as dstf:
+                ghblock = runOutput.sub("", ghf.read())
+                dstblock = runOutput.sub("", dstf.read())
+                if ghblock.strip() == dstblock.strip():
+                    continue
+                ghtext = ghblock.splitlines(keepends=True)
+                #show(ghtext, sep="#")
+                dsttext = dstblock.splitlines(keepends=True)
+                #show(dsttext, sep="-")
+                print("[[[", f, "]]]")
+                if shortForm:
+                    show([ln + "\n" for ln in difflib.context_diff(rstrip(ghtext), rstrip(dsttext))], sep="=")
+                else:
+                    show([ln + "\n" for ln in differ.compare(rstrip(ghtext), rstrip(dsttext))], sep="=")
+                #sys.exit()
+
+
+
+
 
 
 def githubDirs():
@@ -143,7 +190,7 @@ class CodeFileOptions(object):
                 self.exclude = '/'.join(self.codeFile.subdirs) + '/' + self.exclude
             print(self.exclude)
 
-        self.throwsexception = "{ThrowsException}" in self.codeFile.code
+        self.continue_on_error = "{ThrowsException}" in self.codeFile.code
 
         self.alternatemainclass = None
         if "{main: " in self.codeFile.code:
@@ -151,6 +198,15 @@ class CodeFileOptions(object):
                 if "{main:" in line:
                     self.alternatemainclass = line.split("{main:")[1].strip()
                     self.alternatemainclass = self.alternatemainclass.rsplit("}", 1)[0]
+
+        self.timeout = None
+        if "{TimeOut:" in self.codeFile.code:
+             for line in self.codeFile.lines:
+                if "{TimeOut:" in line:
+                    self.timeout = line.split("{TimeOut:")[1].strip()
+                    self.timeout = self.timeout.rsplit("}", 1)[0]
+                    self.continue_on_error = True
+
 
 
     def classFile(self):
@@ -172,12 +228,17 @@ class CodeFileOptions(object):
         return ""
 
     def failOnError(self):
-        if self.throwsexception:
+        if self.continue_on_error:
             return """failOnError='false' """
         return ""
 
+    def timeOut(self):
+        if self.timeout:
+            return """timeOut='%s' """ % self.timeout
+        return ""
+
     def createRunCommand(self):
-        return self.classFile() + self.dirPath() + self.arguments() + self.failOnError() + "/>\n"
+        return self.classFile() + self.dirPath() + self.arguments() + self.failOnError() + self.timeOut() + "/>\n"
 
 
 

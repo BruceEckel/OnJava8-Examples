@@ -10,7 +10,7 @@ public class FormattedMemoryInput {
          BufferedInputFile.read(
           "FormattedMemoryInput.java").getBytes()));
       while(true)
-        System.out.print((char)in.readByte());
+        System.out.write((char)in.readByte());
     } catch(EOFException e) {
       System.err.println("End of stream");
     }

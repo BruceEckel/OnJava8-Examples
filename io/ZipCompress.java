@@ -20,17 +20,17 @@ public class ZipCompress {
     // No corresponding getComment(), though.
     for(String arg : args) {
       print("Writing file " + arg);
-      BufferedReader in =
-        new BufferedReader(new FileReader(arg));
+      InputStream in = new BufferedInputStream(
+         new FileInputStream(arg));
       zos.putNextEntry(new ZipEntry(arg));
       int c;
-      while((c = in.read()) != -1)
+      while((c = in.read()) != -1)	
         out.write(c);
       in.close();
       out.flush();
     }
     out.close();
-    // Checksum valid only after the file has been closed!
+    // Checksum valid only after the file is closed!
     print("Checksum: " + csum.getChecksum().getValue());
     // Now extract the files:
     print("Reading file");

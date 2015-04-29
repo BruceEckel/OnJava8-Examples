@@ -1,5 +1,6 @@
 //: annotations/database/TableCreationProcessorFactory.java
 // The database example using Visitor.
+// {CompileTimeError} Not working in Java 8
 // {Exec: apt -factory
 // annotations.database.TableCreationProcessorFactory
 // database/Member.java -s database}
@@ -7,8 +8,8 @@ package annotations.database;
 import com.sun.mirror.apt.*;
 import com.sun.mirror.declaration.*;
 import com.sun.mirror.util.*;
-import static com.sun.mirror.util.DeclarationVisitors.*;
 import java.util.*;
+import static com.sun.mirror.util.DeclarationVisitors.*;
 
 public class TableCreationProcessorFactory
   implements AnnotationProcessorFactory {

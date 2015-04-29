@@ -3,7 +3,6 @@
 import java.nio.*;
 import java.nio.channels.*;
 import java.io.*;
-
 public class GetChannel {
   private static final int BSIZE = 1024;
   public static void main(String[] args) throws Exception {
@@ -24,7 +23,8 @@ public class GetChannel {
     fc.read(buff);
     buff.flip();
     while(buff.hasRemaining())
-      System.out.print((char)buff.get());
+      System.out.write(buff.get());
+    System.out.flush();
   }
 } /* Output:
 Some text Some more

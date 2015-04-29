@@ -29,7 +29,7 @@ public class Functional {
   }
   // Take a function object and call it on each object in
   // the list, ignoring the return value. The function
-  // object may act as a collecting parameter, so it is
+  // object can act as a collecting parameter, so it is
   // returned at the end.
   public static <T> Collector<T>
   forEach(Iterable<T> seq, Collector<T> func) {
@@ -56,7 +56,7 @@ public class Functional {
         result.add(t);
     return result;
   }
-  // To use the above generic methods, we need to create
+  // To use the above generic methods, we create
   // function objects to adapt to our particular needs:
   static class IntegerAdder implements Combiner<Integer> {
     public Integer combine(Integer x, Integer y) {

@@ -1,4 +1,5 @@
 //: concurrency/CriticalSection.java
+// {RunByHand} (Behavior may have changed in Java 8).
 // Synchronizing blocks instead of entire methods. Also
 // demonstrates protection of a non-thread-safe class
 // with a thread-safe one.

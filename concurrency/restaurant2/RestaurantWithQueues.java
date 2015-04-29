@@ -60,7 +60,7 @@ class Customer implements Runnable {
       Food food = course.randomSelection();
       try {
         waitPerson.placeOrder(this, food);
-        // Blocks until course has been delivered:
+        // Blocks until course is delivered:
         print(this + "eating " + placeSetting.take());
       } catch(InterruptedException e) {
         print(this + "waiting for " +

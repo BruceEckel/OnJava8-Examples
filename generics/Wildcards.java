@@ -12,7 +12,7 @@ public class Wildcards {
     // Can't do this; don't have any 'T':
     // T t = holder.get();
 
-    // OK, but type information has been lost:
+    // OK, but type information is lost:
     Object obj = holder.get();
   }	
   // Similar to rawArgs(), but errors instead of warnings:
@@ -25,7 +25,7 @@ public class Wildcards {
     // Can't do this; don't have any 'T':
     // T t = holder.get();
 
-    // OK, but type information has been lost:
+    // OK, but type information is lost:
     Object obj = holder.get();
   }	
   static <T> T exact1(Holder<T> holder) {
@@ -52,7 +52,7 @@ public class Wildcards {
     // T t = holder.get();  // Error:
     //   Incompatible types: found Object, required T
 
-    // OK, but type information has been lost:
+    // OK, but type information is lost:
     Object obj = holder.get();
   }
   public static void main(String[] args) {

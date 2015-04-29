@@ -1,6 +1,6 @@
 //: enumerated/VendingMachine.java
+// {CompileTimeError} Not working in Java 8
 // {Args: VendingMachineInput.txt}
-package enumerated;
 import java.util.*;
 import net.mindview.util.*;
 import static enumerated.Input.*;

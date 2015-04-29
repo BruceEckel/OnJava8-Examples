@@ -1,4 +1,5 @@
 //: concurrency/SettingDefaultHandler.java
+// {RunByHand}
 import java.util.concurrent.*;
 
 public class SettingDefaultHandler {

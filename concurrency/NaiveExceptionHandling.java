@@ -10,7 +10,7 @@ public class NaiveExceptionHandling {
       exec.execute(new ExceptionThread());
     } catch(RuntimeException ue) {
       // This statement will NOT execute!
-      System.out.println("Exception has been handled!");
+      System.out.println("Exception was handled!");
     }
   }
 } ///:~

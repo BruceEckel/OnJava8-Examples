@@ -53,12 +53,12 @@ public class TypesForSets {
     try {
       test(new TreeSet<SetType>(), SetType.class);
     } catch(Exception e) {
-      System.out.println(e.getMessage());
+      System.out.println("Expected: " + e.getMessage());
     }
     try {
       test(new TreeSet<HashType>(), HashType.class);
     } catch(Exception e) {
-      System.out.println(e.getMessage());
+      System.out.println("Expected: " + e.getMessage());
     }
   }
 } /* Output: (Sample)
@@ -69,6 +69,6 @@ public class TypesForSets {
 [0, 5, 5, 6, 5, 0, 3, 1, 9, 8, 4, 2, 3, 9, 7, 3, 4, 4, 0, 7, 1, 9, 6, 2, 1, 8, 2, 8, 6, 7]
 [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-java.lang.ClassCastException: SetType cannot be cast to java.lang.Comparable
-java.lang.ClassCastException: HashType cannot be cast to java.lang.Comparable
+Expected: java.lang.ClassCastException: SetType cannot be cast to java.lang.Comparable
+Expected: java.lang.ClassCastException: HashType cannot be cast to java.lang.Comparable
 *///:~

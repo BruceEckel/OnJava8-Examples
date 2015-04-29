@@ -1,5 +1,5 @@
 //: generics/Manipulation.java
-// {CompileTimeError} (Won't compile)
+// {CompileTimeError} (Will not compile)
 
 class Manipulator<T> {
   private T obj;

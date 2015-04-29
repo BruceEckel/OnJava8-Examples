@@ -1,5 +1,5 @@
 //: concurrency/SimplePriorities.java
-// Shows the use of thread priorities.
+// Shows thread priorities.
 import java.util.concurrent.*;
 
 public class SimplePriorities implements Runnable {

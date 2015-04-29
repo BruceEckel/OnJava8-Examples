@@ -1,5 +1,4 @@
 //: enumerated/Input.java
-package enumerated;
 import java.util.*;
 
 public enum Input {

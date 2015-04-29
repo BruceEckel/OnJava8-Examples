@@ -24,11 +24,11 @@ public class EnumMaps {
     try { // If there's no value for a particular key:
       em.get(UTILITY).action();
     } catch(Exception e) {
-      print(e);
+      print("Expected: " + e);
     }
   }
 } /* Output:
 BATHROOM: Bathroom alert!
 KITCHEN: Kitchen fire!
-java.lang.NullPointerException
+Expected: java.lang.NullPointerException
 *///:~

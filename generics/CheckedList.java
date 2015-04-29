@@ -16,7 +16,7 @@ public class CheckedList {
     try {
       oldStyleMethod(dogs2); // Throws an exception
     } catch(Exception e) {
-      System.out.println(e);
+      System.out.println("Expected: " + e);
     }
     // Derived types work fine:
     List<Pet> pets = Collections.checkedList(
@@ -25,5 +25,5 @@ public class CheckedList {
     pets.add(new Cat());
   }
 } /* Output:
-java.lang.ClassCastException: Attempt to insert class typeinfo.pets.Cat element into collection with element type class typeinfo.pets.Dog
+Expected: java.lang.ClassCastException: Attempt to insert class typeinfo.pets.Cat element into collection with element type class typeinfo.pets.Dog
 *///:~

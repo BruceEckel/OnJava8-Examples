@@ -21,7 +21,7 @@ class D {}
 // class E extends SelfBounded<D> {}
 // Compile error: Type parameter D is not within its bound
 
-// Alas, you can do this, so you can't force the idiom:
+// Alas, you can do this, so you cannot force the idiom:
 class F extends SelfBounded {}
 
 public class SelfBounding {

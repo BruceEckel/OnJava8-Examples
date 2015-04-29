@@ -1,5 +1,4 @@
 //: holding/StackCollision.java
-import net.mindview.util.*;
 
 public class StackCollision {
   public static void main(String[] args) {

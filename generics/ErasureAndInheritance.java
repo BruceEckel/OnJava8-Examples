@@ -2,7 +2,7 @@
 
 class GenericBase<T> {
   private T element;
-  public void set(T arg) { arg = element; }
+  public void set(T arg) { element = arg; }
   public T get() { return element; }
 }
 

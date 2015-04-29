@@ -27,7 +27,7 @@ public class ReaderWriterList<T> {
     rlock.lock();
     try {
       // Show that multiple readers
-      // may acquire the read lock:
+      // can acquire the read lock:
       if(lock.getReadLockCount() > 1)
         print(lock.getReadLockCount());
       return lockedList.get(index);

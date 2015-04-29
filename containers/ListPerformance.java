@@ -149,7 +149,7 @@ public class ListPerformance {
     // Can only do these two tests on an array:
     Tester<List<Integer>> arrayTest =
       new Tester<List<Integer>>(null, tests.subList(1, 3)){
-        // This will be called before each test. It
+        // This is called before each test. It
         // produces a non-resizeable array-backed list:
         @Override protected
         List<Integer> initialize(int size) {

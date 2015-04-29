@@ -7,7 +7,7 @@ import java.io.*;
 import static net.mindview.util.Print.*;
 
 public class LargeMappedFiles {
-  static int length = 0x8FFFFFF; // 128 MB
+  static int length = 0x8000000; // 128 MB
   public static void main(String[] args) throws Exception {
     MappedByteBuffer out =
       new RandomAccessFile("test.dat", "rw").getChannel()
