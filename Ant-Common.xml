@@ -20,6 +20,7 @@
      <attribute name="arguments" default=""/>
      <attribute name="failOnError" default="true"/>
      <attribute name="timeOut" default="15000"/>
+     <attribute name="msg" default=""/>
      <sequential>
         <echo>Running: ${chapter} @{cls}</echo>
         <java
@@ -32,6 +33,7 @@
             <arg line="@{arguments}"/>
         </java>
         <echo>Finished: ${chapter} @{cls}</echo>
+        <echo>@{msg}</echo>
         <echo>--------------------------------</echo>
      </sequential>
   </macrodef>

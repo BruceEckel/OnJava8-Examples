@@ -175,6 +175,7 @@ class CodeFileOptions(object):
     def __init__(self, codeFile):
         "Should probably use regular expressions for parsing instead"
         self.codeFile = codeFile
+        self.msg = ""
 
         self.cmdargs = None
         if "{Args:" in self.codeFile.code:
@@ -208,6 +209,10 @@ class CodeFileOptions(object):
                     self.timeout = line.split("{TimeOut:")[1].strip()
                     self.timeout = self.timeout.rsplit("}", 1)[0]
                     self.continue_on_error = True
+        elif "//: gui/" in self.codeFile.code or "//: swt/" in self.codeFile.code:
+                    self.timeout = "4000"
+                    self.continue_on_error = True
+                    self.msg = "* Timeout for testing *"
 
 
 
@@ -239,8 +244,13 @@ class CodeFileOptions(object):
             return """timeOut='%s' """ % self.timeout
         return ""
 
+    def message(self):
+        if self.msg:
+            return """msg='%s' """ % self.msg
+        return ""
+
     def createRunCommand(self):
-        return self.classFile() + self.dirPath() + self.arguments() + self.failOnError() + self.timeOut() + "/>\n"
+        return self.classFile() + self.dirPath() + self.arguments() + self.failOnError() + self.timeOut() + self.message() + "/>\n"
 
 
 
