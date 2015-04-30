@@ -1,6 +1,7 @@
 <project>
 
   <property name="chapter" value="CHAPTER?"/>
+  <property name="antoutput" value="../Ant-output.txt"/>
 
   <description>
     Ant build.xml for the source code for chapter ${chapter}
@@ -29,7 +30,8 @@
           dir="@{dirpath}"
           failonerror="@{failOnError}"
           fork="true"
-          timeout="@{timeOut}">
+          timeout="@{timeOut}"
+          output="${antoutput}" append="true">
             <arg line="@{arguments}"/>
         </java>
         <echo>Finished: ${chapter} @{cls}</echo>

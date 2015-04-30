@@ -1,7 +1,6 @@
 #! py -3
 """
 TODO: Make sure there's a newline at the end of the extracted files
-TODO: RunByHand can be removed? Not used in book
 Extract code examples from TIJ4 Refreshed. Extracts from plain text file.
 Creates Ant build.xml file for each subdirectory.
 """
@@ -69,6 +68,7 @@ def extractExamples():
                 target.parent.mkdir(parents=True)
             with target.open("w", newline='') as codeListing:
                 codeListing.writelines(listing)
+                codeListing.write("\n")
 
 
 def clean():
