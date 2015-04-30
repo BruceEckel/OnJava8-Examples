@@ -1,8 +1,9 @@
 #! py -3
 """
 TODO: Make sure there's a newline at the end of the extracted files
-
-Extract code examples from TIJ4 Refreshed. Extracts from plain text file
+TODO: RunByHand can be removed? Not used in book
+Extract code examples from TIJ4 Refreshed. Extracts from plain text file.
+Creates Ant build.xml file for each subdirectory.
 """
 from pathlib import Path
 import sys, os
@@ -193,7 +194,11 @@ class CodeFileOptions(object):
                 self.exclude = '/'.join(self.codeFile.subdirs) + '/' + self.exclude
             print(self.exclude)
 
-        self.continue_on_error = "{ThrowsException}" in self.codeFile.code
+        self.continue_on_error = None
+        if "{ThrowsException}" in self.codeFile.code:
+            self.continue_on_error = True
+            self.msg = "* Exception was Expected *"
+
 
         self.alternatemainclass = None
         if "{main: " in self.codeFile.code:
@@ -209,10 +214,11 @@ class CodeFileOptions(object):
                     self.timeout = line.split("{TimeOut:")[1].strip()
                     self.timeout = self.timeout.rsplit("}", 1)[0]
                     self.continue_on_error = True
-        elif "//: gui/" in self.codeFile.code or "//: swt/" in self.codeFile.code:
-                    self.timeout = "4000"
-                    self.continue_on_error = True
-                    self.msg = "* Timeout for testing *"
+        elif "//: gui/" in self.codeFile.code or "//: swt/" in self.codeFile.code or "{TimeOutDuringTesting}" in self.codeFile.code:
+            self.timeout = "4000"
+            self.continue_on_error = True
+            self.msg = "* Timeout for Testing *"
+
 
 
 
