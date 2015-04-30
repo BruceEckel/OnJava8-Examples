@@ -24,6 +24,7 @@
      <attribute name="msg" default=""/>
      <sequential>
         <echo>Running: ${chapter} @{cls}</echo>
+        <echo file="${antoutput}" append="true">Running: ${chapter} @{cls}</echo>
         <java
           classname="@{cls}"
           classpath="${java.class.path};${basedir};${basedir}/.."
@@ -34,9 +35,9 @@
           output="${antoutput}" append="true">
             <arg line="@{arguments}"/>
         </java>
-        <echo>Finished: ${chapter} @{cls}</echo>
-        <echo>@{msg}</echo>
-        <echo>--------------------------------</echo>
+        <echo file="${antoutput}" append="true">Finished: ${chapter} @{cls}</echo>
+        <echo file="${antoutput}" append="true">@{msg}</echo>
+        <echo file="${antoutput}" append="true">--------------------------------</echo>
      </sequential>
   </macrodef>
 
@@ -58,7 +59,7 @@
    description="Build all classes in this directory"
    name="build">
     <fail message="Java 8 required" unless="version1.8"/>
-    <echo message="Building '${chapter}'"/>
+    <echo file="${antoutput}" append="true" message="Building '${chapter}'"/>
     <javac includeantruntime="false"
      classpath="${java.class.path};${basedir};${basedir}/.."
      debug="true"
@@ -67,7 +68,7 @@
       <compilerarg value="-Xmaxerrs"/>
       <compilerarg value="10"/>
     </javac>
-    <echo message="Build '${chapter}' succeeded"/>
+    <echo file="${antoutput}" append="true" message="Build '${chapter}' succeeded"/>
   </target>
 
   <target description="delete all byproducts" name="clean">
