@@ -73,10 +73,17 @@
 
   <target description="delete all byproducts" name="clean">
     <delete>
-      <fileset dir="${basedir}" includes="**/*.class"/>
-      <fileset dir="${basedir}" includes="**/*Output.txt"/>
-      <fileset dir="${basedir}" includes="**/log.txt"/>
-      <fileset dir="${basedir}" includes="failures"/>
+      <fileset dir="${basedir}" casesensitive="yes">
+        <include name="**/*.class" />
+        <include name="**/*Output.txt" />
+        <include name="**/log.txt" />
+        <include name="failures" />
+        <exclude name="*.java"/>
+        <exclude name="Copyright.txt Templates.cpp InstantiateGenericType.cpp Mixins.cpp"/>
+        <exclude name="DogsAndRobots.cpp VendingMachineInput.txt Trash.dat DDTrash.dat VTrash.dat log.prop"/>
+        <exclude name="Face*.gif"/>
+        <exclude name="build.xml"/>
+      </fileset>
     </delete>
     <echo message="clean successful"/>
   </target>

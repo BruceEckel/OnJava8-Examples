@@ -47,6 +47,8 @@ parser.add_argument("-a", "--ant", action='store_true',
     help="Copy ant build files from Github repository to extracted examples")
 parser.add_argument("-m", "--makeant", action='store_true',
     help="Make ant files that don't exist")
+parser.add_argument("-f", "--find", action='store_true',
+    help="Find non-java files in TIJDirectorsCut.txt")
 
 
 def extractExamples():
@@ -167,7 +169,8 @@ def copyAntBuildFiles():
         target = destination / common
         shutil.copy(str(build), str(target))
     shutil.copy(str(github / "Ant-Common.xml"), str(destination))
-
+    for face in (github / "gui").glob("*.gif"):
+        shutil.copy(str(face), str(destination / "gui"))
 
 
 
@@ -351,6 +354,18 @@ def createAntFiles():
         chapter.makeBuildFile()
 
 
+def findNonJavaFiles():
+    if not sourceText.exists():
+        print("Cannot find", sourceText)
+        sys.exit()
+    with sourceText.open("rb") as book:
+        text = book.read().decode("utf-8", "ignore")
+        for listing in re.findall("^//:.*?///:~", text, re.DOTALL | re.MULTILINE):
+            title = listing.splitlines()[0].strip()
+            if not title.endswith(".java"):
+                print(title)
+
+
 def default():
     clean()
     extractExamples()
@@ -377,6 +392,9 @@ if __name__ == '__main__':
 
     if args.makeant:
         createAntFiles()
+
+    if args.find:
+        findNonJavaFiles()
 
     if args.clean:
         clean()
