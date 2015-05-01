@@ -59,7 +59,8 @@ def extractExamples():
         sys.exit()
     with sourceText.open("rb") as book:
         text = book.read().decode("utf-8", "ignore")
-        for listing in re.findall("^//:.*?///:~", text, re.DOTALL | re.MULTILINE):
+        for listing in (re.findall("^//:.*?///:~", text, re.DOTALL | re.MULTILINE) +
+                       re.findall("^#:.*?#:~", text, re.DOTALL | re.MULTILINE)):
             title = listing.splitlines()[0]
             if "//: as a special marker" in title:
                 continue
