@@ -79,6 +79,7 @@
         <include name="**/log.txt" />
         <include name="failures" />
         <exclude name="*.java"/>
+        <exclude name="DogsAndRobots.py PythonLists.py"/>
         <exclude name="Copyright.txt Templates.cpp InstantiateGenericType.cpp Mixins.cpp"/>
         <exclude name="DogsAndRobots.cpp VendingMachineInput.txt Trash.dat DDTrash.dat VTrash.dat log.prop"/>
         <exclude name="Face*.gif"/>
