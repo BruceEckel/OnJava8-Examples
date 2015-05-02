@@ -69,8 +69,10 @@ def extractExamples():
             target = destination / Path(title)
             if not target.parent.exists():
                 target.parent.mkdir(parents=True)
+            if "//:!" in listing:
+                listing = "".join(listing.splitlines(keepends=True)[1:-1])
             with target.open("w", newline='') as codeListing:
-                codeListing.writelines(listing)
+                codeListing.write(listing)
                 codeListing.write("\n")
 
 
@@ -172,6 +174,10 @@ def copyAntBuildFiles():
     shutil.copy(str(github / "Ant-Common.xml"), str(destination))
     for face in (github / "gui").glob("*.gif"):
         shutil.copy(str(face), str(destination / "gui"))
+    patterns = destination / "patterns"
+    trash = patterns / "recycleap" / "Trash.dat"
+    shutil.copy(str(trash), str(patterns / "recycleb"))
+    shutil.copy(str(trash), str(patterns / "dynatrash"))
 
 
 

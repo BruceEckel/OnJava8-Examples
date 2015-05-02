@@ -41,24 +41,63 @@
      </sequential>
   </macrodef>
 
+  <macrodef name="jrunconsole">
+     <attribute name="cls" default="NOT SET"/>
+     <attribute name="dirpath" default=""/>
+     <attribute name="arguments" default=""/>
+     <attribute name="failOnError" default="true"/>
+     <attribute name="timeOut" default="15000"/>
+     <attribute name="msg" default=""/>
+     <sequential>
+        <echo>Running: ${chapter} @{cls}&#13;</echo>
+        <echo append="true">Running: ${chapter} @{cls}&#13;</echo>
+        <java
+          classname="@{cls}"
+          classpath="${java.class.path};${basedir};${basedir}/.."
+          dir="@{dirpath}"
+          failonerror="@{failOnError}"
+          fork="true"
+          timeout="@{timeOut}"
+          >
+            <arg line="@{arguments}"/>
+        </java>
+        <echo append="true">Finished: ${chapter} @{cls}&#13;</echo>
+        <echo append="true">@{msg}&#13;</echo>
+        <echo append="true">--------------------------------&#13;</echo>
+     </sequential>
+  </macrodef>
+
   <condition property="version1.8">
     <equals arg1="1.8" arg2="${ant.java.version}"/>
   </condition>
 
-  <target name="net_mindview_util">
+  <target name="base">
     <javac includeantruntime="false"
      classpath="${java.class.path};${basedir};${basedir}/.."
-     srcdir="${basedir}/../net/mindview/util/">
+     srcdir="${basedir}/../net/mindview/">
+      <compilerarg value="-Xmaxerrs"/>
+      <compilerarg value="10"/>
+    </javac>
+    <javac includeantruntime="false"
+     classpath="${java.class.path};${basedir};${basedir}/.."
+     srcdir="${basedir}/../typeinfo/pets/">
+      <compilerarg value="-Xmaxerrs"/>
+      <compilerarg value="10"/>
+    </javac>
+    <javac includeantruntime="false"
+     classpath="${java.class.path};${basedir};${basedir}/.."
+     srcdir="${basedir}/../generics/coffee/">
       <compilerarg value="-Xmaxerrs"/>
       <compilerarg value="10"/>
     </javac>
   </target>
 
   <target
-   depends="net_mindview_util"
+   depends="base"
    description="Build all classes in this directory"
    name="build">
     <fail message="Java 8 required" unless="version1.8"/>
+    <echo message="Building '${chapter}'&#13;"/>
     <echo file="${antoutput}" append="true" message="Building '${chapter}'&#13;"/>
     <javac includeantruntime="false"
      classpath="${java.class.path};${basedir};${basedir}/.."
@@ -68,6 +107,7 @@
       <compilerarg value="-Xmaxerrs"/>
       <compilerarg value="10"/>
     </javac>
+    <echo message="Build '${chapter}' succeeded&#13;"/>
     <echo file="${antoutput}" append="true" message="Build '${chapter}' succeeded&#13;"/>
   </target>
 
