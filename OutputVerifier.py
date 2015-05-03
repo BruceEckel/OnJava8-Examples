@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#! py -2
 """
 To do:
 

@@ -165,7 +165,7 @@ def destDirs(pattern="**"):
     return {str(file)[leader:] for file in destination.glob(pattern)}
 
 
-def copyAntBuildFiles():
+def copySupplementalFilesFromGithub():
     for common in githubDirs().intersection(destDirs()):
         print("->", common)
         build = github / common / "build.xml"
@@ -174,6 +174,8 @@ def copyAntBuildFiles():
     shutil.copy(str(github / "Ant-Common.xml"), str(destination))
     for face in (github / "gui").glob("*.gif"):
         shutil.copy(str(face), str(destination / "gui"))
+    for verifier in ["OutputGenerator.py", "OutputVerifier.py"]:
+        shutil.copy(str(github/verifier), str(destination))
     patterns = destination / "patterns"
     trash = patterns / "recycleap" / "Trash.dat"
     shutil.copy(str(trash), str(patterns / "recycleb"))
@@ -376,7 +378,7 @@ def findNonJavaFiles():
 def default():
     clean()
     extractExamples()
-    copyAntBuildFiles()
+    copySupplementalFilesFromGithub()
     createAntFiles()
     os.chdir("ExtractedExamples")
 
@@ -388,14 +390,14 @@ if __name__ == '__main__':
 
     if args.extract:
         extractExamples()
-        copyAntBuildFiles()
+        copySupplementalFilesFromGithub()
         createAntFiles()
 
     if args.compare:
         compareWithGithub()
 
     if args.ant:
-        copyAntBuildFiles()
+        copySupplementalFilesFromGithub()
 
     if args.makeant:
         createAntFiles()

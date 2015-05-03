@@ -46,7 +46,6 @@
       patterns/build.xml
       references/build.xml
       assertions/build.xml
-      database/build.xml
       unittesting/build.xml
       debugging/build.xml
       logging/build.xml
