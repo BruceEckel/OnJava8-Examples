@@ -26,11 +26,9 @@ startBuild = """\
   <import file="../Ant-Common.xml"/>
 
   <target name="run" description="Compile and run" depends="build">
-    <touch file="failures"/>
 """
 
 endBuild = """\
-    <delete file="failures"/>
   </target>
 
 </project>
@@ -166,11 +164,12 @@ def destDirs(pattern="**"):
 
 
 def copySupplementalFilesFromGithub():
-    for common in githubDirs().intersection(destDirs()):
-        print("->", common)
-        build = github / common / "build.xml"
-        target = destination / common
-        shutil.copy(str(build), str(target))
+    # for common in githubDirs().intersection(destDirs()):
+    #     print("->", common)
+    #     build = github / common / "build.xml"
+    #     target = destination / common
+    #     shutil.copy(str(build), str(target))
+    shutil.copy(str(github / "build.xml"), str(destination))
     shutil.copy(str(github / "Ant-Common.xml"), str(destination))
     for face in (github / "gui").glob("*.gif"):
         shutil.copy(str(face), str(destination / "gui"))
