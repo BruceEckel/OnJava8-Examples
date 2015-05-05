@@ -24,6 +24,7 @@ class DirFilter implements FilenameFilter {
   public DirFilter(String regex) {
     pattern = Pattern.compile(regex);
   }
+  @Override
   public boolean accept(File dir, String name) {
     return pattern.matcher(name).matches();
   }

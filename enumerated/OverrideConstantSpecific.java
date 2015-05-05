@@ -4,6 +4,7 @@ import static net.mindview.util.Print.*;
 public enum OverrideConstantSpecific {
   NUT, BOLT,
   WASHER {
+    @Override
     void f() { print("Overridden method"); }
   };
   void f() { print("default behavior"); }

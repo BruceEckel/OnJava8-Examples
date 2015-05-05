@@ -27,12 +27,12 @@ public class UnboundedWildcards1 {
     // assign3(new ArrayList()); // Warning:
     // Unchecked conversion. Found: ArrayList
     // Required: List<? extends Object>
-    assign1(new ArrayList<String>());
-    assign2(new ArrayList<String>());
-    assign3(new ArrayList<String>());
+    assign1(new ArrayList<>());
+    assign2(new ArrayList<>());
+    assign3(new ArrayList<>());
     // Both forms are acceptable as List<?>:
     List<?> wildList = new ArrayList();
-    wildList = new ArrayList<String>();
+    wildList = new ArrayList<>();
     assign1(wildList);
     assign2(wildList);
     assign3(wildList);

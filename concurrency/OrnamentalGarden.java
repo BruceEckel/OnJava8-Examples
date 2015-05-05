@@ -19,7 +19,7 @@ class Count {
 class Entrance implements Runnable {
   private static Count count = new Count();
   private static List<Entrance> entrances =
-    new ArrayList<Entrance>();
+    new ArrayList<>();
   private int number = 0;
   // Doesn't need synchronization to read:
   private final int id;
@@ -32,6 +32,7 @@ class Entrance implements Runnable {
     // garbage collection of dead tasks:
     entrances.add(this);
   }
+  @Override
   public void run() {
     while(!canceled) {
       synchronized(this) {
@@ -47,6 +48,7 @@ class Entrance implements Runnable {
     print("Stopping " + this);
   }
   public synchronized int getValue() { return number; }
+  @Override
   public String toString() {
     return "Entrance " + id + ": " + getValue();
   }

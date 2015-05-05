@@ -7,13 +7,14 @@ class Government implements Generator<String> {
     "distributing swords is no basis for a system of " +
     "government").split(" ");
   private int index;
+  @Override
   public String next() { return foundation[index++]; }
 }
 
 public class CollectionDataTest {
   public static void main(String[] args) {
-    Set<String> set = new LinkedHashSet<String>(
-      new CollectionData<String>(new Government(), 15));
+    Set<String> set = new LinkedHashSet<>(
+      new CollectionData<>(new Government(), 15));
     // Using the convenience method:
     set.addAll(CollectionData.list(new Government(), 15));
     System.out.println(set);

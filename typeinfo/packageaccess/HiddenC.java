@@ -4,6 +4,7 @@ import typeinfo.interfacea.*;
 import static net.mindview.util.Print.*;
 
 class C implements A {
+  @Override
   public void f() { print("public C.f()"); }
   public void g() { print("public C.g()"); }
   void u() { print("package C.u()"); }

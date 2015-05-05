@@ -13,6 +13,7 @@ class Toast {
   public void jam() { status = Status.JAMMED; }
   public Status getStatus() { return status; }
   public int getId() { return id; }
+  @Override
   public String toString() {
     return "Toast " + id + ": " + status;
   }
@@ -25,6 +26,7 @@ class Toaster implements Runnable {
   private int count = 0;
   private Random rand = new Random(47);
   public Toaster(ToastQueue tq) { toastQueue = tq; }
+  @Override
   public void run() {
     try {
       while(!Thread.interrupted()) {
@@ -50,6 +52,7 @@ class Butterer implements Runnable {
     dryQueue = dry;
     butteredQueue = buttered;
   }
+  @Override
   public void run() {
     try {
       while(!Thread.interrupted()) {
@@ -73,6 +76,7 @@ class Jammer implements Runnable {
     butteredQueue = buttered;
     finishedQueue = finished;
   }
+  @Override
   public void run() {
     try {
       while(!Thread.interrupted()) {
@@ -96,6 +100,7 @@ class Eater implements Runnable {
   public Eater(ToastQueue finished) {
     finishedQueue = finished;
   }
+  @Override
   public void run() {
     try {
       while(!Thread.interrupted()) {

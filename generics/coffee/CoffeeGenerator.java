@@ -13,6 +13,7 @@ implements Generator<Coffee>, Iterable<Coffee> {
   // For iteration:
   private int size = 0;
   public CoffeeGenerator(int sz) { size = sz; }	
+  @Override
   public Coffee next() {
     try {
       return (Coffee)
@@ -24,15 +25,19 @@ implements Generator<Coffee>, Iterable<Coffee> {
   }
   class CoffeeIterator implements Iterator<Coffee> {
     int count = size;
+    @Override
     public boolean hasNext() { return count > 0; }
+    @Override
     public Coffee next() {
       count--;
       return CoffeeGenerator.this.next();
     }
+    @Override
     public void remove() { // Not implemented
       throw new UnsupportedOperationException();
     }
   };	
+  @Override
   public Iterator<Coffee> iterator() {
     return new CoffeeIterator();
   }

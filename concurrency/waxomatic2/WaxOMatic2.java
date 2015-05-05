@@ -50,6 +50,7 @@ class Car {
 class WaxOn implements Runnable {
   private Car car;
   public WaxOn(Car c) { car = c; }
+  @Override
   public void run() {
     try {
       while(!Thread.interrupted()) {
@@ -68,6 +69,7 @@ class WaxOn implements Runnable {
 class WaxOff implements Runnable {
   private Car car;
   public WaxOff(Car c) { car = c; }
+  @Override
   public void run() {
     try {
       while(!Thread.interrupted()) {

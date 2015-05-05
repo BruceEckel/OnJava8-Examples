@@ -12,6 +12,7 @@ class CheckoutTask<T> implements Runnable {
   public CheckoutTask(Pool<T> pool) {
     this.pool = pool;
   }
+  @Override
   public void run() {
     try {
       T item = pool.checkOut();
@@ -23,6 +24,7 @@ class CheckoutTask<T> implements Runnable {
       // Acceptable way to terminate
     }
   }
+  @Override
   public String toString() {
     return "CheckoutTask " + id + " ";
   }
@@ -31,13 +33,12 @@ class CheckoutTask<T> implements Runnable {
 public class SemaphoreDemo {
   final static int SIZE = 25;
   public static void main(String[] args) throws Exception {
-    final Pool<Fat> pool =
-      new Pool<Fat>(Fat.class, SIZE);
+    final Pool<Fat> pool = new Pool<>(Fat.class, SIZE);
     ExecutorService exec = Executors.newCachedThreadPool();
     for(int i = 0; i < SIZE; i++)
-      exec.execute(new CheckoutTask<Fat>(pool));
+      exec.execute(new CheckoutTask<>(pool));
     print("All CheckoutTasks created");
-    List<Fat> list = new ArrayList<Fat>();
+    List<Fat> list = new ArrayList<>();
     for(int i = 0; i < SIZE; i++) {
       Fat f = pool.checkOut();
       printnb(i + ": main() thread checked out ");
@@ -45,6 +46,7 @@ public class SemaphoreDemo {
       list.add(f);
     }
     Future<?> blocked = exec.submit(new Runnable() {
+      @Override
       public void run() {
         try {
           // Semaphore prevents additional checkout,

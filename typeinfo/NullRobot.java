@@ -11,12 +11,16 @@ class NullRobotProxyHandler implements InvocationHandler {
     nullName = type.getSimpleName() + " NullRobot";
   }
   private class NRobot implements Null, Robot {
+    @Override
     public String name() { return nullName; }
+    @Override
     public String model() { return nullName; }
+    @Override
     public List<Operation> operations() {
       return Collections.emptyList();
     }
   }	
+  @Override
   public Object
   invoke(Object proxy, Method method, Object[] args)
   throws Throwable {

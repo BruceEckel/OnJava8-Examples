@@ -15,7 +15,7 @@ public class GenericArrayWithTypeToken<T> {
   public T[] rep() { return array; }	
   public static void main(String[] args) {
     GenericArrayWithTypeToken<Integer> gai =
-      new GenericArrayWithTypeToken<Integer>(
+      new GenericArrayWithTypeToken<>(
         Integer.class, 10);
     // This now works:
     Integer[] ia = gai.rep();

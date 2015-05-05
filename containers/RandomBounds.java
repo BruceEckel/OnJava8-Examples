@@ -1,6 +1,7 @@
 //: containers/RandomBounds.java
 // Does Math.random() produce 0.0 and 1.0?
-// {RunByHand}
+// {TimeOutDuringTesting}
+// {Args: lower}
 import static net.mindview.util.Print.*;
 
 public class RandomBounds {
@@ -12,17 +13,19 @@ public class RandomBounds {
   }
   public static void main(String[] args) {
     if(args.length != 1) usage();
-    if(args[0].equals("lower")) {
-      while(Math.random() != 0.0)
-        ; // Keep trying
-      print("Produced 0.0!");
+    switch(args[0]) {
+      case "lower":
+        while(Math.random() != 0.0)
+          ; // Keep trying
+        print("Produced 0.0!");
+        break;
+      case "upper":
+        while(Math.random() != 1.0)
+          ; // Keep trying
+        print("Produced 1.0!");
+        break;
+      default:
+        usage();
     }
-    else if(args[0].equals("upper")) {
-      while(Math.random() != 1.0)
-        ; // Keep trying
-      print("Produced 1.0!");
-    }
-    else
-      usage();
   }
 } ///:~

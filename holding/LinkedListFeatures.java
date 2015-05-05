@@ -6,7 +6,7 @@ import static net.mindview.util.Print.*;
 public class LinkedListFeatures {
   public static void main(String[] args) {
     LinkedList<Pet> pets =
-      new LinkedList<Pet>(Pets.arrayList(5));
+      new LinkedList<>(Pets.arrayList(5));
     print(pets);
     // Identical:
     print("pets.getFirst(): " + pets.getFirst());

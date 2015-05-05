@@ -19,12 +19,14 @@ class Blocker {
 
 class Task implements Runnable {
   static Blocker blocker = new Blocker();
+  @Override
   public void run() { blocker.waitingCall(); }
 }
 
 class Task2 implements Runnable {
   // A separate Blocker object:
   static Blocker blocker = new Blocker();
+  @Override
   public void run() { blocker.waitingCall(); }
 }
 
@@ -37,6 +39,7 @@ public class NotifyVsNotifyAll {
     Timer timer = new Timer();
     timer.scheduleAtFixedRate(new TimerTask() {
       boolean prod = true;
+      @Override
       public void run() {
         if(prod) {
           System.out.print("\nnotify() ");

@@ -11,7 +11,7 @@ public class ArrayMaker<T> {
   }
   public static void main(String[] args) {
     ArrayMaker<String> stringMaker =
-      new ArrayMaker<String>(String.class);
+      new ArrayMaker<>(String.class);
     String[] stringArray = stringMaker.create(9);
     System.out.println(Arrays.toString(stringArray));
   }

@@ -1,6 +1,5 @@
 //: net/mindview/atunit/AtUnit.java
 // An annotation-based unit-test framework.
-// {RunByHand}
 package net.mindview.atunit;
 import java.lang.reflect.*;
 import java.io.*;
@@ -10,7 +9,7 @@ import static net.mindview.util.Print.*;
 
 public class AtUnit implements ProcessFiles.Strategy {
   static Class<?> testClass;
-  static List<String> failedTests= new ArrayList<String>();
+  static List<String> failedTests= new ArrayList<>();
   static long testsRun = 0;
   static long failures = 0;
   public static void main(String[] args) throws Exception {
@@ -27,6 +26,7 @@ public class AtUnit implements ProcessFiles.Strategy {
         print("  " + failed);
     }
   }
+  @Override
   public void process(File cFile) {
     try {
       String cName = ClassNameFinder.thisClass(

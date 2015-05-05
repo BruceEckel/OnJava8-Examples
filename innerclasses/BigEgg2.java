@@ -16,6 +16,7 @@ class Egg2 {
 public class BigEgg2 extends Egg2 {
   public class Yolk extends Egg2.Yolk {
     public Yolk() { print("BigEgg2.Yolk()"); }
+    @Override
     public void f() { print("BigEgg2.Yolk.f()"); }
   }
   public BigEgg2() { insertYolk(new Yolk()); }

@@ -8,6 +8,7 @@ extends FourTuple<A,B,C,D> {
     super(a, b, c, d);
     fifth = e;
   }
+  @Override
   public String toString() {
     return "(" + first + ", " + second + ", " +
       third + ", " + fourth + ", " + fifth + ")";

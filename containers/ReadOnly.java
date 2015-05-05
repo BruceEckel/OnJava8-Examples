@@ -6,42 +6,42 @@ import static net.mindview.util.Print.*;
 
 public class ReadOnly {
   static Collection<String> data =
-    new ArrayList<String>(Countries.names(6));
+    new ArrayList<>(Countries.names(6));
   public static void main(String[] args) {
     Collection<String> c =
       Collections.unmodifiableCollection(
-        new ArrayList<String>(data));
+        new ArrayList<>(data));
     print(c); // Reading is OK
     //! c.add("one"); // Can't change it
 
     List<String> a = Collections.unmodifiableList(
-        new ArrayList<String>(data));
+        new ArrayList<>(data));
     ListIterator<String> lit = a.listIterator();
     print(lit.next()); // Reading is OK
     //! lit.add("one"); // Can't change it
 
     Set<String> s = Collections.unmodifiableSet(
-      new HashSet<String>(data));
+      new HashSet<>(data));
     print(s); // Reading is OK
     //! s.add("one"); // Can't change it
 
     // For a SortedSet:
     Set<String> ss = Collections.unmodifiableSortedSet(
-      new TreeSet<String>(data));
+      new TreeSet<>(data));
 
     Map<String,String> m = Collections.unmodifiableMap(
-      new HashMap<String,String>(Countries.capitals(6)));
+      new HashMap<>(Countries.capitals(6)));
     print(m); // Reading is OK
     //! m.put("Ralph", "Howdy!");
 
     // For a SortedMap:
     Map<String,String> sm =
       Collections.unmodifiableSortedMap(
-        new TreeMap<String,String>(Countries.capitals(6)));
+        new TreeMap<>(Countries.capitals(6)));
   }
 } /* Output:
-[ALGERIA, ANGOLA, BENIN, BOTSWANA, BULGARIA, BURKINA FASO]
+[ALGERIA, ANGOLA, BENIN, BOTSWANA, BURKINA FASO, BURUNDI]
 ALGERIA
-[BULGARIA, BURKINA FASO, BOTSWANA, BENIN, ANGOLA, ALGERIA]
-{BULGARIA=Sofia, BURKINA FASO=Ouagadougou, BOTSWANA=Gaberone, BENIN=Porto-Novo, ANGOLA=Luanda, ALGERIA=Algiers}
+[ANGOLA, ALGERIA, BURKINA FASO, BENIN, BURUNDI, BOTSWANA]
+{ANGOLA=Luanda, ALGERIA=Algiers, BURKINA FASO=Ouagadougou, BENIN=Porto-Novo, BURUNDI=Bujumbura, BOTSWANA=Gaberone}
 *///:~

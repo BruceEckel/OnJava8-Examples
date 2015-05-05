@@ -9,8 +9,7 @@ public class SpringDetector {
   public static <T extends Groundhog>
   void detectSpring(Class<T> type) throws Exception {
     Constructor<T> ghog = type.getConstructor(int.class);
-    Map<Groundhog,Prediction> map =
-      new HashMap<Groundhog,Prediction>();
+    Map<Groundhog,Prediction> map = new HashMap<>();
     for(int i = 0; i < 10; i++)
       map.put(ghog.newInstance(i), new Prediction());
     print("map = " + map);
@@ -25,7 +24,7 @@ public class SpringDetector {
     detectSpring(Groundhog.class);
   }
 } /* Output:
-map = {Groundhog #3=Early Spring!, Groundhog #7=Early Spring!, Groundhog #5=Early Spring!, Groundhog #9=Six more weeks of Winter!, Groundhog #8=Six more weeks of Winter!, Groundhog #0=Six more weeks of Winter!, Groundhog #6=Early Spring!, Groundhog #4=Six more weeks of Winter!, Groundhog #1=Six more weeks of Winter!, Groundhog #2=Early Spring!}
+map = {Groundhog #0=Six more weeks of Winter!, Groundhog #4=Six more weeks of Winter!, Groundhog #3=Early Spring!, Groundhog #8=Six more weeks of Winter!, Groundhog #2=Early Spring!, Groundhog #5=Early Spring!, Groundhog #9=Six more weeks of Winter!, Groundhog #7=Early Spring!, Groundhog #1=Six more weeks of Winter!, Groundhog #6=Early Spring!}
 Looking up prediction for Groundhog #3
 Key not found: Groundhog #3
 *///:~

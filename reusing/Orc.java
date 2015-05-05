@@ -6,6 +6,7 @@ class Villain {
   private String name;
   protected void set(String nm) { name = nm; }
   public Villain(String name) { this.name = name; }
+  @Override
   public String toString() {
     return "I'm a Villain and my name is " + name;
   }
@@ -21,6 +22,7 @@ public class Orc extends Villain {
     set(name); // Available because it's protected
     this.orcNumber = orcNumber;
   }
+  @Override
   public String toString() {
     return "Orc " + orcNumber + ": " + super.toString();
   }	

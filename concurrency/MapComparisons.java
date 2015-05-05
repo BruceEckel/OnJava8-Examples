@@ -43,7 +43,7 @@ extends Tester<Map<Integer,Integer>> {
 class SynchronizedHashMapTest extends MapTest {
   Map<Integer,Integer> containerInitializer() {
     return Collections.synchronizedMap(
-      new HashMap<Integer,Integer>(
+      new HashMap<>(
         MapData.map(
           new CountingGenerator.Integer(),
           new CountingGenerator.Integer(),
@@ -56,7 +56,7 @@ class SynchronizedHashMapTest extends MapTest {
 
 class ConcurrentHashMapTest extends MapTest {
   Map<Integer,Integer> containerInitializer() {
-    return new ConcurrentHashMap<Integer,Integer>(
+    return new ConcurrentHashMap<>(
       MapData.map(
         new CountingGenerator.Integer(),
         new CountingGenerator.Integer(), containerSize));

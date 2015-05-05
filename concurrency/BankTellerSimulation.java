@@ -19,6 +19,7 @@ class CustomerLine extends ArrayBlockingQueue<Customer> {
   public CustomerLine(int maxLineSize) {
     super(maxLineSize);
   }
+  @Override
   public String toString() {
     if(this.size() == 0)
       return "[Empty]";
@@ -36,6 +37,7 @@ class CustomerGenerator implements Runnable {
   public CustomerGenerator(CustomerLine cq) {
     customers = cq;
   }
+  @Override
   public void run() {
     try {
       while(!Thread.interrupted()) {
@@ -96,9 +98,9 @@ class TellerManager implements Runnable {
   private ExecutorService exec;
   private CustomerLine customers;
   private PriorityQueue<Teller> workingTellers =
-    new PriorityQueue<Teller>();
+    new PriorityQueue<>();
   private Queue<Teller> tellersDoingOtherThings =
-    new LinkedList<Teller>();
+    new LinkedList<>();
   private int adjustmentPeriod;
   
   public TellerManager(ExecutorService e,
@@ -146,6 +148,7 @@ class TellerManager implements Runnable {
     teller.doSomethingElse();
     tellersDoingOtherThings.offer(teller);
   }
+  @Override
   public void run() {
     try {
       while(!Thread.interrupted()) {
@@ -161,6 +164,7 @@ class TellerManager implements Runnable {
     }
     System.out.println(this + "terminating");
   }
+  @Override
   public String toString() { return "TellerManager "; }
 }
 

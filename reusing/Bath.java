@@ -8,6 +8,7 @@ class Soap {
     print("Soap()");
     s = "Constructed";
   }
+  @Override
   public String toString() { return s; }
 }	
 
@@ -27,6 +28,7 @@ public class Bath {
   }	
   // Instance initialization:
   { i = 47; }
+  @Override
   public String toString() {
     if(s4 == null) // Delayed initialization:
       s4 = "Joy";

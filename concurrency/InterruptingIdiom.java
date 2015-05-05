@@ -17,6 +17,7 @@ class NeedsCleanup {
 
 class Blocked3 implements Runnable {
   private volatile double d = 0.0;
+  @Override
   public void run() {
     try {
       while(!Thread.interrupted()) {

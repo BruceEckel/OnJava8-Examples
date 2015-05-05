@@ -19,7 +19,7 @@ public class GenericReading {
     T readExact(List<T> list) { return list.get(0); }
   }	
   static void f2() {
-    Reader<Fruit> fruitReader = new Reader<Fruit>();
+    Reader<Fruit> fruitReader = new Reader<>();
     Fruit f = fruitReader.readExact(fruit);
     // Fruit a = fruitReader.readExact(apples); // Error:
     // readExact(List<Fruit>) cannot be
@@ -32,7 +32,7 @@ public class GenericReading {
   }
   static void f3() {
     CovariantReader<Fruit> fruitReader =
-      new CovariantReader<Fruit>();
+      new CovariantReader<>();
     Fruit f = fruitReader.readCovariant(fruit);
     Fruit a = fruitReader.readCovariant(apples);
   }	

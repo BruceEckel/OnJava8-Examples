@@ -26,6 +26,7 @@ implements ProcessFiles.Strategy {
     new ProcessFiles(
       new AtUnitRemover(), "class").start(args);
   }
+  @Override
   public void process(File cFile) {
     boolean modified = false;
     try {

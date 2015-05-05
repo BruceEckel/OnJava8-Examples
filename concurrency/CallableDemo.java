@@ -7,6 +7,7 @@ class TaskWithResult implements Callable<String> {
   public TaskWithResult(int id) {
     this.id = id;
   }
+  @Override
   public String call() {
     return "result of TaskWithResult " + id;
   }
@@ -15,8 +16,7 @@ class TaskWithResult implements Callable<String> {
 public class CallableDemo {
   public static void main(String[] args) {
     ExecutorService exec = Executors.newCachedThreadPool();
-    ArrayList<Future<String>> results =
-      new ArrayList<Future<String>>();
+    ArrayList<Future<String>> results = new ArrayList<>();
     for(int i = 0; i < 10; i++)
       results.add(exec.submit(new TaskWithResult(i)));
     for(Future<String> fs : results)

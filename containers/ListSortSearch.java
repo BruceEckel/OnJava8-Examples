@@ -6,7 +6,7 @@ import static net.mindview.util.Print.*;
 public class ListSortSearch {
   public static void main(String[] args) {
     List<String> list =
-      new ArrayList<String>(Utilities.list);
+      new ArrayList<>(Utilities.list);
     list.addAll(Utilities.list);
     print(list);
     Collections.shuffle(list, new Random(47));

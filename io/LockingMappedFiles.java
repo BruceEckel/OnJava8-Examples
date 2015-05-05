@@ -1,6 +1,5 @@
 //: io/LockingMappedFiles.java
 // Locking portions of a mapped file.
-// {RunByHand}
 import java.nio.*;
 import java.nio.channels.*;
 import java.io.*;
@@ -29,6 +28,7 @@ public class LockingMappedFiles {
       buff = mbb.slice();
       start();
     }
+    @Override
     public void run() {
       try {
         // Exclusive lock with no overlap:

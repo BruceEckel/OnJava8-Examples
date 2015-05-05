@@ -9,10 +9,10 @@ public class CheckedList {
     probablyDogs.add(new Cat());
   }	
   public static void main(String[] args) {
-    List<Dog> dogs1 = new ArrayList<Dog>();
+    List<Dog> dogs1 = new ArrayList<>();
     oldStyleMethod(dogs1); // Quietly accepts a Cat
     List<Dog> dogs2 = Collections.checkedList(
-      new ArrayList<Dog>(), Dog.class);
+      new ArrayList<>(), Dog.class);
     try {
       oldStyleMethod(dogs2); // Throws an exception
     } catch(Exception e) {
@@ -20,7 +20,7 @@ public class CheckedList {
     }
     // Derived types work fine:
     List<Pet> pets = Collections.checkedList(
-      new ArrayList<Pet>(), Pet.class);
+      new ArrayList<>(), Pet.class);
     pets.add(new Dog());
     pets.add(new Cat());
   }

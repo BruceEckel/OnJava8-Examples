@@ -10,6 +10,7 @@ public class DirList2 {
     // Creation of anonymous inner class:
     return new FilenameFilter() {
       private Pattern pattern = Pattern.compile(regex);
+      @Override
       public boolean accept(File dir, String name) {
         return pattern.matcher(name).matches();
       }

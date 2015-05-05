@@ -3,13 +3,14 @@
 import java.util.concurrent.*;
 
 public class SleepingTask extends LiftOff {
+  @Override
   public void run() {
     try {
       while(countDown-- > 0) {
         System.out.print(status());
         // Old-style:
         // Thread.sleep(100);
-        // Java SE5/6-style:
+        // Java 5/6-style:
         TimeUnit.MILLISECONDS.sleep(100);
       }
     } catch(InterruptedException e) {

@@ -20,6 +20,7 @@ public class AssociativeArray<K,V> {
         return (V)pairs[i][1];
     return null; // Did not find key
   }
+  @Override
   public String toString() {
     StringBuilder result = new StringBuilder();
     for(int i = 0; i < index; i++) {
@@ -33,7 +34,7 @@ public class AssociativeArray<K,V> {
   }
   public static void main(String[] args) {
     AssociativeArray<String,String> map =
-      new AssociativeArray<String,String>(6);
+      new AssociativeArray<>(6);
     map.put("sky", "blue");
     map.put("grass", "green");
     map.put("ocean", "dancing");

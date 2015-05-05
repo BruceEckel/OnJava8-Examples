@@ -13,11 +13,11 @@ public class Generators {
   }	
   public static void main(String[] args) {
     Collection<Coffee> coffee = fill(
-      new ArrayList<Coffee>(), new CoffeeGenerator(), 4);
+      new ArrayList<>(), new CoffeeGenerator(), 4);
     for(Coffee c : coffee)
       System.out.println(c);
     Collection<Integer> fnumbers = fill(
-      new ArrayList<Integer>(), new Fibonacci(), 12);
+      new ArrayList<>(), new Fibonacci(), 12);
     for(int i : fnumbers)
       System.out.print(i + ", ");
   }

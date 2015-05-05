@@ -12,6 +12,7 @@ class Animal implements Serializable {
     name = nm;
     preferredHouse = h;
   }
+  @Override
   public String toString() {
     return name + "[" + super.toString() +
       "], " + preferredHouse + "\n";
@@ -22,7 +23,7 @@ public class MyWorld {
   public static void main(String[] args)
   throws IOException, ClassNotFoundException {
     House house = new House();
-    List<Animal> animals = new ArrayList<Animal>();
+    List<Animal> animals = new ArrayList<>();
     animals.add(new Animal("Bosco the dog", house));
     animals.add(new Animal("Ralph the hamster", house));
     animals.add(new Animal("Molly the cat", house));

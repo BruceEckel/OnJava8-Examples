@@ -5,20 +5,24 @@ import java.util.*;
 class SetType {
   int i;
   public SetType(int n) { i = n; }
+  @Override
   public boolean equals(Object o) {
     return o instanceof SetType && (i == ((SetType)o).i);
   }
+  @Override
   public String toString() { return Integer.toString(i); }
 }
 
 class HashType extends SetType {
   public HashType(int n) { super(n); }
+  @Override
   public int hashCode() { return i; }
 }
 
 class TreeType extends SetType
 implements Comparable<TreeType> {
   public TreeType(int n) { super(n); }
+  @Override
   public int compareTo(TreeType arg) {
     return (arg.i < i ? -1 : (arg.i == i ? 0 : 1));
   }
@@ -42,21 +46,21 @@ public class TypesForSets {
     System.out.println(set);
   }
   public static void main(String[] args) {
-    test(new HashSet<HashType>(), HashType.class);
-    test(new LinkedHashSet<HashType>(), HashType.class);
-    test(new TreeSet<TreeType>(), TreeType.class);
+    test(new HashSet<>(), HashType.class);
+    test(new LinkedHashSet<>(), HashType.class);
+    test(new TreeSet<>(), TreeType.class);
     // Things that don't work:
-    test(new HashSet<SetType>(), SetType.class);
-    test(new HashSet<TreeType>(), TreeType.class);
-    test(new LinkedHashSet<SetType>(), SetType.class);
-    test(new LinkedHashSet<TreeType>(), TreeType.class);
+    test(new HashSet<>(), SetType.class);
+    test(new HashSet<>(), TreeType.class);
+    test(new LinkedHashSet<>(), SetType.class);
+    test(new LinkedHashSet<>(), TreeType.class);
     try {
-      test(new TreeSet<SetType>(), SetType.class);
+      test(new TreeSet<>(), SetType.class);
     } catch(Exception e) {
       System.out.println("Expected: " + e.getMessage());
     }
     try {
-      test(new TreeSet<HashType>(), HashType.class);
+      test(new TreeSet<>(), HashType.class);
     } catch(Exception e) {
       System.out.println("Expected: " + e.getMessage());
     }

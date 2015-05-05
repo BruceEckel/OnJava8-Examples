@@ -1,5 +1,5 @@
 //: concurrency/TestBlockingQueues.java
-// {RunByHand}
+// {TimeOutDuringTesting}
 import java.util.concurrent.*;
 import java.io.*;
 import static net.mindview.util.Print.*;
@@ -16,6 +16,7 @@ class LiftOffRunner implements Runnable {
       print("Interrupted during put()");
     }
   }
+  @Override
   public void run() {
     try {
       while(!Thread.interrupted()) {
@@ -58,10 +59,10 @@ public class TestBlockingQueues {
   }
   public static void main(String[] args) {
     test("LinkedBlockingQueue", // Unlimited size
-      new LinkedBlockingQueue<LiftOff>());
+      new LinkedBlockingQueue<>());
     test("ArrayBlockingQueue", // Fixed size
-      new ArrayBlockingQueue<LiftOff>(3));
+      new ArrayBlockingQueue<>(3));
     test("SynchronousQueue", // Size of 1
-      new SynchronousQueue<LiftOff>());
+      new SynchronousQueue<>());
   }
 } ///:~

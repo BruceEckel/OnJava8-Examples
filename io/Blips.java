@@ -7,10 +7,12 @@ class Blip1 implements Externalizable {
   public Blip1() {
     print("Blip1 Constructor");
   }
+  @Override
   public void writeExternal(ObjectOutput out)
       throws IOException {
     print("Blip1.writeExternal");
   }
+  @Override
   public void readExternal(ObjectInput in)
      throws IOException, ClassNotFoundException {
     print("Blip1.readExternal");
@@ -21,10 +23,12 @@ class Blip2 implements Externalizable {
   Blip2() {
     print("Blip2 Constructor");
   }
+  @Override
   public void writeExternal(ObjectOutput out)
       throws IOException {
     print("Blip2.writeExternal");
   }
+  @Override
   public void readExternal(ObjectInput in)
      throws IOException, ClassNotFoundException {
     print("Blip2.readExternal");

@@ -17,26 +17,32 @@ extends AbstractMap<Integer,String> {
   implements Map.Entry<Integer,String> {
     int index;
     Entry(int index) { this.index = index; }
+    @Override
     public boolean equals(Object o) {
       return Integer.valueOf(index).equals(o);
     }
+    @Override
     public Integer getKey() { return index; }
+    @Override
     public String getValue() {
       return
         chars[index % chars.length] +
         Integer.toString(index / chars.length);
     }
+    @Override
     public String setValue(String value) {
       throw new UnsupportedOperationException();
     }
+    @Override
     public int hashCode() {
       return Integer.valueOf(index).hashCode();
     }
   }
+  @Override
   public Set<Map.Entry<Integer,String>> entrySet() {
     // LinkedHashSet retains initialization order:
     Set<Map.Entry<Integer,String>> entries =
-      new LinkedHashSet<Map.Entry<Integer,String>>();
+      new LinkedHashSet<>();
     for(int i = 0; i < size; i++)
       entries.add(new Entry(i));
     return entries;

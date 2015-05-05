@@ -6,7 +6,7 @@ import static net.mindview.util.Print.*;
 
 public class CollectionMethods {
   public static void main(String[] args) {
-    Collection<String> c = new ArrayList<String>();
+    Collection<String> c = new ArrayList<>();
     c.addAll(Countries.names(6));
     c.add("ten");
     c.add("eleven");
@@ -21,7 +21,7 @@ public class CollectionMethods {
     print("Collections.max(c) = " + Collections.max(c));
     print("Collections.min(c) = " + Collections.min(c));
     // Add a Collection to another Collection
-    Collection<String> c2 = new ArrayList<String>();
+    Collection<String> c2 = new ArrayList<>();
     c2.addAll(Countries.names(6));
     c.addAll(c2);
     print(c);
@@ -50,25 +50,25 @@ public class CollectionMethods {
     // in c2 that also appear in c3:
     c2.removeAll(c3);
     print("c2.isEmpty() = " +  c2.isEmpty());
-    c = new ArrayList<String>();
+    c = new ArrayList<>();
     c.addAll(Countries.names(6));
     print(c);
     c.clear(); // Remove all elements
     print("after c.clear():" + c);
   }
 } /* Output:
-[ALGERIA, ANGOLA, BENIN, BOTSWANA, BULGARIA, BURKINA FASO, ten, eleven]
+[ALGERIA, ANGOLA, BENIN, BOTSWANA, BURKINA FASO, BURUNDI, ten, eleven]
 Collections.max(c) = ten
 Collections.min(c) = ALGERIA
-[ALGERIA, ANGOLA, BENIN, BOTSWANA, BULGARIA, BURKINA FASO, ten, eleven, ALGERIA, ANGOLA, BENIN, BOTSWANA, BULGARIA, BURKINA FASO]
-[ANGOLA, BENIN, BOTSWANA, BULGARIA, BURKINA FASO, ten, eleven, ALGERIA, ANGOLA, BENIN, BOTSWANA, BULGARIA, BURKINA FASO]
-[BENIN, BOTSWANA, BULGARIA, BURKINA FASO, ten, eleven, ALGERIA, ANGOLA, BENIN, BOTSWANA, BULGARIA, BURKINA FASO]
+[ALGERIA, ANGOLA, BENIN, BOTSWANA, BURKINA FASO, BURUNDI, ten, eleven, ALGERIA, ANGOLA, BENIN, BOTSWANA, BURKINA FASO, BURUNDI]
+[ANGOLA, BENIN, BOTSWANA, BURKINA FASO, BURUNDI, ten, eleven, ALGERIA, ANGOLA, BENIN, BOTSWANA, BURKINA FASO, BURUNDI]
+[BENIN, BOTSWANA, BURKINA FASO, BURUNDI, ten, eleven, ALGERIA, ANGOLA, BENIN, BOTSWANA, BURKINA FASO, BURUNDI]
 [ten, eleven]
-[ten, eleven, ALGERIA, ANGOLA, BENIN, BOTSWANA, BULGARIA, BURKINA FASO]
+[ten, eleven, ALGERIA, ANGOLA, BENIN, BOTSWANA, BURKINA FASO, BURUNDI]
 c.contains(BOTSWANA) = true
 c.containsAll(c2) = true
 [ANGOLA, BENIN]
 c2.isEmpty() = true
-[ALGERIA, ANGOLA, BENIN, BOTSWANA, BULGARIA, BURKINA FASO]
+[ALGERIA, ANGOLA, BENIN, BOTSWANA, BURKINA FASO, BURUNDI]
 after c.clear():[]
 *///:~

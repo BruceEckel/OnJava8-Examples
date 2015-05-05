@@ -14,7 +14,7 @@ public class InterfaceExtractorProcessor
   implements AnnotationProcessor {
   private final AnnotationProcessorEnvironment env;
   private ArrayList<MethodDeclaration> interfaceMethods =
-    new ArrayList<MethodDeclaration>();
+    new ArrayList<>();
   public InterfaceExtractorProcessor(
     AnnotationProcessorEnvironment env) { this.env = env; }
   public void process() {

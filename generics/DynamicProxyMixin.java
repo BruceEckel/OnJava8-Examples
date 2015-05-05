@@ -6,8 +6,9 @@ import static net.mindview.util.Tuple.*;
 
 class MixinProxy implements InvocationHandler {
   Map<String,Object> delegatesByMethod;
+  @SuppressWarnings("unchecked")
   public MixinProxy(TwoTuple<Object,Class<?>>... pairs) {
-    delegatesByMethod = new HashMap<String,Object>();
+    delegatesByMethod = new HashMap<>();
     for(TwoTuple<Object,Class<?>> pair : pairs) {
       for(Method method : pair.second.getMethods()) {
         String methodName = method.getName();
@@ -18,6 +19,7 @@ class MixinProxy implements InvocationHandler {
       }
     }
   }	
+  @Override
   public Object invoke(Object proxy, Method method,
     Object[] args) throws Throwable {
     String methodName = method.getName();

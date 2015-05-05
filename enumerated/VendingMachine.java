@@ -14,7 +14,7 @@ enum Category {
   private Input[] values;
   Category(Input... types) { values = types; }	
   private static EnumMap<Input,Category> categories =
-    new EnumMap<Input,Category>(Input.class);
+    new EnumMap<>(Input.class);
   static {
     for(Category c : Category.class.getEnumConstants())
       for(Input type : c.values)
@@ -32,6 +32,7 @@ public class VendingMachine {
   enum StateDuration { TRANSIENT } // Tagging enum
   enum State {
     RESTING {
+      @Override
       void next(Input input) {
         switch(Category.categorize(input)) {
           case MONEY:
@@ -45,6 +46,7 @@ public class VendingMachine {
       }
     },	
     ADDING_MONEY {
+      @Override
       void next(Input input) {
         switch(Category.categorize(input)) {
           case MONEY:
@@ -66,6 +68,7 @@ public class VendingMachine {
       }
     },	
     DISPENSING(StateDuration.TRANSIENT) {
+      @Override
       void next() {
         print("here is your " + selection);
         amount -= selection.amount();
@@ -73,6 +76,7 @@ public class VendingMachine {
       }
     },
     GIVING_CHANGE(StateDuration.TRANSIENT) {
+      @Override
       void next() {
         if(amount > 0) {
           print("Your change: " + amount);
@@ -81,7 +85,8 @@ public class VendingMachine {
         state = RESTING;
       }
     },	
-    TERMINAL { void output() { print("Halted"); } };
+    TERMINAL {@Override
+ void output() { print("Halted"); } };
     private boolean isTransient = false;
     State() {}
     State(StateDuration trans) { isTransient = true; }
@@ -113,6 +118,7 @@ public class VendingMachine {
 
 // For a basic sanity check:
 class RandomInputGenerator implements Generator<Input> {
+  @Override
   public Input next() { return Input.randomSelection(); }
 }
 
@@ -122,6 +128,7 @@ class FileInputGenerator implements Generator<Input> {
   public FileInputGenerator(String fileName) {
     input = new TextFile(fileName, ";").iterator();
   }
+  @Override
   public Input next() {
     if(!input.hasNext())
       return null;

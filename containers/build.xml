@@ -1,0 +1,50 @@
+<?xml version="1.0" ?>
+
+<project default="run">
+  <property name="chapter" value="containers"/>
+  <property name="excludedfiles" value=""/>
+  <import file="../Ant-Common.xml"/>
+
+  <target name="run" description="Compile and run" depends="build">
+    <touch file="failures"/>
+    <jrun cls="AssociativeArray" />
+    <jrun cls="Bits" />
+    <jrun cls="CanonicalMapping" />
+    <jrun cls="CollectionDataGeneration" />
+    <jrun cls="CollectionDataTest" />
+    <jrun cls="CollectionMethods" />
+    <jrun cls="CountedString" />
+    <jrun cls="DequeTest" />
+    <jrun cls="Enumerations" />
+    <jrun cls="FailFast" />
+    <jrun cls="FillingLists" />
+    <jrun cls="IndividualTest" />
+    <jrun cls="LinkedHashMapDemo" />
+    <jrun cls="ListPerformance" arguments='100 500' />
+    <jrun cls="Lists" />
+    <jrun cls="ListSortSearch" />
+    <jrun cls="MapDataTest" />
+    <jrun cls="MapPerformance" arguments='100 5000' />
+    <jrun cls="Maps" />
+    <jrun cls="QueueBehavior" />
+    <jrun cls="RandomBounds" arguments='lower' failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
+    <jrun cls="ReadOnly" />
+    <jrun cls="References" />
+    <jrun cls="SetPerformance" arguments='100 5000' />
+    <jrun cls="SimpleHashMap" />
+    <jrun cls="SlowMap" />
+    <jrun cls="SortedMapDemo" />
+    <jrun cls="SortedSetDemo" />
+    <jrun cls="SpringDetector" />
+    <jrun cls="SpringDetector2" />
+    <jrun cls="Stacks" />
+    <jrun cls="StringHashCode" />
+    <jrun cls="Synchronization" />
+    <jrun cls="ToDoList" />
+    <jrun cls="TypesForSets" />
+    <jrun cls="Unsupported" />
+    <jrun cls="Utilities" />
+    <delete file="failures"/>
+  </target>
+
+</project>

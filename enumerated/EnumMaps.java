@@ -10,11 +10,13 @@ interface Command { void action(); }
 public class EnumMaps {
   public static void main(String[] args) {
     EnumMap<AlarmPoints,Command> em =
-      new EnumMap<AlarmPoints,Command>(AlarmPoints.class);
+      new EnumMap<>(AlarmPoints.class);
     em.put(KITCHEN, new Command() {
+      @Override
       public void action() { print("Kitchen fire!"); }
     });
     em.put(BATHROOM, new Command() {
+      @Override
       public void action() { print("Bathroom alert!"); }
     });
     for(Map.Entry<AlarmPoints,Command> e : em.entrySet()) {

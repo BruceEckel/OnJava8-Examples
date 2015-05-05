@@ -1,7 +1,7 @@
 //: concurrency/CloseResource.java
 // Interrupting a blocked task by
 // closing the underlying resource.
-// {RunByHand}
+// {TimeOutDuringTesting}
 import java.net.*;
 import java.util.concurrent.*;
 import java.io.*;

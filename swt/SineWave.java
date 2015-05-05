@@ -51,6 +51,7 @@ class SineDraw extends Canvas {
 public class SineWave implements SWTApplication {
   private SineDraw sines;
   private Slider slider;
+  @Override
   public void createContents(Composite parent) {
     parent.setLayout(new GridLayout(1, true));
     sines = new SineDraw(parent, SWT.NONE);

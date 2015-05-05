@@ -6,12 +6,14 @@ import static net.mindview.util.Print.*;
 class Meal {
   private final int orderNum;
   public Meal(int orderNum) { this.orderNum = orderNum; }
+  @Override
   public String toString() { return "Meal " + orderNum; }
 }
 
 class WaitPerson implements Runnable {
   private Restaurant restaurant;
   public WaitPerson(Restaurant r) { restaurant = r; }
+  @Override
   public void run() {
     try {
       while(!Thread.interrupted()) {
@@ -35,6 +37,7 @@ class Chef implements Runnable {
   private Restaurant restaurant;
   private int count = 0;
   public Chef(Restaurant r) { restaurant = r; }
+  @Override
   public void run() {
     try {
       while(!Thread.interrupted()) {

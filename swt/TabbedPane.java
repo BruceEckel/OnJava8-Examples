@@ -11,6 +11,7 @@ import org.eclipse.swt.browser.*;
 public class TabbedPane implements SWTApplication {
   private static TabFolder folder;
   private static Shell shell;
+  @Override
   public void createContents(Composite parent) {
     shell = parent.getShell();
     parent.setLayout(new FillLayout());

@@ -5,6 +5,7 @@ import static enumerated.Outcome.*;
 
 public enum RoShamBo3 implements Competitor<RoShamBo3> {
   PAPER {
+    @Override
     public Outcome compete(RoShamBo3 it) {
       switch(it) {
         default: // To placate the compiler
@@ -15,6 +16,7 @@ public enum RoShamBo3 implements Competitor<RoShamBo3> {
     }
   },
   SCISSORS {
+    @Override
     public Outcome compete(RoShamBo3 it) {
       switch(it) {
         default:
@@ -25,6 +27,7 @@ public enum RoShamBo3 implements Competitor<RoShamBo3> {
     }
   },
   ROCK {
+    @Override
     public Outcome compete(RoShamBo3 it) {
       switch(it) {
         default:
@@ -34,6 +37,7 @@ public enum RoShamBo3 implements Competitor<RoShamBo3> {
       }
     }
   };
+  @Override
   public abstract Outcome compete(RoShamBo3 it);
   public static void main(String[] args) {
     RoShamBo.play(RoShamBo3.class, 20);

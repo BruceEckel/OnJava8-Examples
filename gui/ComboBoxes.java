@@ -19,12 +19,14 @@ public class ComboBoxes extends JFrame {
       c.addItem(description[count++]);
     t.setEditable(false);
     b.addActionListener(new ActionListener() {
+      @Override
       public void actionPerformed(ActionEvent e) {
         if(count < description.length)
           c.addItem(description[count++]);
       }
     });
     c.addActionListener(new ActionListener() {
+      @Override
       public void actionPerformed(ActionEvent e) {
         t.setText("index: "+ c.getSelectedIndex() + "   " +
          ((JComboBox)e.getSource()).getSelectedItem());

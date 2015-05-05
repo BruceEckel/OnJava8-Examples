@@ -13,6 +13,7 @@ public class AnonymousConstructor {
   public static Base getBase(int i) {
     return new Base(i) {
       { print("Inside instance initializer"); }
+      @Override
       public void f() {
         print("In anonymous f()");
       }

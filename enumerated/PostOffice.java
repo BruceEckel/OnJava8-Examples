@@ -18,6 +18,7 @@ class Mail {
   ReturnAddress returnAddress;
   static long counter = 0;
   long id = counter++;
+  @Override
   public String toString() { return "Mail " + id; }
   public String details() {
     return toString() +
@@ -40,10 +41,14 @@ class Mail {
   public static Iterable<Mail> generator(final int count) {
     return new Iterable<Mail>() {
       int n = count;
+      @Override
       public Iterator<Mail> iterator() {
         return new Iterator<Mail>() {
+          @Override
           public boolean hasNext() { return n-- > 0; }
+          @Override
           public Mail next() { return randomMail(); }
+          @Override
           public void remove() { // Not implemented
             throw new UnsupportedOperationException();
           }
@@ -56,6 +61,7 @@ class Mail {
 public class PostOffice {
   enum MailHandler {
     GENERAL_DELIVERY {
+      @Override
       boolean handle(Mail m) {
         switch(m.generalDelivery) {
           case YES:
@@ -66,6 +72,7 @@ public class PostOffice {
       }
     },
     MACHINE_SCAN {
+      @Override
       boolean handle(Mail m) {
         switch(m.scannability) {
           case UNSCANNABLE: return false;
@@ -80,6 +87,7 @@ public class PostOffice {
       }
     },
     VISUAL_INSPECTION {
+      @Override
       boolean handle(Mail m) {
         switch(m.readability) {
           case ILLEGIBLE: return false;
@@ -94,6 +102,7 @@ public class PostOffice {
       }
     },
     RETURN_TO_SENDER {
+      @Override
       boolean handle(Mail m) {
         switch(m.returnAddress) {
           case MISSING: return false;

@@ -4,7 +4,9 @@ import typeinfo.pets.*;
 import static net.mindview.util.Print.*;
 
 class PerformingDog extends Dog implements Performs {
+  @Override
   public void speak() { print("Woof!"); }
+  @Override
   public void sit() { print("Sitting"); }
   public void reproduce() {}
 }

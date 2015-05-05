@@ -6,7 +6,7 @@ public class ModifyingArraysAsList {
     Random rand = new Random(47);
     Integer[] ia = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
     List<Integer> list1 =
-      new ArrayList<Integer>(Arrays.asList(ia));
+      new ArrayList<>(Arrays.asList(ia));
     System.out.println("Before shuffling: " + list1);
     Collections.shuffle(list1, rand);
     System.out.println("After shuffling: " + list1);

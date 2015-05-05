@@ -12,6 +12,7 @@ class TaskPortion implements Runnable {
   TaskPortion(CountDownLatch latch) {
     this.latch = latch;
   }
+  @Override
   public void run() {
     try {
       doWork();
@@ -24,6 +25,7 @@ class TaskPortion implements Runnable {
     TimeUnit.MILLISECONDS.sleep(rand.nextInt(2000));
     print(this + "completed");
   }
+  @Override
   public String toString() {
     return String.format("%1$-3d ", id);
   }
@@ -37,6 +39,7 @@ class WaitingTask implements Runnable {
   WaitingTask(CountDownLatch latch) {
     this.latch = latch;
   }
+  @Override
   public void run() {
     try {
       latch.await();
@@ -45,6 +48,7 @@ class WaitingTask implements Runnable {
       print(this + " interrupted");
     }
   }
+  @Override
   public String toString() {
     return String.format("WaitingTask %1$-3d ", id);
   }

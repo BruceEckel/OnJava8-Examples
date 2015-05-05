@@ -13,16 +13,19 @@ public class CheckBoxes extends JFrame {
     cb3 = new JCheckBox("Check Box 3");
   public CheckBoxes() {
     cb1.addActionListener(new ActionListener() {
+      @Override
       public void actionPerformed(ActionEvent e) {
         trace("1", cb1);
       }
     });
     cb2.addActionListener(new ActionListener() {
+      @Override
       public void actionPerformed(ActionEvent e) {
         trace("2", cb2);
       }
     });
     cb3.addActionListener(new ActionListener() {
+      @Override
       public void actionPerformed(ActionEvent e) {
         trace("3", cb3);
       }

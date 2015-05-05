@@ -6,13 +6,13 @@ import net.mindview.util.*;
 public class Enumerations {
   public static void main(String[] args) {
     Vector<String> v =
-      new Vector<String>(Countries.names(10));
+      new Vector<>(Countries.names(10));
     Enumeration<String> e = v.elements();
     while(e.hasMoreElements())
       System.out.print(e.nextElement() + ", ");
     // Produce an Enumeration from a Collection:
-    e = Collections.enumeration(new ArrayList<String>());
+    e = Collections.enumeration(new ArrayList<>());
   }
 } /* Output:
-ALGERIA, ANGOLA, BENIN, BOTSWANA, BULGARIA, BURKINA FASO, BURUNDI, CAMEROON, CAPE VERDE, CENTRAL AFRICAN REPUBLIC,
+ALGERIA, ANGOLA, BENIN, BOTSWANA, BURKINA FASO, BURUNDI, CAMEROON, CAPE VERDE, CENTRAL AFRICAN REPUBLIC, CHAD,
 *///:~

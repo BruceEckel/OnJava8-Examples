@@ -56,12 +56,12 @@ public class Wildcards {
     Object obj = holder.get();
   }
   public static void main(String[] args) {
-    Holder raw = new Holder<Long>();
+    Holder raw = new Holder<>();
     // Or:
     raw = new Holder();
-    Holder<Long> qualified = new Holder<Long>();
-    Holder<?> unbounded = new Holder<Long>();
-    Holder<? extends Long> bounded = new Holder<Long>();
+    Holder<Long> qualified = new Holder<>();
+    Holder<?> unbounded = new Holder<>();
+    Holder<? extends Long> bounded = new Holder<>();
     Long lng = 1L;
 
     rawArgs(raw, lng);

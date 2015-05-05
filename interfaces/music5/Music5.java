@@ -13,34 +13,45 @@ interface Instrument {
 }
 
 class Wind implements Instrument {
+  @Override
   public void play(Note n) {
     print(this + ".play() " + n);
   }
+  @Override
   public String toString() { return "Wind"; }
+  @Override
   public void adjust() { print(this + ".adjust()"); }
 }
 
 class Percussion implements Instrument {
+  @Override
   public void play(Note n) {
     print(this + ".play() " + n);
   }
+  @Override
   public String toString() { return "Percussion"; }
+  @Override
   public void adjust() { print(this + ".adjust()"); }
 }
 
 class Stringed implements Instrument {
+  @Override
   public void play(Note n) {
     print(this + ".play() " + n);
   }
+  @Override
   public String toString() { return "Stringed"; }
+  @Override
   public void adjust() { print(this + ".adjust()"); }
 }
 
 class Brass extends Wind {
+  @Override
   public String toString() { return "Brass"; }
 }	
 
 class Woodwind extends Wind {
+  @Override
   public String toString() { return "Woodwind"; }
 }
 

@@ -23,6 +23,7 @@ public class ActiveObjectDemo {
   public Future<Integer>
   calculateInt(final int x, final int y) {
     return ex.submit(new Callable<Integer>() {
+      @Override
       public Integer call() {
         print("starting " + x + " + " + y);
         pause(500);
@@ -33,6 +34,7 @@ public class ActiveObjectDemo {
   public Future<Float>
   calculateFloat(final float x, final float y) {
     return ex.submit(new Callable<Float>() {
+      @Override
       public Float call() {
         print("starting " + x + " + " + y);
         pause(2000);
@@ -45,7 +47,7 @@ public class ActiveObjectDemo {
     ActiveObjectDemo d1 = new ActiveObjectDemo();
     // Prevents ConcurrentModificationException:
     List<Future<?>> results =
-      new CopyOnWriteArrayList<Future<?>>();
+      new CopyOnWriteArrayList<>();
     for(float f = 0.0f; f < 1.0f; f += 0.2f)
       results.add(d1.calculateFloat(f, f));
     for(int i = 0; i < 5; i++)

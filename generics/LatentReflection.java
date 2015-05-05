@@ -8,6 +8,7 @@ class Mime {
   public void walkAgainstTheWind() {}
   public void sit() { print("Pretending to sit"); }
   public void pushInvisibleWalls() {}
+  @Override
   public String toString() { return "Mime"; }
 }
 

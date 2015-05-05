@@ -21,6 +21,7 @@ class Order { // (A data-transfer object)
   public Food item() { return food; }
   public Customer getCustomer() { return customer; }
   public WaitPerson getWaitPerson() { return waitPerson; }
+  @Override
   public String toString() {
     return "Order: " + id + " item: " + food +
       " for: " + customer +
@@ -38,6 +39,7 @@ class Plate {
   }
   public Order getOrder() { return order; }
   public Food getFood() { return food; }
+  @Override
   public String toString() { return food.toString(); }
 }
 
@@ -47,7 +49,7 @@ class Customer implements Runnable {
   private final WaitPerson waitPerson;
   // Only one course at a time can be received:
   private SynchronousQueue<Plate> placeSetting =
-    new SynchronousQueue<Plate>();
+    new SynchronousQueue<>();
   public Customer(WaitPerson w) { waitPerson = w; }
   public void
   deliver(Plate p) throws InterruptedException {
@@ -55,6 +57,7 @@ class Customer implements Runnable {
     // eating the previous course:
     placeSetting.put(p);
   }
+  @Override
   public void run() {
     for(Course course : Course.values()) {
       Food food = course.randomSelection();
@@ -70,6 +73,7 @@ class Customer implements Runnable {
     }
     print(this + "finished meal, leaving");
   }
+  @Override
   public String toString() {
     return "Customer " + id + " ";
   }
@@ -80,7 +84,7 @@ class WaitPerson implements Runnable {
   private final int id = counter++;
   private final Restaurant restaurant;
   BlockingQueue<Plate> filledOrders =
-    new LinkedBlockingQueue<Plate>();
+    new LinkedBlockingQueue<>();
   public WaitPerson(Restaurant rest) { restaurant = rest; }
   public void placeOrder(Customer cust, Food food) {
     try {
@@ -91,6 +95,7 @@ class WaitPerson implements Runnable {
       print(this + " placeOrder interrupted");
     }
   }
+  @Override
   public void run() {
     try {
       while(!Thread.interrupted()) {
@@ -106,6 +111,7 @@ class WaitPerson implements Runnable {
     }
     print(this + " off duty");
   }
+  @Override
   public String toString() {
     return "WaitPerson " + id + " ";
   }
@@ -117,6 +123,7 @@ class Chef implements Runnable {
   private final Restaurant restaurant;
   private static Random rand = new Random(47);
   public Chef(Restaurant rest) { restaurant = rest; }
+  @Override
   public void run() {
     try {
       while(!Thread.interrupted()) {
@@ -133,17 +140,18 @@ class Chef implements Runnable {
     }
     print(this + " off duty");
   }
+  @Override
   public String toString() { return "Chef " + id + " "; }
 }
 
 class Restaurant implements Runnable {
   private List<WaitPerson> waitPersons =
-    new ArrayList<WaitPerson>();
-  private List<Chef> chefs = new ArrayList<Chef>();
+    new ArrayList<>();
+  private List<Chef> chefs = new ArrayList<>();
   private ExecutorService exec;
   private static Random rand = new Random(47);
   BlockingQueue<Order>
-    orders = new LinkedBlockingQueue<Order>();
+    orders = new LinkedBlockingQueue<>();
   public Restaurant(ExecutorService e, int nWaitPersons,
     int nChefs) {
     exec = e;
@@ -158,6 +166,7 @@ class Restaurant implements Runnable {
       exec.execute(chef);
     }
   }
+  @Override
   public void run() {
     try {
       while(!Thread.interrupted()) {

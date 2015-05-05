@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+
+<project default="run">
+  <property name="chapter" value="remote"/>
+  <property name="excludedfiles" value=""/>
+  <import file="../Ant-Common.xml"/>
+
+  <target name="run" description="Compile and run" depends="build">
+    <touch file="failures"/>
+    <delete file="failures"/>
+  </target>
+
+</project>

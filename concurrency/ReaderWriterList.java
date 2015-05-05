@@ -10,7 +10,7 @@ public class ReaderWriterList<T> {
   private ReentrantReadWriteLock lock =
     new ReentrantReadWriteLock(true);
   public ReaderWriterList(int size, T initialValue) {
-    lockedList = new ArrayList<T>(
+    lockedList = new ArrayList<>(
       Collections.nCopies(size, initialValue));
   }
   public T set(int index, T element) {
@@ -45,8 +45,9 @@ class ReaderWriterListTest {
   private final static int SIZE = 100;
   private static Random rand = new Random(47);
   private ReaderWriterList<Integer> list =
-    new ReaderWriterList<Integer>(SIZE, 0);
+    new ReaderWriterList<>(SIZE, 0);
   private class Writer implements Runnable {
+    @Override
     public void run() {
       try {
         for(int i = 0; i < 20; i++) { // 2 second test
@@ -61,6 +62,7 @@ class ReaderWriterListTest {
     }
   }
   private class Reader implements Runnable {
+    @Override
     public void run() {
       try {
         while(!Thread.interrupted()) {

@@ -1,11 +1,12 @@
 //: concurrency/MutexEvenGenerator.java
 // Preventing thread collisions with mutexes.
-// {RunByHand}
+// {TimeOutDuringTesting}
 import java.util.concurrent.locks.*;
 
 public class MutexEvenGenerator extends IntGenerator {
   private int currentEvenValue = 0;
   private Lock lock = new ReentrantLock();
+  @Override
   public int next() {
     lock.lock();
     try {

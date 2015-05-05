@@ -7,7 +7,7 @@ import static net.mindview.util.Print.*;
 public class SortedMapDemo {
   public static void main(String[] args) {
     TreeMap<Integer,String> sortedMap =
-      new TreeMap<Integer,String>(new CountingMapData(10));
+      new TreeMap<>(new CountingMapData(10));
     print(sortedMap);
     Integer low = sortedMap.firstKey();
     Integer high = sortedMap.lastKey();

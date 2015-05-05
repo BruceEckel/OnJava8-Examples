@@ -5,6 +5,7 @@ import net.mindview.util.*;
 import static net.mindview.util.Print.*;
 
 public class DaemonFromFactory implements Runnable {
+  @Override
   public void run() {
     try {
       while(true) {

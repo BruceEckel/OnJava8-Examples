@@ -22,6 +22,7 @@ public class Philosopher implements Runnable {
     id = ident;
     ponderFactor = ponder;
   }
+  @Override
   public void run() {
     try {
       while(!Thread.interrupted()) {
@@ -41,5 +42,6 @@ public class Philosopher implements Runnable {
       print(this + " " + "exiting via interrupt");
     }
   }
+  @Override
   public String toString() { return "Philosopher " + id; }
 } ///:~

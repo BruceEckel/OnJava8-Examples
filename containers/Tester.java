@@ -36,11 +36,11 @@ public class Tester<C> {
   }
   // Generic methods for convenience :
   public static <C> void run(C cntnr, List<Test<C>> tests){
-    new Tester<C>(cntnr, tests).timedTest();
+    new Tester<>(cntnr, tests).timedTest();
   }
   public static <C> void run(C cntnr,
       List<Test<C>> tests, TestParam[] paramList) {
-    new Tester<C>(cntnr, tests, paramList).timedTest();
+    new Tester<>(cntnr, tests, paramList).timedTest();
   }
   private void displayHeader() {
     // Calculate width and pad with '-':

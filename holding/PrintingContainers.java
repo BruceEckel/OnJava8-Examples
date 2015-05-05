@@ -19,22 +19,22 @@ public class PrintingContainers {
     return map;
   }	
   public static void main(String[] args) {
-    print(fill(new ArrayList<String>()));
-    print(fill(new LinkedList<String>()));
-    print(fill(new HashSet<String>()));
-    print(fill(new TreeSet<String>()));
-    print(fill(new LinkedHashSet<String>()));
-    print(fill(new HashMap<String,String>()));
-    print(fill(new TreeMap<String,String>()));
-    print(fill(new LinkedHashMap<String,String>()));
+    print(fill(new ArrayList<>()));
+    print(fill(new LinkedList<>()));
+    print(fill(new HashSet<>()));
+    print(fill(new TreeSet<>()));
+    print(fill(new LinkedHashSet<>()));
+    print(fill(new HashMap<>()));
+    print(fill(new TreeMap<>()));
+    print(fill(new LinkedHashMap<>()));
   }
 } /* Output:
 [rat, cat, dog, dog]
 [rat, cat, dog, dog]
-[dog, cat, rat]
+[cat, dog, rat]
 [cat, dog, rat]
 [rat, cat, dog]
-{dog=Spot, cat=Rags, rat=Fuzzy}
+{cat=Rags, dog=Spot, rat=Fuzzy}
 {cat=Rags, dog=Spot, rat=Fuzzy}
 {rat=Fuzzy, cat=Rags, dog=Spot}
 *///:~

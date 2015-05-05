@@ -47,7 +47,7 @@ public class Utilities {
       Collections.disjoint(list, dups));
     // Getting an old-style Enumeration:
     Enumeration<String> e = Collections.enumeration(dups);
-    Vector<String> v = new Vector<String>();
+    Vector<String> v = new Vector<>();
     while(e.hasMoreElements())
       v.addElement(e.nextElement());
     // Converting an old-style Vector

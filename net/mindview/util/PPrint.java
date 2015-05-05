@@ -5,7 +5,7 @@ import java.util.*;
 
 public class PPrint {
   public static String pformat(Collection<?> c) {
-    if(c.size() == 0) return "[]";
+    if(c.isEmpty()) return "[]";
     StringBuilder result = new StringBuilder("[");
     for(Object elem : c) {
       if(c.size() != 1)

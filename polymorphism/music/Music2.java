@@ -4,12 +4,14 @@ package polymorphism.music;
 import static net.mindview.util.Print.*;
 
 class Stringed extends Instrument {
+  @Override
   public void play(Note n) {
     print("Stringed.play() " + n);
   }
 }
 
 class Brass extends Instrument {
+  @Override
   public void play(Note n) {
     print("Brass.play() " + n);
   }

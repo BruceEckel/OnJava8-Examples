@@ -20,6 +20,7 @@ public class Faces extends JFrame {
     jb = new JButton("JButton", faces[3]);
     setLayout(new FlowLayout());
     jb.addActionListener(new ActionListener() {
+      @Override
       public void actionPerformed(ActionEvent e) {
         if(mad) {
           jb.setIcon(faces[3]);
@@ -39,6 +40,7 @@ public class Faces extends JFrame {
     jb.setToolTipText("Yow!");
     add(jb);
     jb2.addActionListener(new ActionListener() {
+      @Override
       public void actionPerformed(ActionEvent e) {
         if(jb.isEnabled()) {
           jb.setEnabled(false);

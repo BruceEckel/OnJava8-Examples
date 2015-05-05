@@ -24,6 +24,7 @@ class BlockedMutex {
 
 class Blocked2 implements Runnable {
   BlockedMutex blocked = new BlockedMutex();
+  @Override
   public void run() {
     print("Waiting for f() in BlockedMutex");
     blocked.f();

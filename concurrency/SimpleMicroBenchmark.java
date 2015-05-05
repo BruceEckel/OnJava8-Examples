@@ -8,11 +8,13 @@ abstract class Incrementable {
 }
 
 class SynchronizingTest extends Incrementable {
+  @Override
   public synchronized void increment() { ++counter; }
 }
 
 class LockingTest extends Incrementable {
   private Lock lock = new ReentrantLock();
+  @Override
   public void increment() {
     lock.lock();
     try {

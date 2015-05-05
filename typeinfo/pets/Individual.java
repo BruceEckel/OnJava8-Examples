@@ -8,15 +8,18 @@ public class Individual implements Comparable<Individual> {
   public Individual(String name) { this.name = name; }
   // 'name' is optional:
   public Individual() {}
+  @Override
   public String toString() {
     return getClass().getSimpleName() +
       (name == null ? "" : " " + name);
   }
   public long id() { return id; }
+  @Override
   public boolean equals(Object o) {
     return o instanceof Individual &&
       id == ((Individual)o).id;
   }
+  @Override
   public int hashCode() {
     int result = 17;
     if(name != null)
@@ -24,6 +27,7 @@ public class Individual implements Comparable<Individual> {
     result = 37 * result + (int)id;
     return result;
   }
+  @Override
   public int compareTo(Individual arg) {
     // Compare by class name first:
     String first = getClass().getSimpleName();

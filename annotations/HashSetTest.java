@@ -5,7 +5,7 @@ import net.mindview.atunit.*;
 import net.mindview.util.*;
 
 public class HashSetTest {
-  HashSet<String> testObject = new HashSet<String>();
+  HashSet<String> testObject = new HashSet<>();
   @Test void initialization() {
     assert testObject.isEmpty();
   }

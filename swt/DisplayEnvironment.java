@@ -6,6 +6,7 @@ import org.eclipse.swt.layout.*;
 import java.util.*;
 
 public class DisplayEnvironment implements SWTApplication {
+  @Override
   public void createContents(Composite parent) {
     parent.setLayout(new FillLayout());
     Text text = new Text(parent, SWT.WRAP | SWT.V_SCROLL);

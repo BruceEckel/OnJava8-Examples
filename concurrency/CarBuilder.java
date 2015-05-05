@@ -30,6 +30,7 @@ class ChassisBuilder implements Runnable {
   private CarQueue carQueue;
   private int counter = 0;
   public ChassisBuilder(CarQueue cq) { carQueue = cq; }
+  @Override
   public void run() {
     try {
       while(!Thread.interrupted()) {
@@ -59,6 +60,7 @@ class Assembler implements Runnable {
   }
   public Car car() { return car; }
   public CyclicBarrier barrier() { return barrier; }
+  @Override
   public void run() {
     try {
       while(!Thread.interrupted()) {
@@ -85,6 +87,7 @@ class Assembler implements Runnable {
 class Reporter implements Runnable {
   private CarQueue carQueue;
   public Reporter(CarQueue cq) { carQueue = cq; }
+  @Override
   public void run() {
     try {
       while(!Thread.interrupted()) {
@@ -167,7 +170,7 @@ class WheelRobot extends Robot {
 
 class RobotPool {
   // Quietly prevents identical entries:
-  private Set<Robot> pool = new HashSet<Robot>();
+  private Set<Robot> pool = new HashSet<>();
   public synchronized void add(Robot r) {
     pool.add(r);
     notifyAll();

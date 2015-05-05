@@ -46,6 +46,7 @@ class Animal extends LivingCreature {
   private Description t =
     new Description("Animal not Vegetable");
   Animal() { print("Animal()"); }
+  @Override
   protected void dispose() {
     print("Animal dispose");
     t.dispose();
@@ -62,6 +63,7 @@ class Amphibian extends Animal {
   Amphibian() {
     print("Amphibian()");
   }
+  @Override
   protected void dispose() {
     print("Amphibian dispose");
     t.dispose();
@@ -74,6 +76,7 @@ public class Frog extends Amphibian {
   private Characteristic p = new Characteristic("Croaks");
   private Description t = new Description("Eats Bugs");
   public Frog() { print("Frog()"); }
+  @Override
   protected void dispose() {
     print("Frog dispose");
     t.dispose();

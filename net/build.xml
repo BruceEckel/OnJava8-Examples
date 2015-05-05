@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+
+<project default="run">
+  <property name="chapter" value="net"/>
+  <property name="excludedfiles" value=""/>
+  <import file="../Ant-Common.xml"/>
+
+  <target name="run" description="Compile and run" depends="build">
+    <touch file="failures"/>
+    <jrun cls="net.mindview.atunit.AtUnit" dirpath="../net/mindview/atunit" />
+    <jrun cls="net.mindview.atunit.AtUnitRemover" dirpath="../net/mindview/atunit" arguments='..' />
+    <jrun cls="net.mindview.atunit.ClassNameFinder" dirpath="../net/mindview/atunit" />
+    <jrun cls="net.mindview.util.ContainerMethodDifferences" dirpath="../net/mindview/util" />
+    <jrun cls="net.mindview.util.CountingIntegerList" dirpath="../net/mindview/util" />
+    <jrun cls="net.mindview.util.CountingMapData" dirpath="../net/mindview/util" />
+    <jrun cls="net.mindview.util.Countries" dirpath="../net/mindview/util" />
+    <jrun cls="net.mindview.util.Directory" dirpath="../net/mindview/util" />
+    <jrun cls="net.mindview.util.Hex" dirpath="../net/mindview/util" />
+    <jrun cls="net.mindview.util.New" dirpath="../net/mindview/util" />
+    <jrun cls="net.mindview.util.ProcessFiles" dirpath="../net/mindview/util" />
+    <jrun cls="net.mindview.util.TextFile" dirpath="../net/mindview/util" />
+    <delete file="failures"/>
+  </target>
+
+</project>

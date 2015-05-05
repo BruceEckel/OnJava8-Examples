@@ -22,7 +22,7 @@ public class AsListInference {
     // required: java.util.List<Snow>
 
     // Collections.addAll() doesn't get confused:
-    List<Snow> snow3 = new ArrayList<Snow>();
+    List<Snow> snow3 = new ArrayList<>();
     Collections.addAll(snow3, new Light(), new Heavy());
 
     // Give a hint using an

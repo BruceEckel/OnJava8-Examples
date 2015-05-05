@@ -9,6 +9,7 @@ import static net.mindview.util.SwingConsole.*;
 class Task implements Runnable {
   private static int counter = 0;
   private final int id = counter++;
+  @Override
   public void run() {
     System.out.println(this + " started");
     try {
@@ -19,6 +20,7 @@ class Task implements Runnable {
     }
     System.out.println(this + " completed");
   }
+  @Override
   public String toString() { return "Task " + id; }
   public long id() { return id; }
 };
@@ -31,6 +33,7 @@ public class InterruptableLongRunningTask extends JFrame {
     Executors.newSingleThreadExecutor();
   public InterruptableLongRunningTask() {
     b1.addActionListener(new ActionListener() {
+      @Override
       public void actionPerformed(ActionEvent e) {
         Task task = new Task();
         executor.execute(task);
@@ -38,6 +41,7 @@ public class InterruptableLongRunningTask extends JFrame {
       }
     });
     b2.addActionListener(new ActionListener() {
+      @Override
       public void actionPerformed(ActionEvent e) {
         executor.shutdownNow(); // Heavy-handed
       }

@@ -13,6 +13,7 @@ class ExchangerProducer<T> implements Runnable {
     generator = gen;
     this.holder = holder;
   }
+  @Override
   public void run() {
     try {
       while(!Thread.interrupted()) {
@@ -35,6 +36,7 @@ class ExchangerConsumer<T> implements Runnable {
     exchanger = ex;
     this.holder = holder;
   }
+  @Override
   public void run() {
     try {
       while(!Thread.interrupted()) {
@@ -60,14 +62,14 @@ public class ExchangerDemo {
     if(args.length > 1)
       delay = new Integer(args[1]);
     ExecutorService exec = Executors.newCachedThreadPool();
-    Exchanger<List<Fat>> xc = new Exchanger<List<Fat>>();
+    Exchanger<List<Fat>> xc = new Exchanger<>();
     List<Fat>
-      producerList = new CopyOnWriteArrayList<Fat>(),
-      consumerList = new CopyOnWriteArrayList<Fat>();
-    exec.execute(new ExchangerProducer<Fat>(xc,
+      producerList = new CopyOnWriteArrayList<>(),
+      consumerList = new CopyOnWriteArrayList<>();
+    exec.execute(new ExchangerProducer<>(xc,
       BasicGenerator.create(Fat.class), producerList));
     exec.execute(
-      new ExchangerConsumer<Fat>(xc,consumerList));
+      new ExchangerConsumer<>(xc,consumerList));
     TimeUnit.SECONDS.sleep(delay);
     exec.shutdownNow();
   }

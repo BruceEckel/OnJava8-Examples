@@ -37,6 +37,7 @@ public class AttemptLocking {
     // Now create a separate task to grab the lock:
     new Thread() {
       { setDaemon(true); }
+      @Override
       public void run() {
         al.lock.lock();
         System.out.println("acquired");

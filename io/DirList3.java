@@ -14,6 +14,7 @@ public class DirList3 {
     else
       list = path.list(new FilenameFilter() {
         private Pattern pattern = Pattern.compile(args[0]);
+        @Override
         public boolean accept(File dir, String name) {
           return pattern.matcher(name).matches();
         }

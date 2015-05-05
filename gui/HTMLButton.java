@@ -11,6 +11,7 @@ public class HTMLButton extends JFrame {
     "<center>Hello!<br><i>Press me now!");
   public HTMLButton() {
     b.addActionListener(new ActionListener() {
+      @Override
       public void actionPerformed(ActionEvent e) {
         add(new JLabel("<html>" +
           "<i><font size=+4>Kapow!"));

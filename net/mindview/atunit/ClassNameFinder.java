@@ -7,10 +7,8 @@ import static net.mindview.util.Print.*;
 
 public class ClassNameFinder {
   public static String thisClass(byte[] classBytes) {
-    Map<Integer,Integer> offsetTable =
-      new HashMap<Integer,Integer>();
-    Map<Integer,String> classNameTable =
-      new HashMap<Integer,String>();
+    Map<Integer,Integer> offsetTable = new HashMap<>();
+    Map<Integer,String> classNameTable = new HashMap<>();
     try {
       DataInputStream data = new DataInputStream(
         new ByteArrayInputStream(classBytes));

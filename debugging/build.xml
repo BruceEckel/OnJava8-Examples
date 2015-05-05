@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+
+<project default="run">
+  <property name="chapter" value="debugging"/>
+  <property name="excludedfiles" value=""/>
+  <import file="../Ant-Common.xml"/>
+
+  <target name="run" description="Compile and run" depends="build">
+    <touch file="failures"/>
+    <jrun cls="SimpleDebugging" failOnError='false' msg='* Exception was Expected *' />
+    <delete file="failures"/>
+  </target>
+
+</project>

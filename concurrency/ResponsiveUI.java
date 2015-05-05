@@ -1,6 +1,6 @@
 //: concurrency/ResponsiveUI.java
 // User interface responsiveness.
-// {RunByHand}
+// {TimeOutDuringTesting}
 
 class UnresponsiveUI {
   private volatile double d = 1;
@@ -17,6 +17,7 @@ public class ResponsiveUI extends Thread {
     setDaemon(true);
     start();
   }
+  @Override
   public void run() {
     while(true) {
       d = d + (Math.PI + Math.E) / d;

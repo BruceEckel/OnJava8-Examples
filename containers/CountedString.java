@@ -5,7 +5,7 @@ import static net.mindview.util.Print.*;
 
 public class CountedString {
   private static List<String> created =
-    new ArrayList<String>();
+    new ArrayList<>();
   private String s;
   private int id = 0;
   public CountedString(String str) {
@@ -17,10 +17,12 @@ public class CountedString {
       if(s2.equals(s))
         id++;
   }
+  @Override
   public String toString() {
     return "String: " + s + " id: " + id +
       " hashCode(): " + hashCode();
   }
+  @Override
   public int hashCode() {
     // The very simple approach:
     // return s.hashCode() * id;
@@ -30,6 +32,7 @@ public class CountedString {
     result = 37 * result + id;
     return result;
   }
+  @Override
   public boolean equals(Object o) {
     return o instanceof CountedString &&
       s.equals(((CountedString)o).s) &&
@@ -37,7 +40,7 @@ public class CountedString {
   }
   public static void main(String[] args) {
     Map<CountedString,Integer> map =
-      new HashMap<CountedString,Integer>();
+      new HashMap<>();
     CountedString[] cs = new CountedString[5];
     for(int i = 0; i < cs.length; i++) {
       cs[i] = new CountedString("hi");

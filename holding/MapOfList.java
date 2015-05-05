@@ -6,7 +6,7 @@ import static net.mindview.util.Print.*;
 
 public class MapOfList {
   public static Map<Person, List<? extends Pet>>
-    petPeople = new HashMap<Person, List<? extends Pet>>();
+    petPeople = new HashMap<>();
   static {
     petPeople.put(new Person("Dawn"),
       Arrays.asList(new Cymric("Molly"),new Mutt("Spot")));
@@ -33,22 +33,22 @@ public class MapOfList {
     }
   }
 } /* Output:	
-People: [Person Luke, Person Marilyn, Person Isaac, Person Dawn, Person Kate]
-Pets: [[Rat Fuzzy, Rat Fizzy], [Pug Louie aka Louis Snorkelstein Dupree, Cat Stanford aka Stinky el Negro, Cat Pinkola], [Rat Freckly], [Cymric Molly, Mutt Spot], [Cat Shackleton, Cat Elsie May, Dog Margrett]]
-Person Luke has:
-    Rat Fuzzy
-    Rat Fizzy
+People: [Person Marilyn, Person Luke, Person Isaac, Person Kate, Person Dawn]
+Pets: [[Pug Louie aka Louis Snorkelstein Dupree, Cat Stanford aka Stinky el Negro, Cat Pinkola], [Rat Fuzzy, Rat Fizzy], [Rat Freckly], [Cat Shackleton, Cat Elsie May, Dog Margrett], [Cymric Molly, Mutt Spot]]
 Person Marilyn has:
     Pug Louie aka Louis Snorkelstein Dupree
     Cat Stanford aka Stinky el Negro
     Cat Pinkola
+Person Luke has:
+    Rat Fuzzy
+    Rat Fizzy
 Person Isaac has:
     Rat Freckly
-Person Dawn has:
-    Cymric Molly
-    Mutt Spot
 Person Kate has:
     Cat Shackleton
     Cat Elsie May
     Dog Margrett
+Person Dawn has:
+    Cymric Molly
+    Mutt Spot
 *///:~

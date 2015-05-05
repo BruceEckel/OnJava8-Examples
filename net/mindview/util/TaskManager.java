@@ -9,11 +9,11 @@ extends ArrayList<TaskItem<R,C>> {
   private ExecutorService exec =
     Executors.newSingleThreadExecutor();
   public void add(C task) {
-    add(new TaskItem<R,C>(exec.submit(task),task));
+    add(new TaskItem<>(exec.submit(task),task));
   }
   public List<R> getResults() {
     Iterator<TaskItem<R,C>> items = iterator();
-    List<R> results = new ArrayList<R>();
+    List<R> results = new ArrayList<>();
     while(items.hasNext()) {
       TaskItem<R,C> item = items.next();
       if(item.future.isDone()) {
@@ -29,7 +29,7 @@ extends ArrayList<TaskItem<R,C>> {
   }
   public List<String> purge() {
     Iterator<TaskItem<R,C>> items = iterator();
-    List<String> results = new ArrayList<String>();
+    List<String> results = new ArrayList<>();
     while(items.hasNext()) {
       TaskItem<R,C> item = items.next();
       // Leave completed tasks for results reporting:

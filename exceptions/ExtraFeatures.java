@@ -11,6 +11,7 @@ class MyException2 extends Exception {
     this.x = x;
   }
   public int val() { return x; }
+  @Override
   public String getMessage() {
     return "Detail Message: "+ x + " "+ super.getMessage();
   }

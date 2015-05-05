@@ -8,6 +8,7 @@ class Cleanser {
   public void dilute() { append(" dilute()"); }
   public void apply() { append(" apply()"); }
   public void scrub() { append(" scrub()"); }
+  @Override
   public String toString() { return s; }
   public static void main(String[] args) {
     Cleanser x = new Cleanser();
@@ -18,6 +19,7 @@ class Cleanser {
 
 public class Detergent extends Cleanser {
   // Change a method:
+  @Override
   public void scrub() {
     append(" Detergent.scrub()");
     super.scrub(); // Call base-class version

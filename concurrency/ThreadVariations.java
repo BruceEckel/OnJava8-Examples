@@ -12,6 +12,7 @@ class InnerThread1 {
       super(name);
       start();
     }
+    @Override
     public void run() {
       try {
         while(true) {
@@ -23,6 +24,7 @@ class InnerThread1 {
         print("interrupted");
       }
     }
+    @Override
     public String toString() {
       return getName() + ": " + countDown;
     }
@@ -38,6 +40,7 @@ class InnerThread2 {
   private Thread t;
   public InnerThread2(String name) {
     t = new Thread(name) {
+      @Override
       public void run() {
         try {
           while(true) {
@@ -49,6 +52,7 @@ class InnerThread2 {
           print("sleep() interrupted");
         }
       }
+      @Override
       public String toString() {
         return getName() + ": " + countDown;
       }
@@ -67,6 +71,7 @@ class InnerRunnable1 {
       t = new Thread(this, name);
       t.start();
     }
+    @Override
     public void run() {
       try {
         while(true) {
@@ -78,6 +83,7 @@ class InnerRunnable1 {
         print("sleep() interrupted");
       }
     }
+    @Override
     public String toString() {
       return t.getName() + ": " + countDown;
     }
@@ -93,6 +99,7 @@ class InnerRunnable2 {
   private Thread t;
   public InnerRunnable2(String name) {
     t = new Thread(new Runnable() {
+      @Override
       public void run() {
         try {
           while(true) {
@@ -104,6 +111,7 @@ class InnerRunnable2 {
           print("sleep() interrupted");
         }
       }
+      @Override
       public String toString() {
         return Thread.currentThread().getName() +
           ": " + countDown;
@@ -122,6 +130,7 @@ class ThreadMethod {
   public void runTask() {
     if(t == null) {
       t = new Thread(name) {
+        @Override
         public void run() {
           try {
             while(true) {
@@ -133,6 +142,7 @@ class ThreadMethod {
             print("sleep() interrupted");
           }
         }
+        @Override
         public String toString() {
           return getName() + ": " + countDown;
         }

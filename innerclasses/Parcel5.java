@@ -8,6 +8,7 @@ public class Parcel5 {
       private PDestination(String whereTo) {
         label = whereTo;
       }
+      @Override
       public String readLabel() { return label; }
     }
     return new PDestination(s);

@@ -1,5 +1,5 @@
 //: concurrency/SettingDefaultHandler.java
-// {RunByHand}
+// {TimeOutDuringTesting}
 import java.util.concurrent.*;
 
 public class SettingDefaultHandler {

@@ -8,6 +8,7 @@ class TimeStampedImp implements TimeStamped {
   public TimeStampedImp() {
     timeStamp = new Date().getTime();
   }
+  @Override
   public long getStamp() { return timeStamp; }
 }
 
@@ -16,6 +17,7 @@ interface SerialNumbered { long getSerialNumber(); }
 class SerialNumberedImp implements SerialNumbered {
   private static long counter = 1;
   private final long serialNumber = counter++;
+  @Override
   public long getSerialNumber() { return serialNumber; }
 }
 
@@ -26,7 +28,9 @@ interface Basic {
 
 class BasicImp implements Basic {
   private String value;
+  @Override
   public void set(String val) { value = val; }
+  @Override
   public String get() { return value; }
 }
 
@@ -35,7 +39,9 @@ implements TimeStamped, SerialNumbered {
   private TimeStamped timeStamp = new TimeStampedImp();
   private SerialNumbered serialNumber =
     new SerialNumberedImp();
+  @Override
   public long getStamp() { return timeStamp.getStamp(); }
+  @Override
   public long getSerialNumber() {
     return serialNumber.getSerialNumber();
   }

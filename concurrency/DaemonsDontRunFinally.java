@@ -4,6 +4,7 @@ import java.util.concurrent.*;
 import static net.mindview.util.Print.*;
 
 class ADaemon implements Runnable {
+  @Override
   public void run() {
     try {
       print("Starting ADaemon");

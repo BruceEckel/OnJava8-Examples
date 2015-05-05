@@ -13,8 +13,7 @@ public class GenericArray<T> {
   // Method that exposes the underlying representation:
   public T[] rep() { return array; }	
   public static void main(String[] args) {
-    GenericArray<Integer> gai =
-      new GenericArray<Integer>(10);
+    GenericArray<Integer> gai = new GenericArray<>(10);
     // This causes a ClassCastException:
     //! Integer[] ia = gai.rep();
     // This is OK:

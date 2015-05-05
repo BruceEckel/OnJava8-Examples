@@ -12,6 +12,7 @@ class ToDoList extends PriorityQueue<ToDoList.ToDoItem> {
       secondary = sec;
       item = td;
     }
+    @Override
     public int compareTo(ToDoItem arg) {
       if(primary > arg.primary)
         return +1;
@@ -22,6 +23,7 @@ class ToDoList extends PriorityQueue<ToDoList.ToDoItem> {
           return 0;
       return -1;
     }
+    @Override
     public String toString() {
       return Character.toString(primary) +
         secondary + ": " + item;

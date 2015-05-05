@@ -9,6 +9,7 @@ import static net.mindview.util.SwingConsole.*;
 
 class CallableTask extends Task
 implements Callable<String> {
+  @Override
   public String call() {
     run();
     return "Return value of " + this;
@@ -22,9 +23,10 @@ InterruptableLongRunningCallable extends JFrame {
     b2 = new JButton("End Long Running Task"),
     b3 = new JButton("Get results");
   private TaskManager<String,CallableTask> manager =
-    new TaskManager<String,CallableTask>();
+    new TaskManager<>();
   public InterruptableLongRunningCallable() {
     b1.addActionListener(new ActionListener() {
+      @Override
       public void actionPerformed(ActionEvent e) {
         CallableTask task = new CallableTask();
         manager.add(task);
@@ -32,12 +34,14 @@ InterruptableLongRunningCallable extends JFrame {
       }
     });
     b2.addActionListener(new ActionListener() {
+      @Override
       public void actionPerformed(ActionEvent e) {
         for(String result : manager.purge())
           System.out.println(result);
       }
     });
     b3.addActionListener(new ActionListener() {
+      @Override
       public void actionPerformed(ActionEvent e) {
         // Sample call to a Task method:
         for(TaskItem<String,CallableTask> tt :

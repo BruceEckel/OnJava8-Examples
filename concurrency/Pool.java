@@ -6,7 +6,7 @@ import java.util.*;
 
 public class Pool<T> {
   private int size;
-  private List<T> items = new ArrayList<T>();
+  private List<T> items = new ArrayList<>();
   private volatile boolean[] checkedOut;
   private Semaphore available;
   public Pool(Class<T> classObject, int size) {

@@ -11,6 +11,7 @@ public class Button2 extends JFrame {
     b2 = new JButton("Button 2");
   private JTextField txt = new JTextField(10);
   class ButtonListener implements ActionListener {
+    @Override
     public void actionPerformed(ActionEvent e) {
       String name = ((JButton)e.getSource()).getText();
       txt.setText(name);

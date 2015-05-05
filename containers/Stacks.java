@@ -8,7 +8,7 @@ enum Month { JANUARY, FEBRUARY, MARCH, APRIL, MAY, JUNE,
 
 public class Stacks {
   public static void main(String[] args) {
-    Stack<String> stack = new Stack<String>();
+    Stack<String> stack = new Stack<>();
     for(Month m : Month.values())
       stack.push(m.toString());
     print("stack = " + stack);
@@ -20,7 +20,7 @@ public class Stacks {
       printnb(stack.pop() + " ");
 
     // Using a LinkedList as a Stack:
-    LinkedList<String> lstack = new LinkedList<String>();
+    LinkedList<String> lstack = new LinkedList<>();
     for(Month m : Month.values())
       lstack.addFirst(m.toString());
     print("lstack = " + lstack);
@@ -30,7 +30,7 @@ public class Stacks {
     // Using the Stack class from
     // the Holding Your Objects Chapter:
     net.mindview.util.Stack<String> stack2 =
-      new net.mindview.util.Stack<String>();
+      new net.mindview.util.Stack<>();
     for(Month m : Month.values())
       stack2.push(m.toString());
     print("stack2 = " + stack2);

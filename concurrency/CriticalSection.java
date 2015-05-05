@@ -1,5 +1,6 @@
 //: concurrency/CriticalSection.java
-// {RunByHand} (Behavior may have changed in Java 8).
+// {TimeOutDuringTesting} 
+// (Behavior may have changed in Java 8).
 // Synchronizing blocks instead of entire methods. Also
 // demonstrates protection of a non-thread-safe class
 // with a thread-safe one.
@@ -19,6 +20,7 @@ class Pair { // Not thread-safe
   public int getY() { return y; }
   public void incrementX() { x++; }
   public void incrementY() { y++; }
+  @Override
   public String toString() {
     return "x: " + x + ", y: " + y;
   }
@@ -40,7 +42,7 @@ abstract class PairManager {
   AtomicInteger checkCounter = new AtomicInteger(0);
   protected Pair p = new Pair();
   private List<Pair> storage =
-    Collections.synchronizedList(new ArrayList<Pair>());
+    Collections.synchronizedList(new ArrayList<>());
   public synchronized Pair getPair() {
     // Make a copy to keep the original safe:
     return new Pair(p.getX(), p.getY());
@@ -57,6 +59,7 @@ abstract class PairManager {
 
 // Synchronize the entire method:
 class PairManager1 extends PairManager {
+  @Override
   public synchronized void increment() {
     p.incrementX();
     p.incrementY();
@@ -66,6 +69,7 @@ class PairManager1 extends PairManager {
 
 // Use a critical section:
 class PairManager2 extends PairManager {
+  @Override
   public void increment() {
     Pair temp;
     synchronized(this) {
@@ -82,10 +86,12 @@ class PairManipulator implements Runnable {
   public PairManipulator(PairManager pm) {
     this.pm = pm;
   }
+  @Override
   public void run() {
     while(true)
       pm.increment();
   }
+  @Override
   public String toString() {
     return "Pair: " + pm.getPair() +
       " checkCounter = " + pm.checkCounter.get();
@@ -97,6 +103,7 @@ class PairChecker implements Runnable {
   public PairChecker(PairManager pm) {
     this.pm = pm;
   }
+  @Override
   public void run() {
     while(true) {
       pm.checkCounter.incrementAndGet();

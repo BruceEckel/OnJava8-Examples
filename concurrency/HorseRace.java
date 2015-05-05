@@ -12,6 +12,7 @@ class Horse implements Runnable {
   private static CyclicBarrier barrier;
   public Horse(CyclicBarrier b) { barrier = b; }
   public synchronized int getStrides() { return strides; }
+  @Override
   public void run() {
     try {
       while(!Thread.interrupted()) {
@@ -27,6 +28,7 @@ class Horse implements Runnable {
       throw new RuntimeException(e);
     }
   }
+  @Override
   public String toString() { return "Horse " + id + " "; }
   public String tracks() {
     StringBuilder s = new StringBuilder();
@@ -39,12 +41,13 @@ class Horse implements Runnable {
 
 public class HorseRace {
   static final int FINISH_LINE = 75;
-  private List<Horse> horses = new ArrayList<Horse>();
+  private List<Horse> horses = new ArrayList<>();
   private ExecutorService exec =
     Executors.newCachedThreadPool();
   private CyclicBarrier barrier;
   public HorseRace(int nHorses, final int pause) {
     barrier = new CyclicBarrier(nHorses, new Runnable() {
+      @Override
       public void run() {
         StringBuilder s = new StringBuilder();
         for(int i = 0; i < FINISH_LINE; i++)

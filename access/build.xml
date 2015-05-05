@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+
+<project default="run">
+  <property name="chapter" value="access"/>
+  <property name="excludedfiles" value=""/>
+  <import file="../Ant-Common.xml"/>
+
+  <target name="run" description="Compile and run" depends="build">
+    <touch file="failures"/>
+    <jrun cls="Cake" />
+    <jrun cls="ChocolateChip" />
+    <jrun cls="ChocolateChip2" />
+    <jrun cls="Dinner" />
+    <jrun cls="FullQualification" />
+    <jrun cls="IceCream" />
+    <jrun cls="ImportedMyClass" />
+    <jrun cls="LibTest" />
+    <jrun cls="PrintTest" />
+    <jrun cls="QualifiedMyClass" />
+    <jrun cls="SingleImport" />
+    <delete file="failures"/>
+  </target>
+
+</project>

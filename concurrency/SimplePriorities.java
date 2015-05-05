@@ -9,9 +9,11 @@ public class SimplePriorities implements Runnable {
   public SimplePriorities(int priority) {
     this.priority = priority;
   }
+  @Override
   public String toString() {
     return Thread.currentThread() + ": " + countDown;
   }
+  @Override
   public void run() {
     Thread.currentThread().setPriority(priority);
     while(true) {

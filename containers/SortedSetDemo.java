@@ -5,7 +5,7 @@ import static net.mindview.util.Print.*;
 
 public class SortedSetDemo {
   public static void main(String[] args) {
-    SortedSet<String> sortedSet = new TreeSet<String>();
+    SortedSet<String> sortedSet = new TreeSet<>();
     Collections.addAll(sortedSet,
       "one two three four five six seven eight"
         .split(" "));

@@ -4,6 +4,7 @@
 public class Parcel11 {
   private static class ParcelContents implements Contents {
     private int i = 11;
+    @Override
     public int value() { return i; }
   }
   protected static class ParcelDestination
@@ -12,6 +13,7 @@ public class Parcel11 {
     private ParcelDestination(String whereTo) {
       label = whereTo;
     }
+    @Override
     public String readLabel() { return label; }	
     // Nested classes can contain other static elements:
     public static void f() {}

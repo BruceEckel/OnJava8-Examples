@@ -33,7 +33,9 @@ extends SuperHero<POWER> {
 }
 
 class SuperHearSmell implements SuperHearing, SuperSmell {
+  @Override
   public void hearSubtleNoises() {}
+  @Override
   public void trackBySmell() {}
 }
 

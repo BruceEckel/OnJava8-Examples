@@ -3,16 +3,19 @@ package enumerated;
 
 public enum RoShamBo4 implements Competitor<RoShamBo4> {
   ROCK {
+    @Override
     public Outcome compete(RoShamBo4 opponent) {
       return compete(SCISSORS, opponent);
     }
   },
   SCISSORS {
+    @Override
     public Outcome compete(RoShamBo4 opponent) {
       return compete(PAPER, opponent);
     }
   },
   PAPER {
+    @Override
     public Outcome compete(RoShamBo4 opponent) {
       return compete(ROCK, opponent);
     }

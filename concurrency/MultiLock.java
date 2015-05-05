@@ -18,6 +18,7 @@ public class MultiLock {
   public static void main(String[] args) throws Exception {
     final MultiLock multiLock = new MultiLock();
     new Thread() {
+      @Override
       public void run() {
         multiLock.f1(10);
       }

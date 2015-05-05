@@ -30,28 +30,34 @@ public class LookAndFeel extends JFrame {
   }
   public static void main(String[] args) {
     if(args.length == 0) usageError();
-    if(args[0].equals("cross")) {
-      try {
-        UIManager.setLookAndFeel(UIManager.
-          getCrossPlatformLookAndFeelClassName());
-      } catch(Exception e) {
-        e.printStackTrace();
-      }
-    } else if(args[0].equals("system")) {
-      try {
-        UIManager.setLookAndFeel(UIManager.
-          getSystemLookAndFeelClassName());
-      } catch(Exception e) {
-        e.printStackTrace();
-      }
-    } else if(args[0].equals("motif")) {
-      try {
-        UIManager.setLookAndFeel("com.sun.java."+
-          "swing.plaf.motif.MotifLookAndFeel");
-      } catch(Exception e) {
-        e.printStackTrace();
-      }
-    } else usageError();
+    switch(args[0]) {
+      case "cross":
+        try {
+          UIManager.setLookAndFeel(UIManager.
+            getCrossPlatformLookAndFeelClassName());
+        } catch(Exception e) {
+          e.printStackTrace();
+        }
+        break;
+      case "system":
+        try {
+          UIManager.setLookAndFeel(UIManager.
+            getSystemLookAndFeelClassName());
+        } catch(Exception e) {
+          e.printStackTrace();
+        }
+        break;
+      case "motif":
+        try {
+          UIManager.setLookAndFeel("com.sun.java."+
+            "swing.plaf.motif.MotifLookAndFeel");
+        } catch(Exception e) {
+          e.printStackTrace();
+        }
+        break;
+      default:
+        usageError();
+    }
     // Note the look & feel must be set before
     // any components are created.
     run(new LookAndFeel(), 300, 300);

@@ -25,6 +25,7 @@ public class Progress extends JFrame {
     pb.setModel(sb.getModel()); // Share model
     add(sb);
     sb.addChangeListener(new ChangeListener() {
+      @Override
       public void stateChanged(ChangeEvent e) {
         pm.setProgress(sb.getValue());
       }

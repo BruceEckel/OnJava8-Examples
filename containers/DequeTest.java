@@ -10,7 +10,7 @@ public class DequeTest {
       deque.addLast(i);
   }
   public static void main(String[] args) {
-    Deque<Integer> di = new Deque<Integer>();
+    Deque<Integer> di = new Deque<>();
     fillTest(di);
     print(di);
     while(di.size() != 0)

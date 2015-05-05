@@ -14,7 +14,7 @@ public class AtUnitExample4 {
   public AtUnitExample4(String word) { this.word = word; }
   public String getWord() { return word; }
   public String scrambleWord() {
-    List<Character> chars = new ArrayList<Character>();
+    List<Character> chars = new ArrayList<>();
     for(Character c : word.toCharArray())
       chars.add(c);
     Collections.shuffle(chars, rand);

@@ -14,7 +14,9 @@ interface Lethal {
 }
 
 class DragonZilla implements DangerousMonster {
+  @Override
   public void menace() {}
+  @Override
   public void destroy() {}
 }	
 
@@ -23,9 +25,13 @@ interface Vampire extends DangerousMonster, Lethal {
 }
 
 class VeryBadVampire implements Vampire {
+  @Override
   public void menace() {}
+  @Override
   public void destroy() {}
+  @Override
   public void kill() {}
+  @Override
   public void drinkBlood() {}
 }	
 

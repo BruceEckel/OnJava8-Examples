@@ -41,7 +41,7 @@ public class Functional {
   // function object for each object in the list:
   public static <R,T> List<R>
   transform(Iterable<T> seq, UnaryFunction<R,T> func) {
-    List<R> result = new ArrayList<R>();
+    List<R> result = new ArrayList<>();
     for(T t : seq)
       result.add(func.function(t));
     return result;
@@ -50,7 +50,7 @@ public class Functional {
   // and returns a list of items that produced "true":
   public static <T> List<T>
   filter(Iterable<T> seq, UnaryPredicate<T> pred) {
-    List<T> result = new ArrayList<T>();
+    List<T> result = new ArrayList<>();
     for(T t : seq)
       if(pred.test(t))
         result.add(t);
@@ -59,30 +59,35 @@ public class Functional {
   // To use the above generic methods, we create
   // function objects to adapt to our particular needs:
   static class IntegerAdder implements Combiner<Integer> {
+    @Override
     public Integer combine(Integer x, Integer y) {
       return x + y;
     }
   }
   static class
   IntegerSubtracter implements Combiner<Integer> {
+    @Override
     public Integer combine(Integer x, Integer y) {
       return x - y;
     }
   }
   static class
   BigDecimalAdder implements Combiner<BigDecimal> {
+    @Override
     public BigDecimal combine(BigDecimal x, BigDecimal y) {
       return x.add(y);
     }
   }
   static class
   BigIntegerAdder implements Combiner<BigInteger> {
+    @Override
     public BigInteger combine(BigInteger x, BigInteger y) {
       return x.add(y);
     }
   }
   static class
   AtomicLongAdder implements Combiner<AtomicLong> {
+    @Override
     public AtomicLong combine(AtomicLong x, AtomicLong y) {
       // Not clear whether this is meaningful:
       return new AtomicLong(x.addAndGet(y.get()));
@@ -92,6 +97,7 @@ public class Functional {
   // (Units in the last place):
   static class BigDecimalUlp
   implements UnaryFunction<BigDecimal,BigDecimal> {
+    @Override
     public BigDecimal function(BigDecimal x) {
       return x.ulp();
     }
@@ -100,6 +106,7 @@ public class Functional {
   implements UnaryPredicate<T> {
     private T bound;
     public GreaterThan(T bound) { this.bound = bound; }
+    @Override
     public boolean test(T x) {
       return x.compareTo(bound) > 0;
     }
@@ -107,10 +114,12 @@ public class Functional {
   static class MultiplyingIntegerCollector
   implements Collector<Integer> {
     private Integer val = 1;
+    @Override
     public Integer function(Integer x) {
       val *= x;
       return val;
     }
+    @Override
     public Integer result() { return val; }
   }
   public static void main(String[] args) {
@@ -122,12 +131,12 @@ public class Functional {
     result = reduce(li, new IntegerSubtracter());
     print(result);
 
-    print(filter(li, new GreaterThan<Integer>(4)));
+    print(filter(li, new GreaterThan<>(4)));
 
     print(forEach(li,
       new MultiplyingIntegerCollector()).result());
 
-    print(forEach(filter(li, new GreaterThan<Integer>(4)),
+    print(forEach(filter(li, new GreaterThan<>(4)),
       new MultiplyingIntegerCollector()).result());
 
     MathContext mc = new MathContext(7);
@@ -138,10 +147,10 @@ public class Functional {
     print(rbd);
 
     print(filter(lbd,
-      new GreaterThan<BigDecimal>(new BigDecimal(3))));
+      new GreaterThan<>(new BigDecimal(3))));
 
     // Use the prime-generation facility of BigInteger:
-    List<BigInteger> lbi = new ArrayList<BigInteger>();
+    List<BigInteger> lbi = new ArrayList<>();
     BigInteger bi = BigInteger.valueOf(11);
     for(int i = 0; i < 11; i++) {
       lbi.add(bi);

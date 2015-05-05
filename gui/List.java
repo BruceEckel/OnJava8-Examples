@@ -12,12 +12,14 @@ public class List extends JFrame {
     "Mint Chip", "Mocha Almond Fudge", "Rum Raisin",
     "Praline Cream", "Mud Pie"
   };
+  private int count = 0;
   private DefaultListModel lItems = new DefaultListModel();
   private JList lst = new JList(lItems);
   private JTextArea t =
     new JTextArea(flavors.length, 20);
   private JButton b = new JButton("Add Item");
   private ActionListener bl = new ActionListener() {
+    @Override
     public void actionPerformed(ActionEvent e) {
       if(count < flavors.length) {
         lItems.add(0, flavors[count++]);
@@ -30,6 +32,7 @@ public class List extends JFrame {
   };
   private ListSelectionListener ll =
     new ListSelectionListener() {
+      @Override
       public void valueChanged(ListSelectionEvent e) {
         if(e.getValueIsAdjusting()) return;
         t.setText("");
@@ -37,7 +40,6 @@ public class List extends JFrame {
           t.append(item + "\n");
       }
     };
-  private int count = 0;
   public List() {
     t.setEditable(false);
     setLayout(new FlowLayout());

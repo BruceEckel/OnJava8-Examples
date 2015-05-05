@@ -24,6 +24,7 @@ public class TypeCounter extends HashMap<Class<?>,Integer>{
        baseType.isAssignableFrom(superClass))
       countClass(superClass);
   }
+  @Override
   public String toString() {
     StringBuilder result = new StringBuilder("{");
     for(Map.Entry<Class<?>,Integer> pair : entrySet()) {

@@ -5,8 +5,8 @@ public class GenericWriting {
   static <T> void writeExact(List<T> list, T item) {
     list.add(item);
   }
-  static List<Apple> apples = new ArrayList<Apple>();
-  static List<Fruit> fruit = new ArrayList<Fruit>();
+  static List<Apple> apples = new ArrayList<>();
+  static List<Fruit> fruit = new ArrayList<>();
   static void f1() {
     writeExact(apples, new Apple());
     writeExact(fruit, new Apple());

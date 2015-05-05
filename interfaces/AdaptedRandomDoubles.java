@@ -9,6 +9,7 @@ implements Readable {
   public AdaptedRandomDoubles(int count) {
     this.count = count;
   }
+  @Override
   public int read(CharBuffer cb) {
     if(count-- == 0)
       return -1;

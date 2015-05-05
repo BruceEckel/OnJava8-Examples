@@ -33,12 +33,12 @@ public class ListFeatures {
     Collections.shuffle(sub, rand); // Mix it up
     print("shuffled subList: " + sub);
     print("12: " + pets.containsAll(sub));
-    List<Pet> copy = new ArrayList<Pet>(pets);
+    List<Pet> copy = new ArrayList<>(pets);
     sub = Arrays.asList(pets.get(1), pets.get(4));
     print("sub: " + sub);
     copy.retainAll(sub);
     print("13: " + copy);
-    copy = new ArrayList<Pet>(pets); // Get a fresh copy
+    copy = new ArrayList<>(pets); // Get a fresh copy
     copy.remove(2); // Remove by index
     print("14: " + copy);
     copy.removeAll(sub); // Only removes exact objects

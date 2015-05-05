@@ -18,6 +18,7 @@ public class PetCount3 {
         if(pair.getKey().isInstance(pet))
           put(pair.getKey(), pair.getValue() + 1);
     }	
+    @Override
     public String toString() {
       StringBuilder result = new StringBuilder("{");
       for(Map.Entry<Class<? extends Pet>,Integer> pair

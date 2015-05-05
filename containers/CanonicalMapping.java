@@ -5,12 +5,16 @@ import java.util.*;
 class Element {
   private String ident;
   public Element(String id) { ident = id; }
+  @Override
   public String toString() { return ident; }
+  @Override
   public int hashCode() { return ident.hashCode(); }
+  @Override
   public boolean equals(Object r) {
     return r instanceof Element &&
       ident.equals(((Element)r).ident);
   }
+  @Override
   protected void finalize() {
     System.out.println("Finalizing " +
       getClass().getSimpleName() + " " + ident);
@@ -32,8 +36,7 @@ public class CanonicalMapping {
     if(args.length > 0)
       size = new Integer(args[0]);
     Key[] keys = new Key[size];
-    WeakHashMap<Key,Value> map =
-      new WeakHashMap<Key,Value>();
+    WeakHashMap<Key,Value> map = new WeakHashMap<>();
     for(int i = 0; i < size; i++) {
       Key k = new Key(Integer.toString(i));
       Value v = new Value(Integer.toString(i));

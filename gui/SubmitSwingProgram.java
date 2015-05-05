@@ -15,10 +15,12 @@ public class SubmitSwingProgram extends JFrame {
   static SubmitSwingProgram ssp;
   public static void main(String[] args) throws Exception {
     SwingUtilities.invokeLater(new Runnable() {
+      @Override
       public void run() { ssp = new SubmitSwingProgram(); }
     });
     TimeUnit.SECONDS.sleep(1);
     SwingUtilities.invokeLater(new Runnable() {
+      @Override
       public void run() {
         ssp.label.setText("Hey! This is Different!");
       }

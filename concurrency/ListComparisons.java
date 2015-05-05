@@ -42,7 +42,7 @@ abstract class ListTest extends Tester<List<Integer>> {
 class SynchronizedArrayListTest extends ListTest {
   List<Integer> containerInitializer() {
     return Collections.synchronizedList(
-      new ArrayList<Integer>(
+      new ArrayList<>(
         new CountingIntegerList(containerSize)));
   }
   SynchronizedArrayListTest(int nReaders, int nWriters) {
@@ -52,7 +52,7 @@ class SynchronizedArrayListTest extends ListTest {
 
 class CopyOnWriteArrayListTest extends ListTest {
   List<Integer> containerInitializer() {
-    return new CopyOnWriteArrayList<Integer>(
+    return new CopyOnWriteArrayList<>(
       new CountingIntegerList(containerSize));
   }
   CopyOnWriteArrayListTest(int nReaders, int nWriters) {

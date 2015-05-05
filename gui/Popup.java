@@ -12,6 +12,7 @@ public class Popup extends JFrame {
     setLayout(new FlowLayout());
     add(t);
     ActionListener al = new ActionListener() {
+      @Override
       public void actionPerformed(ActionEvent e) {
         t.setText(((JMenuItem)e.getSource()).getText());
       }
@@ -34,9 +35,11 @@ public class Popup extends JFrame {
     t.addMouseListener(pl);
   }
   class PopupListener extends MouseAdapter {
+    @Override
     public void mousePressed(MouseEvent e) {
       maybeShowPopup(e);
     }
+    @Override
     public void mouseReleased(MouseEvent e) {
       maybeShowPopup(e);
     }

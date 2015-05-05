@@ -12,40 +12,53 @@ abstract class Instrument {
 }
 
 class Wind extends Instrument {
+  @Override
   public void play(Note n) {
     print("Wind.play() " + n);
   }
+  @Override
   public String what() { return "Wind"; }
+  @Override
   public void adjust() {}
 }
 
 class Percussion extends Instrument {
+  @Override
   public void play(Note n) {
     print("Percussion.play() " + n);
   }
+  @Override
   public String what() { return "Percussion"; }
+  @Override
   public void adjust() {}
 }
 
 class Stringed extends Instrument {
+  @Override
   public void play(Note n) {
     print("Stringed.play() " + n);
   }
+  @Override
   public String what() { return "Stringed"; }
+  @Override
   public void adjust() {}
 }	
 
 class Brass extends Wind {
+  @Override
   public void play(Note n) {
     print("Brass.play() " + n);
   }
+  @Override
   public void adjust() { print("Brass.adjust()"); }
 }
 
 class Woodwind extends Wind {
+  @Override
   public void play(Note n) {
     print("Woodwind.play() " + n);
   }
+  @Override
   public String what() { return "Woodwind"; }
 }	
 

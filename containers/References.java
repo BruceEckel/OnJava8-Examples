@@ -8,7 +8,9 @@ class VeryBig {
   private long[] la = new long[SIZE];
   private String ident;
   public VeryBig(String id) { ident = id; }
+  @Override
   public String toString() { return ident; }
+  @Override
   protected void finalize() {
     System.out.println("Finalizing " + ident);
   }
@@ -16,7 +18,7 @@ class VeryBig {
 
 public class References {
   private static ReferenceQueue<VeryBig> rq =
-    new ReferenceQueue<VeryBig>();
+    new ReferenceQueue<>();
   public static void checkQueue() {
     Reference<? extends VeryBig> inq = rq.poll();
     if(inq != null)
@@ -28,30 +30,30 @@ public class References {
     if(args.length > 0)
       size = new Integer(args[0]);
     LinkedList<SoftReference<VeryBig>> sa =
-      new LinkedList<SoftReference<VeryBig>>();
+      new LinkedList<>();
     for(int i = 0; i < size; i++) {
-      sa.add(new SoftReference<VeryBig>(
+      sa.add(new SoftReference<>(
         new VeryBig("Soft " + i), rq));
       System.out.println("Just created: " + sa.getLast());
       checkQueue();
     }
     LinkedList<WeakReference<VeryBig>> wa =
-      new LinkedList<WeakReference<VeryBig>>();
+      new LinkedList<>();
     for(int i = 0; i < size; i++) {
-      wa.add(new WeakReference<VeryBig>(
+      wa.add(new WeakReference<>(
         new VeryBig("Weak " + i), rq));
       System.out.println("Just created: " + wa.getLast());
       checkQueue();
     }
     SoftReference<VeryBig> s =
-      new SoftReference<VeryBig>(new VeryBig("Soft"));
+      new SoftReference<>(new VeryBig("Soft"));
     WeakReference<VeryBig> w =
-      new WeakReference<VeryBig>(new VeryBig("Weak"));
+      new WeakReference<>(new VeryBig("Weak"));
     System.gc();
     LinkedList<PhantomReference<VeryBig>> pa =
-      new LinkedList<PhantomReference<VeryBig>>();
+      new LinkedList<>();
     for(int i = 0; i < size; i++) {
-      pa.add(new PhantomReference<VeryBig>(
+      pa.add(new PhantomReference<>(
         new VeryBig("Phantom " + i), rq));
       System.out.println("Just created: " + pa.getLast());
       checkQueue();

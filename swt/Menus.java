@@ -8,11 +8,12 @@ import net.mindview.util.*;
 
 public class Menus implements SWTApplication {
   private static Shell shell;
+  @Override
   public void createContents(Composite parent) {
     shell = parent.getShell();
     Menu bar = new Menu(shell, SWT.BAR);
     shell.setMenuBar(bar);
-    Set<String> words = new TreeSet<String>(
+    Set<String> words = new TreeSet<>(
       new TextFile("Menus.java", "\\W+"));
     Iterator<String> it = words.iterator();
     while(it.next().matches("[0-9]+"))

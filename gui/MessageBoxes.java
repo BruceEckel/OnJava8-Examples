@@ -12,18 +12,20 @@ public class MessageBoxes extends JFrame {
     new JButton("3 Vals")
   };
   private JTextField txt = new JTextField(15);
-  private ActionListener al = new ActionListener() {
-    public void actionPerformed(ActionEvent e) {
-      String id = ((JButton)e.getSource()).getText();
-      if(id.equals("Alert"))
+  private ActionListener al = (ActionEvent e) -> {
+    String id = ((JButton)e.getSource()).getText();
+    switch (id) {
+      case "Alert":
         JOptionPane.showMessageDialog(null,
           "There's a bug on you!", "Hey!",
           JOptionPane.ERROR_MESSAGE);
-      else if(id.equals("Yes/No"))
+        break;
+      case "Yes/No":
         JOptionPane.showConfirmDialog(null,
           "or no", "choose yes",
           JOptionPane.YES_NO_OPTION);
-      else if(id.equals("Color")) {
+        break;
+      case "Color":
         Object[] options = { "Red", "Green" };
         int sel = JOptionPane.showOptionDialog(
           null, "Choose a Color!", "Warning",
@@ -32,11 +34,14 @@ public class MessageBoxes extends JFrame {
           options, options[0]);
         if(sel != JOptionPane.CLOSED_OPTION)
           txt.setText("Color Selected: " + options[sel]);
-      } else if(id.equals("Input")) {
+        break;
+      case "Input": {
         String val = JOptionPane.showInputDialog(
-            "How many fingers do you see?");
+          "How many fingers do you see?");
         txt.setText(val);
-      } else if(id.equals("3 Vals")) {
+        break;
+      }
+      case "3 Vals": {
         Object[] selections = {"First", "Second", "Third"};
         Object val = JOptionPane.showInputDialog(
           null, "Choose one", "Input",
@@ -44,6 +49,7 @@ public class MessageBoxes extends JFrame {
           null, selections, selections[0]);
         if(val != null)
           txt.setText(val.toString());
+        break;
       }
     }
   };

@@ -18,7 +18,7 @@ public class UseCaseTracker {
     }
   }
   public static void main(String[] args) {
-    List<Integer> useCases = new ArrayList<Integer>();
+    List<Integer> useCases = new ArrayList<>();
     Collections.addAll(useCases, 47, 48, 49, 50);
     trackUseCases(useCases, PasswordUtils.class);
   }

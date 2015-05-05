@@ -14,6 +14,7 @@ class Shared {
     if(--refcount == 0)
       print("Disposing " + this);
   }
+  @Override
   public String toString() { return "Shared " + id; }
 }
 
@@ -30,6 +31,7 @@ class Composing {
     print("disposing " + this);
     shared.dispose();
   }
+  @Override
   public String toString() { return "Composing " + id; }
 }
 

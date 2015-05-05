@@ -1,0 +1,36 @@
+<?xml version="1.0" ?>
+
+<project default="run">
+  <property name="chapter" value="patterns"/>
+  <property name="excludedfiles" value=""/>
+  <import file="../Ant-Common.xml"/>
+
+  <target name="run" description="Compile and run" depends="build">
+    <touch file="failures"/>
+    <jrun cls="CommandPattern" />
+    <jrun cls="Facade" />
+    <jrun cls="PaperScissorsRock" />
+    <jrun cls="ProxyDemo" />
+    <jrun cls="ShapeFactory2" />
+    <jrun cls="SingletonPattern" />
+    <jrun cls="StateDemo" />
+    <jrun cls="TemplateMethod" />
+    <jrun cls="patterns.absfactory.GameEnvironment" dirpath="../patterns/absfactory" />
+    <jrun cls="patterns.adapt.Adapter" dirpath="../patterns/adapt" />
+    <jrun cls="patterns.chain.ChainOfResponsibility" dirpath="../patterns/chain" />
+    <jrun cls="patterns.doubledispatch.DoubleDispatch" dirpath="../patterns/doubledispatch" />
+    <jrun cls="patterns.dynatrash.DynaTrash" dirpath="../patterns/dynatrash" />
+    <jrun cls="patterns.factory.ShapeFactory1" dirpath="../patterns/factory" />
+    <jrun cls="patterns.observer.ObservedFlower" dirpath="../patterns/observer" />
+    <jrun cls="patterns.recyclea.RecycleA" dirpath="../patterns/recyclea" />
+    <jrun cls="patterns.recycleap.RecycleAP" dirpath="../patterns/recycleap" />
+    <jrun cls="patterns.recycleb.RecycleB" dirpath="../patterns/recycleb" />
+    <jrun cls="patterns.state.StateMachineDemo" dirpath="../patterns/state" />
+    <jrun cls="patterns.strategy.StrategyPattern" dirpath="../patterns/strategy" />
+    <jrun cls="patterns.trashvisitor.TrashVisitor" dirpath="../patterns/trashvisitor" />
+    <jrun cls="patterns.visitor.BeeAndFlowers" dirpath="../patterns/visitor" />
+    <jrun cls="patterns.visualobserver.BoxObserver" dirpath="../patterns/visualobserver" failOnError='false' timeOut='4000' />
+    <delete file="failures"/>
+  </target>
+
+</project>

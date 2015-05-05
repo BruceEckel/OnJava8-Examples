@@ -28,6 +28,7 @@ public class FileChooserTest extends JFrame {
     add(p, BorderLayout.NORTH);
   }
   class OpenL implements ActionListener {
+    @Override
     public void actionPerformed(ActionEvent e) {
       JFileChooser c = new JFileChooser();
       // Demonstrate "Open" dialog:
@@ -43,6 +44,7 @@ public class FileChooserTest extends JFrame {
     }
   }
   class SaveL implements ActionListener {
+    @Override
     public void actionPerformed(ActionEvent e) {
       JFileChooser c = new JFileChooser();
       // Demonstrate "Save" dialog:

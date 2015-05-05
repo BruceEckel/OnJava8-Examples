@@ -13,6 +13,7 @@ public class Member {
   public String getHandle() { return handle; }
   public String getFirstName() { return firstName; }
   public String getLastName() { return lastName; }
+  @Override
   public String toString() { return handle; }
   public Integer getAge() { return age; }
 } ///:~

@@ -24,7 +24,7 @@ public class TableCreator {
       // If the name is empty, use the Class name:
       if(tableName.length() < 1)
         tableName = cl.getName().toUpperCase();
-      List<String> columnDefs = new ArrayList<String>();
+      List<String> columnDefs = new ArrayList<>();
       for(Field field : cl.getDeclaredFields()) {
         String columnName = null;
         Annotation[] anns = field.getDeclaredAnnotations();

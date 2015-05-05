@@ -13,6 +13,7 @@ public enum RoShamBo2 implements Competitor<RoShamBo2> {
     this.vSCISSORS = scissors;
     this.vROCK = rock;
   }	
+  @Override
   public Outcome compete(RoShamBo2 it) {
     switch(it) {
       default:

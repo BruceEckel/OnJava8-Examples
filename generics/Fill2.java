@@ -34,6 +34,7 @@ class AddableCollectionAdapter<T> implements Addable<T> {
   public AddableCollectionAdapter(Collection<T> c) {
     this.c = c;
   }
+  @Override
   public void add(T item) { c.add(item); }
 }
 	
@@ -41,7 +42,7 @@ class AddableCollectionAdapter<T> implements Addable<T> {
 class Adapter {
   public static <T>
   Addable<T> collectionAdapter(Collection<T> c) {
-    return new AddableCollectionAdapter<T>(c);
+    return new AddableCollectionAdapter<>(c);
   }
 }
 
@@ -49,15 +50,16 @@ class Adapter {
 // Make a SimpleQueue Addable using inheritance:
 class AddableSimpleQueue<T>
 extends SimpleQueue<T> implements Addable<T> {
+  @Override
   public void add(T item) { super.add(item); }
 }
 	
 class Fill2Test {
   public static void main(String[] args) {
     // Adapt a Collection:
-    List<Coffee> carrier = new ArrayList<Coffee>();
+    List<Coffee> carrier = new ArrayList<>();
     Fill2.fill(
-      new AddableCollectionAdapter<Coffee>(carrier),
+      new AddableCollectionAdapter<>(carrier),
       Coffee.class, 3);
     // Helper method captures the type:
     Fill2.fill(Adapter.collectionAdapter(carrier),
@@ -67,7 +69,7 @@ class Fill2Test {
     print("----------------------");
     // Use an adapted class:
     AddableSimpleQueue<Coffee> coffeeQueue =
-      new AddableSimpleQueue<Coffee>();
+      new AddableSimpleQueue<>();
     Fill2.fill(coffeeQueue, Mocha.class, 4);
     Fill2.fill(coffeeQueue, Latte.class, 1);
     for(Coffee c: coffeeQueue)

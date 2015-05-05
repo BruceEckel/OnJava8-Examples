@@ -13,6 +13,7 @@ public class RandomWords implements Readable {
     "aeiou".toCharArray();
   private int count;
   public RandomWords(int count) { this.count = count; }	
+  @Override
   public int read(CharBuffer cb) {
     if(count-- == 0)
       return -1; // Indicates end of input

@@ -7,6 +7,7 @@ import static net.mindview.util.Print.*;
 class Data implements Serializable {
   private int n;
   public Data(int n) { this.n = n; }
+  @Override
   public String toString() { return Integer.toString(n); }
 }
 
@@ -29,6 +30,7 @@ public class Worm implements Serializable {
   public Worm() {
     print("Default constructor");
   }
+  @Override
   public String toString() {
     StringBuilder result = new StringBuilder(":");
     result.append(c);

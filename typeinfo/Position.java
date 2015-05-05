@@ -23,6 +23,7 @@ class Position {
     if(person == null)
       person = Person.NULL;
   }
+  @Override
   public String toString() {
     return "Position: " + title + " " + person;
   }

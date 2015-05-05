@@ -10,6 +10,7 @@ import static net.mindview.util.Print.*;
 class NIOBlocked implements Runnable {
   private final SocketChannel sc;
   public NIOBlocked(SocketChannel sc) { this.sc = sc; }
+  @Override
   public void run() {
     try {
       print("Waiting for read() in " + this);

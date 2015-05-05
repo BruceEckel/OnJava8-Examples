@@ -1,7 +1,7 @@
 //: io/xfiles/ThawAlien.java
 // Try to recover a serialized file without the
 // class of object that's stored in that file.
-// {RunByHand}
+// {ThrowsException}
 import java.io.*;
 
 public class ThawAlien {
@@ -11,6 +11,4 @@ public class ThawAlien {
     Object mystery = in.readObject();
     System.out.println(mystery.getClass());
   }
-} /* Output:
-class Alien
-*///:~
+} ///:~

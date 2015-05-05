@@ -12,9 +12,9 @@ public class LinkedStack<T> {
     }
     boolean end() { return item == null && next == null; }
   }
-  private Node<T> top = new Node<T>(); // End sentinel
+  private Node<T> top = new Node<>(); // End sentinel
   public void push(T item) {
-    top = new Node<T>(item, top);
+    top = new Node<>(item, top);
   }	
   public T pop() {
     T result = top.item;
@@ -23,7 +23,7 @@ public class LinkedStack<T> {
     return result;
   }
   public static void main(String[] args) {
-    LinkedStack<String> lss = new LinkedStack<String>();
+    LinkedStack<String> lss = new LinkedStack<>();
     for(String s : "Phasers on stun!".split(" "))
       lss.push(s);
     String s;

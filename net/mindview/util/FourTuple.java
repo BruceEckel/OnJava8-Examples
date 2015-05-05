@@ -7,6 +7,7 @@ public class FourTuple<A,B,C,D> extends ThreeTuple<A,B,C> {
     super(a, b, c);
     fourth = d;
   }
+  @Override
   public String toString() {
     return "(" + first + ", " + second + ", " +
       third + ", " + fourth + ")";

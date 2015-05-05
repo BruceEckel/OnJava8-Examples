@@ -10,15 +10,17 @@ Runnable, Comparable<PrioritizedTask>  {
   private final int id = counter++;
   private final int priority;
   protected static List<PrioritizedTask> sequence =
-    new ArrayList<PrioritizedTask>();
+    new ArrayList<>();
   public PrioritizedTask(int priority) {
     this.priority = priority;
     sequence.add(this);
   }
+  @Override
   public int compareTo(PrioritizedTask arg) {
     return priority < arg.priority ? 1 :
       (priority > arg.priority ? -1 : 0);
   }
+  @Override
   public void run() {
     try {
       TimeUnit.MILLISECONDS.sleep(rand.nextInt(250));
@@ -27,6 +29,7 @@ Runnable, Comparable<PrioritizedTask>  {
     }
     print(this);
   }
+  @Override
   public String toString() {
     return String.format("[%1$-3d]", priority) +
       " Task " + id;
@@ -40,6 +43,7 @@ Runnable, Comparable<PrioritizedTask>  {
       super(-1); // Lowest priority in this program
       exec = e;
     }
+    @Override
     public void run() {
       int count = 0;
       for(PrioritizedTask pt : sequence) {
@@ -63,6 +67,7 @@ class PrioritizedTaskProducer implements Runnable {
     queue = q;
     exec = e; // Used for EndSentinel
   }
+  @Override
   public void run() {
     // Unbounded queue; never blocks.
     // Fill it up fast with random priorities:
@@ -94,6 +99,7 @@ class PrioritizedTaskConsumer implements Runnable {
     PriorityBlockingQueue<Runnable> q) {
     this.q = q;
   }
+  @Override
   public void run() {
     try {
       while(!Thread.interrupted())
@@ -110,7 +116,7 @@ public class PriorityBlockingQueueDemo {
   public static void main(String[] args) throws Exception {
     ExecutorService exec = Executors.newCachedThreadPool();
     PriorityBlockingQueue<Runnable> queue =
-      new PriorityBlockingQueue<Runnable>();
+      new PriorityBlockingQueue<>();
     exec.execute(new PrioritizedTaskProducer(queue, exec));
     exec.execute(new PrioritizedTaskConsumer(queue));
   }

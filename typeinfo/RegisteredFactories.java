@@ -4,11 +4,12 @@ import typeinfo.factory.*;
 import java.util.*;
 
 class Part {
+  @Override
   public String toString() {
     return getClass().getSimpleName();
   }
   static List<Factory<? extends Part>> partFactories =
-    new ArrayList<Factory<? extends Part>>();	
+    new ArrayList<>();	
   static {
     // Collections.addAll() gives an "unchecked generic
     // array creation ... for varargs parameter" warning.
@@ -33,6 +34,7 @@ class FuelFilter extends Filter {
   // Create a Class Factory for each specific type:
   public static class Factory
   implements typeinfo.factory.Factory<FuelFilter> {
+    @Override
     public FuelFilter create() { return new FuelFilter(); }
   }
 }
@@ -40,6 +42,7 @@ class FuelFilter extends Filter {
 class AirFilter extends Filter {
   public static class Factory
   implements typeinfo.factory.Factory<AirFilter> {
+    @Override
     public AirFilter create() { return new AirFilter(); }
   }
 }	
@@ -47,6 +50,7 @@ class AirFilter extends Filter {
 class CabinAirFilter extends Filter {
   public static class Factory
   implements typeinfo.factory.Factory<CabinAirFilter> {
+    @Override
     public CabinAirFilter create() {
       return new CabinAirFilter();
     }
@@ -56,6 +60,7 @@ class CabinAirFilter extends Filter {
 class OilFilter extends Filter {
   public static class Factory
   implements typeinfo.factory.Factory<OilFilter> {
+    @Override
     public OilFilter create() { return new OilFilter(); }
   }
 }	
@@ -65,6 +70,7 @@ class Belt extends Part {}
 class FanBelt extends Belt {
   public static class Factory
   implements typeinfo.factory.Factory<FanBelt> {
+    @Override
     public FanBelt create() { return new FanBelt(); }
   }
 }
@@ -72,6 +78,7 @@ class FanBelt extends Belt {
 class GeneratorBelt extends Belt {
   public static class Factory
   implements typeinfo.factory.Factory<GeneratorBelt> {
+    @Override
     public GeneratorBelt create() {
       return new GeneratorBelt();
     }
@@ -81,6 +88,7 @@ class GeneratorBelt extends Belt {
 class PowerSteeringBelt extends Belt {
   public static class Factory
   implements typeinfo.factory.Factory<PowerSteeringBelt> {
+    @Override
     public PowerSteeringBelt create() {
       return new PowerSteeringBelt();
     }

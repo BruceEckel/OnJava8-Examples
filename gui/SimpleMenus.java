@@ -7,6 +7,7 @@ import static net.mindview.util.SwingConsole.*;
 public class SimpleMenus extends JFrame {
   private JTextField t = new JTextField(15);
   private ActionListener al = new ActionListener() {
+    @Override
     public void actionPerformed(ActionEvent e) {
       t.setText(((JMenuItem)e.getSource()).getText());
     }

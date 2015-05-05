@@ -9,6 +9,7 @@ interface OrdinaryGetter {
 
 interface DerivedGetter extends OrdinaryGetter {
   // Return type of overridden method is allowed to vary:
+  @Override
   Derived get();
 }
 

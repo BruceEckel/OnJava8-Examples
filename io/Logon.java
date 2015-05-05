@@ -13,6 +13,7 @@ public class Logon implements Serializable {
     username = name;
     password = pwd;
   }
+  @Override
   public String toString() {
     return "logon info: \n   username: " + username +
       "\n   date: " + date + "\n   password: " + password;

@@ -29,6 +29,7 @@ abstract class Accumulator {
   public abstract void accumulate();
   public abstract long read();
   private class Modifier implements Runnable {
+    @Override
     public void run() {
       for(long i = 0; i < cycles; i++)
         accumulate();
@@ -41,6 +42,7 @@ abstract class Accumulator {
   }
   private class Reader implements Runnable {
     private volatile long value;
+    @Override
     public void run() {
       for(long i = 0; i < cycles; i++)
         value = read();
@@ -73,10 +75,12 @@ abstract class Accumulator {
 
 class SynchronizedTest extends Accumulator {
   { id = "synch"; }
+  @Override
   public synchronized void accumulate() {
     value += preLoaded[index++];
     if(index >= SIZE) index = 0;
   }
+  @Override
   public synchronized long read() {
     return value;
   }
@@ -85,6 +89,7 @@ class SynchronizedTest extends Accumulator {
 class LockTest extends Accumulator {
   { id = "Lock"; }
   private Lock lock = new ReentrantLock();
+  @Override
   public void accumulate() {
     lock.lock();
     try {
@@ -94,6 +99,7 @@ class LockTest extends Accumulator {
       lock.unlock();
     }
   }
+  @Override
   public long read() {
     lock.lock();
     try {
@@ -111,6 +117,7 @@ class AtomicTest extends Accumulator {
   // Relying on more than one Atomic at a time doesn't
   // work, so we still have to synchronize. But it gives
   // a performance indicator:
+  @Override
   public synchronized void accumulate() {
     int i;
     i = index.getAndIncrement();
@@ -118,7 +125,9 @@ class AtomicTest extends Accumulator {
     if(++i >= SIZE)
       index.set(0);
   }
+  @Override
   public synchronized long read() { return value.get(); }
+  @Override
   public void report(Accumulator acc2) {
     printf("%-22s: %.2f\n", "synch/(Atomic-synch)",
       (double)acc2.duration/

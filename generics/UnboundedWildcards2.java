@@ -14,8 +14,8 @@ public class UnboundedWildcards2 {
     // assign3(new HashMap()); // Warning:
     // Unchecked conversion. Found: HashMap
     // Required: Map<String,?>
-    assign1(new HashMap<String,Integer>());
-    assign2(new HashMap<String,Integer>());
-    assign3(new HashMap<String,Integer>());
+    assign1(new HashMap<>());
+    assign2(new HashMap<>());
+    assign3(new HashMap<>());
   }
 } ///:~

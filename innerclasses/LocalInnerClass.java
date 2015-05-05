@@ -15,6 +15,7 @@ public class LocalInnerClass {
         // Local inner class can have a constructor
         print("LocalCounter()");
       }
+      @Override
       public int next() {
         printnb(name); // Access local final
         return count++;
@@ -30,6 +31,7 @@ public class LocalInnerClass {
       {
         print("Counter()");
       }
+      @Override
       public int next() {
         printnb(name); // Access local final
         return count++;

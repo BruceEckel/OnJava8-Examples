@@ -7,6 +7,7 @@ class WaterSource {
     System.out.println("WaterSource()");
     s = "Constructed";
   }
+  @Override
   public String toString() { return s; }
 }	
 
@@ -15,6 +16,7 @@ public class SprinklerSystem {
   private WaterSource source = new WaterSource();
   private int i;
   private float f;
+  @Override
   public String toString() {
     return
       "valve1 = " + valve1 + " " +

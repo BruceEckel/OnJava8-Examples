@@ -72,7 +72,7 @@ public class TextFile extends ArrayList<String> {
     TextFile text = new TextFile("test.txt");
     text.write("test2.txt");
     // Break into unique sorted list of words:
-    TreeSet<String> words = new TreeSet<String>(
+    TreeSet<String> words = new TreeSet<>(
       new TextFile("TextFile.java", "\\W+"));
     // Display the capitalized words:
     System.out.println(words.headSet("a"));

@@ -12,6 +12,7 @@ public final class Directory {
   local(File dir, final String regex) {
     return dir.listFiles(new FilenameFilter() {
       private Pattern pattern = Pattern.compile(regex);
+      @Override
       public boolean accept(File dir, String name) {
         return pattern.matcher(
           new File(name).getName()).matches();
@@ -24,9 +25,10 @@ public final class Directory {
   }
   // A two-tuple for returning a pair of objects:
   public static class TreeInfo implements Iterable<File> {
-    public List<File> files = new ArrayList<File>();
-    public List<File> dirs = new ArrayList<File>();
+    public List<File> files = new ArrayList<>();
+    public List<File> dirs = new ArrayList<>();
     // The default iterable element is the file list:
+    @Override
     public Iterator<File> iterator() {
       return files.iterator();
     }
@@ -34,6 +36,7 @@ public final class Directory {
       files.addAll(other.files);
       dirs.addAll(other.dirs);
     }
+    @Override
     public String toString() {
       return "dirs: " + PPrint.pformat(dirs) +
         "\n\nfiles: " + PPrint.pformat(files);

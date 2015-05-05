@@ -13,11 +13,11 @@ public class ClassTypeCapture<T> {
   }	
   public static void main(String[] args) {
     ClassTypeCapture<Building> ctt1 =
-      new ClassTypeCapture<Building>(Building.class);
+      new ClassTypeCapture<>(Building.class);
     System.out.println(ctt1.f(new Building()));
     System.out.println(ctt1.f(new House()));
     ClassTypeCapture<House> ctt2 =
-      new ClassTypeCapture<House>(House.class);
+      new ClassTypeCapture<>(House.class);
     System.out.println(ctt2.f(new Building()));
     System.out.println(ctt2.f(new House()));
   }

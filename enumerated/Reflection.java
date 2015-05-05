@@ -15,7 +15,7 @@ public class Reflection {
       print(t);
     print("Base: " + enumClass.getSuperclass());
     print("Methods: ");
-    Set<String> methods = new TreeSet<String>();
+    Set<String> methods = new TreeSet<>();
     for(Method m : enumClass.getMethods())
       methods.add(m.getName());
     print(methods);
@@ -51,7 +51,7 @@ Compiled from "Reflection.java"
 final class Explore extends java.lang.Enum{
     public static final Explore HERE;
     public static final Explore THERE;
-    public static final Explore[] values();
+    public static Explore[] values();
     public static Explore valueOf(java.lang.String);
     static {};
 }

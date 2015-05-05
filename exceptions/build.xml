@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+
+<project default="run">
+  <property name="chapter" value="exceptions"/>
+  <property name="excludedfiles" value=""/>
+  <import file="../Ant-Common.xml"/>
+
+  <target name="run" description="Compile and run" depends="build">
+    <touch file="failures"/>
+    <jrun cls="AlwaysFinally" />
+    <jrun cls="Cleanup" />
+    <jrun cls="CleanupIdiom" />
+    <jrun cls="DynamicFields" failOnError='false' msg='* Exception was Expected *' />
+    <jrun cls="ExceptionMethods" />
+    <jrun cls="ExceptionSilencer" />
+    <jrun cls="ExtraFeatures" />
+    <jrun cls="FinallyWorks" />
+    <jrun cls="FullConstructors" />
+    <jrun cls="Human" />
+    <jrun cls="InheritingExceptions" />
+    <jrun cls="LoggingExceptions" />
+    <jrun cls="LoggingExceptions2" />
+    <jrun cls="LostMessage" />
+    <jrun cls="MainException" />
+    <jrun cls="MultipleReturns" />
+    <jrun cls="NeverCaught" failOnError='false' msg='* Exception was Expected *' />
+    <jrun cls="OnOffSwitch" />
+    <jrun cls="Rethrowing" />
+    <jrun cls="RethrowNew" />
+    <jrun cls="StormyInning" />
+    <jrun cls="TurnOffChecking" />
+    <jrun cls="WhoCalled" />
+    <jrun cls="WithFinally" />
+    <delete file="failures"/>
+  </target>
+
+</project>

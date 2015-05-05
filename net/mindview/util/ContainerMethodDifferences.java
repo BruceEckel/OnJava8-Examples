@@ -5,7 +5,7 @@ import java.util.*;
 
 public class ContainerMethodDifferences {
   static Set<String> methodSet(Class<?> type) {
-    Set<String> result = new TreeSet<String>();
+    Set<String> result = new TreeSet<>();
     for(Method m : type.getMethods())
       result.add(m.getName());
     return result;
@@ -13,7 +13,7 @@ public class ContainerMethodDifferences {
   static void interfaces(Class<?> type) {
     System.out.print("Interfaces in " +
       type.getSimpleName() + ": ");
-    List<String> result = new ArrayList<String>();
+    List<String> result = new ArrayList<>();
     for(Class<?> c : type.getInterfaces())
       result.add(c.getSimpleName());
     System.out.println(result);

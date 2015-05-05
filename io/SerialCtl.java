@@ -10,6 +10,7 @@ public class SerialCtl implements Serializable {
     a = "Not Transient: " + aa;
     b = "Transient: " + bb;
   }
+  @Override
   public String toString() { return a + "\n" + b; }
   private void writeObject(ObjectOutputStream stream)
   throws IOException {

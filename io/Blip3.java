@@ -16,7 +16,9 @@ public class Blip3 implements Externalizable {
     i = a;
     // s & i initialized only in non-default constructor.
   }
+  @Override
   public String toString() { return s + i; }
+  @Override
   public void writeExternal(ObjectOutput out)
   throws IOException {
     print("Blip3.writeExternal");
@@ -24,6 +26,7 @@ public class Blip3 implements Externalizable {
     out.writeObject(s);
     out.writeInt(i);
   }
+  @Override
   public void readExternal(ObjectInput in)
   throws IOException, ClassNotFoundException {
     print("Blip3.readExternal");

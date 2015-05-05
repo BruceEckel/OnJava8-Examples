@@ -13,6 +13,7 @@ public class RadioButtons extends JFrame {
     rb2 = new JRadioButton("two", false),
     rb3 = new JRadioButton("three", false);
   private ActionListener al = new ActionListener() {
+    @Override
     public void actionPerformed(ActionEvent e) {
       t.setText("Radio button " +
         ((JRadioButton)e.getSource()).getText());

@@ -18,6 +18,7 @@ class MonitoredCallable implements Callable<String> {
     monitor.setMaximum(MAX - 1);
     monitor.setMillisToPopup(500);
   }
+  @Override
   public String call() {
     System.out.println(this + " started");
     try {
@@ -26,8 +27,8 @@ class MonitoredCallable implements Callable<String> {
         if(monitor.isCanceled())
           Thread.currentThread().interrupt();
         final int progress = i;
-        SwingUtilities.invokeLater(
-          new Runnable() {
+        SwingUtilities.invokeLater(new Runnable() {
+          @Override
             public void run() {
               monitor.setProgress(progress);
             }
@@ -42,6 +43,7 @@ class MonitoredCallable implements Callable<String> {
     System.out.println(this + " completed");
     return "Result: " + this + " completed";
   }
+  @Override
   public String toString() { return "Task " + id; }
 };
 
@@ -51,9 +53,10 @@ public class MonitoredLongRunningCallable extends JFrame {
     b2 = new JButton("End Long Running Task"),
     b3 = new JButton("Get results");
   private TaskManager<String,MonitoredCallable> manager =
-    new TaskManager<String,MonitoredCallable>();
+    new TaskManager<>();
   public MonitoredLongRunningCallable() {
     b1.addActionListener(new ActionListener() {
+      @Override
       public void actionPerformed(ActionEvent e) {
         MonitoredCallable task = new MonitoredCallable(
           new ProgressMonitor(
@@ -65,12 +68,14 @@ public class MonitoredLongRunningCallable extends JFrame {
       }
     });
     b2.addActionListener(new ActionListener() {
+      @Override
       public void actionPerformed(ActionEvent e) {
         for(String result : manager.purge())
           System.out.println(result);
       }
     });
     b3.addActionListener(new ActionListener() {
+      @Override
       public void actionPerformed(ActionEvent e) {
         for(String result : manager.getResults())
           System.out.println(result);

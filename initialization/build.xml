@@ -1,0 +1,46 @@
+<?xml version="1.0" ?>
+
+<project default="run">
+  <property name="chapter" value="initialization"/>
+  <property name="excludedfiles" value="OverloadingVarargs2.java"/>
+  <import file="../Ant-Common.xml"/>
+
+  <target name="run" description="Compile and run" depends="build">
+    <touch file="failures"/>
+    <jrun cls="ArrayClassObj" />
+    <jrun cls="ArrayInit" />
+    <jrun cls="ArrayNew" />
+    <jrun cls="ArraysOfPrimitives" />
+    <jrun cls="AutoboxingVarargs" />
+    <jrun cls="BananaPeel" />
+    <jrun cls="Burrito" />
+    <jrun cls="DefaultConstructor" />
+    <jrun cls="Demotion" />
+    <jrun cls="DynamicArray" />
+    <jrun cls="EnumOrder" />
+    <jrun cls="ExplicitStatic" />
+    <jrun cls="Flower" />
+    <jrun cls="InitialValues" />
+    <jrun cls="Leaf" />
+    <jrun cls="Mugs" />
+    <jrun cls="NewVarArgs" />
+    <jrun cls="NoSynthesis" />
+    <jrun cls="OptionalTrailingArguments" />
+    <jrun cls="OrderOfInitialization" />
+    <jrun cls="Overloading" />
+    <jrun cls="OverloadingOrder" />
+    <jrun cls="OverloadingVarargs" />
+    <jrun cls="OverloadingVarargs3" />
+    <jrun cls="PassingThis" />
+    <jrun cls="PrimitiveOverloading" />
+    <jrun cls="SimpleConstructor" />
+    <jrun cls="SimpleConstructor2" />
+    <jrun cls="SimpleEnumUse" />
+    <jrun cls="StaticInitialization" />
+    <jrun cls="TerminationCondition" />
+    <jrun cls="VarArgs" />
+    <jrun cls="VarargType" />
+    <delete file="failures"/>
+  </target>
+
+</project>

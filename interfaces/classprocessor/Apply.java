@@ -11,18 +11,21 @@ class Processor {
 }	
 
 class Upcase extends Processor {
+  @Override
   String process(Object input) { // Covariant return
     return ((String)input).toUpperCase();
   }
 }
 
 class Downcase extends Processor {
+  @Override
   String process(Object input) {
     return ((String)input).toLowerCase();
   }
 }
 
 class Splitter extends Processor {
+  @Override
   String process(Object input) {
     // The split() argument divides a String into pieces:
     return Arrays.toString(((String)input).split(" "));

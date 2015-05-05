@@ -10,6 +10,7 @@ interface Incrementable {
 // Very simple to just implement the interface:
 class Callee1 implements Incrementable {
   private int i = 0;
+  @Override
   public void increment() {
     i++;
     print(i);
@@ -25,12 +26,14 @@ class MyIncrement {
 // some other way, you must use an inner class:
 class Callee2 extends MyIncrement {
   private int i = 0;
+  @Override
   public void increment() {
     super.increment();
     i++;
     print(i);
   }
   private class Closure implements Incrementable {
+    @Override
     public void increment() {
       // Specify outer-class method, otherwise
       // you'd get an infinite recursion:

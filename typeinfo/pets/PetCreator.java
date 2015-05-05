@@ -24,7 +24,7 @@ public abstract class PetCreator {
     return result;
   }
   public ArrayList<Pet> arrayList(int size) {
-    ArrayList<Pet> result = new ArrayList<Pet>();
+    ArrayList<Pet> result = new ArrayList<>();
     Collections.addAll(result, createArray(size));
     return result;
   }

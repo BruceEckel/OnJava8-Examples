@@ -13,6 +13,7 @@ class Circle extends Shape {
     super(i);
     print("Drawing Circle");
   }
+  @Override
   void dispose() {
     print("Erasing Circle");
     super.dispose();
@@ -24,6 +25,7 @@ class Triangle extends Shape {
     super(i);
     print("Drawing Triangle");
   }
+  @Override
   void dispose() {
     print("Erasing Triangle");
     super.dispose();
@@ -38,6 +40,7 @@ class Line extends Shape {
     this.end = end;
     print("Drawing Line: " + start + ", " + end);
   }
+  @Override
   void dispose() {
     print("Erasing Line: " + start + ", " + end);
     super.dispose();
@@ -56,6 +59,7 @@ public class CADSystem extends Shape {
     t = new Triangle(1);
     print("Combined constructor");
   }
+  @Override
   public void dispose() {
     print("CADSystem.dispose()");
     // The order of cleanup is the reverse

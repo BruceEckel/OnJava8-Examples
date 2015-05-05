@@ -137,14 +137,19 @@ public class Countries {
     implements Map.Entry<String,String> {
       int index;
       Entry(int index) { this.index = index; }
+      @Override
       public boolean equals(Object o) {
         return DATA[index][0].equals(o);
       }
+      @Override
       public String getKey() { return DATA[index][0]; }
+      @Override
       public String getValue() { return DATA[index][1]; }
+      @Override
       public String setValue(String value) {
         throw new UnsupportedOperationException();
       }
+      @Override
       public int hashCode() {
         return DATA[index][0].hashCode();
       }
@@ -162,22 +167,27 @@ public class Countries {
         else
           this.size = size;
       }
+      @Override
       public int size() { return size; }
       private class Iter
       implements Iterator<Map.Entry<String,String>> {
         // Only one Entry object per Iterator:
         private Entry entry = new Entry(-1);
+        @Override
         public boolean hasNext() {
           return entry.index < size - 1;
         }
+        @Override
         public Map.Entry<String,String> next() {
           entry.index++;
           return entry;
         }
+        @Override
         public void remove() {
           throw new UnsupportedOperationException();
         }
       }
+      @Override
       public
       Iterator<Map.Entry<String,String>> iterator() {
         return new Iter();
@@ -185,6 +195,7 @@ public class Countries {
     }
     private static Set<Map.Entry<String,String>> entries =
       new EntrySet(DATA.length);
+    @Override
     public Set<Map.Entry<String,String>> entrySet() {
       return entries;
     }
@@ -192,6 +203,7 @@ public class Countries {
   // Create a partial map of 'size' countries:
   static Map<String,String> select(final int size) {
     return new FlyweightMap() {
+      @Override
       public Set<Map.Entry<String,String>> entrySet() {
         return new EntrySet(size);
       }
@@ -205,38 +217,38 @@ public class Countries {
     return select(size); // A partial map
   }
   static List<String> names =
-    new ArrayList<String>(map.keySet());
+    new ArrayList<>(map.keySet());
   // All the names:
   public static List<String> names() { return names; }
   // A partial list:
   public static List<String> names(int size) {
-    return new ArrayList<String>(select(size).keySet());
+    return new ArrayList<>(select(size).keySet());
   }
   public static void main(String[] args) {
     print(capitals(10));
     print(names(10));
-    print(new HashMap<String,String>(capitals(3)));
-    print(new LinkedHashMap<String,String>(capitals(3)));
-    print(new TreeMap<String,String>(capitals(3)));
-    print(new Hashtable<String,String>(capitals(3)));
-    print(new HashSet<String>(names(6)));
-    print(new LinkedHashSet<String>(names(6)));
-    print(new TreeSet<String>(names(6)));
-    print(new ArrayList<String>(names(6)));
-    print(new LinkedList<String>(names(6)));
+    print(new HashMap<>(capitals(3)));
+    print(new LinkedHashMap<>(capitals(3)));
+    print(new TreeMap<>(capitals(3)));
+    print(new Hashtable<>(capitals(3)));
+    print(new HashSet<>(names(6)));
+    print(new LinkedHashSet<>(names(6)));
+    print(new TreeSet<>(names(6)));
+    print(new ArrayList<>(names(6)));
+    print(new LinkedList<>(names(6)));
     print(capitals().get("BRAZIL"));
   }
 } /* Output:
-{ALGERIA=Algiers, ANGOLA=Luanda, BENIN=Porto-Novo, BOTSWANA=Gaberone, BULGARIA=Sofia, BURKINA FASO=Ouagadougou, BURUNDI=Bujumbura, CAMEROON=Yaounde, CAPE VERDE=Praia, CENTRAL AFRICAN REPUBLIC=Bangui}
-[ALGERIA, ANGOLA, BENIN, BOTSWANA, BULGARIA, BURKINA FASO, BURUNDI, CAMEROON, CAPE VERDE, CENTRAL AFRICAN REPUBLIC]
-{BENIN=Porto-Novo, ANGOLA=Luanda, ALGERIA=Algiers}
+{ALGERIA=Algiers, ANGOLA=Luanda, BENIN=Porto-Novo, BOTSWANA=Gaberone, BURKINA FASO=Ouagadougou, BURUNDI=Bujumbura, CAMEROON=Yaounde, CAPE VERDE=Praia, CENTRAL AFRICAN REPUBLIC=Bangui, CHAD=N'djamena}
+[ALGERIA, ANGOLA, BENIN, BOTSWANA, BURKINA FASO, BURUNDI, CAMEROON, CAPE VERDE, CENTRAL AFRICAN REPUBLIC, CHAD]
+{ANGOLA=Luanda, ALGERIA=Algiers, BENIN=Porto-Novo}
 {ALGERIA=Algiers, ANGOLA=Luanda, BENIN=Porto-Novo}
 {ALGERIA=Algiers, ANGOLA=Luanda, BENIN=Porto-Novo}
 {ALGERIA=Algiers, ANGOLA=Luanda, BENIN=Porto-Novo}
-[BULGARIA, BURKINA FASO, BOTSWANA, BENIN, ANGOLA, ALGERIA]
-[ALGERIA, ANGOLA, BENIN, BOTSWANA, BULGARIA, BURKINA FASO]
-[ALGERIA, ANGOLA, BENIN, BOTSWANA, BULGARIA, BURKINA FASO]
-[ALGERIA, ANGOLA, BENIN, BOTSWANA, BULGARIA, BURKINA FASO]
-[ALGERIA, ANGOLA, BENIN, BOTSWANA, BULGARIA, BURKINA FASO]
+[ANGOLA, ALGERIA, BURKINA FASO, BENIN, BURUNDI, BOTSWANA]
+[ALGERIA, ANGOLA, BENIN, BOTSWANA, BURKINA FASO, BURUNDI]
+[ALGERIA, ANGOLA, BENIN, BOTSWANA, BURKINA FASO, BURUNDI]
+[ALGERIA, ANGOLA, BENIN, BOTSWANA, BURKINA FASO, BURUNDI]
+[ALGERIA, ANGOLA, BENIN, BOTSWANA, BURKINA FASO, BURUNDI]
 Brasilia
 *///:~

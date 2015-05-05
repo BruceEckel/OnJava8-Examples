@@ -17,6 +17,7 @@ class Implementation1 implements Service {
 }	
 
 class Implementation1Factory implements ServiceFactory {
+  @Override
   public Service getService() {
     return new Implementation1();
   }
@@ -29,6 +30,7 @@ class Implementation2 implements Service {
 }
 
 class Implementation2Factory implements ServiceFactory {
+  @Override
   public Service getService() {
     return new Implementation2();
   }

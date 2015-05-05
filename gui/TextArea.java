@@ -12,18 +12,19 @@ public class TextArea extends JFrame {
     b = new JButton("Add Data"),
     c = new JButton("Clear Data");
   private JTextArea t = new JTextArea(20, 40);
-  private Map<String,String> m =
-    new HashMap<String,String>();
+  private Map<String,String> m = new HashMap<>();
   public TextArea() {
     // Use up all the data:
     m.putAll(Countries.capitals());
     b.addActionListener(new ActionListener() {
+      @Override
       public void actionPerformed(ActionEvent e) {
         for(Map.Entry me : m.entrySet())
           t.append(me.getKey() + ": "+ me.getValue()+"\n");
       }
     });
     c.addActionListener(new ActionListener() {
+      @Override
       public void actionPerformed(ActionEvent e) {
         t.setText("");
       }

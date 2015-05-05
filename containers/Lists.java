@@ -87,7 +87,7 @@ public class Lists {
   }
   // There are some things that only LinkedLists can do:
   public static void testLinkedList() {
-    LinkedList<String> ll = new LinkedList<String>();
+    LinkedList<String> ll = new LinkedList<>();
     ll.addAll(Countries.names(25));
     print(ll);
     // Treat it like a stack, pushing:
@@ -107,19 +107,19 @@ public class Lists {
   public static void main(String[] args) {
     // Make and fill a new list each time:
     basicTest(
-      new LinkedList<String>(Countries.names(25)));
+      new LinkedList<>(Countries.names(25)));
     basicTest(
-      new ArrayList<String>(Countries.names(25)));
+      new ArrayList<>(Countries.names(25)));
     iterMotion(
-      new LinkedList<String>(Countries.names(25)));
+      new LinkedList<>(Countries.names(25)));
     iterMotion(
-      new ArrayList<String>(Countries.names(25)));
+      new ArrayList<>(Countries.names(25)));
     iterManipulation(
-      new LinkedList<String>(Countries.names(25)));
+      new LinkedList<>(Countries.names(25)));
     iterManipulation(
-      new ArrayList<String>(Countries.names(25)));
+      new ArrayList<>(Countries.names(25)));
     testVisual(
-      new LinkedList<String>(Countries.names(25)));
+      new LinkedList<>(Countries.names(25)));
     testLinkedList();
   }
 } /* (Execute to see output) *///:~

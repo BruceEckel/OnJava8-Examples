@@ -4,7 +4,7 @@ import java.util.*;
 
 public class ForNameCreator extends PetCreator {
   private static List<Class<? extends Pet>> types =
-    new ArrayList<Class<? extends Pet>>();
+    new ArrayList<>();
   // Types that you want to be randomly created:
   private static String[] typeNames = {
     "typeinfo.pets.Mutt",
@@ -27,5 +27,6 @@ public class ForNameCreator extends PetCreator {
     }
   }
   static { loader(); }
+  @Override
   public List<Class<? extends Pet>> types() {return types;}
 } ///:~

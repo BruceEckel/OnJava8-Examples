@@ -32,11 +32,13 @@ class CBox extends Canvas implements Runnable {
     this.pause = pause;
     addPaintListener(new CBoxPaintListener());
   }
+  @Override
   public void run() {
     try {
       while(!Thread.interrupted()) {
         cColor = newColor();
         getDisplay().asyncExec(new Runnable() {
+          @Override
           public void run() {
             try { redraw(); } catch(SWTException e) {}
             // SWTException is OK when the parent
@@ -57,6 +59,7 @@ class CBox extends Canvas implements Runnable {
 public class ColorBoxes implements SWTApplication {
   private int grid = 12;
   private int pause = 50;
+  @Override
   public void createContents(Composite parent) {
     GridLayout gridLayout = new GridLayout(grid, true);
     gridLayout.horizontalSpacing = 0;

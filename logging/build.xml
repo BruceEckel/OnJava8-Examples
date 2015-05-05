@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+
+<project default="run">
+  <property name="chapter" value="logging"/>
+  <property name="excludedfiles" value="EmailLogger.java SimpleFormatterExample.java"/>
+  <import file="../Ant-Common.xml"/>
+
+  <target name="run" description="Compile and run" depends="build">
+    <touch file="failures"/>
+    <jrun cls="ConfigureLogging" />
+    <jrun cls="CustomHandler" />
+    <jrun cls="InfoLogging" />
+    <jrun cls="InfoLogging2" />
+    <jrun cls="LoggingLevelManipulation" />
+    <jrun cls="LoggingLevels" />
+    <jrun cls="LogToFile" />
+    <jrun cls="LogToFile2" />
+    <jrun cls="MultipleHandlers" />
+    <jrun cls="MultipleHandlers2" />
+    <jrun cls="PrintableLogRecord" />
+    <jrun cls="SimpleFilter" />
+    <delete file="failures"/>
+  </target>
+
+</project>

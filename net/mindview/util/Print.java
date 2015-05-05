@@ -1,6 +1,6 @@
 //: net/mindview/util/Print.java
 // Print methods that can be used without
-// qualifiers, using Java SE5 static imports:
+// qualifiers, using Java 5 static imports:
 package net.mindview.util;
 import java.io.*;
 
@@ -17,7 +17,7 @@ public class Print {
   public static void printnb(Object obj) {
     System.out.print(obj);
   }
-  // The Java SE5 printf() (from C):
+  // The Java 5 printf() (from C):
   public static PrintStream
   printf(String format, Object... args) {
     return System.out.printf(format, args);

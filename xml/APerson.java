@@ -28,6 +28,7 @@ public class APerson {
     first= person.getFirstChildElement("first").getValue();
     last = person.getFirstChildElement("last").getValue();
   }
+  @Override
   public String toString() { return first + " " + last; }
   // Make it human-readable:
   public static void

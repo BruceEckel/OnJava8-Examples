@@ -26,11 +26,11 @@ public class AvailableCharSets {
   }
 } /* Output:
 Big5: csBig5
-Big5-HKSCS: big5-hkscs, big5hk, big5-hkscs:unicode3.0, big5hkscs, Big5_HKSCS
-EUC-JP: eucjis, x-eucjp, csEUCPkdFmtjapanese, eucjp, Extended_UNIX_Code_Packed_Format_for_Japanese, x-euc-jp, euc_jp
-EUC-KR: ksc5601, 5601, ksc5601_1987, ksc_5601, ksc5601-1987, euc_kr, ks_c_5601-1987, euckr, csEUCKR
+Big5-HKSCS: big5-hkscs:unicode3.0, Big5_HKSCS, big5-hkscs, big5hkscs, big5hk
+EUC-JP: eucjis, Extended_UNIX_Code_Packed_Format_for_Japanese, x-eucjp, eucjp, csEUCPkdFmtjapanese, euc_jp, x-euc-jp
+EUC-KR: 5601, ksc5601-1987, ksc5601_1987, euckr, ksc5601, ksc_5601, ks_c_5601-1987, euc_kr, csEUCKR
 GB18030: gb18030-2000
-GB2312: gb2312-1980, gb2312, EUC_CN, gb2312-80, euc-cn, euccn, x-EUC-CN
-GBK: windows-936, CP936
+GB2312: euc-cn, x-EUC-CN, gb2312-1980, gb2312, gb2312-80, euccn, EUC_CN
+GBK: CP936, windows-936
 ...
 *///:~

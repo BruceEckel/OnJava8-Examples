@@ -17,15 +17,16 @@ public class QueueBehavior {
     String[] s = ("one two three four five six seven " +
       "eight nine ten").split(" ");
     int i;
+    @Override
     public String next() { return s[i++]; }
   }
   public static void main(String[] args) {
-    test(new LinkedList<String>(), new Gen());
-    test(new PriorityQueue<String>(), new Gen());
-    test(new ArrayBlockingQueue<String>(count), new Gen());
-    test(new ConcurrentLinkedQueue<String>(), new Gen());
-    test(new LinkedBlockingQueue<String>(), new Gen());
-    test(new PriorityBlockingQueue<String>(), new Gen());
+    test(new LinkedList<>(), new Gen());
+    test(new PriorityQueue<>(), new Gen());
+    test(new ArrayBlockingQueue<>(count), new Gen());
+    test(new ConcurrentLinkedQueue<>(), new Gen());
+    test(new LinkedBlockingQueue<>(), new Gen());
+    test(new PriorityBlockingQueue<>(), new Gen());
   }
 } /* Output:
 one two three four five six seven eight nine ten
