@@ -117,7 +117,7 @@
         <include name="**/*.class" />
         <include name="**/*Output.txt" />
         <include name="**/log.txt" />
-        <include name="failures" />
+        <include name="failures test.txt test2.txt" />
         <exclude name="*.java"/>
         <exclude name="DogsAndRobots.py PythonLists.py"/>
         <exclude name="Copyright.txt Templates.cpp InstantiateGenericType.cpp Mixins.cpp"/>
