@@ -11,13 +11,11 @@ public class EnumMaps {
   public static void main(String[] args) {
     EnumMap<AlarmPoints,Command> em =
       new EnumMap<>(AlarmPoints.class);
-    em.put(KITCHEN, new Command() {
-      @Override
-      public void action() { print("Kitchen fire!"); }
+    em.put(KITCHEN, (Command) () -> {
+      print("Kitchen fire!");
     });
-    em.put(BATHROOM, new Command() {
-      @Override
-      public void action() { print("Bathroom alert!"); }
+    em.put(BATHROOM, (Command) () -> {
+      print("Bathroom alert!");
     });
     for(Map.Entry<AlarmPoints,Command> e : em.entrySet()) {
       printnb(e.getKey() + ": ");

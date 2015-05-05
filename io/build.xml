@@ -6,7 +6,6 @@
   <import file="../Ant-Common.xml"/>
 
   <target name="run" description="Compile and run" depends="build">
-    <touch file="failures"/>
     <jrun cls="AStoreCADState" />
     <jrun cls="AvailableCharSets" />
     <jrun cls="BasicFileOutput" />
@@ -51,7 +50,6 @@
     <jrun cls="Worm" />
     <jrun cls="ZipCompress" arguments='ZipCompress.java' />
     <jrun cls="ThawAlien" failOnError='false' msg='* Exception was Expected *' />
-    <delete file="failures"/>
   </target>
 
 </project>

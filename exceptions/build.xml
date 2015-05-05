@@ -6,7 +6,6 @@
   <import file="../Ant-Common.xml"/>
 
   <target name="run" description="Compile and run" depends="build">
-    <touch file="failures"/>
     <jrun cls="AlwaysFinally" />
     <jrun cls="Cleanup" />
     <jrun cls="CleanupIdiom" />
@@ -31,7 +30,6 @@
     <jrun cls="TurnOffChecking" />
     <jrun cls="WhoCalled" />
     <jrun cls="WithFinally" />
-    <delete file="failures"/>
   </target>
 
 </project>

@@ -39,22 +39,21 @@ public abstract class Trash {
   public static Trash factory(Info info) 
       throws PrototypeNotFoundException, 
       CannotCreateTrashException {
-    for(int i = 0; i < trashTypes.size(); i++) {
+    for (Object trashType : trashTypes) {
       // Somehow determine the new type
       // to create, and create one:
-      Class tc = 
-        (Class)trashTypes.get(i);
-      if (tc.getName().indexOf(info.id) != -1) {
+      Class tc = (Class) trashType;
+      if (tc.getName().contains(info.id)) {
         try {
           // Get the dynamic constructor method
           // that takes a double argument:
           Constructor ctor =
-            tc.getConstructor(
-              new Class[] {double.class});
+                  tc.getConstructor(
+                          new Class[] {double.class});
           // Call the constructor to create a 
           // new object:
           return (Trash)ctor.newInstance(
-            new Object[]{new Double(info.data)});
+                  new Object[]{info.data});
         } catch(Exception ex) {
           ex.printStackTrace();
           throw new CannotCreateTrashException();

@@ -8,8 +8,9 @@ public class ApplesAndOrangesWithGenerics {
       apples.add(new Apple());
     // Compile-time error:
     // apples.add(new Orange());
-    for(int i = 0; i < apples.size(); i++)
-      System.out.println(apples.get(i).id());
+    for (Apple apple : apples) {
+      System.out.println(apple.id());
+    }
     // Using foreach:
     for(Apple c : apples)
       System.out.println(c.id());

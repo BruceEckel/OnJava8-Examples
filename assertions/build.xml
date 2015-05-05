@@ -6,12 +6,10 @@
   <import file="../Ant-Common.xml"/>
 
   <target name="run" description="Compile and run" depends="build">
-    <touch file="failures"/>
     <jrun cls="Assert1" failOnError='false' msg='* Exception was Expected *' />
     <jrun cls="Assert2" failOnError='false' msg='* Exception was Expected *' />
     <jrun cls="LoaderAssertions" failOnError='false' msg='* Exception was Expected *' />
     <jrun cls="Queue" />
-    <delete file="failures"/>
   </target>
 
 </project>

@@ -6,7 +6,6 @@
   <import file="../Ant-Common.xml"/>
 
   <target name="run" description="Compile and run" depends="build">
-    <touch file="failures"/>
     <jrun cls="ColorBoxes" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
     <jrun cls="DisplayEnvironment" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
     <jrun cls="DisplayProperties" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
@@ -15,7 +14,6 @@
     <jrun cls="ShellsAreMainWindows" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
     <jrun cls="SineWave" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
     <jrun cls="TabbedPane" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
-    <delete file="failures"/>
   </target>
 
 </project>

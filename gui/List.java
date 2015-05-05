@@ -18,28 +18,22 @@ public class List extends JFrame {
   private JTextArea t =
     new JTextArea(flavors.length, 20);
   private JButton b = new JButton("Add Item");
-  private ActionListener bl = new ActionListener() {
-    @Override
-    public void actionPerformed(ActionEvent e) {
-      if(count < flavors.length) {
-        lItems.add(0, flavors[count++]);
-      } else {
-        // Disable, since there are no more
-        // flavors left to be added to the List
-        b.setEnabled(false);
-      }
+  private ActionListener bl = (ActionEvent e) -> {
+    if(count < flavors.length) {
+      lItems.add(0, flavors[count++]);
+    } else {
+      // Disable, since there are no more
+      // flavors left to be added to the List
+      b.setEnabled(false);
     }
   };
   private ListSelectionListener ll =
-    new ListSelectionListener() {
-      @Override
-      public void valueChanged(ListSelectionEvent e) {
-        if(e.getValueIsAdjusting()) return;
-        t.setText("");
-        for(Object item : lst.getSelectedValues())
-          t.append(item + "\n");
-      }
-    };
+    (ListSelectionEvent e) -> {
+      if(e.getValueIsAdjusting()) return;
+      t.setText("");
+      for(Object item : lst.getSelectedValues())
+        t.append(item + "\n");
+  };
   public List() {
     t.setEditable(false);
     setLayout(new FlowLayout());

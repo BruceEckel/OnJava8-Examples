@@ -21,10 +21,10 @@ public class Logon implements Serializable {
   public static void main(String[] args) throws Exception {
     Logon a = new Logon("Hulk", "myLittlePony");
     print("logon a = " + a);
-    ObjectOutputStream o = new ObjectOutputStream(
-      new FileOutputStream("Logon.out"));
-    o.writeObject(a);
-    o.close();
+    try (ObjectOutputStream o = new ObjectOutputStream(
+            new FileOutputStream("Logon.out"))) {
+      o.writeObject(a);
+    }
     TimeUnit.SECONDS.sleep(1); // Delay
     // Now get them back:
     ObjectInputStream in = new ObjectInputStream(

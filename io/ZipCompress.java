@@ -14,22 +14,21 @@ public class ZipCompress {
     CheckedOutputStream csum =
       new CheckedOutputStream(f, new Adler32());
      ZipOutputStream zos = new ZipOutputStream(csum);
-     BufferedOutputStream out =
-      new BufferedOutputStream(zos);
-    zos.setComment("A test of Java Zipping");
-    // No corresponding getComment(), though.
-    for(String arg : args) {
-      print("Writing file " + arg);
-      InputStream in = new BufferedInputStream(
-         new FileInputStream(arg));
-      zos.putNextEntry(new ZipEntry(arg));
-      int c;
-      while((c = in.read()) != -1)	
-        out.write(c);
-      in.close();
-      out.flush();
+    try (BufferedOutputStream out = new BufferedOutputStream(zos)) {
+      zos.setComment("A test of Java Zipping");
+      // No corresponding getComment(), though.
+      for (String arg : args) {
+        print("Writing file " + arg);
+        try (InputStream in = new BufferedInputStream(
+                new FileInputStream(arg))) {
+          zos.putNextEntry(new ZipEntry(arg));
+          int c;
+          while((c = in.read()) != -1)
+            out.write(c);
+        }
+        out.flush();
+      }
     }
-    out.close();
     // Checksum valid only after the file is closed!
     print("Checksum: " + csum.getChecksum().getValue());
     // Now extract the files:

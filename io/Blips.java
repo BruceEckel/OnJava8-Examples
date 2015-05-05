@@ -41,12 +41,12 @@ public class Blips {
     print("Constructing objects:");
     Blip1 b1 = new Blip1();
     Blip2 b2 = new Blip2();
-    ObjectOutputStream o = new ObjectOutputStream(
-      new FileOutputStream("Blips.out"));
-    print("Saving objects:");
-    o.writeObject(b1);
-    o.writeObject(b2);
-    o.close();
+    try (ObjectOutputStream o = new ObjectOutputStream(
+            new FileOutputStream("Blips.out"))) {
+      print("Saving objects:");
+      o.writeObject(b1);
+      o.writeObject(b2);
+    }
     // Now get them back:
     ObjectInputStream in = new ObjectInputStream(
       new FileInputStream("Blips.out"));

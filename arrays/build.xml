@@ -6,7 +6,6 @@
   <import file="../Ant-Common.xml"/>
 
   <target name="run" description="Compile and run" depends="build">
-    <touch file="failures"/>
     <jrun cls="AlphabeticSearch" />
     <jrun cls="ArrayOfGenerics" />
     <jrun cls="ArrayOptions" />
@@ -33,7 +32,6 @@
     <jrun cls="TestArrayGeneration" />
     <jrun cls="TestGenerated" />
     <jrun cls="ThreeDWithNew" />
-    <delete file="failures"/>
   </target>
 
 </project>

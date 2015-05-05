@@ -6,7 +6,6 @@
   <import file="../Ant-Common.xml"/>
 
   <target name="run" description="Compile and run" depends="build">
-    <touch file="failures"/>
     <jrun cls="ApplyTest" />
     <jrun cls="ArrayMaker" />
     <jrun cls="ArrayOfGeneric" />
@@ -78,7 +77,6 @@
     <jrun cls="Wildcards" />
     <jrun cls="generics.coffee.CoffeeGenerator" dirpath="../generics/coffee" />
     <jrun cls="generics.decorator.Decoration" dirpath="../generics/decorator" />
-    <delete file="failures"/>
   </target>
 
 </project>

@@ -12,12 +12,9 @@ public class TextPane extends JFrame {
   private static Generator sg =
     new RandomGenerator.String(7);
   public TextPane() {
-    b.addActionListener(new ActionListener() {
-      @Override
-      public void actionPerformed(ActionEvent e) {
-        for(int i = 1; i < 10; i++)
-          tp.setText(tp.getText() + sg.next() + "\n");
-      }
+    b.addActionListener((ActionEvent e) -> {
+      for(int i = 1; i < 10; i++)
+        tp.setText(tp.getText() + sg.next() + "\n");
     });
     add(new JScrollPane(tp));
     add(BorderLayout.SOUTH, b);

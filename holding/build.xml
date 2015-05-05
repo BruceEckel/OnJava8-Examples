@@ -6,7 +6,6 @@
   <import file="../Ant-Common.xml"/>
 
   <target name="run" description="Compile and run" depends="build">
-    <touch file="failures"/>
     <jrun cls="AdapterMethodIdiom" />
     <jrun cls="AddingGroups" />
     <jrun cls="ApplesAndOrangesWithGenerics" />
@@ -42,7 +41,6 @@
     <jrun cls="Statistics" />
     <jrun cls="UniqueWords" />
     <jrun cls="UniqueWordsAlphabetic" />
-    <delete file="failures"/>
   </target>
 
 </project>

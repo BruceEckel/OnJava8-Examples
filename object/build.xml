@@ -6,10 +6,8 @@
   <import file="../Ant-Common.xml"/>
 
   <target name="run" description="Compile and run" depends="build">
-    <touch file="failures"/>
     <jrun cls="HelloDate" />
     <jrun cls="ShowProperties" />
-    <delete file="failures"/>
   </target>
 
 </project>

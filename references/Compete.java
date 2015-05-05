@@ -47,8 +47,9 @@ public class Compete {
     long t1 = System.currentTimeMillis();
     ByteArrayOutputStream buf= new ByteArrayOutputStream();
     ObjectOutputStream o = new ObjectOutputStream(buf);
-    for(int i = 0; i < a.length; i++)
-      o.writeObject(a[i]);
+    for (Thing2 a1 : a) {
+      o.writeObject(a1);
+    }
     // Now get copies:
     ObjectInputStream in = new ObjectInputStream(
         new ByteArrayInputStream(buf.toByteArray()));

@@ -10,12 +10,9 @@ public class Button2b extends JFrame {
     b1 = new JButton("Button 1"),
     b2 = new JButton("Button 2");
   private JTextField txt = new JTextField(10);
-  private ActionListener bl = new ActionListener() {
-    @Override
-    public void actionPerformed(ActionEvent e) {
-      String name = ((JButton)e.getSource()).getText();
-      txt.setText(name);
-    }
+  private ActionListener bl = (ActionEvent e) -> {
+    String name1 = ((JButton)e.getSource()).getText();
+    txt.setText(name1);
   };
   public Button2b() {
     b1.addActionListener(bl);

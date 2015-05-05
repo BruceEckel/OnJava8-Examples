@@ -13,16 +13,17 @@ public class GZIPcompress {
         "the file to test.gz");
       System.exit(1);
     }
-    InputStream in = new BufferedInputStream(
-      new FileInputStream(args[0]));
-    BufferedOutputStream out = new BufferedOutputStream(
-      new GZIPOutputStream(
-        new FileOutputStream("test.gz")));
-    System.out.println("Writing file");
-    int c;
-    while((c = in.read()) != -1)
+    BufferedOutputStream out;
+    try (InputStream in = new BufferedInputStream(
+            new FileInputStream(args[0]))) {
+      out = new BufferedOutputStream(
+              new GZIPOutputStream(
+                      new FileOutputStream("test.gz")));
+      System.out.println("Writing file");
+      int c;
+      while((c = in.read()) != -1)
       out.write(c);
-    in.close();
+    }
     out.close();
     System.out.println("Reading file");
     BufferedReader in2 = new BufferedReader(

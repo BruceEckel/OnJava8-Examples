@@ -22,24 +22,18 @@ public class ActiveObjectDemo {
   }
   public Future<Integer>
   calculateInt(final int x, final int y) {
-    return ex.submit(new Callable<Integer>() {
-      @Override
-      public Integer call() {
-        print("starting " + x + " + " + y);
-        pause(500);
-        return x + y;
-      }
+    return ex.submit(() -> {
+      print("starting " + x + " + " + y);
+      pause(500);
+      return x + y;
     });
   }
   public Future<Float>
   calculateFloat(final float x, final float y) {
-    return ex.submit(new Callable<Float>() {
-      @Override
-      public Float call() {
-        print("starting " + x + " + " + y);
-        pause(2000);
-        return x + y;
-      }
+    return ex.submit(() -> {
+      print("starting " + x + " + " + y);
+      pause(2000);
+      return x + y;
     });
   }
   public void shutdown() { ex.shutdown(); }

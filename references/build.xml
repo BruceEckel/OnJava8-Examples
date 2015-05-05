@@ -6,7 +6,6 @@
   <import file="../Ant-Common.xml"/>
 
   <target name="run" description="Compile and run" depends="build">
-    <touch file="failures"/>
     <jrun cls="AddingClone" />
     <jrun cls="Alias1" />
     <jrun cls="Alias2" />
@@ -25,7 +24,6 @@
     <jrun cls="PassReferences" />
     <jrun cls="Snake" />
     <jrun cls="Stringer" />
-    <delete file="failures"/>
   </target>
 
 </project>

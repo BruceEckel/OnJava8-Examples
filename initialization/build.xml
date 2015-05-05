@@ -6,7 +6,6 @@
   <import file="../Ant-Common.xml"/>
 
   <target name="run" description="Compile and run" depends="build">
-    <touch file="failures"/>
     <jrun cls="ArrayClassObj" />
     <jrun cls="ArrayInit" />
     <jrun cls="ArrayNew" />
@@ -40,7 +39,6 @@
     <jrun cls="TerminationCondition" />
     <jrun cls="VarArgs" />
     <jrun cls="VarargType" />
-    <delete file="failures"/>
   </target>
 
 </project>

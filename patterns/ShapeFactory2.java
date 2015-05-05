@@ -79,9 +79,9 @@ public class ShapeFactory2 {
       "Square", "Circle", "Circle", "Square" };
     ArrayList shapes = new ArrayList();
     try {
-      for(int i = 0; i < shlist.length; i++)
-        shapes.add(
-          ShapeFactory.createShape(shlist[i]));
+      for (String shlist1 : shlist) {
+        shapes.add(ShapeFactory.createShape(shlist1));
+      }
     } catch(BadShapeCreation e) {
       e.printStackTrace();
       return;

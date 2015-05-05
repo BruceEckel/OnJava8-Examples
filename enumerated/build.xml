@@ -6,7 +6,6 @@
   <import file="../Ant-Common.xml"/>
 
   <target name="run" description="Compile and run" depends="build">
-    <touch file="failures"/>
     <jrun cls="BigEnumSet" />
     <jrun cls="enumerated.Burrito" dirpath="../enumerated" />
     <jrun cls="CarWash" />
@@ -34,7 +33,6 @@
     <jrun cls="enumerated.menu.Meal" dirpath="../enumerated/menu" />
     <jrun cls="enumerated.menu.Meal2" dirpath="../enumerated/menu" />
     <jrun cls="enumerated.menu.TypeOfFood" dirpath="../enumerated/menu" />
-    <delete file="failures"/>
   </target>
 
 </project>

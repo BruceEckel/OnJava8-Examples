@@ -32,19 +32,13 @@ public class InterruptableLongRunningTask extends JFrame {
   ExecutorService executor =
     Executors.newSingleThreadExecutor();
   public InterruptableLongRunningTask() {
-    b1.addActionListener(new ActionListener() {
-      @Override
-      public void actionPerformed(ActionEvent e) {
-        Task task = new Task();
-        executor.execute(task);
-        System.out.println(task + " added to the queue");
-      }
+    b1.addActionListener((ActionEvent e) -> {
+      Task task = new Task();
+      executor.execute(task);
+      System.out.println(task + " added to the queue");
     });
-    b2.addActionListener(new ActionListener() {
-      @Override
-      public void actionPerformed(ActionEvent e) {
-        executor.shutdownNow(); // Heavy-handed
-      }
+    b2.addActionListener((ActionEvent e) -> {
+      executor.shutdownNow(); // Heavy-handed
     });
     setLayout(new FlowLayout());
     add(b1);

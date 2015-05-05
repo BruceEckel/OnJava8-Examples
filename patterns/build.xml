@@ -6,7 +6,6 @@
   <import file="../Ant-Common.xml"/>
 
   <target name="run" description="Compile and run" depends="build">
-    <touch file="failures"/>
     <jrun cls="CommandPattern" />
     <jrun cls="Facade" />
     <jrun cls="PaperScissorsRock" />
@@ -30,7 +29,6 @@
     <jrun cls="patterns.trashvisitor.TrashVisitor" dirpath="../patterns/trashvisitor" />
     <jrun cls="patterns.visitor.BeeAndFlowers" dirpath="../patterns/visitor" />
     <jrun cls="patterns.visualobserver.BoxObserver" dirpath="../patterns/visualobserver" failOnError='false' timeOut='4000' />
-    <delete file="failures"/>
   </target>
 
 </project>

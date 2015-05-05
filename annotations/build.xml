@@ -6,7 +6,6 @@
   <import file="../Ant-Common.xml"/>
 
   <target name="run" description="Compile and run" depends="build">
-    <touch file="failures"/>
     <jrun cls="annotations.AtUnitComposition" dirpath="../annotations" />
     <jrun cls="annotations.AtUnitExample1" dirpath="../annotations" />
     <jrun cls="annotations.AtUnitExample2" dirpath="../annotations" />
@@ -19,7 +18,6 @@
     <jrun cls="annotations.StackLStringTest" dirpath="../annotations" />
     <jrun cls="UseCaseTracker" />
     <jrun cls="annotations.database.TableCreator" dirpath="../annotations/database" arguments='annotations.database.Member' />
-    <delete file="failures"/>
   </target>
 
 </project>

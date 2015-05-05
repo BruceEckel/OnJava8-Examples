@@ -16,18 +16,12 @@ public class TextArea extends JFrame {
   public TextArea() {
     // Use up all the data:
     m.putAll(Countries.capitals());
-    b.addActionListener(new ActionListener() {
-      @Override
-      public void actionPerformed(ActionEvent e) {
-        for(Map.Entry me : m.entrySet())
-          t.append(me.getKey() + ": "+ me.getValue()+"\n");
-      }
+    b.addActionListener((ActionEvent e) -> {
+      for(Map.Entry me : m.entrySet())
+        t.append(me.getKey() + ": "+ me.getValue()+"\n");
     });
-    c.addActionListener(new ActionListener() {
-      @Override
-      public void actionPerformed(ActionEvent e) {
-        t.setText("");
-      }
+    c.addActionListener((ActionEvent e) -> {
+      t.setText("");
     });
     setLayout(new FlowLayout());
     add(new JScrollPane(t));

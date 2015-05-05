@@ -6,7 +6,6 @@
   <import file="../Ant-Common.xml"/>
 
   <target name="run" description="Compile and run" depends="build">
-    <touch file="failures"/>
     <jrun cls="AdaptedRandomDoubles" />
     <jrun cls="Adventure" />
     <jrun cls="Factories" />
@@ -21,7 +20,6 @@
     <jrun cls="interfaces.music4.Music4" dirpath="../interfaces/music4" />
     <jrun cls="interfaces.music5.Music5" dirpath="../interfaces/music5" />
     <jrun cls="interfaces.nesting.NestingInterfaces" dirpath="../interfaces/nesting" />
-    <delete file="failures"/>
   </target>
 
 </project>

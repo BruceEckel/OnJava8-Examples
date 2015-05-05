@@ -33,13 +33,13 @@ public class ShowMethods {
         lines = methods.length + ctors.length;
       } else {
         for(Method method : methods)
-          if(method.toString().indexOf(args[1]) != -1) {
+          if(method.toString().contains(args[1])) {
             print(
               p.matcher(method.toString()).replaceAll(""));
             lines++;
           }
         for(Constructor ctor : ctors)
-          if(ctor.toString().indexOf(args[1]) != -1) {
+          if(ctor.toString().contains(args[1])) {
             print(p.matcher(
               ctor.toString()).replaceAll(""));
             lines++;

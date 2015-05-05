@@ -8,13 +8,13 @@ public class BasicFileOutput {
     BufferedReader in = new BufferedReader(
       new StringReader(
         BufferedInputFile.read("BasicFileOutput.java")));
-    PrintWriter out = new PrintWriter(
-      new BufferedWriter(new FileWriter(file)));
-    int lineCount = 1;
-    String s;
-    while((s = in.readLine()) != null )
-      out.println(lineCount++ + ": " + s);
-    out.close();
+    try (PrintWriter out = new PrintWriter(
+            new BufferedWriter(new FileWriter(file)))) {
+      int lineCount = 1;
+      String s;
+      while((s = in.readLine()) != null )
+        out.println(lineCount++ + ": " + s);
+    }
     // Show the stored file:
     System.out.println(BufferedInputFile.read(file));
   }

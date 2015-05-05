@@ -6,7 +6,6 @@
   <import file="../Ant-Common.xml"/>
 
   <target name="run" description="Compile and run" depends="build">
-    <touch file="failures"/>
     <jrun cls="AnonymousImplementation" />
     <jrun cls="BoundedClassReferences" />
     <jrun cls="ClassCasts" />
@@ -36,7 +35,6 @@
     <jrun cls="typeinfo.pets.LiteralPetCreator" dirpath="../typeinfo/pets" />
     <jrun cls="typeinfo.toys.GenericToyTest" dirpath="../typeinfo/toys" />
     <jrun cls="typeinfo.toys.ToyTest" dirpath="../typeinfo/toys" />
-    <delete file="failures"/>
   </target>
 
 </project>

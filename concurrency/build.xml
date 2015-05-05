@@ -6,7 +6,6 @@
   <import file="../Ant-Common.xml"/>
 
   <target name="run" description="Compile and run" depends="build">
-    <touch file="failures"/>
     <jrun cls="ActiveObjectDemo" />
     <jrun cls="AtomicEvenGenerator" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
     <jrun cls="AtomicIntegerTest" />
@@ -74,7 +73,6 @@
     <jrun cls="concurrency.restaurant2.RestaurantWithQueues" dirpath="../concurrency/restaurant2" arguments='5' />
     <jrun cls="concurrency.waxomatic.WaxOMatic" dirpath="../concurrency/waxomatic" />
     <jrun cls="concurrency.waxomatic2.WaxOMatic2" dirpath="../concurrency/waxomatic2" />
-    <delete file="failures"/>
   </target>
 
 </project>

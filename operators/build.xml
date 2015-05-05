@@ -6,7 +6,6 @@
   <import file="../Ant-Common.xml"/>
 
   <target name="run" description="Compile and run" depends="build">
-    <touch file="failures"/>
     <jrun cls="Assignment" />
     <jrun cls="AutoInc" />
     <jrun cls="BitManipulation" />
@@ -28,7 +27,6 @@
     <jrun cls="StringOperators" />
     <jrun cls="TernaryIfElse" />
     <jrun cls="URShift" />
-    <delete file="failures"/>
   </target>
 
 </project>

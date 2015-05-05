@@ -6,8 +6,6 @@
   <import file="../Ant-Common.xml"/>
 
   <target name="run" description="Compile and run" depends="build">
-    <touch file="failures"/>
-    <delete file="failures"/>
   </target>
 
 </project>

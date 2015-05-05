@@ -6,7 +6,6 @@
   <import file="../Ant-Common.xml"/>
 
   <target name="run" description="Compile and run" depends="build">
-    <touch file="failures"/>
     <jrun cls="ArrayListDisplay" />
     <jrun cls="BetterRead" />
     <jrun cls="Concatenation" />
@@ -35,7 +34,6 @@
     <jrun cls="ThreatAnalyzer" />
     <jrun cls="Turtle" />
     <jrun cls="UsingStringBuilder" />
-    <delete file="failures"/>
   </target>
 
 </project>

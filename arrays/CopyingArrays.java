@@ -23,8 +23,8 @@ public class CopyingArrays {
     // Objects:
     Integer[] u = new Integer[10];
     Integer[] v = new Integer[5];
-    Arrays.fill(u, new Integer(47));
-    Arrays.fill(v, new Integer(99));
+    Arrays.fill(u, 47);
+    Arrays.fill(v, 99);
     print("u = " + Arrays.toString(u));
     print("v = " + Arrays.toString(v));
     System.arraycopy(v, 0, u, u.length/2, v.length);

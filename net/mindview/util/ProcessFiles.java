@@ -41,11 +41,8 @@ public class ProcessFiles {
   }
   // Demonstration of how to use it:
   public static void main(String[] args) {
-    new ProcessFiles(new ProcessFiles.Strategy() {
-      @Override
-      public void process(File file) {
-        System.out.println(file);
-      }
+    new ProcessFiles((File file) -> {
+      System.out.println(file);
     }, "java").start(args);
   }
 } /* (Execute to see output) *///:~

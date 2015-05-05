@@ -6,7 +6,6 @@
   <import file="../Ant-Common.xml"/>
 
   <target name="run" description="Compile and run" depends="build">
-    <touch file="failures"/>
     <jrun cls="BorderLayout1" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
     <jrun cls="Borders" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
     <jrun cls="Button1" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
@@ -47,7 +46,6 @@
     <jrun cls="TextPane" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
     <jrun cls="TicTacToe" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
     <jrun cls="TrackEvent" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
-    <delete file="failures"/>
   </target>
 
 </project>

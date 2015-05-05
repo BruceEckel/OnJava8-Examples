@@ -45,16 +45,13 @@ public class SemaphoreDemo {
       f.operation();
       list.add(f);
     }
-    Future<?> blocked = exec.submit(new Runnable() {
-      @Override
-      public void run() {
-        try {
-          // Semaphore prevents additional checkout,
-          // so call is blocked:
-          pool.checkOut();
-        } catch(InterruptedException e) {
-          print("checkOut() Interrupted");
-        }
+    Future<?> blocked = exec.submit(() -> {
+      try {
+        // Semaphore prevents additional checkout,
+        // so call is blocked:
+        pool.checkOut();
+      } catch(InterruptedException e) {
+        print("checkOut() Interrupted");
       }
     });
     TimeUnit.SECONDS.sleep(2);

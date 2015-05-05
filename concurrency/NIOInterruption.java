@@ -33,16 +33,16 @@ public class NIOInterruption {
     InetSocketAddress isa =
       new InetSocketAddress("localhost", 8080);
     SocketChannel sc1 = SocketChannel.open(isa);
-    SocketChannel sc2 = SocketChannel.open(isa);
-    Future<?> f = exec.submit(new NIOBlocked(sc1));
-    exec.execute(new NIOBlocked(sc2));
-    exec.shutdown();
-    TimeUnit.SECONDS.sleep(1);
-    // Produce an interrupt via cancel:
-    f.cancel(true);
-    TimeUnit.SECONDS.sleep(1);
-    // Release the block by closing the channel:
-    sc2.close();
+    try (SocketChannel sc2 = SocketChannel.open(isa)) {
+      Future<?> f = exec.submit(new NIOBlocked(sc1));
+      exec.execute(new NIOBlocked(sc2));
+      exec.shutdown();
+      TimeUnit.SECONDS.sleep(1);
+      // Produce an interrupt via cancel:
+      f.cancel(true);
+      TimeUnit.SECONDS.sleep(1);
+      // Release the block by closing the channel:
+    }
   }
 } /* Output: (Sample)
 Waiting for read() in NIOBlocked@7a84e4

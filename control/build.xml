@@ -6,7 +6,6 @@
   <import file="../Ant-Common.xml"/>
 
   <target name="run" description="Compile and run" depends="build">
-    <touch file="failures"/>
     <jrun cls="BreakAndContinue" />
     <jrun cls="CommaOperator" />
     <jrun cls="ForEachFloat" />
@@ -20,7 +19,6 @@
     <jrun cls="StringSwitch" />
     <jrun cls="VowelsAndConsonants" />
     <jrun cls="WhileTest" />
-    <delete file="failures"/>
   </target>
 
 </project>

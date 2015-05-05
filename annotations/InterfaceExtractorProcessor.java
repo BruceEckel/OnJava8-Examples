@@ -30,28 +30,27 @@ public class InterfaceExtractorProcessor
           interfaceMethods.add(m);
       if(interfaceMethods.size() > 0) {
         try {
-          PrintWriter writer =
-            env.getFiler().createSourceFile(annot.value());
-          writer.println("package " +
-            typeDecl.getPackage().getQualifiedName() +";");
-          writer.println("public interface " +
-            annot.value() + " {");
-          for(MethodDeclaration m : interfaceMethods) {
-            writer.print("  public ");
-            writer.print(m.getReturnType() + " ");
-            writer.print(m.getSimpleName() + " (");
-            int i = 0;
-            for(ParameterDeclaration parm :
-              m.getParameters()) {
-              writer.print(parm.getType() + " " +
-                parm.getSimpleName());
-              if(++i < m.getParameters().size())
-                writer.print(", ");
+          try (PrintWriter writer = env.getFiler().createSourceFile(annot.value())) {
+            writer.println("package " +
+                    typeDecl.getPackage().getQualifiedName() +";");
+            writer.println("public interface " +
+                    annot.value() + " {");
+            for(MethodDeclaration m : interfaceMethods) {
+              writer.print("  public ");
+              writer.print(m.getReturnType() + " ");
+              writer.print(m.getSimpleName() + " (");
+              int i = 0;
+              for(ParameterDeclaration parm :
+                      m.getParameters()) {
+                writer.print(parm.getType() + " " +
+                        parm.getSimpleName());
+                if(++i < m.getParameters().size())
+                  writer.print(", ");
+              }
+              writer.println(");");
             }
-            writer.println(");");
+            writer.println("}");
           }
-          writer.println("}");
-          writer.close();
         } catch(IOException ioe) {
           throw new RuntimeException(ioe);
         }

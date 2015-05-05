@@ -6,7 +6,6 @@
   <import file="../Ant-Common.xml"/>
 
   <target name="run" description="Compile and run" depends="build">
-    <touch file="failures"/>
     <jrun cls="AnonymousConstructor" />
     <jrun cls="BigEgg" />
     <jrun cls="BigEgg2" />
@@ -36,7 +35,6 @@
     <jrun cls="Sequence" />
     <jrun cls="TestBed$Tester" />
     <jrun cls="TestParcel" />
-    <delete file="failures"/>
   </target>
 
 </project>

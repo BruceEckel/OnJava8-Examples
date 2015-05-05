@@ -63,8 +63,9 @@ public class DoubleDispatch {
     bins.sortIntoBins(bin);
     TypedBin[] tb = bins.binSet();
     // Perform sumValue for each bin...
-    for(int i = 0; i < tb.length; i++)
-      Trash.sumValue(tb[i].v);
+    for (TypedBin tb1 : tb) {
+      Trash.sumValue(tb1.v);
+    }
     // ... and for the master bin
     Trash.sumValue(bin);
   }

@@ -6,7 +6,6 @@
   <import file="../Ant-Common.xml"/>
 
   <target name="run" description="Compile and run" depends="build">
-    <touch file="failures"/>
     <jrun cls="Bath" />
     <jrun cls="Beetle" />
     <jrun cls="BlankFinal" />
@@ -26,7 +25,6 @@
     <jrun cls="SpaceShipDelegation" />
     <jrun cls="SprinklerSystem" />
     <jrun cls="Wind" />
-    <delete file="failures"/>
   </target>
 
 </project>

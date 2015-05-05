@@ -9,23 +9,22 @@ public class ParseTrash {
   public static void
   fillBin(String filename, Fillable bin) {
     try {
-      BufferedReader data =
-        new BufferedReader(
-          new FileReader(filename));
-      String buf;
-      while((buf = data.readLine())!= null) {
-        if(buf.trim().length() == 0)
-          continue; // Skip empty lines
-        String type = buf.substring(0,
-          buf.indexOf(':')).trim();
-        double weight = Double.valueOf(
-          buf.substring(buf.indexOf(':') + 1)
-          .trim()).doubleValue();
-        bin.addTrash(
-          Trash.factory(
-            new Trash.Info(type, weight)));
+      try (BufferedReader data = new BufferedReader(
+              new FileReader(filename))) {
+        String buf;
+        while((buf = data.readLine())!= null) {
+          if(buf.trim().length() == 0)
+            continue; // Skip empty lines
+          String type = buf.substring(0,
+                  buf.indexOf(':')).trim();
+          double weight = Double.valueOf(
+                  buf.substring(buf.indexOf(':') + 1)
+                          .trim());
+          bin.addTrash(
+                  Trash.factory(
+                          new Trash.Info(type, weight)));
+        }
       }
-      data.close();
     } catch(IOException e) {
       e.printStackTrace();
     } catch(Exception e) {

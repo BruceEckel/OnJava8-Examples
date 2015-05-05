@@ -27,13 +27,9 @@ class MonitoredCallable implements Callable<String> {
         if(monitor.isCanceled())
           Thread.currentThread().interrupt();
         final int progress = i;
-        SwingUtilities.invokeLater(new Runnable() {
-          @Override
-            public void run() {
-              monitor.setProgress(progress);
-            }
-          }
-        );
+        SwingUtilities.invokeLater(() -> {
+          monitor.setProgress(progress);
+        });
       }
     } catch(InterruptedException e) {
       monitor.close();
@@ -55,31 +51,22 @@ public class MonitoredLongRunningCallable extends JFrame {
   private TaskManager<String,MonitoredCallable> manager =
     new TaskManager<>();
   public MonitoredLongRunningCallable() {
-    b1.addActionListener(new ActionListener() {
-      @Override
-      public void actionPerformed(ActionEvent e) {
-        MonitoredCallable task = new MonitoredCallable(
-          new ProgressMonitor(
-            MonitoredLongRunningCallable.this,
-            "Long-Running Task", "", 0, 0)
-        );
-        manager.add(task);
-        System.out.println(task + " added to the queue");
-      }
+    b1.addActionListener((ActionEvent e) -> {
+      MonitoredCallable task = new MonitoredCallable(
+              new ProgressMonitor(
+                      MonitoredLongRunningCallable.this,
+                      "Long-Running Task", "", 0, 0)
+      );
+      manager.add(task);
+      System.out.println(task + " added to the queue");
     });
-    b2.addActionListener(new ActionListener() {
-      @Override
-      public void actionPerformed(ActionEvent e) {
-        for(String result : manager.purge())
-          System.out.println(result);
-      }
+    b2.addActionListener((ActionEvent e) -> {
+      for(String result : manager.purge())
+        System.out.println(result);
     });
-    b3.addActionListener(new ActionListener() {
-      @Override
-      public void actionPerformed(ActionEvent e) {
-        for(String result : manager.getResults())
-          System.out.println(result);
-      }
+    b3.addActionListener((ActionEvent e) -> {
+      for(String result : manager.getResults())
+        System.out.println(result);
     });
     setLayout(new FlowLayout());
     add(b1);

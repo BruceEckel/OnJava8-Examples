@@ -6,7 +6,6 @@
   <import file="../Ant-Common.xml"/>
 
   <target name="run" description="Compile and run" depends="build">
-    <touch file="failures"/>
     <jrun cls="Cake" />
     <jrun cls="ChocolateChip" />
     <jrun cls="ChocolateChip2" />
@@ -18,7 +17,6 @@
     <jrun cls="PrintTest" />
     <jrun cls="QualifiedMyClass" />
     <jrun cls="SingleImport" />
-    <delete file="failures"/>
   </target>
 
 </project>

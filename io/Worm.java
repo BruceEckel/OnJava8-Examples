@@ -46,11 +46,12 @@ public class Worm implements Serializable {
   throws ClassNotFoundException, IOException {
     Worm w = new Worm(6, 'a');
     print("w = " + w);
-    ObjectOutputStream out = new ObjectOutputStream(
-      new FileOutputStream("worm.out"));
-    out.writeObject("Worm storage\n");
-    out.writeObject(w);
-    out.close(); // Also flushes output
+    try (ObjectOutputStream out = new ObjectOutputStream(
+            new FileOutputStream("worm.out"))) {
+      out.writeObject("Worm storage\n");
+      out.writeObject(w);
+      out.close(); // Also flushes output
+    }
     ObjectInputStream in = new ObjectInputStream(
       new FileInputStream("worm.out"));
     String s = (String)in.readObject();

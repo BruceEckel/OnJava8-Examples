@@ -6,7 +6,6 @@
   <import file="../Ant-Common.xml"/>
 
   <target name="run" description="Compile and run" depends="build">
-    <touch file="failures"/>
     <jrun cls="AssociativeArray" />
     <jrun cls="Bits" />
     <jrun cls="CanonicalMapping" />
@@ -44,7 +43,6 @@
     <jrun cls="TypesForSets" />
     <jrun cls="Unsupported" />
     <jrun cls="Utilities" />
-    <delete file="failures"/>
   </target>
 
 </project>

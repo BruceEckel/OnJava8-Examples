@@ -6,7 +6,6 @@
   <import file="../Ant-Common.xml"/>
 
   <target name="run" description="Compile and run" depends="build">
-    <touch file="failures"/>
     <jrun cls="ChatterClient" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
     <jrun cls="ChatterServer" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
     <jrun cls="MultiSimpleClient" failOnError='false' msg='* Exception was Expected *' />
@@ -14,7 +13,6 @@
     <jrun cls="SimpleClient" failOnError='false' msg='* Exception was Expected *' />
     <jrun cls="SimpleServer" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
     <jrun cls="WhoAmI" arguments='MindviewToshibaLaptop' />
-    <delete file="failures"/>
   </target>
 
 </project>

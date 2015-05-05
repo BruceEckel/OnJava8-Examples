@@ -11,10 +11,7 @@ class Customer {
   public String toString() { return "Customer " + id; }
   // A method to produce Generator objects:
   public static Generator<Customer> generator() {
-    return new Generator<Customer>() {
-      @Override
-      public Customer next() { return new Customer(); }
-    };
+    return () -> new Customer();
   }
 }	
 
@@ -26,10 +23,7 @@ class Teller {
   public String toString() { return "Teller " + id; }
   // A single Generator object:
   public static Generator<Teller> generator =
-    new Generator<Teller>() {
-      @Override
-      public Teller next() { return new Teller(); }
-    };
+    () -> new Teller();
 }	
 
 public class BankTeller {

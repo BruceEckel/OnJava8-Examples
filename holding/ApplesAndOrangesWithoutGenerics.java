@@ -19,8 +19,9 @@ public class ApplesAndOrangesWithoutGenerics {
       apples.add(new Apple());
     // Not prevented from adding an Orange to apples:
     apples.add(new Orange());
-    for(int i = 0; i < apples.size(); i++)
-      ((Apple)apples.get(i)).id();
+    for (Object apple : apples) {
+      ((Apple) apple).id();
       // Orange is detected only at run time
+    }
   }
 } /* (Execute to see output) *///:~

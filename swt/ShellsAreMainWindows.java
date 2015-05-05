@@ -16,9 +16,11 @@ public class ShellsAreMainWindows {
     display.dispose();
   }
   static boolean shellsDisposed() {
-    for(int i = 0; i < shells.length; i++)
-      if(shells[i].isDisposed())
+    for (Shell shell : shells) {
+      if (shell.isDisposed()) {
         return true;
+      }
+    }
     return false;
   }
 } ///:~

@@ -6,7 +6,6 @@
   <import file="../Ant-Common.xml"/>
 
   <target name="run" description="Compile and run" depends="build">
-    <touch file="failures"/>
     <jrun cls="CovariantReturn" />
     <jrun cls="FieldAccess" />
     <jrun cls="polymorphism.Frog" dirpath="../polymorphism" />
@@ -21,7 +20,6 @@
     <jrun cls="polymorphism.music.Music" dirpath="../polymorphism/music" />
     <jrun cls="polymorphism.music.Music2" dirpath="../polymorphism/music" />
     <jrun cls="polymorphism.music3.Music3" dirpath="../polymorphism/music3" />
-    <delete file="failures"/>
   </target>
 
 </project>

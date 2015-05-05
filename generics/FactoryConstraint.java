@@ -15,7 +15,7 @@ class Foo2<T> {
 class IntegerFactory implements FactoryI<Integer> {
   @Override
   public Integer create() {
-    return new Integer(0);
+    return 0;
   }
 }	
 
