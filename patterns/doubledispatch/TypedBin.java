@@ -5,12 +5,12 @@ import patterns.trash.*;
 import java.util.*;
 
 public abstract class TypedBin {
-  ArrayList v = new ArrayList();
+  ArrayList<Trash> v = new ArrayList<>();
   protected boolean addIt(Trash t) {
     v.add(t);
     return true;
   }
-  public Iterator elements() {
+  public Iterator<Trash> elements() {
     return v.iterator();
   }
   public boolean add(DDAluminum a) {

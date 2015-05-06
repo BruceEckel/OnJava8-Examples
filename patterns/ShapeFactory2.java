@@ -15,8 +15,9 @@ interface Shape {
 
 abstract class ShapeFactory {
   protected abstract Shape create();
-  static Map factories = new HashMap();
-  static Shape createShape(String id) 
+  static Map<String, ShapeFactory> factories =
+    new HashMap<>();
+  static Shape createShape(String id)
   throws BadShapeCreation {
     if(!factories.containsKey(id)) {
       try {
@@ -28,23 +29,22 @@ abstract class ShapeFactory {
       if(!factories.containsKey(id))
         throw new BadShapeCreation(id);
     }
-    return 
-      ((ShapeFactory)factories.get(id)).create();
+    return factories.get(id).create();
   }
 }
 
 class Circle implements Shape {
   private Circle() {}
-  public void draw() { 
-    System.out.println("Circle.draw"); 
+  public void draw() {
+    System.out.println("Circle.draw");
   }
-  public void erase() { 
+  public void erase() {
     System.out.println("Circle.erase");
   }
   static class Factory extends ShapeFactory {
     @Override
-    protected Shape create() { 
-      return new Circle(); 
+    protected Shape create() {
+      return new Circle();
     }
   }
   static {
@@ -54,17 +54,17 @@ class Circle implements Shape {
 }
 
 class Square implements Shape {
-  private Square() {} 
-  public void draw() { 
-    System.out.println("Square.draw"); 
+  private Square() {}
+  public void draw() {
+    System.out.println("Square.draw");
   }
-  public void erase() { 
-    System.out.println("Square.erase"); 
+  public void erase() {
+    System.out.println("Square.erase");
   }
   static class Factory extends ShapeFactory {
     @Override
-    protected Shape create() { 
-      return new Square(); 
+    protected Shape create() {
+      return new Square();
     }
   }
   static {
@@ -75,9 +75,9 @@ class Square implements Shape {
 
 public class ShapeFactory2 {
   public static void main(String args[]) {
-    String shlist[] = { "Circle", "Square", 
+    String shlist[] = { "Circle", "Square",
       "Square", "Circle", "Circle", "Square" };
-    ArrayList shapes = new ArrayList();
+    ArrayList<Shape> shapes = new ArrayList<>();
     try {
       for (String shlist1 : shlist) {
         shapes.add(ShapeFactory.createShape(shlist1));
@@ -86,11 +86,11 @@ public class ShapeFactory2 {
       e.printStackTrace();
       return;
     }
-    Iterator i = shapes.iterator();
+    Iterator<Shape> i = shapes.iterator();
     while(i.hasNext()) {
-      Shape s = (Shape)i.next();
+      Shape s = i.next();
       s.draw();
       s.erase();
     }
-  } 
+  }
 } ///:~

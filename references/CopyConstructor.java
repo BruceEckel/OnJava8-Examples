@@ -115,6 +115,7 @@ public class CopyConstructor {
     System.out.println("In slice, f is a " +
       f.getClass().getName());
   }
+  @SuppressWarnings("unchecked")
   public static void ripen2(Tomato t) {
     try {
       Class c = t.getClass();
@@ -128,10 +129,11 @@ public class CopyConstructor {
             InstantiationException |
             IllegalAccessException |
             IllegalArgumentException |
-            InvocationTargetException e) { 
-      System.out.println(e); 
+            InvocationTargetException e) {
+      System.out.println(e);
     }
   }
+  @SuppressWarnings("unchecked")
   public static void slice2(Fruit f) {
     try {
       Class c = f.getClass();
@@ -139,13 +141,13 @@ public class CopyConstructor {
       Object obj = ct.newInstance(new Object[] { f });
       System.out.println("In slice2, f is a " +
         obj.getClass().getName());
-    } catch(NoSuchMethodException | 
-            SecurityException | 
-            InstantiationException | 
-            IllegalAccessException | 
-            IllegalArgumentException | 
-            InvocationTargetException e) { 
-      System.out.println(e); 
+    } catch(NoSuchMethodException |
+            SecurityException |
+            InstantiationException |
+            IllegalAccessException |
+            IllegalArgumentException |
+            InvocationTargetException e) {
+      System.out.println(e);
     }
   }
   public static void main(String[] args) {

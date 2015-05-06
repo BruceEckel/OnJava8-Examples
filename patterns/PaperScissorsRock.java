@@ -7,8 +7,8 @@ class Outcome {
   private int value;
   private Outcome(int val) { value = val; }
   public final static Outcome
-    WIN = new Outcome(0), 
-    LOSE = new Outcome(1), 
+    WIN = new Outcome(0),
+    LOSE = new Outcome(1),
     DRAW = new Outcome(2);
   @Override
   public String toString() {
@@ -119,13 +119,12 @@ class Compete {
 
 public class PaperScissorsRock {
   public static void main(String args[]) {
-    ArrayList items = new ArrayList();
+    ArrayList<Item> items = new ArrayList<>();
     for(int i = 0; i < 40; i++)
       items.add(ItemFactory.newItem());
     for(int i = 0; i < items.size()/2; i++)
       System.out.println(
         Compete.match(
-          (Item)items.get(i), 
-          (Item)items.get(i*2)));
+          items.get(i), items.get(i*2)));
   }
 } ///:~

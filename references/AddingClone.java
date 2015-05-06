@@ -28,6 +28,7 @@ class Int3 extends Int2 {
 }
 
 public class AddingClone {
+  @SuppressWarnings("unchecked")
   public static void main(String[] args) {
     Int2 x = new Int2(10);
     Int2 x2 = (Int2)x.clone();

@@ -3,53 +3,53 @@
 package patterns.visitor;
 import java.util.*;
 
-interface Visitor {  
+interface Visitor {
   void visit(Gladiolus g);
   void visit(Renuculus r);
   void visit(Chrysanthemum c);
 }
 
 // The Flower hierarchy cannot be changed:
-interface Flower {  
+interface Flower {
   void accept(Visitor v);
 }
 
-class Gladiolus implements Flower {  
+class Gladiolus implements Flower {
   @Override
   public void accept(Visitor v) { v.visit(this);}
 }
 
-class Renuculus implements Flower {  
+class Renuculus implements Flower {
   @Override
   public void accept(Visitor v) { v.visit(this);}
 }
 
-class Chrysanthemum implements Flower {  
+class Chrysanthemum implements Flower {
   @Override
   public void accept(Visitor v) { v.visit(this);}
 }
 
 // Add the ability to produce a string:
 class StringVal implements Visitor {
-  String s;  
+  String s;
   @Override
   public String toString() { return s; }
   @Override
-  public void visit(Gladiolus g) { 
-    s = "Gladiolus"; 
+  public void visit(Gladiolus g) {
+    s = "Gladiolus";
   }
   @Override
-  public void visit(Renuculus r) { 
-    s = "Renuculus"; 
+  public void visit(Renuculus r) {
+    s = "Renuculus";
   }
   @Override
-  public void visit(Chrysanthemum c) { 
-    s = "Chrysanthemum"; 
+  public void visit(Chrysanthemum c) {
+    s = "Chrysanthemum";
   }
 }
 
 // Add the ability to do "Bee" activities:
-class Bee implements Visitor {  
+class Bee implements Visitor {
   @Override
   public void visit(Gladiolus g) {
     System.out.println("Bee and Gladiolus");
@@ -77,21 +77,21 @@ class FlowerFactory {
 
 public class BeeAndFlowers {
   public static void main(String args[]) {
-    ArrayList flowers = new ArrayList();
+    List<Flower> flowers = new ArrayList<>();
     for(int i = 0; i < 10; i++)
       flowers.add(FlowerFactory.newFlower());
     // It's almost as if I had added a function
     // to produce a Flower string representation:
     StringVal sval = new StringVal();
-    Iterator it = flowers.iterator();
+    Iterator<Flower> it = flowers.iterator();
     while(it.hasNext()) {
-      ((Flower)it.next()).accept(sval);
+      it.next().accept(sval);
       System.out.println(sval);
     }
     // Perform "Bee" operation on all Flowers:
     Bee bee = new Bee();
     it = flowers.iterator();
     while(it.hasNext())
-      ((Flower)it.next()).accept(bee);
+      it.next().accept(bee);
   }
 } ///:~

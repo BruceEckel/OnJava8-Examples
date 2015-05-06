@@ -10,7 +10,7 @@ public class ParseTrash {
   fillBin(String filename, Fillable bin) {
     try {
       try (BufferedReader data = new BufferedReader(
-              new FileReader(filename))) {
+             new FileReader(filename))) {
         String buf;
         while((buf = data.readLine())!= null) {
           if(buf.trim().length() == 0)
@@ -20,9 +20,8 @@ public class ParseTrash {
           double weight = Double.valueOf(
                   buf.substring(buf.indexOf(':') + 1)
                           .trim());
-          bin.addTrash(
-                  Trash.factory(
-                          new Trash.Info(type, weight)));
+          bin.addTrash(Trash.factory(
+            new Trash.Info(type, weight)));
         }
       }
     } catch(IOException e) {
@@ -36,6 +35,6 @@ public class ParseTrash {
   // Special case to handle ArrayList:
   public static void
   fillBin(String filename, ArrayList bin) {
-    fillBin(filename, new FillableArrayList(bin));
+    fillBin(filename, new FillableList(bin));
   }
 } ///:~

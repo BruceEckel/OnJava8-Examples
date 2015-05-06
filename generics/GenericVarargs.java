@@ -2,6 +2,7 @@
 import java.util.*;
 
 public class GenericVarargs {
+  @SuppressWarnings("unchecked")
   public static <T> List<T> makeList(T... args) {
     List<T> result = new ArrayList<>();
     for(T item : args)

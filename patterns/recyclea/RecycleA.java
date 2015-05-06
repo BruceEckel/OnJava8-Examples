@@ -1,4 +1,4 @@
-//: patterns/recyclea/RecycleA.java 
+//: patterns/recyclea/RecycleA.java
 // Recycling with RTTI.
 package patterns.recyclea;
 import java.util.*;
@@ -10,13 +10,13 @@ abstract class Trash {
   abstract double value();
   double weight() { return weight; }
   // Sums the value of Trash in a bin:
-  static void sumValue(ArrayList bin) {
-    Iterator e = bin.iterator();
+  static void sumValue(List<Trash> bin) {
+    Iterator<Trash> e = bin.iterator();
     double val = 0.0f;
     while(e.hasNext()) {
       // One kind of RTTI:
       // A dynamically-checked cast
-      Trash t = (Trash)e.next();
+      Trash t = e.next();
       // Polymorphism in action:
       val += t.weight() * t.value();
       System.out.println(
@@ -62,7 +62,7 @@ class Glass extends Trash {
 
 public class RecycleA {
   public static void main(String[] args) {
-    ArrayList bin = new ArrayList();
+    List<Trash> bin = new ArrayList<>();
     // Fill up the Trash bin:
     for(int i = 0; i < 30; i++)
       switch((int)(Math.random() * 3)) {
@@ -78,14 +78,14 @@ public class RecycleA {
           bin.add(new
             Glass(Math.random() * 100));
       }
-    ArrayList 
-      glassBin = new ArrayList(),
-      paperBin = new ArrayList(),
-      alBin = new ArrayList();
-    Iterator sorter = bin.iterator();
+    List<Trash>
+      glassBin = new ArrayList<>(),
+      paperBin = new ArrayList<>(),
+      alBin = new ArrayList<>();
+    Iterator<Trash> sorter = bin.iterator();
     // Sort the Trash:
     while(sorter.hasNext()) {
-      Object t = sorter.next();
+      Trash t = sorter.next();
       // RTTI to show class membership:
       if(t instanceof Aluminum)
         alBin.add(t);

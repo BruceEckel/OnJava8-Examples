@@ -12,7 +12,7 @@ class BadShapeCreation extends Exception {
 abstract class Shape {
   public abstract void draw();
   public abstract void erase();
-  static Shape factory(String type) 
+  static Shape factory(String type)
     throws BadShapeCreation {
     if("Circle".equals(type)) return new Circle();
     if("Square".equals(type)) return new Square();
@@ -23,32 +23,32 @@ abstract class Shape {
 class Circle extends Shape {
   Circle() {} // Friendly constructor
   @Override
-  public void draw() { 
-    System.out.println("Circle.draw"); 
+  public void draw() {
+    System.out.println("Circle.draw");
   }
   @Override
-  public void erase() { 
-    System.out.println("Circle.erase"); 
+  public void erase() {
+    System.out.println("Circle.erase");
   }
 }
 
 class Square extends Shape {
   Square() {} // Friendly constructor
   @Override
-  public void draw() { 
-    System.out.println("Square.draw"); 
+  public void draw() {
+    System.out.println("Square.draw");
   }
   @Override
-  public void erase() { 
-    System.out.println("Square.erase"); 
+  public void erase() {
+    System.out.println("Square.erase");
   }
 }
 
 public class ShapeFactory1 {
   public static void main(String args[]) {
-    String shlist[] = { "Circle", "Square", 
+    String shlist[] = { "Circle", "Square",
       "Square", "Circle", "Circle", "Square" };
-    ArrayList shapes = new ArrayList();
+    List<Shape> shapes = new ArrayList<>();
     try {
       for (String shlist1 : shlist) {
         shapes.add(Shape.factory(shlist1));
@@ -57,11 +57,11 @@ public class ShapeFactory1 {
       e.printStackTrace();
       return;
     }
-    Iterator i = shapes.iterator();
+    Iterator<Shape> i = shapes.iterator();
     while(i.hasNext()) {
-      Shape s = (Shape)i.next();
+      Shape s = i.next();
       s.draw();
       s.erase();
     }
-  } 
+  }
 } ///:~

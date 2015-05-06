@@ -12,6 +12,7 @@ class Int {
 }
 
 public class Cloning {
+  @SuppressWarnings("unchecked")
   public static void main(String[] args) {
     ArrayList v = new ArrayList();
     for(int i = 0; i < 10; i++ )

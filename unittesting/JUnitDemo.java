@@ -7,7 +7,7 @@ import org.junit.Assert.*;
 
 // So we can see the list objects being created,
 // and keep track of when they are cleaned up:
-class CountedList extends ArrayList {
+class CountedList extends ArrayList<String> {
   private static int counter = 0;
   private int id = counter++;
   public CountedList() {
@@ -77,7 +77,7 @@ public class JUnitDemo {
   @Test
   public void testAddAll() {
     System.out.println("Running testAddAll()");
-    list.addAll(Arrays.asList(new Object[] {
+    list.addAll(Arrays.asList(new String[] {
       "An", "African", "Swallow"}));
     org.junit.Assert.assertEquals(list.size(), 6);
     compare(list, new String[] { "0", "1", "2",

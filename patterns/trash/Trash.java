@@ -11,13 +11,13 @@ public abstract class Trash {
   public abstract double value();
   public double weight() { return weight; }
   // Sums the value of Trash in a bin:
-  public static void sumValue(ArrayList bin) {
-    Iterator e = bin.iterator();
+  public static void sumValue(List<Trash> bin) {
+    Iterator<Trash> e = bin.iterator();
     double val = 0.0f;
     while(e.hasNext()) {
       // One kind of RTTI:
       // A dynamically-checked cast
-      Trash t = (Trash)e.next();
+      Trash t = e.next();
       val += t.weight() * t.value();
       System.out.println(
         "weight of " +
@@ -34,15 +34,16 @@ public abstract class Trash {
       extends Exception {}
   public static class CannotCreateTrashException
       extends Exception {}
-  private static ArrayList trashTypes = 
-    new ArrayList();
-  public static Trash factory(Info info) 
-      throws PrototypeNotFoundException, 
+  private static List<Class> trashTypes =
+    new ArrayList<>();
+  @SuppressWarnings("unchecked")
+  public static Trash factory(Info info)
+      throws PrototypeNotFoundException,
       CannotCreateTrashException {
-    for (Object trashType : trashTypes) {
+    for (Class trashType : trashTypes) {
       // Somehow determine the new type
       // to create, and create one:
-      Class tc = (Class) trashType;
+      Class tc = trashType;
       if (tc.getName().contains(info.id)) {
         try {
           // Get the dynamic constructor method
@@ -50,7 +51,7 @@ public abstract class Trash {
           Constructor ctor =
                   tc.getConstructor(
                           new Class[] {double.class});
-          // Call the constructor to create a 
+          // Call the constructor to create a
           // new object:
           return (Trash)ctor.newInstance(
                   new Object[]{info.data});
@@ -69,13 +70,12 @@ public abstract class Trash {
     // but it must be in your class path!
     try {
       System.out.println("Loading " + info.id);
-      trashTypes.add(
-        Class.forName(info.id));
+      trashTypes.add(Class.forName(info.id));
     } catch(Exception e) {
       e.printStackTrace();
       throw new PrototypeNotFoundException();
     }
-    // Loaded successfully. Recursive call 
+    // Loaded successfully. Recursive call
     // should work this time:
     return factory(info);
   }

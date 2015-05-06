@@ -6,16 +6,16 @@ import java.util.*;
 public class CustomHandler {
   private static Logger logger =
     Logger.getLogger("CustomHandler");
-  private static List strHolder = new ArrayList();
+  private static List<String> trace = new ArrayList<>();
   public static void main(String[] args) {
     logger.addHandler(new Handler() {
       @Override
       public void publish(LogRecord logRecord) {
-        strHolder.add(logRecord.getLevel() + ":");
-        strHolder.add(logRecord.getSourceClassName()+":");
-        strHolder.add(logRecord.getSourceMethodName()+":");
-        strHolder.add("<" + logRecord.getMessage() + ">");
-        strHolder.add("\n");
+        trace.add(logRecord.getLevel() + ":");
+        trace.add(logRecord.getSourceClassName()+":");
+        trace.add(logRecord.getSourceMethodName()+":");
+        trace.add("<" + logRecord.getMessage() + ">");
+        trace.add("\n");
       }
       @Override
       public void flush() {}
@@ -24,6 +24,6 @@ public class CustomHandler {
     });
     logger.warning("Logging Warning");
     logger.info("Logging Info");
-    System.out.print(strHolder);
+    System.out.print(trace);
   }
 } ///:~

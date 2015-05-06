@@ -14,12 +14,12 @@ class IntValue {
 
 public class MutableInteger {
   public static void main(String[] args) {
-    List v = new ArrayList();
+    List<IntValue> v = new ArrayList<>();
     for(int i = 0; i < 10; i++)
       v.add(new IntValue(i));
     System.out.println(v);
     for(int i = 0; i < v.size(); i++)
-      ((IntValue)v.get(i)).increment();
+      v.get(i).increment();
     System.out.println(v);
   }
 } ///:~
