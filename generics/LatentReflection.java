@@ -35,7 +35,10 @@ class CommunicateReflectively {
       } catch(NoSuchMethodException e) {
         print(speaker + " cannot sit");
       }
-    } catch(Exception e) {
+    } catch(SecurityException | 
+            IllegalAccessException | 
+            IllegalArgumentException | 
+            InvocationTargetException e) {
       throw new RuntimeException(speaker.toString(), e);
     }
   }

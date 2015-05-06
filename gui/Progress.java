@@ -24,9 +24,8 @@ public class Progress extends JFrame {
     sb.setBorder(new TitledBorder("Slide Me"));
     pb.setModel(sb.getModel()); // Share model
     add(sb);
-    sb.addChangeListener((ChangeEvent e) -> {
-      pm.setProgress(sb.getValue());
-    });
+    sb.addChangeListener(e ->
+      pm.setProgress(sb.getValue()));
   }
   public static void main(String[] args) {
     run(new Progress(), 300, 200);

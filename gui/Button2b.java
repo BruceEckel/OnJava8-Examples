@@ -10,7 +10,7 @@ public class Button2b extends JFrame {
     b1 = new JButton("Button 1"),
     b2 = new JButton("Button 2");
   private JTextField txt = new JTextField(10);
-  private ActionListener bl = (ActionEvent e) -> {
+  private ActionListener bl = e -> {
     String name1 = ((JButton)e.getSource()).getText();
     txt.setText(name1);
   };

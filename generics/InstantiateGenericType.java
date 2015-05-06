@@ -6,7 +6,8 @@ class ClassAsFactory<T> {
   public ClassAsFactory(Class<T> kind) {
     try {
       x = kind.newInstance();
-    } catch(Exception e) {
+    } catch(InstantiationException |
+            IllegalAccessException e) {
       throw new RuntimeException(e);
     }
   }

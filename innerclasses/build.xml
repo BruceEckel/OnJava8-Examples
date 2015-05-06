@@ -17,6 +17,7 @@
     <jrun cls="Games" />
     <jrun cls="GreenhouseController" arguments='5000' />
     <jrun cls="InheritInner" />
+    <jrun cls="LambdaExpressions" />
     <jrun cls="LocalInnerClass" />
     <jrun cls="innerclasses.MultiImplementation" dirpath="../innerclasses" />
     <jrun cls="innerclasses.MultiInterfaces" dirpath="../innerclasses" />

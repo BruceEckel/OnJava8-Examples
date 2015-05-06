@@ -14,8 +14,8 @@ public class LookAndFeel extends JFrame {
     new JLabel("JLabel"),
     new JCheckBox("JCheckBox"),
     new JRadioButton("Radio"),
-    new JComboBox(choices),
-    new JList(choices),
+    new JComboBox<String>(choices),
+    new JList<String>(choices),
   };
   public LookAndFeel() {
     super("Look And Feel");
@@ -35,7 +35,10 @@ public class LookAndFeel extends JFrame {
         try {
           UIManager.setLookAndFeel(UIManager.
             getCrossPlatformLookAndFeelClassName());
-        } catch(Exception e) {
+        } catch(ClassNotFoundException |
+                InstantiationException |
+                IllegalAccessException |
+                UnsupportedLookAndFeelException e) {
           e.printStackTrace();
         }
         break;
@@ -43,7 +46,10 @@ public class LookAndFeel extends JFrame {
         try {
           UIManager.setLookAndFeel(UIManager.
             getSystemLookAndFeelClassName());
-        } catch(Exception e) {
+        } catch(ClassNotFoundException |
+                InstantiationException |
+                IllegalAccessException |
+                UnsupportedLookAndFeelException e) {
           e.printStackTrace();
         }
         break;
@@ -51,7 +57,10 @@ public class LookAndFeel extends JFrame {
         try {
           UIManager.setLookAndFeel("com.sun.java."+
             "swing.plaf.motif.MotifLookAndFeel");
-        } catch(Exception e) {
+        } catch(ClassNotFoundException |
+                InstantiationException |
+                IllegalAccessException |
+                UnsupportedLookAndFeelException e) {
           e.printStackTrace();
         }
         break;

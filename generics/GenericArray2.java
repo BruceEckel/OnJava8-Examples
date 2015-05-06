@@ -24,7 +24,9 @@ public class GenericArray2<T> {
     System.out.println();
     try {
       Integer[] ia = gai.rep();
-    } catch(Exception e) { System.out.println(e); }
+    } catch(Exception e) { 
+      System.out.println(e);
+    }
   }
 } /* Output: (Sample)
 0 1 2 3 4 5 6 7 8 9

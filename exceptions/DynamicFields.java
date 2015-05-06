@@ -93,9 +93,8 @@ public class DynamicFields {
       print("df: " + df);
       print("df.getField(\"d\") : " + df.getField("d"));
       Object field = df.setField("d", null); // Exception
-    } catch(NoSuchFieldException e) {
-      e.printStackTrace(System.out);
-    } catch(DynamicFieldsException e) {
+    } catch(NoSuchFieldException | 
+            DynamicFieldsException e) {
       e.printStackTrace(System.out);
     }
   }

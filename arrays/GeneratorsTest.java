@@ -11,7 +11,8 @@ public class GeneratorsTest {
         for(int i = 0; i < size; i++)
           System.out.printf(g.next() + " ");
         System.out.println();
-      } catch(Exception e) {
+      } catch(InstantiationException |
+              IllegalAccessException e) {
         throw new RuntimeException(e);
       }
     }

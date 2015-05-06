@@ -14,8 +14,8 @@ abstract class Shape {
   public abstract void erase();
   static Shape factory(String type) 
     throws BadShapeCreation {
-    if(type == "Circle") return new Circle();
-    if(type == "Square") return new Square();
+    if("Circle".equals(type)) return new Circle();
+    if("Square".equals(type)) return new Square();
     throw new BadShapeCreation(type);
   }
 }

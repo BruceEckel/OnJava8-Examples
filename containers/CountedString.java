@@ -44,7 +44,7 @@ public class CountedString {
     CountedString[] cs = new CountedString[5];
     for(int i = 0; i < cs.length; i++) {
       cs[i] = new CountedString("hi");
-      map.put(cs[i], i); // Autobox int -> Integer
+      map.put(cs[i], i); // Autobox int to Integer
     }
     print(map);
     for(CountedString cstring : cs) {

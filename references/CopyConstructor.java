@@ -123,8 +123,14 @@ public class CopyConstructor {
       Object obj = ct.newInstance(new Object[] { t });
       System.out.println("In ripen2, t is a " +
         obj.getClass().getName());
+    } catch(NoSuchMethodException |
+            SecurityException |
+            InstantiationException |
+            IllegalAccessException |
+            IllegalArgumentException |
+            InvocationTargetException e) { 
+      System.out.println(e); 
     }
-    catch(Exception e) { System.out.println(e); }
   }
   public static void slice2(Fruit f) {
     try {
@@ -133,8 +139,14 @@ public class CopyConstructor {
       Object obj = ct.newInstance(new Object[] { f });
       System.out.println("In slice2, f is a " +
         obj.getClass().getName());
+    } catch(NoSuchMethodException | 
+            SecurityException | 
+            InstantiationException | 
+            IllegalAccessException | 
+            IllegalArgumentException | 
+            InvocationTargetException e) { 
+      System.out.println(e); 
     }
-    catch(Exception e) { System.out.println(e); }
   }
   public static void main(String[] args) {
     Tomato tomato = new Tomato();

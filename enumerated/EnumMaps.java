@@ -11,12 +11,8 @@ public class EnumMaps {
   public static void main(String[] args) {
     EnumMap<AlarmPoints,Command> em =
       new EnumMap<>(AlarmPoints.class);
-    em.put(KITCHEN, (Command) () -> {
-      print("Kitchen fire!");
-    });
-    em.put(BATHROOM, (Command) () -> {
-      print("Bathroom alert!");
-    });
+    em.put(KITCHEN, () -> print("Kitchen fire!"));
+    em.put(BATHROOM, () -> print("Bathroom alert!"));
     for(Map.Entry<AlarmPoints,Command> e : em.entrySet()) {
       printnb(e.getKey() + ": ");
       e.getValue().action();

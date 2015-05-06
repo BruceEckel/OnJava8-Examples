@@ -16,7 +16,8 @@ public class FilledList<T> {
     try {
       for(int i = 0; i < nElements; i++)
         result.add(type.newInstance());
-    } catch(Exception e) {
+    } catch(InstantiationException | 
+            IllegalAccessException e) {
       throw new RuntimeException(e);
     }
     return result;

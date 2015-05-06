@@ -6,7 +6,7 @@ class UnresponsiveUI {
   private volatile double d = 1;
   public UnresponsiveUI() throws Exception {
     while(d > 0)
-      d = d + (Math.PI + Math.E) / d;
+      d += (Math.PI + Math.E) / d;
     System.in.read(); // Never gets here
   }
 }
@@ -20,7 +20,7 @@ public class ResponsiveUI extends Thread {
   @Override
   public void run() {
     while(true) {
-      d = d + (Math.PI + Math.E) / d;
+      d += (Math.PI + Math.E) / d;
     }
   }
   public static void main(String[] args) throws Exception {

@@ -51,7 +51,7 @@ public class MonitoredLongRunningCallable extends JFrame {
   private TaskManager<String,MonitoredCallable> manager =
     new TaskManager<>();
   public MonitoredLongRunningCallable() {
-    b1.addActionListener((ActionEvent e) -> {
+    b1.addActionListener(e -> {
       MonitoredCallable task = new MonitoredCallable(
               new ProgressMonitor(
                       MonitoredLongRunningCallable.this,
@@ -60,11 +60,11 @@ public class MonitoredLongRunningCallable extends JFrame {
       manager.add(task);
       System.out.println(task + " added to the queue");
     });
-    b2.addActionListener((ActionEvent e) -> {
+    b2.addActionListener(e -> {
       for(String result : manager.purge())
         System.out.println(result);
     });
-    b3.addActionListener((ActionEvent e) -> {
+    b3.addActionListener(e -> {
       for(String result : manager.getResults())
         System.out.println(result);
     });

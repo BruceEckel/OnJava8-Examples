@@ -27,7 +27,12 @@ public class ButtonGroups extends JFrame {
           kind.getConstructor(String.class);
         // Create a new object:
         ab = (AbstractButton)ctor.newInstance(id);
-      } catch(Exception ex) {
+      } catch(NoSuchMethodException |
+              SecurityException |
+              InstantiationException |
+              IllegalAccessException |
+              IllegalArgumentException |
+              InvocationTargetException ex) {
         System.err.println("can't create " + kind);
       }
       bg.add(ab);

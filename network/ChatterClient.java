@@ -2,7 +2,6 @@
 // {TimeOutDuringTesting}
 // Tests the ChatterServer by starting multiple 
 // clients, each of which sends datagrams.
-import java.lang.Thread;
 import java.net.*;
 import java.io.*;
 

@@ -15,7 +15,8 @@ public class Fill2 {
     for(int i = 0; i < size; i++)
       try {
         addable.add(classToken.newInstance());
-      } catch(Exception e) {
+      } catch(InstantiationException |
+              IllegalAccessException e) {
         throw new RuntimeException(e);
       }
   }

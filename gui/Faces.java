@@ -19,7 +19,7 @@ public class Faces extends JFrame {
     };
     jb = new JButton("JButton", faces[3]);
     setLayout(new FlowLayout());
-    jb.addActionListener((ActionEvent e) -> {
+    jb.addActionListener(e -> {
       if(mad) {
         jb.setIcon(faces[3]);
         mad = false;
@@ -36,7 +36,7 @@ public class Faces extends JFrame {
     jb.setDisabledIcon(faces[4]);
     jb.setToolTipText("Yow!");
     add(jb);
-    jb2.addActionListener((ActionEvent e) -> {
+    jb2.addActionListener(e -> {
       if(jb.isEnabled()) {
         jb.setEnabled(false);
         jb2.setText("Enable");

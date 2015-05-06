@@ -14,7 +14,8 @@ public class Fill {
       // Assumes default constructor:
       try {
         collection.add(classToken.newInstance());
-      } catch(Exception e) {
+      } catch(InstantiationException |
+              IllegalAccessException e) {
         throw new RuntimeException(e);
       }
   }

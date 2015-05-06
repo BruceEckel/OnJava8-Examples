@@ -35,7 +35,7 @@ class Blocked3 implements Runnable {
             print("Calculating");
             // A time-consuming, non-blocking operation:
             for(int i = 1; i < 2500000; i++)
-              d = d + (Math.PI + Math.E) / d;
+              d += (Math.PI + Math.E) / d;
             print("Finished time-consuming operation");
           } finally {
             n2.cleanup();

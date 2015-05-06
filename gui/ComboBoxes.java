@@ -11,18 +11,18 @@ public class ComboBoxes extends JFrame {
     "Somnescent", "Timorous", "Florid", "Putrescent"
   };
   private JTextField t = new JTextField(15);
-  private JComboBox c = new JComboBox();
+  private JComboBox<String> c = new JComboBox<>();
   private JButton b = new JButton("Add items");
   private int count = 0;
   public ComboBoxes() {
     for(int i = 0; i < 4; i++)
       c.addItem(description[count++]);
     t.setEditable(false);
-    b.addActionListener((ActionEvent e) -> {
+    b.addActionListener(e -> {
       if(count < description.length)
         c.addItem(description[count++]);
     });
-    c.addActionListener((ActionEvent e) -> {
+    c.addActionListener(e -> {
       t.setText("index: "+ c.getSelectedIndex() + "   " +
         ((JComboBox)e.getSource()).getSelectedItem());
     });

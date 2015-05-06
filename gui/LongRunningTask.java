@@ -11,16 +11,16 @@ public class LongRunningTask extends JFrame {
     b1 = new JButton("Start Long Running Task"),
     b2 = new JButton("End Long Running Task");
   public LongRunningTask() {
-    b1.addActionListener((ActionEvent evt) -> {
+    b1.addActionListener(e -> {
       try {
         TimeUnit.SECONDS.sleep(3);
-      } catch(InterruptedException e) {
+      } catch(InterruptedException ex) {
         System.out.println("Task interrupted");
         return;
       }
       System.out.println("Task completed");
     });
-    b2.addActionListener((ActionEvent evt) -> {
+    b2.addActionListener(e -> {
       // Interrupt yourself?
       Thread.currentThread().interrupt();
     });

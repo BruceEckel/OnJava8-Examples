@@ -58,7 +58,7 @@ public class ClassNameFinder {
       int super_class = data.readShort();
       return classNameTable.get(
         offsetTable.get(this_class)).replace('/', '.');
-    } catch(Exception e) {
+    } catch(IOException | RuntimeException e) {
       throw new RuntimeException(e);
     }
   }

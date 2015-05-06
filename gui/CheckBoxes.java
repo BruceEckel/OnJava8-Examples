@@ -12,15 +12,9 @@ public class CheckBoxes extends JFrame {
     cb2 = new JCheckBox("Check Box 2"),
     cb3 = new JCheckBox("Check Box 3");
   public CheckBoxes() {
-    cb1.addActionListener((ActionEvent e) -> {
-      trace("1", cb1);
-    });
-    cb2.addActionListener((ActionEvent e) -> {
-      trace("2", cb2);
-    });
-    cb3.addActionListener((ActionEvent e) -> {
-      trace("3", cb3);
-    });
+    cb1.addActionListener(e -> trace("1", cb1));
+    cb2.addActionListener(e -> trace("2", cb2));
+    cb3.addActionListener(e -> trace("3", cb3));
     setLayout(new FlowLayout());
     add(new JScrollPane(t));
     add(cb1);

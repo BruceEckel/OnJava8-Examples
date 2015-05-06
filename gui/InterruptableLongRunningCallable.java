@@ -25,16 +25,16 @@ InterruptableLongRunningCallable extends JFrame {
   private TaskManager<String,CallableTask> manager =
     new TaskManager<>();
   public InterruptableLongRunningCallable() {
-    b1.addActionListener((ActionEvent e) -> {
+    b1.addActionListener(e -> {
       CallableTask task = new CallableTask();
       manager.add(task);
       System.out.println(task + " added to the queue");
     });
-    b2.addActionListener((ActionEvent e) -> {
+    b2.addActionListener(e -> {
       for(String result : manager.purge())
         System.out.println(result);
     });
-    b3.addActionListener((ActionEvent e) -> {
+    b3.addActionListener(e -> {
       // Sample call to a Task method:
       for(TaskItem<String,CallableTask> tt : manager)
         tt.task.id(); // No cast required

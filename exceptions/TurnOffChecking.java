@@ -12,7 +12,8 @@ class WrapCheckedException {
         case 2: throw new RuntimeException("Where am I?");
         default: return;
       }
-    } catch(Exception e) { // Adapt to unchecked:
+    } catch(IOException | RuntimeException e) {
+      // Adapt to unchecked:
       throw new RuntimeException(e);
     }
   }

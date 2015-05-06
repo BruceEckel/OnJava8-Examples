@@ -12,10 +12,9 @@ public class RadioButtons extends JFrame {
     rb1 = new JRadioButton("one", false),
     rb2 = new JRadioButton("two", false),
     rb3 = new JRadioButton("three", false);
-  private ActionListener al = (ActionEvent e) -> {
+  private ActionListener al = e ->
     t.setText("Radio button " +
       ((JRadioButton)e.getSource()).getText());
-  };
   public RadioButtons() {
     rb1.addActionListener(al);
     rb2.addActionListener(al);

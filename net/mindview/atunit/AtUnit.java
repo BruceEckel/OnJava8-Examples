@@ -34,7 +34,7 @@ public class AtUnit implements ProcessFiles.Strategy {
       if(!cName.contains("."))
         return; // Ignore unpackaged classes
       testClass = Class.forName(cName);
-    } catch(Exception e) {
+    } catch(IOException | ClassNotFoundException e) {
       throw new RuntimeException(e);
     }
     TestMethods testMethods = new TestMethods();
@@ -86,7 +86,9 @@ public class AtUnit implements ProcessFiles.Strategy {
         }
         if(cleanup != null)
           cleanup.invoke(testObject, testObject);
-      } catch(Exception e) {
+      } catch(IllegalAccessException |
+              IllegalArgumentException |
+              InvocationTargetException e) {
         throw new RuntimeException(e);
       }
     }
@@ -137,14 +139,17 @@ public class AtUnit implements ProcessFiles.Strategy {
     if(creator != null) {
       try {
         return creator.invoke(testClass);
-      } catch(Exception e) {
+      } catch(IllegalAccessException |
+              IllegalArgumentException |
+              InvocationTargetException e) {
         throw new RuntimeException("Couldn't run " +
           "@TestObject (creator) method.");
       }
     } else { // Use the default constructor:
       try {
         return testClass.newInstance();
-      } catch(Exception e) {
+      } catch(InstantiationException |
+              IllegalAccessException e) {
         throw new RuntimeException("Couldn't create a " +
           "test object. Try using a @TestObject method.");
       }

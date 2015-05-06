@@ -41,8 +41,7 @@ public class ProcessFiles {
   }
   // Demonstration of how to use it:
   public static void main(String[] args) {
-    new ProcessFiles((File file) -> {
-      System.out.println(file);
-    }, "java").start(args);
+    new ProcessFiles(file -> System.out.println(file),
+      "java").start(args);
   }
 } /* (Execute to see output) *///:~

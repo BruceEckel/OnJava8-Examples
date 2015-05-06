@@ -54,7 +54,12 @@ public abstract class Trash {
           // new object:
           return (Trash)ctor.newInstance(
                   new Object[]{info.data});
-        } catch(Exception ex) {
+        } catch(NoSuchMethodException |
+                SecurityException |
+                InstantiationException |
+                IllegalAccessException |
+                IllegalArgumentException |
+                InvocationTargetException ex) {
           ex.printStackTrace();
           throw new CannotCreateTrashException();
         }

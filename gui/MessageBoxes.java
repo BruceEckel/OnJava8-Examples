@@ -12,7 +12,7 @@ public class MessageBoxes extends JFrame {
     new JButton("3 Vals")
   };
   private JTextField txt = new JTextField(15);
-  private ActionListener al = (ActionEvent e) -> {
+  private ActionListener al = e -> {
     String id = ((JButton)e.getSource()).getText();
     switch (id) {
       case "Alert":

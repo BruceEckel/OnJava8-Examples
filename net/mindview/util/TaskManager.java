@@ -19,7 +19,8 @@ extends ArrayList<TaskItem<R,C>> {
       if(item.future.isDone()) {
         try {
           results.add(item.future.get());
-        } catch(Exception e) {
+        } catch(InterruptedException |
+                ExecutionException e) {
           throw new RuntimeException(e);
         }
         items.remove();

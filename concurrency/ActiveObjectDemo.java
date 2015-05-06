@@ -52,7 +52,8 @@ public class ActiveObjectDemo {
         if(f.isDone()) {
           try {
             print(f.get());
-          } catch(Exception e) {
+          } catch(InterruptedException |
+                  ExecutionException e) {
             throw new RuntimeException(e);
           }
           results.remove(f);

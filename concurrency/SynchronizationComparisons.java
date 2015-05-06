@@ -35,7 +35,8 @@ abstract class Accumulator {
         accumulate();
       try {
         barrier.await();
-      } catch(Exception e) {
+      } catch(InterruptedException |
+              BrokenBarrierException e) {
         throw new RuntimeException(e);
       }
     }
@@ -48,7 +49,8 @@ abstract class Accumulator {
         value = read();
       try {
         barrier.await();
-      } catch(Exception e) {
+      } catch(InterruptedException |
+              BrokenBarrierException e) {
         throw new RuntimeException(e);
       }
     }
@@ -61,7 +63,8 @@ abstract class Accumulator {
     }
     try {
       barrier.await();
-    } catch(Exception e) {
+    } catch(InterruptedException |
+            BrokenBarrierException e) {
       throw new RuntimeException(e);
     }
     duration = System.nanoTime() - start;

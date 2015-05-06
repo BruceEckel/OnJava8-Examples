@@ -79,7 +79,7 @@ public class MultiSimpleClient {
       if(SimpleClientThread.threadCount() 
          < MAX_THREADS)
         new SimpleClientThread(addr);
-      Thread.currentThread().sleep(100);
+      Thread.sleep(100);
     }
   }
 } ///:~

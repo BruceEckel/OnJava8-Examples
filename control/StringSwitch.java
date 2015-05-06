@@ -5,13 +5,13 @@ public class StringSwitch {
   public static void main(String[] args) {
     String color = "red";
     // Old way: using if-then
-    if(color == "red") {
+    if("red".equals(color)) {
       print("RED");
-    } else if(color == "green") {
+    } else if("green".equals(color)) {
       print("GREEN");
-    } else if(color == "blue") {
+    } else if("blue".equals(color)) {
       print("BLUE");
-    } else if(color == "yellow") {
+    } else if("yellow".equals(color)) {
       print("YELLOW");
     } else {
       print("Unknown");

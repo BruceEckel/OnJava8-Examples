@@ -10,7 +10,7 @@ public class HTMLButton extends JFrame {
     "<html><b><font size=+2>" +
     "<center>Hello!<br><i>Press me now!");
   public HTMLButton() {
-    b.addActionListener((ActionEvent e) -> {
+    b.addActionListener(e -> {
       add(new JLabel("<html>" +
               "<i><font size=+4>Kapow!"));
       // Force a re-layout to include the new label:

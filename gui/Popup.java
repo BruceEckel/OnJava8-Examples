@@ -11,9 +11,8 @@ public class Popup extends JFrame {
   public Popup() {
     setLayout(new FlowLayout());
     add(t);
-    ActionListener al = (ActionEvent e) -> {
+    ActionListener al = e ->
       t.setText(((JMenuItem)e.getSource()).getText());
-    };
     JMenuItem m = new JMenuItem("Hither");
     m.addActionListener(al);
     popup.add(m);

@@ -1,5 +1,6 @@
 //: containers/TypesForSets.java
 // Methods necessary to put your own type in a Set.
+import java.lang.reflect.InvocationTargetException;
 import java.util.*;
 
 class SetType {
@@ -34,7 +35,12 @@ public class TypesForSets {
       for(int i = 0; i < 10; i++)
           set.add(
             type.getConstructor(int.class).newInstance(i));
-    } catch(Exception e) {
+    } catch(NoSuchMethodException |
+            SecurityException |
+            InstantiationException |
+            IllegalAccessException |
+            IllegalArgumentException |
+            InvocationTargetException e) {
       throw new RuntimeException(e);
     }
     return set;

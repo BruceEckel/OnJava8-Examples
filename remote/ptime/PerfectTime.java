@@ -30,7 +30,9 @@ public class PerfectTime
       Naming.bind(
         "//MindviewToshibaLaptop:2005/PerfectTime", pt);
       System.out.println("Ready to do time");
-    } catch(Exception e) {
+    } catch(RemoteException |
+            AlreadyBoundException |
+            MalformedURLException e) {
       e.printStackTrace();
     }
   }

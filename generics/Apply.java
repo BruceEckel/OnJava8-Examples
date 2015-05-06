@@ -10,7 +10,9 @@ public class Apply {
     try {
       for(T t: seq)
         f.invoke(t, args);
-    } catch(Exception e) {
+    } catch(IllegalAccessException | 
+            IllegalArgumentException | 
+            InvocationTargetException e) {
       // Failures are programmer errors
       throw new RuntimeException(e);
     }
@@ -32,7 +34,8 @@ class FilledList<T> extends ArrayList<T> {
       for(int i = 0; i < size; i++)
         // Assumes default constructor:
         add(type.newInstance());
-    } catch(Exception e) {
+    } catch(InstantiationException |
+            IllegalAccessException e) {
       throw new RuntimeException(e);
     }
   }

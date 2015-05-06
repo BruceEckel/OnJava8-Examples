@@ -30,7 +30,8 @@ public class LostMessage {
       } finally {
         lm.dispose();
       }
-    } catch(Exception e) {
+    } catch(VeryImportantException | 
+            HoHumException e) {
       System.out.println(e);
     }
   }

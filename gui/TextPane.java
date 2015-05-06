@@ -12,7 +12,7 @@ public class TextPane extends JFrame {
   private static Generator sg =
     new RandomGenerator.String(7);
   public TextPane() {
-    b.addActionListener((ActionEvent e) -> {
+    b.addActionListener(e -> {
       for(int i = 1; i < 10; i++)
         tp.setText(tp.getText() + sg.next() + "\n");
     });

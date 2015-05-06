@@ -23,8 +23,8 @@
      <attribute name="timeOut" default="15000"/>
      <attribute name="msg" default=""/>
      <sequential>
-        <echo>Running: ${chapter} @{cls}&#13;</echo>
-        <echo file="${antoutput}" append="true">Running: ${chapter} @{cls}&#13;</echo>
+        <echo>[${chapter}] Running: java @{cls} @{arguments}&#13;</echo>
+        <echo file="${antoutput}" append="true">[${chapter}] Running: java @{cls} @{arguments}&#13;</echo>
         <java
           classname="@{cls}"
           classpath="${java.class.path};${basedir};${basedir}/.."
@@ -35,7 +35,7 @@
           output="${antoutput}" append="true">
             <arg line="@{arguments}"/>
         </java>
-        <echo file="${antoutput}" append="true">Finished: ${chapter} @{cls}&#13;</echo>
+        <echo file="${antoutput}" append="true">[${chapter}] Finished: java @{cls} @{arguments}&#13;</echo>
         <echo file="${antoutput}" append="true">@{msg}&#13;</echo>
         <echo file="${antoutput}" append="true">--------------------------------&#13;</echo>
      </sequential>
@@ -49,8 +49,8 @@
      <attribute name="timeOut" default="15000"/>
      <attribute name="msg" default=""/>
      <sequential>
-        <echo>Running: ${chapter} @{cls}&#13;</echo>
-        <echo append="true">Running: ${chapter} @{cls}&#13;</echo>
+        <echo>[${chapter}] Running: java @{cls} @{arguments}&#13;</echo>
+        <echo append="true">[${chapter}] Running: java @{cls} @{arguments}&#13;</echo>
         <java
           classname="@{cls}"
           classpath="${java.class.path};${basedir};${basedir}/.."
@@ -61,7 +61,7 @@
           >
             <arg line="@{arguments}"/>
         </java>
-        <echo append="true">Finished: ${chapter} @{cls}&#13;</echo>
+        <echo append="true">[${chapter}] Finished: java @{cls} @{arguments}&#13;</echo>
         <echo append="true">@{msg}&#13;</echo>
         <echo append="true">--------------------------------&#13;</echo>
      </sequential>

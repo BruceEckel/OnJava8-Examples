@@ -27,7 +27,9 @@ public class ParseTrash {
       }
     } catch(IOException e) {
       e.printStackTrace();
-    } catch(Exception e) {
+    } catch(NumberFormatException |
+            Trash.PrototypeNotFoundException |
+            Trash.CannotCreateTrashException e) {
       e.printStackTrace();
     }
   }

@@ -18,7 +18,8 @@ public class Pool<T> {
       try {
         // Assumes a default constructor:
         items.add(classObject.newInstance());
-      } catch(Exception e) {
+      } catch(InstantiationException |
+              IllegalAccessException e) {
         throw new RuntimeException(e);
       }
   }
