@@ -41,6 +41,12 @@ class Flags:
     def values(self):
         return str(self.flags.values())
 
+    def jvm_args(self):
+        return self.flags["JVMArgs"] if "JVMArgs" in self.flags else ""
+
+    def cmd_args(self):
+        return " " + self.flags["Args"] if "Args" in self.flags else ""
+
 
 
 
@@ -53,7 +59,7 @@ class RunnableFile:
         self.body = body
         self.lines = body.splitlines()
         self.flags = Flags(self.lines)
-        self.package = ""
+        self._package = ""
         # self.args = ""
         # self.jvm_args = ""
         # self.brace_cmds = ""
@@ -63,24 +69,24 @@ class RunnableFile:
             # if "{JVMArgs:" in line:
             #     self.jvm_args = extract(line,"{JVMArgs:") + " "
             if line.startswith("package "):
-                self.package = line.split("package ")[1].strip()[:-1]
-                if self.package.replace('.', '/') not in self.lines[0]:
-                    self.package = ""
+                self._package = line.split("package ")[1].strip()[:-1]
+                if self._package.replace('.', '/') not in self.lines[0]:
+                    self._package = ""
             # if line.startswith("// {"):
             #     self.brace_cmds += line + "\n"
 
     def __repr__(self):
         return str(self.relative) + "\n" #+ self.header
 
-    def finaldot(self):
-        return '.' if self.package else ''
+    def package(self):
+        return self._package + '.' if self._package else ''
 
     def runCommand(self):
-        return "java " + self.jvm_args + self.package + self.finaldot() + self.name + " " + self.args
+        return "[" + str(self.path.parent) + "] java " + self.flags.jvm_args() + self.package() + self.name + self.flags.cmd_args()
 
 
 class RunFiles:
-    base = Path("ExtractedExamples")
+    base = Path(".")
     def __init__(self):
         self.runFiles = []
         for java in RunFiles.base.rglob("*.java"):
@@ -105,6 +111,7 @@ class RunFiles:
         return [f.runCommand() for f in self.runFiles]
 
 if __name__ == '__main__':
+    assert Path.cwd().stem is "ExtractedExamples"
     runFiles = RunFiles()
     pprint.pprint(runFiles.allFlags())
     pprint.pprint(runFiles.runCommands())
