@@ -19,6 +19,7 @@ parser.add_argument("-c", "--cleanoutput", action='store_true',
 #  Create Powershell Script to run all programs and capture the output
 ###############################################################################
 # Powershell: https://gist.github.com/diyan/2850866
+# http://marxsoftware.blogspot.com/2008/02/windows-powershell-and-java.html
 
 class Flags:
     discard = ["{Requires:"]
@@ -160,6 +161,7 @@ def createPowershellScript():
     # [print(f, f.flags) for f in runFiles]
     # sys.exit()
     with open("runall.ps1", 'w') as ps:
+        ps.write('''Start-Process -FilePath "ant" -ArgumentList "build" -NoNewWindow -Wait \n\n''')
         for rf in runFiles:
             with visitDir(rf.rundir()):
                 pstext = """\
@@ -174,7 +176,7 @@ def createPowershellScript():
                 ps.write("cd {}\n".format(os.getcwd()))
                 ps.write(pstext + "\n")
                 ps.write('Write-Host [{}] {}\n'.format(rf.relative, rf.name))
-                ps.write("cd {}\n".format(startDir))
+                ps.write("cd {}\n\n".format(startDir))
 
     # pprint.pprint(runFiles.runCommands())
 
@@ -183,6 +185,9 @@ def createPowershellScript():
 ###############################################################################
 
 class Result:
+    """
+    Finds result files, compares to output stored in comments at ends of Java files.
+    """
     oldOutput = re.compile("/* Output:.*?\n(.*)\n\*///:~(?s)")
     @staticmethod
     def create(javaFilePath):
