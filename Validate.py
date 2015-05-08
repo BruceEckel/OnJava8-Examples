@@ -1,9 +1,23 @@
 #! py -3
+"""
+Run all (possible) java files and capture output and errors
+"""
 from pathlib import Path
 import pprint
+import textwrap
 import os, sys
 from contextlib import contextmanager
+import argparse
 
+parser = argparse.ArgumentParser()
+parser.add_argument("-p", "--powershell", action='store_true',
+    help="Create Powershell Script to run all programs and capture the output")
+parser.add_argument("-c", "--cleanoutput", action='store_true',
+    help="Clean output files by removing empty ones, and reporting file sizes")
+
+###############################################################################
+#  Create Powershell Script to run all programs and capture the output
+###############################################################################
 # Powershell: https://gist.github.com/diyan/2850866
 
 class Flags:
@@ -51,7 +65,6 @@ class Flags:
 
 
 
-
 class RunnableFile:
 
     def __init__(self, path, body):
@@ -72,7 +85,7 @@ class RunnableFile:
         return elt in self.flags
 
     def __repr__(self):
-        return str(self.relative) + ": " + self.name
+        return str(self.relative) #+ ": " + self.name
 
     def package(self):
         return self._package + '.' if self._package else ''
@@ -88,6 +101,7 @@ class RunnableFile:
         return "java " + self.javaArguments()
 
 
+
 class RunFiles:
     # RunFirst is temporary?
     not_runnable = ["RunByHand", "TimeOutDuringTesting", "CompileTimeError", 'TimeOut', 'RunFirst']
@@ -101,8 +115,13 @@ class RunFiles:
                 body = code.read()
                 if "static void main(String[] args)" in body:
                     self.runFiles.append(RunnableFile(java, body))
+        allMains = set(self.runFiles)
         self.runFiles = [f for f in self.runFiles if not [nr for nr in self.not_runnable if nr in f]]
         self.runFiles = [f for f in self.runFiles if not [nd for nd in self.skip_dirs if nd in f.path.parts[0]]]
+        testedMains = set(self.runFiles)
+        self.untested = allMains.difference(testedMains)
+        with (RunFiles.base / "Untested.txt").open('w') as utf:
+            utf.write(pprint.pformat(self.untested))
 
     def allFlagKeys(self):
         flagkeys = set()
@@ -134,8 +153,7 @@ def visitDir(d):
     yield d
     os.chdir(old)
 
-
-if __name__ == '__main__':
+def createPowershellScript():
     assert Path.cwd().stem is "ExtractedExamples"
     runFiles = RunFiles()
     startDir = os.getcwd()
@@ -144,10 +162,83 @@ if __name__ == '__main__':
     with open("runall.ps1", 'w') as ps:
         for rf in runFiles:
             with visitDir(rf.rundir()):
+                pstext = """\
+                Start-Process
+                -FilePath "java.exe"
+                -ArgumentList "{}"
+                -NoNewWindow
+                -RedirectStandardOutput {}-output.txt
+                -RedirectStandardError {}-erroroutput.txt
+                """.format(rf.javaArguments(), rf.name, rf.name)
+                pstext = textwrap.dedent(pstext).replace('\n', ' ')
                 ps.write("cd {}\n".format(os.getcwd()))
-                ps.write('Start-Process -FilePath "java.exe" -ArgumentList "{}" -NoNewWindow -RedirectStandardOutput {}-output.txt -RedirectStandardError {}-erroroutput.txt \n'.format(rf.javaArguments(), rf.name, rf.name))
+                ps.write(pstext + "\n")
                 ps.write('Write-Host [{}] {}\n'.format(rf.relative, rf.name))
                 ps.write("cd {}\n".format(startDir))
 
     # pprint.pprint(runFiles.runCommands())
 
+###############################################################################
+#  Attach Output to Java Files
+###############################################################################
+
+class Result:
+
+    @staticmethod
+    def create(javaFilePath):
+        "if the output files exist and are not both empty, produce Result object"
+        outfile = javaFilePath.with_name(javaFilePath.stem + "-output.txt")
+        errfile = javaFilePath.with_name(javaFilePath.stem + "-erroroutput.txt")
+        if outfile.exists():
+            assert errfile.exists()
+        else:
+            return None
+        # Ensure that only one contains data:
+        if outfile.stat().st_size:
+            assert not errfile.stat().st_size
+        if errfile.stat().st_size:
+            assert not outfile.stat().st_size
+        # Only create if at least one has output:
+        if outfile.stat().st_size or errfile.stat().st_size:
+            return Result(javaFilePath, outfile, errfile)
+        else:
+            return None
+
+    def __init__(self, javaFilePath, outfile, errfile):
+        self.javaFilePath = javaFilePath
+        self.outFilePath = outfile
+        self.errFilePath = errfile
+
+    def __repr__(self):
+        return str(self.javaFilePath) + "\n" +\
+        str(self.outFilePath) + " " + str(self.outFilePath.stat().st_size) + "\n" +\
+        str(self.errFilePath) + " " + str(self.errFilePath.stat().st_size) + "\n"
+
+
+
+def checkAndCleanResults():
+    print("checkAndCleanResults()")
+    assert Path.cwd().stem is "ExtractedExamples"
+    results = [r for r in [Result.create(jfp) for jfp in RunFiles.base.rglob("*.java")] if r]
+    pprint.pprint(results)
+
+
+
+
+###############################################################################
+#  Main execution logic
+###############################################################################
+
+def default():
+    checkAndCleanResults()
+
+if __name__ == '__main__':
+    args = parser.parse_args()
+
+    if not any(vars(args).values()): default()
+
+    if args.powershell:
+        createPowershellScript()
+
+    if args.cleanoutput:
+        checkAndCleanResults()
