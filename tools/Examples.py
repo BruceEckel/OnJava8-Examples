@@ -248,7 +248,7 @@ class CodeFileOptions(object):
 
     def arguments(self):
         if self.cmdargs:
-            return """arguments='%s' """ % self.cmdargs
+            return """arguments="%s" """ % self.cmdargs
         return ""
 
     def failOnError(self):

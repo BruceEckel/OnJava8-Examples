@@ -1,11 +1,10 @@
 #! py -3
 from pathlib import Path
 import pprint
+import os, sys
+from contextlib import contextmanager
 
-
-# def extract(line, token):
-#     tag = line.split(token)[1]
-#     return tag.split("}")[0].strip()
+# Powershell: https://gist.github.com/diyan/2850866
 
 class Flags:
     discard = ["{Requires:"]
@@ -28,6 +27,9 @@ class Flags:
                 self.flags[fl] = arg
             else:
                 self.flags[flag] = None # Make an entry, but no arg
+
+    def __contains__(self, elt):
+        return elt in self.flags
 
     def __repr__(self):
         return pprint.pformat(self.flags)
@@ -60,32 +62,37 @@ class RunnableFile:
         self.lines = body.splitlines()
         self.flags = Flags(self.lines)
         self._package = ""
-        # self.args = ""
-        # self.jvm_args = ""
-        # self.brace_cmds = ""
         for line in self.lines:
-            # if "{Args:" in line:
-            #     self.args = extract(line,"{Args:")
-            # if "{JVMArgs:" in line:
-            #     self.jvm_args = extract(line,"{JVMArgs:") + " "
             if line.startswith("package "):
                 self._package = line.split("package ")[1].strip()[:-1]
                 if self._package.replace('.', '/') not in self.lines[0]:
                     self._package = ""
-            # if line.startswith("// {"):
-            #     self.brace_cmds += line + "\n"
+
+    def __contains__(self, elt):
+        return elt in self.flags
 
     def __repr__(self):
-        return str(self.relative) + "\n" #+ self.header
+        return str(self.relative) + ": " + self.name
 
     def package(self):
         return self._package + '.' if self._package else ''
 
+    def rundir(self):
+        "Directory to change to before running the command"
+        return self.path.parent
+
+    def javaArguments(self):
+        return self.flags.jvm_args() + self.package() + self.name + self.flags.cmd_args()
+
     def runCommand(self):
-        return "[" + str(self.path.parent) + "] java " + self.flags.jvm_args() + self.package() + self.name + self.flags.cmd_args()
+        return "java " + self.javaArguments()
 
 
 class RunFiles:
+    # RunFirst is temporary?
+    not_runnable = ["RunByHand", "TimeOutDuringTesting", "CompileTimeError", 'TimeOut', 'RunFirst']
+    skip_dirs = ["gui", "swt"]
+
     base = Path(".")
     def __init__(self):
         self.runFiles = []
@@ -94,6 +101,8 @@ class RunFiles:
                 body = code.read()
                 if "static void main(String[] args)" in body:
                     self.runFiles.append(RunnableFile(java, body))
+        self.runFiles = [f for f in self.runFiles if not [nr for nr in self.not_runnable if nr in f]]
+        self.runFiles = [f for f in self.runFiles if not [nd for nd in self.skip_dirs if nd in f.path.parts[0]]]
 
     def allFlagKeys(self):
         flagkeys = set()
@@ -110,10 +119,35 @@ class RunFiles:
     def runCommands(self):
         return [f.runCommand() for f in self.runFiles]
 
+    def runData(self):
+        return "\n".join(["[{}] {}".format(f.rundir(), f.runCommand()) for f in self.runFiles])
+
+    def __iter__(self):
+        return iter(self.runFiles)
+
+
+@contextmanager
+def visitDir(d):
+    d = str(d)
+    old = os.getcwd()
+    os.chdir(d)
+    yield d
+    os.chdir(old)
+
+
 if __name__ == '__main__':
     assert Path.cwd().stem is "ExtractedExamples"
     runFiles = RunFiles()
-    pprint.pprint(runFiles.allFlags())
-    pprint.pprint(runFiles.runCommands())
+    startDir = os.getcwd()
+    # [print(f, f.flags) for f in runFiles]
+    # sys.exit()
+    with open("runall.ps1", 'w') as ps:
+        for rf in runFiles:
+            with visitDir(rf.rundir()):
+                ps.write("cd {}\n".format(os.getcwd()))
+                ps.write('Start-Process -FilePath "java.exe" -ArgumentList "{}" -NoNewWindow -RedirectStandardOutput {}-output.txt -RedirectStandardError {}-erroroutput.txt \n'.format(rf.javaArguments(), rf.name, rf.name))
+                ps.write('Write-Host [{}] {}\n'.format(rf.relative, rf.name))
+                ps.write("cd {}\n".format(startDir))
 
+    # pprint.pprint(runFiles.runCommands())
 
