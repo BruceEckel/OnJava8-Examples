@@ -12,7 +12,7 @@
     <jrun cls="MultiSimpleServer" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
     <jrun cls="SimpleClient" failOnError='false' msg='* Exception was Expected *' />
     <jrun cls="SimpleServer" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
-    <jrun cls="WhoAmI" arguments='MindviewToshibaLaptop' />
+    <jrun cls="WhoAmI" arguments="MindviewToshibaLaptop" />
   </target>
 
 </project>

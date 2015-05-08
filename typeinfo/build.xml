@@ -25,7 +25,7 @@
     <jrun cls="RegisteredFactories" />
     <jrun cls="SelectingMethods" />
     <jrun cls="Shapes" />
-    <jrun cls="ShowMethods" arguments='ShowMethods' />
+    <jrun cls="ShowMethods" arguments="ShowMethods" />
     <jrun cls="SimpleDynamicProxy" />
     <jrun cls="SimpleProxyDemo" />
     <jrun cls="SnowRemovalRobot" />

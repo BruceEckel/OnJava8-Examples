@@ -19,7 +19,7 @@ public class ZipCompress {
       // No corresponding getComment(), though.
       for (String arg : args) {
         print("Writing file " + arg);
-        try (InputStream in = new BufferedInputStream(
+        try(InputStream in = new BufferedInputStream(
                 new FileInputStream(arg))) {
           zos.putNextEntry(new ZipEntry(arg));
           int c;
@@ -37,17 +37,18 @@ public class ZipCompress {
     CheckedInputStream csumi =
       new CheckedInputStream(fi, new Adler32());
     ZipInputStream in2 = new ZipInputStream(csumi);
-    BufferedInputStream bis = new BufferedInputStream(in2);
-    ZipEntry ze;
-    while((ze = in2.getNextEntry()) != null) {
-      print("Reading file " + ze);
-      int x;
-      while((x = bis.read()) != -1)
-        System.out.write(x);
+    try(BufferedInputStream bis = 
+        new BufferedInputStream(in2)) {
+      ZipEntry ze;
+      while((ze = in2.getNextEntry()) != null) {
+        print("Reading file " + ze);
+        int x;
+        while((x = bis.read()) != -1)
+          System.out.write(x);
+      }
+      if(args.length == 1)
+        print("Checksum: " + csumi.getChecksum().getValue());
     }
-    if(args.length == 1)
-    print("Checksum: " + csumi.getChecksum().getValue());
-    bis.close();
     // Alternative way to open and read Zip files:
     ZipFile zf = new ZipFile("test.zip");
     Enumeration e = zf.entries();

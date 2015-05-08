@@ -28,7 +28,7 @@
     <jrun cls="InterruptableLongRunningTask" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
     <jrun cls="List" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
     <jrun cls="LongRunningTask" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
-    <jrun cls="LookAndFeel" arguments='motif' failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
+    <jrun cls="LookAndFeel" arguments="motif" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
     <jrun cls="Menus" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
     <jrun cls="MessageBoxes" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
     <jrun cls="MonitoredLongRunningCallable" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />

@@ -11,7 +11,7 @@
     <jrun cls="AtomicIntegerTest" />
     <jrun cls="AtomicityTest" />
     <jrun cls="AttemptLocking" />
-    <jrun cls="BankTellerSimulation" arguments='5' />
+    <jrun cls="BankTellerSimulation" arguments="5" />
     <jrun cls="BasicThreads" />
     <jrun cls="CachedThreadPool" />
     <jrun cls="CallableDemo" />
@@ -23,28 +23,26 @@
     <jrun cls="DaemonFromFactory" />
     <jrun cls="Daemons" />
     <jrun cls="DaemonsDontRunFinally" />
-    <jrun cls="DeadlockingDiningPhilosophers" arguments='0 5 timeout' />
+    <jrun cls="DeadlockingDiningPhilosophers" arguments="0 5 timeout" />
     <jrun cls="DelayQueueDemo" />
     <jrun cls="EvenGenerator" />
-    <jrun cls="ExceptionThread" failOnError='false' msg='* Exception was Expected *' />
     <jrun cls="ExchangerDemo" />
     <jrun cls="concurrency.ExplicitCriticalSection" dirpath="../concurrency" failOnError='false' msg='* Exception was Expected *' />
     <jrun cls="FastSimulation" />
-    <jrun cls="FixedDiningPhilosophers" arguments='5 5 timeout' />
+    <jrun cls="FixedDiningPhilosophers" arguments="5 5 timeout" />
     <jrun cls="FixedThreadPool" />
-    <jrun cls="GreenhouseScheduler" arguments='5000' />
+    <jrun cls="GreenhouseScheduler" arguments="5000" />
     <jrun cls="HorseRace" />
     <jrun cls="Interrupting" />
     <jrun cls="Interrupting2" />
-    <jrun cls="InterruptingIdiom" arguments='1100' />
+    <jrun cls="InterruptingIdiom" arguments="1100" />
     <jrun cls="Joining" />
-    <jrun cls="ListComparisons" arguments='1 10 10' />
+    <jrun cls="ListComparisons" arguments="1 10 10" />
     <jrun cls="MainThread" />
-    <jrun cls="MapComparisons" arguments='1 10 10' />
+    <jrun cls="MapComparisons" arguments="1 10 10" />
     <jrun cls="MoreBasicThreads" />
     <jrun cls="MultiLock" />
     <jrun cls="MutexEvenGenerator" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
-    <jrun cls="NaiveExceptionHandling" failOnError='false' msg='* Exception was Expected *' />
     <jrun cls="NIOInterruption" />
     <jrun cls="NotifyVsNotifyAll" />
     <jrun cls="OrnamentalGarden" />
@@ -55,7 +53,7 @@
     <jrun cls="Restaurant" />
     <jrun cls="SelfManaged" />
     <jrun cls="SemaphoreDemo" />
-    <jrun cls="SerialNumberChecker" arguments='4' />
+    <jrun cls="SerialNumberChecker" arguments="4" />
     <jrun cls="SettingDefaultHandler" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
     <jrun cls="SimpleDaemons" />
     <jrun cls="SimpleMicroBenchmark" />
@@ -70,7 +68,7 @@
     <jrun cls="ThreadLocalVariableHolder" />
     <jrun cls="ThreadVariations" />
     <jrun cls="ToastOMatic" />
-    <jrun cls="concurrency.restaurant2.RestaurantWithQueues" dirpath="../concurrency/restaurant2" arguments='5' />
+    <jrun cls="concurrency.restaurant2.RestaurantWithQueues" dirpath="../concurrency/restaurant2" arguments="5" />
     <jrun cls="concurrency.waxomatic.WaxOMatic" dirpath="../concurrency/waxomatic" />
     <jrun cls="concurrency.waxomatic2.WaxOMatic2" dirpath="../concurrency/waxomatic2" />
   </target>

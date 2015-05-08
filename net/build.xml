@@ -7,7 +7,7 @@
 
   <target name="run" description="Compile and run" depends="build">
     <jrun cls="net.mindview.atunit.AtUnit" dirpath="../net/mindview/atunit" />
-    <jrun cls="net.mindview.atunit.AtUnitRemover" dirpath="../net/mindview/atunit" arguments='..' failOnError='false' msg='* Exception was Expected *' />
+    <jrun cls="net.mindview.atunit.AtUnitRemover" dirpath="../net/mindview/atunit" arguments=".." failOnError='false' msg='* Exception was Expected *' />
     <jrun cls="net.mindview.atunit.ClassNameFinder" dirpath="../net/mindview/atunit" />
     <jrun cls="net.mindview.util.ContainerMethodDifferences" dirpath="../net/mindview/util" />
     <jrun cls="net.mindview.util.CountingIntegerList" dirpath="../net/mindview/util" />

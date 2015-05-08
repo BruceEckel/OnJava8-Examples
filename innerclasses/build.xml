@@ -15,7 +15,7 @@
     <jrun cls="DotThis" />
     <jrun cls="Factories" />
     <jrun cls="Games" />
-    <jrun cls="GreenhouseController" arguments='5000' />
+    <jrun cls="GreenhouseController" arguments="5000" />
     <jrun cls="InheritInner" />
     <jrun cls="LambdaExpressions" />
     <jrun cls="LocalInnerClass" />

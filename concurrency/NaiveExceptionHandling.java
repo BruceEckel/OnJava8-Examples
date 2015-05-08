@@ -1,4 +1,5 @@
 //: concurrency/NaiveExceptionHandling.java
+// {RunByHand}
 // {ThrowsException}
 import java.util.concurrent.*;
 

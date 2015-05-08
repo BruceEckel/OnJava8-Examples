@@ -1,6 +1,6 @@
 //: io/DirList2.java
 // Uses anonymous inner classes.
-// {Args: "D.*\.java"}
+// {Args: 'D.*\.java'}
 import java.util.regex.*;
 import java.io.*;
 import java.util.*;

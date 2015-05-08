@@ -17,7 +17,7 @@
     <jrun cls="annotations.Multiplier" dirpath="../annotations" />
     <jrun cls="annotations.StackLStringTest" dirpath="../annotations" />
     <jrun cls="UseCaseTracker" />
-    <jrun cls="annotations.database.TableCreator" dirpath="../annotations/database" arguments='annotations.database.Member' />
+    <jrun cls="annotations.database.TableCreator" dirpath="../annotations/database" arguments="annotations.database.Member" />
   </target>
 
 </project>

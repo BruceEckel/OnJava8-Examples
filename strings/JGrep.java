@@ -1,6 +1,6 @@
 //: strings/JGrep.java
 // A very simple version of the "grep" program.
-// {Args: JGrep.java "\\b[Ssct]\\w+"}
+// {Args: JGrep.java '\\b[Ssct]\\w+'}
 import java.util.regex.*;
 import net.mindview.util.*;
 
