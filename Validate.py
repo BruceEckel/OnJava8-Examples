@@ -5,7 +5,7 @@ Run all (possible) java files and capture output and errors
 from pathlib import Path
 import pprint
 import textwrap
-import os, sys
+import os, sys, re
 from contextlib import contextmanager
 import argparse
 
@@ -183,10 +183,10 @@ def createPowershellScript():
 ###############################################################################
 
 class Result:
-
+    oldOutput = re.compile("/* Output:.*?\n(.*)\n\*///:~(?s)")
     @staticmethod
     def create(javaFilePath):
-        "if the output files exist and are not both empty, produce Result object"
+        "Factory: If the output files exist and are not both empty, produce Result object"
         outfile = javaFilePath.with_name(javaFilePath.stem + "-output.txt")
         errfile = javaFilePath.with_name(javaFilePath.stem + "-erroroutput.txt")
         if outfile.exists():
@@ -207,12 +207,38 @@ class Result:
     def __init__(self, javaFilePath, outfile, errfile):
         self.javaFilePath = javaFilePath
         self.outFilePath = outfile
+        self.outFileSize = self.outFilePath.stat().st_size
         self.errFilePath = errfile
+        self.errFileSize = self.errFilePath.stat().st_size
+        def extractOldOutput(jfp):
+            with self.javaFilePath.open() as code:
+                return self.oldOutput.findall(code.read())
+        self.old_output = extractOldOutput(self.javaFilePath)
+
+    def newOutput(self):
+        if self.outFileSize:
+            with self.outFilePath.open() as f:
+                return f.read()
+        if self.errFileSize:
+            with self.errFilePath.open() as f:
+                return f.read()
+        assert False
 
     def __repr__(self):
-        return str(self.javaFilePath) + "\n" +\
-        str(self.outFilePath) + " " + str(self.outFilePath.stat().st_size) + "\n" +\
-        str(self.errFilePath) + " " + str(self.errFilePath.stat().st_size) + "\n"
+        def center(arg, sep="_"):
+            return "[ {} ]".format(str(arg)).center(50, sep) + "\n"
+        result = "\n" + center(self.javaFilePath, "=") +\
+        str(self.outFilePath) + " " + str(self.outFileSize) + "\n" +\
+        str(self.errFilePath) + " " + str(self.errFileSize) + "\n"
+        if self.old_output:
+            result += center("Previous Output")
+            result += "\n".join(self.old_output) + "\n"
+        else:
+            result += center("No Previous Output")
+        result += center("New Output")
+        result += self.newOutput() + "\n"
+
+        return result
 
 
 
