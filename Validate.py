@@ -8,6 +8,7 @@ import textwrap
 import os, sys, re
 from contextlib import contextmanager
 import argparse
+import difflib
 
 parser = argparse.ArgumentParser()
 parser.add_argument("-p", "--powershell", action='store_true',
@@ -105,7 +106,7 @@ class RunnableFile:
 
 class RunFiles:
     # RunFirst is temporary?
-    not_runnable = ["RunByHand", "TimeOutDuringTesting", "CompileTimeError", 'TimeOut', 'RunFirst']
+    not_runnable = ["RunByHand", "TimeOutDuringTesting", "CompileTimeError", 'TimeOut', 'RunFirst', "ValidateByHand"]
     skip_dirs = ["gui", "swt"]
 
     base = Path(".")
@@ -211,6 +212,7 @@ class Result:
         self.errFileSize = self.errFilePath.stat().st_size
         self.old_output = self.__oldOutput()
         self.new_output = self.__newOutput()
+        self.difference = difflib.SequenceMatcher(None, self.old_output, self.new_output).ratio()
 
     def __oldOutput(self):
         with self.javaFilePath.open() as code:
@@ -228,16 +230,19 @@ class Result:
     def __repr__(self):
         def center(arg, sep="_"):
             return "[ {} ]".format(str(arg)).center(50, sep) + "\n"
-        result = "\n" + center(self.javaFilePath, "=") +\
-        str(self.outFilePath) + " " + str(self.outFileSize) + "\n" +\
-        str(self.errFilePath) + " " + str(self.errFileSize) + "\n"
+        result = "\n" + center(self.javaFilePath, "=") +"\n"
+        # str(self.outFilePath) + " " + str(self.outFileSize) + "\n" +\
+        # str(self.errFilePath) + " " + str(self.errFileSize) + "\n"
         if self.old_output:
             result += center("Previous Output")
-            result += self.old_output + "\n"
+            result += self.old_output + "\n\n"
         else:
             result += center("No Previous Output")
         result += center("New Output")
-        result += self.new_output + "\n"
+        result += self.new_output + "\n\n"
+        result += center("Difference: {}".format(self.difference), '+') + "\n"
+
+        if self.difference == 1.0: return '.'
 
         return result
 
