@@ -198,12 +198,6 @@ class Result:
             assert errfile.exists()
         else:
             return None
-        # Ensure that only one contains data:
-        if outfile.stat().st_size:
-            assert not errfile.stat().st_size
-        if errfile.stat().st_size:
-            assert not outfile.stat().st_size
-        # Only create if at least one has output:
         if outfile.stat().st_size or errfile.stat().st_size:
             return Result(javaFilePath, outfile, errfile)
         else:
@@ -215,19 +209,21 @@ class Result:
         self.outFileSize = self.outFilePath.stat().st_size
         self.errFilePath = errfile
         self.errFileSize = self.errFilePath.stat().st_size
-        def extractOldOutput(jfp):
-            with self.javaFilePath.open() as code:
-                return self.oldOutput.findall(code.read())
-        self.old_output = extractOldOutput(self.javaFilePath)
+        self.old_output = self.__oldOutput()
+        self.new_output = self.__newOutput()
 
-    def newOutput(self):
-        if self.outFileSize:
-            with self.outFilePath.open() as f:
-                return f.read()
-        if self.errFileSize:
-            with self.errFilePath.open() as f:
-                return f.read()
-        assert False
+    def __oldOutput(self):
+        with self.javaFilePath.open() as code:
+            result = self.oldOutput.findall(code.read())
+            return "\n".join(result).rstrip()
+
+    def __newOutput(self):
+        result =""
+        with self.outFilePath.open() as f:
+            result += f.read() + "\n"
+        with self.errFilePath.open() as f:
+            result += f.read()
+        return result.rstrip()
 
     def __repr__(self):
         def center(arg, sep="_"):
@@ -237,11 +233,11 @@ class Result:
         str(self.errFilePath) + " " + str(self.errFileSize) + "\n"
         if self.old_output:
             result += center("Previous Output")
-            result += "\n".join(self.old_output) + "\n"
+            result += self.old_output + "\n"
         else:
             result += center("No Previous Output")
         result += center("New Output")
-        result += self.newOutput() + "\n"
+        result += self.new_output + "\n"
 
         return result
 
