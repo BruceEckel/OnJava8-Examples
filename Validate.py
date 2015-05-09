@@ -9,12 +9,36 @@ import os, sys, re
 from contextlib import contextmanager
 import argparse
 import difflib
+from collections import defaultdict
 
-parser = argparse.ArgumentParser()
-parser.add_argument("-p", "--powershell", action='store_true',
-    help="Create Powershell Script to run all programs and capture the output")
-parser.add_argument("-c", "--cleanoutput", action='store_true',
-    help="Clean output files by removing empty ones, and reporting file sizes")
+
+class CmdLine:
+    """
+    Decorator to add a new command-line option
+    See http://www.artima.com/weblogs/viewpost.jsp?thread=240845
+    """
+
+    parser = argparse.ArgumentParser()
+    commands = dict()
+
+    def __init__(self, letterFlag, wordFlag):
+        self.letterFlag = letterFlag
+        self.wordFlag = wordFlag
+
+    def __call__(self, func):
+        CmdLine.parser.add_argument("-" + self.letterFlag, "--" + self.wordFlag, action='store_true', help="{}".format(func.__doc__))
+        CmdLine.commands[self.wordFlag] = func # But what if func has arguments?
+        return func # No wrapping needed
+
+    @staticmethod
+    def run():
+        args = vars(CmdLine.parser.parse_args())
+        for wordFlag, func in CmdLine.commands.items():
+            if args[wordFlag]:
+                func()
+        else:
+            CmdLine.parser.print_help()
+
 
 ###############################################################################
 #  Create Powershell Script to run all programs and capture the output
@@ -106,6 +130,8 @@ class RunnableFile:
 
 class RunFiles:
     # RunFirst is temporary?
+    # Probably don't need ValidateByHand, can just use /* Output:
+    # Except ValidateByHand makes it clear this isn't a mistake. Leave it in.
     not_runnable = ["RunByHand", "TimeOutDuringTesting", "CompileTimeError", 'TimeOut', 'RunFirst', "ValidateByHand"]
     skip_dirs = ["gui", "swt"]
 
@@ -155,12 +181,15 @@ def visitDir(d):
     yield d
     os.chdir(old)
 
+
+@CmdLine("p", "powershell")
 def createPowershellScript():
+    """
+    Create Powershell Script to run all programs and capture the output
+    """
     assert Path.cwd().stem is "ExtractedExamples"
     runFiles = RunFiles()
     startDir = os.getcwd()
-    # [print(f, f.flags) for f in runFiles]
-    # sys.exit()
     with open("runall.ps1", 'w') as ps:
         ps.write('''Start-Process -FilePath "ant" -ArgumentList "build" -NoNewWindow -Wait \n\n''')
         for rf in runFiles:
@@ -179,15 +208,80 @@ def createPowershellScript():
                 ps.write('Write-Host [{}] {}\n'.format(rf.relative, rf.name))
                 ps.write("cd {}\n\n".format(startDir))
 
-    # pprint.pprint(runFiles.runCommands())
 
 ###############################################################################
 #  Attach Output to Java Files
 ###############################################################################
 
+@CmdLine("d", "discover")
+def discoverOutputTags():
+    """
+    Discover 'Output:' tags
+    """
+    all = set()
+    for jf in Path(".").rglob("*.java"):
+        with jf.open() as java:
+            lines = java.readlines()
+            for line in lines:
+                if "Output:" in line:
+                    # print(lines[0].rstrip())
+                    # print(line + "\n")
+                    all.add(line)
+                    continue
+    pprint.pprint(all)
+
+# Tags:
+# (XX% Match)
+# (Sample)
+# (First XX Lines)
+
+def showAllSampleFiles():
+    for jf in Path(".").rglob("*.java"):
+        with jf.open() as java:
+            lines = java.readlines()
+            for line in lines:
+                if "(Sample)" in line:
+                    print(lines[0].rstrip())
+                    print(line + "\n")
+                    continue
+    pprint.pprint(all)
+
+
+
+class OutputTags:
+    tagfind = re.compile("\(.*?\)")
+
+    def __init__(self, javaFilePath):
+        self.javaFilePath = javaFilePath
+        self.has_output = False
+        self.tags = []
+        with self.javaFilePath.open() as code:
+            for line in code.readlines():
+                if "/* Output:" in line:
+                    self.has_output = True
+                    for tag in self.tagfind.findall(line):
+                        self.tags.append(tag[1:-1])
+        if self.tags:
+            assert self.has_output
+
+    def __repr__(self):
+        return "{}\n{}\n".format(self.javaFilePath, pprint.pformat(self.tags))
+
+    def __bool__(self):
+        return bool(self.has_output and self.tags)
+
+    def __iter__(self):
+        return iter(self.tags)
+
+
+
 class Result:
     """
     Finds result files, compares to output stored in comments at ends of Java files.
+
+    If there's output, and no flag that says otherwise, add /* Output:
+
+
     """
     oldOutput = re.compile("/* Output:.*?\n(.*)\n\*///:~(?s)")
     @staticmethod
@@ -207,16 +301,18 @@ class Result:
     def __init__(self, javaFilePath, outfile, errfile):
         self.javaFilePath = javaFilePath
         self.outFilePath = outfile
-        self.outFileSize = self.outFilePath.stat().st_size
         self.errFilePath = errfile
+        self.outFileSize = self.outFilePath.stat().st_size
         self.errFileSize = self.errFilePath.stat().st_size
+        self.output_tags = OutputTags(javaFilePath)
         self.old_output = self.__oldOutput()
         self.new_output = self.__newOutput()
         self.difference = difflib.SequenceMatcher(None, self.old_output, self.new_output).ratio()
 
     def __oldOutput(self):
         with self.javaFilePath.open() as code:
-            result = self.oldOutput.findall(code.read())
+            body = code.read()
+            result = self.oldOutput.findall(body)
             return "\n".join(result).rstrip()
 
     def __newOutput(self):
@@ -231,8 +327,7 @@ class Result:
         def center(arg, sep="_"):
             return "[ {} ]".format(str(arg)).center(50, sep) + "\n"
         result = "\n" + center(self.javaFilePath, "=") +"\n"
-        # str(self.outFilePath) + " " + str(self.outFileSize) + "\n" +\
-        # str(self.errFilePath) + " " + str(self.errFileSize) + "\n"
+        result += "Output tag: {}\n".format(self.output_tag)
         if self.old_output:
             result += center("Previous Output")
             result += self.old_output + "\n\n"
@@ -246,13 +341,37 @@ class Result:
 
         return result
 
+    def checkValidateByHands(self):
+        pass
 
 
+
+@CmdLine("c", "cleanoutput")
 def checkAndCleanResults():
+    """
+    Clean output files by removing empty ones, and reporting file sizes
+    """
     print("checkAndCleanResults()")
     assert Path.cwd().stem is "ExtractedExamples"
     results = [r for r in [Result.create(jfp) for jfp in RunFiles.base.rglob("*.java")] if r]
     pprint.pprint(results)
+
+
+@CmdLine("s", "sample")
+def insertSampleOutput():
+    """
+    Show '(Sample)' tags
+    """
+    results = [r for r in [Result.create(jfp) for jfp in RunFiles.base.rglob("*.java")] if r]
+    assert len(results), "Must run runall.ps1 first"
+    for r in results:
+        if r.output_tags:
+            print(r.output_tags)
+    tagd = defaultdict(list)
+    for tagged in [r for r in [Result.create(jfp) for jfp in RunFiles.base.rglob("*.java")] if r and r.output_tags]:
+        for tag in tagged.output_tags:
+            tagd[tag].append(str(tagged.javaFilePath))
+    pprint.pprint(tagd)
 
 
 
@@ -261,16 +380,5 @@ def checkAndCleanResults():
 #  Main execution logic
 ###############################################################################
 
-def default():
-    checkAndCleanResults()
-
 if __name__ == '__main__':
-    args = parser.parse_args()
-
-    if not any(vars(args).values()): default()
-
-    if args.powershell:
-        createPowershellScript()
-
-    if args.cleanoutput:
-        checkAndCleanResults()
+    CmdLine.run()
