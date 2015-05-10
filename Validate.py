@@ -1,6 +1,8 @@
 #! py -3
 """
 Run all (possible) java files and capture output and errors
+
+TODO: 1st and last 10 lines, with ... in between? {FirstAndLast: 10 Lines}
 """
 from pathlib import Path
 import pprint
@@ -101,9 +103,7 @@ class RunnableFile:
 
 class RunFiles:
     # RunFirst is temporary?
-    # Probably don't need ValidateByHand, can just use /* Output:
-    # Except ValidateByHand makes it clear this isn't a mistake. Leave it in.
-    not_runnable = ["RunByHand", "TimeOutDuringTesting", "CompileTimeError", 'TimeOut', 'RunFirst', "ValidateByHand"]
+    not_runnable = ["RunByHand", "TimeOutDuringTesting", "CompileTimeError", 'TimeOut', 'RunFirst']
     skip_dirs = ["gui", "swt"]
 
     base = Path(".")
@@ -204,6 +204,14 @@ class OutputTags:
         return iter(self.tags)
 
 
+# def path_ends_with(fullPath, partialPath):
+#     path = list(reversed(fullPath.parts))
+#     for i, part in enumerate(reversed(partialPath.parts)):
+#         if not part is path[i]:
+#             return False
+#     return True
+
+# Path.ends_with = path_ends_with # extension method to Path
 
 class Result:
     """
@@ -212,20 +220,26 @@ class Result:
     If there's output, and no flag that says otherwise, add /* Output:
 
     """
+    excludefiles = [
+        "object/ShowProperties.java",
+    ]
     oldOutput = re.compile("/* Output:.*?\n(.*)\n\*///:~(?s)")
     @staticmethod
     def create(javaFilePath):
         "Factory: If the output files exist and are not both empty, produce Result object"
+        for p in Result.excludefiles:
+            if javaFilePath.match(p):
+                return None
         outfile = javaFilePath.with_name(javaFilePath.stem + "-output.txt")
         errfile = javaFilePath.with_name(javaFilePath.stem + "-erroroutput.txt")
         if outfile.exists():
             assert errfile.exists()
-        else:
-            return None
-        if outfile.stat().st_size or errfile.stat().st_size:
-            return Result(javaFilePath, outfile, errfile)
-        else:
-            return None
+            with javaFilePath.open() as jf:
+                if "{CheckOutputByHand}" in jf.read():
+                    return None
+            if outfile.stat().st_size or errfile.stat().st_size:
+                return Result(javaFilePath, outfile, errfile)
+        return None
 
     def __init__(self, javaFilePath, outfile, errfile):
         self.javaFilePath = javaFilePath
@@ -254,7 +268,6 @@ class Result:
         def center(arg, sep="_"):
             return "[ {} ]".format(str(arg)).center(50, sep) + "\n"
         result = "\n" + center(self.javaFilePath, "=") +"\n"
-        result += "Output tag: {}\n".format(self.output_tag)
         if self.old_output:
             result += center("Previous Output")
             result += self.old_output + "\n\n"
@@ -282,6 +295,25 @@ def discoverOutputTags():
         for tag in tagged.output_tags:
             tagd[tag].append(str(tagged.javaFilePath))
     pprint.pprint(tagd)
+
+
+@CmdLine("f", "fillin")
+def fillInUnexcludedOutput():
+    """
+    Find the files that aren't explicitly excluded AND have no OUTPUT:, show them and their output.
+    """
+    results = [r for r in [Result.create(jfp) for jfp in RunFiles.base.rglob("*.java")] if r]
+    assert len(results), "Must run runall.ps1 first"
+    nonexcluded = []
+    for r in results:
+        if r.output_tags:
+            for t in r.output_tags:
+                if t in RunFiles.not_runnable:
+                    break
+        else:
+            if not r.old_output:
+                nonexcluded.append(r)
+    pprint.pprint(nonexcluded)
 
 
 
