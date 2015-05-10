@@ -61,3 +61,4 @@ io/*.tmp
 io/test.zip
 io/test.gz
 io/X.file
+*.pyc
