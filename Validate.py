@@ -20,23 +20,29 @@ class CmdLine:
 
     parser = argparse.ArgumentParser()
     commands = dict()
+    letterflags = set()
 
     def __init__(self, letterFlag, wordFlag):
-        self.letterFlag = letterFlag
         self.wordFlag = wordFlag
+        self.letterFlag = letterFlag
+        assert wordFlag not in CmdLine.commands, "Duplicate command argument word flags"
+        assert letterFlag not in CmdLine.letterflags, "Duplicate command argument letter flags"
+        CmdLine.letterflags.add(letterFlag)
 
     def __call__(self, func):
-        CmdLine.parser.add_argument("-" + self.letterFlag, "--" + self.wordFlag, action='store_true', help="{}".format(func.__doc__))
+        CmdLine.parser.add_argument("-" + self.letterFlag, "--" + self.wordFlag, action='store_true', help=func.__doc__)
         CmdLine.commands[self.wordFlag] = func # But what if func has arguments?
         return func # No wrapping needed
 
     @staticmethod
     def run():
+        show_help = True
         args = vars(CmdLine.parser.parse_args())
         for wordFlag, func in CmdLine.commands.items():
             if args[wordFlag]:
                 func()
-        else:
+                show_help = False
+        if show_help:
             CmdLine.parser.print_help()
 
 
@@ -213,40 +219,10 @@ def createPowershellScript():
 #  Attach Output to Java Files
 ###############################################################################
 
-@CmdLine("d", "discover")
-def discoverOutputTags():
-    """
-    Discover 'Output:' tags
-    """
-    all = set()
-    for jf in Path(".").rglob("*.java"):
-        with jf.open() as java:
-            lines = java.readlines()
-            for line in lines:
-                if "Output:" in line:
-                    # print(lines[0].rstrip())
-                    # print(line + "\n")
-                    all.add(line)
-                    continue
-    pprint.pprint(all)
-
 # Tags:
 # (XX% Match)
 # (Sample)
 # (First XX Lines)
-
-def showAllSampleFiles():
-    for jf in Path(".").rglob("*.java"):
-        with jf.open() as java:
-            lines = java.readlines()
-            for line in lines:
-                if "(Sample)" in line:
-                    print(lines[0].rstrip())
-                    print(line + "\n")
-                    continue
-    pprint.pprint(all)
-
-
 
 class OutputTags:
     tagfind = re.compile("\(.*?\)")
@@ -261,8 +237,6 @@ class OutputTags:
                     self.has_output = True
                     for tag in self.tagfind.findall(line):
                         self.tags.append(tag[1:-1])
-        if self.tags:
-            assert self.has_output
 
     def __repr__(self):
         return "{}\n{}\n".format(self.javaFilePath, pprint.pformat(self.tags))
@@ -302,8 +276,6 @@ class Result:
         self.javaFilePath = javaFilePath
         self.outFilePath = outfile
         self.errFilePath = errfile
-        self.outFileSize = self.outFilePath.stat().st_size
-        self.errFileSize = self.errFilePath.stat().st_size
         self.output_tags = OutputTags(javaFilePath)
         self.old_output = self.__oldOutput()
         self.new_output = self.__newOutput()
@@ -341,32 +313,15 @@ class Result:
 
         return result
 
-    def checkValidateByHands(self):
-        pass
 
 
-
-@CmdLine("c", "cleanoutput")
-def checkAndCleanResults():
+@CmdLine("d", "discover")
+def discoverOutputTags():
     """
-    Clean output files by removing empty ones, and reporting file sizes
-    """
-    print("checkAndCleanResults()")
-    assert Path.cwd().stem is "ExtractedExamples"
-    results = [r for r in [Result.create(jfp) for jfp in RunFiles.base.rglob("*.java")] if r]
-    pprint.pprint(results)
-
-
-@CmdLine("s", "sample")
-def insertSampleOutput():
-    """
-    Show '(Sample)' tags
+    Discover 'Output:' tags
     """
     results = [r for r in [Result.create(jfp) for jfp in RunFiles.base.rglob("*.java")] if r]
     assert len(results), "Must run runall.ps1 first"
-    for r in results:
-        if r.output_tags:
-            print(r.output_tags)
     tagd = defaultdict(list)
     for tagged in [r for r in [Result.create(jfp) for jfp in RunFiles.base.rglob("*.java")] if r and r.output_tags]:
         for tag in tagged.output_tags:
@@ -374,11 +329,4 @@ def insertSampleOutput():
     pprint.pprint(tagd)
 
 
-
-
-###############################################################################
-#  Main execution logic
-###############################################################################
-
-if __name__ == '__main__':
-    CmdLine.run()
+if __name__ == '__main__': CmdLine.run()
