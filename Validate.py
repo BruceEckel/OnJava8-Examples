@@ -6,44 +6,9 @@ from pathlib import Path
 import pprint
 import textwrap
 import os, sys, re
-from contextlib import contextmanager
-import argparse
 import difflib
 from collections import defaultdict
-
-
-class CmdLine:
-    """
-    Decorator to add a new command-line option
-    See http://www.artima.com/weblogs/viewpost.jsp?thread=240845
-    """
-
-    parser = argparse.ArgumentParser()
-    commands = dict()
-    letterflags = set()
-
-    def __init__(self, letterFlag, wordFlag):
-        self.wordFlag = wordFlag
-        self.letterFlag = letterFlag
-        assert wordFlag not in CmdLine.commands, "Duplicate command argument word flags"
-        assert letterFlag not in CmdLine.letterflags, "Duplicate command argument letter flags"
-        CmdLine.letterflags.add(letterFlag)
-
-    def __call__(self, func):
-        CmdLine.parser.add_argument("-" + self.letterFlag, "--" + self.wordFlag, action='store_true', help=func.__doc__)
-        CmdLine.commands[self.wordFlag] = func # But what if func has arguments?
-        return func # No wrapping needed
-
-    @staticmethod
-    def run():
-        show_help = True
-        args = vars(CmdLine.parser.parse_args())
-        for wordFlag, func in CmdLine.commands.items():
-            if args[wordFlag]:
-                func()
-                show_help = False
-        if show_help:
-            CmdLine.parser.print_help()
+from betools import CmdLine, visitDir
 
 
 ###############################################################################
@@ -179,15 +144,6 @@ class RunFiles:
         return iter(self.runFiles)
 
 
-@contextmanager
-def visitDir(d):
-    d = str(d)
-    old = os.getcwd()
-    os.chdir(d)
-    yield d
-    os.chdir(old)
-
-
 @CmdLine("p", "powershell")
 def createPowershellScript():
     """
@@ -254,7 +210,6 @@ class Result:
     Finds result files, compares to output stored in comments at ends of Java files.
 
     If there's output, and no flag that says otherwise, add /* Output:
-
 
     """
     oldOutput = re.compile("/* Output:.*?\n(.*)\n\*///:~(?s)")
@@ -327,6 +282,7 @@ def discoverOutputTags():
         for tag in tagged.output_tags:
             tagd[tag].append(str(tagged.javaFilePath))
     pprint.pprint(tagd)
+
 
 
 if __name__ == '__main__': CmdLine.run()
