@@ -10,7 +10,7 @@ import textwrap
 import os, sys, re
 import difflib
 from collections import defaultdict
-from betools import CmdLine, visitDir
+from betools import CmdLine, visitDir, ruler, head
 
 
 ###############################################################################
@@ -204,26 +204,6 @@ class OutputTags:
         return iter(self.tags)
 
 
-# def path_ends_with(fullPath, partialPath):
-#     path = list(reversed(fullPath.parts))
-#     for i, part in enumerate(reversed(partialPath.parts)):
-#         if not part is path[i]:
-#             return False
-#     return True
-
-# Path.ends_with = path_ends_with # extension method to Path
-
-def ruler(arg=None, sep="_", print_=False, width=60):
-    if arg:
-        result = "[ {} ]".format(str(arg)).center(width, sep) + "\n"
-    else:
-        result = "".center(width, sep) + "\n"
-    if print_:
-        print(result)
-    else:
-        return result
-
-def head(arg=None, sep="_", width=60): ruler(arg, sep, True, width)
 
 class Result:
     """
@@ -317,7 +297,7 @@ def discoverOutputTags():
 @CmdLine("f", "fillin")
 def fillInUnexcludedOutput():
     """
-    Find the files that aren't explicitly excluded AND have no OUTPUT:, show them and their output.
+    Find the files that aren't explicitly excluded AND have no 'Output:'. Show them and their output.
     """
     results = [r for r in [Result.create(jfp) for jfp in RunFiles.base.rglob("*.java")] if r]
     assert len(results), "Must run runall.ps1 first"
