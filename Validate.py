@@ -213,6 +213,18 @@ class OutputTags:
 
 # Path.ends_with = path_ends_with # extension method to Path
 
+def ruler(arg=None, sep="_", print_=False, width=60):
+    if arg:
+        result = "[ {} ]".format(str(arg)).center(width, sep) + "\n"
+    else:
+        result = "".center(width, sep) + "\n"
+    if print_:
+        print(result)
+    else:
+        return result
+
+def head(arg=None, sep="_", width=60): ruler(arg, sep, True, width)
+
 class Result:
     """
     Finds result files, compares to output stored in comments at ends of Java files.
@@ -265,17 +277,22 @@ class Result:
         return result.rstrip()
 
     def __repr__(self):
-        def center(arg, sep="_"):
-            return "[ {} ]".format(str(arg)).center(50, sep) + "\n"
-        result = "\n" + center(self.javaFilePath, "=") +"\n"
+        result = "\n" + ruler(self.javaFilePath, "=") +"\n"
+        with self.javaFilePath.open() as jf:
+            for line in jf.readlines():
+                if "/* Output:" in line:
+                    result += line + "\n"
+                    break
+            else:
+                result += "no prior /* Output:\n"
         if self.old_output:
-            result += center("Previous Output")
+            result += ruler("Previous Output")
             result += self.old_output + "\n\n"
         else:
-            result += center("No Previous Output")
-        result += center("New Output")
+            result += ruler("No Previous Output")
+        result += ruler("New Output")
         result += self.new_output + "\n\n"
-        result += center("Difference: {}".format(self.difference), '+') + "\n"
+        result += ruler("Difference: {}".format(self.difference), '+') + "\n"
 
         if self.difference == 1.0: return '.'
 
@@ -313,8 +330,23 @@ def fillInUnexcludedOutput():
         else:
             if not r.old_output:
                 nonexcluded.append(r)
-    pprint.pprint(nonexcluded)
+    for ne in nonexcluded:
+        print(ne)
 
+
+@CmdLine("e", "exceptions")
+def findExceptionsFromRun():
+    """
+    Find all the exceptions produced by runall.ps1
+    """
+    errors = [r for r in [Result.create(jfp) for jfp in RunFiles.base.rglob("*.java")]
+              if r and r.errFilePath.stat().st_size]
+    assert len(errors), "Must run runall.ps1 first"
+    for e in errors:
+        with e.errFilePath.open() as errfile:
+            head(e.errFilePath, "#")
+            print(errfile.read())
+            head()
 
 
 if __name__ == '__main__': CmdLine.run()
