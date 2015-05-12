@@ -1,4 +1,4 @@
 @echo off
-python Examples.py -d
+python Examples.py -e
 cd ExtractedExamples
 ant build

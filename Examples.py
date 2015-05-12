@@ -7,12 +7,11 @@ Creates Ant build.xml file for each subdirectory.
 from pathlib import Path
 import sys, os
 import re
-from betools import CmdLine
-import argparse
 import shutil
 import pprint
 import difflib
 from sortedcontainers import SortedSet
+from betools import CmdLine
 
 destination = Path('.') / "ExtractedExamples"
 sourceText = Path('.') / "TIJDirectorsCut.txt"
@@ -190,9 +189,6 @@ class CodeFileOptions(object):
             self.continue_on_error = True
             self.msg = "* Timeout for Testing *"
 
-
-
-
     def classFile(self):
         start = """    <jrun cls="%s" """
         if self.alternatemainclass:
@@ -228,7 +224,6 @@ class CodeFileOptions(object):
 
     def createRunCommand(self):
         return self.classFile() + self.dirPath() + self.arguments() + self.failOnError() + self.timeOut() + self.message() + "/>\n"
-
 
 
 
@@ -339,15 +334,7 @@ def findNonJavaFiles():
 
 @CmdLine('e', "extract" )
 def extractAndCreateBuildFiles():
-    "Extract examples from TIJDirectorsCut.txt"
-    extractExamples()
-    copySupplementalFilesFromGithub()
-    createAntFiles()
-
-
-@CmdLine('d', "default" )
-def default():
-    "Default: clean, extract, build ant files"
+    "Clean, then extract examples from TIJDirectorsCut.txt, build ant files"
     clean()
     extractExamples()
     copySupplementalFilesFromGithub()
