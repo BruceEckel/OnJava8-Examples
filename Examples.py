@@ -7,6 +7,7 @@ Creates Ant build.xml file for each subdirectory.
 from pathlib import Path
 import sys, os
 import re
+from betools import CmdLine
 import argparse
 import shutil
 import pprint
@@ -34,21 +35,6 @@ endBuild = """\
 </project>
 """
 
-parser = argparse.ArgumentParser()
-parser.add_argument("-e", "--extract", action='store_true',
-    help="Extract examples from TIJDirectorsCut.txt")
-parser.add_argument("-x", "--clean", action='store_true',
-    help="Remove ExtractedExamples directory")
-parser.add_argument("-c", "--compare", action='store_true',
-    help="Compare files from Github repository to extracted examples")
-parser.add_argument("-a", "--ant", action='store_true',
-    help="Copy ant build files from Github repository to extracted examples")
-parser.add_argument("-m", "--makeant", action='store_true',
-    help="Make ant files that don't exist")
-parser.add_argument("-f", "--find", action='store_true',
-    help="Find non-java files in TIJDirectorsCut.txt")
-
-
 def extractExamples():
     if not destination.exists():
         destination.mkdir()
@@ -73,14 +59,17 @@ def extractExamples():
                 codeListing.write(listing)
                 codeListing.write("\n")
 
-
+@CmdLine("x", "clean")
 def clean():
+    "Remove ExtractedExamples directory"
     print("clean")
     if destination.exists():
         shutil.rmtree(str(destination))
 
 
+@CmdLine("c", "compare")
 def compareWithGithub(shortForm=True):
+    "Compare files from Github repository to extracted examples"
     leader = len(str(github)) + 1
     githubfiles = [str(file)[leader:] for file in github.glob("**/*")]
     githubfiles = [ghf for ghf in githubfiles if not ghf.startswith(".git")]
@@ -137,7 +126,9 @@ def destDirs(pattern="**"):
     return {str(file)[leader:] for file in destination.glob(pattern)}
 
 
+@CmdLine("a", "ant")
 def copySupplementalFilesFromGithub():
+    "Copy ant build files from Github repository to extracted examples"
     shutil.copy(str(github / "build.xml"), str(destination))
     shutil.copy(str(github / "Ant-Common.xml"), str(destination))
     for face in (github / "gui").glob("*.gif"):
@@ -323,15 +314,18 @@ class Chapter:
 
 
 
-
+@CmdLine("m", "makeant")
 def createAntFiles():
+    "Make ant files that don't exist"
     chapters = [Chapter(fd) for fd in destination.glob("*") if fd.is_dir() if not (fd / "build.xml").exists()]
     for chapter in chapters:
         chapter.checkPackages()
         chapter.makeBuildFile()
 
 
+@CmdLine("f", "find")
 def findNonJavaFiles():
+    "Find non-java files in TIJDirectorsCut.txt"
     if not sourceText.exists():
         print("Cannot find", sourceText)
         sys.exit()
@@ -343,7 +337,17 @@ def findNonJavaFiles():
                 print(title)
 
 
+@CmdLine('e', "extract" )
+def extractAndCreateBuildFiles():
+    "Extract examples from TIJDirectorsCut.txt"
+    extractExamples()
+    copySupplementalFilesFromGithub()
+    createAntFiles()
+
+
+@CmdLine('d', "default" )
 def default():
+    "Default: clean, extract, build ant files"
     clean()
     extractExamples()
     copySupplementalFilesFromGithub()
@@ -355,30 +359,4 @@ def default():
     with open("v.bat", 'w') as run:
         run.write(r"python ..\Validate.py %*" + "\n")
 
-def extractAndCreateBuildFiles():
-    extractExamples()
-    copySupplementalFilesFromGithub()
-    createAntFiles()
-
-if __name__ == '__main__':
-    args = parser.parse_args()
-
-    if not any(vars(args).values()): default()
-
-    if args.extract:
-        extractAndCreateBuildFiles()
-
-    if args.compare:
-        compareWithGithub()
-
-    if args.ant:
-        copySupplementalFilesFromGithub()
-
-    if args.makeant:
-        createAntFiles()
-
-    if args.find:
-        findNonJavaFiles()
-
-    if args.clean:
-        clean()
+if __name__ == '__main__':  CmdLine.run()
