@@ -132,8 +132,8 @@ def copySupplementalFilesFromGithub():
     shutil.copy(str(github / "Ant-Common.xml"), str(destination))
     for face in (github / "gui").glob("*.gif"):
         shutil.copy(str(face), str(destination / "gui"))
-    for verifier in ["OutputGenerator.py", "OutputVerifier.py"]:
-        shutil.copy(str(github/verifier), str(destination))
+    # for verifier in ["OutputGenerator.py", "OutputVerifier.py"]:
+    #     shutil.copy(str(github/verifier), str(destination))
     patterns = destination / "patterns"
     trash = patterns / "recycleap" / "Trash.dat"
     shutil.copy(str(trash), str(patterns / "recycleb"))
@@ -223,7 +223,9 @@ class CodeFileOptions(object):
         return ""
 
     def createRunCommand(self):
-        return self.classFile() + self.dirPath() + self.arguments() + self.failOnError() + self.timeOut() + self.message() + "/>\n"
+        return self.classFile() + self.dirPath() + \
+            self.arguments() + self.failOnError() + \
+            self.timeOut() + self.message() + "/>\n"
 
 
 
