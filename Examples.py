@@ -97,26 +97,6 @@ def compareWithGithub(shortForm=True):
     githubfiles = SortedSet(githubfiles)
     destfiles = SortedSet(destfiles)
 
-    # print("in githubfiles but not destfiles:")
-    # for f in [f for f in githubfiles.difference(destfiles) if not f.endswith(".py") if not f.endswith(".xml")]:
-    #     print("\t", f)
-
-    # print("#" * 80)
-
-    # print("in destfiles but not githubfiles:")
-    # for f in [f for f in destfiles.difference(githubfiles) if f.endswith(".java")]:
-    #         # if not f.endswith(".class")
-    #         # if not f.endswith(".xml")
-    #         # if not f.endswith(".dat")
-    #         # if not f.endswith(".txt")
-    #         # if not f.endswith(".zip")
-    #         # if not f.endswith(".out")
-    #         # if not f.endswith(".file")
-    #         # if not f.endswith(".gz")
-    #         # ]:
-    #     print("\t", f)
-
-    # print("in destfiles and in githubfiles:")
     runOutput = re.compile("/\* Output:.*///:~", re.DOTALL)
     differ = difflib.Differ()
 
@@ -137,18 +117,12 @@ def compareWithGithub(shortForm=True):
                 if ghblock.strip() == dstblock.strip():
                     continue
                 ghtext = ghblock.splitlines(keepends=True)
-                #show(ghtext, sep="#")
                 dsttext = dstblock.splitlines(keepends=True)
-                #show(dsttext, sep="-")
                 print("[[[", f, "]]]")
                 if shortForm:
                     show([ln + "\n" for ln in difflib.context_diff(rstrip(ghtext), rstrip(dsttext))], sep="=")
                 else:
                     show([ln + "\n" for ln in differ.compare(rstrip(ghtext), rstrip(dsttext))], sep="=")
-                #sys.exit()
-
-
-
 
 
 
@@ -164,11 +138,6 @@ def destDirs(pattern="**"):
 
 
 def copySupplementalFilesFromGithub():
-    # for common in githubDirs().intersection(destDirs()):
-    #     print("->", common)
-    #     build = github / common / "build.xml"
-    #     target = destination / common
-    #     shutil.copy(str(build), str(target))
     shutil.copy(str(github / "build.xml"), str(destination))
     shutil.copy(str(github / "Ant-Common.xml"), str(destination))
     for face in (github / "gui").glob("*.gif"):
@@ -380,7 +349,16 @@ def default():
     copySupplementalFilesFromGithub()
     createAntFiles()
     os.chdir("ExtractedExamples")
+    with open("run.bat", 'w') as run:
+        run.write(r"python ..\Validate.py -p" + "\n")
+        run.write(r"powershell .\runall.ps1" + "\n")
+    with open("v.bat", 'w') as run:
+        run.write(r"python ..\Validate.py %*" + "\n")
 
+def extractAndCreateBuildFiles():
+    extractExamples()
+    copySupplementalFilesFromGithub()
+    createAntFiles()
 
 if __name__ == '__main__':
     args = parser.parse_args()
@@ -388,9 +366,7 @@ if __name__ == '__main__':
     if not any(vars(args).values()): default()
 
     if args.extract:
-        extractExamples()
-        copySupplementalFilesFromGithub()
-        createAntFiles()
+        extractAndCreateBuildFiles()
 
     if args.compare:
         compareWithGithub()
