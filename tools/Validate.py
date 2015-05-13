@@ -328,5 +328,31 @@ def findExceptionsFromRun():
             print(errfile.read())
             head()
 
+@CmdLine("a", "editall")
+def editAllJavaFiles():
+    """
+    Edit all Java files in this directory and beneath
+    """
+    with Path("editall.bat").open('w') as cmdfile:
+        cmdfile.write("subl ")
+        for java in Path(".").rglob("*.java"):
+            cmdfile.write("{} ".format(java))
+
+@CmdLine("s", "single", 1)
+def attachToSingleFile():
+    """
+    Attach output to single file.
+    """
+    javafilepath = Path(sys.argv[2])
+    if not javafilepath.exists():
+        print("Error: cannot find {}".format(javafilepath))
+        sys.exit(1)
+    result = Result.create(javafilepath)
+    if not result:
+        print("Error: no output or error files for {}".format(javafilepath))
+        sys.exit(1)
+    print(result)
+
+
 
 if __name__ == '__main__': CmdLine.run()
