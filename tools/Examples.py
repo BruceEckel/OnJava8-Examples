@@ -345,7 +345,5 @@ def extractAndCreateBuildFiles():
     with open("run.bat", 'w') as run:
         run.write(r"python ..\Validate.py -p" + "\n")
         run.write(r"powershell .\runall.ps1" + "\n")
-    # with open("v.bat", 'w') as run:
-    #     run.write(r"python ..\Validate.py %*" + "\n")
 
 if __name__ == '__main__':  CmdLine.run()

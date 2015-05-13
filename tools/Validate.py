@@ -3,6 +3,8 @@
 Run all (possible) java files and capture output and errors
 
 TODO: 1st and last 10 lines, with ... in between? {FirstAndLast: 10 Lines}
+
+TODO: format __newOutput() for line width using textwrap
 """
 from pathlib import Path
 import pprint
@@ -278,6 +280,25 @@ class Result:
 
         return result
 
+    def appendOutputFiles(self):
+        if not self.output_tags.has_output: # no /* Output: at all
+            with self.javaFilePath.open() as jf:
+                code = jf.read()
+                lines = code.splitlines()
+                while lines[-1].strip() is "":
+                    lines.pop()
+                assert lines[-1].rstrip() == "} ///:~"
+                lines[-1] = "} /* Output:"
+                lines.append(self.new_output)
+                lines.append("*///:~")
+                result = "\n".join(lines) + "\n"
+            with self.javaFilePath.open("w") as jf:
+                jf.write(result)
+            return result
+        else:
+            print("{} already has Output: tags:".format(self.javaFilePath))
+            print(self.output_tags)
+            sys.exit()
 
 
 @CmdLine("d", "discover")
@@ -328,6 +349,7 @@ def findExceptionsFromRun():
             print(errfile.read())
             head()
 
+
 @CmdLine("a", "editall")
 def editAllJavaFiles():
     """
@@ -338,20 +360,22 @@ def editAllJavaFiles():
         for java in Path(".").rglob("*.java"):
             cmdfile.write("{} ".format(java))
 
-@CmdLine("s", "single", 1)
+
+@CmdLine("s", "single", "+")
 def attachToSingleFile():
     """
-    Attach output to single file.
+    Attach output to selected file(s).
     """
-    javafilepath = Path(sys.argv[2])
-    if not javafilepath.exists():
-        print("Error: cannot find {}".format(javafilepath))
-        sys.exit(1)
-    result = Result.create(javafilepath)
-    if not result:
-        print("Error: no output or error files for {}".format(javafilepath))
-        sys.exit(1)
-    print(result)
+    for jfp in sys.argv[2:]:
+        javafilepath = Path(jfp)
+        if not javafilepath.exists():
+            print("Error: cannot find {}".format(javafilepath))
+            sys.exit(1)
+        result = Result.create(javafilepath)
+        if not result:
+            print("Error: no output or error files for {}".format(javafilepath))
+            sys.exit(1)
+        print(result.appendOutputFiles())
 
 
 
