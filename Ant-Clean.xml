@@ -10,41 +10,32 @@
     <delete>
       <fileset dir="${basedir}" casesensitive="yes">
         <include name="**/*.class" />
-        <include name="**/*output.txt" />
-        <include name="**/log.txt" />
+        <include name="**/*.txt" />
+        <include name="**/*.tmp" />
+        <include name="**/*.xml" />
+        <include name="**/*.out" />
+        <include name="**/*.dat" />
         <include name="**/failures" />
-        <include name="**/test.txt" />
-        <include name="**/test2.txt" />
-        <include name="**/Test0.txt" />
-        <include name="**/Test1.txt" />
-        <include name="**/Test2.txt" />
-        <include name="**/LogToFile.xml"/>
-        <include name="**/LogToFile2.txt"/>
-        <include name="**/TransferTo.txt"/>
-        <include name="**/data.txt"/>
-        <include name="**/data2.txt"/>
-        <include name="**/file.txt"/>
-        <include name="**/MultipleHandlers.xml"/>
-        <include name="**/MultipleHandlers2.xml" />
-        <include name="**/People.xml" />
+        <include name="**/test.gz" />
+        <include name="**/test.zip" />
+        <include name="**/X.file" />
         <exclude name="**/*.java"/>
-        <exclude name="**/DogsAndRobots.py" />
-        <exclude name="**/DogsAndRobots.cpp" />
-        <exclude name="**/PythonLists.py" />
         <exclude name="**/Copyright.txt" />
-        <exclude name="**/Templates.cpp" />
-        <exclude name="**/InstantiateGenericType.cpp" />
-        <exclude name="**/Mixins.cpp" />
+        <exclude name="**/Face*.gif"/>
+        <exclude name="**/build.xml"/>
+        <exclude name="**/Ant-Common.xml" />
+        <exclude name="**/Ant-Clean.xml" />
+        <exclude name="**/run.bat" />
+        <exclude name="**/*.py" />
+        <exclude name="**/*.cpp" />
         <exclude name="**/VendingMachineInput.txt" />
         <exclude name="**/Trash.dat" />
         <exclude name="**/DDTrash.dat" />
         <exclude name="**/VTrash.dat" />
         <exclude name="**/log.prop"/>
-        <exclude name="**/Face*.gif"/>
-        <exclude name="**/build.xml"/>
+        <exclude name="**/runall.ps1" />
       </fileset>
     </delete>
-    <delete file="*output.txt"/>
     <echo message="clean successful"/>
   </target>
 
