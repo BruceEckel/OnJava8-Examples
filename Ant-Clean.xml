@@ -1,0 +1,25 @@
+<project>
+
+  <target name="clean" description="delete all byproducts" >
+    <delete>
+      <fileset dir="${basedir}" casesensitive="yes">
+        <include name="**/*.class" />
+        <include name="**/*output.txt" />
+        <include name="**/log.txt" />
+        <include name="**/failures **/test.txt **/test2.txt" />
+        <include name="**/LogToFile.xml"/>
+        <include name="**/MultipleHandlers.xml"/>
+        <include name="**/MultipleHandlers2.xml" />
+        <exclude name="*.java"/>
+        <exclude name="DogsAndRobots.py PythonLists.py"/>
+        <exclude name="Copyright.txt Templates.cpp InstantiateGenericType.cpp Mixins.cpp"/>
+        <exclude name="DogsAndRobots.cpp VendingMachineInput.txt Trash.dat DDTrash.dat VTrash.dat log.prop"/>
+        <exclude name="Face*.gif"/>
+        <exclude name="build.xml"/>
+      </fileset>
+    </delete>
+    <delete file="*output.txt"/>
+    <echo message="clean successful"/>
+  </target>
+
+</project>
