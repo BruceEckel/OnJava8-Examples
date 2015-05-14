@@ -1,21 +1,47 @@
 <project>
 
+  <description>
+    For this file to be included in all build.xml files
+    at all directory levels, the single entries with the
+    "**/" syntax must be used everywhere.
+  </description>
+
   <target name="clean" description="delete all byproducts" >
     <delete>
       <fileset dir="${basedir}" casesensitive="yes">
         <include name="**/*.class" />
         <include name="**/*output.txt" />
         <include name="**/log.txt" />
-        <include name="**/failures **/test.txt **/test2.txt" />
+        <include name="**/failures" />
+        <include name="**/test.txt" />
+        <include name="**/test2.txt" />
+        <include name="**/Test0.txt" />
+        <include name="**/Test1.txt" />
+        <include name="**/Test2.txt" />
         <include name="**/LogToFile.xml"/>
+        <include name="**/LogToFile2.txt"/>
+        <include name="**/TransferTo.txt"/>
+        <include name="**/data.txt"/>
+        <include name="**/data2.txt"/>
+        <include name="**/file.txt"/>
         <include name="**/MultipleHandlers.xml"/>
         <include name="**/MultipleHandlers2.xml" />
-        <exclude name="*.java"/>
-        <exclude name="DogsAndRobots.py PythonLists.py"/>
-        <exclude name="Copyright.txt Templates.cpp InstantiateGenericType.cpp Mixins.cpp"/>
-        <exclude name="DogsAndRobots.cpp VendingMachineInput.txt Trash.dat DDTrash.dat VTrash.dat log.prop"/>
-        <exclude name="Face*.gif"/>
-        <exclude name="build.xml"/>
+        <include name="**/People.xml" />
+        <exclude name="**/*.java"/>
+        <exclude name="**/DogsAndRobots.py" />
+        <exclude name="**/DogsAndRobots.cpp" />
+        <exclude name="**/PythonLists.py" />
+        <exclude name="**/Copyright.txt" />
+        <exclude name="**/Templates.cpp" />
+        <exclude name="**/InstantiateGenericType.cpp" />
+        <exclude name="**/Mixins.cpp" />
+        <exclude name="**/VendingMachineInput.txt" />
+        <exclude name="**/Trash.dat" />
+        <exclude name="**/DDTrash.dat" />
+        <exclude name="**/VTrash.dat" />
+        <exclude name="**/log.prop"/>
+        <exclude name="**/Face*.gif"/>
+        <exclude name="**/build.xml"/>
       </fileset>
     </delete>
     <delete file="*output.txt"/>
