@@ -69,7 +69,21 @@ Sub UpdateCode()
     Selection.Find.Execute
     Call updateFile
     Selection.MoveRight wdCharacter, 1
-    Selection.Find.ClearFormatting
+    ' All this is just to clear the formatting:
+    ' Selection.Find.ClearFormatting
+    With Selection.Find
+        .ClearFormatting
+        .Text = ""
+        .Forward = True
+        .Wrap = wdFindContinue
+        .Format = False
+        .MatchCase = False
+        .MatchWholeWord = False
+        .MatchAllWordForms = False
+        .MatchSoundsLike = False
+        .MatchWildcards = False
+    End With
+    Selection.Find.Execute
 End Sub
 
 Sub FreshenAllCode_StripTrailingNewlinesFirst()
@@ -117,139 +131,6 @@ Sub SaveAsText()
 End Sub
 
 
-Private Sub OLDUpdateAllCode()
-' Update the entire book's code listings
-' Macro created 7/7/2002 by Mark Welsh
-'
-    Dim startLoc As Long, endLoc As Long
-    Dim oldCode As String, i As Integer
-    Dim fname As String, ln As String
-    Dim newCode As String
-
-    'Application.ScreenUpdating = False
-    Application.EnableCancelKey = xlInterrupt
-
-    Do
-        ' Find the starting location
-        Selection.Find.ClearFormatting
-        startLoc = Selection.Start
-        With Selection.Find
-            .Text = "//: "
-            .Forward = True
-            .Wrap = wdFindContinue
-            .Format = False
-            .MatchCase = False
-            .MatchWholeWord = False
-            .MatchWildcards = False
-            .MatchSoundsLike = False
-            .MatchAllWordForms = False
-        End With
-        Selection.Find.Execute
-
-        startLoc = Selection.Start
-        ' No new code found, so quit
-        If startLoc < endLoc Then
-            Exit Sub
-        End If
-
-        ' Find the end location
-        Selection.Find.ClearFormatting
-        With Selection.Find
-            .Text = "///:~"
-            .Forward = True
-            .Wrap = wdFindContinue
-            .Format = False
-            .MatchCase = False
-            .MatchWholeWord = False
-            .MatchWildcards = False
-            .MatchSoundsLike = False
-            .MatchAllWordForms = False
-        End With
-        Selection.Find.Execute
-        endLoc = Selection.End
-
-        Selection.MoveRight wdCharacter, 1
-        Selection.MoveLeft wdCharacter, endLoc - startLoc, wdExtend
-
-        ' Get the file name
-        oldCode = Selection
-        i = InStr(5, oldCode, ".java")
-        fname = Mid(oldCode, 5, i)
-        fname = Replace(fname, "/", "\")
-
-        If Len(fname) = 0 Then
-            GoTo skip
-        End If
-
-        ' Does the file exist?
-        If Not fileExists(fname) Then
-            If MsgBox(fname & " could not be found! Continue replace?", vbYesNo + vbExclamation, "UpdateCode") = vbNo Then
-                Exit Sub
-            End If
-            GoTo skip
-        End If
-
-        'Open the file
-        Open basedir & fname For Input As #1
-            While Not EOF(1)
-                Line Input #1, ln
-                newCode = newCode & ln & vbCrLf
-            Wend
-        Close #1
-
-        'Add the new code and change the style
-        Selection = Left(newCode, Len(newCode) - 2)
-        Selection.Style = ActiveDocument.Styles("Code")
-        'Selection.MoveRight wdCharacter, 1
-        'Selection.HomeKey wdLine, wdExtend
-        'Selection.Style = ActiveDocument.Styles("CodeInline")
-        'Selection.MoveDown wdLine, 1
-        'Selection.Style = ActiveDocument.Styles("CodeInlineTrailer")
-skip:
-        Selection.MoveRight wdCharacter, 2
-        newCode = ""
-    Loop
-    Application.ScreenUpdating = True
-End Sub
-
-Private Sub oldCodeBody()
-            Selection.MoveRight wdCharacter, 1
-            Selection.MoveLeft wdCharacter, endLoc - startLoc, wdExtend
-
-            ' Get the file name
-            oldCode = Selection
-            i = InStr(5, oldCode, ".java")
-            fname = Mid(oldCode, 5, i)
-            fname = Replace(fname, "/", "\")
-
-            If Len(fname) = 0 Then
-                GoTo skip
-            End If
-
-            ' Does the file exist?
-            If Not fileExists(fname) Then
-                If MsgBox(fname & " could not be found! Continue replace?", vbYesNo + vbExclamation, "UpdateCode") = vbNo Then
-                    Exit Sub
-                End If
-                GoTo skip
-            End If
-
-            'Open the file
-            Open basedir & fname For Input As #1
-                While Not EOF(1)
-                    Line Input #1, ln
-                    newCode = newCode & ln & vbCrLf
-                Wend
-            Close #1
-
-            'Add the new code and change the style
-            Selection = Left(newCode, Len(newCode) - 2)
-            Selection.Style = ActiveDocument.Styles("Code")
-skip:
-            Selection.MoveRight wdCharacter, 2
-            newCode = ""
-
-End Sub
 Sub NextCodeItemOfInterest()
 '
 ' NextCodeItemOfInterest Macro

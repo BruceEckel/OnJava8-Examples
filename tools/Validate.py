@@ -253,9 +253,13 @@ class Result:
     def __newOutput(self):
         result =""
         with self.outFilePath.open() as f:
-            result += f.read() + "\n"
+            out = f.read().strip()
+            if out:
+                result += out + "\n"
         with self.errFilePath.open() as f:
-            result += f.read()
+            err = f.read().strip()
+            if err:
+                result += err
         return result.rstrip()
 
     def __repr__(self):
