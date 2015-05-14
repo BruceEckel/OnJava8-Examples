@@ -23,8 +23,8 @@
      <attribute name="timeOut" default="15000"/>
      <attribute name="msg" default=""/>
      <sequential>
-        <echo>[${chapter}] Running: java @{cls} @{arguments}&#13;</echo>
-        <echo file="${antoutput}" append="true">[${chapter}] Running: java @{cls} @{arguments}&#13;</echo>
+        <echo>[${chapter}] java @{cls} @{arguments}&#13;</echo>
+        <echo file="${antoutput}" append="true">[${chapter}] java @{cls} @{arguments}&#13;</echo>
         <java
           classname="@{cls}"
           classpath="${java.class.path};${basedir};${basedir}/.."
@@ -49,8 +49,8 @@
      <attribute name="timeOut" default="15000"/>
      <attribute name="msg" default=""/>
      <sequential>
-        <echo>[${chapter}] Running: java @{cls} @{arguments}&#13;</echo>
-        <echo append="true">[${chapter}] Running: java @{cls} @{arguments}&#13;</echo>
+        <echo>[${chapter}] java @{cls} @{arguments}&#13;</echo>
+        <echo append="true">[${chapter}] java @{cls} @{arguments}&#13;</echo>
         <java
           classname="@{cls}"
           classpath="${java.class.path};${basedir};${basedir}/.."
