@@ -14,6 +14,7 @@ import difflib
 from collections import defaultdict
 from betools import CmdLine, visitDir, ruler, head
 
+maindef = re.compile("public\s+static\s+void\s+main")
 
 ###############################################################################
 #  Create Powershell Script to run all programs and capture the output
@@ -114,7 +115,7 @@ class RunFiles:
         for java in RunFiles.base.rglob("*.java"):
             with java.open() as code:
                 body = code.read()
-                if "static void main(String[] args)" in body:
+                if maindef.search(body):
                     self.runFiles.append(RunnableFile(java, body))
         allMains = set(self.runFiles)
         self.runFiles = [f for f in self.runFiles if not [nr for nr in self.not_runnable if nr in f]]
@@ -382,5 +383,16 @@ def attachToSingleFile():
         print(result.appendOutputFiles())
 
 
+@CmdLine("m", "mains")
+def findAllMains():
+    """
+    Find all main()s in java files, using re
+    """
+    for jf in Path('.').rglob("*.java"):
+        with jf.open() as java:
+            code = java.read()
+            for m in maindef.findall(code):
+                head(jf)
+                print(m)
 
 if __name__ == '__main__': CmdLine.run()

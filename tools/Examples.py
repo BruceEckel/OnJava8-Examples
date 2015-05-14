@@ -13,6 +13,8 @@ import difflib
 from sortedcontainers import SortedSet
 from betools import CmdLine
 
+maindef = re.compile("public\s+static\s+void\s+main")
+
 destination = Path('.') / "ExtractedExamples"
 sourceText = Path('.') / "TIJDirectorsCut.txt"
 github = Path(r'C:\Users\Bruce\Documents\GitHub\TIJ-Directors-Cut')
@@ -24,6 +26,7 @@ startBuild = """\
   <property name="chapter" value="%s"/>
   <property name="excludedfiles" value="%s"/>
   <import file="../Ant-Common.xml"/>
+  <import file="../Ant-Clean.xml"/>
 
   <target name="run" description="Compile and run" depends="build">
 """
@@ -130,6 +133,7 @@ def copySupplementalFilesFromGithub():
     "Copy ant build files from Github repository to extracted examples"
     shutil.copy(str(github / "build.xml"), str(destination))
     shutil.copy(str(github / "Ant-Common.xml"), str(destination))
+    shutil.copy(str(github / "Ant-Clean.xml"), str(destination))
     for face in (github / "gui").glob("*.gif"):
         shutil.copy(str(face), str(destination / "gui"))
     # for verifier in ["OutputGenerator.py", "OutputVerifier.py"]:
@@ -238,7 +242,7 @@ class CodeFile:
             self.code = j.read()
         self.lines = self.code.splitlines()
         self.main = None
-        if "public static void main" in self.code:
+        if maindef.search(self.code):
             self.main = True
         self.package = None
         if "package " in self.code:
@@ -345,5 +349,23 @@ def extractAndCreateBuildFiles():
     with open("run.bat", 'w') as run:
         run.write(r"python ..\Validate.py -p" + "\n")
         run.write(r"powershell .\runall.ps1" + "\n")
+
+@CmdLine('g', "generateAntClean" )
+def checkAntClean():
+    "Generate directives for Ant-Clean.xml"
+    examples = Path(r"C:\Users\Bruce\Dropbox\__TIJ4-ebook\ExtractedExamples")
+    others = set([f.name for f in examples.rglob("*") if not f.is_dir()
+                if not f.suffix == ".java"
+                if not f.suffix == ".class"
+                if not f.suffix == ".py"
+                if not f.suffix == ".cpp"
+                if not str(f).endswith("-output.txt")
+                if not str(f).endswith("-erroroutput.txt")
+                if f.name
+             ])
+    for f in others:
+        print("""        <exclude name="**/{}" />""".format(f))
+
+    # pprint.pprint([f for f in others if "test" in f or "Test" in f])
 
 if __name__ == '__main__':  CmdLine.run()
