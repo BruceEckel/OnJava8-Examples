@@ -15,6 +15,7 @@
         <include name="**/*.xml" />
         <include name="**/*.out" />
         <include name="**/*.dat" />
+        <include name="**/*.log" />
         <include name="**/failures" />
         <include name="**/test.gz" />
         <include name="**/test.zip" />

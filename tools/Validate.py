@@ -301,8 +301,7 @@ class Result:
                 jf.write(result)
             return result
         else:
-            print("{} already has Output: tags:".format(self.javaFilePath))
-            print(self.output_tags)
+            print("{} already has Output!".format(self.javaFilePath))
             sys.exit()
 
 
@@ -314,7 +313,8 @@ def discoverOutputTags():
     results = [r for r in [Result.create(jfp) for jfp in RunFiles.base.rglob("*.java")] if r]
     assert len(results), "Must run runall.ps1 first"
     tagd = defaultdict(list)
-    for tagged in [r for r in [Result.create(jfp) for jfp in RunFiles.base.rglob("*.java")] if r and r.output_tags]:
+    for tagged in [r for r in [Result.create(jfp) for jfp in RunFiles.base.rglob("*.java")]
+                   if r and r.output_tags]:
         for tag in tagged.output_tags:
             tagd[tag].append(str(tagged.javaFilePath))
     pprint.pprint(tagd)

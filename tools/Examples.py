@@ -1,6 +1,5 @@
 #! py -3
 """
-TODO: Make sure there's a newline at the end of the extracted files
 Extract code examples from TIJ4 Refreshed. Extracts from plain text file.
 Creates Ant build.xml file for each subdirectory.
 """
@@ -11,7 +10,8 @@ import shutil
 import pprint
 import difflib
 from sortedcontainers import SortedSet
-from betools import CmdLine
+from collections import defaultdict
+from betools import CmdLine, visitDir, ruler, head
 
 maindef = re.compile("public\s+static\s+void\s+main")
 
@@ -367,5 +367,38 @@ def checkAntClean():
         print("""        <exclude name="**/{}" />""".format(f))
 
     # pprint.pprint([f for f in others if "test" in f or "Test" in f])
+
+tagRE = re.compile("{.*?}", re.DOTALL)
+
+def findTags(lines):
+    topblock = []
+    for line in lines:
+        if line.startswith("//"):
+            topblock.append(line)
+        else:
+            break
+    topblock = [line[2:].strip() for line in topblock]
+    tags = tagRE.findall(" ".join(topblock))
+    return tags
+
+
+
+@CmdLine('t', "findAllCommentTags" )
+def findAllCommentTags():
+    "Find all '{}' comment tags in Java files"
+    tagdict = defaultdict(list)
+    examples = Path(r"C:\Users\Bruce\Dropbox\__TIJ4-ebook\ExtractedExamples")
+    for jf in [f for f in examples.rglob("*.java")]:
+        with jf.open() as code:
+            lines = code.readlines()
+            tags = findTags(lines)
+            if tags:
+                # head(jf.name)
+                # print("\n".join(tags))
+                for t in tags:
+                    tagdict[t].append(jf.name)
+    pprint.pprint(tagdict)
+
+
 
 if __name__ == '__main__':  CmdLine.run()
