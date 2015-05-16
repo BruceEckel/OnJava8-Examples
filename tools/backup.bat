@@ -4,37 +4,48 @@ import zipfile
 import datetime
 import os, sys, shutil
 from glob import glob
-#import platform
-#print(platform.python_version())
+import pathlib
 from pathlib import Path
+import pprint
 
-destdirs = [ # Different paths for different machines:
-    r'''C:\Users\Bruce Eckel\Box Sync\TIJ4-ebook-Backups''',
-    r'''C:\Users\Bruce\Box Sync\TIJ4-ebook-Backups''',
-]
+root = Path('.').resolve().parent.parent
+boxdir = root / r"Box Sync\TIJ4-ebook-Backups"
+gdrive = root / "Google Drive" / "TIJ4RefreshedBackups"
+idrive = root / "IDrive-Sync" / "TIJ4-ebook-Backups"
+print(boxdir)
+print(gdrive)
+print(idrive)
 
-for destdir in destdirs:
-  if os.path.exists(destdir):
-      break
-assert(os.path.exists(destdir))
+def cp(src, dest, display=True):
+    if type(src) is pathlib.WindowsPath:
+        name = src.name
+    else:
+        name = src
+    if display:
+        print("copying", name)
+        print("to:", dest)
+    shutil.copy(str(src), str(dest))
 
 now = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M")
 zip_file_name = 'TIJDirectorsCut-' + now + '.zip'
-dest = os.path.join(destdir, zip_file_name)
+dest = boxdir / zip_file_name
+print(dest)
+tozip = ["Notes.txt", "backup.bat", "go.bat"] + glob("*.py") + glob("*.docx") + glob("*.docm")
 
-with zipfile.ZipFile(dest, 'w') as myzip:
-    # for f in glob("*.odt") + glob("*.docx") + glob("*.doc") + glob("*.txt") + glob("*.bat") + glob("*.py"):
-    for f in ["Examples.py", "Validate.py", "Notes.txt", "backup.bat", "backupall.bat"] + glob("*.docx"):
+with zipfile.ZipFile(str(dest), 'w') as myzip:
+    for f in tozip:
         myzip.write(f)
-    # myzip.write("TIJDirectorsCut.docx")
 
-# copy dest to:
-# double_back = os.path.join(r'C:\Users\Bruce\IDrive-Sync\TIJ4-ebook-Backups', zip_file_name)
-shutil.copy(dest, r'C:\Users\Bruce\Google Drive\TIJ4RefreshedBackups')
-shutil.copy(dest, r'C:\Users\Bruce\IDrive-Sync\TIJ4-ebook-Backups')
+cp(dest, gdrive)
+cp(dest, idrive)
 
-shutil.copy("Examples.py", r'C:\Users\Bruce\Documents\GitHub\TIJ-Directors-Cut\tools')
-shutil.copy("Validate.py", r'C:\Users\Bruce\Documents\GitHub\TIJ-Directors-Cut\tools')
+shortcut = Path(r"C:\Python34\Scripts")
+tools = ["Examples.py", "Validate.py", "backup.bat", "go.bat", "StripLastBlankLine.py",
+             shortcut / "v.bat", shortcut / "e.bat"]
+
+print("copying tools to Github")
+for tool in tools:
+    cp(tool, root / "Documents" / "GitHub" / "TIJ-Directors-Cut" / "tools", False)
 
 # Touch this file to indicate most recent update time:
 os.utime("backup.bat", None)
