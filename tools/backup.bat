@@ -7,6 +7,7 @@ from glob import glob
 import pathlib
 from pathlib import Path
 import pprint
+import msvcrt
 
 root = Path('.').resolve().parent.parent
 boxdir = root / r"Box Sync\TIJ4-ebook-Backups"
@@ -49,3 +50,4 @@ for tool in tools:
 
 # Touch this file to indicate most recent update time:
 os.utime("backup.bat", None)
+msvcrt.getch()
