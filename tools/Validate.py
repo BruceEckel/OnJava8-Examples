@@ -147,7 +147,7 @@ class RunFiles:
         return iter(self.runFiles)
 
 
-@CmdLine("p", "powershell")
+@CmdLine("p")
 def createPowershellScript():
     """
     Create Powershell Script to run all programs and capture the output
@@ -305,7 +305,7 @@ class Result:
             sys.exit()
 
 
-@CmdLine("d", "discover")
+@CmdLine("d")
 def discoverOutputTags():
     """
     Discover 'Output:' tags
@@ -320,7 +320,7 @@ def discoverOutputTags():
     pprint.pprint(tagd)
 
 
-@CmdLine("f", "fillin")
+@CmdLine("f")
 def fillInUnexcludedOutput():
     """
     Find the files that aren't explicitly excluded AND have no 'Output:'. Show them and their output.
@@ -340,7 +340,7 @@ def fillInUnexcludedOutput():
         print(ne)
 
 
-@CmdLine("e", "exceptions")
+@CmdLine("e")
 def findExceptionsFromRun():
     """
     Find all the exceptions produced by runall.ps1
@@ -355,7 +355,7 @@ def findExceptionsFromRun():
             head()
 
 
-@CmdLine("a", "editall")
+@CmdLine("a")
 def editAllJavaFiles():
     """
     Edit all Java files in this directory and beneath
@@ -366,7 +366,7 @@ def editAllJavaFiles():
             cmdfile.write("{} ".format(java))
 
 
-@CmdLine("s", "single", "+")
+@CmdLine("s", num_args="+")
 def attachToSingleFile():
     """
     Attach output to selected file(s).
@@ -383,7 +383,7 @@ def attachToSingleFile():
         print(result.appendOutputFiles())
 
 
-@CmdLine("m", "mains")
+@CmdLine("m")
 def findAllMains():
     """
     Find all main()s in java files, using re

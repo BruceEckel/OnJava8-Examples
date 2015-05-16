@@ -60,7 +60,7 @@ def extractExamples():
                 codeListing.write(listing)
                 codeListing.write("\n")
 
-@CmdLine("x", "clean")
+@CmdLine("x")
 def clean():
     "Remove ExtractedExamples directory"
     print("clean")
@@ -68,7 +68,7 @@ def clean():
         shutil.rmtree(str(destination))
 
 
-@CmdLine("c", "compare")
+@CmdLine("c")
 def compareWithGithub(shortForm=True):
     "Compare files from Github repository to extracted examples"
     leader = len(str(github)) + 1
@@ -127,7 +127,7 @@ def destDirs(pattern="**"):
     return {str(file)[leader:] for file in destination.glob(pattern)}
 
 
-@CmdLine("a", "ant")
+@CmdLine("a")
 def copySupplementalFilesFromGithub():
     "Copy ant build files from Github repository to extracted examples"
     shutil.copy(str(github / "build.xml"), str(destination))
@@ -314,7 +314,7 @@ class Chapter:
 
 
 
-@CmdLine("m", "makeant")
+@CmdLine("m")
 def createAntFiles():
     "Make ant files that don't exist"
     chapters = [Chapter(fd) for fd in destination.glob("*") if fd.is_dir() if not (fd / "build.xml").exists()]
@@ -323,7 +323,7 @@ def createAntFiles():
         chapter.makeBuildFile()
 
 
-@CmdLine("f", "find")
+@CmdLine("f")
 def findNonJavaFiles():
     "Find non-java files in TIJDirectorsCut.txt"
     if not sourceText.exists():
@@ -337,7 +337,7 @@ def findNonJavaFiles():
                 print(title)
 
 
-@CmdLine('e', "extract" )
+@CmdLine('e')
 def extractAndCreateBuildFiles():
     "Clean, then extract examples from TIJDirectorsCut.txt, build ant files"
     clean()
@@ -349,8 +349,8 @@ def extractAndCreateBuildFiles():
         run.write(r"python ..\Validate.py -p" + "\n")
         run.write(r"powershell .\runall.ps1" + "\n")
 
-@CmdLine('g', "generateAntClean" )
-def checkAntClean():
+@CmdLine('g')
+def generateAntClean():
     "Generate directives for Ant-Clean.xml"
     examples = Path(r"C:\Users\Bruce\Dropbox\__TIJ4-ebook\ExtractedExamples")
     others = set([f.name for f in examples.rglob("*") if not f.is_dir()
@@ -382,7 +382,7 @@ def findTags(lines):
 
 
 
-@CmdLine('t', "findAllCommentTags" )
+@CmdLine('t')
 def findAllCommentTags():
     "Find all '{}' comment tags in Java files"
     tagdict = defaultdict(list)
