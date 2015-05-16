@@ -9,7 +9,6 @@ import re
 import shutil
 import pprint
 import difflib
-from sortedcontainers import SortedSet
 from collections import defaultdict
 from betools import CmdLine, visitDir, ruler, head
 
@@ -85,8 +84,8 @@ def compareWithGithub(shortForm=True):
     if duplicates:
         print("duplicates = ", duplicates)
 
-    githubfiles = SortedSet(githubfiles)
-    destfiles = SortedSet(destfiles)
+    githubfiles = set(githubfiles)
+    destfiles = set(destfiles)
 
     runOutput = re.compile("/\* Output:.*///:~", re.DOTALL)
     differ = difflib.Differ()
