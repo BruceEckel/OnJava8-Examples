@@ -10,12 +10,9 @@ import pprint
 import msvcrt
 
 root = Path('.').resolve().parent.parent
-boxdir = root / r"Box Sync\TIJ4-ebook-Backups"
+boxdir = root / "Box Sync" / "TIJ4-ebook-Backups"
 gdrive = root / "Google Drive" / "TIJ4RefreshedBackups"
 idrive = root / "IDrive-Sync" / "TIJ4-ebook-Backups"
-print(boxdir)
-print(gdrive)
-print(idrive)
 
 def cp(src, dest, display=True):
     if type(src) is pathlib.WindowsPath:
@@ -24,13 +21,13 @@ def cp(src, dest, display=True):
         name = src
     if display:
         print("copying", name)
-        print("to:", dest)
+        print("to:", dest, "\n")
     shutil.copy(str(src), str(dest))
 
 now = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M")
 zip_file_name = 'TIJDirectorsCut-' + now + '.zip'
 dest = boxdir / zip_file_name
-print(dest)
+print(dest, "\n")
 tozip = ["Notes.txt", "backup.bat", "go.bat"] + glob("*.py") + glob("*.docx") + glob("*.docm")
 
 with zipfile.ZipFile(str(dest), 'w') as myzip:
