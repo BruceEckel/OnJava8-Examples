@@ -52,6 +52,7 @@
       logging/build.xml
       network/build.xml
       remote/build.xml
+      staticchecking/build.xml
       "/>
 
   <target name="run" description="Compiles and runs all examples">
