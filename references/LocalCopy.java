@@ -1,6 +1,5 @@
 //: references/LocalCopy.java
 // Creating local copies with clone().
-import java.util.*;
 
 class MyObject implements Cloneable {
   private int n;
@@ -44,4 +43,11 @@ public class LocalCopy {
     System.out.println("c == d: " + (c == d) +
       "\nc = " + c + "\nd = " + d);
   }
-} ///:~
+} /* Output:
+a == b: true
+a = 12
+b = 12
+c == d: false
+c = 47
+d = 48
+*///:~

@@ -1,9 +1,11 @@
 //: references/Immutable2.java
-// A companion class to modify immutable objects.
+// A companion class to modify immutable objects
 
 class Mutable {
   private int data;
-  public Mutable(int initVal) { data = initVal; }
+  public Mutable(int initVal) {
+    data = initVal;
+  }
   public Mutable add(int x) {
     data += x;
     return this;
@@ -19,9 +21,13 @@ class Mutable {
 
 public class Immutable2 {
   private int data;
-  public Immutable2(int initVal) { data = initVal; }
+  public Immutable2(int initVal) {
+    data = initVal;
+  }
   public int read() { return data; }
-  public boolean nonzero() { return data != 0; }
+  public boolean nonzero() {
+    return data != 0;
+  }
   public Immutable2 add(int x) {
     return new Immutable2(data + x);
   }
@@ -31,7 +37,8 @@ public class Immutable2 {
   public Mutable makeMutable() {
     return new Mutable(data);
   }
-  public static Immutable2 modify1(Immutable2 y) {
+  public static
+  Immutable2 modify1(Immutable2 y) {
     Immutable2 val = y.add(12);
     val = val.multiply(3);
     val = val.add(11);
@@ -39,7 +46,8 @@ public class Immutable2 {
     return val;
   }
   // This produces the same result:
-  public static Immutable2 modify2(Immutable2 y) {
+  public static
+  Immutable2 modify2(Immutable2 y) {
     Mutable m = y.makeMutable();
     m.add(12).multiply(3).add(11).multiply(2);
     return m.makeImmutable2();
@@ -52,4 +60,8 @@ public class Immutable2 {
     System.out.println("r1 = " + r1.read());
     System.out.println("r2 = " + r2.read());
   }
-} ///:~
+} /* Output:
+i2 = 47
+r1 = 376
+r2 = 376
+*///:~

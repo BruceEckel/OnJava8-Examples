@@ -4,6 +4,7 @@
   <property name="chapter" value="reusing"/>
   <property name="excludedfiles" value="Lisa.java"/>
   <import file="../Ant-Common.xml"/>
+  <import file="../Ant-Clean.xml"/>
 
   <target name="run" description="Compile and run" depends="build">
     <jrun cls="Bath" />

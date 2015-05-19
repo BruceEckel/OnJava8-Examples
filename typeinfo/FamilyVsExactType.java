@@ -4,7 +4,7 @@ package typeinfo;
 import static net.mindview.util.Print.*;
 
 class Base {}
-class Derived extends Base {}	
+class Derived extends Base {}
 
 public class FamilyVsExactType {
   static void test(Object x) {
@@ -26,7 +26,7 @@ public class FamilyVsExactType {
   public static void main(String[] args) {
     test(new Base());
     test(new Derived());
-  }	
+  }
 } /* Output:
 Testing x of type class typeinfo.Base
 x instanceof Base true

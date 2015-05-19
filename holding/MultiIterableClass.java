@@ -15,7 +15,7 @@ public class MultiIterableClass extends IterableClass {
         throw new UnsupportedOperationException();
       }
     };
-  }	
+  }
   public Iterable<String> randomized() {
     return () -> {
       List<String> shuffled =
@@ -23,7 +23,7 @@ public class MultiIterableClass extends IterableClass {
       Collections.shuffle(shuffled, new Random(47));
       return shuffled.iterator();
     };
-  }	
+  }
   public static void main(String[] args) {
     MultiIterableClass mic = new MultiIterableClass();
     for(String s : mic.reversed())

@@ -16,7 +16,7 @@ public class New {
   }
   public static <T> Set<T> set() {
     return new HashSet<>();
-  }	
+  }
   public static <T> Queue<T> queue() {
     return new LinkedList<>();
   }

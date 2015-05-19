@@ -4,7 +4,7 @@ import static net.mindview.util.Print.*;
 
 class Tank {
   int level;
-}	
+}
 
 public class Assignment {
   public static void main(String[] args) {

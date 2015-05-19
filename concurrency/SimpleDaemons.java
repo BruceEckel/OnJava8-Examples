@@ -24,7 +24,7 @@ public class SimpleDaemons implements Runnable {
     print("All daemons started");
     TimeUnit.MILLISECONDS.sleep(175);
   }
-} /* Output: (Sample)
+} /* Output: (First 11 Lines)
 All daemons started
 Thread[Thread-0,5,main] SimpleDaemons@530daa
 Thread[Thread-1,5,main] SimpleDaemons@a62fc3

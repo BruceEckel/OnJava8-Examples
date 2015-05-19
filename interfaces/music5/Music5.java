@@ -48,7 +48,7 @@ class Stringed implements Instrument {
 class Brass extends Wind {
   @Override
   public String toString() { return "Brass"; }
-}	
+}
 
 class Woodwind extends Wind {
   @Override
@@ -65,7 +65,7 @@ public class Music5 {
   static void tuneAll(Instrument[] e) {
     for(Instrument i : e)
       tune(i);
-  }	
+  }
   public static void main(String[] args) {
     // Upcasting during addition to the array:
     Instrument[] orchestra = {

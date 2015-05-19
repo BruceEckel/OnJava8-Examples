@@ -60,6 +60,7 @@ def extractExamples():
                 codeListing.write(listing)
                 codeListing.write("\n")
 
+
 @CmdLine("x")
 def clean():
     "Remove ExtractedExamples directory"

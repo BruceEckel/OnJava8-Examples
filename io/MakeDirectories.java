@@ -67,7 +67,7 @@ public class MakeDirectories {
       fileData(f);
     }
   }
-} /* Output: (80% match)
+} /* Output: (80% Match)
 created MakeDirectoriesTest
 Absolute path: d:\aaa-TIJ4\code\io\MakeDirectoriesTest
  Can read: true

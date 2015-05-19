@@ -15,7 +15,7 @@ public class Burrito {
       case FLAMING:
       default:     System.out.println("maybe too hot.");
     }
-  }	
+  }
   public static void main(String[] args) {
     Burrito
       plain = new Burrito(Spiciness.NOT),

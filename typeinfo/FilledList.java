@@ -10,7 +10,7 @@ class CountedInteger {
 
 public class FilledList<T> {
   private Class<T> type;
-  public FilledList(Class<T> type) { this.type = type; }	
+  public FilledList(Class<T> type) { this.type = type; }
   public List<T> create(int nElements) {
     List<T> result = new ArrayList<>();
     try {

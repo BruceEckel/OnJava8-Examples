@@ -2,7 +2,6 @@
 // Using drop-down lists.
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.*;
 import static net.mindview.util.SwingConsole.*;
 
 public class ComboBoxes extends JFrame {

@@ -13,7 +13,7 @@ class MNA {
       }
     }
   }
-}	
+}
 
 public class MultiNestingAccess {
   public static void main(String[] args) {

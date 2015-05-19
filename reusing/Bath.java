@@ -10,7 +10,7 @@ class Soap {
   }
   @Override
   public String toString() { return s; }
-}	
+}
 
 public class Bath {
   private String // Initializing at point of definition:
@@ -25,7 +25,7 @@ public class Bath {
     s3 = "Joy";
     toy = 3.14f;
     castille = new Soap();
-  }	
+  }
   // Instance initialization:
   { i = 47; }
   @Override
@@ -40,7 +40,7 @@ public class Bath {
       "i = " + i + "\n" +
       "toy = " + toy + "\n" +
       "castille = " + castille;
-  }	
+  }
   public static void main(String[] args) {
     Bath b = new Bath();
     print(b);

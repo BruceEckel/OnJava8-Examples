@@ -26,7 +26,7 @@ public class LoggingExceptions {
       System.err.println("Caught " + e);
     }
   }
-} /* Output: (85% match)
+} /* Output: (85% Match)
 Aug 30, 2005 4:02:31 PM LoggingException <init>
 SEVERE: LoggingException
         at LoggingExceptions.main(LoggingExceptions.java:19)

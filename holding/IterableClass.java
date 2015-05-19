@@ -20,7 +20,7 @@ public class IterableClass implements Iterable<String> {
         throw new UnsupportedOperationException();
       }
     };
-  }	
+  }
   public static void main(String[] args) {
     for(String s : new IterableClass())
       System.out.print(s + " ");

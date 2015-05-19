@@ -4,6 +4,7 @@
   <property name="chapter" value="enumerated"/>
   <property name="excludedfiles" value="VendingMachine.java"/>
   <import file="../Ant-Common.xml"/>
+  <import file="../Ant-Clean.xml"/>
 
   <target name="run" description="Compile and run" depends="build">
     <jrun cls="BigEnumSet" />

@@ -13,7 +13,7 @@ class Tree {
     height = initialHeight;
     print("Creating new Tree that is " +
       height + " feet tall");
-  }	
+  }
   void info() {
     print("Tree is " + height + " feet tall");
   }
@@ -31,7 +31,7 @@ public class Overloading {
     }
     // Overloaded constructor:
     new Tree();
-  }	
+  }
 } /* Output:
 Creating new Tree that is 0 feet tall
 Tree is 0 feet tall

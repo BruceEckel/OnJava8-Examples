@@ -16,8 +16,8 @@ public class ShellsAreMainWindows {
     display.dispose();
   }
   static boolean shellsDisposed() {
-    for (Shell shell : shells) {
-      if (shell.isDisposed()) {
+    for(Shell shell : shells) {
+      if(shell.isDisposed()) {
         return true;
       }
     }

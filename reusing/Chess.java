@@ -13,7 +13,7 @@ class BoardGame extends Game {
     super(i);
     print("BoardGame constructor");
   }
-}	
+}
 
 public class Chess extends BoardGame {
   Chess() {

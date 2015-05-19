@@ -17,7 +17,7 @@ class Checkers implements Game {
   public static GameFactory factory = new GameFactory() {
     public Game getGame() { return new Checkers(); }
   };
-}	
+}
 
 class Chess implements Game {
   private Chess() {}
@@ -30,7 +30,7 @@ class Chess implements Game {
   public static GameFactory factory = new GameFactory() {
     public Game getGame() { return new Chess(); }
   };
-}	
+}
 
 public class Games {
   public static void playGame(GameFactory factory) {

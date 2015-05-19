@@ -74,7 +74,7 @@ public class Interrupting {
     print("Aborting with System.exit(0)");
     System.exit(0); // ... since last 2 interrupts failed
   }
-} /* Output: (95% match)
+} /* Output: (95% Match)
 Interrupting SleepBlocked
 InterruptedException
 Exiting SleepBlocked.run()

@@ -17,12 +17,12 @@ public class WatercolorSets {
     Set<Watercolors> subset = intersection(set1, set2);
     print("intersection(set1, set2): " + subset);
     print("difference(set1, subset): " +
-      difference(set1, subset));	
+      difference(set1, subset));
     print("difference(set2, subset): " +
       difference(set2, subset));
     print("complement(set1, set2): " +
       complement(set1, set2));
-  }	
+  }
 } /* Output: (Sample)
 set1: [BRILLIANT_RED, CRIMSON, MAGENTA, ROSE_MADDER, VIOLET, CERULEAN_BLUE_HUE, PHTHALO_BLUE, ULTRAMARINE, COBALT_BLUE_HUE, PERMANENT_GREEN, VIRIDIAN_HUE]
 set2: [CERULEAN_BLUE_HUE, PHTHALO_BLUE, ULTRAMARINE, COBALT_BLUE_HUE, PERMANENT_GREEN, VIRIDIAN_HUE, SAP_GREEN, YELLOW_OCHRE, BURNT_SIENNA, RAW_UMBER, BURNT_UMBER]

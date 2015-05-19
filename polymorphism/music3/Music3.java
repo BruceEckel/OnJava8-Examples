@@ -17,7 +17,7 @@ class Wind extends Instrument {
   String what() { return "Wind"; }
   @Override
   void adjust() { print("Adjusting Wind"); }
-}	
+}
 
 class Percussion extends Instrument {
   @Override
@@ -49,7 +49,7 @@ class Woodwind extends Wind {
   void play(Note n) { print("Woodwind.play() " + n); }
   @Override
   String what() { return "Woodwind"; }
-}	
+}
 
 public class Music3 {
   // Doesn't care about type, so new types
@@ -61,7 +61,7 @@ public class Music3 {
   public static void tuneAll(Instrument[] e) {
     for(Instrument i : e)
       tune(i);
-  }	
+  }
   public static void main(String[] args) {
     // Upcasting during addition to the array:
     Instrument[] orchestra = {

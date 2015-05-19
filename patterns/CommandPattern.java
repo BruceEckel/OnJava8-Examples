@@ -28,14 +28,13 @@ class IAm implements Command {
 
 // A Command object that holds commands:
 class Macro implements Command {
-  private ArrayList<Command> commands = 
+  private ArrayList<Command> commands =
     new ArrayList<>();
   public void add(Command c) { commands.add(c); }
   @Override
   public void execute() {
-    Iterator<Command> it = commands.iterator();
-    while(it.hasNext())
-      it.next().execute();
+    for(Command c : commands)
+      c.execute();
   }
 }
 

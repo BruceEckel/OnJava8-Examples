@@ -10,7 +10,7 @@ public class ClassTypeCapture<T> {
   }
   public boolean f(Object arg) {
     return kind.isInstance(arg);
-  }	
+  }
   public static void main(String[] args) {
     ClassTypeCapture<Building> ctt1 =
       new ClassTypeCapture<>(Building.class);

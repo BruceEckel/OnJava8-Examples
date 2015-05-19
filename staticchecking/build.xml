@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+
+<project default="run">
+  <property name="chapter" value="staticchecking"/>
+  <property name="excludedfiles" value=""/>
+  <import file="../Ant-Common.xml"/>
+  <import file="../Ant-Clean.xml"/>
+
+  <target name="run" description="Compile and run" depends="build">
+    <jrun cls="staticchecking.dr.DogsAndRobots" dirpath="../staticchecking/dr" />
+    <jrun cls="staticchecking.drc.DogAndRobotCollections" dirpath="../staticchecking/drc" />
+    <jrun cls="staticchecking.latent.Latent" dirpath="../staticchecking/latent" />
+    <jrun cls="staticchecking.petspeak.PetSpeak" dirpath="../staticchecking/petspeak" />
+  </target>
+
+</project>

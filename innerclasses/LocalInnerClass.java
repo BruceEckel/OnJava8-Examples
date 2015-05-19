@@ -4,7 +4,7 @@ import static net.mindview.util.Print.*;
 
 interface Counter {
   int next();
-}	
+}
 
 public class LocalInnerClass {
   private int count = 0;
@@ -22,7 +22,7 @@ public class LocalInnerClass {
       }
     }
     return new LocalCounter();
-  }	
+  }
   // The same thing with an anonymous inner class:
   Counter getCounter2(final String name) {
     return new Counter() {
@@ -37,7 +37,7 @@ public class LocalInnerClass {
         return count++;
       }
     };
-  }	
+  }
   public static void main(String[] args) {
     LocalInnerClass lic = new LocalInnerClass();
     Counter

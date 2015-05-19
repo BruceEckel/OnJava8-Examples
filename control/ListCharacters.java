@@ -9,7 +9,7 @@ public class ListCharacters {
         System.out.println("value: " + (int)c +
           " character: " + c);
   }
-} /* Output:
+} /* Output: (First 10 Lines)
 value: 97 character: a
 value: 98 character: b
 value: 99 character: c

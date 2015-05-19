@@ -15,7 +15,7 @@ class MoreUseful extends Useful {
   public void u() {}
   public void v() {}
   public void w() {}
-}	
+}
 
 public class RTTI {
   public static void main(String[] args) {

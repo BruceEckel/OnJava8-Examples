@@ -15,7 +15,7 @@ class Cleanser {
     x.dilute(); x.apply(); x.scrub();
     print(x);
   }
-}	
+}
 
 public class Detergent extends Cleanser {
   // Change a method:
@@ -36,7 +36,7 @@ public class Detergent extends Cleanser {
     print(x);
     print("Testing base class:");
     Cleanser.main(args);
-  }	
+  }
 } /* Output:
 Cleanser dilute() apply() Detergent.scrub() scrub() foam()
 Testing base class:

@@ -13,7 +13,7 @@ class Derived2 extends GenericBase {} // No warning
 // class Derived3 extends GenericBase<?> {}
 // Strange error:
 //   unexpected type found : ?
-//   required: class or interface without bounds	
+//   required: class or interface without bounds
 
 public class ErasureAndInheritance {
   @SuppressWarnings("unchecked")

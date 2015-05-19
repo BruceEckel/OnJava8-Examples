@@ -13,7 +13,7 @@ class AnonymousA {
       private void w() { print("private C.w()"); }
     };
   }
-}	
+}
 
 public class AnonymousImplementation {
   public static void main(String[] args) throws Exception {

@@ -13,7 +13,7 @@ public class GenericArray2<T> {
   @SuppressWarnings("unchecked")
   public T[] rep() {
     return (T[])array; // Warning: unchecked cast
-  }	
+  }
   public static void main(String[] args) {
     GenericArray2<Integer> gai = 
       new GenericArray2<>(10);

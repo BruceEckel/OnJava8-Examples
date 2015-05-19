@@ -40,7 +40,7 @@ public class SimpleMicroBenchmark {
     System.out.printf("Lock/synchronized = %1$.3f",
       (double)lockTime/(double)synchTime);
   }
-} /* Output: (75% match)
+} /* Output: (75% Match)
 synchronized:  244919117
 Lock:          939098964
 Lock/synchronized = 3.834

@@ -36,7 +36,7 @@ public class SimplePriorities implements Runnable {
         new SimplePriorities(Thread.MAX_PRIORITY));
     exec.shutdown();
   }
-} /* Output: (70% match)
+} /* Output: (First 10 Lines) (70% Match)
 Thread[pool-1-thread-6,10,main]: 5
 Thread[pool-1-thread-6,10,main]: 4
 Thread[pool-1-thread-6,10,main]: 3

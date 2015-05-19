@@ -10,7 +10,7 @@ class DerivedSetter extends OrdinarySetter {
   void set(Derived derived) {
     System.out.println("DerivedSetter.set(Derived)");
   }
-}	
+}
 
 public class OrdinaryArguments {
   public static void main(String[] args) {

@@ -9,7 +9,7 @@ class Apple {
   public long id() { return id; }
 }
 
-class Orange {}	
+class Orange {}
 
 public class ApplesAndOrangesWithoutGenerics {
   @SuppressWarnings("unchecked")
@@ -19,7 +19,7 @@ public class ApplesAndOrangesWithoutGenerics {
       apples.add(new Apple());
     // Not prevented from adding an Orange to apples:
     apples.add(new Orange());
-    for (Object apple : apples) {
+    for(Object apple : apples) {
       ((Apple) apple).id();
       // Orange is detected only at run time
     }

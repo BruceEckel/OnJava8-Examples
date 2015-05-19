@@ -11,7 +11,7 @@ class Egg2 {
   public Egg2() { print("New Egg2()"); }
   public void insertYolk(Yolk yy) { y = yy; }
   public void g() { y.f(); }
-}	
+}
 
 public class BigEgg2 extends Egg2 {
   public class Yolk extends Egg2.Yolk {

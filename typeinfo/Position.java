@@ -12,7 +12,7 @@ class Position {
   public Position(String jobTitle) {
     title = jobTitle;
     person = Person.NULL;
-  }	
+  }
   public String getTitle() { return title; }
   public void setTitle(String newTitle) {
     title = newTitle;

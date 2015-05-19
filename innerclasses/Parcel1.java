@@ -12,7 +12,7 @@ public class Parcel1 {
       label = whereTo;
     }
     String readLabel() { return label; }
-  }	
+  }
   // Using inner classes looks just like
   // using any other class, within Parcel1:
   public void ship(String dest) {

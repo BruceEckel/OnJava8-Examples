@@ -2,7 +2,6 @@
 // Displaying task progress with ProgressMonitors.
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.*;
 import java.util.concurrent.*;
 import net.mindview.util.*;
 import static net.mindview.util.SwingConsole.*;

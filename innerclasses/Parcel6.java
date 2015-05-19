@@ -16,7 +16,7 @@ public class Parcel6 {
     }
     // Can't use it here! Out of scope:
     //! TrackingSlip ts = new TrackingSlip("x");
-  }	
+  }
   public void track() { internalTracking(true); }
   public static void main(String[] args) {
     Parcel6 p = new Parcel6();

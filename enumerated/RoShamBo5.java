@@ -14,7 +14,7 @@ enum RoShamBo5 implements Competitor<RoShamBo5> {
     initRow(PAPER, DRAW, LOSE, WIN);
     initRow(SCISSORS, WIN, DRAW, LOSE);
     initRow(ROCK, LOSE, WIN, DRAW);
-  }	
+  }
   static void initRow(RoShamBo5 it,
     Outcome vPAPER, Outcome vSCISSORS, Outcome vROCK) {
     EnumMap<RoShamBo5,Outcome> row =

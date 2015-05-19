@@ -10,4 +10,7 @@ public class PassReferences {
     System.out.println("p inside main(): " + p);
     f(p);
   }
-} ///:~
+} /* Output:
+p inside main(): PassReferences@19e0bfd
+h inside f(): PassReferences@19e0bfd
+*///:~

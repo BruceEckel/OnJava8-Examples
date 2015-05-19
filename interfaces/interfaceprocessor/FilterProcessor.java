@@ -13,7 +13,7 @@ class FilterAdapter implements Processor {
   public Waveform process(Object input) {
     return filter.process((Waveform)input);
   }
-}	
+}
 
 public class FilterProcessor {
   public static void main(String[] args) {

@@ -13,7 +13,7 @@ public class Sets {
     Set<T> result = new HashSet<>(a);
     result.retainAll(b);
     return result;
-  }	
+  }
   // Subtract subset from superset:
   public static <T> Set<T>
   difference(Set<T> superset, Set<T> subset) {

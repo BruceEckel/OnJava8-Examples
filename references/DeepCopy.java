@@ -1,12 +1,14 @@
 //: references/DeepCopy.java
 // Cloning a composed object.
-// {Depends: junit.jar}
+// (Install libraries from www.junit.org)
 import org.junit.Test;
-import org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 class DepthReading implements Cloneable {
   private double depth;
-  public DepthReading(double depth) { this.depth = depth; }
+  public DepthReading(double depth) {
+    this.depth = depth;
+  }
   @Override
   public Object clone() {
     Object o = null;
@@ -18,15 +20,19 @@ class DepthReading implements Cloneable {
     return o;
   }
   public double getDepth() { return depth; }
-  public void setDepth(double depth){ this.depth = depth; }
+  public void setDepth(double depth){
+    this.depth = depth;
+  }
   @Override
-  public String toString() { return String.valueOf(depth);}
+  public String toString() {
+    return String.valueOf(depth);
+  }
 }
 
 class TemperatureReading implements Cloneable {
   private long time;
   private double temperature;
-  public TemperatureReading(double temperature) {
+  public TemperatureReading(double temperature){
     time = System.currentTimeMillis();
     this.temperature = temperature;
   }
@@ -40,9 +46,11 @@ class TemperatureReading implements Cloneable {
     }
     return o;
   }
-  public double getTemperature() { return temperature; }
-  public void setTemperature(double temperature) {
-    this.temperature = temperature;
+  public double getTemperature() {
+    return temperature;
+  }
+  public void setTemperature(double temp) {
+    this.temperature = temp;
   }
   @Override
   public String toString() {
@@ -53,7 +61,8 @@ class TemperatureReading implements Cloneable {
 class OceanReading implements Cloneable {
   private DepthReading depth;
   private TemperatureReading temperature;
-  public OceanReading(double tdata, double ddata) {
+  public
+  OceanReading(double tdata, double ddata) {
     temperature = new TemperatureReading(tdata);
     depth = new DepthReading(ddata);
   }
@@ -91,21 +100,25 @@ class OceanReading implements Cloneable {
 public class DeepCopy {
   @Test
   public void testClone() {
-    OceanReading reading = new OceanReading(33.9, 100.5);
+    OceanReading reading =
+      new OceanReading(33.9, 100.5);
     // Now clone it:
-    OceanReading clone = (OceanReading)reading.clone();
-    TemperatureReading tr = clone.getTemperatureReading();
+    OceanReading clone =
+      (OceanReading)reading.clone();
+    TemperatureReading tr =
+      clone.getTemperatureReading();
     tr.setTemperature(tr.getTemperature() + 1);
     clone.setTemperatureReading(tr);
     DepthReading dr = clone.getDepthReading();
     dr.setDepth(dr.getDepth() + 1);
     clone.setDepthReading(dr);
-    org.junit.Assert.assertEquals(reading.toString(),
+    assertEquals(reading.toString(),
       "temperature: 33.9, depth: 100.5");
-    org.junit.Assert.assertEquals(clone.toString(),
+    assertEquals(clone.toString(),
       "temperature: 34.9, depth: 101.5");
   }
   public static void main(String[] args) {
-    org.junit.runner.JUnitCore.runClasses(DeepCopy.class);
+    org.junit.runner.JUnitCore.runClasses(
+      DeepCopy.class);
   }
 } ///:~

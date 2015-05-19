@@ -167,42 +167,42 @@ public class SynchronizationComparisons {
     }
     Accumulator.exec.shutdown();
   }
-} /* Output: (Sample) using JDK6u10
+} /* Output: (Sample)
 Warmup
-synch        :     129868038
+synch        :      94513807
 ============================
 Cycles       :         50000
-synch        :     126407922
-Lock         :      51207369
-Atomic       :     141845223
-synch/Lock            : 2.47
-synch/(Atomic-synch)  : 8.19
+synch        :      94514234
+Lock         :      24976352
+Atomic       :      98296651
+synch/Lock            : 3.78
+synch/(Atomic-synch)  : 24.99
 ============================
 Cycles       :        100000
-synch        :     251174061
-Lock         :     105338114
-Atomic       :     279503250
-synch/Lock            : 2.38
-synch/(Atomic-synch)  : 8.87
+synch        :     178531353
+Lock         :      46007787
+Atomic       :     192372561
+synch/Lock            : 3.88
+synch/(Atomic-synch)  : 12.90
 ============================
 Cycles       :        200000
-synch        :     508778006
-Lock         :     214398402
-Atomic       :     574464795
-synch/Lock            : 2.37
-synch/(Atomic-synch)  : 7.75
+synch        :     377107591
+Lock         :      91051260
+Atomic       :     394509274
+synch/Lock            : 4.14
+synch/(Atomic-synch)  : 21.67
 ============================
 Cycles       :        400000
-synch        :    1027003521
-Lock         :     428342577
-Atomic       :    1115667617
-synch/Lock            : 2.40
-synch/(Atomic-synch)  : 11.58
+synch        :     722152518
+Lock         :     184968090
+Atomic       :     746950974
+synch/Lock            : 3.90
+synch/(Atomic-synch)  : 29.12
 ============================
 Cycles       :        800000
-synch        :    2179255097
-Lock         :     877216314
-Atomic       :    2371504710
-synch/Lock            : 2.48
-synch/(Atomic-synch)  : 11.34
+synch        :    1478348925
+Lock         :     416729956
+Atomic       :    1559738238
+synch/Lock            : 3.55
+synch/(Atomic-synch)  : 18.16
 *///:~

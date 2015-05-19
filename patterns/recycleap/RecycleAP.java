@@ -1,4 +1,4 @@
-//: patterns/recycleap/RecycleAP.java 
+//: patterns/recycleap/RecycleAP.java
 // Recycling with RTTI and Prototypes.
 package patterns.recycleap;
 import patterns.trash.*;
@@ -6,17 +6,17 @@ import java.util.*;
 
 public class RecycleAP {
   public static void main(String[] args) {
-    ArrayList bin = new ArrayList();
+    ArrayList<Trash> bin = new ArrayList<>();
     // Fill up the Trash bin:
     ParseTrash.fillBin("Trash.dat", bin);
-    ArrayList 
-      glassBin = new ArrayList(),
-      paperBin = new ArrayList(),
-      alBin = new ArrayList();
-    Iterator sorter = bin.iterator();
+    ArrayList<Trash>
+      glassBin = new ArrayList<>(),
+      paperBin = new ArrayList<>(),
+      alBin = new ArrayList<>();
+    Iterator<Trash> sorter = bin.iterator();
     // Sort the Trash:
     while(sorter.hasNext()) {
-      Object t = sorter.next();
+      Trash t = sorter.next();
       // RTTI to show class membership:
       if(t instanceof Aluminum)
         alBin.add(t);

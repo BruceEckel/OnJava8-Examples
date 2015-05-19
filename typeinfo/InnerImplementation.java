@@ -12,7 +12,7 @@ class InnerA {
     private void w() { print("private C.w()"); }
   }
   public static A makeA() { return new C(); }
-}	
+}
 
 public class InnerImplementation {
   public static void main(String[] args) throws Exception {

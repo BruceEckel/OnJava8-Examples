@@ -103,7 +103,7 @@ public class MappedIO {
     for(Tester test : tests)
       test.runTest();
   }
-} /* Output: (90% match)
+} /* Output: (90% Match)
 Stream Write: 0.56
 Mapped Write: 0.12
 Stream Read: 0.80

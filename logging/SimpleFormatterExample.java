@@ -1,7 +1,5 @@
 //: logging/SimpleFormatterExample.java
-// {CompileTimeError}
 import java.util.logging.*;
-import java.util.*;
 
 public class SimpleFormatterExample {
   private static Logger logger =
@@ -16,12 +14,17 @@ public class SimpleFormatterExample {
     conHdlr.setFormatter(new Formatter() {
       public String format(LogRecord record) {
         return record.getLevel()  + "  :  "
-          + record.getSourceClassName()  + " -:- "
-          + record.getSourceMethodName()  + " -:- "
+          + record.getSourceClassName()
+          + " -:- "
+          + record.getSourceMethodName()
+          + " -:- "
           + record.getMessage() + "\n";
       }
     });
     logger.addHandler(conHdlr);
     logMessages();
   }
-} ///:~
+} /* Output:
+INFO  :  SimpleFormatterExample -:- logMessages -:- Line One
+INFO  :  SimpleFormatterExample -:- logMessages -:- Line Two
+*///:~

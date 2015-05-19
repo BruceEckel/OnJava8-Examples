@@ -38,7 +38,7 @@ class AddableCollectionAdapter<T> implements Addable<T> {
   @Override
   public void add(T item) { c.add(item); }
 }
-	
+
 // A Helper to capture the type automatically:
 class Adapter {
   public static <T>
@@ -54,7 +54,7 @@ extends SimpleQueue<T> implements Addable<T> {
   @Override
   public void add(T item) { super.add(item); }
 }
-	
+
 class Fill2Test {
   public static void main(String[] args) {
     // Adapt a Collection:

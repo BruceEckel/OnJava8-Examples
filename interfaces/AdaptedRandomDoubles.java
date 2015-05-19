@@ -16,7 +16,7 @@ implements Readable {
     String result = Double.toString(next()) + " ";
     cb.append(result);
     return result.length();
-  }	
+  }
   public static void main(String[] args) {
     Scanner s = new Scanner(new AdaptedRandomDoubles(7));
     while(s.hasNextDouble())

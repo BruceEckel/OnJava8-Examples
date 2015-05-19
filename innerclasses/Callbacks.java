@@ -15,12 +15,12 @@ class Callee1 implements Incrementable {
     i++;
     print(i);
   }
-}	
+}
 
 class MyIncrement {
   public void increment() { print("Other operation"); }
   static void f(MyIncrement mi) { mi.increment(); }
-}	
+}
 
 // If your class must implement increment() in
 // some other way, you must use an inner class:
@@ -43,7 +43,7 @@ class Callee2 extends MyIncrement {
   Incrementable getCallbackReference() {
     return new Closure();
   }
-}	
+}
 
 class Caller {
   private Incrementable callbackReference;
@@ -62,7 +62,7 @@ public class Callbacks {
     caller1.go();
     caller2.go();
     caller2.go();
-  }	
+  }
 } /* Output:
 Other operation
 1

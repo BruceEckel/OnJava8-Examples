@@ -14,7 +14,7 @@ public class Parcel11 {
       label = whereTo;
     }
     @Override
-    public String readLabel() { return label; }	
+    public String readLabel() { return label; }
     // Nested classes can contain other static elements:
     public static void f() {}
     static int x = 10;

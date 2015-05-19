@@ -24,7 +24,7 @@ public class AvailableCharSets {
       print();
     }
   }
-} /* Output:
+} /* Output: (First 7 Lines)
 Big5: csBig5
 Big5-HKSCS: big5-hkscs:unicode3.0, Big5_HKSCS, big5-hkscs, big5hkscs, big5hk
 EUC-JP: eucjis, Extended_UNIX_Code_Packed_Format_for_Japanese, x-eucjp, eucjp, csEUCPkdFmtjapanese, euc_jp, x-euc-jp

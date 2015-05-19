@@ -14,7 +14,7 @@ class B extends SelfBounded<A> {} // Also OK
 
 class C extends SelfBounded<C> {
   C setAndGet(C arg) { set(arg); return get(); }
-}	
+}
 
 class D {}
 // Can't do this:

@@ -13,7 +13,7 @@ extends ArrayList<Processor<T,E>> {
       processor.process(resultCollector);
     return resultCollector;
   }
-}	
+}
 
 class Failure1 extends Exception {}
 
@@ -29,7 +29,7 @@ class Processor1 implements Processor<String,Failure1> {
     if(count < 0)
        throw new Failure1();
   }
-}	
+}
 
 class Failure2 extends Exception {}
 
@@ -46,7 +46,7 @@ class Processor2 implements Processor<Integer,Failure2> {
     if(count < 0)
        throw new Failure2();
   }
-}	
+}
 
 public class ThrowGenericException {
   public static void main(String[] args) {

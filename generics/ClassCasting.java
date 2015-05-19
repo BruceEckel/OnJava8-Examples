@@ -9,7 +9,7 @@ public class ClassCasting {
       new FileInputStream(args[0]));
       // Won't Compile:
 //    List<Widget> lw1 =
-//    List<Widget>.class.cast(in.readObject());
+//    List<>.class.cast(in.readObject());
     List<Widget> lw2 = List.class.cast(in.readObject());
   }
 } ///:~

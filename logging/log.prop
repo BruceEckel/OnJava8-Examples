@@ -25,9 +25,9 @@ java.util.logging.ConsoleHandler.level = FINEST
 java.util.logging.ConsoleHandler.formatter = java.util.logging.SimpleFormatter
 
 # Set Logger Levels #
-com.level=SEVERE
-com.bruceeckel.level = FINEST
-com.bruceeckel.util.level = INFO
-com.bruceeckel.test.level = FINER
+net.level=SEVERE
+net.mindview.level = FINEST
+net.mindview.util.level = INFO
+net.mindview.test.level = FINER
 random.level= SEVERE
 ///:~

@@ -3,7 +3,6 @@
 // A server that echoes datagrams
 import java.net.*;
 import java.io.*;
-import java.util.*;
 
 public class ChatterServer {
   static final int INPORT = 1711;

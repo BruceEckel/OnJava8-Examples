@@ -13,7 +13,7 @@ class ClassAsFactory<T> {
   }
 }
 
-class Employee {}	
+class Employee {}
 
 public class InstantiateGenericType {
   public static void main(String[] args) {

@@ -15,7 +15,7 @@ public class TypeCounter extends HashMap<Class<?>,Integer>{
         + type + ", should be type or subtype of "
         + baseType);
     countClass(type);
-  }	
+  }
   private void countClass(Class<?> type) {
     Integer quantity = get(type);
     put(type, quantity == null ? 1 : quantity + 1);

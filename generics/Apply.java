@@ -17,7 +17,7 @@ public class Apply {
       throw new RuntimeException(e);
     }
   }
-}	
+}
 
 class Shape {
   public void rotate() { print(this + " rotate"); }
@@ -39,7 +39,7 @@ class FilledList<T> extends ArrayList<T> {
       throw new RuntimeException(e);
     }
   }
-}	
+}
 
 class ApplyTest {
   public static void main(String[] args) throws Exception {
@@ -55,7 +55,7 @@ class ApplyTest {
     Apply.apply(squares, Shape.class.getMethod("rotate"));
     Apply.apply(squares,
       Shape.class.getMethod("resize", int.class), 5);
-	
+
     Apply.apply(new FilledList<>(Shape.class, 10),
       Shape.class.getMethod("rotate"));
     Apply.apply(new FilledList<>(Square.class, 10),

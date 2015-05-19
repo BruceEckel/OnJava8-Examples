@@ -7,7 +7,7 @@ public class HelloDate {
     print("Hello, it's: ");
     print(new Date());
   }
-} /* Output: (55% match)
+} /* Output: (55% Match)
 Hello, it's:
 Wed Oct 05 14:39:05 MDT 2005
 *///:~

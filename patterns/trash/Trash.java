@@ -15,12 +15,9 @@ public abstract class Trash {
     Iterator<Trash> e = bin.iterator();
     double val = 0.0f;
     while(e.hasNext()) {
-      // One kind of RTTI:
-      // A dynamically-checked cast
       Trash t = e.next();
       val += t.weight() * t.value();
-      System.out.println(
-        "weight of " +
+      System.out.println("weight of " +
         // Using RTTI to get type
         // information about the class:
         t.getClass().getName() +
@@ -40,17 +37,16 @@ public abstract class Trash {
   public static Trash factory(Info info)
       throws PrototypeNotFoundException,
       CannotCreateTrashException {
-    for (Class trashType : trashTypes) {
+    for(Class trashType : trashTypes) {
       // Somehow determine the new type
       // to create, and create one:
       Class tc = trashType;
-      if (tc.getName().contains(info.id)) {
+      if(tc.getName().contains(info.id)) {
         try {
           // Get the dynamic constructor method
           // that takes a double argument:
-          Constructor ctor =
-                  tc.getConstructor(
-                          new Class[] {double.class});
+          Constructor ctor = tc.getConstructor(
+            new Class[] {double.class});
           // Call the constructor to create a
           // new object:
           return (Trash)ctor.newInstance(

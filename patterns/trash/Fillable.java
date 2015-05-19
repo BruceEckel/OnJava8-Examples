@@ -1,4 +1,4 @@
-//: patterns/trash/Fillable.java 
+//: patterns/trash/Fillable.java
 // Any object that can be filled with Trash.
 package patterns.trash;
 

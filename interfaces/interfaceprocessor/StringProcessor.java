@@ -16,7 +16,7 @@ public abstract class StringProcessor implements Processor{
     Apply.process(new Downcase(), s);
     Apply.process(new Splitter(), s);
   }
-}	
+}
 
 class Upcase extends StringProcessor {
   @Override
@@ -36,7 +36,7 @@ class Splitter extends StringProcessor {
   @Override
   public String process(Object input) {
     return Arrays.toString(((String)input).split(" "));
-  }	
+  }
 } /* Output:
 Using Processor Upcase
 IF SHE WEIGHS THE SAME AS A DUCK, SHE'S MADE OF WOOD

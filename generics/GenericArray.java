@@ -11,7 +11,7 @@ public class GenericArray<T> {
   }
   public T get(int index) { return array[index]; }
   // Method that exposes the underlying representation:
-  public T[] rep() { return array; }	
+  public T[] rep() { return array; }
   public static void main(String[] args) {
     GenericArray<Integer> gai = new GenericArray<>(10);
     // This causes a ClassCastException:

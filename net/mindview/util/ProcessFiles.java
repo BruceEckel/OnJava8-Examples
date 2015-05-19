@@ -1,4 +1,5 @@
 //: net/mindview/util/ProcessFiles.java
+// {CheckOutputByHand}
 package net.mindview.util;
 import java.io.*;
 

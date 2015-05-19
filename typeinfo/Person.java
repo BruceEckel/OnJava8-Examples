@@ -11,7 +11,7 @@ class Person {
     this.first = first;
     this.last = last;
     this.address = address;
-  }	
+  }
   @Override
   public String toString() {
     return "Person: " + first + " " + last + " " + address;

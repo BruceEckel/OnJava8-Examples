@@ -94,7 +94,7 @@ public class WaxOMatic2 {
     TimeUnit.SECONDS.sleep(5);
     exec.shutdownNow();
   }
-} /* Output: (90% match)
+} /* Output: (90% Match)
 Wax On! Wax Off! Wax On! Wax Off! Wax On! Wax Off! Wax On! Wax Off! Wax On! Wax Off! Wax On! Wax Off! Wax On! Wax Off! Wax On! Wax Off! Wax On! Wax Off! Wax On! Wax Off! Wax On! Wax Off! Wax On! Wax Off! Wax On! Exiting via interrupt
 Ending Wax Off task
 Exiting via interrupt

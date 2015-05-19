@@ -13,7 +13,7 @@ class RealObject implements Interface {
   public void somethingElse(String arg) {
     print("somethingElse " + arg);
   }
-}	
+}
 
 class SimpleProxy implements Interface {
   private Interface proxied;
@@ -30,7 +30,7 @@ class SimpleProxy implements Interface {
     print("SimpleProxy somethingElse " + arg);
     proxied.somethingElse(arg);
   }
-}	
+}
 
 class SimpleProxyDemo {
   public static void consumer(Interface iface) {

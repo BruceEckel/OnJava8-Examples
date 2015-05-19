@@ -34,7 +34,7 @@ public class ToyTest {
       print("Can't find FancyToy");
       System.exit(1);
     }
-    printInfo(c);	
+    printInfo(c);
     for(Class face : c.getInterfaces())
       printInfo(face);
     Class up = c.getSuperclass();

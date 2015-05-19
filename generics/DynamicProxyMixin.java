@@ -14,11 +14,11 @@ class MixinProxy implements InvocationHandler {
         String methodName = method.getName();
         // The first interface in the map
         // implements the method.
-        if (!delegatesByMethod.containsKey(methodName))
+        if(!delegatesByMethod.containsKey(methodName))
           delegatesByMethod.put(methodName, pair.first);
       }
     }
-  }	
+  }
   @Override
   public Object invoke(Object proxy, Method method,
     Object[] args) throws Throwable {
@@ -37,7 +37,7 @@ class MixinProxy implements InvocationHandler {
     return Proxy.newProxyInstance(
       cl, interfaces, new MixinProxy(pairs));
   }
-}	
+}
 
 public class DynamicProxyMixin {
   public static void main(String[] args) {

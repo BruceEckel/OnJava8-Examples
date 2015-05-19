@@ -17,7 +17,7 @@ public class PetCount3 {
           : entrySet())
         if(pair.getKey().isInstance(pet))
           put(pair.getKey(), pair.getValue() + 1);
-    }	
+    }
     @Override
     public String toString() {
       StringBuilder result = new StringBuilder("{");
@@ -32,7 +32,7 @@ public class PetCount3 {
       result.append("}");
       return result.toString();
     }
-  }	
+  }
   public static void main(String[] args) {
     PetCounter petCount = new PetCounter();
     for(Pet pet : Pets.createArray(20)) {

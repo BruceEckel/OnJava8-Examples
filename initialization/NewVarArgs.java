@@ -17,7 +17,7 @@ public class NewVarArgs {
     printArray((Object[])new Integer[]{ 1, 2, 3, 4 });
     printArray(); // Empty list is OK
   }
-} /* Output: (75% match)
+} /* Output: (75% Match)
 47 3.14 11.11
 47 3.14 11.11
 one two three

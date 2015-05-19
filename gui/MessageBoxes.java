@@ -55,7 +55,7 @@ public class MessageBoxes extends JFrame {
   };
   public MessageBoxes() {
     setLayout(new FlowLayout());
-    for (JButton b1 : b) {
+    for(JButton b1 : b) {
       b1.addActionListener(al);
       add(b1);
     }

@@ -80,8 +80,6 @@ public class BeeAndFlowers {
     List<Flower> flowers = new ArrayList<>();
     for(int i = 0; i < 10; i++)
       flowers.add(FlowerFactory.newFlower());
-    // It's almost as if I had added a function
-    // to produce a Flower string representation:
     StringVal sval = new StringVal();
     Iterator<Flower> it = flowers.iterator();
     while(it.hasNext()) {

@@ -1,6 +1,7 @@
 //: patterns/ShapeFactory2.java
 // Polymorphic factory methods.
 import java.util.*;
+import static net.mindview.util.Print.*;
 
 class BadShapeCreation extends Exception {
   BadShapeCreation(String msg) {
@@ -35,12 +36,8 @@ abstract class ShapeFactory {
 
 class Circle implements Shape {
   private Circle() {}
-  public void draw() {
-    System.out.println("Circle.draw");
-  }
-  public void erase() {
-    System.out.println("Circle.erase");
-  }
+  public void draw() { print("Circle.draw"); }
+  public void erase() { print("Circle.erase"); }
   static class Factory extends ShapeFactory {
     @Override
     protected Shape create() {
@@ -55,12 +52,8 @@ class Circle implements Shape {
 
 class Square implements Shape {
   private Square() {}
-  public void draw() {
-    System.out.println("Square.draw");
-  }
-  public void erase() {
-    System.out.println("Square.erase");
-  }
+  public void draw() { print("Square.draw"); }
+  public void erase() { print("Square.erase"); }
   static class Factory extends ShapeFactory {
     @Override
     protected Shape create() {
@@ -79,8 +72,9 @@ public class ShapeFactory2 {
       "Square", "Circle", "Circle", "Square" };
     ArrayList<Shape> shapes = new ArrayList<>();
     try {
-      for (String shlist1 : shlist) {
-        shapes.add(ShapeFactory.createShape(shlist1));
+      for(String shlist1 : shlist) {
+        shapes.add(
+          ShapeFactory.createShape(shlist1));
       }
     } catch(BadShapeCreation e) {
       e.printStackTrace();

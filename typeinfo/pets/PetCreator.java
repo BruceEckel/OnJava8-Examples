@@ -15,7 +15,7 @@ public abstract class PetCreator {
             IllegalAccessException e) {
       throw new RuntimeException(e);
     }
-  }	
+  }
   public Pet[] createArray(int size) {
     Pet[] result = new Pet[size];
     for(int i = 0; i < size; i++)

@@ -14,7 +14,7 @@ enum LikeClasses {
 
 public class NotClasses {
   // void f1(LikeClasses.WINKEN instance) {} // Nope
-} /* Output:
+} /* Output: (First 7 Lines)
 Compiled from "NotClasses.java"
 abstract class LikeClasses extends java.lang.Enum{
 public static final LikeClasses WINKEN;

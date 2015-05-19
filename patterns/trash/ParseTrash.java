@@ -34,7 +34,7 @@ public class ParseTrash {
   }
   // Special case to handle ArrayList:
   public static void
-  fillBin(String filename, ArrayList bin) {
+  fillBin(String filename, ArrayList<Trash> bin) {
     fillBin(filename, new FillableList(bin));
   }
 } ///:~

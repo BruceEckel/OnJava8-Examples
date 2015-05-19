@@ -33,7 +33,7 @@ class ServeOneSimple extends Thread {
     try {
       while (true) {  
         String str = in.readLine();
-        if (str.equals("END")) break;
+        if(str.equals("END")) break;
         System.out.println("Echoing: " + str);
         out.println(str);
       }

@@ -2,7 +2,6 @@
 // Recycling with RTTI.
 package patterns.recyclea;
 import java.util.*;
-import java.io.*;
 
 abstract class Trash {
   private double weight;
@@ -14,8 +13,6 @@ abstract class Trash {
     Iterator<Trash> e = bin.iterator();
     double val = 0.0f;
     while(e.hasNext()) {
-      // One kind of RTTI:
-      // A dynamically-checked cast
       Trash t = e.next();
       // Polymorphism in action:
       val += t.weight() * t.value();

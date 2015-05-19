@@ -3,7 +3,6 @@
 // {Args: VendingMachineInput.txt}
 import java.util.*;
 import net.mindview.util.*;
-import static enumerated.Input.*;
 import static net.mindview.util.Print.*;
 
 enum Category {
@@ -12,7 +11,7 @@ enum Category {
   QUIT_TRANSACTION(ABORT_TRANSACTION),
   SHUT_DOWN(STOP);
   private Input[] values;
-  Category(Input... types) { values = types; }	
+  Category(Input... types) { values = types; }
   private static EnumMap<Input,Category> categories =
     new EnumMap<>(Input.class);
   static {
@@ -23,7 +22,7 @@ enum Category {
   public static Category categorize(Input input) {
     return categories.get(input);
   }
-}	
+}
 
 public class VendingMachine {
   private static State state = State.RESTING;
@@ -44,7 +43,7 @@ public class VendingMachine {
           default:
         }
       }
-    },	
+    },
     ADDING_MONEY {
       @Override
       void next(Input input) {
@@ -66,7 +65,7 @@ public class VendingMachine {
           default:
         }
       }
-    },	
+    },
     DISPENSING(StateDuration.TRANSIENT) {
       @Override
       void next() {
@@ -84,7 +83,7 @@ public class VendingMachine {
         }
         state = RESTING;
       }
-    },	
+    },
     TERMINAL {@Override
  void output() { print("Halted"); } };
     private boolean isTransient = false;
@@ -99,7 +98,7 @@ public class VendingMachine {
         "StateDuration.TRANSIENT states");
     }
     void output() { print(amount); }
-  }	
+  }
   static void run(Generator<Input> gen) {
     while(state != State.TERMINAL) {
       state.next(gen.next());
@@ -114,7 +113,7 @@ public class VendingMachine {
       gen = new FileInputGenerator(args[0]);
     run(gen);
   }
-}	
+}
 
 // For a basic sanity check:
 class RandomInputGenerator implements Generator<Input> {

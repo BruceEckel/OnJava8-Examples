@@ -2,8 +2,9 @@
 
 <project default="run">
   <property name="chapter" value="annotations"/>
-  <property name="excludedfiles" value="InterfaceExtractorProcessor.java InterfaceExtractorProcessorFactory.java database/TableCreationProcessorFactory.java"/>
+  <property name="excludedfiles" value=""/>
   <import file="../Ant-Common.xml"/>
+  <import file="../Ant-Clean.xml"/>
 
   <target name="run" description="Compile and run" depends="build">
     <jrun cls="annotations.AtUnitComposition" dirpath="../annotations" />
@@ -18,6 +19,7 @@
     <jrun cls="annotations.StackLStringTest" dirpath="../annotations" />
     <jrun cls="UseCaseTracker" />
     <jrun cls="annotations.database.TableCreator" dirpath="../annotations/database" arguments="annotations.database.Member" />
+    <jrun cls="annotations.simplest.SimpleTest" dirpath="../annotations/simplest" />
   </target>
 
 </project>

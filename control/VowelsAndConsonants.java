@@ -23,7 +23,7 @@ public class VowelsAndConsonants {
       }
     }
   }
-} /* Output:
+} /* Output: (First 13 Lines)
 y, 121: Sometimes a vowel
 n, 110: consonant
 z, 122: consonant

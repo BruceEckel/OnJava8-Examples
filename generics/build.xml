@@ -4,6 +4,7 @@
   <property name="chapter" value="generics"/>
   <property name="excludedfiles" value="Erased.java HijackedInterface.java Manipulation.java MultipleInterfaceVariants.java NonCovariantGenerics.java UseList.java"/>
   <import file="../Ant-Common.xml"/>
+  <import file="../Ant-Clean.xml"/>
 
   <target name="run" description="Compile and run" depends="build">
     <jrun cls="ApplyTest" />

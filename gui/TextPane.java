@@ -2,7 +2,6 @@
 // The JTextPane control is a little editor.
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.*;
 import net.mindview.util.*;
 import static net.mindview.util.SwingConsole.*;
 

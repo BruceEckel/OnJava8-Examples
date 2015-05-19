@@ -17,7 +17,7 @@ class DynamicProxyHandler implements InvocationHandler {
         System.out.println("  " + arg);
     return method.invoke(proxied, args);
   }
-}	
+}
 
 class SimpleDynamicProxy {
   public static void consumer(Interface iface) {
@@ -34,7 +34,7 @@ class SimpleDynamicProxy {
       new DynamicProxyHandler(real));
     consumer(proxy);
   }
-} /* Output: (95% match)	
+} /* Output: (95% Match)
 doSomething
 somethingElse bonobo
 **** proxy: class $Proxy0, method: public abstract void Interface.doSomething(), args: null

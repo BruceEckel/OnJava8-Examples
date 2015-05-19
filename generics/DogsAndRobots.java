@@ -15,7 +15,7 @@ class Robot implements Performs {
   public void speak() { print("Click!"); }
   public void sit() { print("Clank!"); }
   public void oilChange() {}
-}	
+}
 
 class Communicate {
   public static <T extends Performs>

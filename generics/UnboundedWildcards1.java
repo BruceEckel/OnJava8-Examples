@@ -15,7 +15,7 @@ public class UnboundedWildcards1 {
     list1 = list;
     list2 = list;
     list3 = list;
-  }	
+  }
   static void assign3(List<? extends Object> list) {
     list1 = list;
     list2 = list;

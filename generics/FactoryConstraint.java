@@ -17,7 +17,7 @@ class IntegerFactory implements FactoryI<Integer> {
   public Integer create() {
     return 0;
   }
-}	
+}
 
 class Widget {
   public static class Factory implements FactoryI<Widget> {

@@ -8,22 +8,26 @@ class Int {
   public Int(int ii) { i = ii; }
   public void increment() { i++; }
   @Override
-  public String toString() { return Integer.toString(i); }
+  public String toString() {
+    return Integer.toString(i);
+  }
 }
 
 public class Cloning {
-  @SuppressWarnings("unchecked")
   public static void main(String[] args) {
-    ArrayList v = new ArrayList();
+    ArrayList<Int> v = new ArrayList<>();
     for(int i = 0; i < 10; i++ )
-      v.add(new Int(i));
+     v.add(new Int(i));
     System.out.println("v: " + v);
-    ArrayList v2 = (ArrayList)v.clone();
+    @SuppressWarnings("unchecked")
+    ArrayList<Int> v2 = (ArrayList<Int>)v.clone();
     // Increment all v2's elements:
-    for(Iterator e = v2.iterator();
-        e.hasNext(); )
-      ((Int)e.next()).increment();
+    for(Int e : v2)
+      e.increment();
     // See if it changed v's elements:
     System.out.println("v: " + v);
   }
-} ///:~
+} /* Output:
+v: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+v: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+*///:~

@@ -14,7 +14,7 @@ public class GenericWriting {
   static <T> void
   writeWithWildcard(List<? super T> list, T item) {
     list.add(item);
-  }	
+  }
   static void f2() {
     writeWithWildcard(apples, new Apple());
     writeWithWildcard(fruit, new Apple());

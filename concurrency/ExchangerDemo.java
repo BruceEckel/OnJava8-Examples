@@ -1,7 +1,7 @@
 //: concurrency/ExchangerDemo.java
 import java.util.concurrent.*;
-import java.util.*;
 import net.mindview.util.*;
+import java.util.*;
 
 class ExchangerProducer<T> implements Runnable {
   private Generator<T> generator;

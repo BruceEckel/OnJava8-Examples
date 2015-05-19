@@ -61,7 +61,7 @@ public class ActiveObjectDemo {
     }
     d1.shutdown();
   }
-} /* Output: (85% match)
+} /* Output: (85% Match)
 All asynch calls made
 starting 0.0 + 0.0
 starting 0.2 + 0.2

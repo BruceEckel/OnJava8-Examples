@@ -2,7 +2,6 @@
 // Using sliders, progress bars and progress monitors.
 import javax.swing.*;
 import javax.swing.border.*;
-import javax.swing.event.*;
 import java.awt.*;
 import static net.mindview.util.SwingConsole.*;
 

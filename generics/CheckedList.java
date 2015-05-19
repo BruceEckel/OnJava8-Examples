@@ -7,7 +7,7 @@ public class CheckedList {
   @SuppressWarnings("unchecked")
   static void oldStyleMethod(List probablyDogs) {
     probablyDogs.add(new Cat());
-  }	
+  }
   public static void main(String[] args) {
     List<Dog> dogs1 = new ArrayList<>();
     oldStyleMethod(dogs1); // Quietly accepts a Cat

@@ -1,6 +1,6 @@
 //: net/mindview/util/Range.java
 // Array creation methods that can be used without
-// qualifiers, using Java 5 static imports:
+// qualifiers, using static imports:
 package net.mindview.util;
 
 public class Range {

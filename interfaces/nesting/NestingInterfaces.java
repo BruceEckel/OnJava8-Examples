@@ -19,7 +19,7 @@ class A {
   class CImp implements C {
     @Override
     public void f() {}
-  }	
+  }
   private class CImp2 implements C {
     @Override
     public void f() {}
@@ -41,7 +41,7 @@ class A {
     dRef = d;
     dRef.f();
   }
-}	
+}
 
 interface E {
   interface G {
@@ -54,7 +54,7 @@ interface E {
   void g();
   // Cannot be private within an interface:
   //! private interface I {}
-}	
+}
 
 public class NestingInterfaces {
   public class BImp implements A.B {
@@ -85,7 +85,7 @@ public class NestingInterfaces {
       @Override
       public void f() {}
     }
-  }	
+  }
   public static void main(String[] args) {
     A a = new A();
     // Can't access A.D:

@@ -18,7 +18,7 @@ public class LoggingExceptions2 {
       logException(e);
     }
   }
-} /* Output: (90% match)
+} /* Output: (90% Match)
 Aug 30, 2005 4:07:54 PM LoggingExceptions2 logException
 SEVERE: java.lang.NullPointerException
         at LoggingExceptions2.main(LoggingExceptions2.java:16)

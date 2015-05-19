@@ -9,7 +9,9 @@ class IntValue {
   public void setValue(int n) { this.n = n; }
   public void increment() { n++; }
   @Override
-  public String toString() { return Integer.toString(n); }
+  public String toString() {
+    return Integer.toString(n);
+  }
 }
 
 public class MutableInteger {
@@ -22,4 +24,7 @@ public class MutableInteger {
       v.get(i).increment();
     System.out.println(v);
   }
-} ///:~
+} /* Output:
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+*///:~

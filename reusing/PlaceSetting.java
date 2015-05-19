@@ -13,7 +13,7 @@ class DinnerPlate extends Plate {
     super(i);
     print("DinnerPlate constructor");
   }
-}	
+}
 
 class Utensil {
   Utensil(int i) {
@@ -33,7 +33,7 @@ class Fork extends Utensil {
     super(i);
     print("Fork constructor");
   }
-}	
+}
 
 class Knife extends Utensil {
   Knife(int i) {
@@ -47,7 +47,7 @@ class Custom {
   Custom(int i) {
     print("Custom constructor");
   }
-}	
+}
 
 public class PlaceSetting extends Custom {
   private Spoon sp;

@@ -17,7 +17,7 @@ class SmartDog {
   public void speak() { print("Woof!"); }
   public void sit() { print("Sitting"); }
   public void reproduce() {}
-}	
+}
 
 class CommunicateReflectively {
   public static void perform(Object speaker) {

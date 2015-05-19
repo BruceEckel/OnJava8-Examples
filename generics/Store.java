@@ -35,7 +35,7 @@ class Shelf extends ArrayList<Product> {
   public Shelf(int nProducts) {
     Generators.fill(this, Product.generator, nProducts);
   }
-}	
+}
 
 class Aisle extends ArrayList<Shelf> {
   public Aisle(int nShelves, int nProducts) {
@@ -69,7 +69,7 @@ public class Store extends ArrayList<Aisle> {
   public static void main(String[] args) {
     System.out.println(new Store(14, 5, 10));
   }
-} /* Output:
+} /* Output: (First 8 Lines)
 258: Test, price: $400.99
 861: Test, price: $160.99
 868: Test, price: $417.99

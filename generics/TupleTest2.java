@@ -27,7 +27,7 @@ public class TupleTest2 {
     System.out.println(h());
     System.out.println(k());
   }
-} /* Output: (80% match)
+} /* Output: (80% Match)
 (hi, 47)
 (hi, 47)
 (Amphibian@7d772e, hi, 47)

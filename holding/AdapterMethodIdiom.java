@@ -18,7 +18,7 @@ class ReversibleArrayList<T> extends ArrayList<T> {
       }
     };
   }
-}	
+}
 
 public class AdapterMethodIdiom {
   public static void main(String[] args) {

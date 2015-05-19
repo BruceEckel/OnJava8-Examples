@@ -18,7 +18,7 @@ public class LiteralPetCreator extends PetCreator {
   @Override
   public List<Class<? extends Pet>> types() {
     return types;
-  }	
+  }
   public static void main(String[] args) {
     System.out.println(types);
   }

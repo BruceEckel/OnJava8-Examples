@@ -25,7 +25,7 @@ public class CloseResource {
     print("Closing " + System.in.getClass().getName());
     System.in.close(); // Releases blocked thread
   }
-} /* Output: (85% match)
+} /* Output: (85% Match)
 Waiting for read():
 Waiting for read():
 Shutting down all threads

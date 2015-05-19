@@ -7,7 +7,7 @@ abstract class Base {
     print("Base constructor, i = " + i);
   }
   public abstract void f();
-}	
+}
 
 public class AnonymousConstructor {
   public static Base getBase(int i) {

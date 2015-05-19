@@ -11,7 +11,8 @@ import javax.mail.internet.*;
 public class EmailLogger {
   private static Logger logger =
     Logger.getLogger("EmailLogger");
-  public static void main(String[] args) throws Exception {
+  public static void
+  main(String[] args) throws Exception {
     logger.setUseParentHandlers(false);
     Handler conHdlr = new ConsoleHandler();
     conHdlr.setFormatter(new Formatter() {
@@ -28,7 +29,8 @@ public class EmailLogger {
       new FileHandler("EmailLoggerOutput.xml"));
     logger.addHandler(new MailingHandler());
     logger.log(Level.INFO,
-      "Testing Multiple Handlers", "SendMailTrue");
+      "Testing Multiple Handlers",
+      "SendMailTrue");
   }
 }
 
@@ -59,7 +61,8 @@ class MailInfo {
   private String subject;
   private String message;
   public MailInfo(String from, String[] to,
-    String server, String subject, String message) {
+    String server, String subject,
+    String message) {
     fromAddr = from;
     toAddr = to;
     serverAddr = server;
@@ -74,14 +77,17 @@ class MailInfo {
         Session.getDefaultInstance(prop, null);
       session.setDebug(true);
       // Create a message
-      Message mimeMsg = new MimeMessage(session);
+      Message mimeMsg= new MimeMessage(session);
       // Set the from and to address
-      Address addressFrom = new InternetAddress(fromAddr);
+      Address addressFrom =
+        new InternetAddress(fromAddr);
       mimeMsg.setFrom(addressFrom);
-      Address[] to = new InternetAddress[toAddr.length];
+      Address[] to =
+        new InternetAddress[toAddr.length];
       for(int i = 0; i < toAddr.length; i++)
         to[i] = new InternetAddress(toAddr[i]);
-      mimeMsg.setRecipients(Message.RecipientType.TO,to);
+      mimeMsg.setRecipients(
+        Message.RecipientType.TO,to);
       mimeMsg.setSubject(subject);
       mimeMsg.setText(message);
       Transport.send(mimeMsg);

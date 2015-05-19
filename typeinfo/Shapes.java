@@ -20,7 +20,7 @@ class Square extends Shape {
 class Triangle extends Shape {
   @Override
   public String toString() { return "Triangle"; }
-}	
+}
 
 public class Shapes {
   public static void main(String[] args) {

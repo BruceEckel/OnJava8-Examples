@@ -11,7 +11,7 @@ interface Collector<T> extends UnaryFunction<T,T> {
   T result(); // Extract result of collecting parameter
 }
 interface UnaryPredicate<T> { boolean test(T x); }
-	
+
 public class Functional {
   // Calls the Combiner object on each element to combine
   // it with a running result, which is finally returned:

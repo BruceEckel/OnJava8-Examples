@@ -14,4 +14,10 @@ public class Alias1 {
     System.out.println("x: " + x.i);
     System.out.println("y: " + y.i);
   }
-} ///:~
+} /* Output:
+x: 7
+y: 7
+Incrementing x
+x: 8
+y: 8
+*///:~

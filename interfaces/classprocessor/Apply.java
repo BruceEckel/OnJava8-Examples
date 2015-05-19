@@ -8,7 +8,7 @@ class Processor {
     return getClass().getSimpleName();
   }
   Object process(Object input) { return input; }
-}	
+}
 
 class Upcase extends Processor {
   @Override
@@ -30,7 +30,7 @@ class Splitter extends Processor {
     // The split() argument divides a String into pieces:
     return Arrays.toString(((String)input).split(" "));
   }
-}	
+}
 
 public class Apply {
   public static void process(Processor p, Object s) {

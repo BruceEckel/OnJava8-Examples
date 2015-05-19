@@ -14,7 +14,7 @@ class Creator extends GenericWithCreate<X> {
   void f() {
     System.out.println(element.getClass().getSimpleName());
   }
-}	
+}
 
 public class CreatorGeneric {
   public static void main(String[] args) {

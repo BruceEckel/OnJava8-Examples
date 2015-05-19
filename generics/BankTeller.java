@@ -13,7 +13,7 @@ class Customer {
   public static Generator<Customer> generator() {
     return () -> new Customer();
   }
-}	
+}
 
 class Teller {
   private static long counter = 1;
@@ -24,7 +24,7 @@ class Teller {
   // A single Generator object:
   public static Generator<Teller> generator =
     () -> new Teller();
-}	
+}
 
 public class BankTeller {
   public static void serve(Teller t, Customer c) {
@@ -38,7 +38,7 @@ public class BankTeller {
     Generators.fill(tellers, Teller.generator, 4);
     for(Customer c : line)
       serve(tellers.get(rand.nextInt(tellers.size())), c);
-  }	
+  }
 } /* Output:
 Teller 3 serves Customer 1
 Teller 2 serves Customer 2

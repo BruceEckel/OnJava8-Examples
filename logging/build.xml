@@ -2,8 +2,9 @@
 
 <project default="run">
   <property name="chapter" value="logging"/>
-  <property name="excludedfiles" value="EmailLogger.java SimpleFormatterExample.java"/>
+  <property name="excludedfiles" value="EmailLogger.java"/>
   <import file="../Ant-Common.xml"/>
+  <import file="../Ant-Clean.xml"/>
 
   <target name="run" description="Compile and run" depends="build">
     <jrun cls="ConfigureLogging" />
@@ -18,6 +19,7 @@
     <jrun cls="MultipleHandlers2" />
     <jrun cls="PrintableLogRecord" />
     <jrun cls="SimpleFilter" />
+    <jrun cls="SimpleFormatterExample" />
   </target>
 
 </project>

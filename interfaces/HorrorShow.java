@@ -18,7 +18,7 @@ class DragonZilla implements DangerousMonster {
   public void menace() {}
   @Override
   public void destroy() {}
-}	
+}
 
 interface Vampire extends DangerousMonster, Lethal {
   void drinkBlood();
@@ -33,7 +33,7 @@ class VeryBadVampire implements Vampire {
   public void kill() {}
   @Override
   public void drinkBlood() {}
-}	
+}
 
 public class HorrorShow {
   static void u(Monster b) { b.menace(); }

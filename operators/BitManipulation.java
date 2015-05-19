@@ -56,7 +56,7 @@ public class BitManipulation {
     print(s + ", long: " + l + ", binary:\n    " +
       Long.toBinaryString(l));
   }
-} /* Output:
+} /* Output: (First 32 Lines)
 -1, int: -1, binary:
    11111111111111111111111111111111
 +1, int: 1, binary:

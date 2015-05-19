@@ -136,7 +136,7 @@ public class Menus extends JFrame {
     s.setMnemonic(KeyEvent.VK_A);
     f.add(s);
     f.setMnemonic(KeyEvent.VK_F);
-    for (JMenuItem file1 : file) {
+    for(JMenuItem file1 : file) {
       file1.addActionListener(ml);
       f.add(file1);
     }

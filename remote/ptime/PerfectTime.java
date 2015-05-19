@@ -5,7 +5,6 @@
 package remote.ptime;
 import java.rmi.*;
 import java.rmi.server.*;
-import java.rmi.registry.*;
 import java.net.*;
 
 public class PerfectTime

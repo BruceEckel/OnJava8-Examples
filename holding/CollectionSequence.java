@@ -22,7 +22,7 @@ extends AbstractCollection<Pet> {
         throw new UnsupportedOperationException();
       }
     };
-  }	
+  }
   public static void main(String[] args) {
     CollectionSequence c = new CollectionSequence();
     InterfaceVsIterator.display(c);

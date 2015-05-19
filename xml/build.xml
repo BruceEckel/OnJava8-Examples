@@ -4,6 +4,7 @@
   <property name="chapter" value="xml"/>
   <property name="excludedfiles" value=""/>
   <import file="../Ant-Common.xml"/>
+  <import file="../Ant-Clean.xml"/>
 
   <target name="run" description="Compile and run" depends="build">
     <jrun cls="APerson" />

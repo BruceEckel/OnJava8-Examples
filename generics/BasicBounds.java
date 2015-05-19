@@ -14,7 +14,7 @@ class Dimension { public int x, y, z; }
 
 // This won't work -- class must be first, then interfaces:
 // class ColoredDimension<T extends HasColor & Dimension> {
-	
+
 // Multiple bounds:
 class ColoredDimension<T extends Dimension & HasColor> {
   T item;
@@ -26,7 +26,7 @@ class ColoredDimension<T extends Dimension & HasColor> {
   int getZ() { return item.z; }
 }
 
-interface Weight { int weight(); }	
+interface Weight { int weight(); }
 
 // As with inheritance, you can have only one
 // concrete class but multiple interfaces:
@@ -47,7 +47,7 @@ extends Dimension implements HasColor, Weight {
   public java.awt.Color getColor() { return null; }
   @Override
   public int weight() { return 0; }
-}	
+}
 
 public class BasicBounds {
   public static void main(String[] args) {

@@ -16,7 +16,7 @@ class MethodSelector implements InvocationHandler {
       print("Proxy detected the interesting method");
     return method.invoke(proxied, args);
   }
-}	
+}
 
 interface SomeMethods {
   void boring1();
@@ -36,7 +36,7 @@ class Implementation implements SomeMethods {
   }
   @Override
   public void boring3() { print("boring3"); }
-}	
+}
 
 class SelectingMethods {
   public static void main(String[] args) {

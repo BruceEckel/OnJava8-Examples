@@ -14,7 +14,7 @@ public class Wildcards {
 
     // OK, but type information is lost:
     Object obj = holder.get();
-  }	
+  }
   // Similar to rawArgs(), but errors instead of warnings:
   static void unboundedArg(Holder<?> holder, Object arg) {
     // holder.set(arg); // Error:
@@ -27,7 +27,7 @@ public class Wildcards {
 
     // OK, but type information is lost:
     Object obj = holder.get();
-  }	
+  }
   static <T> T exact1(Holder<T> holder) {
     T t = holder.get();
     return t;
@@ -45,7 +45,7 @@ public class Wildcards {
     //   cannot be applied to (T)
     T t = holder.get();
     return t;
-  }	
+  }
   static <T>
   void wildSupertype(Holder<? super T> holder, T arg) {
     holder.set(arg);
@@ -68,7 +68,7 @@ public class Wildcards {
     rawArgs(qualified, lng);
     rawArgs(unbounded, lng);
     rawArgs(bounded, lng);
-	
+
     unboundedArg(raw, lng);
     unboundedArg(qualified, lng);
     unboundedArg(unbounded, lng);
@@ -81,7 +81,7 @@ public class Wildcards {
     Long r2 = exact1(qualified);
     Object r3 = exact1(unbounded); // Must return Object
     Long r4 = exact1(bounded);
-	
+
     // Long r5 = exact2(raw, lng); // Warnings:
     //   Unchecked conversion from Holder to Holder<Long>
     //   Unchecked method invocation: exact2(Holder<T>,T)
@@ -93,7 +93,7 @@ public class Wildcards {
     // Long r8 = exact2(bounded, lng); // Error:
     //   exact2(Holder<T>,T) cannot be applied
     //   to (Holder<capture of ? extends Long>,Long)
-	
+
     // Long r9 = wildSubtype(raw, lng); // Warnings:
     //   Unchecked conversion from Holder
     //   to Holder<? extends Long>
@@ -104,7 +104,7 @@ public class Wildcards {
     // OK, but can only return Object:
     Object r11 = wildSubtype(unbounded, lng);
     Long r12 = wildSubtype(bounded, lng);
-	
+
     // wildSupertype(raw, lng); // Warnings:
     //   Unchecked conversion from Holder
     //   to Holder<? super Long>

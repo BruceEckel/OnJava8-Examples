@@ -8,7 +8,7 @@ interface Service {
 
 interface ServiceFactory {
   Service getService();
-}	
+}
 
 class Implementation1 implements Service {
   private Implementation1() {}
@@ -20,7 +20,7 @@ class Implementation1 implements Service {
         return new Implementation1();
       }
     };
-}	
+}
 
 class Implementation2 implements Service {
   private Implementation2() {}
@@ -32,7 +32,7 @@ class Implementation2 implements Service {
         return new Implementation2();
       }
     };
-}	
+}
 
 public class Factories {
   public static void serviceConsumer(ServiceFactory fact) {

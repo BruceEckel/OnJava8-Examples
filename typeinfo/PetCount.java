@@ -13,7 +13,7 @@ public class PetCount {
       else
         put(type, quantity + 1);
     }
-  }	
+  }
   public static void
   countPets(PetCreator creator) {
     PetCounter counter= new PetCounter();
@@ -48,7 +48,7 @@ public class PetCount {
     // Show the counts:
     print();
     print(counter);
-  }	
+  }
   public static void main(String[] args) {
     countPets(new ForNameCreator());
   }

@@ -17,7 +17,7 @@ public class Parcel10 {
       @Override
       public String readLabel() { return label; }
     };
-  }	
+  }
   public static void main(String[] args) {
     Parcel10 p = new Parcel10();
     Destination d = p.destination("Tasmania", 101.395F);

@@ -19,7 +19,7 @@ public class SnowRemovalRobot implements Robot {
         public void command() {
           System.out.println(name + " shoveling snow");
         }
-      },	
+      },
       new Operation() {
         @Override
         public String description() {
@@ -41,7 +41,7 @@ public class SnowRemovalRobot implements Robot {
         }
       }
     );
-  }	
+  }
   public static void main(String[] args) {
     Robot.Test.test(new SnowRemovalRobot("Slusher"));
   }

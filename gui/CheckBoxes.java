@@ -2,7 +2,6 @@
 // Using JCheckBoxes.
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.*;
 import static net.mindview.util.SwingConsole.*;
 
 public class CheckBoxes extends JFrame {

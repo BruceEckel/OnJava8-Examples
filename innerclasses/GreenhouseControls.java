@@ -17,7 +17,7 @@ public class GreenhouseControls extends Controller {
     }
     @Override
     public String toString() { return "Light is on"; }
-  }	
+  }
   public class LightOff extends Event {
     public LightOff(long delayTime) { super(delayTime); }
     @Override
@@ -41,7 +41,7 @@ public class GreenhouseControls extends Controller {
     public String toString() {
       return "Greenhouse water is on";
     }
-  }	
+  }
   public class WaterOff extends Event {
     public WaterOff(long delayTime) { super(delayTime); }
     @Override
@@ -54,7 +54,7 @@ public class GreenhouseControls extends Controller {
       return "Greenhouse water is off";
     }
   }
-  private String thermostat = "Day";	
+  private String thermostat = "Day";
   public class ThermostatNight extends Event {
     public ThermostatNight(long delayTime) {
       super(delayTime);
@@ -68,7 +68,7 @@ public class GreenhouseControls extends Controller {
     public String toString() {
       return "Thermostat on night setting";
     }
-  }	
+  }
   public class ThermostatDay extends Event {
     public ThermostatDay(long delayTime) {
       super(delayTime);
@@ -93,7 +93,7 @@ public class GreenhouseControls extends Controller {
     }
     @Override
     public String toString() { return "Bing!"; }
-  }	
+  }
   public class Restart extends Event {
     private Event[] eventList;
     public Restart(long delayTime, Event[] eventList) {
@@ -115,7 +115,7 @@ public class GreenhouseControls extends Controller {
     public String toString() {
       return "Restarting system";
     }
-  }	
+  }
   public static class Terminate extends Event {
     public Terminate(long delayTime) { super(delayTime); }
     @Override

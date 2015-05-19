@@ -15,7 +15,7 @@ public enum Input {
     public int amount() { // Disallow
       throw new RuntimeException("SHUT_DOWN.amount()");
     }
-  };	
+  };
   int value; // In cents
   Input(int value) { this.value = value; }
   Input() {}

@@ -1,5 +1,5 @@
 //: references/CopyConstructor.java
-// A constructor for copying an object of the same
+// A constructor to copy an object of the same
 // type, as an attempt to create a local copy.
 import java.lang.reflect.*;
 
@@ -10,7 +10,8 @@ class FruitQualities {
   private int ripeness;
   private int smell;
   // etc.
-  public FruitQualities() { // Default constructor
+  // Default constructor:
+  public FruitQualities() {
     // Do something meaningful...
   }
   // Other constructors:
@@ -36,7 +37,7 @@ class Fruit {
   private FruitQualities fq;
   private int seeds;
   private Seed[] s;
-  public Fruit(FruitQualities q, int seedCount) {
+  public Fruit(FruitQualities q, int seedCount){
     fq = q;
     seeds = seedCount;
     s = new Seed[seeds];
@@ -57,7 +58,7 @@ class Fruit {
   }
   // To allow derived constructors (or other
   // methods) to put in different qualities:
-  protected void addQualities(FruitQualities q) {
+  protected void addQualities(FruitQualities q){
     fq = q;
   }
   protected FruitQualities getQualities() {
@@ -70,14 +71,15 @@ class Tomato extends Fruit {
     super(new FruitQualities(), 100);
   }
   public Tomato(Tomato t) { // Copy-constructor
-    super(t); // Upcast for base copy-constructor
+    super(t); // Upcast to base copy-constructor
     // Other copy-construction activities...
   }
 }
 
 class ZebraQualities extends FruitQualities {
   private int stripedness;
-  public ZebraQualities() { // Default constructor
+  // Default constructor:
+  public ZebraQualities() {
     super();
     // do something meaningful...
   }
@@ -97,7 +99,8 @@ class GreenZebra extends Tomato {
     addQualities(new ZebraQualities());
   }
   public void evaluate() {
-    ZebraQualities zq = (ZebraQualities)getQualities();
+    ZebraQualities zq =
+      (ZebraQualities)getQualities();
     // Do something with the qualities
     // ...
   }
@@ -120,8 +123,10 @@ public class CopyConstructor {
     try {
       Class c = t.getClass();
       // Use the "copy constructor":
-      Constructor ct = c.getConstructor(new Class[] { c });
-      Object obj = ct.newInstance(new Object[] { t });
+      Constructor ct =
+        c.getConstructor(new Class[] { c });
+      Object obj =
+        ct.newInstance(new Object[] { t });
       System.out.println("In ripen2, t is a " +
         obj.getClass().getName());
     } catch(NoSuchMethodException |
@@ -137,8 +142,10 @@ public class CopyConstructor {
   public static void slice2(Fruit f) {
     try {
       Class c = f.getClass();
-      Constructor ct = c.getConstructor(new Class[] { c });
-      Object obj = ct.newInstance(new Object[] { f });
+      Constructor ct =
+        c.getConstructor(new Class[] { c });
+      Object obj =
+        ct.newInstance(new Object[] { f });
       System.out.println("In slice2, f is a " +
         obj.getClass().getName());
     } catch(NoSuchMethodException |
@@ -163,4 +170,13 @@ public class CopyConstructor {
     slice2(g); // OK
     g.evaluate();
   }
-} ///:~
+} /* Output:
+In ripen, t is a Tomato
+In slice, f is a Fruit
+In ripen2, t is a Tomato
+In slice2, f is a Tomato
+In ripen, t is a Tomato
+In slice, f is a Fruit
+In ripen2, t is a GreenZebra
+In slice2, f is a GreenZebra
+*///:~

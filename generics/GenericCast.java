@@ -9,7 +9,7 @@ class FixedSizeStack<T> {
   public void push(T item) { storage[index++] = item; }
   @SuppressWarnings("unchecked")
   public T pop() { return (T)storage[--index]; }
-}	
+}
 
 public class GenericCast {
   public static final int SIZE = 10;

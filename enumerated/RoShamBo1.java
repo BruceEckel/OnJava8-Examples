@@ -22,7 +22,7 @@ class Paper implements Item {
   public Outcome eval(Rock r) { return LOSE; }
   @Override
   public String toString() { return "Paper"; }
-}	
+}
 
 class Scissors implements Item {
   @Override
@@ -48,7 +48,7 @@ class Rock implements Item {
   public Outcome eval(Rock r) { return DRAW; }
   @Override
   public String toString() { return "Rock"; }
-}	
+}
 
 public class RoShamBo1 {
   static final int SIZE = 20;
@@ -69,7 +69,7 @@ public class RoShamBo1 {
     for(int i = 0; i < SIZE; i++)
       match(newItem(), newItem());
   }
-} /* Output:	
+} /* Output:
 Rock vs. Rock: DRAW
 Paper vs. Rock: WIN
 Paper vs. Rock: WIN

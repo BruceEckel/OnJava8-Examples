@@ -1,5 +1,5 @@
 //: annotations/Multiplier.java
-// APT-based annotation processing.
+// javac-based annotation processing.
 package annotations;
 
 @ExtractInterface("IMultiplier")

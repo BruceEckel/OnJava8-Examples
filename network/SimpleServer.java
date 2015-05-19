@@ -31,7 +31,7 @@ public class SimpleServer {
                 socket.getOutputStream())),true);
         while (true) {  
           String str = in.readLine();
-          if (str.equals("END")) break;
+          if(str.equals("END")) break;
           System.out.println("Echoing: " + str);
           out.println(str);
         }

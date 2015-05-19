@@ -5,8 +5,10 @@ import java.util.*;
 
 public class FillableList
 implements Fillable {
-  private ArrayList v;
-  public FillableList(ArrayList vv) { v = vv; }
+  private ArrayList<Trash> v;
+  public FillableList(ArrayList<Trash> vv) {
+    v = vv;
+  }
   @Override
   public void addTrash(Trash t) { v.add(t); }
 } ///:~

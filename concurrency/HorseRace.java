@@ -1,5 +1,6 @@
 //: concurrency/HorseRace.java
 // Using CyclicBarriers.
+// {CheckOutputByHand}
 import java.util.concurrent.*;
 import java.util.*;
 import static net.mindview.util.Print.*;

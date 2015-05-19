@@ -34,7 +34,7 @@ class ExplicitPairManager2 extends PairManager {
     } finally {
       lock.unlock();
     }
-    store(temp);	
+    store(temp);
   }
 }
 

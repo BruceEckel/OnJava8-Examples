@@ -27,7 +27,7 @@ class Basic {
 public:
   void set(string val) { value = val; }
   string get() { return value; }
-};	
+};
 
 int main() {
   TimeStamped<SerialNumbered<Basic> > mixin1, mixin2;

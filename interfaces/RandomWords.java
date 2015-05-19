@@ -12,7 +12,7 @@ public class RandomWords implements Readable {
   private static final char[] vowels =
     "aeiou".toCharArray();
   private int count;
-  public RandomWords(int count) { this.count = count; }	
+  public RandomWords(int count) { this.count = count; }
   @Override
   public int read(CharBuffer cb) {
     if(count-- == 0)

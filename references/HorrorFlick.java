@@ -1,19 +1,23 @@
 //: references/HorrorFlick.java
-// You can insert Cloneability at any level of inheritance.
-import java.util.*;
+// You can insert Cloneability
+// at any level of inheritance.
 
 class Person {}
+
 class Hero extends Person {}
-class Scientist extends Person implements Cloneable {
+
+class Scientist extends Person
+implements Cloneable {
   public Object clone() {
     try {
       return super.clone();
     } catch(CloneNotSupportedException e) {
-      // This should never happen: It's Cloneable already!
+      // Should never happen; it's Cloneable:
       throw new RuntimeException(e);
     }
   }
 }
+
 class MadScientist extends Scientist {}
 
 public class HorrorFlick {

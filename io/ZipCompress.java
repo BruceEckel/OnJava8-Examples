@@ -17,7 +17,7 @@ public class ZipCompress {
     try (BufferedOutputStream out = new BufferedOutputStream(zos)) {
       zos.setComment("A test of Java Zipping");
       // No corresponding getComment(), though.
-      for (String arg : args) {
+      for(String arg : args) {
         print("Writing file " + arg);
         try(InputStream in = new BufferedInputStream(
                 new FileInputStream(arg))) {

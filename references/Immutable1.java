@@ -1,5 +1,5 @@
 //: references/Immutable1.java
-// Objects that cannot be modified are immune to aliasing.
+// Immutable objects are immune to aliasing.
 
 public class Immutable1 {
   private int data;
@@ -22,4 +22,9 @@ public class Immutable1 {
     f(x);
     System.out.println("x = " + x.read());
   }
-} ///:~
+} /* Output:
+x = 47
+i1 = 47
+quad = 188
+x = 47
+*///:~

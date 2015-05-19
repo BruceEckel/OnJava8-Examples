@@ -4,6 +4,7 @@
   <property name="chapter" value="swt"/>
   <property name="excludedfiles" value=""/>
   <import file="../Ant-Common.xml"/>
+  <import file="../Ant-Clean.xml"/>
 
   <target name="run" description="Compile and run" depends="build">
     <jrun cls="ColorBoxes" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />

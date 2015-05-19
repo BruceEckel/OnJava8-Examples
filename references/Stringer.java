@@ -11,4 +11,8 @@ public class Stringer {
     System.out.println(qq); // HOWDY
     System.out.println(q); // howdy
   }
-} ///:~
+} /* Output:
+howdy
+HOWDY
+howdy
+*///:~

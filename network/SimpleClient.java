@@ -2,8 +2,7 @@
 // Very simple client that just sends
 // lines to the server and reads lines
 // that the server sends.
-// {ThrowsException} (When run standalone,
-// during testing).
+// {RunByHand}
 import java.net.*;
 import java.io.*;
 

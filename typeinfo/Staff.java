@@ -16,7 +16,7 @@ public class Staff extends ArrayList<Position> {
          position.getPerson() == Person.NULL)
         return true;
     return false;
-  }	
+  }
   public void fillPosition(String title, Person hire) {
     for(Position position : this)
       if(position.getTitle().equals(title) &&
@@ -26,7 +26,7 @@ public class Staff extends ArrayList<Position> {
       }
     throw new RuntimeException(
       "Position " + title + " not available");
-  }	
+  }
   public static void main(String[] args) {
     Staff staff = new Staff("President", "CTO",
       "Marketing Manager", "Product Manager",
@@ -43,6 +43,6 @@ public class Staff extends ArrayList<Position> {
         new Person("Bob", "Coder", "Bright Light City"));
     System.out.println(staff);
   }
-} /* Output:	
+} /* Output:
 [Position: President Person: Me Last The Top, Lonely At, Position: CTO NullPerson, Position: Marketing Manager NullPerson, Position: Product Manager NullPerson, Position: Project Lead Person: Janet Planner The Burbs, Position: Software Engineer Person: Bob Coder Bright Light City, Position: Software Engineer NullPerson, Position: Software Engineer NullPerson, Position: Software Engineer NullPerson, Position: Test Engineer NullPerson, Position: Technical Writer NullPerson]
 *///:~

@@ -44,7 +44,7 @@ public class Maps {
     test(new ConcurrentHashMap<>());
     test(new WeakHashMap<>());
   }
-} /* Output:
+} /* Output: (First 11 Lines)
 HashMap
 Size = 25, Keys: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 17, 16, 19, 18, 21, 20, 23, 22, 24]
 Values: [A0, B0, C0, D0, E0, F0, G0, H0, I0, J0, K0, L0, M0, N0, O0, P0, R0, Q0, T0, S0, V0, U0, X0, W0, Y0]

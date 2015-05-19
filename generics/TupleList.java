@@ -13,7 +13,7 @@ extends ArrayList<FourTuple<A,B,C,D>> {
     for(FourTuple<Vehicle,Amphibian,String,Integer> i: tl)
       System.out.println(i);
   }
-} /* Output: (75% match)
+} /* Output: (75% Match)
 (Vehicle@11b86e7, Amphibian@35ce36, hi, 47)
 (Vehicle@757aef, Amphibian@d9f9c3, hi, 47)
 *///:~

@@ -31,7 +31,7 @@ class Contract {
 }
 
 class TitleTransfer extends Contract {}
-	
+
 class FillTest {
   public static void main(String[] args) {
     List<Contract> contracts = new ArrayList<>();

@@ -1,5 +1,5 @@
 //: annotations/ExtractInterface.java
-// APT-based annotation processing.
+// javac-based annotation processing.
 package annotations;
 import java.lang.annotation.*;
 

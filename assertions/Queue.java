@@ -1,9 +1,12 @@
 //: assertions/Queue.java
 // Demonstration of Design by Contract (DBC) combined
 // with white-box unit testing.
-// {Depends: junit.jar}
-import junit.framework.*;
+// (Install libraries from www.junit.org)
 import java.util.*;
+import org.junit.Test;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertFalse;
 
 public class Queue {
   private Object[] data;
@@ -86,11 +89,10 @@ public class Queue {
   }
   // JUnit testing.
   // As an inner class, this has access to privates:
-  public static class WhiteBoxTest extends TestCase {
+  public static class WhiteBoxTest {
     private Queue queue = new Queue(10);
     private int i = 0;
-    public WhiteBoxTest(String name) {
-      super(name);
+    public WhiteBoxTest() {
       while(i < 5) // Preload with some data
         queue.put("" + i++);
     }
@@ -106,7 +108,8 @@ public class Queue {
       assertTrue(queue.empty());
       System.out.println(queue.dump());
     }
-    public void testFull() {
+    @Test
+    public void full() {
       System.out.println("testFull");
       System.out.println(queue.dump());
       System.out.println(queue.get());
@@ -123,7 +126,8 @@ public class Queue {
       assertEquals(msg, "put() into full Queue");
       showFullness();
     }
-    public void testEmpty() {
+    @Test
+    public void empty() {
       System.out.println("testEmpty");
       while(!queue.empty())
         System.out.println(queue.get());
@@ -137,7 +141,8 @@ public class Queue {
       assertEquals(msg, "get() from empty Queue");
       showEmptiness();
     }
-    public void testNullPut() {
+    @Test
+    public void nullPut() {
       System.out.println("testNullPut");
       String msg = "";
       try {
@@ -148,7 +153,8 @@ public class Queue {
       }
       assertEquals(msg, "put() null item");
     }
-    public void testCircularity() {
+    @Test
+    public void circularity() {
       System.out.println("testCircularity");
       while(!queue.full())
         queue.put("" + i++);
@@ -167,6 +173,7 @@ public class Queue {
     }
   }
   public static void main(String[] args) {
-    junit.textui.TestRunner.run(Queue.WhiteBoxTest.class);
+    org.junit.runner.JUnitCore.runClasses(
+      Queue.WhiteBoxTest.class);
   }
 } ///:~

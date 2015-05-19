@@ -8,8 +8,8 @@ public class DDCardboard extends Cardboard
   public DDCardboard(double wt) { super(wt); }
   @Override
   public boolean addToBin(TypedBin[] tb) {
-    for (TypedBin tb1 : tb) {
-      if (tb1.add(this)) {
+    for(TypedBin tb1 : tb) {
+      if(tb1.add(this)) {
         return true;
       }
     }

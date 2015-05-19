@@ -1,8 +1,9 @@
-//: patterns/trashvisitor/TrashVisitor.java 
+//: patterns/trashvisitor/TrashVisitor.java
 // The "visitor" pattern.
 package patterns.trashvisitor;
 import patterns.trash.*;
 import java.util.*;
+import static net.mindview.util.Print.*;
 
 // Specific group of algorithms packaged
 // in each implementation of Visitor:
@@ -14,33 +15,29 @@ class PriceVisitor implements Visitor {
   @Override
   public void visit(VAluminum al) {
     double v = al.weight() * al.value();
-    System.out.println(
-      "value of Aluminum= " + v);
+    print("value of Aluminum= " + v);
     alSum += v;
   }
   @Override
   public void visit(VPaper p) {
     double v = p.weight() * p.value();
-    System.out.println(
-      "value of Paper= " + v);
+    print("value of Paper= " + v);
     pSum += v;
   }
   @Override
   public void visit(VGlass g) {
     double v = g.weight() * g.value();
-    System.out.println(
-      "value of Glass= " + v);
+    print("value of Glass= " + v);
     gSum += v;
   }
   @Override
   public void visit(VCardboard c) {
     double v = c.weight() * c.value();
-    System.out.println(
-      "value of Cardboard = " + v);
+    print("value of Cardboard = " + v);
     cSum += v;
   }
   void total() {
-    System.out.println(
+    print(
       "Total Aluminum: $" + alSum + "\n" +
       "Total Paper: $" + pSum + "\n" +
       "Total Glass: $" + gSum + "\n" +
@@ -56,36 +53,28 @@ class WeightVisitor implements Visitor {
   @Override
   public void visit(VAluminum al) {
     alSum += al.weight();
-    System.out.println("weight of Aluminum = "
-        + al.weight());
+    print("Aluminum weight = " + al.weight());
   }
   @Override
   public void visit(VPaper p) {
     pSum += p.weight();
-    System.out.println("weight of Paper = "
-        + p.weight());
+    print("Paper weight = " + p.weight());
   }
   @Override
   public void visit(VGlass g) {
     gSum += g.weight();
-    System.out.println("weight of Glass = "
-        + g.weight());
+    print("Glass weight = " + g.weight());
   }
   @Override
   public void visit(VCardboard c) {
     cSum += c.weight();
-    System.out.println("weight of Cardboard = "
-        + c.weight());
+    print("Cardboard weight = " + c.weight());
   }
   void total() {
-    System.out.println("Total weight Aluminum:"
-        + alSum);
-    System.out.println("Total weight Paper:"
-        + pSum);
-    System.out.println("Total weight Glass:"
-        + gSum);
-    System.out.println("Total weight Cardboard:"
-        + cSum);
+    print("Total weight Aluminum:" + alSum);
+    print("Total weight Paper:" + pSum);
+    print("Total weight Glass:" + gSum);
+    print("Total weight Cardboard:" + cSum);
   }
 }
 

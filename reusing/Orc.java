@@ -10,7 +10,7 @@ class Villain {
   public String toString() {
     return "I'm a Villain and my name is " + name;
   }
-}	
+}
 
 public class Orc extends Villain {
   private int orcNumber;
@@ -25,7 +25,7 @@ public class Orc extends Villain {
   @Override
   public String toString() {
     return "Orc " + orcNumber + ": " + super.toString();
-  }	
+  }
   public static void main(String[] args) {
     Orc orc = new Orc("Limburger", 12);
     print(orc);

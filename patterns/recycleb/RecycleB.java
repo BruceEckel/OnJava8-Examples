@@ -5,12 +5,12 @@ import patterns.trash.*;
 import java.util.*;
 
 // A vector that admits only the right type:
-class Tbin extends ArrayList {
+class Tbin<T> extends ArrayList<T> {
   Class binType;
-  Tbin(Class binType) { 
-    this.binType = binType; 
+  Tbin() {
+    this.binType = binType;
   }
-  boolean grab(Trash t) {
+  boolean grab(T t) {
     // Comparing class types:
     if(t.getClass().equals(binType)) {
       add(t);
@@ -21,6 +21,7 @@ class Tbin extends ArrayList {
 }
 
 class TbinList extends ArrayList { //(*1*)
+  @SuppressWarnings("unchecked")
   boolean sort(Trash t) {
     Iterator e = iterator();
     while(e.hasNext()) {
@@ -38,29 +39,24 @@ class TbinList extends ArrayList { //(*1*)
 }
 
 public class RecycleB {
-  static Tbin bin = new Tbin(Trash.class);
+  static Tbin<Trash> bin = new Tbin<>();
+  @SuppressWarnings("unchecked")
   public static void main(String[] args) {
     // Fill up the Trash bin:
     ParseTrash.fillBin("Trash.dat", bin);
 
     TbinList trashBins = new TbinList();
-    trashBins.add(
-      new Tbin(Aluminum.class));
-    trashBins.add(
-      new Tbin(Paper.class));
-    trashBins.add(
-      new Tbin(Glass.class));
+    trashBins.add(new Tbin<Aluminum>());
+    trashBins.add(new Tbin<Paper>());
+    trashBins.add(new Tbin<Glass>());
     // add one line here: (*3*)
-    trashBins.add(
-      new Tbin(Cardboard.class));
+    trashBins.add(new Tbin<Cardboard>());
 
     trashBins.sortBin(bin); // (*4*)
 
-    Iterator e = trashBins.iterator();
-    while(e.hasNext()) {
-      Tbin b = (Tbin)e.next();
-      Trash.sumValue(b);
-    }
+    Iterator<Tbin> e = trashBins.iterator();
+    while(e.hasNext())
+      Trash.sumValue(e.next());
     Trash.sumValue(bin);
   }
 } ///:~

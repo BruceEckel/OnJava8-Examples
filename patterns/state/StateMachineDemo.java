@@ -2,7 +2,6 @@
 // Demonstrates StateMachine pattern 
 // and Template method.
 package patterns.state;
-import java.util.*;
 
 interface State {
   void run();
@@ -62,7 +61,7 @@ class Washer extends StateMachine {
   public boolean changeState() {
     if(i < states.length) {
       // Change the state by setting the 
-      // surrogate handle to a new object:
+      // surrogate reference to a new object:
       currentState = states[i++]; 
       return true;
     } else

@@ -2,7 +2,6 @@
 // Icon behavior in JButtons.
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.*;
 import static net.mindview.util.SwingConsole.*;
 
 public class Faces extends JFrame {

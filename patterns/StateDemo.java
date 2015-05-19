@@ -1,5 +1,6 @@
 //: patterns/StateDemo.java
 // Simple demonstration of the State pattern.
+import static net.mindview.util.Print.*;
 
 interface StateBase {
   void f();
@@ -10,8 +11,8 @@ interface StateBase {
 
 class State implements StateBase {
   private StateBase implementation;
-  public State(StateBase imp) { 
-    implementation = imp; 
+  public State(StateBase imp) {
+    implementation = imp;
   }
   @Override
   public void changeImp(StateBase newImp) {
@@ -28,16 +29,16 @@ class State implements StateBase {
 
 class Implementation1 implements StateBase {
   @Override
-  public void f() { 
-    System.out.println("Implementation1.f()"); 
+  public void f() {
+    print("Implementation1.f()");
   }
   @Override
-  public void g() { 
-    System.out.println("Implementation1.g()"); 
+  public void g() {
+    print("Implementation1.g()");
   }
   @Override
-  public void h() { 
-    System.out.println("Implementation1.h()"); 
+  public void h() {
+    print("Implementation1.h()");
   }
   @Override
   public void changeImp(StateBase newImp) {}
@@ -45,16 +46,16 @@ class Implementation1 implements StateBase {
 
 class Implementation2 implements StateBase {
   @Override
-  public void f() { 
-    System.out.println("Implementation2.f()"); 
+  public void f() {
+    print("Implementation2.f()");
   }
   @Override
-  public void g() { 
-    System.out.println("Implementation2.g()"); 
+  public void g() {
+    print("Implementation2.g()");
   }
   @Override
-  public void h() { 
-    System.out.println("Implementation2.h()"); 
+  public void h() {
+    print("Implementation2.h()");
   }
   @Override
   public void changeImp(StateBase newImp) {}
@@ -67,7 +68,7 @@ public class StateDemo {
     b.h();
   }
   public static void main(String args[]) {
-    StateBase b = 
+    StateBase b =
       new State(new Implementation1());
     test(b);
     b.changeImp(new Implementation2());

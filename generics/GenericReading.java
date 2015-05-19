@@ -17,7 +17,7 @@ public class GenericReading {
   // established when the class is instantiated:
   static class Reader<T> {
     T readExact(List<T> list) { return list.get(0); }
-  }	
+  }
   static void f2() {
     Reader<Fruit> fruitReader = new Reader<>();
     Fruit f = fruitReader.readExact(fruit);
@@ -35,7 +35,7 @@ public class GenericReading {
       new CovariantReader<>();
     Fruit f = fruitReader.readCovariant(fruit);
     Fruit a = fruitReader.readCovariant(apples);
-  }	
+  }
   public static void main(String[] args) {
     f1(); f2(); f3();
   }

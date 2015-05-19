@@ -15,7 +15,7 @@ public class LinkedStack<T> {
   private Node<T> top = new Node<>(); // End sentinel
   public void push(T item) {
     top = new Node<>(item, top);
-  }	
+  }
   public T pop() {
     T result = top.item;
     if(!top.end())

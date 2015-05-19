@@ -41,7 +41,7 @@ public class CaptureUncaughtException {
       new HandlerThreadFactory());
     exec.execute(new ExceptionThread2());
   }
-} /* Output: (90% match)
+} /* Output: (90% Match)
 HandlerThreadFactory@de6ced creating new Thread
 created Thread[Thread-0,5,main]
 eh = MyUncaughtExceptionHandler@1fb8ee3

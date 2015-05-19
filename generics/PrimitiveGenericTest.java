@@ -8,7 +8,7 @@ class FArray {
       a[i] = gen.next();
     return a;
   }
-}	
+}
 
 public class PrimitiveGenericTest {
   public static void main(String[] args) {

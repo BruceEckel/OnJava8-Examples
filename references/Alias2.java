@@ -12,4 +12,8 @@ public class Alias2 {
     f(x);
     System.out.println("x: " + x.i);
   }
-} ///:~
+} /* Output:
+x: 7
+Calling f(x)
+x: 8
+*///:~

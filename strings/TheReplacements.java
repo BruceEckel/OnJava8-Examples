@@ -4,7 +4,7 @@ import net.mindview.util.*;
 import static net.mindview.util.Print.*;
 
 /*! Here's a block of text to use as input to
-    the regular expression matcher. Note that we'll
+    the regular expression matcher. Note that we
     first extract the block of text by looking for
     the special delimiters, then process the
     extracted block. !*/
@@ -38,7 +38,7 @@ public class TheReplacements {
   }
 } /* Output:
 Here's a block of text to use as input to
-the regular expression matcher. Note that we'll
+the regular expression matcher. Note that we
 first extract the block of text by looking for
 the special delimiters, then process the
 extracted block.

@@ -11,7 +11,7 @@ class Egg {
     print("New Egg()");
     y = new Yolk();
   }
-}	
+}
 
 public class BigEgg extends Egg {
   public class Yolk {

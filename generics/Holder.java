@@ -9,7 +9,7 @@ public class Holder<T> {
   @Override
   public boolean equals(Object obj) {
     return value.equals(obj);
-  }	
+  }
   public static void main(String[] args) {
     Holder<Apple> Apple = new Holder<>(new Apple());
     Apple d = Apple.get();

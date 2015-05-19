@@ -15,7 +15,7 @@ interface CanFly {
 
 class ActionCharacter {
   public void fight() {}
-}	
+}
 
 class Hero extends ActionCharacter
     implements CanFight, CanSwim, CanFly {

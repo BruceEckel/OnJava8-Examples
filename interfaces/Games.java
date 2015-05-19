@@ -18,7 +18,7 @@ class Checkers implements Game {
 class CheckersFactory implements GameFactory {
   @Override
   public Game getGame() { return new Checkers(); }
-}	
+}
 
 class Chess implements Game {
   private int moves = 0;
@@ -33,7 +33,7 @@ class Chess implements Game {
 class ChessFactory implements GameFactory {
   @Override
   public Game getGame() { return new Chess(); }
-}	
+}
 
 public class Games {
   public static void playGame(GameFactory factory) {

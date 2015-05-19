@@ -14,7 +14,7 @@ class Implementation1 implements Service {
   Implementation1() {} // Package access
   public void method1() {print("Implementation1 method1");}
   public void method2() {print("Implementation1 method2");}
-}	
+}
 
 class Implementation1Factory implements ServiceFactory {
   @Override
@@ -34,7 +34,7 @@ class Implementation2Factory implements ServiceFactory {
   public Service getService() {
     return new Implementation2();
   }
-}	
+}
 
 public class Factories {
   public static void serviceConsumer(ServiceFactory fact) {
