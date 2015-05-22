@@ -111,4 +111,24 @@
     <echo file="${antoutput}" append="true" message="Build '${chapter}' succeeded&#13;"/>
   </target>
 
+  <target
+   depends="base"
+   description="Build all classes in this directory, enabling 'Unchecked' warnings"
+   name="buildw">
+    <fail message="Java 8 required" unless="version1.8"/>
+    <echo message="Building '${chapter}'&#13;"/>
+    <echo file="${antoutput}" append="true" message="Building '${chapter}'&#13;"/>
+    <javac includeantruntime="false"
+     classpath="${java.class.path};${basedir};${basedir}/.."
+     debug="true"
+     excludes="${excludedfiles}"
+     srcdir="${basedir}">
+      <compilerarg value="-Xlint:unchecked"/>
+      <compilerarg value="-Xmaxerrs"/>
+      <compilerarg value="10"/>
+    </javac>
+    <echo message="Build '${chapter}' succeeded&#13;"/>
+    <echo file="${antoutput}" append="true" message="Build '${chapter}' succeeded&#13;"/>
+  </target>
+
 </project>
