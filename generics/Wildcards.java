@@ -29,13 +29,11 @@ public class Wildcards {
     Object obj = holder.get();
   }
   static <T> T exact1(Holder<T> holder) {
-    T t = holder.get();
-    return t;
+    return holder.get();
   }
   static <T> T exact2(Holder<T> holder, T arg) {
     holder.set(arg);
-    T t = holder.get();
-    return t;
+    return holder.get();
   }
   static <T>
   T wildSubtype(Holder<? extends T> holder, T arg) {
@@ -43,8 +41,7 @@ public class Wildcards {
     //   set(capture of ? extends T) in
     //   Holder<capture of ? extends T>
     //   cannot be applied to (T)
-    T t = holder.get();
-    return t;
+    return holder.get();
   }
   static <T>
   void wildSupertype(Holder<? super T> holder, T arg) {

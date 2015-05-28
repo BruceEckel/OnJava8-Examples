@@ -3,12 +3,12 @@
 package patterns.trash;
 import java.util.*;
 
-public class FillableList
-implements Fillable {
-  private ArrayList<Trash> v;
-  public FillableList(ArrayList<Trash> vv) {
+public class FillableList<T extends Trash>
+implements Fillable<T> {
+  private ArrayList<T> v;
+  public FillableList(ArrayList<T> vv) {
     v = vv;
   }
   @Override
-  public void addTrash(Trash t) { v.add(t); }
+  public void addTrash(T t) { v.add(t); }
 } ///:~

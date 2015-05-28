@@ -1,6 +1,7 @@
 //: patterns/ShapeFactory2.java
 // Polymorphic factory methods.
 import java.util.*;
+import java.util.function.*;
 import static net.mindview.util.Print.*;
 
 class BadShapeCreation extends Exception {
@@ -15,8 +16,7 @@ interface Shape {
 }
 
 abstract class ShapeFactory {
-  protected abstract Shape create();
-  static Map<String, ShapeFactory> factories =
+  static Map<String, Supplier<Shape>> factories =
     new HashMap<>();
   static Shape createShape(String id)
   throws BadShapeCreation {
@@ -30,7 +30,7 @@ abstract class ShapeFactory {
       if(!factories.containsKey(id))
         throw new BadShapeCreation(id);
     }
-    return factories.get(id).create();
+    return factories.get(id).get();
   }
 }
 
@@ -38,15 +38,8 @@ class Circle implements Shape {
   private Circle() {}
   public void draw() { print("Circle.draw"); }
   public void erase() { print("Circle.erase"); }
-  static class Factory extends ShapeFactory {
-    @Override
-    protected Shape create() {
-      return new Circle();
-    }
-  }
   static {
-    ShapeFactory.factories.put(
-      "Circle", new Circle.Factory());
+    ShapeFactory.factories.put("Circle", Circle::new);
   }
 }
 
@@ -54,15 +47,8 @@ class Square implements Shape {
   private Square() {}
   public void draw() { print("Square.draw"); }
   public void erase() { print("Square.erase"); }
-  static class Factory extends ShapeFactory {
-    @Override
-    protected Shape create() {
-      return new Square();
-    }
-  }
   static {
-    ShapeFactory.factories.put(
-      "Square", new Square.Factory());
+    ShapeFactory.factories.put("Square", Square::new);
   }
 }
 
@@ -80,11 +66,7 @@ public class ShapeFactory2 {
       e.printStackTrace();
       return;
     }
-    Iterator<Shape> i = shapes.iterator();
-    while(i.hasNext()) {
-      Shape s = i.next();
-      s.draw();
-      s.erase();
-    }
+    shapes.forEach(Shape::draw);
+    shapes.forEach(Shape::erase);
   }
 } ///:~

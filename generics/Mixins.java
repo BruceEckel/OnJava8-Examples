@@ -22,8 +22,8 @@ class SerialNumberedImp implements SerialNumbered {
 }
 
 interface Basic {
-  public void set(String val);
-  public String get();
+  void set(String val);
+  String get();
 }
 
 class BasicImp implements Basic {

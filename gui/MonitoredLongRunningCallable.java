@@ -26,9 +26,8 @@ class MonitoredCallable implements Callable<String> {
         if(monitor.isCanceled())
           Thread.currentThread().interrupt();
         final int progress = i;
-        SwingUtilities.invokeLater(() -> {
-          monitor.setProgress(progress);
-        });
+        SwingUtilities.invokeLater(() ->
+          monitor.setProgress(progress));
       }
     } catch(InterruptedException e) {
       monitor.close();

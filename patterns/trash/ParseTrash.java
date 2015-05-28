@@ -6,8 +6,8 @@ import java.util.*;
 import java.io.*;
 
 public class ParseTrash {
-  public static void
-  fillBin(String filename, Fillable bin) {
+  public static <T extends Trash> void
+  fillBin(String filename, Fillable<T> bin) {
     try {
       try (BufferedReader data = new BufferedReader(
              new FileReader(filename))) {
@@ -24,17 +24,16 @@ public class ParseTrash {
             new Trash.Info(type, weight)));
         }
       }
-    } catch(IOException e) {
-      e.printStackTrace();
-    } catch(NumberFormatException |
+    } catch(IOException |
+            NumberFormatException |
             Trash.PrototypeNotFoundException |
             Trash.CannotCreateTrashException e) {
       e.printStackTrace();
     }
   }
   // Special case to handle ArrayList:
-  public static void
-  fillBin(String filename, ArrayList<Trash> bin) {
-    fillBin(filename, new FillableList(bin));
+  public static <T extends Trash> void
+  fillBin(String filename, ArrayList<T> bin) {
+    fillBin(filename, new FillableList<>(bin));
   }
 } ///:~

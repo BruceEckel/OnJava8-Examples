@@ -30,7 +30,7 @@ public:
 };
 
 int main() {
-  TimeStamped<SerialNumbered<Basic> > mixin1, mixin2;
+  TimeStamped<SerialNumbered<Basic>> mixin1, mixin2;
   mixin1.set("test string 1");
   mixin2.set("test string 2");
   cout << mixin1.get() << " " << mixin1.getStamp() <<

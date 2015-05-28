@@ -2,29 +2,7 @@
 // Demonstration of multiple dispatching.
 import java.util.*;
 
-// An enumeration type:
-class Outcome {
-  private int value;
-  private Outcome(int val) { value = val; }
-  public final static Outcome
-    WIN = new Outcome(0),
-    LOSE = new Outcome(1),
-    DRAW = new Outcome(2);
-  @Override
-  public String toString() {
-    switch(value) {
-      default:
-      case 0: return "win";
-      case 1: return "lose";
-      case 2: return "draw";
-    }
-  }
-  @Override
-  public boolean equals(Object o) {
-    return (o instanceof Outcome)
-      && (value == ((Outcome)o).value);
-  }
-}
+enum Outcome { WIN, LOSE, DRAW }
 
 interface Item {
   Outcome compete(Item it);

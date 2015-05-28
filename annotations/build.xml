@@ -15,10 +15,10 @@
     <jrun cls="annotations.AtUnitExample5" dirpath="../annotations" />
     <jrun cls="annotations.AtUnitExternalTest" dirpath="../annotations" />
     <jrun cls="annotations.HashSetTest" dirpath="../annotations" />
-    <jrun cls="annotations.Multiplier" dirpath="../annotations" />
     <jrun cls="annotations.StackLStringTest" dirpath="../annotations" />
     <jrun cls="UseCaseTracker" />
     <jrun cls="annotations.database.TableCreator" dirpath="../annotations/database" arguments="annotations.database.Member" />
+    <jrun cls="annotations.ifx.Multiplier" dirpath="../annotations/ifx" />
     <jrun cls="annotations.simplest.SimpleTest" dirpath="../annotations/simplest" />
   </target>
 

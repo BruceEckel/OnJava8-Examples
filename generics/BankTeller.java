@@ -11,7 +11,7 @@ class Customer {
   public String toString() { return "Customer " + id; }
   // A method to produce Generator objects:
   public static Generator<Customer> generator() {
-    return () -> new Customer();
+    return Customer::new; // Constructor reference
   }
 }
 
@@ -22,8 +22,7 @@ class Teller {
   @Override
   public String toString() { return "Teller " + id; }
   // A single Generator object:
-  public static Generator<Teller> generator =
-    () -> new Teller();
+  public static Generator<Teller> generator = Teller::new;
 }
 
 public class BankTeller {

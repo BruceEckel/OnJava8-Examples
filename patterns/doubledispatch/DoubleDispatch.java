@@ -41,10 +41,8 @@ class TrashBinSet {
     new CardboardBin()
   };
   public void sortIntoBins(ArrayList bin) {
-    Iterator e = bin.iterator();
-    while(e.hasNext()) {
-      TypedBinMember t = 
-        (TypedBinMember)e.next();
+    for(Object aBin : bin) {
+      TypedBinMember t = (TypedBinMember)aBin;
       if(!t.addToBin(binSet))
         System.err.println("Couldn't add " + t);
     }
@@ -54,18 +52,16 @@ class TrashBinSet {
 
 public class DoubleDispatch {
   public static void main(String[] args) {
-    ArrayList bin = new ArrayList();
+    ArrayList<Trash> bin = new ArrayList<>();
     TrashBinSet bins = new TrashBinSet();
     // ParseTrash still works, without changes:
     ParseTrash.fillBin("DDTrash.dat", bin);
     // Sort from the master bin into the 
     // individually-typed bins:
     bins.sortIntoBins(bin);
-    TypedBin[] tb = bins.binSet();
     // Perform sumValue for each bin...
-    for(TypedBin tb1 : tb) {
+    for(TypedBin tb1 : bins.binSet())
       Trash.sumValue(tb1.v);
-    }
     // ... and for the master bin
     Trash.sumValue(bin);
   }

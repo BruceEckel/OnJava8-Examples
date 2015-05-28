@@ -24,7 +24,7 @@ class SimpleClientThread extends Thread {
         new Socket(addr, MultiSimpleServer.PORT);
     } catch(IOException e) {
       // If the creation of the socket fails, 
-      // nothing needs to be cleaned up.
+      // nothing needs cleanup.
     }
     try {    
       in = 

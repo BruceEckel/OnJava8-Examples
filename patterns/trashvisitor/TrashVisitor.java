@@ -80,16 +80,15 @@ class WeightVisitor implements Visitor {
 
 public class TrashVisitor {
   public static void main(String[] args) {
-    ArrayList bin = new ArrayList();
+    ArrayList<Trash> bin = new ArrayList<>();
     // ParseTrash still works, without changes:
     ParseTrash.fillBin("VTrash.dat", bin);
     // You could even iterate through
     // a list of visitors!
     PriceVisitor pv = new PriceVisitor();
     WeightVisitor wv = new WeightVisitor();
-    Iterator it = bin.iterator();
-    while(it.hasNext()) {
-      Visitable v = (Visitable)it.next();
+    for(Trash aBin : bin) {
+      Visitable v = (Visitable) aBin;
       v.accept(pv);
       v.accept(wv);
     }

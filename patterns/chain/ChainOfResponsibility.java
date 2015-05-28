@@ -1,87 +1,86 @@
 //: patterns/chain/ChainOfResponsibility.java
 package patterns.chain;
+import java.util.*;
+import static net.mindview.util.PrintArray.*;
 
-class FindMinima {
-  private FindMinima successor = null;
-  public void add(FindMinima succ) {
-    FindMinima end = this;
-    while(end.successor != null)
-      end = end.successor; // Traverse list
-    end.successor = succ;
+class Result {
+  boolean success;
+  double[] line;
+  public Result(double[] data) {
+    success = true;
+    line = data;
   }
-  public double[] algorithm(double[] line) {
-    if(successor != null)
-      return successor.algorithm(line);
-    else // Try the next one in the chain:
-      return new double[] {};
+  public Result() {
+    success = false;
+    line = new double[] {};
   }
 }
 
-class LeastSquares extends FindMinima {
-  @Override
-  public double[] algorithm(double[] line) {
+class Fail extends Result {}
+
+interface Algorithm {
+  Result algorithm(double[] line);
+}
+
+class LeastSquares implements Algorithm {
+  public Result algorithm(double[] line) {
     System.out.println("LeastSquares.algorithm");
     boolean weSucceed = false;
     if(weSucceed) // Actual test/calculation here
-      return new double[] { 1.1, 2.2 }; // Dummy
+      return new Result(new double[] { 1.1, 2.2 });
     else // Try the next one in the chain:
-      return super.algorithm(line);
+      return new Fail();
   }
 }
 
-class Perturbation extends FindMinima {
-  @Override
-  public double[] algorithm(double[] line) {
+class Perturbation implements Algorithm {
+  public Result algorithm(double[] line) {
     System.out.println("Perturbation.algorithm");
     boolean weSucceed = false;
     if(weSucceed) // Actual test/calculation here
-      return new double[] { 3.3, 4.4 }; // Dummy
-    else // Try the next one in the chain:
-      return super.algorithm(line);
+      return new Result(new double[] { 3.3, 4.4 });
+    else
+      return new Fail();
   }
 }
 
-class Bisection extends FindMinima {
-  @Override
-  public double[] algorithm(double[] line) {
+class Bisection implements Algorithm {
+  public Result algorithm(double[] line) {
     System.out.println("Bisection.algorithm");
     boolean weSucceed = true;
     if(weSucceed) // Actual test/calculation here
-      return new double[] { 5.5, 6.6 }; // Dummy
+      return new Result(new double[] { 5.5, 6.6 });
     else
-      return super.algorithm(line);
+      return new Fail();
   }
 }
 
-// The "Handler" proxies to the first functor:
-class MinimaSolver {
-  private FindMinima chain = new FindMinima();
-  void add(FindMinima newAlgorithm) {
-    chain.add(newAlgorithm);
-  }
-  // Make the call to the top of the chain:
-  double[] minima(double[] line) {
-    return chain.algorithm(line);
+class FindMinima {
+  List<Algorithm> algorithms = Arrays.asList(
+    new LeastSquares(),
+    new Perturbation(),
+    new Bisection()
+  );
+  public Result minima(double[] line) {
+    for (Algorithm alg : algorithms) {
+      Result result = alg.algorithm(line);
+      if(result.success)
+        return result;
+    }
+    return new Fail();
   }
 }
 
 public class ChainOfResponsibility {
-  public static void printArray(double[] array) {
-    for(int i = 0; i < array.length; i++) {
-      System.out.print(array[i]);
-      if(i != array.length -1)
-        System.out.print(", ");
-    }
-    System.out.println();
-  }    
   public static void main(String args[]) {
-    MinimaSolver solver = new MinimaSolver();
-    solver.add(new LeastSquares());
-    solver.add(new Perturbation());
-    solver.add(new Bisection());
+    FindMinima solver = new FindMinima();
     double[] line = { 
       1.0, 2.0, 1.0, 2.0, -1.0, 
       3.0, 4.0, 5.0, 4.0 };
-    printArray(solver.minima(line));
+    Result result = solver.minima(line);
+    if(result.success)
+      printArray(result.line);
+    else
+      System.out.println("No algorithm found");
   }
 } ///:~

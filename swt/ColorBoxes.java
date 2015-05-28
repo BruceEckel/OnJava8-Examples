@@ -37,13 +37,10 @@ class CBox extends Canvas implements Runnable {
     try {
       while(!Thread.interrupted()) {
         cColor = newColor();
-        getDisplay().asyncExec(new Runnable() {
-          @Override
-          public void run() {
-            try { redraw(); } catch(SWTException e) {}
-            // SWTException is OK when the parent
-            // is terminated from under us.
-          }
+        getDisplay().asyncExec( () -> {
+          try { redraw(); } catch(SWTException e) {}
+          // SWTException is OK when the parent
+          // is terminated from under us.
         });
         TimeUnit.MILLISECONDS.sleep(pause);
       }

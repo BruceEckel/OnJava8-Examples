@@ -14,8 +14,8 @@ public class LookAndFeel extends JFrame {
     new JLabel("JLabel"),
     new JCheckBox("JCheckBox"),
     new JRadioButton("Radio"),
-    new JComboBox<String>(choices),
-    new JList<String>(choices),
+    new JComboBox<>(choices),
+    new JList<>(choices),
   };
   public LookAndFeel() {
     super("Look And Feel");

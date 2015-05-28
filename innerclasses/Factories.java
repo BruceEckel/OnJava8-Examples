@@ -26,12 +26,18 @@ class Implementation2 implements Service {
   private Implementation2() {}
   public void method1() {print("Implementation2 method1");}
   public void method2() {print("Implementation2 method2");}
+  // Use method reference instead:
   public static ServiceFactory factory =
-    new ServiceFactory() {
-      public Service getService() {
-        return new Implementation2();
-      }
-    };
+    Implementation2::new; // Constructor reference
+}
+
+class Implementation3 implements Service {
+  private Implementation3() {}
+  public void method1() {print("Implementation3 method1");}
+  public void method2() {print("Implementation3 method2");}
+  // Use lambda expression instead:
+  public static ServiceFactory factory =
+    () -> new Implementation3();
 }
 
 public class Factories {
@@ -44,10 +50,13 @@ public class Factories {
     serviceConsumer(Implementation1.factory);
     // Implementations are completely interchangeable:
     serviceConsumer(Implementation2.factory);
+    serviceConsumer(Implementation3.factory);
   }
 } /* Output:
 Implementation1 method1
 Implementation1 method2
 Implementation2 method1
 Implementation2 method2
+Implementation3 method1
+Implementation3 method2
 *///:~

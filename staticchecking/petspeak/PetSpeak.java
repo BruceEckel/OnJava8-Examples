@@ -22,7 +22,7 @@ public class PetSpeak {
   static void command(Pet p) { p.speak(); }
   public static void main(String[] args) {
     Pet[] pets = { new Cat(), new Dog() };
-    for(int i = 0; i < pets.length; i++)
-      command(pets[i]);
+    for(Pet pet : pets)
+      command(pet);
   }
 } ///:~

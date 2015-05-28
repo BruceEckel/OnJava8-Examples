@@ -23,7 +23,7 @@ public class BufferToText {
     String encoding = System.getProperty("file.encoding");
     System.out.println("Decoded using " + encoding + ": "
       + Charset.forName(encoding).decode(buff));
-    // Or, we could encode with something that will print:
+    // Or, we could encode with something that prints:
     fc = new FileOutputStream("data2.txt").getChannel();
     fc.write(ByteBuffer.wrap(
       "Some text".getBytes("UTF-16BE")));

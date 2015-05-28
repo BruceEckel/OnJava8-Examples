@@ -9,11 +9,9 @@ abstract class Trash {
   abstract double value();
   double weight() { return weight; }
   // Sums the value of Trash in a bin:
-  static void sumValue(List<Trash> bin) {
-    Iterator<Trash> e = bin.iterator();
+  static void sumValue(List<? extends Trash> bin) {
     double val = 0.0f;
-    while(e.hasNext()) {
-      Trash t = e.next();
+    for(Trash t : bin) {
       // Polymorphism in action:
       val += t.weight() * t.value();
       System.out.println(
@@ -75,21 +73,18 @@ public class RecycleA {
           bin.add(new
             Glass(Math.random() * 100));
       }
-    List<Trash>
-      glassBin = new ArrayList<>(),
-      paperBin = new ArrayList<>(),
-      alBin = new ArrayList<>();
-    Iterator<Trash> sorter = bin.iterator();
+    List<Glass> glassBin = new ArrayList<>();
+    List<Paper> paperBin = new ArrayList<>();
+    List<Aluminum> alBin = new ArrayList<>();
     // Sort the Trash:
-    while(sorter.hasNext()) {
-      Trash t = sorter.next();
-      // RTTI to show class membership:
+    for(Trash t : bin) {
+      // RTTI to discover Trash type:
       if(t instanceof Aluminum)
-        alBin.add(t);
+        alBin.add((Aluminum)t);
       if(t instanceof Paper)
-        paperBin.add(t);
+        paperBin.add((Paper)t);
       if(t instanceof Glass)
-        glassBin.add(t);
+        glassBin.add((Glass)t);
     }
     Trash.sumValue(alBin);
     Trash.sumValue(paperBin);

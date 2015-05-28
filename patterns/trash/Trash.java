@@ -6,16 +6,17 @@ import java.lang.reflect.*;
 
 public abstract class Trash {
   private double weight;
-  Trash(double wt) { weight = wt; }
-  Trash() {}
+  public Trash(double wt) { weight = wt; }
+  public Trash() {}
   public abstract double value();
   public double weight() { return weight; }
   // Sums the value of Trash in a bin:
-  public static void sumValue(List<Trash> bin) {
-    Iterator<Trash> e = bin.iterator();
+  public static <T extends Trash> 
+  void sumValue(List<? extends T> bin) {
+    Iterator<? extends T> e = bin.iterator();
     double val = 0.0f;
     while(e.hasNext()) {
-      Trash t = e.next();
+      T t = e.next();
       val += t.weight() * t.value();
       System.out.println("weight of " +
         // Using RTTI to get type
@@ -34,23 +35,21 @@ public abstract class Trash {
   private static List<Class> trashTypes =
     new ArrayList<>();
   @SuppressWarnings("unchecked")
-  public static Trash factory(Info info)
+  public static <T extends Trash> T factory(Info info)
       throws PrototypeNotFoundException,
       CannotCreateTrashException {
     for(Class trashType : trashTypes) {
       // Somehow determine the new type
       // to create, and create one:
-      Class tc = trashType;
-      if(tc.getName().contains(info.id)) {
+      if(trashType.getName().contains(info.id)) {
         try {
           // Get the dynamic constructor method
           // that takes a double argument:
-          Constructor ctor = tc.getConstructor(
-            new Class[] {double.class});
+          Constructor ctor = trashType.getConstructor(
+                  double.class);
           // Call the constructor to create a
           // new object:
-          return (Trash)ctor.newInstance(
-                  new Object[]{info.data});
+          return (T)ctor.newInstance(info.data);
         } catch(NoSuchMethodException |
                 SecurityException |
                 InstantiationException |

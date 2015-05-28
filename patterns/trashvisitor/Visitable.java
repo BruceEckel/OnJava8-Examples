@@ -3,7 +3,6 @@
 // the Trash hierarchy without modifying the 
 // base class.
 package patterns.trashvisitor;
-import patterns.trash.*;
 
 interface Visitable {
   // The new method:

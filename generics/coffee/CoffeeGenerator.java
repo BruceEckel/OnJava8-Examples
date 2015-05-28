@@ -37,7 +37,7 @@ implements Generator<Coffee>, Iterable<Coffee> {
     public void remove() { // Not implemented
       throw new UnsupportedOperationException();
     }
-  };
+  }
   @Override
   public Iterator<Coffee> iterator() {
     return new CoffeeIterator();

@@ -21,10 +21,9 @@ public class ComboBoxes extends JFrame {
       if(count < description.length)
         c.addItem(description[count++]);
     });
-    c.addActionListener(e -> {
-      t.setText("index: "+ c.getSelectedIndex() + "   " +
-        ((JComboBox)e.getSource()).getSelectedItem());
-    });
+    c.addActionListener(e -> t.setText("index: " +
+      c.getSelectedIndex() + "   " +
+      ((JComboBox)e.getSource()).getSelectedItem()));
     setLayout(new FlowLayout());
     add(t);
     add(c);

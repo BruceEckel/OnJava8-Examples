@@ -47,12 +47,8 @@ public class SineWave extends JFrame {
   private JSlider adjustCycles = new JSlider(1, 30, 5);
   public SineWave() {
     add(sines);
-    adjustCycles.addChangeListener(new ChangeListener() {
-      public void stateChanged(ChangeEvent e) {
-        sines.setCycles(
-          ((JSlider)e.getSource()).getValue());
-      }
-    });
+    adjustCycles.addChangeListener(e -> sines.setCycles(
+      ((JSlider)e.getSource()).getValue()));
     add(BorderLayout.SOUTH, adjustCycles);
   }
   public static void main(String[] args) {

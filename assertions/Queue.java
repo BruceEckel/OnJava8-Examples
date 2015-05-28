@@ -1,5 +1,5 @@
 //: assertions/Queue.java
-// Demonstration of Design by Contract (DBC) combined
+// Demonstration of Design by Contract (DbC) combined
 // with white-box unit testing.
 // (Install libraries from www.junit.org)
 import java.util.*;

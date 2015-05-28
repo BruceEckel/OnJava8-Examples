@@ -41,8 +41,7 @@ public class Unsupported {
     test("Modifiable Copy", new ArrayList<>(list));
     test("Arrays.asList()", list);
     test("unmodifiableList()",
-      Collections.unmodifiableList(
-        new ArrayList<>(list)));
+      Collections.unmodifiableList(new ArrayList<>(list)));
   }
 } /* Output:
 --- Modifiable Copy ---

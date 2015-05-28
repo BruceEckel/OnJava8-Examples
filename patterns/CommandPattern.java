@@ -33,8 +33,7 @@ class Macro implements Command {
   public void add(Command c) { commands.add(c); }
   @Override
   public void execute() {
-    for(Command c : commands)
-      c.execute();
+    commands.forEach(Command::execute);
   }
 }
 

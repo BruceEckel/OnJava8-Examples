@@ -8,6 +8,8 @@
 
   <target name="run" description="Compile and run" depends="build">
     <jrun cls="CommandPattern" />
+    <jrun cls="CommandPattern2" />
+    <jrun cls="CommandPattern3" />
     <jrun cls="Facade" />
     <jrun cls="PaperScissorsRock" />
     <jrun cls="ProxyDemo" />
@@ -16,8 +18,10 @@
     <jrun cls="StateDemo" />
     <jrun cls="TemplateMethod" />
     <jrun cls="patterns.absfactory.GameEnvironment" dirpath="../patterns/absfactory" />
+    <jrun cls="patterns.absfactory.GameEnvironment2" dirpath="../patterns/absfactory" />
     <jrun cls="patterns.adapt.Adapter" dirpath="../patterns/adapt" />
     <jrun cls="patterns.chain.ChainOfResponsibility" dirpath="../patterns/chain" />
+    <jrun cls="patterns.chain.ChainOfResponsibility2" dirpath="../patterns/chain" />
     <jrun cls="patterns.doubledispatch.DoubleDispatch" dirpath="../patterns/doubledispatch" />
     <jrun cls="patterns.dynatrash.DynaTrash" dirpath="../patterns/dynatrash" />
     <jrun cls="patterns.factory.ShapeFactory1" dirpath="../patterns/factory" />
@@ -27,6 +31,7 @@
     <jrun cls="patterns.recycleb.RecycleB" dirpath="../patterns/recycleb" />
     <jrun cls="patterns.state.StateMachineDemo" dirpath="../patterns/state" />
     <jrun cls="patterns.strategy.StrategyPattern" dirpath="../patterns/strategy" />
+    <jrun cls="patterns.strategy.StrategyPattern2" dirpath="../patterns/strategy" />
     <jrun cls="patterns.trashvisitor.TrashVisitor" dirpath="../patterns/trashvisitor" />
     <jrun cls="patterns.visitor.BeeAndFlowers" dirpath="../patterns/visitor" />
     <jrun cls="patterns.visualobserver.BoxObserver" dirpath="../patterns/visualobserver" failOnError='false' timeOut='4000' />

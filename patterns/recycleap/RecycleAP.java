@@ -9,21 +9,18 @@ public class RecycleAP {
     ArrayList<Trash> bin = new ArrayList<>();
     // Fill up the Trash bin:
     ParseTrash.fillBin("Trash.dat", bin);
-    ArrayList<Trash>
-      glassBin = new ArrayList<>(),
-      paperBin = new ArrayList<>(),
-      alBin = new ArrayList<>();
-    Iterator<Trash> sorter = bin.iterator();
+    List<Glass> glassBin = new ArrayList<>();
+    List<Paper> paperBin = new ArrayList<>();
+    List<Aluminum> alBin = new ArrayList<>();
     // Sort the Trash:
-    while(sorter.hasNext()) {
-      Trash t = sorter.next();
-      // RTTI to show class membership:
+    for(Trash t : bin) {
+      // RTTI to discover Trash type:
       if(t instanceof Aluminum)
-        alBin.add(t);
+        alBin.add((Aluminum)t);
       if(t instanceof Paper)
-        paperBin.add(t);
+        paperBin.add((Paper)t);
       if(t instanceof Glass)
-        glassBin.add(t);
+        glassBin.add((Glass)t);
     }
     Trash.sumValue(alBin);
     Trash.sumValue(paperBin);

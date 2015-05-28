@@ -27,9 +27,20 @@ class Chess implements Game {
     print("Chess move " + moves);
     return ++moves != MOVES;
   }
-  public static GameFactory factory = new GameFactory() {
-    public Game getGame() { return new Chess(); }
-  };
+  // Use a lambda expression instead:
+  public static GameFactory factory = () -> new Chess();
+}
+
+class TicTacToe implements Game {
+  private TicTacToe() {}
+  private int moves = 0;
+  private static final int MOVES = 4;
+  public boolean move() {
+    print("TicTacToe move " + moves);
+    return ++moves != MOVES;
+  }
+  // Use a method reference instead:
+  public static GameFactory factory = TicTacToe::new;
 }
 
 public class Games {
@@ -41,6 +52,7 @@ public class Games {
   public static void main(String[] args) {
     playGame(Checkers.factory);
     playGame(Chess.factory);
+    playGame(TicTacToe.factory);
   }
 } /* Output:
 Checkers move 0

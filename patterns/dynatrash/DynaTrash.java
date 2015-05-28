@@ -40,6 +40,7 @@ class TypeMapAdapter implements Fillable {
 }
 
 public class DynaTrash {
+  @SuppressWarnings("unchecked")
   public static void main(String[] args) {
     TypeMap<Trash> bin = new TypeMap<>();
     ParseTrash.fillBin("Trash.dat",

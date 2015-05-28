@@ -50,7 +50,7 @@ class OCBox extends JPanel implements Observer {
     Color.orange, Color.pink, Color.red, 
     Color.white, Color.yellow 
   };
-  static final Color newColor() {
+  static Color newColor() {
     return colors[
       (int)(Math.random() * colors.length)
     ];
@@ -83,7 +83,7 @@ class OCBox extends JPanel implements Observer {
       repaint();
     }
   }
-  private final boolean nextTo(OCBox b) {
+  private boolean nextTo(OCBox b) {
     return Math.abs(x - b.x) <= 1 && 
            Math.abs(y - b.y) <= 1;
   }

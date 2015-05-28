@@ -15,14 +15,11 @@ public class IfaceExtractorProcessor
 extends AbstractProcessor {
   private ArrayList<Element>
     interfaceMethods = new ArrayList<>();
-  Types typeUtils;
   Elements elementUtils;
-
   private ProcessingEnvironment processingEnv;
   @Override public void
   init(ProcessingEnvironment processingEnv) {
     this.processingEnv = processingEnv;
-    typeUtils = processingEnv.getTypeUtils();
     elementUtils = processingEnv.getElementUtils();
   }
   @Override public boolean
@@ -43,24 +40,10 @@ extends AbstractProcessor {
           interfaceMethods.add(enclosed);
         }
       }
-      if(interfaceMethods.size() > 0) {
+      if(interfaceMethods.size() > 0)
         writeInterfaceFile(interfaceName);
-      }
     }
     return false;
-  }
-  private String createArgList(
-    List<? extends VariableElement> parameters) {
-    if(parameters.size() == 0)
-      return "()";
-    String args = "(";
-    for(VariableElement p : parameters) {
-      args += p.asType() + " ";
-      args += p.getSimpleName() + ", ";
-    }
-    args = args.substring(0, args.length() - 2);
-    args += ")";
-    return args;
   }
   private void
   writeInterfaceFile(String interfaceName) {
@@ -91,5 +74,18 @@ extends AbstractProcessor {
     } catch(Exception e) {
       throw new RuntimeException(e);
     }
+  }
+  private String createArgList(
+    List<? extends VariableElement> parameters) {
+    if(parameters.size() == 0)
+      return "()";
+    String args = "(";
+    for(VariableElement p : parameters) {
+      args += p.asType() + " ";
+      args += p.getSimpleName() + ", ";
+    }
+    args = args.substring(0, args.length() - 2);
+    args += ")";
+    return args;
   }
 } ///:~

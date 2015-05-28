@@ -53,11 +53,7 @@ public class ShapeFactory1 {
       e.printStackTrace();
       return;
     }
-    Iterator<Shape> i = shapes.iterator();
-    while(i.hasNext()) {
-      Shape s = i.next();
-      s.draw();
-      s.erase();
-    }
+    shapes.forEach(Shape::draw);
+    shapes.forEach(Shape::erase);
   }
 } ///:~

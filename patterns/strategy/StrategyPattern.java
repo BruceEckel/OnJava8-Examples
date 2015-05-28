@@ -1,31 +1,30 @@
 //: patterns/strategy/StrategyPattern.java
 package patterns.strategy;
+import java.util.function.*;
+import static net.mindview.util.PrintArray.*;
 
-// The strategy interface:
-interface FindMinima {
-  // Line is a sequence of points:
-  double[] algorithm(double[] line);
+// The common strategy base type:
+class FindMinima {
+  Function<double[], double[]> algorithm;
 }
 
 // The various strategies:
-class LeastSquares implements FindMinima {
-  @Override
-  public double[] algorithm(double[] line) {
-    return new double[] { 1.1, 2.2 }; // Dummy
+class LeastSquares extends FindMinima {
+  LeastSquares() {
+    // Line is a sequence of points (Dummy data):
+    algorithm = (line) -> new double[] { 1.1, 2.2 };
   }
 }
 
-class Perturbation implements FindMinima {
-  @Override
-  public double[] algorithm(double[] line) {
-    return new double[] { 3.3, 4.4 }; // Dummy
+class Perturbation extends FindMinima {
+  Perturbation() {
+    algorithm = (line) -> new double[] { 3.3, 4.4 };
   }
 }
 
-class Bisection implements FindMinima {
-  @Override
-  public double[] algorithm(double[] line) {
-    return new double[] { 5.5, 6.6 }; // Dummy
+class Bisection extends FindMinima {
+  Bisection() {
+    algorithm = (line) -> new double[] { 5.5, 6.6 };
   }
 }
 
@@ -36,7 +35,7 @@ class MinimaSolver {
     strategy = strat;
   }
   double[] minima(double[] line) {
-    return strategy.algorithm(line);
+    return strategy.algorithm.apply(line);
   }
   void changeAlgorithm(FindMinima newAlgorithm) {
     strategy = newAlgorithm;
@@ -44,14 +43,6 @@ class MinimaSolver {
 }
 
 public class StrategyPattern {
-  public static void printArray(double[] array) {
-    for(int i = 0; i < array.length; i++) {
-      System.out.print(array[i]);
-      if(i != array.length -1)
-        System.out.print(", ");
-    }
-    System.out.println();
-  }    
   public static void main(String args[]) {
     MinimaSolver solver = 
       new MinimaSolver(new LeastSquares());

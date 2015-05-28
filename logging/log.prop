@@ -15,9 +15,9 @@ config = ConfigureLogging
 java.util.logging.FileHandler.pattern = java%g.log
 # Write 100000 bytes before rotating this file
 java.util.logging.FileHandler.limit = 100000
-# Number of rotating files to be used
+# Number of rotating files
 java.util.logging.FileHandler.count = 3
-# Formatter to be used with this FileHandler
+# Formatter for this FileHandler
 java.util.logging.FileHandler.formatter =   java.util.logging.SimpleFormatter
 
 # Configure ConsoleHandler

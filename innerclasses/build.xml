@@ -8,10 +8,12 @@
 
   <target name="run" description="Compile and run" depends="build">
     <jrun cls="AnonymousConstructor" />
+    <jrun cls="ArgReturnReferences" />
     <jrun cls="BigEgg" />
     <jrun cls="BigEgg2" />
     <jrun cls="innerclasses.Callbacks" dirpath="../innerclasses" />
     <jrun cls="ClassInInterface$Test" />
+    <jrun cls="CtorReference" />
     <jrun cls="DotNew" />
     <jrun cls="DotThis" />
     <jrun cls="Factories" />
@@ -20,6 +22,7 @@
     <jrun cls="InheritInner" />
     <jrun cls="LambdaExpressions" />
     <jrun cls="LocalInnerClass" />
+    <jrun cls="MethodReferences" />
     <jrun cls="innerclasses.MultiImplementation" dirpath="../innerclasses" />
     <jrun cls="innerclasses.MultiInterfaces" dirpath="../innerclasses" />
     <jrun cls="MultiNestingAccess" />
@@ -34,9 +37,11 @@
     <jrun cls="Parcel7b" />
     <jrun cls="Parcel8" />
     <jrun cls="Parcel9" />
+    <jrun cls="RunnableMethodReference" />
     <jrun cls="Sequence" />
     <jrun cls="TestBed$Tester" />
     <jrun cls="TestParcel" />
+    <jrun cls="UnboundMethodReference" />
   </target>
 
 </project>
