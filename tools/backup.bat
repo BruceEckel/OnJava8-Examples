@@ -44,7 +44,7 @@ cp(dest, gdrive)
 cp(dest, idrive)
 
 shortcut = Path(r"C:\Python34\Scripts")
-tools = ["Examples.py", "Validate.py", "backup.bat", "go.bat", "StripLastBlankLine.py",
+tools = ["Examples.py", "Validate.py", "backup.bat", "go.bat", "StripLastBlankLine.py", "update_git.py",
              shortcut / "v.bat", shortcut / "e.bat"]
 
 print("\nCopying tools to Github")
