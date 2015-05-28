@@ -70,12 +70,14 @@ def update_to_git():
     common = [str(b) for b in book if not b.is_dir()]
     match, mismatch, errors = cmpfiles(str(examplePath), str(gitpath), common, False)
     with Path("update.bat").open('w') as outfile:
-        outfile.write("\n" + ruler("match"))
-        outfile.write(pformat(match))
-        outfile.write("\n" + ruler("mismatch"))
-        outfile.write(pformat(mismatch))
-        outfile.write("\n" + ruler("errors"))
-        outfile.write(pformat(errors))
+        # outfile.write("\n" + ruler("match"))
+        # outfile.write(pformat(match))
+        # outfile.write("\n" + ruler("mismatch"))
+        # outfile.write(pformat(mismatch))
+        # outfile.write("\n" + ruler("errors"))
+        # outfile.write(pformat(errors))
+        for f in mismatch:
+            outfile.write("copy {} {}\{}\n".format(f, str(gitpath), f))
     for f in mismatch:
         if not (f.endswith(".java") or
                 f.endswith(".py") or
