@@ -1,4 +1,5 @@
 //: containers/MapDataTest.java
+// ©2015 MindView LLC: see Copyright.txt
 import java.util.*;
 import net.mindview.util.*;
 import static net.mindview.util.Print.*;

@@ -1,4 +1,5 @@
 //: concurrency/SimpleDaemons.java
+// ©2015 MindView LLC: see Copyright.txt
 // Daemon threads don't prevent the program from ending.
 import java.util.concurrent.*;
 import static net.mindview.util.Print.*;

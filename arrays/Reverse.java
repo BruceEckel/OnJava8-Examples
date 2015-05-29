@@ -1,4 +1,5 @@
 //: arrays/Reverse.java
+// ©2015 MindView LLC: see Copyright.txt
 // The Collections.reverseOrder() Comparator
 import java.util.*;
 import net.mindview.util.*;

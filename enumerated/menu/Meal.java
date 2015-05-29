@@ -1,4 +1,5 @@
 //: enumerated/menu/Meal.java
+// ©2015 MindView LLC: see Copyright.txt
 package enumerated.menu;
 
 public class Meal {

@@ -1,4 +1,5 @@
 //: reusing/Chess.java
+// ©2015 MindView LLC: see Copyright.txt
 // Inheritance, constructors and arguments.
 import static net.mindview.util.Print.*;
 

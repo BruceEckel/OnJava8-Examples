@@ -1,4 +1,5 @@
 //: control/ForEachInt.java
+// ©2015 MindView LLC: see Copyright.txt
 import static net.mindview.util.Range.*;
 import static net.mindview.util.Print.*;
 

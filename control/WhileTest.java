@@ -1,4 +1,5 @@
 //: control/WhileTest.java
+// ©2015 MindView LLC: see Copyright.txt
 // Demonstrates the while loop.
 
 public class WhileTest {

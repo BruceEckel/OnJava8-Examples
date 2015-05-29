@@ -1,4 +1,5 @@
 //: reusing/Beetle.java
+// ©2015 MindView LLC: see Copyright.txt
 // The full process of initialization.
 import static net.mindview.util.Print.*;
 

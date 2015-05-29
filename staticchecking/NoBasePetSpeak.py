@@ -1,4 +1,5 @@
 #: staticchecking/NoBasePetSpeak.py
+# ©2015 MindView LLC: see Copyright.txt
 # Speaking pets without base classes:
 
 class Cat:

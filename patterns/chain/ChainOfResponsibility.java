@@ -1,4 +1,5 @@
 //: patterns/chain/ChainOfResponsibility.java
+// ©2015 MindView LLC: see Copyright.txt
 package patterns.chain;
 import java.util.*;
 import static net.mindview.util.PrintArray.*;

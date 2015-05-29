@@ -1,4 +1,5 @@
 //: generics/Templates.cpp
+// ©2015 MindView LLC: see Copyright.txt
 #include <iostream>
 using namespace std;
 

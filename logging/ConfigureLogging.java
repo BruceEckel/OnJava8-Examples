@@ -1,4 +1,5 @@
 //: logging/ConfigureLogging.java
+// ©2015 MindView LLC: see Copyright.txt
 // {JVMArgs: -Djava.util.logging.config.file=log.prop}
 import java.util.logging.*;
 

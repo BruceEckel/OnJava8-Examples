@@ -1,4 +1,5 @@
 //: polymorphism/music/Wind.java
+// ©2015 MindView LLC: see Copyright.txt
 package polymorphism.music;
 
 // Wind objects are instruments

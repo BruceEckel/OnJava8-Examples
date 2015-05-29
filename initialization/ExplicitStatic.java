@@ -1,4 +1,5 @@
 //: initialization/ExplicitStatic.java
+// ©2015 MindView LLC: see Copyright.txt
 // Explicit static initialization with the "static" clause.
 import static net.mindview.util.Print.*;
 

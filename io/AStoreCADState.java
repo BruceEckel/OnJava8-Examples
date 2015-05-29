@@ -1,4 +1,5 @@
 //: io/AStoreCADState.java
+// ©2015 MindView LLC: see Copyright.txt
 // Saving the state of a pretend CAD system.
 import java.io.*;
 import java.util.*;

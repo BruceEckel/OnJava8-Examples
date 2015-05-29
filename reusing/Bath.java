@@ -1,4 +1,5 @@
 //: reusing/Bath.java
+// ©2015 MindView LLC: see Copyright.txt
 // Constructor initialization with composition.
 import static net.mindview.util.Print.*;
 

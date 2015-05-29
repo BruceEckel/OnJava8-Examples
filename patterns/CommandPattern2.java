@@ -1,4 +1,5 @@
 //: patterns/CommandPattern2.java
+// ©2015 MindView LLC: see Copyright.txt
 // Using the Runnable functional interface
 import java.util.*;
 

@@ -1,4 +1,5 @@
 //: object/HelloDate.java
+// ©2015 MindView LLC: see Copyright.txt
 import java.util.*;
 
 /** The first Thinking in Java example program.

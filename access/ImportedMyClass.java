@@ -1,4 +1,5 @@
 //: access/ImportedMyClass.java
+// ©2015 MindView LLC: see Copyright.txt
 import access.mypackage.*;
 
 public class ImportedMyClass {

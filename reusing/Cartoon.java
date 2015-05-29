@@ -1,4 +1,5 @@
 //: reusing/Cartoon.java
+// ©2015 MindView LLC: see Copyright.txt
 // Constructor calls during inheritance.
 import static net.mindview.util.Print.*;
 

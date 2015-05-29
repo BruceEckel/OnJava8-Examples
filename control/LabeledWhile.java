@@ -1,4 +1,5 @@
 //: control/LabeledWhile.java
+// ©2015 MindView LLC: see Copyright.txt
 // While loops with "labeled break" and "labeled continue."
 import static net.mindview.util.Print.*;
 

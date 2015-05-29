@@ -1,4 +1,5 @@
 //: generics/SelfBoundingAndCovariantArguments.java
+// ©2015 MindView LLC: see Copyright.txt
 
 interface SelfBoundSetter<T extends SelfBoundSetter<T>> {
   void set(T arg);

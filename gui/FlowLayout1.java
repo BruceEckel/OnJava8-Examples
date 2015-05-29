@@ -1,4 +1,5 @@
 //: gui/FlowLayout1.java
+// ©2015 MindView LLC: see Copyright.txt
 // Demonstrates FlowLayout.
 import javax.swing.*;
 import java.awt.*;

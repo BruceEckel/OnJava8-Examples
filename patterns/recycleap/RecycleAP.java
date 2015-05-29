@@ -1,4 +1,5 @@
 //: patterns/recycleap/RecycleAP.java
+// ©2015 MindView LLC: see Copyright.txt
 // Recycling with RTTI and Prototypes.
 package patterns.recycleap;
 import patterns.trash.*;

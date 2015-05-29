@@ -1,4 +1,5 @@
 //: enumerated/RoShamBo2.java
+// ©2015 MindView LLC: see Copyright.txt
 // Switching one enum on another.
 package enumerated;
 import static enumerated.Outcome.*;

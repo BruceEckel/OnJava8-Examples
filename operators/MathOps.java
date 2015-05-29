@@ -1,4 +1,5 @@
 //: operators/MathOps.java
+// ©2015 MindView LLC: see Copyright.txt
 // Demonstrates the mathematical operators.
 import java.util.*;
 import static net.mindview.util.Print.*;

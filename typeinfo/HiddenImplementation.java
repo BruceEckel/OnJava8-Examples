@@ -1,4 +1,5 @@
 //: typeinfo/HiddenImplementation.java
+// ©2015 MindView LLC: see Copyright.txt
 // Sneaking around package access.
 import typeinfo.interfacea.*;
 import typeinfo.packageaccess.*;

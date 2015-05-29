@@ -1,4 +1,5 @@
 //: initialization/OverloadingOrder.java
+// ©2015 MindView LLC: see Copyright.txt
 // Overloading based on the order of the arguments.
 import static net.mindview.util.Print.*;
 

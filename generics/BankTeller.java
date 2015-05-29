@@ -1,4 +1,5 @@
 //: generics/BankTeller.java
+// ©2015 MindView LLC: see Copyright.txt
 // A very simple bank teller simulation.
 import java.util.*;
 import net.mindview.util.*;

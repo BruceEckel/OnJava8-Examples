@@ -1,4 +1,5 @@
 //: initialization/PrimitiveOverloading.java
+// ©2015 MindView LLC: see Copyright.txt
 // Promotion of primitives and overloading.
 import static net.mindview.util.Print.*;
 

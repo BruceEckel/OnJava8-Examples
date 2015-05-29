@@ -1,4 +1,5 @@
 //: arrays/GeneratorsTest.java
+// ©2015 MindView LLC: see Copyright.txt
 import net.mindview.util.*;
 
 public class GeneratorsTest {

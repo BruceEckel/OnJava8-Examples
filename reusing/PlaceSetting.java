@@ -1,4 +1,5 @@
 //: reusing/PlaceSetting.java
+// ©2015 MindView LLC: see Copyright.txt
 // Combining composition & inheritance.
 import static net.mindview.util.Print.*;
 

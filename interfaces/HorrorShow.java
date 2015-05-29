@@ -1,4 +1,5 @@
 //: interfaces/HorrorShow.java
+// ©2015 MindView LLC: see Copyright.txt
 // Extending an interface with inheritance.
 
 interface Monster {

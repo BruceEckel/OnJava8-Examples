@@ -1,4 +1,5 @@
 //: containers/SortedMapDemo.java
+// ©2015 MindView LLC: see Copyright.txt
 // What you can do with a TreeMap.
 import java.util.*;
 import net.mindview.util.*;

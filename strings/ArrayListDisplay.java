@@ -1,4 +1,5 @@
 //: strings/ArrayListDisplay.java
+// ©2015 MindView LLC: see Copyright.txt
 import generics.coffee.*;
 import java.util.*;
 

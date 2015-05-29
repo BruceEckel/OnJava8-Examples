@@ -1,4 +1,5 @@
 //: net/mindview/util/MapData.java
+// ©2015 MindView LLC: see Copyright.txt
 // A Map filled with data using a generator object.
 package net.mindview.util;
 import java.util.*;

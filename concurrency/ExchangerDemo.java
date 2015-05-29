@@ -1,4 +1,5 @@
 //: concurrency/ExchangerDemo.java
+// ©2015 MindView LLC: see Copyright.txt
 import java.util.concurrent.*;
 import net.mindview.util.*;
 import java.util.*;

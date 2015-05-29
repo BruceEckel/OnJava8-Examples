@@ -1,4 +1,5 @@
 //: enumerated/EnumMaps.java
+// ©2015 MindView LLC: see Copyright.txt
 // Basics of EnumMaps.
 package enumerated;
 import java.util.*;

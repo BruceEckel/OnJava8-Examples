@@ -1,4 +1,5 @@
 //: containers/CollectionDataGeneration.java
+// ©2015 MindView LLC: see Copyright.txt
 // Using the Generators defined in the Arrays chapter.
 import java.util.*;
 import net.mindview.util.*;

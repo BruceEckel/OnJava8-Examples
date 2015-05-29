@@ -1,4 +1,5 @@
 //: typeinfo/Position.java
+// ©2015 MindView LLC: see Copyright.txt
 
 class Position {
   private String title;

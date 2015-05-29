@@ -1,4 +1,5 @@
 //: net/mindview/util/Countries.java
+// ©2015 MindView LLC: see Copyright.txt
 // "Flyweight" Maps and Lists of sample data.
 package net.mindview.util;
 import java.util.*;

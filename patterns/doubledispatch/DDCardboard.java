@@ -1,4 +1,5 @@
 //: patterns/doubledispatch/DDCardboard.java
+// ©2015 MindView LLC: see Copyright.txt
 // Cardboard for double dispatching.
 package patterns.doubledispatch;
 import patterns.trash.*;

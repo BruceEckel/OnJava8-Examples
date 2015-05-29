@@ -1,4 +1,5 @@
 //: generics/Manipulation.java
+// ©2015 MindView LLC: see Copyright.txt
 // {CompileTimeError} (Will not compile)
 
 class Manipulator<T> {

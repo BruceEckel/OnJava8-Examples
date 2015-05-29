@@ -1,4 +1,5 @@
 //: access/ChocolateChip.java
+// ©2015 MindView LLC: see Copyright.txt
 // Can't use package-access member from another package.
 import access.dessert.*;
 

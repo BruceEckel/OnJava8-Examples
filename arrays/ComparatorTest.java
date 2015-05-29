@@ -1,4 +1,5 @@
 //: arrays/ComparatorTest.java
+// ©2015 MindView LLC: see Copyright.txt
 // Implementing a Comparator for a class.
 import java.util.*;
 import net.mindview.util.*;

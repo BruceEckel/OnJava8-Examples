@@ -1,4 +1,5 @@
 //: patterns/TemplateMethod.java
+// ©2015 MindView LLC: see Copyright.txt
 // Simple demonstration of Template Method.
 
 abstract class ApplicationFramework {

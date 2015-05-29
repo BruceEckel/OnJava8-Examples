@@ -1,4 +1,5 @@
 //: net/mindview/util/Sets.java
+// ©2015 MindView LLC: see Copyright.txt
 package net.mindview.util;
 import java.util.*;
 

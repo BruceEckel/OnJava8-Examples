@@ -1,4 +1,5 @@
 //: remote/ptime/PerfectTime.java
+// ©2015 MindView LLC: see Copyright.txt
 // The implementation of the PerfectTime
 // remote object.
 // {RunByHand}

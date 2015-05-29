@@ -1,4 +1,5 @@
 //: holding/MapOfList.java
+// ©2015 MindView LLC: see Copyright.txt
 package holding;
 import typeinfo.pets.*;
 import java.util.*;

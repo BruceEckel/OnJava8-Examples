@@ -1,5 +1,7 @@
 //: innerclasses/ArgReturnReferences.java
+// ©2015 MindView LLC: see Copyright.txt
 // Demonstrates method references
+package innerclasses;
 import java.util.function.*;
 import static net.mindview.util.Print.*;
 

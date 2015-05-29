@@ -1,4 +1,5 @@
 //: enumerated/SpaceShip.java
+// ©2015 MindView LLC: see Copyright.txt
 public enum SpaceShip {
   SCOUT, CARGO, TRANSPORT, CRUISER, BATTLESHIP, MOTHERSHIP;
   @Override

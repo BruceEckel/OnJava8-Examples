@@ -1,4 +1,5 @@
 //: innerclasses/RunnableMethodReference.java
+// ©2015 MindView LLC: see Copyright.txt
 // Demonstrates method references
 import static net.mindview.util.Print.*;
 

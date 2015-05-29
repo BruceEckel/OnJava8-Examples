@@ -1,4 +1,5 @@
 //: exceptions/FinallyWorks.java
+// ©2015 MindView LLC: see Copyright.txt
 // The finally clause is always executed.
 
 class ThreeException extends Exception {}

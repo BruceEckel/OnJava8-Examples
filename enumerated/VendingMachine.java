@@ -1,4 +1,5 @@
 //: enumerated/VendingMachine.java
+// ©2015 MindView LLC: see Copyright.txt
 // {CompileTimeError} Not working in Java 8
 // {Args: VendingMachineInput.txt}
 import java.util.*;

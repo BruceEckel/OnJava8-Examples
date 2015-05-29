@@ -1,4 +1,5 @@
 //: access/ChocolateChip2.java
+// ©2015 MindView LLC: see Copyright.txt
 import access.cookie2.*;
 
 public class ChocolateChip2 extends Cookie {

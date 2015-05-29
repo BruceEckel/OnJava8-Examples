@@ -1,4 +1,5 @@
 //: enumerated/menu/Food.java
+// ©2015 MindView LLC: see Copyright.txt
 // Subcategorization of enums within interfaces.
 package enumerated.menu;
 

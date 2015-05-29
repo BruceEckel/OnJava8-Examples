@@ -1,4 +1,5 @@
 //: network/SimpleClient.java
+// ©2015 MindView LLC: see Copyright.txt
 // Very simple client that just sends
 // lines to the server and reads lines
 // that the server sends.

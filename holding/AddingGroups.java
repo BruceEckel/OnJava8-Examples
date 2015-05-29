@@ -1,4 +1,5 @@
 //: holding/AddingGroups.java
+// ©2015 MindView LLC: see Copyright.txt
 // Adding groups of elements to Collection objects.
 import java.util.*;
 

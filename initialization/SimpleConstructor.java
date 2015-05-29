@@ -1,4 +1,5 @@
 //: initialization/SimpleConstructor.java
+// ©2015 MindView LLC: see Copyright.txt
 // Demonstration of a simple constructor.
 
 class Rock {

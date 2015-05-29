@@ -1,4 +1,5 @@
 //: generics/Erased.java
+// ©2015 MindView LLC: see Copyright.txt
 // {CompileTimeError} (Won't compile)
 
 public class Erased<T> {

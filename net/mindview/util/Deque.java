@@ -1,4 +1,5 @@
 //: net/mindview/util/Deque.java
+// ©2015 MindView LLC: see Copyright.txt
 // Creating a Deque from a LinkedList.
 package net.mindview.util;
 import java.util.*;

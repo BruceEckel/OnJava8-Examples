@@ -1,4 +1,5 @@
 //: io/TestEOF.java
+// ©2015 MindView LLC: see Copyright.txt
 // Testing for end of file while reading a byte at a time.
 import java.io.*;
 

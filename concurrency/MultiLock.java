@@ -1,4 +1,5 @@
 //: concurrency/MultiLock.java
+// ©2015 MindView LLC: see Copyright.txt
 // One thread can reacquire the same lock.
 import static net.mindview.util.Print.*;
 

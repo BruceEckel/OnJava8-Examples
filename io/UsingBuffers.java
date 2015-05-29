@@ -1,4 +1,5 @@
 //: io/UsingBuffers.java
+// ©2015 MindView LLC: see Copyright.txt
 import java.nio.*;
 import static net.mindview.util.Print.*;
 

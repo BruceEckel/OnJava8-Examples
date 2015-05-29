@@ -1,4 +1,5 @@
 //: enumerated/EnumClass.java
+// ©2015 MindView LLC: see Copyright.txt
 // Capabilities of the Enum class
 import static net.mindview.util.Print.*;
 

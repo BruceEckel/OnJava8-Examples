@@ -1,4 +1,5 @@
 //: io/FileLocking.java
+// ©2015 MindView LLC: see Copyright.txt
 import java.nio.channels.*;
 import java.util.concurrent.*;
 import java.io.*;

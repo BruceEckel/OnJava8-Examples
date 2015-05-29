@@ -1,4 +1,5 @@
 //: patterns/absfactory/GameEnvironment.java
+// ©2015 MindView LLC: see Copyright.txt
 // An example of the Abstract Factory pattern.
 package patterns.absfactory;
 

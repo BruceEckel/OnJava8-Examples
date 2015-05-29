@@ -1,4 +1,5 @@
 //: concurrency/ActiveObjectDemo.java
+// ©2015 MindView LLC: see Copyright.txt
 // Can only pass constants, immutables, "disconnected
 // objects," or other active objects as arguments
 // to asynch methods.

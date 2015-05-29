@@ -1,4 +1,5 @@
 //: initialization/Demotion.java
+// ©2015 MindView LLC: see Copyright.txt
 // Demotion of primitives and overloading.
 import static net.mindview.util.Print.*;
 

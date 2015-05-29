@@ -1,4 +1,5 @@
 //: arrays/MultidimensionalPrimitiveArray.java
+// ©2015 MindView LLC: see Copyright.txt
 // Creating multidimensional arrays.
 import java.util.*;
 

@@ -1,4 +1,5 @@
 //: initialization/StaticInitialization.java
+// ©2015 MindView LLC: see Copyright.txt
 // Specifying initial values in a class definition.
 import static net.mindview.util.Print.*;
 

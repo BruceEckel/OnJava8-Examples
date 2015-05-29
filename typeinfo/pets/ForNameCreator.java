@@ -1,4 +1,5 @@
 //: typeinfo/pets/ForNameCreator.java
+// ©2015 MindView LLC: see Copyright.txt
 package typeinfo.pets;
 import java.util.*;
 

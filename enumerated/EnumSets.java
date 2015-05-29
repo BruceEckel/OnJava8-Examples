@@ -1,4 +1,5 @@
 //: enumerated/EnumSets.java
+// ©2015 MindView LLC: see Copyright.txt
 // Operations on EnumSets
 package enumerated;
 import java.util.*;

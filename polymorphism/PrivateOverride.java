@@ -1,4 +1,5 @@
 //: polymorphism/PrivateOverride.java
+// ©2015 MindView LLC: see Copyright.txt
 // Trying to override a private method.
 package polymorphism;
 import static net.mindview.util.Print.*;

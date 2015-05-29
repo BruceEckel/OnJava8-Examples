@@ -1,4 +1,5 @@
 //: generics/Apply.java
+// ©2015 MindView LLC: see Copyright.txt
 // {main: ApplyTest}
 import java.lang.reflect.*;
 import java.util.*;

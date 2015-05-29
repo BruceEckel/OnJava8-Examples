@@ -1,4 +1,5 @@
 //: generics/Mixins.cpp
+// ©2015 MindView LLC: see Copyright.txt
 #include <string>
 #include <ctime>
 #include <iostream>

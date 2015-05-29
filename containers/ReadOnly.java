@@ -1,4 +1,5 @@
 //: containers/ReadOnly.java
+// ©2015 MindView LLC: see Copyright.txt
 // Using the Collections.unmodifiable methods.
 import java.util.*;
 import net.mindview.util.*;

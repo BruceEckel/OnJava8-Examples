@@ -1,4 +1,5 @@
 //: enumerated/NotClasses.java
+// ©2015 MindView LLC: see Copyright.txt
 // {Exec: javap -c LikeClasses}
 import static net.mindview.util.Print.*;
 

@@ -1,4 +1,5 @@
 //: enumerated/OzWitch.java
+// ©2015 MindView LLC: see Copyright.txt
 // The witches in the land of Oz.
 import static net.mindview.util.Print.*;
 

@@ -1,4 +1,5 @@
 //: patterns/StateDemo.java
+// ©2015 MindView LLC: see Copyright.txt
 // Simple demonstration of the State pattern.
 import static net.mindview.util.Print.*;
 

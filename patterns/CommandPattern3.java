@@ -1,4 +1,5 @@
 //: patterns/CommandPattern3.java
+// ©2015 MindView LLC: see Copyright.txt
 // Just implement the Runnable interface!
 import java.util.*;
 

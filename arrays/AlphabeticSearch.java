@@ -1,4 +1,5 @@
 //: arrays/AlphabeticSearch.java
+// ©2015 MindView LLC: see Copyright.txt
 // Searching with a Comparator.
 import java.util.*;
 import net.mindview.util.*;

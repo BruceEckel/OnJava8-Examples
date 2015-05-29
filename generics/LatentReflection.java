@@ -1,4 +1,5 @@
 //: generics/LatentReflection.java
+// ©2015 MindView LLC: see Copyright.txt
 // Using Reflection to produce latent typing.
 import java.lang.reflect.*;
 import static net.mindview.util.Print.*;

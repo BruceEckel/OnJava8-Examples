@@ -1,4 +1,5 @@
 //: gui/Buttons.java
+// ©2015 MindView LLC: see Copyright.txt
 // Various Swing buttons.
 import javax.swing.*;
 import javax.swing.border.*;

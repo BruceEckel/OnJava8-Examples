@@ -1,4 +1,5 @@
 //: operators/URShift.java
+// ©2015 MindView LLC: see Copyright.txt
 // Test of unsigned right shift.
 import static net.mindview.util.Print.*;
 

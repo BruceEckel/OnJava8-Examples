@@ -1,4 +1,5 @@
 //: enumerated/PostOffice.java
+// ©2015 MindView LLC: see Copyright.txt
 // Modeling a post office.
 import java.util.*;
 import net.mindview.util.*;

@@ -1,4 +1,5 @@
 //: initialization/OptionalTrailingArguments.java
+// ©2015 MindView LLC: see Copyright.txt
 
 public class OptionalTrailingArguments {
   static void f(int required, String... trailing) {

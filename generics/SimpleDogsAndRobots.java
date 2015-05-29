@@ -1,4 +1,5 @@
 //: generics/SimpleDogsAndRobots.java
+// ©2015 MindView LLC: see Copyright.txt
 // Removing the generic; code still works.
 
 class CommunicateSimply {

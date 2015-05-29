@@ -1,4 +1,5 @@
 //: gui/ShowAddListeners.java
+// ©2015 MindView LLC: see Copyright.txt
 // Display the "addXXXListener" methods of any Swing class.
 import javax.swing.*;
 import java.awt.*;

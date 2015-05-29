@@ -1,4 +1,5 @@
 //: assertions/Queue.java
+// ©2015 MindView LLC: see Copyright.txt
 // Demonstration of Design by Contract (DbC) combined
 // with white-box unit testing.
 // (Install libraries from www.junit.org)

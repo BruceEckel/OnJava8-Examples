@@ -1,4 +1,5 @@
 //: holding/ForEachCollections.java
+// ©2015 MindView LLC: see Copyright.txt
 // All collections work with foreach.
 import java.util.*;
 

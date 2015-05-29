@@ -1,4 +1,5 @@
 //: containers/Maps.java
+// ©2015 MindView LLC: see Copyright.txt
 // Things you can do with Maps.
 import java.util.concurrent.*;
 import java.util.*;

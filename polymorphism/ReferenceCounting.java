@@ -1,4 +1,5 @@
 //: polymorphism/ReferenceCounting.java
+// ©2015 MindView LLC: see Copyright.txt
 // Cleaning up shared member objects.
 import static net.mindview.util.Print.*;
 

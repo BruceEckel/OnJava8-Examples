@@ -1,4 +1,5 @@
 //: polymorphism/Transmogrify.java
+// ©2015 MindView LLC: see Copyright.txt
 // Dynamically changing the behavior of an object
 // via composition (the "State" design pattern).
 import static net.mindview.util.Print.*;

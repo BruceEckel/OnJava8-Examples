@@ -1,4 +1,5 @@
 //: polymorphism/shape/Square.java
+// ©2015 MindView LLC: see Copyright.txt
 package polymorphism.shape;
 import static net.mindview.util.Print.*;
 

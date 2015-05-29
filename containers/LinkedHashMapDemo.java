@@ -1,4 +1,5 @@
 //: containers/LinkedHashMapDemo.java
+// ©2015 MindView LLC: see Copyright.txt
 // What you can do with a LinkedHashMap.
 import java.util.*;
 import net.mindview.util.*;

@@ -1,4 +1,5 @@
 //: enumerated/RoShamBo6.java
+// ©2015 MindView LLC: see Copyright.txt
 // Enums using "tables" instead of multiple dispatch.
 package enumerated;
 import static enumerated.Outcome.*;

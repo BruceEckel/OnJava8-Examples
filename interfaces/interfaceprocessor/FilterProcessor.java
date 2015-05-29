@@ -1,4 +1,5 @@
 //: interfaces/interfaceprocessor/FilterProcessor.java
+// ©2015 MindView LLC: see Copyright.txt
 package interfaces.interfaceprocessor;
 import interfaces.filters.*;
 

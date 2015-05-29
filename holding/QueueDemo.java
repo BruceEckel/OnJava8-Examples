@@ -1,4 +1,5 @@
 //: holding/QueueDemo.java
+// ©2015 MindView LLC: see Copyright.txt
 // Upcasting to a Queue from a LinkedList.
 import java.util.*;
 

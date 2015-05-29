@@ -1,4 +1,5 @@
 //: exceptions/ExceptionMethods.java
+// ©2015 MindView LLC: see Copyright.txt
 // Demonstrating the Exception Methods.
 import static net.mindview.util.Print.*;
 

@@ -1,4 +1,5 @@
 //: io/RecoverCADState.java
+// ©2015 MindView LLC: see Copyright.txt
 // Restoring the state of the pretend CAD system.
 // {RunFirst: AStoreCADState}
 import java.io.*;

@@ -1,4 +1,5 @@
 //: gui/HTMLButton.java
+// ©2015 MindView LLC: see Copyright.txt
 // Putting HTML text on Swing components.
 import javax.swing.*;
 import java.awt.*;

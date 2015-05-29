@@ -1,4 +1,5 @@
 //: access/PrintTest.java
+// ©2015 MindView LLC: see Copyright.txt
 // Uses the static printing methods in Print.java.
 import static net.mindview.util.Print.*;
 

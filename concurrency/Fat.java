@@ -1,4 +1,5 @@
 //: concurrency/Fat.java
+// ©2015 MindView LLC: see Copyright.txt
 // Objects that are expensive to create.
 
 public class Fat {

@@ -1,4 +1,5 @@
 //: patterns/observer/ObservedFlower.java
+// ©2015 MindView LLC: see Copyright.txt
 // Demonstration of "observer" pattern.
 package patterns.observer;
 import java.util.*;

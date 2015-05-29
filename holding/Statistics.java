@@ -1,4 +1,5 @@
 //: holding/Statistics.java
+// ©2015 MindView LLC: see Copyright.txt
 // Simple demonstration of HashMap.
 import java.util.*;
 

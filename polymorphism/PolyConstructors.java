@@ -1,4 +1,5 @@
 //: polymorphism/PolyConstructors.java
+// ©2015 MindView LLC: see Copyright.txt
 // Constructors and polymorphism
 // don't produce what you might expect.
 import static net.mindview.util.Print.*;

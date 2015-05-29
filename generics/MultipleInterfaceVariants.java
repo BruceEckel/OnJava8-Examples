@@ -1,4 +1,5 @@
 //: generics/MultipleInterfaceVariants.java
+// ©2015 MindView LLC: see Copyright.txt
 // {CompileTimeError} (Won't compile)
 
 interface Payable<T> {}

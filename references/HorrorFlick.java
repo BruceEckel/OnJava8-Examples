@@ -1,4 +1,5 @@
 //: references/HorrorFlick.java
+// ©2015 MindView LLC: see Copyright.txt
 // You can insert Cloneability
 // at any level of inheritance.
 

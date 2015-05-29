@@ -1,4 +1,5 @@
 //: annotations/ifx/IfaceExtractorProcessor.java
+// ©2015 MindView LLC: see Copyright.txt
 // javac-based annotation processing.
 package annotations.ifx;
 import javax.annotation.processing.*;

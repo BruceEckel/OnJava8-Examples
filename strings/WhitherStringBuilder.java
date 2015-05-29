@@ -1,4 +1,5 @@
 //: strings/WhitherStringBuilder.java
+// ©2015 MindView LLC: see Copyright.txt
 
 public class WhitherStringBuilder {
   public String implicit(String[] fields) {

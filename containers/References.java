@@ -1,4 +1,5 @@
 //: containers/References.java
+// ©2015 MindView LLC: see Copyright.txt
 // Demonstrates Reference objects
 import java.lang.ref.*;
 import java.util.*;

@@ -1,4 +1,5 @@
 //: interfaces/filters/HighPass.java
+// ©2015 MindView LLC: see Copyright.txt
 package interfaces.filters;
 
 public class HighPass extends Filter {

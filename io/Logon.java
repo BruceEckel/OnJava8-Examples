@@ -1,4 +1,5 @@
 //: io/Logon.java
+// ©2015 MindView LLC: see Copyright.txt
 // Demonstrates the "transient" keyword.
 import java.util.concurrent.*;
 import java.io.*;

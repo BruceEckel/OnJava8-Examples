@@ -1,4 +1,5 @@
 //: operators/RoundingNumbers.java
+// ©2015 MindView LLC: see Copyright.txt
 // Rounding floats and doubles.
 import static net.mindview.util.Print.*;
 

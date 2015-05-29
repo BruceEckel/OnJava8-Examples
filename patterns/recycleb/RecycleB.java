@@ -1,4 +1,5 @@
 //: patterns/recycleb/RecycleB.java
+// ©2015 MindView LLC: see Copyright.txt
 // Adding more objects to the recycling problem.
 package patterns.recycleb;
 import patterns.trash.*;

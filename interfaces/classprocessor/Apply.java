@@ -1,4 +1,5 @@
 //: interfaces/classprocessor/Apply.java
+// ©2015 MindView LLC: see Copyright.txt
 package interfaces.classprocessor;
 import java.util.*;
 import static net.mindview.util.Print.*;

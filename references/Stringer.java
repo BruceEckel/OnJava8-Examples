@@ -1,4 +1,5 @@
 //: references/Stringer.java
+// ©2015 MindView LLC: see Copyright.txt
 
 public class Stringer {
   public static String upcase(String s) {

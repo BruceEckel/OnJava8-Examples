@@ -1,4 +1,5 @@
 //: containers/RandomBounds.java
+// ©2015 MindView LLC: see Copyright.txt
 // Does Math.random() produce 0.0 and 1.0?
 // {TimeOutDuringTesting}
 // {Args: lower}

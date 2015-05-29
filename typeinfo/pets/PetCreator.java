@@ -1,4 +1,5 @@
 //: typeinfo/pets/PetCreator.java
+// ©2015 MindView LLC: see Copyright.txt
 // Creates random sequences of Pets.
 package typeinfo.pets;
 import java.util.*;

@@ -1,4 +1,5 @@
 //: interfaces/Games.java
+// ©2015 MindView LLC: see Copyright.txt
 // A Game framework using Factory Methods.
 import static net.mindview.util.Print.*;
 

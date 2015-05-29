@@ -1,4 +1,5 @@
 //: concurrency/SyncObject.java
+// ©2015 MindView LLC: see Copyright.txt
 // Synchronizing on another object.
 import static net.mindview.util.Print.*;
 

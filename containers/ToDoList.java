@@ -1,4 +1,5 @@
 //: containers/ToDoList.java
+// ©2015 MindView LLC: see Copyright.txt
 // A more complex use of PriorityQueue.
 import java.util.*;
 

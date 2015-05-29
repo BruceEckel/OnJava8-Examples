@@ -1,4 +1,5 @@
 //: innerclasses/LambdaExpressions.java
+// ©2015 MindView LLC: see Copyright.txt
 import static net.mindview.util.Print.*;
 
 interface Description {

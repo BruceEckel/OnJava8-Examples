@@ -1,4 +1,5 @@
 //: io/IntBufferDemo.java
+// ©2015 MindView LLC: see Copyright.txt
 // Manipulating ints in a ByteBuffer with an IntBuffer
 import java.nio.*;
 

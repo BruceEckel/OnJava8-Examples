@@ -1,4 +1,5 @@
 //: initialization/InitialValues.java
+// ©2015 MindView LLC: see Copyright.txt
 // Shows default initial values.
 import static net.mindview.util.Print.*;
 

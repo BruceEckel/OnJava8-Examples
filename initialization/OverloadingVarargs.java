@@ -1,4 +1,5 @@
 //: initialization/OverloadingVarargs.java
+// ©2015 MindView LLC: see Copyright.txt
 
 public class OverloadingVarargs {
   static void f(Character... args) {

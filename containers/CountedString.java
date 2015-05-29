@@ -1,4 +1,5 @@
 //: containers/CountedString.java
+// ©2015 MindView LLC: see Copyright.txt
 // Creating a good hashCode().
 import java.util.*;
 import static net.mindview.util.Print.*;

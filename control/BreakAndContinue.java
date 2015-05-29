@@ -1,4 +1,5 @@
 //: control/BreakAndContinue.java
+// ©2015 MindView LLC: see Copyright.txt
 // Demonstrates break and continue keywords.
 import static net.mindview.util.Range.*;
 

@@ -1,4 +1,5 @@
 //: innerclasses/CtorReference.java
+// ©2015 MindView LLC: see Copyright.txt
 // Demonstrates java.util.function
 import java.util.function.*;
 import static net.mindview.util.Print.*;

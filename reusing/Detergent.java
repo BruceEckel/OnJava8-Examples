@@ -1,4 +1,5 @@
 //: reusing/Detergent.java
+// ©2015 MindView LLC: see Copyright.txt
 // Inheritance syntax & properties.
 import static net.mindview.util.Print.*;
 

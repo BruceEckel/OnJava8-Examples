@@ -1,4 +1,5 @@
 //: unittesting/JUnitDemo.java
+// ©2015 MindView LLC: see Copyright.txt
 // Simple use of JUnit to test ArrayList
 // (Install libraries from www.junit.org)
 import java.util.*;

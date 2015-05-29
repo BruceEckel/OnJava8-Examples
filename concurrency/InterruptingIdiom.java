@@ -1,4 +1,5 @@
 //: concurrency/InterruptingIdiom.java
+// ©2015 MindView LLC: see Copyright.txt
 // General idiom for interrupting a task.
 // {Args: 1100}
 import java.util.concurrent.*;

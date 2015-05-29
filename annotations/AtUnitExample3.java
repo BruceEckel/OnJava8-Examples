@@ -1,4 +1,5 @@
 //: annotations/AtUnitExample3.java
+// ©2015 MindView LLC: see Copyright.txt
 package annotations;
 import net.mindview.atunit.*;
 import net.mindview.util.*;

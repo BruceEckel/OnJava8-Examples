@@ -1,4 +1,5 @@
 //: net/mindview/util/TaskItem.java
+// ©2015 MindView LLC: see Copyright.txt
 // A Future and the Callable that produced it.
 package net.mindview.util;
 import java.util.concurrent.*;

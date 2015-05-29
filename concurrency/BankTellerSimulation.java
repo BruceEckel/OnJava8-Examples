@@ -1,4 +1,5 @@
 //: concurrency/BankTellerSimulation.java
+// ©2015 MindView LLC: see Copyright.txt
 // Using queues and multithreading.
 // {Args: 5}
 import java.util.concurrent.*;

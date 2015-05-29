@@ -1,4 +1,5 @@
 //: concurrency/IntGenerator.java
+// ©2015 MindView LLC: see Copyright.txt
 
 public abstract class IntGenerator {
   private volatile boolean canceled = false;

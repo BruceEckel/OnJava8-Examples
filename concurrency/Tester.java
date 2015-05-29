@@ -1,4 +1,5 @@
 //: concurrency/Tester.java
+// ©2015 MindView LLC: see Copyright.txt
 // Framework to test performance of concurrency containers.
 import java.util.concurrent.*;
 import net.mindview.util.*;

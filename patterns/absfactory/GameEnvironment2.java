@@ -1,4 +1,5 @@
 //: patterns/absfactory/GameEnvironment2.java
+// ©2015 MindView LLC: see Copyright.txt
 // Using the Supplier<> Functional Interface.
 package patterns.absfactory;
 import java.util.function.*;

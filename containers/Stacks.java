@@ -1,4 +1,5 @@
 //: containers/Stacks.java
+// ©2015 MindView LLC: see Copyright.txt
 // Demonstration of Stack Class.
 import java.util.*;
 import static net.mindview.util.Print.*;

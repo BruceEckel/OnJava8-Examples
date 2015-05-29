@@ -1,4 +1,5 @@
 //: io/SerialCtl.java
+// ©2015 MindView LLC: see Copyright.txt
 // Controlling serialization by adding your own
 // writeObject() and readObject() methods.
 import java.io.*;

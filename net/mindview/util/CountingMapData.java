@@ -1,4 +1,5 @@
 //: net/mindview/util/CountingMapData.java
+// ©2015 MindView LLC: see Copyright.txt
 // Unlimited-length Map containing sample data.
 package net.mindview.util;
 import java.util.*;

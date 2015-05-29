@@ -1,4 +1,5 @@
 //: swt/DisplayEnvironment.java
+// ©2015 MindView LLC: see Copyright.txt
 import swt.util.*;
 import org.eclipse.swt.*;
 import org.eclipse.swt.widgets.*;

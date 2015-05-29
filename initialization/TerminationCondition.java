@@ -1,4 +1,5 @@
 //: initialization/TerminationCondition.java
+// ©2015 MindView LLC: see Copyright.txt
 // Using finalize() to detect an object that
 // hasn't been properly cleaned up.
 

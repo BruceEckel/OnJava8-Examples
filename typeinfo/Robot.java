@@ -1,4 +1,5 @@
 //: typeinfo/Robot.java
+// ©2015 MindView LLC: see Copyright.txt
 import net.mindview.util.*;
 import java.util.*;
 

@@ -1,4 +1,5 @@
 //: containers/CollectionMethods.java
+// ©2015 MindView LLC: see Copyright.txt
 // Things you can do with all Collections.
 import java.util.*;
 import net.mindview.util.*;

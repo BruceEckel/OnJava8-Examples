@@ -1,4 +1,5 @@
 //: polymorphism/Shapes.java
+// ©2015 MindView LLC: see Copyright.txt
 // Polymorphism in Java.
 import polymorphism.shape.*;
 

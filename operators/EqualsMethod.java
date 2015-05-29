@@ -1,4 +1,5 @@
 //: operators/EqualsMethod.java
+// ©2015 MindView LLC: see Copyright.txt
 
 public class EqualsMethod {
   public static void main(String[] args) {

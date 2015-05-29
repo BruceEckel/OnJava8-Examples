@@ -1,4 +1,5 @@
 //: patterns/trashvisitor/VGlass.java
+// ©2015 MindView LLC: see Copyright.txt
 // Glass for the visitor pattern.
 package patterns.trashvisitor;
 import patterns.trash.*;

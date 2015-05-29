@@ -1,4 +1,5 @@
 //: net/mindview/util/RandomGenerator.java
+// ©2015 MindView LLC: see Copyright.txt
 // Generators that produce random values.
 package net.mindview.util;
 import java.util.*;

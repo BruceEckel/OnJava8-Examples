@@ -1,4 +1,5 @@
 //: innerclasses/Games.java
+// ©2015 MindView LLC: see Copyright.txt
 // Using anonymous inner classes with the Game framework.
 import static net.mindview.util.Print.*;
 

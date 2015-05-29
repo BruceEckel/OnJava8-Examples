@@ -1,4 +1,5 @@
 //: containers/Utilities.java
+// ©2015 MindView LLC: see Copyright.txt
 // Simple demonstrations of the Collections utilities.
 import java.util.*;
 import static net.mindview.util.Print.*;

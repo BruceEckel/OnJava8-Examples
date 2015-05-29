@@ -1,4 +1,5 @@
 //: generics/InstantiateGenericType.java
+// ©2015 MindView LLC: see Copyright.txt
 import static net.mindview.util.Print.*;
 
 class ClassAsFactory<T> {

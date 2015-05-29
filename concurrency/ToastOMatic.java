@@ -1,4 +1,5 @@
 //: concurrency/ToastOMatic.java
+// ©2015 MindView LLC: see Copyright.txt
 // A toaster that uses queues.
 import java.util.concurrent.*;
 import java.util.*;

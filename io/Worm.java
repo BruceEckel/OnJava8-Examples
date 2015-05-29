@@ -1,4 +1,5 @@
 //: io/Worm.java
+// ©2015 MindView LLC: see Copyright.txt
 // Demonstrates object serialization.
 import java.io.*;
 import java.util.*;

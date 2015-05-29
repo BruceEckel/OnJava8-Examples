@@ -1,4 +1,5 @@
 //: exceptions/Rethrowing.java
+// ©2015 MindView LLC: see Copyright.txt
 // Demonstrating fillInStackTrace()
 
 public class Rethrowing {

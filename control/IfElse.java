@@ -1,4 +1,5 @@
 //: control/IfElse.java
+// ©2015 MindView LLC: see Copyright.txt
 import static net.mindview.util.Print.*;
 
 public class IfElse {

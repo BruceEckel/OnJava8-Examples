@@ -1,4 +1,5 @@
 //: holding/AdapterMethodIdiom.java
+// ©2015 MindView LLC: see Copyright.txt
 // The "Adapter Method" idiom uses foreach
 // with additional kinds of Iterables.
 import java.util.*;

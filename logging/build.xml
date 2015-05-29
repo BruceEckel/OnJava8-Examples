@@ -2,7 +2,7 @@
 
 <project default="run">
   <property name="chapter" value="logging"/>
-  <property name="excludedfiles" value="EmailLogger.java"/>
+  <property name="excludedfiles" value=""/>
   <import file="../Ant-Common.xml"/>
   <import file="../Ant-Clean.xml"/>
 

@@ -1,4 +1,5 @@
 //: references/CheckCloneable.java
+// ©2015 MindView LLC: see Copyright.txt
 // Check to see if a reference can be cloned.
 
 // Can't clone this -- doesn't override clone():

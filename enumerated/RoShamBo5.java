@@ -1,4 +1,5 @@
 //: enumerated/RoShamBo5.java
+// ©2015 MindView LLC: see Copyright.txt
 // Multiple dispatching using an EnumMap of EnumMaps.
 package enumerated;
 import java.util.*;

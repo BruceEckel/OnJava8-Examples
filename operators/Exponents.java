@@ -1,4 +1,5 @@
 //: operators/Exponents.java
+// ©2015 MindView LLC: see Copyright.txt
 // "e" means "10 to the power."
 
 public class Exponents {

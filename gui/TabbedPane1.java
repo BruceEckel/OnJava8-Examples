@@ -1,4 +1,5 @@
 //: gui/TabbedPane1.java
+// ©2015 MindView LLC: see Copyright.txt
 // Demonstrates the Tabbed Pane.
 import javax.swing.*;
 import java.awt.*;

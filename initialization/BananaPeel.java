@@ -1,4 +1,5 @@
 //: initialization/BananaPeel.java
+// ©2015 MindView LLC: see Copyright.txt
 
 class Banana { void peel(int i) { /* ... */ } }
 

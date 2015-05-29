@@ -1,4 +1,5 @@
 //: containers/AssociativeArray.java
+// ©2015 MindView LLC: see Copyright.txt
 // Associates keys with values.
 import static net.mindview.util.Print.*;
 

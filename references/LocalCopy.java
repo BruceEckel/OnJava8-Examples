@@ -1,4 +1,5 @@
 //: references/LocalCopy.java
+// ©2015 MindView LLC: see Copyright.txt
 // Creating local copies with clone().
 
 class MyObject implements Cloneable {

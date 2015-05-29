@@ -1,4 +1,5 @@
 //: innerclasses/UnboundMethodReference.java
+// ©2015 MindView LLC: see Copyright.txt
 // Method reference without an object.
 import java.util.*;
 import java.util.function.*;

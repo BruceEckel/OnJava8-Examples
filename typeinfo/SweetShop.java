@@ -1,4 +1,5 @@
 //: typeinfo/SweetShop.java
+// ©2015 MindView LLC: see Copyright.txt
 // Examination of the way the class loader works.
 import static net.mindview.util.Print.*;
 

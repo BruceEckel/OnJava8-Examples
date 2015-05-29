@@ -1,4 +1,5 @@
 //: gui/Menus.java
+// ©2015 MindView LLC: see Copyright.txt
 // Submenus, check box menu items, swapping menus,
 // mnemonics (shortcuts) and action commands.
 import javax.swing.*;

@@ -1,4 +1,5 @@
 //: io/GetData.java
+// ©2015 MindView LLC: see Copyright.txt
 // Getting different representations from a ByteBuffer
 import java.nio.*;
 import static net.mindview.util.Print.*;

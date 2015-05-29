@@ -1,4 +1,5 @@
 //: object/Documentation3.java
+// ©2015 MindView LLC: see Copyright.txt
 /**
 * You can <em>even</em> insert a list:
 * <ol>

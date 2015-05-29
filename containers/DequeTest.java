@@ -1,4 +1,5 @@
 //: containers/DequeTest.java
+// ©2015 MindView LLC: see Copyright.txt
 import net.mindview.util.*;
 import static net.mindview.util.Print.*;
 

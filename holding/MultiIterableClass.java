@@ -1,4 +1,5 @@
 //: holding/MultiIterableClass.java
+// ©2015 MindView LLC: see Copyright.txt
 // Adding several Adapter Methods.
 import java.util.*;
 

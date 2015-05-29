@@ -1,4 +1,5 @@
 //: concurrency/SleepingTask.java
+// ©2015 MindView LLC: see Copyright.txt
 // Calling sleep() to pause for a while.
 import java.util.concurrent.*;
 

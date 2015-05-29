@@ -1,4 +1,5 @@
 //: polymorphism/music3/Music3.java
+// ©2015 MindView LLC: see Copyright.txt
 // An extensible program.
 package polymorphism.music3;
 import polymorphism.music.Note;

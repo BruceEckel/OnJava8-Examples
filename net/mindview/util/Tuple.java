@@ -1,4 +1,5 @@
 //: net/mindview/util/Tuple.java
+// ©2015 MindView LLC: see Copyright.txt
 // Tuple library using type argument inference.
 package net.mindview.util;
 

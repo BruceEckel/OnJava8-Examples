@@ -1,4 +1,5 @@
 //: patterns/trash/Trash.java
+// ©2015 MindView LLC: see Copyright.txt
 // Base class for Trash recycling examples.
 package patterns.trash;
 import java.util.*;

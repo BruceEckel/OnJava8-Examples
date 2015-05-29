@@ -1,4 +1,5 @@
 //: concurrency/DaemonsDontRunFinally.java
+// ©2015 MindView LLC: see Copyright.txt
 // Daemon threads don't run the finally clause
 import java.util.concurrent.*;
 import static net.mindview.util.Print.*;

@@ -1,4 +1,5 @@
 //: initialization/VarargType.java
+// ©2015 MindView LLC: see Copyright.txt
 
 public class VarargType {
   static void f(Character... args) {

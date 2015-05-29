@@ -1,4 +1,5 @@
 //: typeinfo/pets/Pets.java
+// ©2015 MindView LLC: see Copyright.txt
 // Facade to produce a default PetCreator.
 package typeinfo.pets;
 import java.util.*;

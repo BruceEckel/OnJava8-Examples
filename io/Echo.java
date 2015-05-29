@@ -1,4 +1,5 @@
 //: io/Echo.java
+// ©2015 MindView LLC: see Copyright.txt
 // How to read from standard input.
 // {TimeOutDuringTesting}
 import java.io.*;

@@ -1,4 +1,5 @@
 //: gui/SubmitSwingProgram.java
+// ©2015 MindView LLC: see Copyright.txt
 import javax.swing.*;
 import java.util.concurrent.*;
 

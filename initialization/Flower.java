@@ -1,4 +1,5 @@
 //: initialization/Flower.java
+// ©2015 MindView LLC: see Copyright.txt
 // Calling constructors with "this"
 import static net.mindview.util.Print.*;
 

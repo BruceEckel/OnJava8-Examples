@@ -1,4 +1,5 @@
 //: operators/ShortCircuit.java
+// ©2015 MindView LLC: see Copyright.txt
 // Demonstrates short-circuiting behavior
 // with logical operators.
 import static net.mindview.util.Print.*;

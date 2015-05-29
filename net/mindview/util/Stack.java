@@ -1,4 +1,5 @@
 //: net/mindview/util/Stack.java
+// ©2015 MindView LLC: see Copyright.txt
 // Making a stack from a LinkedList.
 package net.mindview.util;
 import java.util.LinkedList;

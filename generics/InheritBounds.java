@@ -1,4 +1,5 @@
 //: generics/InheritBounds.java
+// ©2015 MindView LLC: see Copyright.txt
 
 class HoldItem<T> {
   T item;

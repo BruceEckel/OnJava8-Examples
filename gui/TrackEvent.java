@@ -1,4 +1,5 @@
 //: gui/TrackEvent.java
+// ©2015 MindView LLC: see Copyright.txt
 // Show events as they happen.
 import javax.swing.*;
 import java.awt.*;

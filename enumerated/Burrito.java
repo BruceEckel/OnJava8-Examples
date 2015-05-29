@@ -1,4 +1,5 @@
 //: enumerated/Burrito.java
+// ©2015 MindView LLC: see Copyright.txt
 package enumerated;
 import static enumerated.Spiciness.*;
 

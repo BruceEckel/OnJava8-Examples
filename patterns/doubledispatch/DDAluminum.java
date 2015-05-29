@@ -1,4 +1,5 @@
 //: patterns/doubledispatch/DDAluminum.java
+// ©2015 MindView LLC: see Copyright.txt
 // Aluminum for double dispatching.
 package patterns.doubledispatch;
 import patterns.trash.*;

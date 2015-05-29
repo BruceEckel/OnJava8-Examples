@@ -1,4 +1,5 @@
 //: arrays/IceCream.java
+// ©2015 MindView LLC: see Copyright.txt
 // Returning arrays from methods.
 import java.util.*;
 

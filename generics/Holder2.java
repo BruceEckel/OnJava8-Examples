@@ -1,4 +1,5 @@
 //: generics/Holder2.java
+// ©2015 MindView LLC: see Copyright.txt
 
 public class Holder2 {
   private Object a;

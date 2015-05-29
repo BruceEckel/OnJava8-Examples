@@ -1,4 +1,5 @@
 //: net/mindview/util/PrintArray.java
+// ©2015 MindView LLC: see Copyright.txt
 // Display an array of double
 package net.mindview.util;
 

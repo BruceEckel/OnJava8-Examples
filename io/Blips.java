@@ -1,4 +1,5 @@
 //: io/Blips.java
+// ©2015 MindView LLC: see Copyright.txt
 // Simple use of Externalizable & a pitfall.
 import java.io.*;
 import static net.mindview.util.Print.*;

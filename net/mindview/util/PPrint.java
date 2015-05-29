@@ -1,4 +1,5 @@
 //: net/mindview/util/PPrint.java
+// ©2015 MindView LLC: see Copyright.txt
 // Pretty-printer for collections
 package net.mindview.util;
 import java.util.*;

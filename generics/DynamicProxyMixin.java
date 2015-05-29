@@ -1,4 +1,5 @@
 //: generics/DynamicProxyMixin.java
+// ©2015 MindView LLC: see Copyright.txt
 import java.lang.reflect.*;
 import java.util.*;
 import net.mindview.util.*;

@@ -1,4 +1,5 @@
 //: io/LargeMappedFiles.java
+// ©2015 MindView LLC: see Copyright.txt
 // Creating a very large file using mapping.
 import java.nio.*;
 import java.nio.channels.*;

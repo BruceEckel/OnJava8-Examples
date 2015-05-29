@@ -1,4 +1,5 @@
 //: swt/Menus.java
+// ©2015 MindView LLC: see Copyright.txt
 // Fun with menus.
 import swt.util.*;
 import org.eclipse.swt.*;

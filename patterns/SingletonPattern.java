@@ -1,4 +1,5 @@
 //: patterns/SingletonPattern.java
+// ©2015 MindView LLC: see Copyright.txt
 // The Singleton design pattern: you can
 // never instantiate more than one.
 // Since this isn't inherited from a Cloneable

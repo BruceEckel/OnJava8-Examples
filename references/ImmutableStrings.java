@@ -1,4 +1,5 @@
 //: references/ImmutableStrings.java
+// ©2015 MindView LLC: see Copyright.txt
 // Demonstrating StringBuffer.
 
 public class ImmutableStrings {

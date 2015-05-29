@@ -1,4 +1,5 @@
 //: patterns/factory/ShapeFactory1.java
+// ©2015 MindView LLC: see Copyright.txt
 // A simple static factory method.
 package patterns.factory;
 import java.util.*;

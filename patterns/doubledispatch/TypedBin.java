@@ -1,4 +1,5 @@
 //: patterns/doubledispatch/TypedBin.java
+// ©2015 MindView LLC: see Copyright.txt
 // An ArrayList that can grab the right type.
 package patterns.doubledispatch;
 import patterns.trash.*;

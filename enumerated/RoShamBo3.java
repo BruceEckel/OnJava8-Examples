@@ -1,4 +1,5 @@
 //: enumerated/RoShamBo3.java
+// ©2015 MindView LLC: see Copyright.txt
 // Using constant-specific methods.
 package enumerated;
 import static enumerated.Outcome.*;

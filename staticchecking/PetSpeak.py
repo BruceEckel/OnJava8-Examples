@@ -1,4 +1,5 @@
 #: staticchecking/PetSpeak.py
+# ©2015 MindView LLC: see Copyright.txt
 # Speaking pets in Python
 
 class Pet:

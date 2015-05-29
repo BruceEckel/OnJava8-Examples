@@ -1,4 +1,5 @@
 //: containers/Bits.java
+// ©2015 MindView LLC: see Copyright.txt
 // Demonstration of BitSet.
 import java.util.*;
 import static net.mindview.util.Print.*;

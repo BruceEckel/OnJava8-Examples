@@ -1,4 +1,5 @@
 //: operators/PassObject.java
+// ©2015 MindView LLC: see Copyright.txt
 // Passing objects to methods might not be
 // what you're used to.
 import static net.mindview.util.Print.*;

@@ -1,4 +1,5 @@
 //: holding/IterableClass.java
+// ©2015 MindView LLC: see Copyright.txt
 // Anything Iterable works with foreach.
 import java.util.*;
 

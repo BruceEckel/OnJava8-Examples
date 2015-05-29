@@ -1,4 +1,5 @@
 //: interfaces/Months.java
+// ©2015 MindView LLC: see Copyright.txt
 // Using interfaces to create groups of constants.
 package interfaces;
 

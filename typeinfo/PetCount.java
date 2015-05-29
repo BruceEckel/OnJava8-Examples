@@ -1,4 +1,5 @@
 //: typeinfo/PetCount.java
+// ©2015 MindView LLC: see Copyright.txt
 // Using instanceof.
 import typeinfo.pets.*;
 import java.util.*;

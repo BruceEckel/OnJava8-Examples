@@ -1,4 +1,5 @@
 //: exceptions/WhoCalled.java
+// ©2015 MindView LLC: see Copyright.txt
 // Programmatic access to stack trace information.
 
 public class WhoCalled {

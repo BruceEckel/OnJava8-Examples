@@ -1,4 +1,5 @@
 //: generics/Generators.java
+// ©2015 MindView LLC: see Copyright.txt
 // A utility to use with Generators.
 import generics.coffee.*;
 import java.util.*;

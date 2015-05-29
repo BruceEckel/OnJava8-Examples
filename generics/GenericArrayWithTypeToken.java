@@ -1,4 +1,5 @@
 //: generics/GenericArrayWithTypeToken.java
+// ©2015 MindView LLC: see Copyright.txt
 import java.lang.reflect.*;
 
 public class GenericArrayWithTypeToken<T> {

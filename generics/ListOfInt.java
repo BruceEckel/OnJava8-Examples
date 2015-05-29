@@ -1,4 +1,5 @@
 //: generics/ListOfInt.java
+// ©2015 MindView LLC: see Copyright.txt
 // Autoboxing compensates for the inability to use
 // primitives in generics.
 import java.util.*;

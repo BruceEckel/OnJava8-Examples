@@ -1,4 +1,5 @@
 //: patterns/dynatrash/DynaTrash.java
+// ©2015 MindView LLC: see Copyright.txt
 // Using a Map of Lists and RTTI
 // to automatically sort trash into
 // vectors. This solution, despite the

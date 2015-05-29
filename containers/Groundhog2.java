@@ -1,4 +1,5 @@
 //: containers/Groundhog2.java
+// ©2015 MindView LLC: see Copyright.txt
 // A class that's used as a key in a HashMap
 // must override hashCode() and equals().
 

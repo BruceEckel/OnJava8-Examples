@@ -1,4 +1,5 @@
 //: net/mindview/util/ContainerMethodDifferences.java
+// ©2015 MindView LLC: see Copyright.txt
 package net.mindview.util;
 import java.lang.reflect.*;
 import java.util.*;

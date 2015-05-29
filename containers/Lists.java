@@ -1,4 +1,5 @@
 //: containers/Lists.java
+// ©2015 MindView LLC: see Copyright.txt
 // Things you can do with Lists.
 import java.util.*;
 import net.mindview.util.*;

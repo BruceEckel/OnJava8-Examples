@@ -1,4 +1,5 @@
 //: references/PassReferences.java
+// ©2015 MindView LLC: see Copyright.txt
 // Passing references around.
 
 public class PassReferences {

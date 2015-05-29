@@ -1,4 +1,5 @@
 //: generics/BasicGeneratorDemo.java
+// ©2015 MindView LLC: see Copyright.txt
 import net.mindview.util.*;
 
 public class BasicGeneratorDemo {

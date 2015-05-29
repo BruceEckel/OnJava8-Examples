@@ -1,4 +1,5 @@
 //: network/SimpleServer.java
+// ©2015 MindView LLC: see Copyright.txt
 // Very simple server that just
 // echoes whatever the client sends.
 // {TimeOutDuringTesting}

@@ -1,4 +1,5 @@
 //: reusing/CADSystem.java
+// ©2015 MindView LLC: see Copyright.txt
 // Ensuring proper cleanup.
 package reusing;
 import static net.mindview.util.Print.*;

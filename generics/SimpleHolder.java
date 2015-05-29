@@ -1,4 +1,5 @@
 //: generics/SimpleHolder.java
+// ©2015 MindView LLC: see Copyright.txt
 
 public class SimpleHolder {
   private Object obj;

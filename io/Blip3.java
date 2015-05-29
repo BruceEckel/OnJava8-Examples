@@ -1,4 +1,5 @@
 //: io/Blip3.java
+// ©2015 MindView LLC: see Copyright.txt
 // Reconstructing an externalizable object.
 import java.io.*;
 import static net.mindview.util.Print.*;

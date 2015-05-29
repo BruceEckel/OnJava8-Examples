@@ -1,4 +1,5 @@
 //: innerclasses/Callbacks.java
+// ©2015 MindView LLC: see Copyright.txt
 // Using inner classes for callbacks
 package innerclasses;
 import static net.mindview.util.Print.*;

@@ -1,4 +1,5 @@
 //: access/LibTest.java
+// ©2015 MindView LLC: see Copyright.txt
 // Uses the library.
 import net.mindview.simple.*;
 

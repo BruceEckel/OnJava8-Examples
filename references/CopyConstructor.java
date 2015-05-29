@@ -1,4 +1,5 @@
 //: references/CopyConstructor.java
+// ©2015 MindView LLC: see Copyright.txt
 // A constructor to copy an object of the same
 // type, as an attempt to create a local copy.
 import java.lang.reflect.*;

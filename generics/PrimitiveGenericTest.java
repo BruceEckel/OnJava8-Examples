@@ -1,4 +1,5 @@
 //: generics/PrimitiveGenericTest.java
+// ©2015 MindView LLC: see Copyright.txt
 import net.mindview.util.*;
 
 // Fill an array using a generator:

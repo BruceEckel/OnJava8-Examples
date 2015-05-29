@@ -1,4 +1,5 @@
 //: io/xfiles/ThawAlien.java
+// ©2015 MindView LLC: see Copyright.txt
 // Try to recover a serialized file without the
 // class of object that's stored in that file.
 // {ThrowsException}

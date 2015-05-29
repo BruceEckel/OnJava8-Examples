@@ -1,4 +1,5 @@
 //: holding/AsListInference.java
+// ©2015 MindView LLC: see Copyright.txt
 // Arrays.asList() makes its best guess about type.
 import java.util.*;
 

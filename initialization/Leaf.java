@@ -1,4 +1,5 @@
 //: initialization/Leaf.java
+// ©2015 MindView LLC: see Copyright.txt
 // Simple use of the "this" keyword.
 
 public class Leaf {

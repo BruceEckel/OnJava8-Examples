@@ -1,4 +1,5 @@
 //: exceptions/RethrowNew.java
+// ©2015 MindView LLC: see Copyright.txt
 // Rethrow a different object from the one that was caught.
 
 class OneException extends Exception {

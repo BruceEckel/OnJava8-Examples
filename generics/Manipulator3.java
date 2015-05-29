@@ -1,4 +1,5 @@
 //: generics/Manipulator3.java
+// ©2015 MindView LLC: see Copyright.txt
 
 class Manipulator3 {
   private HasF obj;

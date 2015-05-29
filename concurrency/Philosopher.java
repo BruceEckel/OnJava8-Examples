@@ -1,4 +1,5 @@
 //: concurrency/Philosopher.java
+// ©2015 MindView LLC: see Copyright.txt
 // A dining philosopher
 import java.util.concurrent.*;
 import java.util.*;

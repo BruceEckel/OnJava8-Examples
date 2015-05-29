@@ -1,4 +1,5 @@
 //: swt/ColorBoxes.java
+// ©2015 MindView LLC: see Copyright.txt
 // SWT translation of Swing ColorBoxes.java.
 import swt.util.*;
 import org.eclipse.swt.*;

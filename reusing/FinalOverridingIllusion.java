@@ -1,4 +1,5 @@
 //: reusing/FinalOverridingIllusion.java
+// ©2015 MindView LLC: see Copyright.txt
 // It only looks like you can override
 // a private or private final method.
 import static net.mindview.util.Print.*;

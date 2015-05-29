@@ -1,4 +1,5 @@
 //: typeinfo/toys/GenericToyTest.java
+// ©2015 MindView LLC: see Copyright.txt
 // Testing class Class.
 package typeinfo.toys;
 

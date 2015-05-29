@@ -1,4 +1,5 @@
 //: concurrency/PipedIO.java
+// ©2015 MindView LLC: see Copyright.txt
 // Using pipes for inter-task I/O
 import java.util.concurrent.*;
 import java.io.*;

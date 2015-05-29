@@ -1,4 +1,5 @@
 //: innerclasses/InheritInner.java
+// ©2015 MindView LLC: see Copyright.txt
 // Inheriting an inner class.
 
 class WithInner {

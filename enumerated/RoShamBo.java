@@ -1,4 +1,5 @@
 //: enumerated/RoShamBo.java
+// ©2015 MindView LLC: see Copyright.txt
 // Common tools for RoShamBo examples.
 package enumerated;
 import net.mindview.util.*;

@@ -1,4 +1,5 @@
 //: operators/AutoInc.java
+// ©2015 MindView LLC: see Copyright.txt
 // Demonstrates the ++ and -- operators.
 import static net.mindview.util.Print.*;
 

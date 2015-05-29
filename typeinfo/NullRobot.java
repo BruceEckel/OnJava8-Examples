@@ -1,4 +1,5 @@
 //: typeinfo/NullRobot.java
+// ©2015 MindView LLC: see Copyright.txt
 // Using a dynamic proxy to create a Null Object.
 import java.lang.reflect.*;
 import java.util.*;

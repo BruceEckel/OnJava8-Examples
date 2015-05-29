@@ -1,4 +1,5 @@
 //: xml/People.java
+// ©2015 MindView LLC: see Copyright.txt
 // {Requires: nu.xom.Node; You must install
 // the XOM library from http://www.xom.nu }
 // {RunFirst: APerson}

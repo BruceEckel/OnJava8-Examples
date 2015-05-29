@@ -1,4 +1,5 @@
 //: arrays/ArrayOfGenerics.java
+// ©2015 MindView LLC: see Copyright.txt
 // It is possible to create arrays of generics.
 import java.util.*;
 

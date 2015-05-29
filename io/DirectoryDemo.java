@@ -1,4 +1,5 @@
 //: io/DirectoryDemo.java
+// ©2015 MindView LLC: see Copyright.txt
 // Sample use of Directory utilities.
 import java.io.*;
 import net.mindview.util.*;

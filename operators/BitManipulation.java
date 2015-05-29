@@ -1,4 +1,5 @@
 //: operators/BitManipulation.java
+// ©2015 MindView LLC: see Copyright.txt
 // Using the bitwise operators.
 import java.util.*;
 import static net.mindview.util.Print.*;

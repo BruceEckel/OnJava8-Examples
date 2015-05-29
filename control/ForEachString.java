@@ -1,4 +1,5 @@
 //: control/ForEachString.java
+// ©2015 MindView LLC: see Copyright.txt
 
 public class ForEachString {
   public static void main(String[] args) {

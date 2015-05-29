@@ -1,4 +1,5 @@
 //: io/OSExecuteDemo.java
+// ©2015 MindView LLC: see Copyright.txt
 // Demonstrates standard I/O redirection.
 import net.mindview.util.*;
 

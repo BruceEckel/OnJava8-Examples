@@ -1,4 +1,5 @@
 //: generics/DogsAndRobots.java
+// ©2015 MindView LLC: see Copyright.txt
 // No latent typing in Java
 import typeinfo.pets.*;
 import static net.mindview.util.Print.*;

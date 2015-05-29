@@ -1,4 +1,5 @@
 //: typeinfo/FamilyVsExactType.java
+// ©2015 MindView LLC: see Copyright.txt
 // The difference between instanceof and class
 package typeinfo;
 import static net.mindview.util.Print.*;

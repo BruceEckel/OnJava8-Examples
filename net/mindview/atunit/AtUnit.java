@@ -1,4 +1,5 @@
 //: net/mindview/atunit/AtUnit.java
+// ©2015 MindView LLC: see Copyright.txt
 // An annotation-based unit-test framework.
 package net.mindview.atunit;
 import java.lang.reflect.*;

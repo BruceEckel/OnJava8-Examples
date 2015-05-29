@@ -1,4 +1,5 @@
 //: generics/FactoryConstraint.java
+// ©2015 MindView LLC: see Copyright.txt
 
 interface FactoryI<T> {
   T create();

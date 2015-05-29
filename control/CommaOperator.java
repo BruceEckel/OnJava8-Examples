@@ -1,4 +1,5 @@
 //: control/CommaOperator.java
+// ©2015 MindView LLC: see Copyright.txt
 
 public class CommaOperator {
   public static void main(String[] args) {

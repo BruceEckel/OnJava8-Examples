@@ -1,4 +1,5 @@
 //: generics/CovariantReturnTypes.java
+// ©2015 MindView LLC: see Copyright.txt
 
 class Base {}
 class Derived extends Base {}

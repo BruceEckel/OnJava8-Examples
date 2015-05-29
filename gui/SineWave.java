@@ -1,4 +1,5 @@
 //: gui/SineWave.java
+// ©2015 MindView LLC: see Copyright.txt
 // Drawing with Swing, using a JSlider.
 import javax.swing.*;
 import javax.swing.event.*;

@@ -1,4 +1,5 @@
 //: gui/ColorBoxes.java
+// ©2015 MindView LLC: see Copyright.txt
 // A visual demonstration of threading.
 import javax.swing.*;
 import java.awt.*;

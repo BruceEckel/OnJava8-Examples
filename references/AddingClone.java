@@ -1,4 +1,5 @@
 //: references/AddingClone.java
+// ©2015 MindView LLC: see Copyright.txt
 // You must go through a few gyrations
 // to add cloning to your own class.
 import java.util.*;

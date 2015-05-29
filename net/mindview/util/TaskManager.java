@@ -1,4 +1,5 @@
 //: net/mindview/util/TaskManager.java
+// ©2015 MindView LLC: see Copyright.txt
 // Managing and executing a queue of tasks.
 package net.mindview.util;
 import java.util.concurrent.*;

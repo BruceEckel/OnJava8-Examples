@@ -1,4 +1,5 @@
 //: net/mindview/util/DaemonThreadFactory.java
+// ©2015 MindView LLC: see Copyright.txt
 package net.mindview.util;
 import java.util.concurrent.*;
 

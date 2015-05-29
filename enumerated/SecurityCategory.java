@@ -1,4 +1,5 @@
 //: enumerated/SecurityCategory.java
+// ©2015 MindView LLC: see Copyright.txt
 // More succinct subcategorization of enums.
 import net.mindview.util.*;
 

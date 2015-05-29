@@ -1,4 +1,5 @@
 //: network/WhoAmI.java
+// ©2015 MindView LLC: see Copyright.txt
 // Finds out your network address when you're 
 // connected to the Internet.
 // {Args:MindviewToshibaLaptop}

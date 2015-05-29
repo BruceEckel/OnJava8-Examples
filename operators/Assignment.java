@@ -1,4 +1,5 @@
 //: operators/Assignment.java
+// ©2015 MindView LLC: see Copyright.txt
 // Assignment with objects is a bit tricky.
 import static net.mindview.util.Print.*;
 

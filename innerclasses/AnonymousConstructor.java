@@ -1,4 +1,5 @@
 //: innerclasses/AnonymousConstructor.java
+// ©2015 MindView LLC: see Copyright.txt
 // Creating a constructor for an anonymous inner class.
 import static net.mindview.util.Print.*;
 

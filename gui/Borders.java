@@ -1,4 +1,5 @@
 //: gui/Borders.java
+// ©2015 MindView LLC: see Copyright.txt
 // Different Swing borders.
 import javax.swing.*;
 import javax.swing.border.*;

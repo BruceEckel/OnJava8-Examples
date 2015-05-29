@@ -1,4 +1,5 @@
 //: innerclasses/Sequence.java
+// ©2015 MindView LLC: see Copyright.txt
 // Holds a sequence of Objects.
 
 interface Selector {

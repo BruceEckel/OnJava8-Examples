@@ -1,4 +1,5 @@
 //: access/OrganizedByAccess.java
+// ©2015 MindView LLC: see Copyright.txt
 
 public class OrganizedByAccess {
   public void pub1() { /* ... */ }

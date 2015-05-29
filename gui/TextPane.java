@@ -1,4 +1,5 @@
 //: gui/TextPane.java
+// ©2015 MindView LLC: see Copyright.txt
 // The JTextPane control is a little editor.
 import javax.swing.*;
 import java.awt.*;

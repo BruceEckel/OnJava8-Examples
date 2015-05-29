@@ -1,4 +1,5 @@
 //: innerclasses/BigEgg2.java
+// ©2015 MindView LLC: see Copyright.txt
 // Proper inheritance of an inner class.
 import static net.mindview.util.Print.*;
 

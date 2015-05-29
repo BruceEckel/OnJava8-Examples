@@ -1,4 +1,5 @@
 //: generics/Holder3.java
+// ©2015 MindView LLC: see Copyright.txt
 
 public class Holder3<T> {
   private T a;

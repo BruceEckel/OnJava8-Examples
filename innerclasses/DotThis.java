@@ -1,4 +1,5 @@
 //: innerclasses/DotThis.java
+// ©2015 MindView LLC: see Copyright.txt
 // Qualifying access to the outer-class object.
 
 public class DotThis {

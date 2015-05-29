@@ -1,4 +1,5 @@
 //: exceptions/AlwaysFinally.java
+// ©2015 MindView LLC: see Copyright.txt
 // Finally is always executed.
 import static net.mindview.util.Print.*;
 

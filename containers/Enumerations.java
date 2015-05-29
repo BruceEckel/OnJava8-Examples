@@ -1,4 +1,5 @@
 //: containers/Enumerations.java
+// ©2015 MindView LLC: see Copyright.txt
 // Java 1.0/1.1 Vector and Enumeration.
 import java.util.*;
 import net.mindview.util.*;

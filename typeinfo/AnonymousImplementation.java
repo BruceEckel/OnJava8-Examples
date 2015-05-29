@@ -1,4 +1,5 @@
 //: typeinfo/AnonymousImplementation.java
+// ©2015 MindView LLC: see Copyright.txt
 // Anonymous inner classes can't hide from reflection.
 import typeinfo.interfacea.*;
 import static net.mindview.util.Print.*;

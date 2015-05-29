@@ -1,4 +1,5 @@
 //: arrays/TestArrayGeneration.java
+// ©2015 MindView LLC: see Copyright.txt
 // Test the tools that use generators to fill arrays.
 import java.util.*;
 import net.mindview.util.*;

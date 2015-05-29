@@ -1,4 +1,5 @@
 //: containers/SlowMap.java
+// ©2015 MindView LLC: see Copyright.txt
 // A Map implemented with ArrayLists.
 import java.util.*;
 import net.mindview.util.*;

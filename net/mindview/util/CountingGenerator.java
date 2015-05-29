@@ -1,4 +1,5 @@
 //: net/mindview/util/CountingGenerator.java
+// ©2015 MindView LLC: see Copyright.txt
 // Simple generator implementations.
 package net.mindview.util;
 

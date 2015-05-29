@@ -1,4 +1,5 @@
 //: innerclasses/BigEgg.java
+// ©2015 MindView LLC: see Copyright.txt
 // An inner class cannot be overriden like a method.
 import static net.mindview.util.Print.*;
 

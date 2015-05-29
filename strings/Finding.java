@@ -1,4 +1,5 @@
 //: strings/Finding.java
+// ©2015 MindView LLC: see Copyright.txt
 import java.util.regex.*;
 import static net.mindview.util.Print.*;
 

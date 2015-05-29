@@ -1,4 +1,5 @@
 //: generics/Fibonacci.java
+// ©2015 MindView LLC: see Copyright.txt
 // Generate a Fibonacci sequence.
 import net.mindview.util.*;
 

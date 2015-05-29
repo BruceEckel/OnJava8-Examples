@@ -1,4 +1,5 @@
 #: arrays/PythonLists.py
+# ©2015 MindView LLC: see Copyright.txt
 
 aList = [1, 2, 3, 4, 5]
 print(type(aList)) # <type 'list'>

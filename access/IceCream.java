@@ -1,4 +1,5 @@
 //: access/IceCream.java
+// ©2015 MindView LLC: see Copyright.txt
 // Demonstrates "private" keyword.
 
 class Sundae {

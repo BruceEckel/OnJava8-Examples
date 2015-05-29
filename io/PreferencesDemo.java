@@ -1,4 +1,5 @@
 //: io/PreferencesDemo.java
+// ©2015 MindView LLC: see Copyright.txt
 import java.util.prefs.*;
 import static net.mindview.util.Print.*;
 

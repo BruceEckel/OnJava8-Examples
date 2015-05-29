@@ -1,4 +1,5 @@
 //: concurrency/Joining.java
+// ©2015 MindView LLC: see Copyright.txt
 // Understanding join().
 import static net.mindview.util.Print.*;
 

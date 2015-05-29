@@ -1,4 +1,5 @@
 //: enumerated/menu/Meal2.java
+// ©2015 MindView LLC: see Copyright.txt
 package enumerated.menu;
 import net.mindview.util.*;
 

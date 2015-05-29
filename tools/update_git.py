@@ -81,9 +81,62 @@ def update_to_git():
                 f.endswith("build.xml")):
             print(f)
 
+
+def comment_header(lines):
+    if lines[0][0] == "#":
+        cmt = "#"
+    else:
+        cmt = "//"
+    result = []
+    for line in lines:
+        if line.startswith(cmt):
+            result.append(line)
+        else:
+            return result
+
+
+@CmdLine('t')
+def tops_file():
+    "Create file tops.txt with tops of all book code files"
+    os.chdir(str(examplePath))
+    candidates = list(Path(".").rglob("*.java")) + list(Path(".").rglob("*.py")) + list(Path(".").rglob("*.cpp"))
+    with (examplePath/"tops.txt").open('w') as tops:
+        for c in candidates:
+            lines = c.open().readlines()
+            if lines[0].startswith("//:") or lines[0].startswith("#:"):
+                tops.write(ruler(c))
+                for line in lines[:8]:
+                    tops.write(line)
+                # tops.write(ruler())
+                # for line in comment_header(lines):
+                #     tops.write(line)
+                tops.write(ruler())
+                for line in insert_copyright(lines)[:9]:
+                    tops.write(line)
+                tops.write("\n")
+
+def insert_copyright(lines):
+    if "Copyright.txt" in lines[1]:
+        return lines
+    if lines[0][0] == "#":
+        cmt = "#"
+    else:
+        cmt = "//"
+    return [lines[0], cmt + " ©2015 MindView LLC: see Copyright.txt\n"] + lines[1:]
+
 @CmdLine('c')
-def copyright():
-    "Add copyright notices to all java, py and cpp files in github repo"
+def add_copyright():
+    "Add copyright line to all book code files"
+    os.chdir(str(examplePath))
+    candidates = list(Path(".").rglob("*.java")) + list(Path(".").rglob("*.py")) + list(Path(".").rglob("*.cpp"))
+    for c in candidates:
+        with c.open() as code:
+            lines = code.readlines()
+        if lines[0].startswith("//:") or lines[0].startswith("#:"):
+            if "Copyright.txt" not in lines[1]:
+                copyrighted = insert_copyright(lines)
+                with c.open('w') as crighted:
+                    crighted.writelines(copyrighted)
 
 if __name__ == '__main__':
     CmdLine.run()

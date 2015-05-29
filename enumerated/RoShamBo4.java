@@ -1,4 +1,5 @@
 //: enumerated/RoShamBo4.java
+// ©2015 MindView LLC: see Copyright.txt
 package enumerated;
 
 public enum RoShamBo4 implements Competitor<RoShamBo4> {

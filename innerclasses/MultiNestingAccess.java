@@ -1,4 +1,5 @@
 //: innerclasses/MultiNestingAccess.java
+// ©2015 MindView LLC: see Copyright.txt
 // Nested classes can access all members of all
 // levels of the classes they are nested within.
 

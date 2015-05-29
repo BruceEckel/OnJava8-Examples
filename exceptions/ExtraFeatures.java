@@ -1,4 +1,5 @@
 //: exceptions/ExtraFeatures.java
+// ©2015 MindView LLC: see Copyright.txt
 // Further embellishment of exception classes.
 import static net.mindview.util.Print.*;
 

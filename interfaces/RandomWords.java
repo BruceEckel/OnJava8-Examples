@@ -1,4 +1,5 @@
 //: interfaces/RandomWords.java
+// ©2015 MindView LLC: see Copyright.txt
 // Implementing an interface to conform to a method.
 import java.nio.*;
 import java.util.*;

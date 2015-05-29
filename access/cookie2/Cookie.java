@@ -1,4 +1,5 @@
 //: access/cookie2/Cookie.java
+// ©2015 MindView LLC: see Copyright.txt
 package access.cookie2;
 
 public class Cookie {

@@ -1,4 +1,5 @@
 //: initialization/OrderOfInitialization.java
+// ©2015 MindView LLC: see Copyright.txt
 // Demonstrates initialization order.
 import static net.mindview.util.Print.*;
 

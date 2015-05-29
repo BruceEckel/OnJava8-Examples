@@ -1,4 +1,5 @@
 //: concurrency/SemaphoreDemo.java
+// ©2015 MindView LLC: see Copyright.txt
 // Testing the Pool class
 import java.util.concurrent.*;
 import java.util.*;

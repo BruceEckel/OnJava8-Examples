@@ -1,4 +1,5 @@
 //: gui/TextArea.java
+// ©2015 MindView LLC: see Copyright.txt
 // Using the JTextArea control.
 import javax.swing.*;
 import java.awt.*;

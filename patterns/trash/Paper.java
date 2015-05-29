@@ -1,4 +1,5 @@
 //: patterns/trash/Paper.java 
+// ©2015 MindView LLC: see Copyright.txt
 // The Paper class with prototyping.
 package patterns.trash;
 

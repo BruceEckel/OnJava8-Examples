@@ -1,4 +1,5 @@
 //: initialization/ArrayNew.java
+// ©2015 MindView LLC: see Copyright.txt
 // Creating arrays with new.
 import java.util.*;
 import static net.mindview.util.Print.*;

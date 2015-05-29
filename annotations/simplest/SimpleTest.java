@@ -1,4 +1,5 @@
 //: annotations/simplest/SimpleTest.java
+// ©2015 MindView LLC: see Copyright.txt
 // Test the "Simple" annotation
 package annotations.simplest;
 

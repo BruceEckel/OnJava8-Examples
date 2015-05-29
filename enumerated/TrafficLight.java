@@ -1,4 +1,5 @@
 //: enumerated/TrafficLight.java
+// ©2015 MindView LLC: see Copyright.txt
 // Enums in switch statements.
 import static net.mindview.util.Print.*;
 

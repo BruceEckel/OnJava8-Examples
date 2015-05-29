@@ -1,4 +1,5 @@
 //: reusing/Jurassic.java
+// ©2015 MindView LLC: see Copyright.txt
 // Making an entire class final.
 
 class SmallBrain {}

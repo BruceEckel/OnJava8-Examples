@@ -1,4 +1,5 @@
 //: access/Cake.java
+// ©2015 MindView LLC: see Copyright.txt
 // Accesses a class in a separate compilation unit.
 
 class Cake {

@@ -1,4 +1,5 @@
 //: concurrency/EvenGenerator.java
+// ©2015 MindView LLC: see Copyright.txt
 // When threads collide.
 
 public class EvenGenerator extends IntGenerator {

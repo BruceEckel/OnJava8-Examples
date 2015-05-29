@@ -1,4 +1,5 @@
 //: io/ZipCompress.java
+// ©2015 MindView LLC: see Copyright.txt
 // Uses Zip compression to compress any
 // number of files given on the command line.
 // {Args: ZipCompress.java}

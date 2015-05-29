@@ -1,4 +1,5 @@
 //: innerclasses/Parcel3.java
+// ©2015 MindView LLC: see Copyright.txt
 // Using .new to create instances of inner classes.
 
 public class Parcel3 {

@@ -1,4 +1,5 @@
 //: enumerated/Reflection.java
+// ©2015 MindView LLC: see Copyright.txt
 // Analyzing enums using reflection.
 import java.lang.reflect.*;
 import java.util.*;

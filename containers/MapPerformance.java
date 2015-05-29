@@ -1,4 +1,5 @@
 //: containers/MapPerformance.java
+// ©2015 MindView LLC: see Copyright.txt
 // Demonstrates performance differences in Maps.
 // {Args: 100 5000} Small to keep build testing short
 import java.util.*;

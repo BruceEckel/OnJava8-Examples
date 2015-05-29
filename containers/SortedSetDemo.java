@@ -1,4 +1,5 @@
 //: containers/SortedSetDemo.java
+// ©2015 MindView LLC: see Copyright.txt
 // What you can do with a TreeSet.
 import java.util.*;
 import static net.mindview.util.Print.*;

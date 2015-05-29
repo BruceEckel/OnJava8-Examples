@@ -1,4 +1,5 @@
 //: containers/IndividualTest.java
+// ©2015 MindView LLC: see Copyright.txt
 import holding.MapOfList;
 import typeinfo.pets.*;
 import java.util.*;

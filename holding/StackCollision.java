@@ -1,4 +1,5 @@
 //: holding/StackCollision.java
+// ©2015 MindView LLC: see Copyright.txt
 
 public class StackCollision {
   public static void main(String[] args) {

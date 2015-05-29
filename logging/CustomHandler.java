@@ -1,4 +1,5 @@
 //: logging/CustomHandler.java
+// ©2015 MindView LLC: see Copyright.txt
 // How to write custom handler
 import java.util.logging.*;
 import java.util.*;

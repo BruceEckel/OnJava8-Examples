@@ -1,4 +1,5 @@
 //: initialization/Mugs.java
+// ©2015 MindView LLC: see Copyright.txt
 // Java "Instance Initialization."
 import static net.mindview.util.Print.*;
 

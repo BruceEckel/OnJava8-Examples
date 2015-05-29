@@ -1,4 +1,5 @@
 //: initialization/SimpleConstructor2.java
+// ©2015 MindView LLC: see Copyright.txt
 // Constructors can have arguments.
 
 class Rock2 {

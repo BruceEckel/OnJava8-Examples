@@ -1,4 +1,5 @@
 //: interfaces/music5/Music5.java
+// ©2015 MindView LLC: see Copyright.txt
 // Interfaces.
 package interfaces.music5;
 import polymorphism.music.Note;
