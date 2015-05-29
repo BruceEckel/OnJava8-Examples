@@ -44,7 +44,7 @@ def retain(lst):
     return result
 
 
-@CmdLine('c')
+@CmdLine('x')
 def clean():
     "Write batch file to remove unused files from git directory"
     os.chdir(str(gitpath))
@@ -54,14 +54,6 @@ def clean():
             clean.write("del " + str(tc) + "\n")
     if Path("clean.bat").stat().st_size == 0:
         Path("clean.bat").unlink()
-
-
-# def print_diff_files(dcmp, outfile):
-#     for name in dcmp.diff_files:
-#         outfile.write("diff_file %s found in %s and %s\n" % (name, dcmp.left,
-#               dcmp.right))
-#     for sub_dcmp in dcmp.subdirs.values():
-#         print_diff_files(sub_dcmp, outfile)
 
 @CmdLine('u')
 def update_to_git():
@@ -76,8 +68,12 @@ def update_to_git():
         # outfile.write(pformat(mismatch))
         # outfile.write("\n" + ruler("errors"))
         # outfile.write(pformat(errors))
+        head("files to update")
         for f in mismatch:
             outfile.write("copy {} {}\{}\n".format(f, str(gitpath), f))
+            print(f)
+
+    head("odd files")
     for f in mismatch:
         if not (f.endswith(".java") or
                 f.endswith(".py") or
@@ -85,6 +81,9 @@ def update_to_git():
                 f.endswith("build.xml")):
             print(f)
 
+@CmdLine('c')
+def copyright():
+    "Add copyright notices to all java, py and cpp files in github repo"
 
 if __name__ == '__main__':
     CmdLine.run()
