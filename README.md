@@ -1,4 +1,4 @@
-# Thinking in Java Director's Cut Code Examples
+# *Thinking in Java Director's Cut* Examples
 
 ## Get the Examples ##
 
