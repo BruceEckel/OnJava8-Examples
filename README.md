@@ -9,8 +9,6 @@
 
 1. Install Apache Ant. Follow the instructions [here](https://ant.apache.org/manual/install.html#getting).
 
-1. Add the path to the directory where you unpacked the examples to your CLASSPATH.
-
 1. Start a command prompt in the directory where you installed the examples. If your installation is successful, you should be able to type **ant build** and build everything. **ant run** will build AND run the examples. You will initially get some error messages instructing you to install specified packages (jar files), but eventually you should get through the whole build process successfully.
 
 
