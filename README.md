@@ -1,8 +1,7 @@
-# Thinking in Java 4e (Refreshed) Code Examples
-----------
-(for Java 8)
+# Thinking in Java Director's Cut
+## Code Examples
 
-### *Initial draft; not working yet*
+----------
 
 ## Get the Examples ##
 
