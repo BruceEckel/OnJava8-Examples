@@ -1,7 +1,4 @@
-# Thinking in Java Director's Cut
-## Code Examples
-
-----------
+# Thinking in Java Director's Cut Code Examples
 
 ## Get the Examples ##
 
@@ -20,4 +17,4 @@
 Report bugs in the examples or in the book [here](https://github.com/BruceEckel/TIJ4-Refreshed-Examples/issues).
 
 ----------
-**Copyright &copy;2015 Bruce Eckel, MindView LLC. All Rights Reserved. You may use the examples for teaching, as long as they are not republished without permission.**
+**Copyright &copy;2015 Bruce Eckel, MindView LLC. All Rights Reserved. See *Copyright.txt* for usage details.**
