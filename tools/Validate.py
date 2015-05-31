@@ -14,6 +14,8 @@ import difflib
 from collections import defaultdict
 from betools import CmdLine, visitDir, ruler, head
 
+examplePath = Path(r"C:\Users\Bruce\Dropbox\__TIJ4-ebook\ExtractedExamples")
+
 maindef = re.compile("public\s+static\s+void\s+main")
 
 ###############################################################################
@@ -35,7 +37,7 @@ class Flags:
         self.flaglines = [line for line in self.flaglines if not [d for d in Flags.discard if d in line]]
         self.flags = dict()
         for flag in self.flaglines:
-            flag = flag[flag.index("{") + 1 : flag.index("}")].strip()
+            flag = flag[flag.index("{") + 1 : flag.rfind("}")].strip()
             if ":" in flag:
                 fl, arg = flag.split(":")
                 fl = fl.strip()
@@ -60,7 +62,7 @@ class Flags:
         return str(self.flags.values())
 
     def jvm_args(self):
-        return self.flags["JVMArgs"] if "JVMArgs" in self.flags else ""
+        return self.flags["JVMArgs"] + " " if "JVMArgs" in self.flags else ""
 
     def cmd_args(self):
         return " " + self.flags["Args"] if "Args" in self.flags else ""
@@ -82,6 +84,9 @@ class RunnableFile:
                 self._package = line.split("package ")[1].strip()[:-1]
                 if self._package.replace('.', '/') not in self.lines[0]:
                     self._package = ""
+        self.main = self.name
+        if "main" in self.flags:
+            self.main = self.flags.flags["main"]
 
     def __contains__(self, elt):
         return elt in self.flags
@@ -97,7 +102,7 @@ class RunnableFile:
         return self.path.parent
 
     def javaArguments(self):
-        return self.flags.jvm_args() + self.package() + self.name + self.flags.cmd_args()
+        return self.flags.jvm_args() + self.package() + self.main + self.flags.cmd_args()
 
     def runCommand(self):
         return "java " + self.javaArguments()
@@ -106,7 +111,7 @@ class RunnableFile:
 
 class RunFiles:
     # RunFirst is temporary?
-    not_runnable = ["RunByHand", "TimeOutDuringTesting", "CompileTimeError", 'TimeOut', 'RunFirst']
+    not_runnable = ["ValidateByHand", "TimeOutDuringTesting", "CompileTimeError", 'TimeOut', 'RunFirst']
     skip_dirs = ["gui", "swt"]
 
     base = Path(".")
@@ -152,22 +157,28 @@ def createPowershellScript():
     """
     Create Powershell Script to run all programs and capture the output
     """
-    assert Path.cwd().stem is "ExtractedExamples"
+    os.chdir(str(examplePath))
     runFiles = RunFiles()
     startDir = os.getcwd()
     with open("runall.ps1", 'w') as ps:
         ps.write('''Start-Process -FilePath "ant" -ArgumentList "build" -NoNewWindow -Wait \n\n''')
         for rf in runFiles:
             with visitDir(rf.rundir()):
+                argquote = '"'
+                if '"' in rf.javaArguments() or '$' in rf.javaArguments():
+                    argquote = "'"
                 pstext = """\
                 Start-Process
                 -FilePath "java.exe"
-                -ArgumentList "{}"
+                -ArgumentList {}{}{}
                 -NoNewWindow
                 -RedirectStandardOutput {}-output.txt
                 -RedirectStandardError {}-erroroutput.txt
-                """.format(rf.javaArguments(), rf.name, rf.name)
+                """.format(argquote, rf.javaArguments(), argquote, rf.name, rf.name)
                 pstext = textwrap.dedent(pstext).replace('\n', ' ')
+                if "ThrowsException" in rf:
+                    pstext += " -Wait\n"
+                    pstext += "Add-Content {}-erroroutput.txt '---[ Exception is Expected ]---'".format(rf.name)
                 ps.write("cd {}\n".format(os.getcwd()))
                 ps.write(pstext + "\n")
                 ps.write('Write-Host [{}] {}\n'.format(rf.relative, rf.name))
@@ -343,16 +354,34 @@ def fillInUnexcludedOutput():
 @CmdLine("e")
 def findExceptionsFromRun():
     """
-    Find all the exceptions produced by runall.ps1
+    Put the exceptions produced by runall.ps1 into errors.txt
     """
     errors = [r for r in [Result.create(jfp) for jfp in RunFiles.base.rglob("*.java")]
               if r and r.errFilePath.stat().st_size]
     assert len(errors), "Must run runall.ps1 first"
-    for e in errors:
-        with e.errFilePath.open() as errfile:
-            head(e.errFilePath, "#")
-            print(errfile.read())
-            head()
+    with (examplePath / "errors.txt").open('w') as errors_txt:
+        for e in errors:
+            with e.errFilePath.open() as errfile:
+                errors_txt.write("\n" + ruler(e.errFilePath, width=80))
+                errors_txt.write(errfile.read())
+                errors_txt.write("<-:->")
+    showProblemErrors()
+
+@CmdLine("b")
+def showProblemErrors():
+    """
+    Show unexpected errors inside errors.txt
+    """
+    with (examplePath / "errors.txt").open() as errors_txt:
+        for err in errors_txt.read().split("<-:->"):
+            if "_[ logging\\" in err:
+                continue
+            if "LoggingException" in err:
+                continue
+            if "---[ Exception is Expected ]---" in err:
+                continue
+            print(err)
+
 
 
 @CmdLine("a")

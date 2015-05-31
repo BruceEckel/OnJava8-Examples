@@ -159,7 +159,7 @@ class CodeFileOptions(object):
                     self.cmdargs = line.split("{Args:")[1].strip()
                     self.cmdargs = self.cmdargs.rsplit("}", 1)[0]
 
-        self.runbyhand = "{RunByHand}" in self.codeFile.code
+        self.validatebyhand = "{ValidateByHand}" in self.codeFile.code
 
         self.exclude = None
         if "{CompileTimeError}" in self.codeFile.code:
@@ -208,7 +208,10 @@ class CodeFileOptions(object):
 
     def arguments(self):
         if self.cmdargs:
-            return """arguments="%s" """ % self.cmdargs
+            if '"' in self.cmdargs:
+                return """arguments='%s' """ % self.cmdargs
+            else:
+                return """arguments="%s" """ % self.cmdargs
         return ""
 
     def failOnError(self):
@@ -306,7 +309,7 @@ class Chapter:
     def makeBuildFile(self):
         buildFile = startBuild % (self.dir.name, " ".join(self.excludes))
         for cf in self.code_files:
-            if any([cf.name + ".java" in f for f in self.excludes]) or cf.options.runbyhand:
+            if any([cf.name + ".java" in f for f in self.excludes]) or cf.options.validatebyhand:
                 continue
             buildFile += cf.run_command()
         buildFile += endBuild
@@ -349,6 +352,7 @@ def extractAndCreateBuildFiles():
     with open("run.bat", 'w') as run:
         run.write(r"python ..\Validate.py -p" + "\n")
         run.write(r"powershell .\runall.ps1" + "\n")
+        run.write(r"python ..\Validate.py -e" + "\n")
 
 @CmdLine('g')
 def generateAntClean():

@@ -1,6 +1,7 @@
 #! Py -3
 from pathlib import Path
 from filecmp import cmpfiles
+from filecmp import dircmp
 import sys, os
 from sortedcontainers import SortedSet
 from betools import *
@@ -43,17 +44,41 @@ def retain(lst):
         result = [f for f in result if not str(f).endswith(k)]
     return result
 
+def print_diff_files(dcmp):
+    for name in dcmp.diff_files:
+        print("diff_file %s found in %s and %s" % (name, dcmp.left, dcmp.right))
+    for sub_dcmp in dcmp.subdirs.values():
+        print_diff_files(sub_dcmp)
+
 
 @CmdLine('x')
 def clean():
-    "Write batch file to remove unused files from git directory"
-    os.chdir(str(gitpath))
-    with Path("clean.bat").open("w") as clean:
-        toclean = retain([g for g in git if g not in book])
-        for tc in toclean:
-            clean.write("del " + str(tc) + "\n")
-    if Path("clean.bat").stat().st_size == 0:
-        Path("clean.bat").unlink()
+    "Show differences with git directory"
+    os.chdir(str(examplePath))
+    os.system("diff -q -r . " + str(gitpath))
+    # common = [str(b) for b in book if not b.is_dir()]
+    # dcmp = dircmp(str(examplePath), str(gitpath))
+    # print_diff_files(dcmp)
+    # print(dcmp.right_only)
+    # with Path("clean.bat").open('w') as outfile:
+    #     outfile.write("\n" + ruler("match"))
+    #     outfile.write(pformat(match))
+    #     outfile.write("\n" + ruler("mismatch"))
+    #     outfile.write(pformat(mismatch))
+    #     outfile.write("\n" + ruler("errors"))
+    #     outfile.write(pformat(errors))
+        # head("files to update")
+        # for f in mismatch:
+        #     outfile.write("copy {} {}\{}\n".format(f, str(gitpath), f))
+        #     print(f)
+
+    # os.chdir(str(gitpath))
+    # with Path("clean.bat").open("w") as clean:
+    #     toclean = retain([g for g in git if g not in book])
+    #     for tc in toclean:
+    #         clean.write("del " + str(tc) + "\n")
+    # if Path("clean.bat").stat().st_size == 0:
+    #     Path("clean.bat").unlink()
 
 @CmdLine('u')
 def update_to_git():
