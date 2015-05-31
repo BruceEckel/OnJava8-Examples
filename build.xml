@@ -39,7 +39,7 @@
       containers/build.xml
       io/build.xml
       xml/build.xml
-      enumerated/build.xml
+      enums/build.xml
       annotations/build.xml
       concurrency/build.xml
       gui/build.xml
