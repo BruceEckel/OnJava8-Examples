@@ -1,7 +1,7 @@
 //: concurrency/HorseRace.java
 // ©2015 MindView LLC: see Copyright.txt
 // Using CyclicBarriers.
-// {CheckOutputByHand}
+// {ValidateByHand}
 import java.util.concurrent.*;
 import java.util.*;
 import static net.mindview.util.Print.*;

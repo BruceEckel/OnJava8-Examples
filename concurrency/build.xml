@@ -33,7 +33,6 @@
     <jrun cls="FixedDiningPhilosophers" arguments="5 5 timeout" />
     <jrun cls="FixedThreadPool" />
     <jrun cls="GreenhouseScheduler" arguments="5000" />
-    <jrun cls="HorseRace" />
     <jrun cls="Interrupting" />
     <jrun cls="Interrupting2" />
     <jrun cls="InterruptingIdiom" arguments="1100" />

@@ -2,7 +2,7 @@
 // ©2015 MindView LLC: see Copyright.txt
 // {Args: 5}
 package concurrency.restaurant2;
-import enumerated.menu.*;
+import enums.menu.*;
 import java.util.concurrent.*;
 import java.util.*;
 import static net.mindview.util.Print.*;

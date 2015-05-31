@@ -1,6 +1,6 @@
 //: net/mindview/util/ProcessFiles.java
 // ©2015 MindView LLC: see Copyright.txt
-// {CheckOutputByHand}
+// {ValidateByHand}
 package net.mindview.util;
 import java.io.*;
 

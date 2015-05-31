@@ -16,7 +16,6 @@
     <jrun cls="net.mindview.util.Directory" dirpath="../net/mindview/util" />
     <jrun cls="net.mindview.util.Hex" dirpath="../net/mindview/util" />
     <jrun cls="net.mindview.util.New" dirpath="../net/mindview/util" />
-    <jrun cls="net.mindview.util.ProcessFiles" dirpath="../net/mindview/util" />
     <jrun cls="net.mindview.util.TextFile" dirpath="../net/mindview/util" />
   </target>
 
