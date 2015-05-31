@@ -51,8 +51,8 @@ def print_diff_files(dcmp):
         print_diff_files(sub_dcmp)
 
 
-@CmdLine('x')
-def clean():
+@CmdLine('d')
+def diff():
     "Show differences with git directory"
     os.chdir(str(examplePath))
     os.system("diff -q -r . " + str(gitpath))
@@ -84,27 +84,43 @@ def clean():
 def update_to_git():
     "Write batch file to copy out-of-date files to git directory"
     os.chdir(str(examplePath))
-    common = [str(b) for b in book if not b.is_dir()]
-    match, mismatch, errors = cmpfiles(str(examplePath), str(gitpath), common, False)
-    with Path("update.bat").open('w') as outfile:
-        # outfile.write("\n" + ruler("match"))
-        # outfile.write(pformat(match))
-        # outfile.write("\n" + ruler("mismatch"))
-        # outfile.write(pformat(mismatch))
-        # outfile.write("\n" + ruler("errors"))
-        # outfile.write(pformat(errors))
-        head("files to update")
-        for f in mismatch:
-            outfile.write("copy {} {}\{}\n".format(f, str(gitpath), f))
-            print(f)
+    os.system("diff -q -r . " + str(gitpath) + " > update.bat")
+    lines = [line[len("Files "):-(len("differ") + 1)] for line in open("update.bat").readlines() if line.startswith("Files ")]
+    args = [line.split(" and ") for line in lines]
+    args = [(str(Path(arg[0].strip())), str(Path(arg[1].strip()))) for arg in args]
+    for arg in args:
+        if not arg[0].endswith(".java"):
+            continue
+        if "Copyright.txt" not in open(arg[0]).readlines()[1]:
+            print("Missing copyright in {} \nrun v -c".format(arg[0]))
+            sys.exit(-1)
+    lines = ["copy {} {}".format(arg[0], arg[1]) for arg in args]
+    with open("update.bat", 'w') as update:
+        update.write("\n".join(lines))
 
-    head("odd files")
-    for f in mismatch:
-        if not (f.endswith(".java") or
-                f.endswith(".py") or
-                f.endswith(".cpp") or
-                f.endswith("build.xml")):
-            print(f)
+
+    # os.chdir(str(examplePath))
+    # common = [str(b) for b in book if not b.is_dir()]
+    # match, mismatch, errors = cmpfiles(str(examplePath), str(gitpath), common, False)
+    # with Path("update.bat").open('w') as outfile:
+    #     # outfile.write("\n" + ruler("match"))
+    #     # outfile.write(pformat(match))
+    #     # outfile.write("\n" + ruler("mismatch"))
+    #     # outfile.write(pformat(mismatch))
+    #     # outfile.write("\n" + ruler("errors"))
+    #     # outfile.write(pformat(errors))
+    #     head("files to update")
+    #     for f in mismatch:
+    #         outfile.write("copy {} {}\{}\n".format(f, str(gitpath), f))
+    #         print(f)
+
+    # head("odd files")
+    # for f in mismatch:
+    #     if not (f.endswith(".java") or
+    #             f.endswith(".py") or
+    #             f.endswith(".cpp") or
+    #             f.endswith("build.xml")):
+    #         print(f)
 
 
 def comment_header(lines):
