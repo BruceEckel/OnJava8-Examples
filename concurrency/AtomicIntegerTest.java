@@ -17,11 +17,12 @@ public class AtomicIntegerTest implements Runnable {
     new Timer().schedule(new TimerTask() {
       @Override
       public void run() {
-        System.err.println("Aborting");
+        System.out.println("Aborting");
         System.exit(0);
       }
     }, 5000); // Terminate after 5 seconds
-    ExecutorService exec = Executors.newCachedThreadPool();
+    ExecutorService exec = 
+      Executors.newCachedThreadPool();
     AtomicIntegerTest ait = new AtomicIntegerTest();
     exec.execute(ait);
     while(true) {

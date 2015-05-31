@@ -1,7 +1,7 @@
 //: remote/ptime/DisplayPerfectTime.java
 // ©2015 MindView LLC: see Copyright.txt
 // Uses remote object PerfectTime
-// {RunByHand}
+// {ValidateByHand}
 package remote.ptime;
 import java.net.MalformedURLException;
 import java.rmi.*;

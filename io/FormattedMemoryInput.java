@@ -13,7 +13,7 @@ public class FormattedMemoryInput {
       while(true)
         System.out.write((char)in.readByte());
     } catch(EOFException e) {
-      System.err.println("End of stream");
+      System.out.println("End of stream");
     }
   }
 } /* (Execute to see output) *///:~

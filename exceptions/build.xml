@@ -10,7 +10,7 @@
     <jrun cls="AlwaysFinally" />
     <jrun cls="Cleanup" />
     <jrun cls="CleanupIdiom" />
-    <jrun cls="DynamicFields" failOnError='false' msg='* Exception was Expected *' />
+    <jrun cls="DynamicFields" />
     <jrun cls="ExceptionMethods" />
     <jrun cls="ExceptionSilencer" />
     <jrun cls="ExtraFeatures" />

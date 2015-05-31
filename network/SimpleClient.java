@@ -3,7 +3,7 @@
 // Very simple client that just sends
 // lines to the server and reads lines
 // that the server sends.
-// {RunByHand}
+// {ValidateByHand}
 import java.net.*;
 import java.io.*;
 

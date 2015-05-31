@@ -44,6 +44,7 @@
     <jrun cls="MoreBasicThreads" />
     <jrun cls="MultiLock" />
     <jrun cls="MutexEvenGenerator" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
+    <jrun cls="NaiveExceptionHandling" failOnError='false' msg='* Exception was Expected *' />
     <jrun cls="NIOInterruption" />
     <jrun cls="NotifyVsNotifyAll" />
     <jrun cls="OrnamentalGarden" />

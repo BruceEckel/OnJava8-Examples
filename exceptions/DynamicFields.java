@@ -1,6 +1,5 @@
 //: exceptions/DynamicFields.java
 // ©2015 MindView LLC: see Copyright.txt
-// {ThrowsException}
 // A Class that dynamically adds fields to itself.
 // Demonstrates exception chaining.
 import static net.mindview.util.Print.*;
@@ -94,7 +93,7 @@ public class DynamicFields {
       print("df: " + df);
       print("df.getField(\"d\") : " + df.getField("d"));
       Object field = df.setField("d", null); // Exception
-    } catch(NoSuchFieldException | 
+    } catch(NoSuchFieldException |
             DynamicFieldsException e) {
       e.printStackTrace(System.out);
     }

@@ -38,7 +38,7 @@ public class ChatterServer {
       System.err.println("Can't open socket");
       System.exit(1);
     } catch(IOException e) {
-      System.err.println("Communication error");
+      System.out.println("Communication error");
       e.printStackTrace();
     }
   }

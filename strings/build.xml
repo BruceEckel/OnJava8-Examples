@@ -15,7 +15,6 @@
     <jrun cls="Finding" />
     <jrun cls="Groups" />
     <jrun cls="Immutable" />
-    <jrun cls="InfiniteRecursion" failOnError='false' msg='* Exception was Expected *' />
     <jrun cls="IntegerMatch" />
     <jrun cls="JGrep" arguments="JGrep.java '\\b[Ssct]\\w+'" />
     <jrun cls="Receipt" />
@@ -30,7 +29,7 @@
     <jrun cls="SplitDemo" />
     <jrun cls="Splitting" />
     <jrun cls="StartEnd" />
-    <jrun cls="TestRegularExpression" arguments="abcabcabcdefabc 'abc+' '(abc)+' '(abc){2,}' " />
+    <jrun cls="TestRegularExpression" arguments='abcabcabcdefabc "abc+" "(abc)+" "(abc){2,}" ' />
     <jrun cls="TheReplacements" />
     <jrun cls="ThreatAnalyzer" />
     <jrun cls="Turtle" />

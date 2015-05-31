@@ -1,7 +1,7 @@
 //: strings/TestRegularExpression.java
 // ©2015 MindView LLC: see Copyright.txt
 // Easily try out regular expressions.
-// {Args: abcabcabcdefabc 'abc+' '(abc)+' '(abc){2,}' }
+// {Args: abcabcabcdefabc "abc+" "(abc)+" "(abc){2,}" }
 import java.util.regex.*;
 import static net.mindview.util.Print.*;
 

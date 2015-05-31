@@ -31,13 +31,13 @@ class Communicate {
        spkr.getMethod("talk", (Class[])null);
      talk.invoke(speaker, new Object[]{});
     } catch(NoSuchMethodException e) {
-     System.err.println(
+     System.out.println(
        speaker + " cannot talk");
     } catch(IllegalAccessException e) {
-     System.err.println(
+     System.out.println(
        speaker + " IllegalAccessException");
     } catch(InvocationTargetException e) {
-     System.err.println(
+     System.out.println(
        speaker + " InvocationTargetException");
     }
   }

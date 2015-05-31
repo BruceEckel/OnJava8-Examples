@@ -66,7 +66,7 @@ public class CheckCloneable {
         x= (Ordinary)((IsCloneable)ord).clone();
         System.out.println("Cloned " + id);
       } catch(CloneNotSupportedException e) {
-        System.err.println(
+        System.out.println(
           "Could not clone " + id);
       }
     } else {

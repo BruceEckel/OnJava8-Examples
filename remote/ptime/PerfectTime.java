@@ -2,7 +2,7 @@
 // ©2015 MindView LLC: see Copyright.txt
 // The implementation of the PerfectTime
 // remote object.
-// {RunByHand}
+// {ValidateByHand}
 package remote.ptime;
 import java.rmi.*;
 import java.rmi.server.*;
