@@ -382,7 +382,34 @@ def showProblemErrors():
                 continue
             print(err)
 
-
+@CmdLine('w')
+def findAndEditAllCompileTimeError():
+    "Find all files tagged with {CompileTimeError} and edit them"
+    os.chdir(str(examplePath))
+    with open("CompileTimeError.bat", 'w') as cte:
+        cte.write("subl ")
+        for j in Path(".").rglob("*.java"):
+            code = j.open().read()
+            if "//: reusing/Lisa.java" in code:
+                continue # Checked
+            if "//: initialization/OverloadingVarargs2.java" in code:
+                continue # Checked
+            if "//: generics/UseList.java" in code:
+                continue # Checked
+            if "//: generics/NonCovariantGenerics.java" in code:
+                continue # Checked
+            if "//: generics/MultipleInterfaceVariants.java" in code:
+                continue # Checked
+            if "//: generics/Manipulation.java" in code:
+                continue # Checked
+            if "generics/HijackedInterface.java" in code:
+                continue # Checked
+            if "//: generics/Erased.java" in code:
+                continue # Checked
+            if "{CompileTimeError}" in code:
+                cte.write(str(j) + " ")
+                print(j)
+    os.system("CompileTimeError.bat")
 
 @CmdLine("a")
 def editAllJavaFiles():
