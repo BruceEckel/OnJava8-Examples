@@ -1,0 +1,40 @@
+What is the Director’s Cut?
+Preface
+Introduction
+Introduction to Objects
+Everything Is an Object
+Operators
+Controlling Execution
+Initialization & Cleanup
+Access Control
+Reusing Classes
+Polymorphism
+Interfaces
+Inner Classes
+Holding Your Objects
+Error Handling with Exceptions
+Strings
+Type Information
+Generics
+Arrays
+Containers in Depth
+I/O
+Enumerated Types
+Annotations
+Concurrency
+Graphical User Interfaces
+Design Patterns
+Appendix: Supplements
+Appendix: Resources
+Appendix: Java Programming Guidelines
+Appendix: Unit Testing
+Appendix: Improving Reliability with Assertions
+Appendix: Passing & Returning Objects
+Appendix: Logging
+Appendix: Debugging
+Appendix: Network Programming
+Appendix: Remote Methods
+Appendix: Profiling and Optimizing
+Appendix: The Benefits and Costs of Static Type Checking
+Appendix: The Positive Legacy of C++ and Java
+Appendix: On Being a Programmer

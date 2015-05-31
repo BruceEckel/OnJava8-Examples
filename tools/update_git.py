@@ -92,7 +92,7 @@ def update_to_git():
         if not arg[0].endswith(".java"):
             continue
         if "Copyright.txt" not in open(arg[0]).readlines()[1]:
-            print("Missing copyright in {} \nrun v -c".format(arg[0]))
+            print("Missing copyright in {} \nrun g -c".format(arg[0]))
             sys.exit(-1)
     lines = ["copy {} {}".format(arg[0], arg[1]) for arg in args]
     with open("update.bat", 'w') as update:

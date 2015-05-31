@@ -451,4 +451,21 @@ def findAllMains():
                 head(jf)
                 print(m)
 
+@CmdLine("c")
+def createChecklist():
+    """
+    Make checklist of chapters and appendices
+    """
+    from bs4 import BeautifulSoup
+    import codecs
+    os.chdir(str(examplePath / ".."))
+
+    with codecs.open(str(Path("TIJDirectorsCut.htm")),'r', encoding='utf-8', errors='ignore') as book:
+        soup = BeautifulSoup(book.read())
+        with Path("Checklist-generated.txt").open('wb') as checklist:
+            for h1 in soup.find_all("h1"):
+                text = " ".join(h1.text.split())
+                checklist.write(codecs.encode(text + "\n"))
+
+
 if __name__ == '__main__': CmdLine.run()

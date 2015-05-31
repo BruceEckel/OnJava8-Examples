@@ -32,7 +32,7 @@ now = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M")
 zip_file_name = 'TIJDirectorsCut-' + now + '.zip'
 dest = boxdir / zip_file_name
 print(dest)
-tozip = ["Notes.txt", "backup.bat", "go.bat"] + glob("*.py") + glob("*.docx") + glob("*.docm")
+tozip = ["Notes.txt", "backup.bat", "go.bat", "Checklist.txt"] + glob("*.py") + glob("*.docx") + glob("*.docm")
 
 with zipfile.ZipFile(str(dest), 'w') as myzip:
     for f in tozip:
@@ -50,6 +50,9 @@ tools = ["Examples.py", "Validate.py", "backup.bat", "go.bat", "StripLastBlankLi
 print("\nCopying tools to Github")
 for tool in tools:
     cp(tool, root / "Documents" / "GitHub" / "TIJ-Directors-Cut" / "tools", shortForm=True)
+
+cp("Checklist.txt", root / "Documents" / "GitHub" / "TIJ-Directors-Cut", shortForm=True)
+
 
 # Touch this file to indicate most recent update time:
 os.utime("backup.bat", None)
