@@ -14,6 +14,7 @@ from betools import CmdLine, visitDir, ruler, head
 
 maindef = re.compile("public\s+static\s+void\s+main")
 
+# Leave this alone, relative path necessary:
 destination = Path('.') / "ExtractedExamples"
 sourceText = Path('.') / "TIJDirectorsCut.txt"
 github = Path(r'C:\Users\Bruce\Documents\GitHub\TIJ-Directors-Cut')
@@ -50,7 +51,7 @@ def extractExamples():
             if "//: as a special marker" in title:
                 continue
             title = title.split()[1]
-            print(title)
+            # print(title)
             target = destination / Path(title)
             if not target.parent.exists():
                 target.parent.mkdir(parents=True)
@@ -166,7 +167,7 @@ class CodeFileOptions(object):
             self.exclude = self.codeFile.name + ".java"
             if self.codeFile.subdirs:
                 self.exclude = '/'.join(self.codeFile.subdirs) + '/' + self.exclude
-            print(self.exclude)
+            print("self.exclude {}".format(self.exclude))
 
         self.continue_on_error = None
         if "{ThrowsException}" in self.codeFile.code:
@@ -310,12 +311,34 @@ class Chapter:
         buildFile = startBuild % (self.dir.name, " ".join(self.excludes))
         for cf in self.code_files:
             if any([cf.name + ".java" in f for f in self.excludes]) or cf.options.validatebyhand:
+                print("Excluding {}".format(cf))
                 continue
             buildFile += cf.run_command()
         buildFile += endBuild
         with (self.dir / "build.xml").open("w") as buildxml:
             buildxml.write(buildFile)
 
+exec = """\
+    <echo message="{}"/>
+    <exec executable="cmd" dir=".">
+      <arg line="/c {}" />
+    </exec>
+"""
+
+def addBatchCommand(target_dir, batch_file_name):
+    with (destination/target_dir/"build.xml").open() as build:
+        lines = build.readlines()
+        for n, line in enumerate(lines):
+            if "</target>" in line:
+                lines.insert(n, exec.format(batch_file_name, batch_file_name))
+                break
+    with (destination/target_dir/"build.xml").open("w") as build:
+        build.writelines(lines)
+
+def addBatchFile(target_dir, batch_file_name, batch_file_text):
+    with (destination/target_dir/batch_file_name).open('w') as ss:
+        ss.write(batch_file_text)
+    addBatchCommand(target_dir, batch_file_name)
 
 
 @CmdLine("m")
@@ -325,6 +348,28 @@ def createAntFiles():
     for chapter in chapters:
         chapter.checkPackages()
         chapter.makeBuildFile()
+    # with (destination/"network"/"SimpleServer.bat").open('w') as ss:
+    #     ss.write("start java SimpleServer\n")
+    #     ss.write("java SimpleClient\n")
+    # addBatchCommand("network", "SimpleServer.bat")
+    addBatchFile("network", "SimpleServer.bat",
+"""\
+start java SimpleServer
+java SimpleClient
+""")
+    addBatchFile("network", "ChatterServer.bat",
+"""\
+start java ChatterServer
+timeout /t 1
+java ChatterClient
+""")
+    addBatchFile("network", "MultiSimpleServer.bat",
+"""\
+start java MultiSimpleServer
+timeout /t 1
+java MultiSimpleClient
+""")
+
 
 
 @CmdLine("f")
@@ -353,6 +398,7 @@ def extractAndCreateBuildFiles():
         run.write(r"python ..\Validate.py -p" + "\n")
         run.write(r"powershell .\runall.ps1" + "\n")
         run.write(r"python ..\Validate.py -e" + "\n")
+
 
 @CmdLine('g')
 def generateAntClean():
