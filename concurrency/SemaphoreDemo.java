@@ -33,7 +33,8 @@ class CheckoutTask<T> implements Runnable {
 
 public class SemaphoreDemo {
   final static int SIZE = 25;
-  public static void main(String[] args) throws Exception {
+  public static void 
+  main(String[] args) throws Exception {
     final Pool<Fat> pool = new Pool<>(Fat.class, SIZE);
     ExecutorService exec = Executors.newCachedThreadPool();
     for(int i = 0; i < SIZE; i++)

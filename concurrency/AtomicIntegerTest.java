@@ -3,6 +3,7 @@
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.*;
 import java.util.*;
+import net.mindview.util.*;
 
 public class AtomicIntegerTest implements Runnable {
   private AtomicInteger i = new AtomicInteger(0);
@@ -14,13 +15,7 @@ public class AtomicIntegerTest implements Runnable {
       evenIncrement();
   }
   public static void main(String[] args) {
-    new Timer().schedule(new TimerTask() {
-      @Override
-      public void run() {
-        System.out.println("Aborting");
-        System.exit(0);
-      }
-    }, 5000); // Terminate after 5 seconds
+    new TimedAbort(5); // Terminate after 5 seconds
     ExecutorService exec = 
       Executors.newCachedThreadPool();
     AtomicIntegerTest ait = new AtomicIntegerTest();

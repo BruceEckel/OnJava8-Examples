@@ -2,10 +2,10 @@
 // ©2015 MindView LLC: see Copyright.txt
 // Client that tests the MultiSimpleServer
 // by starting up multiple clients.
-// {ThrowsException} (When run standalone,
-// during testing).
+// {ValidateByHand}
 import java.net.*;
 import java.io.*;
+import net.mindview.util.*;
 
 class SimpleClientThread extends Thread {
   private Socket socket;
@@ -14,34 +14,34 @@ class SimpleClientThread extends Thread {
   private static int counter = 0;
   private int id = counter++;
   private static int threadcount = 0;
-  public static int threadCount() { 
-    return threadcount; 
+  public static int threadCount() {
+    return threadcount;
   }
   public SimpleClientThread(InetAddress addr) {
     System.out.println("Making client " + id);
     threadcount++;
     try {
-      socket = 
+      socket =
         new Socket(addr, MultiSimpleServer.PORT);
     } catch(IOException e) {
-      // If the creation of the socket fails, 
+      // If the creation of the socket fails,
       // nothing needs cleanup.
     }
-    try {    
-      in = 
+    try {
+      in =
         new BufferedReader(
           new InputStreamReader(
             socket.getInputStream()));
       // Enable auto-flush:
-      out = 
+      out =
         new PrintWriter(
           new BufferedWriter(
             new OutputStreamWriter(
               socket.getOutputStream())), true);
       start();
     } catch(IOException e) {
-      // The socket should be closed on any 
-      // failures other than the socket 
+      // The socket should be closed on any
+      // failures other than the socket
       // constructor:
       try {
         socket.close();
@@ -72,12 +72,13 @@ class SimpleClientThread extends Thread {
 
 public class MultiSimpleClient {
   static final int MAX_THREADS = 40;
-  public static void main(String[] args) 
+  public static void main(String[] args)
       throws IOException, InterruptedException {
-    InetAddress addr = 
+    new TimedAbort(5); // Terminate after 5 seconds
+    InetAddress addr =
       InetAddress.getByName(null);
     while(true) {
-      if(SimpleClientThread.threadCount() 
+      if(SimpleClientThread.threadCount()
          < MAX_THREADS)
         new SimpleClientThread(addr);
       Thread.sleep(100);

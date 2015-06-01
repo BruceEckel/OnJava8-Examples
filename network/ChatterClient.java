@@ -1,17 +1,18 @@
 //: network/ChatterClient.java
 // ©2015 MindView LLC: see Copyright.txt
-// {TimeOutDuringTesting}
-// Tests the ChatterServer by starting multiple 
+// {ValidateByHand}
+// Tests the ChatterServer by starting multiple
 // clients, each of which sends datagrams.
 import java.net.*;
 import java.io.*;
+import net.mindview.util.*;
 
 public class ChatterClient extends Thread {
   // Can listen & send on the same socket:
   private DatagramSocket s;
   private InetAddress hostAddress;
   private byte[] buf = new byte[1000];
-  private DatagramPacket dp = 
+  private DatagramPacket dp =
     new DatagramPacket(buf, buf.length);
   private int id;
 
@@ -20,7 +21,7 @@ public class ChatterClient extends Thread {
     try {
       // Auto-assign port number:
       s = new DatagramSocket();
-      hostAddress = 
+      hostAddress =
         InetAddress.getByName("localhost");
     } catch(UnknownHostException e) {
       System.err.println("Cannot find host");
@@ -29,36 +30,37 @@ public class ChatterClient extends Thread {
       System.err.println("Can't open socket");
       e.printStackTrace();
       System.exit(1);
-    } 
+    }
     System.out.println("ChatterClient starting");
   }
-  @Override
-  public void run() {
+  public void sendAndEcho(String msg) {
     try {
-      for(int i = 0; i < 25; i++) {
-        String outMessage = "Client #" +
-          id + ", message #" + i;
-        // Make and send a datagram:
-        s.send(Dgram.toDatagram(outMessage,
-          hostAddress, 
-          ChatterServer.INPORT));
-        // Block until it echoes back:
-        s.receive(dp);
-        // Print out the echoed contents:
-        String rcvd = "Client #" + id +
-          ", rcvd from " + 
-          dp.getAddress() + ", " + 
-          dp.getPort() + ": " +
-          Dgram.toString(dp);
-        System.out.println(rcvd);
-      }
+      // Make and send a datagram:
+      s.send(Dgram.toDatagram(msg,
+        hostAddress,
+        ChatterServer.INPORT));
+      // Block until it echoes back:
+      s.receive(dp);
+      // Print out the echoed contents:
+      String rcvd = "Client #" + id +
+        ", rcvd from " +
+        dp.getAddress() + ", " +
+        dp.getPort() + ": " +
+        Dgram.toString(dp);
+      System.out.println(rcvd);
     } catch(IOException e) {
       e.printStackTrace();
       System.exit(1);
     }
   }
+  @Override
+  public void run() {
+    for(int i = 0; i <= 25; i++)
+      sendAndEcho("Client #" + id + ", message #" + i);
+  }
   public static void main(String[] args) {
-    for(int i = 0; i < 10; i++)
+    new TimedAbort(5); // Terminate after 5 seconds
+    for(int i = 0; i <= 10; i++)
       new ChatterClient(i).start();
   }
 } ///:~

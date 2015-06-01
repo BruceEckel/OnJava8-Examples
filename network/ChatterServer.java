@@ -1,14 +1,15 @@
 //: network/ChatterServer.java
 // ©2015 MindView LLC: see Copyright.txt
-// {TimeOutDuringTesting}
+// {ValidateByHand}
 // A server that echoes datagrams
 import java.net.*;
 import java.io.*;
+import net.mindview.util.*;
 
 public class ChatterServer {
   static final int INPORT = 1711;
   private byte[] buf = new byte[1000];
-  private DatagramPacket dp = 
+  private DatagramPacket dp =
     new DatagramPacket(buf, buf.length);
   // Can listen & send on the same socket:
   private DatagramSocket socket;
@@ -24,12 +25,12 @@ public class ChatterServer {
           ", from address: " + dp.getAddress() +
           ", port: " + dp.getPort();
         System.out.println(rcvd);
-        String echoString = 
+        String echoString =
           "Echoed: " + rcvd;
         // Extract the address and port from the
         // received datagram to find out where to
         // send it back:
-        DatagramPacket echo = 
+        DatagramPacket echo =
           Dgram.toDatagram(echoString,
             dp.getAddress(), dp.getPort());
         socket.send(echo);
@@ -43,6 +44,7 @@ public class ChatterServer {
     }
   }
   public static void main(String[] args) {
+    new TimedAbort(5); // Terminate after 5 seconds
     new ChatterServer();
   }
 } ///:~

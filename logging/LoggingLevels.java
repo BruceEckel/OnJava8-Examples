@@ -6,13 +6,13 @@ import java.util.logging.Logger;
 public class LoggingLevels {
   private static Logger
   lgr = Logger.getLogger("com"),
-  lgr2 = Logger.getLogger("com.bruceeckel"),
-  util= Logger.getLogger("com.bruceeckel.util"),
-  test= Logger.getLogger("com.bruceeckel.test"),
+  lgr2 = Logger.getLogger("net.mindview"),
+  util= Logger.getLogger("net.mindview.util"),
+  test= Logger.getLogger("net.mindview.test"),
   rand = Logger.getLogger("random");
   private static void logMessages() {
     lgr.info("com : info");
-    lgr2.info("com.bruceeckel : info");
+    lgr2.info("net.mindview : info");
     util.info("util : info");
     test.severe("test : severe");
     rand.info("random : info");

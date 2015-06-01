@@ -7,12 +7,20 @@
   <import file="../Ant-Clean.xml"/>
 
   <target name="run" description="Compile and run" depends="build">
-    <jrun cls="ChatterClient" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
-    <jrun cls="ChatterServer" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
-    <jrun cls="MultiSimpleClient" failOnError='false' msg='* Exception was Expected *' />
-    <jrun cls="MultiSimpleServer" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
-    <jrun cls="SimpleServer" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
-    <jrun cls="WhoAmI" arguments="MindviewToshibaLaptop" />
+    <jrun cls="LocalHost" />
+    <jrun cls="WhoAmI" />
+    <echo message="SimpleServer.bat"/>
+    <exec executable="cmd" dir=".">
+      <arg line="/c SimpleServer.bat" />
+    </exec>
+    <echo message="ChatterServer.bat"/>
+    <exec executable="cmd" dir=".">
+      <arg line="/c ChatterServer.bat" />
+    </exec>
+    <echo message="MultiSimpleServer.bat"/>
+    <exec executable="cmd" dir=".">
+      <arg line="/c MultiSimpleServer.bat" />
+    </exec>
   </target>
 
 </project>

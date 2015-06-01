@@ -1,20 +1,14 @@
 //: network/WhoAmI.java
 // ©2015 MindView LLC: see Copyright.txt
-// Finds out your network address when you're 
-// connected to the Internet.
-// {Args:MindviewToshibaLaptop}
+// Finds out your machine name and network address
+// when you're connected to the Internet.
 import java.net.*;
 
 public class WhoAmI {
-  public static void main(String[] args) 
+  public static void main(String[] args)
       throws Exception {
-    if(args.length != 1) {
-      System.err.println(
-        "Usage: WhoAmI MachineName");
-      System.exit(1);
-    }
-    InetAddress a = 
-      InetAddress.getByName(args[0]);
-    System.out.println(a);
+    InetAddress whoami = InetAddress.getLocalHost();
+    System.out.println(whoami.getHostName());
+    System.out.println(whoami.getHostAddress());
   }
 } ///:~
