@@ -1,6 +1,6 @@
 #! py -3
 """
-Extract code examples from TIJ4 Refreshed. Extracts from plain text file.
+Extract code examples from TIJ Director's Cut plain text file.
 Creates Ant build.xml file for each subdirectory.
 """
 from pathlib import Path
@@ -64,7 +64,7 @@ def extractExamples():
                 codeListing.write("\n")
 
 
-@CmdLine("x")
+# @CmdLine("x")
 def clean():
     "Remove ExtractedExamples directory"
     print("Cleaning ...")
@@ -132,7 +132,7 @@ def destDirs(pattern="**"):
 
 
 
-@CmdLine("a")
+# @CmdLine("a")
 def copySupplementalFilesFromGithub():
     "Copy supplemental files from Github repository to extracted examples"
     print("Copying supplemental files from Github ...")
@@ -339,23 +339,7 @@ exec = """\
     </exec>
 """
 
-# def addBatchCommand(target_dir, batch_file_name):
-#     with (destination/target_dir/"build.xml").open() as build:
-#         lines = build.readlines()
-#         for n, line in enumerate(lines):
-#             if "</target>" in line:
-#                 lines.insert(n, exec.format(batch_file_name, batch_file_name))
-#                 break
-#     with (destination/target_dir/"build.xml").open("w") as build:
-#         build.writelines(lines)
-
-# def addBatchFile(target_dir, batch_file_name, batch_file_text):
-#     with (destination/target_dir/batch_file_name).open('w') as ss:
-#         ss.write(batch_file_text)
-#     addBatchCommand(target_dir, batch_file_name)
-
-
-@CmdLine("m")
+#@CmdLine("m")
 def createAntFiles():
     "Make ant files that don't exist"
     print("Creating Ant Files ...")
@@ -393,7 +377,7 @@ def extractAndCreateBuildFiles():
         run.write(r"python ..\Validate.py -e" + "\n")
 
 
-@CmdLine('g')
+#@CmdLine('g')
 def generateAntClean():
     "Generate directives for Ant-Clean.xml"
     others = set([f.name for f in examples.rglob("*") if not f.is_dir()
@@ -408,11 +392,10 @@ def generateAntClean():
     for f in others:
         print("""        <exclude name="**/{}" />""".format(f))
 
-    # pprint.pprint([f for f in others if "test" in f or "Test" in f])
 
-tagRE = re.compile("{.*?}", re.DOTALL)
 
 def findTags(lines):
+    tagRE = re.compile("{.*?}", re.DOTALL)
     topblock = []
     for line in lines:
         if line.startswith("//"):
@@ -442,4 +425,6 @@ def findAllCommentTags():
 
 
 
-if __name__ == '__main__':  CmdLine.run()
+if __name__ == '__main__':
+    print(__doc__)
+    CmdLine.run()
