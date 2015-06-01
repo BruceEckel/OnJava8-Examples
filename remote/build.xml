@@ -7,6 +7,10 @@
   <import file="../Ant-Clean.xml"/>
 
   <target name="run" description="Compile and run" depends="build">
+    <echo message="go"/>
+    <exec executable="cmd" dir=".">
+      <arg line="/c go" />
+    </exec>
   </target>
 
 </project>

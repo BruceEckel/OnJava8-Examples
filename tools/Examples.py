@@ -18,6 +18,7 @@ maindef = re.compile("public\s+static\s+void\s+main")
 destination = Path('.') / "ExtractedExamples"
 sourceText = Path('.') / "TIJDirectorsCut.txt"
 github = Path(r'C:\Users\Bruce\Documents\GitHub\TIJ-Directors-Cut')
+examples = Path(r"C:\Users\Bruce\Dropbox\__TIJ4-ebook\ExtractedExamples")
 
 startBuild = """\
 <?xml version="1.0" ?>
@@ -38,6 +39,7 @@ endBuild = """\
 """
 
 def extractExamples():
+    print("Extracting examples ...")
     if not destination.exists():
         destination.mkdir()
     if not sourceText.exists():
@@ -65,7 +67,7 @@ def extractExamples():
 @CmdLine("x")
 def clean():
     "Remove ExtractedExamples directory"
-    print("clean")
+    print("Cleaning ...")
     if destination.exists():
         shutil.rmtree(str(destination))
 
@@ -129,16 +131,29 @@ def destDirs(pattern="**"):
     return {str(file)[leader:] for file in destination.glob(pattern)}
 
 
+
 @CmdLine("a")
 def copySupplementalFilesFromGithub():
-    "Copy ant build files from Github repository to extracted examples"
-    shutil.copy(str(github / "build.xml"), str(destination))
-    shutil.copy(str(github / "Ant-Common.xml"), str(destination))
-    shutil.copy(str(github / "Ant-Clean.xml"), str(destination))
-    for face in (github / "gui").glob("*.gif"):
-        shutil.copy(str(face), str(destination / "gui"))
-    # for verifier in ["OutputGenerator.py", "OutputVerifier.py"]:
-    #     shutil.copy(str(github/verifier), str(destination))
+    "Copy supplemental files from Github repository to extracted examples"
+    print("Copying supplemental files from Github ...")
+    def _copy(dir, name_or_pattern, trace=False):
+        source = (github/dir).glob(name_or_pattern)
+        dest_dir = examples/dir
+        assert dest_dir.is_dir()
+        for f in source:
+            if trace:
+                print("source: {}".format(f))
+                print("dest: {}".format(dest_dir))
+            shutil.copy(str(f), str(dest_dir))
+
+    _copy(".", "build.xml")
+    _copy(".", "Ant-*.xml")
+    _copy("gui", "*.gif")
+    _copy("network", "*.bat")
+    _copy("network", "build.xml")
+    _copy("remote", "*.bat")
+    _copy("remote", "build.xml")
+
     patterns = destination / "patterns"
     trash = patterns / "recycleap" / "Trash.dat"
     shutil.copy(str(trash), str(patterns / "recycleb"))
@@ -167,7 +182,6 @@ class CodeFileOptions(object):
             self.exclude = self.codeFile.name + ".java"
             if self.codeFile.subdirs:
                 self.exclude = '/'.join(self.codeFile.subdirs) + '/' + self.exclude
-            print("self.exclude {}".format(self.exclude))
 
         self.continue_on_error = None
         if "{ThrowsException}" in self.codeFile.code:
@@ -311,7 +325,7 @@ class Chapter:
         buildFile = startBuild % (self.dir.name, " ".join(self.excludes))
         for cf in self.code_files:
             if any([cf.name + ".java" in f for f in self.excludes]) or cf.options.validatebyhand:
-                print("Excluding {}".format(cf))
+                # print("Excluding {}".format(cf))
                 continue
             buildFile += cf.run_command()
         buildFile += endBuild
@@ -325,51 +339,30 @@ exec = """\
     </exec>
 """
 
-def addBatchCommand(target_dir, batch_file_name):
-    with (destination/target_dir/"build.xml").open() as build:
-        lines = build.readlines()
-        for n, line in enumerate(lines):
-            if "</target>" in line:
-                lines.insert(n, exec.format(batch_file_name, batch_file_name))
-                break
-    with (destination/target_dir/"build.xml").open("w") as build:
-        build.writelines(lines)
+# def addBatchCommand(target_dir, batch_file_name):
+#     with (destination/target_dir/"build.xml").open() as build:
+#         lines = build.readlines()
+#         for n, line in enumerate(lines):
+#             if "</target>" in line:
+#                 lines.insert(n, exec.format(batch_file_name, batch_file_name))
+#                 break
+#     with (destination/target_dir/"build.xml").open("w") as build:
+#         build.writelines(lines)
 
-def addBatchFile(target_dir, batch_file_name, batch_file_text):
-    with (destination/target_dir/batch_file_name).open('w') as ss:
-        ss.write(batch_file_text)
-    addBatchCommand(target_dir, batch_file_name)
+# def addBatchFile(target_dir, batch_file_name, batch_file_text):
+#     with (destination/target_dir/batch_file_name).open('w') as ss:
+#         ss.write(batch_file_text)
+#     addBatchCommand(target_dir, batch_file_name)
 
 
 @CmdLine("m")
 def createAntFiles():
     "Make ant files that don't exist"
+    print("Creating Ant Files ...")
     chapters = [Chapter(fd) for fd in destination.glob("*") if fd.is_dir() if not (fd / "build.xml").exists()]
     for chapter in chapters:
         chapter.checkPackages()
         chapter.makeBuildFile()
-    # with (destination/"network"/"SimpleServer.bat").open('w') as ss:
-    #     ss.write("start java SimpleServer\n")
-    #     ss.write("java SimpleClient\n")
-    # addBatchCommand("network", "SimpleServer.bat")
-    addBatchFile("network", "SimpleServer.bat",
-"""\
-start java SimpleServer
-java SimpleClient
-""")
-    addBatchFile("network", "ChatterServer.bat",
-"""\
-start java ChatterServer
-timeout /t 1
-java ChatterClient
-""")
-    addBatchFile("network", "MultiSimpleServer.bat",
-"""\
-start java MultiSimpleServer
-timeout /t 1
-java MultiSimpleClient
-""")
-
 
 
 @CmdLine("f")
@@ -391,8 +384,8 @@ def extractAndCreateBuildFiles():
     "Clean, then extract examples from TIJDirectorsCut.txt, build ant files"
     clean()
     extractExamples()
-    copySupplementalFilesFromGithub()
     createAntFiles()
+    copySupplementalFilesFromGithub()
     os.chdir("ExtractedExamples")
     with open("run.bat", 'w') as run:
         run.write(r"python ..\Validate.py -p" + "\n")
@@ -403,7 +396,6 @@ def extractAndCreateBuildFiles():
 @CmdLine('g')
 def generateAntClean():
     "Generate directives for Ant-Clean.xml"
-    examples = Path(r"C:\Users\Bruce\Dropbox\__TIJ4-ebook\ExtractedExamples")
     others = set([f.name for f in examples.rglob("*") if not f.is_dir()
                 if not f.suffix == ".java"
                 if not f.suffix == ".class"
@@ -437,7 +429,6 @@ def findTags(lines):
 def findAllCommentTags():
     "Find all '{}' comment tags in Java files"
     tagdict = defaultdict(list)
-    examples = Path(r"C:\Users\Bruce\Dropbox\__TIJ4-ebook\ExtractedExamples")
     for jf in [f for f in examples.rglob("*.java")]:
         with jf.open() as code:
             lines = code.readlines()
