@@ -1,6 +1,6 @@
 #! py -3
 """
-Extract code examples from TIJ4 Refreshed. Extracts from plain text file.
+Extract code examples from TIJ Director's Cut plain text file.
 Creates Ant build.xml file for each subdirectory.
 """
 from pathlib import Path
@@ -64,7 +64,6 @@ def extractExamples():
                 codeListing.write("\n")
 
 
-@CmdLine("x")
 def clean():
     "Remove ExtractedExamples directory"
     print("Cleaning ...")
@@ -120,23 +119,22 @@ def compareWithGithub(shortForm=True):
 
 
 
-def githubDirs():
-    leader = len(str(github)) + 1
-    buildfiles = [str(file)[leader:] for file in github.glob("**/build.xml")]
-    return {str((github / f).parent)[leader:] for f in buildfiles}
+# def githubDirs():
+#     leader = len(str(github)) + 1
+#     buildfiles = [str(file)[leader:] for file in github.glob("**/build.xml")]
+#     return {str((github / f).parent)[leader:] for f in buildfiles}
 
 
-def destDirs(pattern="**"):
-    leader = len(str(destination)) + 1
-    return {str(file)[leader:] for file in destination.glob(pattern)}
+# def destDirs(pattern="**"):
+#     leader = len(str(destination)) + 1
+#     return {str(file)[leader:] for file in destination.glob(pattern)}
 
 
 
-@CmdLine("a")
 def copySupplementalFilesFromGithub():
     "Copy supplemental files from Github repository to extracted examples"
     print("Copying supplemental files from Github ...")
-    def _copy(dir, name_or_pattern, trace=False):
+    def _copy_from_github(dir, name_or_pattern, trace=False):
         source = (github/dir).glob(name_or_pattern)
         dest_dir = examples/dir
         assert dest_dir.is_dir()
@@ -145,14 +143,15 @@ def copySupplementalFilesFromGithub():
                 print("source: {}".format(f))
                 print("dest: {}".format(dest_dir))
             shutil.copy(str(f), str(dest_dir))
-
-    _copy(".", "build.xml")
-    _copy(".", "Ant-*.xml")
-    _copy("gui", "*.gif")
-    _copy("network", "*.bat")
-    _copy("network", "build.xml")
-    _copy("remote", "*.bat")
-    _copy("remote", "build.xml")
+    for args in [
+        (".", "build.xml"),
+        (".", "Ant-*.xml"),
+        ("gui", "*.gif"),
+        ("network", "*.bat"),
+        ("network", "build.xml"),
+        ("remote", "*.bat"),
+        ("remote", "build.xml"),
+        ]: _copy_from_github(*args)
 
     patterns = destination / "patterns"
     trash = patterns / "recycleap" / "Trash.dat"
@@ -339,25 +338,9 @@ exec = """\
     </exec>
 """
 
-# def addBatchCommand(target_dir, batch_file_name):
-#     with (destination/target_dir/"build.xml").open() as build:
-#         lines = build.readlines()
-#         for n, line in enumerate(lines):
-#             if "</target>" in line:
-#                 lines.insert(n, exec.format(batch_file_name, batch_file_name))
-#                 break
-#     with (destination/target_dir/"build.xml").open("w") as build:
-#         build.writelines(lines)
-
-# def addBatchFile(target_dir, batch_file_name, batch_file_text):
-#     with (destination/target_dir/batch_file_name).open('w') as ss:
-#         ss.write(batch_file_text)
-#     addBatchCommand(target_dir, batch_file_name)
-
-
-@CmdLine("m")
+#@CmdLine("m")
 def createAntFiles():
-    "Make ant files that don't exist"
+    "Make ant files"
     print("Creating Ant Files ...")
     chapters = [Chapter(fd) for fd in destination.glob("*") if fd.is_dir() if not (fd / "build.xml").exists()]
     for chapter in chapters:
@@ -393,7 +376,6 @@ def extractAndCreateBuildFiles():
         run.write(r"python ..\Validate.py -e" + "\n")
 
 
-@CmdLine('g')
 def generateAntClean():
     "Generate directives for Ant-Clean.xml"
     others = set([f.name for f in examples.rglob("*") if not f.is_dir()
@@ -408,11 +390,10 @@ def generateAntClean():
     for f in others:
         print("""        <exclude name="**/{}" />""".format(f))
 
-    # pprint.pprint([f for f in others if "test" in f or "Test" in f])
 
-tagRE = re.compile("{.*?}", re.DOTALL)
 
 def findTags(lines):
+    tagRE = re.compile("{.*?}", re.DOTALL)
     topblock = []
     for line in lines:
         if line.startswith("//"):
@@ -442,4 +423,6 @@ def findAllCommentTags():
 
 
 
-if __name__ == '__main__':  CmdLine.run()
+if __name__ == '__main__':
+    print(__doc__)
+    CmdLine.run()
