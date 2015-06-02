@@ -33,7 +33,7 @@
 [ ]  Appendix: Logging
 [ ]  Appendix: Debugging
 [ ]  Appendix: Network Programming
-[X]  Appendix: Remote Methods
+[ ]  Appendix: Remote Methods
 [ ]  Appendix: Profiling and Optimizing
 [ ]  Appendix: The Benefits and Costs of Static Type Checking
 [ ]  Appendix: The Positive Legacy of C++ and Java
