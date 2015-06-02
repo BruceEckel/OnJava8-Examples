@@ -1,7 +1,7 @@
 //: network/MultiSimpleServer.java
 // ©2015 MindView LLC: see Copyright.txt
-// A server that uses multithreading to handle
-// any number of clients.
+// A server that uses multithreading
+// to handle any number of clients.
 // {ValidateByHand}
 import java.io.*;
 import java.net.*;

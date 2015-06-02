@@ -14,13 +14,7 @@ public class SimpleClient {
     // special "Local Loopback" IP address, for
     // testing on one machine w/o a network:
     InetAddress addr = 
-      InetAddress.getByName(null);
-    // Alternatively, you can use 
-    // the address or name:
-    // InetAddress addr = 
-    //    InetAddress.getByName("127.0.0.1");
-    // InetAddress addr = 
-    //    InetAddress.getByName("localhost");
+      InetAddress.getLoopbackAddress();
     System.out.println("addr = " + addr);
     Socket socket = 
       new Socket(addr, SimpleServer.PORT);

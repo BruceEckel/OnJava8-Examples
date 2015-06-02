@@ -1,4 +1,5 @@
 #! Py -3
+"Tools for updating Github repository"
 from pathlib import Path
 from filecmp import cmpfiles
 from filecmp import dircmp
@@ -8,7 +9,9 @@ from betools import *
 from pprint import *
 
 gitpath = Path(r"C:\Users\Bruce\Documents\GitHub\TIJ-Directors-Cut")
+assert gitpath.is_dir()
 examplePath = Path(r"C:\Users\Bruce\Dropbox\__TIJ4-ebook\ExtractedExamples")
+assert examplePath.is_dir()
 
 def ignore(lst):
     result = [f for f in lst if not str(f).startswith(".git")]
@@ -23,7 +26,7 @@ git = ignore(git)
 
 @CmdLine('g')
 def copy_to_git():
-    "Write batch file to copy missing files to git directory"
+    "Write togit.bat to copy missing files to git directory"
     exclude = ["Book.txt", "Git.txt", "togit.bat"]
     os.chdir(str(examplePath))
     with Path("togit.bat").open("w") as togit:
@@ -56,33 +59,11 @@ def diff():
     "Show differences with git directory"
     os.chdir(str(examplePath))
     os.system("diff -q -r . " + str(gitpath))
-    # common = [str(b) for b in book if not b.is_dir()]
-    # dcmp = dircmp(str(examplePath), str(gitpath))
-    # print_diff_files(dcmp)
-    # print(dcmp.right_only)
-    # with Path("clean.bat").open('w') as outfile:
-    #     outfile.write("\n" + ruler("match"))
-    #     outfile.write(pformat(match))
-    #     outfile.write("\n" + ruler("mismatch"))
-    #     outfile.write(pformat(mismatch))
-    #     outfile.write("\n" + ruler("errors"))
-    #     outfile.write(pformat(errors))
-        # head("files to update")
-        # for f in mismatch:
-        #     outfile.write("copy {} {}\{}\n".format(f, str(gitpath), f))
-        #     print(f)
 
-    # os.chdir(str(gitpath))
-    # with Path("clean.bat").open("w") as clean:
-    #     toclean = retain([g for g in git if g not in book])
-    #     for tc in toclean:
-    #         clean.write("del " + str(tc) + "\n")
-    # if Path("clean.bat").stat().st_size == 0:
-    #     Path("clean.bat").unlink()
 
 @CmdLine('u')
 def update_to_git():
-    "Write batch file to copy out-of-date files to git directory"
+    "Write update.bat to copy out-of-date files to git directory"
     os.chdir(str(examplePath))
     os.system("diff -q -r . " + str(gitpath) + " > update.bat")
     lines = [line[len("Files "):-(len("differ") + 1)] for line in open("update.bat").readlines() if line.startswith("Files ")]
@@ -97,30 +78,6 @@ def update_to_git():
     lines = ["copy {} {}".format(arg[0], arg[1]) for arg in args]
     with open("update.bat", 'w') as update:
         update.write("\n".join(lines))
-
-
-    # os.chdir(str(examplePath))
-    # common = [str(b) for b in book if not b.is_dir()]
-    # match, mismatch, errors = cmpfiles(str(examplePath), str(gitpath), common, False)
-    # with Path("update.bat").open('w') as outfile:
-    #     # outfile.write("\n" + ruler("match"))
-    #     # outfile.write(pformat(match))
-    #     # outfile.write("\n" + ruler("mismatch"))
-    #     # outfile.write(pformat(mismatch))
-    #     # outfile.write("\n" + ruler("errors"))
-    #     # outfile.write(pformat(errors))
-    #     head("files to update")
-    #     for f in mismatch:
-    #         outfile.write("copy {} {}\{}\n".format(f, str(gitpath), f))
-    #         print(f)
-
-    # head("odd files")
-    # for f in mismatch:
-    #     if not (f.endswith(".java") or
-    #             f.endswith(".py") or
-    #             f.endswith(".cpp") or
-    #             f.endswith("build.xml")):
-    #         print(f)
 
 
 def comment_header(lines):

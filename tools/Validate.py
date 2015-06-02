@@ -1,10 +1,11 @@
 #! py -3
 """
 Run all (possible) java files and capture output and errors
+"""
+TODO = """
+- 1st and last 10 lines, with ... in between? {FirstAndLast: 10 Lines}
 
-TODO: 1st and last 10 lines, with ... in between? {FirstAndLast: 10 Lines}
-
-TODO: format __newOutput() for line width using textwrap
+- format __newOutput() for line width using textwrap
 """
 from pathlib import Path
 import pprint
