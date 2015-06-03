@@ -30,11 +30,11 @@
 [ ]  Appendix: Unit Testing
 [ ]  Appendix: Improving Reliability with Assertions
 [ ]  Appendix: Passing & Returning Objects
-[ ]  Appendix: Logging
-[ ]  Appendix: Debugging
 [X]  Appendix: Network Programming
 [X]  Appendix: Remote Methods
-[ ]  Appendix: Profiling and Optimizing
+[ ]  Appendix: Logging
+[X]  Appendix: Debugging
+[X]  Appendix: Profiling and Optimizing
 [ ]  Appendix: The Benefits and Costs of Static Type Checking
 [ ]  Appendix: The Positive Legacy of C++ and Java
 [ ]  Appendix: On Being a Programmer

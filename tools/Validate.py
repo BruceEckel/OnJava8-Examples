@@ -3,7 +3,9 @@
 Run all (possible) java files and capture output and errors
 """
 TODO = """
-- 1st and last 10 lines, with ... in between? {FirstAndLast: 10 Lines}
+- 1st and last 10 lines, with ... in between? {OutputFirstAndLast: 10 Lines}
+
+- {NoOutput}
 
 - format __newOutput() for line width using textwrap
 """
