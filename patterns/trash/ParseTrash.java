@@ -29,7 +29,7 @@ public class ParseTrash {
             NumberFormatException |
             Trash.PrototypeNotFoundException |
             Trash.CannotCreateTrashException e) {
-      e.printStackTrace();
+      throw new RuntimeException(e);
     }
   }
   // Special case to handle ArrayList:

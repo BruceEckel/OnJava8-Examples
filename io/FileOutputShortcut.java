@@ -7,10 +7,10 @@ public class FileOutputShortcut {
   public static void main(String[] args)
   throws IOException {
     BufferedReader in = new BufferedReader(
-      new StringReader(
-       BufferedInputFile.read("FileOutputShortcut.java")));
-    try ( // Here's the shortcut:
-            PrintWriter out = new PrintWriter(file)) {
+      new StringReader(BufferedInputFile.read(
+        "FileOutputShortcut.java")));
+    // Here's the shortcut:
+    try(PrintWriter out = new PrintWriter(file)) {
       int lineCount = 1;
       String s;
       while((s = in.readLine()) != null )

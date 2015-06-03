@@ -1,6 +1,7 @@
 //: containers/References.java
 // ©2015 MindView LLC: see Copyright.txt
 // Demonstrates Reference objects
+// {OutputFirstAndLast: 10 Lines}
 import java.lang.ref.*;
 import java.util.*;
 
@@ -60,4 +61,4 @@ public class References {
       checkQueue();
     }
   }
-} /* (Execute to see output) *///:~
+} ///:~

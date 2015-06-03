@@ -1,6 +1,7 @@
 //: generics/Apply.java
 // ©2015 MindView LLC: see Copyright.txt
 // {main: ApplyTest}
+// {OutputFirstAndLast: 10 Lines}
 import java.lang.reflect.*;
 import java.util.*;
 import static net.mindview.util.Print.*;
@@ -69,4 +70,4 @@ class ApplyTest {
     }
     Apply.apply(shapeQ, Shape.class.getMethod("rotate"));
   }
-} /* (Execute to see output) *///:~
+} ///:~

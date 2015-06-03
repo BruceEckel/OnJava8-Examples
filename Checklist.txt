@@ -32,7 +32,7 @@
 [ ]  Appendix: Passing & Returning Objects
 [X]  Appendix: Network Programming
 [X]  Appendix: Remote Methods
-[ ]  Appendix: Logging
+[X]  Appendix: Logging
 [X]  Appendix: Debugging
 [X]  Appendix: Profiling and Optimizing
 [ ]  Appendix: The Benefits and Costs of Static Type Checking

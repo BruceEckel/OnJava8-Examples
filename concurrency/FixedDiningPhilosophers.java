@@ -2,6 +2,7 @@
 // ©2015 MindView LLC: see Copyright.txt
 // Dining philosophers without deadlock.
 // {Args: 5 5 timeout}
+// {OutputFirstAndLast: 10 Lines}
 import java.util.concurrent.*;
 
 public class FixedDiningPhilosophers {
@@ -31,4 +32,4 @@ public class FixedDiningPhilosophers {
     }
     exec.shutdownNow();
   }
-} /* (Execute to see output) *///:~
+} ///:~

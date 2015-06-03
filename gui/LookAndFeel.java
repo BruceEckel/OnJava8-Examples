@@ -4,11 +4,13 @@
 // {Args: motif}
 import javax.swing.*;
 import java.awt.*;
+import java.util.*;
 import static net.mindview.util.SwingConsole.*;
 
 public class LookAndFeel extends JFrame {
   private String[] choices =
-    "Eeny Meeny Minnie Mickey Moe Larry Curly".split(" ");
+    "Eeny Meeny Minnie Mickey Moe Larry Curly"
+    .split(" ");
   private Component[] samples = {
     new JButton("JButton"),
     new JTextField("JTextField"),
@@ -18,55 +20,66 @@ public class LookAndFeel extends JFrame {
     new JComboBox<>(choices),
     new JList<>(choices),
   };
+  private static
+  Map<String,String> optionMap = new HashMap<>();
+  private static String options = "";
   public LookAndFeel() {
     super("Look And Feel");
     setLayout(new FlowLayout());
     for(Component component : samples)
       add(component);
   }
+  public static void initOptions() {
+    if(optionMap.isEmpty()) {
+      UIManager.LookAndFeelInfo[] lafi =
+        UIManager.getInstalledLookAndFeels();
+      for(UIManager.LookAndFeelInfo lf : lafi) {
+        String classname = lf.getClassName();
+        String[] parts = classname.split("\\.");
+        String option = parts[parts.length - 2];
+        optionMap.put(option, classname);
+      }
+      for(String option : optionMap.keySet())
+        options += option + " | ";
+      options =
+        options.substring(0, options.length() - 3);
+      options = "cross | system | " + options;
+    }
+  }
   private static void usageError() {
     System.out.println(
-      "Usage:LookAndFeel [cross|system|motif]");
+      "Usage:LookAndFeel [ " + options + " ]");
     System.exit(1);
   }
   public static void main(String[] args) {
+    initOptions();
     if(args.length == 0) usageError();
-    switch(args[0]) {
-      case "cross":
-        try {
+    try {
+      switch(args[0]) {
+        case "cross":
           UIManager.setLookAndFeel(UIManager.
             getCrossPlatformLookAndFeelClassName());
-        } catch(ClassNotFoundException |
-                InstantiationException |
-                IllegalAccessException |
-                UnsupportedLookAndFeelException e) {
-          e.printStackTrace();
-        }
-        break;
+          break;
       case "system":
-        try {
           UIManager.setLookAndFeel(UIManager.
             getSystemLookAndFeelClassName());
-        } catch(ClassNotFoundException |
-                InstantiationException |
-                IllegalAccessException |
-                UnsupportedLookAndFeelException e) {
-          e.printStackTrace();
-        }
-        break;
+          break;
       case "motif":
-        try {
-          UIManager.setLookAndFeel("com.sun.java."+
-            "swing.plaf.motif.MotifLookAndFeel");
-        } catch(ClassNotFoundException |
-                InstantiationException |
-                IllegalAccessException |
-                UnsupportedLookAndFeelException e) {
-          e.printStackTrace();
-        }
+        UIManager.setLookAndFeel("com.sun.java."+
+          "swing.plaf.motif.MotifLookAndFeel");
         break;
       default:
-        usageError();
+        if(optionMap.containsKey(args[0]))
+          UIManager.setLookAndFeel(
+            optionMap.get(args[0]));
+        else
+          usageError();
+      }
+    } catch(ClassNotFoundException |
+            InstantiationException |
+            IllegalAccessException |
+            UnsupportedLookAndFeelException e) {
+      usageError();
     }
     // Note the look & feel must be set before
     // any components are created.

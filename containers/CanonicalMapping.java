@@ -1,6 +1,7 @@
 //: containers/CanonicalMapping.java
 // ©2015 MindView LLC: see Copyright.txt
 // Demonstrates WeakHashMap.
+// {NoOutput}
 import java.util.*;
 
 class Element {
@@ -47,4 +48,4 @@ public class CanonicalMapping {
     }
     System.gc();
   }
-} /* (Execute to see output) *///:~
+} ///:~

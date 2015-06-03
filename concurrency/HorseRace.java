@@ -1,7 +1,7 @@
 //: concurrency/HorseRace.java
 // ©2015 MindView LLC: see Copyright.txt
 // Using CyclicBarriers.
-// {ValidateByHand}
+// {OutputFirstAndLast: 10 Lines}
 import java.util.concurrent.*;
 import java.util.*;
 import static net.mindview.util.Print.*;
@@ -86,4 +86,4 @@ public class HorseRace {
     }
     new HorseRace(nHorses, pause);
   }
-} /* (Execute to see output) *///:~
+} ///:~

@@ -64,11 +64,10 @@ ENHANCEMENTS, OR MODIFICATIONS.
 
 Please note that MindView LLC maintains a Web site which
 is the sole distribution point for electronic copies of the 
-Source Code, http://www.MindView.net (and official mirror
-sites), where it is freely available under the terms stated 
-above.
+Source Code, https://github.com/BruceEckel/TIJ-Directors-Cut/,
+where it is freely available under the terms stated above.
 
 If you think you've found an error in the Source Code,
-please submit a correction using the feedback system that 
-you will find at http://www.MindView.net.
+please submit a correction at:
+https://github.com/BruceEckel/TIJ-Directors-Cut/issues
 ///:~

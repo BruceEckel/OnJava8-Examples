@@ -16,7 +16,7 @@ class DepthReading implements Cloneable {
     try {
       o = super.clone();
     } catch(CloneNotSupportedException e) {
-      e.printStackTrace();
+      throw new RuntimeException(e);
     }
     return o;
   }
@@ -43,7 +43,7 @@ class TemperatureReading implements Cloneable {
     try {
       o = super.clone();
     } catch(CloneNotSupportedException e) {
-      e.printStackTrace();
+      throw new RuntimeException(e);
     }
     return o;
   }
@@ -73,7 +73,7 @@ class OceanReading implements Cloneable {
     try {
       o = (OceanReading)super.clone();
     } catch(CloneNotSupportedException e) {
-      e.printStackTrace();
+      throw new RuntimeException(e);
     }
     // Must clone references:
     o.depth = (DepthReading)o.depth.clone();

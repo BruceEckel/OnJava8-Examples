@@ -28,8 +28,7 @@ public class ChatterClient extends Thread {
       System.exit(1);
     } catch(SocketException e) {
       System.err.println("Can't open socket");
-      e.printStackTrace();
-      System.exit(1);
+      throw new RuntimeException(e);
     }
     System.out.println("ChatterClient starting");
   }
@@ -49,8 +48,7 @@ public class ChatterClient extends Thread {
         Dgram.toString(dp);
       System.out.println(rcvd);
     } catch(IOException e) {
-      e.printStackTrace();
-      System.exit(1);
+      throw new RuntimeException(e);
     }
   }
   @Override

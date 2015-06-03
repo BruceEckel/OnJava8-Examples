@@ -1,6 +1,7 @@
 //: control/WhileTest.java
 // ©2015 MindView LLC: see Copyright.txt
 // Demonstrates the while loop.
+// {OutputFirstAndLast: 5 Lines}
 
 public class WhileTest {
   static boolean condition() {
@@ -13,4 +14,4 @@ public class WhileTest {
       System.out.println("Inside 'while'");
     System.out.println("Exited 'while'");
   }
-} /* (Execute to see output) *///:~
+} ///:~

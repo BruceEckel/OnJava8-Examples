@@ -1,5 +1,6 @@
 //: concurrency/CountDownLatchDemo.java
 // ©2015 MindView LLC: see Copyright.txt
+// {OutputFirstAndLast: 10 Lines}
 import java.util.concurrent.*;
 import java.util.*;
 import static net.mindview.util.Print.*;
@@ -68,4 +69,4 @@ public class CountDownLatchDemo {
     print("Launched all tasks");
     exec.shutdown(); // Quit when all tasks complete
   }
-} /* (Execute to see output) *///:~
+} ///:~

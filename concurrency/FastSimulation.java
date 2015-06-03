@@ -1,5 +1,6 @@
 //: concurrency/FastSimulation.java
 // ©2015 MindView LLC: see Copyright.txt
+// {OutputFirstAndLast: 10 Lines}
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.*;
 import java.util.*;
@@ -49,4 +50,4 @@ public class FastSimulation {
     TimeUnit.SECONDS.sleep(5);
     exec.shutdownNow();
   }
-} /* (Execute to see output) *///:~
+} ///:~

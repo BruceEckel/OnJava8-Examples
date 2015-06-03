@@ -1,5 +1,6 @@
 //: concurrency/PriorityBlockingQueueDemo.java
 // ©2015 MindView LLC: see Copyright.txt
+// {OutputFirstAndLast: 12 Lines}
 import java.util.concurrent.*;
 import java.util.*;
 import static net.mindview.util.Print.*;
@@ -121,4 +122,4 @@ public class PriorityBlockingQueueDemo {
     exec.execute(new PrioritizedTaskProducer(queue, exec));
     exec.execute(new PrioritizedTaskConsumer(queue));
   }
-} /* (Execute to see output) *///:~
+} ///:~

@@ -40,7 +40,7 @@ public class ChatterServer {
       System.exit(1);
     } catch(IOException e) {
       System.out.println("Communication error");
-      e.printStackTrace();
+      throw new RuntimeException(e);
     }
   }
   public static void main(String[] args) {

@@ -1,6 +1,7 @@
 //: concurrency/SemaphoreDemo.java
 // ©2015 MindView LLC: see Copyright.txt
 // Testing the Pool class
+// {OutputFirstAndLast: 10 Lines}
 import java.util.concurrent.*;
 import java.util.*;
 import static net.mindview.util.Print.*;
@@ -65,4 +66,4 @@ public class SemaphoreDemo {
       pool.checkIn(f); // Second checkIn ignored
     exec.shutdown();
   }
-} /* (Execute to see output) *///:~
+} ///:~

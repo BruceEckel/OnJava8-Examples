@@ -1,6 +1,7 @@
 //: containers/Lists.java
 // ©2015 MindView LLC: see Copyright.txt
 // Things you can do with Lists.
+// {OutputFirstAndLast: 10 Lines}
 import java.util.*;
 import net.mindview.util.*;
 import static net.mindview.util.Print.*;
@@ -123,4 +124,4 @@ public class Lists {
       new LinkedList<>(Countries.names(25)));
     testLinkedList();
   }
-} /* (Execute to see output) *///:~
+} ///:~

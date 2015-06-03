@@ -1,6 +1,7 @@
 //: concurrency/CarBuilder.java
 // ©2015 MindView LLC: see Copyright.txt
 // A complex example of tasks working together.
+// {OutputFirstAndLast: 10 Lines}
 import java.util.concurrent.*;
 import java.util.*;
 import static net.mindview.util.Print.*;
@@ -209,4 +210,4 @@ public class CarBuilder {
     TimeUnit.SECONDS.sleep(7);
     exec.shutdownNow();
   }
-} /* (Execute to see output) *///:~
+} ///:~

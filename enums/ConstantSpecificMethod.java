@@ -28,4 +28,4 @@ public enum ConstantSpecificMethod {
     for(ConstantSpecificMethod csm : values())
       System.out.println(csm.getInfo());
   }
-} /* (Execute to see output) *///:~
+} ///:~

@@ -7,9 +7,9 @@ public class BufferedInputFile {
   public static String
   read(String filename) throws IOException {
     StringBuilder sb;
-    try ( // Reading input by lines:
-            BufferedReader in = new BufferedReader(
-                    new FileReader(filename))) {
+    // Reading input by lines:
+    try(BufferedReader in = new BufferedReader(
+        new FileReader(filename))) {
       String s;
       sb = new StringBuilder();
       while((s = in.readLine())!= null)

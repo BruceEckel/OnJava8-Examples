@@ -161,4 +161,4 @@ public class ThreadVariations {
     new InnerRunnable2("InnerRunnable2");
     new ThreadMethod("ThreadMethod").runTask();
   }
-} /* (Execute to see output) *///:~
+} ///:~

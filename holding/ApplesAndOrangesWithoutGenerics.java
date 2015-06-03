@@ -1,6 +1,6 @@
 //: holding/ApplesAndOrangesWithoutGenerics.java
 // ©2015 MindView LLC: see Copyright.txt
-// Simple container example (produces compiler warnings).
+// Simple container use (suppressing compiler warnings)
 // {ThrowsException}
 import java.util.*;
 
@@ -25,4 +25,4 @@ public class ApplesAndOrangesWithoutGenerics {
       // Orange is detected only at run time
     }
   }
-} /* (Execute to see output) *///:~
+} ///:~

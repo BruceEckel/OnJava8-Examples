@@ -3,6 +3,7 @@
 // Rewriting innerclasses/GreenhouseController.java
 // to use a ScheduledThreadPoolExecutor.
 // {Args: 5000}
+// {OutputFirstAndLast: 10 Lines}
 import java.util.concurrent.*;
 import java.util.*;
 
@@ -163,4 +164,4 @@ public class GreenhouseScheduler {
     gh.repeat(gh.new ThermostatDay(), 0, 1400);
     gh.repeat(gh.new CollectData(), 500, 500);
   }
-} /* (Execute to see output) *///:~
+} ///:~

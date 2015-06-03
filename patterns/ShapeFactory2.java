@@ -64,8 +64,7 @@ public class ShapeFactory2 {
           ShapeFactory.createShape(shlist1));
       }
     } catch(BadShapeCreation e) {
-      e.printStackTrace();
-      return;
+      throw new RuntimeException(e);
     }
     shapes.forEach(Shape::draw);
     shapes.forEach(Shape::erase);
