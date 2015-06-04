@@ -29,6 +29,9 @@ def copy_to_git():
     "Write togit.bat to copy missing files to git directory"
     exclude = ["Book.txt", "Git.txt", "togit.bat"]
     os.chdir(str(examplePath))
+    if list(examplePath.rglob("*.class")):
+        print("Run Ant clean First")
+        sys.exit(1)
     with Path("togit.bat").open("w") as togit:
         tocopy = [e for e in book if e not in git]
         for e in exclude:
