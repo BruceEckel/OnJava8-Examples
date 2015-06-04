@@ -3,8 +3,6 @@
 Run all (possible) java files and capture output and errors. Integrate into /* Output:
 """
 TODO = """
-- strip_last_blank_line -> cleanfiles (also strip trailing spaces on each line, remove copyright notice)
-
 - 1st and last 10 lines, with ... in between? {OutputFirstAndLast: 10 Lines}
 
 - {NoOutput}
@@ -489,12 +487,14 @@ def checkWidth():
 
 @CmdLine("c")
 def clean_files():
-    "Strip trainling blank lines in all Java files -- prep for reintigration into book"
+    "Strip trailing spaces and blank lines in all Java files -- prep for reintigration into book"
     os.chdir(str(examplePath))
     for j in Path(".").rglob("*.java"):
         print(str(j), end=" ")
         with j.open() as f:
-            code = f.read().strip()
+            code = f.readlines()
+            code = "\n".join([line.rstrip() for line in code])
+            code = code.strip()
         with j.open('w') as w:
             w.write(code)
 
