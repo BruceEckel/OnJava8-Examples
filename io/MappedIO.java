@@ -27,9 +27,10 @@ public class MappedIO {
     new Tester("Stream Write") {
       @Override
       public void test() throws IOException {
-        try (DataOutputStream dos = new DataOutputStream(
-                new BufferedOutputStream(
-                        new FileOutputStream(new File("temp.tmp"))))) {
+        try(DataOutputStream dos = new DataOutputStream(
+              new BufferedOutputStream(
+                new FileOutputStream(
+                  new File("temp.tmp"))))) {
           for(int i = 0; i < numOfInts; i++)
             dos.writeInt(i);
         }
@@ -38,11 +39,12 @@ public class MappedIO {
     new Tester("Mapped Write") {
       @Override
       public void test() throws IOException {
-        try (FileChannel fc = new RandomAccessFile("temp.tmp", "rw")
-                .getChannel()) {
+        try(FileChannel fc =
+            new RandomAccessFile("temp.tmp", "rw")
+            .getChannel()) {
           IntBuffer ib = fc.map(
-                  FileChannel.MapMode.READ_WRITE, 0, fc.size())
-                  .asIntBuffer();
+            FileChannel.MapMode.READ_WRITE, 0, fc.size())
+            .asIntBuffer();
           for(int i = 0; i < numOfInts; i++)
             ib.put(i);
         }
@@ -51,9 +53,9 @@ public class MappedIO {
     new Tester("Stream Read") {
       @Override
       public void test() throws IOException {
-        try (DataInputStream dis = new DataInputStream(
-                new BufferedInputStream(
-                        new FileInputStream("temp.tmp")))) {
+        try(DataInputStream dis = new DataInputStream(
+              new BufferedInputStream(
+                new FileInputStream("temp.tmp")))) {
           for(int i = 0; i < numOfInts; i++)
             dis.readInt();
         }
@@ -62,11 +64,11 @@ public class MappedIO {
     new Tester("Mapped Read") {
       @Override
       public void test() throws IOException {
-        try (FileChannel fc = new FileInputStream(
-                new File("temp.tmp")).getChannel()) {
+        try(FileChannel fc = new FileInputStream(
+             new File("temp.tmp")).getChannel()) {
           IntBuffer ib = fc.map(
-                  FileChannel.MapMode.READ_ONLY, 0, fc.size())
-                  .asIntBuffer();
+            FileChannel.MapMode.READ_ONLY, 0, fc.size())
+            .asIntBuffer();
           while(ib.hasRemaining())
             ib.get();
         }
@@ -75,8 +77,8 @@ public class MappedIO {
     new Tester("Stream Read/Write") {
       @Override
       public void test() throws IOException {
-        try (RandomAccessFile raf = new RandomAccessFile(
-                new File("temp.tmp"), "rw")) {
+        try(RandomAccessFile raf = new RandomAccessFile(
+              new File("temp.tmp"), "rw")) {
           raf.writeInt(1);
           for(int i = 0; i < numOfUbuffInts; i++) {
             raf.seek(raf.length() - 4);
@@ -88,11 +90,11 @@ public class MappedIO {
     new Tester("Mapped Read/Write") {
       @Override
       public void test() throws IOException {
-        try (FileChannel fc = new RandomAccessFile(
-                new File("temp.tmp"), "rw").getChannel()) {
+        try(FileChannel fc = new RandomAccessFile(
+              new File("temp.tmp"), "rw").getChannel()) {
           IntBuffer ib = fc.map(
-                  FileChannel.MapMode.READ_WRITE, 0, fc.size())
-                  .asIntBuffer();
+            FileChannel.MapMode.READ_WRITE, 0, fc.size())
+            .asIntBuffer();
           ib.put(0);
           for(int i = 1; i < numOfUbuffInts; i++)
             ib.put(ib.get(i - 1));

@@ -9,8 +9,8 @@ public class BasicFileOutput {
     BufferedReader in = new BufferedReader(
       new StringReader(
         BufferedInputFile.read("BasicFileOutput.java")));
-    try (PrintWriter out = new PrintWriter(
-            new BufferedWriter(new FileWriter(file)))) {
+    try(PrintWriter out = new PrintWriter(
+          new BufferedWriter(new FileWriter(file)))) {
       int lineCount = 1;
       String s;
       while((s = in.readLine()) != null )

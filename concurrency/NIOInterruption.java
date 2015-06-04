@@ -34,7 +34,7 @@ public class NIOInterruption {
     InetSocketAddress isa =
       new InetSocketAddress("localhost", 8080);
     SocketChannel sc1 = SocketChannel.open(isa);
-    try (SocketChannel sc2 = SocketChannel.open(isa)) {
+    try(SocketChannel sc2 = SocketChannel.open(isa)) {
       Future<?> f = exec.submit(new NIOBlocked(sc1));
       exec.execute(new NIOBlocked(sc2));
       exec.shutdown();

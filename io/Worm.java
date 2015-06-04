@@ -47,8 +47,8 @@ public class Worm implements Serializable {
   throws ClassNotFoundException, IOException {
     Worm w = new Worm(6, 'a');
     print("w = " + w);
-    try (ObjectOutputStream out = new ObjectOutputStream(
-            new FileOutputStream("worm.out"))) {
+    try(ObjectOutputStream out = new ObjectOutputStream(
+          new FileOutputStream("worm.out"))) {
       out.writeObject("Worm storage\n");
       out.writeObject(w);
       out.close(); // Also flushes output

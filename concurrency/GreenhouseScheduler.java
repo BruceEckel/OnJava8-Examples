@@ -139,10 +139,10 @@ public class GreenhouseScheduler {
         if(rand.nextInt(5) == 4)
           tempDirection = -tempDirection;
         // Store previous value:
-        lastTemp += tempDirection * (1.0f + rand.nextFloat());
+        lastTemp += tempDirection*(1.0f+rand.nextFloat());
         if(rand.nextInt(5) == 4)
           humidityDirection = -humidityDirection;
-        lastHumidity += humidityDirection * rand.nextFloat();
+        lastHumidity += humidityDirection*rand.nextFloat();
         // Calendar must be cloned, otherwise all
         // DataPoints hold references to the same lastTime.
         // For a basic object like Calendar, clone() is OK.

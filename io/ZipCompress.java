@@ -15,7 +15,8 @@ public class ZipCompress {
     CheckedOutputStream csum =
       new CheckedOutputStream(f, new Adler32());
      ZipOutputStream zos = new ZipOutputStream(csum);
-    try (BufferedOutputStream out = new BufferedOutputStream(zos)) {
+    try(BufferedOutputStream out =
+      new BufferedOutputStream(zos)) {
       zos.setComment("A test of Java Zipping");
       // No corresponding getComment(), though.
       for(String arg : args) {
@@ -38,7 +39,7 @@ public class ZipCompress {
     CheckedInputStream csumi =
       new CheckedInputStream(fi, new Adler32());
     ZipInputStream in2 = new ZipInputStream(csumi);
-    try(BufferedInputStream bis = 
+    try(BufferedInputStream bis =
         new BufferedInputStream(in2)) {
       ZipEntry ze;
       while((ze = in2.getNextEntry()) != null) {
@@ -48,7 +49,7 @@ public class ZipCompress {
           System.out.write(x);
       }
       if(args.length == 1)
-        print("Checksum: " + csumi.getChecksum().getValue());
+        print("Checksum: "+csumi.getChecksum().getValue());
     }
     // Alternative way to open and read Zip files:
     ZipFile zf = new ZipFile("test.zip");

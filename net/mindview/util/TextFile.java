@@ -11,7 +11,8 @@ public class TextFile extends ArrayList<String> {
   public static String read(String fileName) {
     StringBuilder sb = new StringBuilder();
     try {
-      try (BufferedReader in = new BufferedReader(new FileReader(
+      try(BufferedReader in =
+            new BufferedReader(new FileReader(
               new File(fileName).getAbsoluteFile()))) {
         String s;
         while((s = in.readLine()) != null) {
@@ -27,8 +28,8 @@ public class TextFile extends ArrayList<String> {
   // Write a single file in one method call:
   public static void write(String fileName, String text) {
     try {
-      try (PrintWriter out = new PrintWriter(
-              new File(fileName).getAbsoluteFile())) {
+      try(PrintWriter out = new PrintWriter(
+            new File(fileName).getAbsoluteFile())) {
         out.print(text);
       }
     } catch(IOException e) {
@@ -48,8 +49,8 @@ public class TextFile extends ArrayList<String> {
   }
   public void write(String fileName) {
     try {
-      try (PrintWriter out = new PrintWriter(
-              new File(fileName).getAbsoluteFile())) {
+      try(PrintWriter out = new PrintWriter(
+            new File(fileName).getAbsoluteFile())) {
         for(String item : this)
           out.println(item);
       }

@@ -15,11 +15,11 @@ public class GZIPcompress {
       System.exit(1);
     }
     BufferedOutputStream out;
-    try (InputStream in = new BufferedInputStream(
-            new FileInputStream(args[0]))) {
+    try(InputStream in = new BufferedInputStream(
+          new FileInputStream(args[0]))) {
       out = new BufferedOutputStream(
               new GZIPOutputStream(
-                      new FileOutputStream("test.gz")));
+                new FileOutputStream("test.gz")));
       System.out.println("Writing file");
       int c;
       while((c = in.read()) != -1)

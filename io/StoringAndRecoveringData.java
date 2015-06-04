@@ -5,9 +5,9 @@ import java.io.*;
 public class StoringAndRecoveringData {
   public static void main(String[] args)
   throws IOException {
-    try (DataOutputStream out = new DataOutputStream(
-            new BufferedOutputStream(
-                    new FileOutputStream("Data.txt")))) {
+    try(DataOutputStream out = new DataOutputStream(
+          new BufferedOutputStream(
+            new FileOutputStream("Data.txt")))) {
       out.writeDouble(3.14159);
       out.writeUTF("That was pi");
       out.writeDouble(1.41413);

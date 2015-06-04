@@ -57,7 +57,8 @@ public class JUnitDemo {
   // A helper method to reduce code duplication. As long
   // as it isn't annotated with @Test, it will not
   // be automatically executed by JUnit.
-  private void compare(ArrayList<String> lst, String[] strs) {
+  private
+  void compare(ArrayList<String> lst, String[] strs) {
     String[] array = (String[])lst.toArray();
     assertTrue("Arrays not the same length",
       array.length == strs.length);

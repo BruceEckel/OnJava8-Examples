@@ -10,7 +10,7 @@ public class ParseTrash {
   public static <T extends Trash> void
   fillBin(String filename, Fillable<T> bin) {
     try {
-      try (BufferedReader data = new BufferedReader(
+      try(BufferedReader data = new BufferedReader(
              new FileReader(filename))) {
         String buf;
         while((buf = data.readLine())!= null) {

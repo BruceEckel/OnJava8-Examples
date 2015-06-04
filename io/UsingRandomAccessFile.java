@@ -5,7 +5,8 @@ import java.io.*;
 public class UsingRandomAccessFile {
   static String file = "rtest.dat";
   static void display() throws IOException {
-    try (RandomAccessFile rf = new RandomAccessFile(file, "r")) {
+    try(RandomAccessFile rf =
+      new RandomAccessFile(file, "r")) {
       for(int i = 0; i < 7; i++)
         System.out.println(
                 "Value " + i + ": " + rf.readDouble());

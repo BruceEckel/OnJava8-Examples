@@ -22,8 +22,8 @@ public class Logon implements Serializable {
   public static void main(String[] args) throws Exception {
     Logon a = new Logon("Hulk", "myLittlePony");
     print("logon a = " + a);
-    try (ObjectOutputStream o = new ObjectOutputStream(
-            new FileOutputStream("Logon.out"))) {
+    try(ObjectOutputStream o = new ObjectOutputStream(
+         new FileOutputStream("Logon.out"))) {
       o.writeObject(a);
     }
     TimeUnit.SECONDS.sleep(1); // Delay

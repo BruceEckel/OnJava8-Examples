@@ -9,9 +9,9 @@ public class Redirecting {
     PrintStream console = System.out;
     BufferedInputStream in = new BufferedInputStream(
       new FileInputStream("Redirecting.java"));
-    try (PrintStream out = new PrintStream(
-            new BufferedOutputStream(
-                    new FileOutputStream("test.out")))) {
+    try(PrintStream out = new PrintStream(
+          new BufferedOutputStream(
+            new FileOutputStream("test.out")))) {
       System.setIn(in);
       System.setOut(out);
       System.setErr(out);

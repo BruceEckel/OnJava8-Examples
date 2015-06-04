@@ -40,8 +40,8 @@ public class Blip3 implements Externalizable {
     print("Constructing objects:");
     Blip3 b3 = new Blip3("A String ", 47);
     print(b3);
-    try (ObjectOutputStream o = new ObjectOutputStream(
-            new FileOutputStream("Blip3.out"))) {
+    try(ObjectOutputStream o = new ObjectOutputStream(
+          new FileOutputStream("Blip3.out"))) {
       print("Saving object:");
       o.writeObject(b3);
     }

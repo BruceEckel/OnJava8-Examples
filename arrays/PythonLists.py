@@ -18,7 +18,8 @@ class MyList(list): # Inherit from list
         reversed.reverse() # Built-in list method
         return reversed
 
-list2 = MyList(aList) # No 'new' needed for object creation
+# No 'new' necessary for object creation:
+list2 = MyList(aList)
 print(type(list2)) # <class '__main__.MyList'>
 print(list2.getReversed()) # [8, 7, 6, 5, 4, 3, 2, 1]
 #:~
