@@ -1,8 +1,10 @@
 #! py -3
 """
-Run all (possible) java files and capture output and errors
+Run all (possible) java files and capture output and errors. Integrate into /* Output:
 """
 TODO = """
+- strip_last_blank_line -> cleanfiles (also strip trailing spaces on each line, remove copyright notice)
+
 - 1st and last 10 lines, with ... in between? {OutputFirstAndLast: 10 Lines}
 
 - {NoOutput}
@@ -15,6 +17,7 @@ import textwrap
 import os, sys, re
 import difflib
 from collections import defaultdict
+from itertools import chain
 from betools import CmdLine, visitDir, ruler, head
 
 examplePath = Path(r"C:\Users\Bruce\Dropbox\__TIJ4-ebook\ExtractedExamples")
@@ -385,7 +388,7 @@ def showProblemErrors():
                 continue
             print(err)
 
-@CmdLine('w')
+# @CmdLine('w')
 def findAndEditAllCompileTimeError():
     "Find all files tagged with {CompileTimeError} and edit them"
     os.chdir(str(examplePath))
@@ -419,10 +422,8 @@ def editAllJavaFiles():
     """
     Edit all Java files in this directory and beneath
     """
-    with Path("editall.bat").open('w') as cmdfile:
-        cmdfile.write("subl ")
-        for java in Path(".").rglob("*.java"):
-            cmdfile.write("{} ".format(java))
+    for java in Path(".").rglob("*.java"):
+        os.system("ed {}".format(java))
 
 
 @CmdLine("s", num_args="+")
@@ -454,7 +455,6 @@ def findAllMains():
                 head(jf)
                 print(m)
 
-@CmdLine("c")
 def createChecklist():
     """
     Make checklist of chapters and appendices
@@ -469,6 +469,34 @@ def createChecklist():
             for h1 in soup.find_all("h1"):
                 text = " ".join(h1.text.split())
                 checklist.write(codecs.encode(text + "\n"))
+
+@CmdLine('w')
+def checkWidth():
+    "Check line width on code examples"
+    os.chdir(str(examplePath))
+    for example in chain(Path(".").rglob("*.java"), Path(".").rglob("*.cpp"), Path(".").rglob("*.py")):
+        displayed = False
+        with example.open() as code:
+            for n, line in enumerate(code.readlines()):
+                if "///:~" in line or "/* Output:" in line:
+                    break
+                if len(line) > 60:
+                    if not displayed:
+                        #print(str(example).replace("\\", "/"))
+                        displayed = True
+                        os.system("ed {}:{}".format(str(example), n+1))
+                    # print("{} : {}".format(n, len(line)))
+
+@CmdLine("c")
+def clean_files():
+    "Strip trainling blank lines in all Java files -- prep for reintigration into book"
+    os.chdir(str(examplePath))
+    for j in Path(".").rglob("*.java"):
+        print(str(j), end=" ")
+        with j.open() as f:
+            code = f.read().strip()
+        with j.open('w') as w:
+            w.write(code)
 
 
 if __name__ == '__main__': CmdLine.run()
