@@ -18,6 +18,7 @@ from collections import defaultdict
 from itertools import chain
 from betools import CmdLine, visitDir, ruler, head
 
+maxlinewidth = 60
 examplePath = Path(r"C:\Users\Bruce\Dropbox\__TIJ4-ebook\ExtractedExamples")
 
 maindef = re.compile("public\s+static\s+void\s+main")
@@ -275,8 +276,9 @@ class Result:
         with self.errFilePath.open() as f:
             err = f.read().strip()
             if err:
+                result += "--[ Error Output ]--\n"
                 result += err
-        return result.rstrip()
+        return textwrap.wrap(result, width=maxlinewidth)
 
     def __repr__(self):
         result = "\n" + ruler(self.javaFilePath, "=") +"\n"
@@ -301,6 +303,8 @@ class Result:
         return result
 
     def appendOutputFiles(self):
+        if not self.new_output:
+            return
         if not self.output_tags.has_output: # no /* Output: at all
             with self.javaFilePath.open() as jf:
                 code = jf.read()
@@ -478,7 +482,7 @@ def checkWidth():
             for n, line in enumerate(code.readlines()):
                 if "///:~" in line or "/* Output:" in line:
                     break
-                if len(line) > 60:
+                if len(line) > maxlinewidth:
                     if not displayed:
                         #print(str(example).replace("\\", "/"))
                         displayed = True

@@ -424,5 +424,4 @@ def findAllCommentTags():
 
 
 if __name__ == '__main__':
-    print(__doc__)
     CmdLine.run()
