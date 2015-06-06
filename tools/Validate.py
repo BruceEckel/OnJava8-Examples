@@ -28,6 +28,7 @@ maindef = re.compile("public\s+static\s+void\s+main")
 ###############################################################################
 # Powershell: https://gist.github.com/diyan/2850866
 # http://marxsoftware.blogspot.com/2008/02/windows-powershell-and-java.html
+allflags = dict()
 
 class Flags:
     discard = ["{Requires:"]
@@ -48,8 +49,11 @@ class Flags:
                 fl = fl.strip()
                 arg = arg.strip()
                 self.flags[fl] = arg
+                allflags[fl] = arg
             else:
                 self.flags[flag] = None # Make an entry, but no arg
+                allflags[flag] = None
+            # allflags.add(flag)
 
     def __contains__(self, elt):
         return elt in self.flags
@@ -125,7 +129,7 @@ class RunFiles:
         for java in RunFiles.base.rglob("*.java"):
             with java.open() as code:
                 body = code.read()
-                if maindef.search(body):
+                if maindef.search(body) or "{Exec:" in body:
                     self.runFiles.append(RunnableFile(java, body))
         allMains = set(self.runFiles)
         self.runFiles = [f for f in self.runFiles if not [nr for nr in self.not_runnable if nr in f]]
@@ -180,10 +184,25 @@ def createPowershellScript():
                 -RedirectStandardOutput {}-output.txt
                 -RedirectStandardError {}-erroroutput.txt
                 """.format(argquote, rf.javaArguments(), argquote, rf.name, rf.name)
+
+                if "Exec" in rf:
+                    print("Exec found in {}".format(rf.name))
+                    pprint.pprint(rf.flags.flags)
+                    command = rf.flags.flags["Exec"].split()
+                    pprint.pprint(command)
+                    pstext = """\
+                    Start-Process
+                    -FilePath "{}"
+                    -ArgumentList {}{}{}
+                    -NoNewWindow
+                    -RedirectStandardOutput {}-output.txt
+                    -RedirectStandardError {}-erroroutput.txt
+                    """.format(command[0] ,argquote, " ".join(command[1:]), argquote, rf.name, rf.name)
+
                 pstext = textwrap.dedent(pstext).replace('\n', ' ')
                 if "ThrowsException" in rf:
                     pstext += " -Wait\n"
-                    pstext += "Add-Content {}-erroroutput.txt '---[ Exception is Expected ]---'".format(rf.name)
+                    pstext += "Add-Content {}-erroroutput.txt '___[ Exception is Expected ]___'".format(rf.name)
                 ps.write("cd {}\n".format(os.getcwd()))
                 ps.write(pstext + "\n")
                 ps.write('Write-Host [{}] {}\n'.format(rf.relative, rf.name))
@@ -276,7 +295,7 @@ class Result:
         with self.errFilePath.open() as f:
             err = f.read().strip()
             if err:
-                result += "--[ Error Output ]--\n"
+                result += "___[ Error Output ]___\n"
                 result += err
         return textwrap.wrap(result, width=maxlinewidth)
 
@@ -386,7 +405,7 @@ def showProblemErrors():
                 continue
             if "LoggingException" in err:
                 continue
-            if "---[ Exception is Expected ]---" in err:
+            if "___[ Exception is Expected ]___" in err:
                 continue
             print(err)
 
@@ -503,4 +522,6 @@ def clean_files():
             w.write(code)
 
 
-if __name__ == '__main__': CmdLine.run()
+if __name__ == '__main__':
+    CmdLine.run()
+    pprint.pprint(allflags)

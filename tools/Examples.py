@@ -3,6 +3,9 @@
 Extract code examples from TIJ Director's Cut plain text file.
 Creates Ant build.xml file for each subdirectory.
 """
+TODO = """
+incorporate exec_command into build.xml
+"""
 from pathlib import Path
 import sys, os
 import re
@@ -187,13 +190,20 @@ class CodeFileOptions(object):
             self.continue_on_error = True
             self.msg = "* Exception was Expected *"
 
-
         self.alternatemainclass = None
         if "{main: " in self.codeFile.code:
              for line in self.codeFile.lines:
                 if "{main:" in line:
                     self.alternatemainclass = line.split("{main:")[1].strip()
                     self.alternatemainclass = self.alternatemainclass.rsplit("}", 1)[0]
+
+        self.exec_command = None
+        if "{Exec:" in self.codeFile.code:
+             for line in self.codeFile.lines:
+                if "{Exec:" in line:
+                    self.exec_command = line.split("{Exec:")[1].strip()
+                    self.exec_command = self.exec_command.rsplit("}", 1)[0]
+                    self.exec_command = self.exec_command.strip()
 
         self.timeout = None
         if "{TimeOut:" in self.codeFile.code:
