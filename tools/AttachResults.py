@@ -30,7 +30,7 @@ examplePath = Path(r"C:\Users\Bruce\Dropbox\__TIJ4-ebook\ExtractedExamples")
 
 
 class JavaMain:
-
+    max_output_length = 32 # lines beyond which we flag this
     maindef = re.compile("public\s+static\s+void\s+main")
     ellipses = ["[...]".center(maxlinewidth, '_')]
 
@@ -40,7 +40,7 @@ class JavaMain:
         def with_main(javaFilePath):
             with javaFilePath.open() as doc:
                 code = doc.read()
-                if JavaMain.maindef.search(code):
+                if JavaMain.maindef.search(code) or "{Exec:" in code:
                     return JavaMain.JFile(javaFilePath, code)
             return None
         def __init__(self, javaFilePath, code):
@@ -62,6 +62,8 @@ class JavaMain:
             return None
         if "/* Output: (None) */" in j_file.code:
             return None
+        if "/* Output: (Execute to see)" in j_file.code:
+            return None
         outfile = javaFilePath.with_name(javaFilePath.stem + "-output.txt")
         errfile = javaFilePath.with_name(javaFilePath.stem + "-erroroutput.txt")
         if outfile.exists() or errfile.exists():
@@ -75,6 +77,7 @@ class JavaMain:
         self.errfile = errfile
         self.first_and_last = None
         self.first_lines = None
+        self.long_output = False
 
         ol = self.j_file.output_line
         if ol:
@@ -103,6 +106,9 @@ class JavaMain:
                     result += err
         self.result = JavaMain.wrapOutput(result) + "\n"
 
+        if len(self.result.splitlines()) > JavaMain.max_output_length:
+            self.long_output = True
+
         for line in self.j_file.lines:
             if line.startswith("} ///:~"):
                 self.j_file.newcode += "} /* Output:\n"
@@ -127,6 +133,9 @@ class JavaMain:
             result += textwrap.wrap(line.rstrip(), width=maxlinewidth)
         return "\n".join(result)
 
+    def write_modified_file(self):
+        with self.j_file.javaFilePath.open('w') as modified:
+            modified.write(self.j_file.newcode)
 
 
 @CmdLine('o')
@@ -169,8 +178,6 @@ def extractResults():
                 if outline:
                     results.write(outline + "\n")
                 results.write(j_main.result)
-            # else:
-            #     results.write("[ No output for {} ]\n".format(jfp))
     os.system("subl AttachedResults.txt")
 
 @CmdLine('n')
@@ -201,73 +208,43 @@ def noOutputFixup():
             # test.write(ruler(jfp))
             # test.write(newcode)
 
+@CmdLine('v')
+def viewAttachedFiles():
+    """View all files containing output in this directory and below"""
+    for java in Path(".").rglob("*.java"):
+        with java.open() as codefile:
+            code = codefile.read()
+            if "/* Output:" in code:
+                if "/* Output: (None)" in code:
+                    continue
+                if "/* Output: (Execute to see)" in code:
+                    continue
+                for n, line in enumerate(code.splitlines()):
+                    if "/* Output:" in line:
+                        os.system("subl {}:{}".format(java, n))
+                        continue
+
 
 @CmdLine('a')
 def attachFiles():
     """Attach standard and error output to all files"""
     os.chdir(str(examplePath))
-    test = open("test.txt", 'w')
+    test = open("AllFilesWithOutput.txt", 'w')
+    longOutput = open("LongOutput.txt", 'w')
     for jfp in Path(".").rglob("*.java"):
         if "gui" in jfp.parts or "swt" in jfp.parts:
             continue
         j_main = JavaMain.create(jfp)
         if j_main is None:
             continue
+        j_main.write_modified_file()
         test.write(ruler())
         test.write(j_main.new_code())
-    os.system("subl test.txt")
+        if j_main.long_output:
+            longOutput.write(ruler())
+            longOutput.write(j_main.new_code())
+    os.system("subl AllFilesWithOutput.txt")
+    os.system("subl LongOutput.txt")
 
 if __name__ == '__main__': CmdLine.run()
 
-
-
-# def newOutput(javaFilePath):
-#     outfile = javaFilePath.with_name(javaFilePath.stem + "-output.txt")
-#     errfile = javaFilePath.with_name(javaFilePath.stem + "-erroroutput.txt")
-#     result =""
-#     if outfile.exists():
-#         with outfile.open() as f:
-#             out = f.read().strip()
-#             if out:
-#                 result += out + "\n"
-#     if errfile.exists():
-#         with errfile.open() as f:
-#             err = f.read().strip()
-#             if err:
-#                 result += "___[ Error Output ]___\n"
-#                 result += err
-#     result = wrapOutput(result)
-#     if result:
-#         return result + "\n"
-#     return None
-
-
-
-
-
-
-
-# def appendOutputFiles(javaFilePath):
-#     jfile = JFile.with_main(javaFilePath)
-#     if jfile is None:
-#         return
-#     output = newOutput(javaFilePath)
-#     if not output:
-#         return
-#     if not self.output_tags.has_output: # no /* Output: at all
-#         with self.javaFilePath.open() as jf:
-#             code = jf.read()
-#             lines = code.splitlines()
-#             while lines[-1].strip() is "":
-#                 lines.pop()
-#             assert lines[-1].rstrip() == "} ///:~"
-#             lines[-1] = "} /* Output:"
-#             lines.append(self.new_output)
-#             lines.append("*///:~")
-#             result = "\n".join(lines) + "\n"
-#         with self.javaFilePath.open("w") as jf:
-#             jf.write(result)
-#         return result
-#     else:
-#         print("{} already has Output!".format(self.javaFilePath))
-#         sys.exit()

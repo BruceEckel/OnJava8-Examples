@@ -28,7 +28,6 @@ maindef = re.compile("public\s+static\s+void\s+main")
 ###############################################################################
 # Powershell: https://gist.github.com/diyan/2850866
 # http://marxsoftware.blogspot.com/2008/02/windows-powershell-and-java.html
-allflags = dict()
 
 class Flags:
     discard = ["{Requires:"]
@@ -49,11 +48,8 @@ class Flags:
                 fl = fl.strip()
                 arg = arg.strip()
                 self.flags[fl] = arg
-                allflags[fl] = arg
             else:
                 self.flags[flag] = None # Make an entry, but no arg
-                allflags[flag] = None
-            # allflags.add(flag)
 
     def __contains__(self, elt):
         return elt in self.flags
@@ -445,6 +441,8 @@ def editAllJavaFiles():
     """
     for java in Path(".").rglob("*.java"):
         os.system("ed {}".format(java))
+        # print("ed %s" % java)
+        # print(java)
 
 
 @CmdLine("s", num_args="+")
@@ -524,4 +522,3 @@ def clean_files():
 
 if __name__ == '__main__':
     CmdLine.run()
-    pprint.pprint(allflags)
