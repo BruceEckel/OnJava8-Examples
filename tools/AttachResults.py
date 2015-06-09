@@ -210,7 +210,7 @@ def noOutputFixup():
 
 @CmdLine('v')
 def viewAttachedFiles():
-    """View all files containing output in this directory and below"""
+    """Sublime edit all files containing output in this directory and below"""
     for java in Path(".").rglob("*.java"):
         with java.open() as codefile:
             code = codefile.read()
@@ -227,7 +227,7 @@ def viewAttachedFiles():
 
 @CmdLine('s')
 def showJavaFiles():
-    """Show all java files in this directory and below"""
+    """Sublime edit all java files in this directory and below"""
     for java in Path(".").rglob("*.java"):
         os.system("subl {}".format(java))
 
@@ -243,6 +243,22 @@ def blankOutputFiles():
                 # print(output.group(1))
                 if not output.group(1).strip():
                     print(java)
+
+@CmdLine('u')
+def unexpectedOutput():
+    """Show java files with output where none was expected"""
+    os.chdir(str(examplePath))
+    for java in Path(".").rglob("*.java"):
+        with java.open() as codeFile:
+            if "/* Output: (None) */" in codeFile.read():
+                outfile = java.with_name(java.stem + "-output.txt")
+                errfile = java.with_name(java.stem + "-erroroutput.txt")
+                if outfile.exists():
+                    if outfile.stat().st_size:
+                        print("Unexpected output: {}".format(java))
+                if errfile.exists():
+                    if errfile.stat().st_size:
+                        print("Unexpected error output: {}".format(java))
 
 @CmdLine('a')
 def attachFiles():
