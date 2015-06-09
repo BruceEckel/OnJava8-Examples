@@ -221,9 +221,28 @@ def viewAttachedFiles():
                     continue
                 for n, line in enumerate(code.splitlines()):
                     if "/* Output:" in line:
-                        os.system("subl {}:{}".format(java, n))
+                        # os.system("subl {}:{}".format(java, n))
+                        os.system("subl {}".format(java))
                         continue
 
+@CmdLine('s')
+def showJavaFiles():
+    """Show all java files in this directory and below"""
+    for java in Path(".").rglob("*.java"):
+        os.system("subl {}".format(java))
+
+@CmdLine('b')
+def blankOutputFiles():
+    """Show java files with expected output where there is none"""
+    find_output = re.compile(r"/\* Output:(.*)\*///:~", re.DOTALL)
+    os.chdir(str(examplePath))
+    for java in Path(".").rglob("*.java"):
+        with java.open() as codeFile:
+            output = find_output.search(codeFile.read())
+            if output:
+                # print(output.group(1))
+                if not output.group(1).strip():
+                    print(java)
 
 @CmdLine('a')
 def attachFiles():
