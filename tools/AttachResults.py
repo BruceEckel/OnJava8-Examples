@@ -4,6 +4,10 @@ Append output and error files to Java files
 """
 TODO = """
 
+- NUL bytes in some files:
+  1. Show we can find them
+  2. Replace with NUL or [NUL]
+
 - Display all files with less than 100% match (rather than putting percentage and "Sample" in)
   Rely on visual inspection of non-matching file?
   Have a list of files to exclude normally, and inspect ocasionally
@@ -23,6 +27,7 @@ import pprint
 import textwrap
 import os, sys, re
 from itertools import chain
+from sortedcontainers import SortedSet
 from betools import CmdLine, visitDir, ruler, head
 
 maxlinewidth = 59
@@ -32,10 +37,11 @@ examplePath = Path(r"C:\Users\Bruce\Dropbox\__TIJ4-ebook\ExtractedExamples")
 class JavaMain:
     max_output_length = 32 # lines beyond which we flag this
     maindef = re.compile("public\s+static\s+void\s+main")
-    ellipses = ["[...]".center(maxlinewidth, '_')]
+    leader = "_" * 8
+    ellipses = [leader + leader.join(["..."] * 4) + leader]
+    # ellipses = ["[...]".center(14, '_') * 4]
 
     class JFile:
-        """Could just manipulate this, then write it at the end"""
         @staticmethod
         def with_main(javaFilePath):
             with javaFilePath.open() as doc:
@@ -96,7 +102,7 @@ class JavaMain:
                         out = "\n".join(lines[:self.first_and_last] + JavaMain.ellipses + lines[-self.first_and_last:])
                     elif self.first_lines:
                         lines = out.splitlines()
-                        out = "\n".join(lines[:self.first_lines] + JavaMain.ellipses)
+                        out = "\n".join(lines[:self.first_lines] + [" " * 18 + "..."])
                     result += out + "\n"
         if errfile.exists(): # Always include all of errfile
             with errfile.open() as f:
@@ -127,6 +133,10 @@ class JavaMain:
 
     @staticmethod
     def wrapOutput(output):
+        """
+        Wrap to line limit and perform other fixups for display and comparison
+        """
+        output = output.replace('\0', "NUL")
         lines = output.splitlines()
         result = []
         for line in lines:
@@ -180,7 +190,7 @@ def extractResults():
                 results.write(j_main.result)
     os.system("subl AttachedResults.txt")
 
-@CmdLine('n')
+#@CmdLine('n')
 def noOutputFixup():
     """Attach "Output: (None)" lines to empty output files"""
     os.chdir(str(examplePath))
@@ -225,11 +235,61 @@ def viewAttachedFiles():
                         os.system("subl {}".format(java))
                         continue
 
+
+@CmdLine('x')
+def showNulBytesInOutput():
+    """Look for NUL bytes in output files`"""
+    os.chdir(str(examplePath))
+    for normal in Path(".").rglob("*-output.txt"):
+        with normal.open() as codeFile:
+            if "\0" in codeFile.read():
+                print(normal)
+    for errors in Path(".").rglob("*-erroroutput.txt"):
+        with errors.open() as codeFile:
+            if "\0" in codeFile.read():
+                print(normal)
+
+
 @CmdLine('s')
 def showJavaFiles():
     """Sublime edit all java files in this directory and below"""
     for java in Path(".").rglob("*.java"):
         os.system("subl {}".format(java))
+
+
+# @CmdLine('w')
+def boldWords():
+    """
+    Create list of bolded words to be used as a Word dictionary
+    """
+    from bs4 import BeautifulSoup
+    import codecs
+    import string
+    clean = lambda dirty: ''.join(filter(string.printable.__contains__, dirty))
+    def flense(word):
+        word = clean(word)
+        word = word.split('(')[0]
+        word = word.split('[')[0]
+        return word.strip()
+
+    os.chdir(str(examplePath / ".."))
+    spelldict = SortedSet()
+    with codecs.open(str(Path("TIJDirectorsCut.htm")),'r', encoding='utf-8', errors='ignore') as book:
+        soup = BeautifulSoup(book.read())
+        for b in soup.find_all("b"):
+            text = (" ".join(b.text.split())).strip()
+            if " " in text:
+                continue
+            text = flense(text)
+            if text:
+                spelldict.add(text)
+
+    with Path("BoldedWords.txt").open('w') as boldwords:
+        for word in spelldict:
+            if len(word):
+                if word[0] in string.ascii_letters:
+                    boldwords.write(word + "\n")
+
 
 @CmdLine('b')
 def blankOutputFiles():
@@ -260,6 +320,144 @@ def unexpectedOutput():
                     if errfile.stat().st_size:
                         print("Unexpected error output: {}".format(java))
 
+exclude_files = [
+r"concurrency\ActiveObjectDemo.java",
+r"concurrency\AtomicityTest.java",
+r"concurrency\CachedThreadPool.java",
+r"concurrency\CountDownLatchDemo.java",
+r"concurrency\DaemonFromFactory.java",
+r"concurrency\DeadlockingDiningPhilosophers.java",
+r"concurrency\FastSimulation.java",
+r"concurrency\FixedDiningPhilosophers.java",
+r"concurrency\FixedThreadPool.java",
+r"concurrency\MoreBasicThreads.java",
+r"concurrency\NIOInterruption.java",
+r"concurrency\SelfManaged.java",
+r"concurrency\SemaphoreDemo.java",
+r"concurrency\SimpleDaemons.java",
+r"concurrency\SleepingTask.java",
+r"concurrency\ThreadLocalVariableHolder.java",
+r"patterns\PaperScissorsRock.java",
+r"patterns\recyclea\RecycleA.java",
+r"patterns\visitor\BeeAndFlowers.java",
+r"concurrency\EvenGenerator.java",
+r"concurrency\GreenhouseScheduler.java",
+r"concurrency\OrnamentalGarden.java",
+r"concurrency\PipedIO.java",
+r"concurrency\SimplePriorities.java",
+r"concurrency\SimpleThread.java",
+r"concurrency\ThreadVariations.java",
+r"generics\DynamicProxyMixin.java",
+r"logging\LoggingLevelManipulation.java",
+r"logging\SimpleFilter.java",
+r"annotations\AtUnitExample4.java",
+r"concurrency\BankTellerSimulation.java",
+r"concurrency\CarBuilder.java",
+r"concurrency\ListComparisons.java",
+r"concurrency\MapComparisons.java",
+r"concurrency\ReaderWriterList.java",
+r"concurrency\restaurant2\RestaurantWithQueues.java",
+r"generics\Mixins.java",
+r"io\LockingMappedFiles.java",
+r"logging\ConfigureLogging.java",
+r"logging\LoggingLevels.java",
+r"operators\HelloDate.java",
+r"annotations\AtUnitComposition.java",
+r"annotations\AtUnitExample3.java",
+r"annotations\AtUnitExternalTest.java",
+r"annotations\HashSetTest.java",
+r"annotations\UseCaseTracker.java",
+r"concurrency\Interrupting.java",
+r"concurrency\SerialNumberChecker.java",
+r"concurrency\SimpleMicroBenchmark.java",
+r"concurrency\SynchronizationComparisons.java",
+r"concurrency\SyncObject.java",
+r"containers\ListPerformance.java",
+r"io\Logon.java",
+r"logging\CustomHandler.java",
+r"object\HelloDate.java",
+r"annotations\AtUnitExample1.java",
+r"annotations\AtUnitExample2.java",
+r"concurrency\ExchangerDemo.java",
+r"concurrency\ExplicitCriticalSection.java",
+r"concurrency\Restaurant.java",
+r"containers\MapPerformance.java",
+r"containers\SetPerformance.java",
+r"exceptions\LoggingExceptions.java",
+r"logging\InfoLogging.java",
+r"logging\InfoLogging2.java",
+r"logging\LogToFile.java",
+r"logging\LogToFile2.java",
+r"logging\MultipleHandlers.java",
+r"logging\MultipleHandlers2.java",
+r"annotations\AtUnitExample5.java",
+r"concurrency\Daemons.java",
+r"concurrency\HorseRace.java",
+r"concurrency\ToastOMatic.java",
+r"enums\ConstantSpecificMethod.java",
+r"exceptions\LoggingExceptions2.java",
+r"io\MakeDirectories.java",
+r"io\MappedIO.java",
+r"io\PreferencesDemo.java",
+r"logging\PrintableLogRecord.java",
+r"references\Compete.java",
+
+# Keep an eye on:
+r"strings\JGrep.java",
+]
+
+@CmdLine('c')
+def compare_output():
+    """Compare attached and newly-generated output"""
+    TODO = """
+      - Could also compare number of lines
+    """
+    ratio_target = 1.0
+    from difflib import SequenceMatcher
+    os.chdir(str(examplePath))
+    def generated_output(jfp):
+        j_main = JavaMain.create(jfp)
+        if not j_main:
+            return None
+        return j_main.result.strip()
+    def embedded_output(jfp):
+        find_output = re.compile(r"/\* (Output:.*)\*///:~", re.DOTALL)
+        with jfp.open() as java:
+            output = find_output.search(java.read())
+            assert output, "No embedded output: in {}".format(jfp)
+            return "\n".join(output.group(1).strip().splitlines()[1:])
+    if Path("CompareExclusions.txt").is_file():
+        Path("CompareExclusions.txt").unlink()
+    with Path("OutputComparisons.txt").open('w') as comparisions:
+        for jfp in Path(".").rglob("*.java"):
+            if "gui" in jfp.parts or "swt" in jfp.parts:
+                continue
+            if str(jfp) in exclude_files:
+                continue
+            generated = generated_output(jfp)
+            if generated is None:
+                continue
+            embedded = embedded_output(jfp)
+            comp = SequenceMatcher(None, embedded, generated)
+            ratio = comp.ratio()
+            if ratio < ratio_target:
+                print(jfp)
+                print("ratio: {}\n".format(ratio))
+                comparisions.write("\n" + ruler(jfp))
+                comparisions.write("ratio: {}\n".format(ratio))
+                comparisions.write(ruler("Attached"))
+                comparisions.write(embedded)
+                comparisions.write("\n" + ruler("Generated"))
+                comparisions.write(generated)
+                with Path("CompareExclusions.txt").open('a') as exclusions:
+                    exclusions.write('r"' + str(jfp) + "\",\n")
+    if Path("CompareExclusions.txt").is_file():
+        os.system("ed CompareExclusions.txt")
+    if Path("OutputComparisons.txt").is_file():
+        os.system("ed OutputComparisons.txt")
+
+
+
 @CmdLine('a')
 def attachFiles():
     """Attach standard and error output to all files"""
@@ -278,8 +476,8 @@ def attachFiles():
         if j_main.long_output:
             longOutput.write(ruler())
             longOutput.write(j_main.new_code())
-    os.system("subl AllFilesWithOutput.txt")
-    os.system("subl LongOutput.txt")
+    # os.system("subl AllFilesWithOutput.txt")
+    # os.system("subl LongOutput.txt")
 
 if __name__ == '__main__': CmdLine.run()
 
