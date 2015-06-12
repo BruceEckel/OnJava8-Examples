@@ -1,2 +1,2 @@
 @echo off
-python C:\Users\Bruce\Dropbox\__TIJ4-ebook\update_git.py %*
+python C:\Users\Bruce\Dropbox\__Dreaming-in-Java\update_git.py %*

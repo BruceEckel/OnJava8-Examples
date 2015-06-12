@@ -1,2 +1,2 @@
 @echo off
-python C:\Users\Bruce\Dropbox\__TIJ4-ebook\AttachResults.py %*
+python C:\Users\Bruce\Dropbox\__Dreaming-in-Java\AttachResults.py %*
