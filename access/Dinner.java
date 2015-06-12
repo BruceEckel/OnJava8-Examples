@@ -1,5 +1,5 @@
 //: access/Dinner.java
-// ©2015 MindView LLC: see Copyright.txt
+// Â©2015 MindView LLC: see Copyright.txt
 // Uses the library.
 import access.dessert.*;
 
