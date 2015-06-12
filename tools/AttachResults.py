@@ -31,7 +31,7 @@ from sortedcontainers import SortedSet
 from betools import CmdLine, visitDir, ruler, head
 
 maxlinewidth = 59
-examplePath = Path(r"C:\Users\Bruce\Dropbox\__TIJ4-ebook\ExtractedExamples")
+examplePath = Path(r"C:\Users\Bruce\Dropbox\__Dreaming-in-Java\ExtractedExamples")
 
 
 class JavaMain:
@@ -274,7 +274,7 @@ def boldWords():
 
     os.chdir(str(examplePath / ".."))
     spelldict = SortedSet()
-    with codecs.open(str(Path("TIJDirectorsCut.htm")),'r', encoding='utf-8', errors='ignore') as book:
+    with codecs.open(str(Path("DreamingInJava.htm")),'r', encoding='utf-8', errors='ignore') as book:
         soup = BeautifulSoup(book.read())
         for b in soup.find_all("b"):
             text = (" ".join(b.text.split())).strip()

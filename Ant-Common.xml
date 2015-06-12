@@ -5,7 +5,7 @@
 
   <description>
     Ant build.xml for the source code for chapter ${chapter}
-    Thinking in Java Director's Cut by Bruce Eckel
+    Dreaming in Java by Bruce Eckel
     Code available at http://www.MindView.net
     See installation instructions in README.md
     See copyright notice in CopyRight.txt

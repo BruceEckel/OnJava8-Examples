@@ -11,9 +11,9 @@ import msvcrt
 verbose = True
 
 root = Path('.').resolve().parent.parent
-boxdir = root / "Box Sync" / "TIJ4-ebook-Backups"
-gdrive = root / "Google Drive" / "TIJ4RefreshedBackups"
-idrive = root / "IDrive-Sync" / "TIJ4-ebook-Backups"
+boxdir = root / "Box Sync" / "Dreaming-in-Java-Backups"
+gdrive = root / "Google Drive" / "Dreaming-in-Java-Backups"
+idrive = root / "IDrive-Sync" / "Dreaming-in-Java-Backups"
 
 def cp(src, dest, display=True, shortForm=False):
     if type(src) is pathlib.WindowsPath:
@@ -29,7 +29,7 @@ def cp(src, dest, display=True, shortForm=False):
     shutil.copy(str(src), str(dest))
 
 now = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M")
-zip_file_name = 'TIJDirectorsCut-' + now + '.zip'
+zip_file_name = 'DreamingInJava-' + now + '.zip'
 dest = boxdir / zip_file_name
 print(dest)
 tozip = ["Notes.txt", "backup.bat", "go.bat", "Checklist.txt"] + glob("*.py") + glob("*.docx") + glob("*.docm")
@@ -49,9 +49,9 @@ tools = ["Examples.py", "Validate.py", "AttachResults.py", "backup.bat", "go.bat
 
 print("\nCopying tools to Github")
 for tool in tools:
-    cp(tool, root / "Documents" / "GitHub" / "TIJ-Directors-Cut" / "tools", shortForm=True)
+    cp(tool, root / "Documents" / "GitHub" / "Dreaming-in-Java" / "tools", shortForm=True)
 
-cp("Checklist.txt", root / "Documents" / "GitHub" / "TIJ-Directors-Cut", shortForm=True)
+cp("Checklist.txt", root / "Documents" / "GitHub" / "Dreaming-in-Java", shortForm=True)
 
 
 # Touch this file to indicate most recent update time:

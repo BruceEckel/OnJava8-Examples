@@ -19,7 +19,7 @@ from itertools import chain
 from betools import CmdLine, visitDir, ruler, head
 
 maxlinewidth = 60
-examplePath = Path(r"C:\Users\Bruce\Dropbox\__TIJ4-ebook\ExtractedExamples")
+examplePath = Path(r"C:\Users\Bruce\Dropbox\__Dreaming-in-Java\ExtractedExamples")
 
 maindef = re.compile("public\s+static\s+void\s+main")
 
@@ -482,7 +482,7 @@ def createChecklist():
     import codecs
     os.chdir(str(examplePath / ".."))
 
-    with codecs.open(str(Path("TIJDirectorsCut.htm")),'r', encoding='utf-8', errors='ignore') as book:
+    with codecs.open(str(Path("DreamingInJava.htm")),'r', encoding='utf-8', errors='ignore') as book:
         soup = BeautifulSoup(book.read())
         with Path("Checklist-generated.txt").open('wb') as checklist:
             for h1 in soup.find_all("h1"):
