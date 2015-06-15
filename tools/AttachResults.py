@@ -3,24 +3,8 @@
 Append output and error files to Java files
 """
 TODO = """
-
-- NUL bytes in some files:
-  1. Show we can find them
-  2. Replace with NUL or [NUL]
-
-- Display all files with less than 100% match (rather than putting percentage and "Sample" in)
-  Rely on visual inspection of non-matching file?
-  Have a list of files to exclude normally, and inspect ocasionally
-
-
 - Test to make sure that None files indeed have no output
-
-- Ambitious: Allow edits of "AttachedResults.txt" which are
-then pulled back into the source files.
-
-} /* Same output as RoShamBo2.java *///:~
-} /* Output: (Same as RoShamBo2.java) *///:~
-
+- Collect all tests under single flag
 """
 from pathlib import Path
 import pprint
