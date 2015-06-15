@@ -117,7 +117,7 @@ class RunnableFile:
 class RunFiles:
     # RunFirst is temporary?
     not_runnable = ["ValidateByHand", "TimeOutDuringTesting", "CompileTimeError", 'TimeOut', 'RunFirst']
-    skip_dirs = ["gui", "swt"]
+    skip_dirs = ["ui", "swt"]
 
     base = Path(".")
     def __init__(self):

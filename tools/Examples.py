@@ -212,7 +212,7 @@ class CodeFileOptions(object):
                     self.timeout = line.split("{TimeOut:")[1].strip()
                     self.timeout = self.timeout.rsplit("}", 1)[0]
                     self.continue_on_error = True
-        elif "//: gui/" in self.codeFile.code or "//: swt/" in self.codeFile.code or "{TimeOutDuringTesting}" in self.codeFile.code:
+        elif "//: ui/" in self.codeFile.code or "//: swt/" in self.codeFile.code or "{TimeOutDuringTesting}" in self.codeFile.code:
             self.timeout = "4000"
             self.continue_on_error = True
             self.msg = "* Timeout for Testing *"
