@@ -1,12 +1,12 @@
 <?xml version="1.0" ?>
 
-<project basedir="." default="run" name="Dreaming in Java by Bruce Eckel">
+<project basedir="." default="run" name="Bruce Eckel On Java">
   <import file="Ant-Clean.xml"/>
 
   <description>
     Main build.xml for the source code for
-    Dreaming in Java by Bruce Eckel
-    Code available at http://www.MindView.net
+    Bruce Eckel On Java
+    Code available at https://github.com/BruceEckel/On-Java
     See installation instructions in README.md
     See copyright notice in CopyRight.txt
 

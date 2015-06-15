@@ -5,8 +5,8 @@
 
   <description>
     Ant build.xml for the source code for chapter ${chapter}
-    Dreaming in Java by Bruce Eckel
-    Code available at http://www.MindView.net
+    Bruce Eckel on Java
+    Code available at https://github.com/BruceEckel/On-Java
     See installation instructions in README.md
     See copyright notice in CopyRight.txt
 
