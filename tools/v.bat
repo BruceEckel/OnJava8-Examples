@@ -1,2 +1,2 @@
 @echo off
-python C:\Users\Bruce\Dropbox\__Dreaming-in-Java\Validate.py %*
+python C:\Users\Bruce\Dropbox\___OnJava\Validate.py %*

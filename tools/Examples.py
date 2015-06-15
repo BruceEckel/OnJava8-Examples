@@ -1,6 +1,6 @@
 #! py -3
 """
-Extract code examples from Dreaming in Java plain text file.
+Extract code examples from On Java plain text file.
 Creates Ant build.xml file for each subdirectory.
 """
 TODO = """
@@ -19,9 +19,9 @@ maindef = re.compile("public\s+static\s+void\s+main")
 
 # Leave this alone, relative path necessary:
 destination = Path('.') / "ExtractedExamples"
-sourceText = Path('.') / "DreamingInJava.txt"
-github = Path(r'C:\Users\Bruce\Documents\GitHub\Dreaming-in-Java')
-examples = Path(r"C:\Users\Bruce\Dropbox\__Dreaming-in-Java\ExtractedExamples")
+sourceText = Path('.') / "OnJava.txt"
+github = Path(r'C:\Users\Bruce\Documents\GitHub\On-Java')
+examples = Path(r"C:\Users\Bruce\Dropbox\___OnJava\ExtractedExamples")
 
 startBuild = """\
 <?xml version="1.0" ?>
@@ -149,7 +149,7 @@ def copySupplementalFilesFromGithub():
     for args in [
         (".", "build.xml"),
         (".", "Ant-*.xml"),
-        ("gui", "*.gif"),
+        ("ui", "*.gif"),
         ("network", "*.bat"),
         ("network", "build.xml"),
         ("remote", "*.bat"),
@@ -360,7 +360,7 @@ def createAntFiles():
 
 @CmdLine("f")
 def findNonJavaFiles():
-    "Find non-java files in DreamingInJava.txt"
+    "Find non-java files in OnJava.txt"
     if not sourceText.exists():
         print("Cannot find", sourceText)
         sys.exit()
@@ -374,7 +374,7 @@ def findNonJavaFiles():
 
 @CmdLine('e')
 def extractAndCreateBuildFiles():
-    "Clean, then extract examples from DreamingInJava.txt, build ant files"
+    "Clean, then extract examples from OnJava.txt, build ant files"
     clean()
     extractExamples()
     createAntFiles()

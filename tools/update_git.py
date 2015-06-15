@@ -8,9 +8,9 @@ from sortedcontainers import SortedSet
 from betools import *
 from pprint import *
 
-gitpath = Path(r"C:\Users\Bruce\Documents\GitHub\Dreaming-in-Java")
+gitpath = Path(r"C:\Users\Bruce\Documents\GitHub\On-Java")
 assert gitpath.is_dir()
-examplePath = Path(r"C:\Users\Bruce\Dropbox\__Dreaming-in-Java\ExtractedExamples")
+examplePath = Path(r"C:\Users\Bruce\Dropbox\___OnJava\ExtractedExamples")
 assert examplePath.is_dir()
 
 def ignore(lst):

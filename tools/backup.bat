@@ -45,7 +45,12 @@ cp(dest, idrive)
 
 shortcut = Path(r"C:\Python34\Scripts")
 tools = ["Examples.py", "Validate.py", "AttachResults.py", "backup.bat", "go.bat", "update_git.py",
-             shortcut / "a.bat", shortcut / "v.bat", shortcut / "e.bat", shortcut / "g.bat", shortcut / "home.bat"]
+             shortcut / "a.bat",
+             shortcut / "v.bat",
+             shortcut / "e.bat",
+             shortcut / "g.bat",
+             shortcut / "p.bat",
+             shortcut / "home.bat"]
 
 print("\nCopying tools to Github")
 for tool in tools:

@@ -74,7 +74,7 @@
   <target name="base">
     <javac includeantruntime="false"
      classpath="${java.class.path};${basedir};${basedir}/.."
-     srcdir="${basedir}/../net/mindview/">
+     srcdir="${basedir}/../com/mindviewinc/">
       <compilerarg value="-Xmaxerrs"/>
       <compilerarg value="10"/>
     </javac>

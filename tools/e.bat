@@ -1,2 +1,2 @@
 @echo off
-python C:\Users\Bruce\Dropbox\__Dreaming-in-Java\Examples.py %*
+python C:\Users\Bruce\Dropbox\___OnJava\Examples.py %*
