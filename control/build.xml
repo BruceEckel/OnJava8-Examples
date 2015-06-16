@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+
+<project default="run">
+  <property name="chapter" value="control"/>
+  <property name="excludedfiles" value=""/>
+  <import file="../Ant-Common.xml"/>
+  <import file="../Ant-Clean.xml"/>
+
+  <target name="run" description="Compile and run" depends="build">
+    <jrun cls="BreakAndContinue" />
+    <jrun cls="CommaOperator" />
+    <jrun cls="ForEachFloat" />
+    <jrun cls="ForEachInt" />
+    <jrun cls="ForEachString" />
+    <jrun cls="IfElse" />
+    <jrun cls="IfElse2" />
+    <jrun cls="LabeledFor" />
+    <jrun cls="LabeledWhile" />
+    <jrun cls="ListCharacters" />
+    <jrun cls="StringSwitch" />
+    <jrun cls="VowelsAndConsonants" />
+    <jrun cls="WhileTest" />
+  </target>
+
+</project>

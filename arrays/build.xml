@@ -1,0 +1,38 @@
+<?xml version="1.0" ?>
+
+<project default="run">
+  <property name="chapter" value="arrays"/>
+  <property name="excludedfiles" value=""/>
+  <import file="../Ant-Common.xml"/>
+  <import file="../Ant-Clean.xml"/>
+
+  <target name="run" description="Compile and run" depends="build">
+    <jrun cls="AlphabeticSearch" />
+    <jrun cls="ArrayOfGenerics" />
+    <jrun cls="ArrayOptions" />
+    <jrun cls="ArraySearching" />
+    <jrun cls="AssemblingMultidimensionalArrays" />
+    <jrun cls="AutoboxingArrays" />
+    <jrun cls="ComparatorTest" />
+    <jrun cls="ComparingArrays" />
+    <jrun cls="CompType" />
+    <jrun cls="ContainerComparison" />
+    <jrun cls="CopyingArrays" />
+    <jrun cls="FillingArrays" />
+    <jrun cls="GeneratorsTest" />
+    <jrun cls="IceCream" />
+    <jrun cls="MultidimensionalObjectArrays" />
+    <jrun cls="MultidimensionalPrimitiveArray" />
+    <jrun cls="MultiDimWrapperArray" />
+    <jrun cls="ParameterizedArrayType" />
+    <jrun cls="PrimitiveConversionDemonstration" />
+    <jrun cls="RaggedArray" />
+    <jrun cls="RandomGeneratorsTest" />
+    <jrun cls="Reverse" />
+    <jrun cls="StringSorting" />
+    <jrun cls="TestArrayGeneration" />
+    <jrun cls="TestGenerated" />
+    <jrun cls="ThreeDWithNew" />
+  </target>
+
+</project>

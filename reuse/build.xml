@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+
+<project default="run">
+  <property name="chapter" value="reuse"/>
+  <property name="excludedfiles" value="Lisa.java"/>
+  <import file="../Ant-Common.xml"/>
+  <import file="../Ant-Clean.xml"/>
+
+  <target name="run" description="Compile and run" depends="build">
+    <jrun cls="Bath" />
+    <jrun cls="Beetle" />
+    <jrun cls="BlankFinal" />
+    <jrun cls="reuse.CADSystem" dirpath="../reuse" />
+    <jrun cls="Car" />
+    <jrun cls="Cartoon" />
+    <jrun cls="Chess" />
+    <jrun cls="Detergent" />
+    <jrun cls="FinalArguments" />
+    <jrun cls="FinalData" />
+    <jrun cls="FinalOverridingIllusion" />
+    <jrun cls="Hide" />
+    <jrun cls="Jurassic" />
+    <jrun cls="Orc" />
+    <jrun cls="PlaceSetting" />
+    <jrun cls="SpaceShip" />
+    <jrun cls="SpaceShipDelegation" />
+    <jrun cls="SprinklerSystem" />
+    <jrun cls="Wind" />
+  </target>
+
+</project>

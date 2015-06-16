@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+
+<project default="run">
+  <property name="chapter" value="swt"/>
+  <property name="excludedfiles" value=""/>
+  <import file="../Ant-Common.xml"/>
+  <import file="../Ant-Clean.xml"/>
+
+  <target name="run" description="Compile and run" depends="build">
+    <jrun cls="ColorBoxes" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
+    <jrun cls="DisplayEnvironment" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
+    <jrun cls="DisplayProperties" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
+    <jrun cls="HelloSWT" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
+    <jrun cls="Menus" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
+    <jrun cls="ShellsAreMainWindows" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
+    <jrun cls="SineWave" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
+    <jrun cls="TabbedPane" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
+  </target>
+
+</project>

@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+
+<project default="run">
+  <property name="chapter" value="xml"/>
+  <property name="excludedfiles" value=""/>
+  <import file="../Ant-Common.xml"/>
+  <import file="../Ant-Clean.xml"/>
+
+  <target name="run" description="Compile and run" depends="build">
+    <jrun cls="APerson" />
+    <jrun cls="People" />
+  </target>
+
+</project>

@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+
+<project default="run">
+  <property name="chapter" value="references"/>
+  <property name="excludedfiles" value=""/>
+  <import file="../Ant-Common.xml"/>
+  <import file="../Ant-Clean.xml"/>
+
+  <target name="run" description="Compile and run" depends="build">
+    <jrun cls="AddingClone" />
+    <jrun cls="Alias1" />
+    <jrun cls="Alias2" />
+    <jrun cls="CheckCloneable" />
+    <jrun cls="Cloning" />
+    <jrun cls="Compete" />
+    <jrun cls="CopyConstructor" />
+    <jrun cls="DeepCopy" />
+    <jrun cls="HorrorFlick" />
+    <jrun cls="Immutable1" />
+    <jrun cls="Immutable2" />
+    <jrun cls="ImmutableInteger" />
+    <jrun cls="ImmutableStrings" />
+    <jrun cls="LocalCopy" />
+    <jrun cls="MutableInteger" />
+    <jrun cls="PassReferences" />
+    <jrun cls="Snake" />
+    <jrun cls="Stringer" />
+  </target>
+
+</project>
