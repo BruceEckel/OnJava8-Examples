@@ -5,7 +5,7 @@
 [Click here](https://github.com/BruceEckel/On-Java/archive/master.zip) to download the zip file. Unzip the file into a directory of your choice.
 
 ## Build the Examples ##
-1. Install the latest version of Java 8 (JDK8). (Use the 32-bit version on Windows because of some library issues).
+1. Install the [latest version of Java 8 (JDK8)](http://www.oracle.com/technetwork/java/javase/downloads/index.html). (Use the 32-bit version on Windows because of some library issues).
 
 1. Install Apache Ant. Follow the instructions [here](https://ant.apache.org/manual/install.html#getting).
 
