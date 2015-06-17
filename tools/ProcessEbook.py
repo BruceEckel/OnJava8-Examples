@@ -151,7 +151,7 @@ def cleanup_stripped_html():
         (end_marker("code"), "</code>"),
         (start_marker("blockquote"), "<blockquote>"),
         (end_marker("blockquote"), "</blockquote>"),
-        (start_marker("br"), "<br/>")
+        # (start_marker("br"), "<br/>"),
         ("</head>", style),
         ('<table cellspacing="0" cellpadding="0">', '<table align="center">'),
         (blank_table_row, fixed_table_row),
@@ -182,7 +182,8 @@ def convert_to_html():
 def convert_to_markdown():
     "Convert to markdown"
     os.chdir(str(ebookBuildPath))
-    cmd = "pandoc {} -f html -t markdown -o {}.md  --toc --toc-depth=2".format("onjava-3.html", "onjava")
+    # cmd = "pandoc {} -f html -t markdown -o {}.md  --toc --toc-depth=2".format("onjava-3.html", "onjava")
+    cmd = "pandoc {} -f html -t markdown -o {}.md".format("onjava-3.html", "onjava")
     print(cmd)
     os.system(cmd)
 
@@ -191,11 +192,23 @@ silly = r"""</div>
 \
 <div>"""
 
+standalone_start_old = r"""
+` """
+standalone_start_new = r"""
+```java
+ """
+standalone_end_old = r"""
+ `
+"""
+standalone_end_new = r"""
+```
+"""
+
 @CmdLine('s')
 def reconstruct_source_code_files():
     "Reconstruct source code from examples, make sure you attach output first"
     os.chdir(str(ebookBuildPath))
-    example = re.compile(r"\` //: (.*?\.(java|txt|cpp|py|prop))(.*?)///:~\`", re.DOTALL)
+    example = re.compile(r"` //: (.*?\.(java|txt|cpp|py|prop))(.*?)///:~.*?`", re.DOTALL)
 
     def restore_example(matchobj):
         ename = matchobj.group(1)
@@ -210,8 +223,11 @@ def reconstruct_source_code_files():
 
     with Path("onjava.md").open(encoding="utf8", errors="ignore") as md:
         restored = example.sub(restore_example, md.read())
+        restored = restored.replace(start_marker("br"), "\n")
 
     restored = restored.replace(silly, "")
+    restored = restored.replace(standalone_start_old, standalone_start_new)
+    restored = restored.replace(standalone_end_old, standalone_end_new)
 
     with Path("onjava-2.md").open('w', encoding="utf8") as ojmd2:
         ojmd2.write(restored)
@@ -245,5 +261,12 @@ def break_up_markdown_file():
             chp.write("=" * len(p) + "\n")
             chp.write(chaps[p])
 
+@CmdLine('e')
+def everything():
+    fresh_start()
+    convert_to_html()
+    convert_to_markdown()
+    reconstruct_source_code_files()
+    break_up_markdown_file()
 
 if __name__ == '__main__': CmdLine.run()
