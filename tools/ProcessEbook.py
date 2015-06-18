@@ -23,6 +23,7 @@ css = ebookResources / (ebookName + ".css")
 fonts = ebookResources.glob("ubuntumono-*")
 cover = ebookResources / "cover" / "cover.jpg"
 example_path = Path(r"C:\Users\Bruce\Dropbox\___OnJava\ExtractedExamples")
+tablepath = ebookBuildPath / "tables"
 
 def start_marker(tag):
     return '[${}$]'.format(tag)
@@ -149,11 +150,10 @@ def cleanup_stripped_html():
     Clean up stripped HTML -- final housekeeping
     """
     fixes = [
-        (start_marker("code"), "<code>"),
-        (end_marker("code"), "</code>"),
+        (start_marker("code"), "<code>\n"),
+        (end_marker("code"), "\n</code>"),
         (start_marker("blockquote"), "<blockquote>"),
         (end_marker("blockquote"), "</blockquote>"),
-        # (start_marker("br"), "<br/>"),
         ("</head>", style),
         ('<table cellspacing="0" cellpadding="0">', '<table align="center">'),
         (blank_table_row, fixed_table_row),
@@ -173,7 +173,6 @@ def extract_and_check_tables():
     """
     # Extract tables:
     print("extracting tables ...")
-    tablepath = ebookBuildPath / "tables"
     if tablepath.exists():
         shutil.rmtree(str(tablepath))
     time.sleep(1)
@@ -182,10 +181,10 @@ def extract_and_check_tables():
     os.chdir(str(tablepath))
     with html.with_name(html.stem + "-3.html").open(encoding="utf8") as ht:
         doc = ht.read()
-    doc = doc.replace("<thead>", "")
-    doc = doc.replace("</thead>", "")
-    doc = doc.replace("<tbody>", "")
-    doc = doc.replace("</tbody>", "")
+    # doc = doc.replace("<thead>", "")
+    # doc = doc.replace("</thead>", "")
+    # doc = doc.replace("<tbody>", "")
+    # doc = doc.replace("</tbody>", "")
     tables = re.compile("(<table.*?>)(.*?</table>)", re.DOTALL)
     for n, table in enumerate(tables.findall(doc)):
         fname = "%02d_table.html" % n
@@ -193,12 +192,21 @@ def extract_and_check_tables():
         with (tablepath / fname).open('w', encoding="utf8") as tablefile:
             tablefile.write(table[0])
             tablefile.write(table[1])
-        # webbrowser.open(str(tablepath / fname))
         pandoc = "pandoc {} -t markdown -o {}.md".format(fname, fname.split('.')[0])
         print(pandoc)
         os.system(pandoc)
-        # os.system("ed {}.md".format(fname.split('.')[0]))
-        # os.system("ed {}".format(tablepath / fname))
+
+@CmdLine('v')
+def view_tables():
+    """
+    View tables for checking
+    """
+    os.chdir(str(tablepath))
+    # for html in Path(".").glob("*.html"):
+    #     webbrowser.open("ed {}".format(html))
+    for md in Path(".").glob("*.md"):
+        os.system("ed {}".format(md))
+
 
 
 @CmdLine('c')
@@ -265,6 +273,12 @@ def reconstruct_source_code_files():
     restored = restored.replace(standalone_start_old, standalone_start_new)
     restored = restored.replace(standalone_end_old, standalone_end_new)
 
+    ######### This is the new section:
+    codeblocks = re.compile("```java\n(.*?)\n```")
+    def dedent(matchobj):
+        return "```java\n" + textwrap.dedent(matchobj.group(1)) + "\n```"
+    restored = codeblocks.sub(dedent, restored)
+
     with Path("onjava-2.md").open('w', encoding="utf8") as ojmd2:
         ojmd2.write(restored)
 
@@ -296,6 +310,14 @@ def break_up_markdown_file():
             chp.write(p + "\n")
             chp.write("=" * len(p) + "\n")
             chp.write(chaps[p])
+
+@CmdLine('w')
+def view_in_texts():
+    "Show all separate .md files in wysiwyg markdown editor"
+    os.chdir(str(ebookBuildPath))
+    for md in Path(".").glob("*.md"):
+        os.system("texts {}".format(md))
+
 
 @CmdLine('e')
 def everything():
