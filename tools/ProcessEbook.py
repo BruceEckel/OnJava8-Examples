@@ -11,6 +11,8 @@ from itertools import chain
 from sortedcontainers import SortedSet
 from collections import OrderedDict
 from betools import CmdLine, visitDir, ruler, head
+import webbrowser
+
 ebookName = "onjava"
 rootPath = Path(r"C:\Users\Bruce\Dropbox\___OnJava")
 docm = rootPath / "OnJava.docm"
@@ -19,7 +21,7 @@ html = ebookBuildPath / (ebookName + ".html")
 ebookResources = rootPath / "ebook_resources"
 css = ebookResources / (ebookName + ".css")
 fonts = ebookResources.glob("ubuntumono-*")
-cover = rootPath / "cover" / "TIJDC-ebook-cover.jpg"
+cover = ebookResources / "cover" / "cover.jpg"
 example_path = Path(r"C:\Users\Bruce\Dropbox\___OnJava\ExtractedExamples")
 
 def start_marker(tag):
@@ -164,6 +166,40 @@ def cleanup_stripped_html():
     with html.with_name(html.stem + "-3.html").open('w', encoding="utf8") as ht:
         ht.write(doc)
 
+@CmdLine('t')
+def extract_and_check_tables():
+    """
+    Extract tables and view them for checking
+    """
+    # Extract tables:
+    print("extracting tables ...")
+    tablepath = ebookBuildPath / "tables"
+    if tablepath.exists():
+        shutil.rmtree(str(tablepath))
+    time.sleep(1)
+    tablepath.mkdir()
+
+    os.chdir(str(tablepath))
+    with html.with_name(html.stem + "-3.html").open(encoding="utf8") as ht:
+        doc = ht.read()
+    doc = doc.replace("<thead>", "")
+    doc = doc.replace("</thead>", "")
+    doc = doc.replace("<tbody>", "")
+    doc = doc.replace("</tbody>", "")
+    tables = re.compile("(<table.*?>)(.*?</table>)", re.DOTALL)
+    for n, table in enumerate(tables.findall(doc)):
+        fname = "%02d_table.html" % n
+        # print(fname)
+        with (tablepath / fname).open('w', encoding="utf8") as tablefile:
+            tablefile.write(table[0])
+            tablefile.write(table[1])
+        # webbrowser.open(str(tablepath / fname))
+        pandoc = "pandoc {} -t markdown -o {}.md".format(fname, fname.split('.')[0])
+        print(pandoc)
+        os.system(pandoc)
+        # os.system("ed {}.md".format(fname.split('.')[0]))
+        # os.system("ed {}".format(tablepath / fname))
+
 
 @CmdLine('c')
 def convert_to_html():
@@ -263,7 +299,7 @@ def break_up_markdown_file():
 
 @CmdLine('e')
 def everything():
-    fresh_start()
+    # fresh_start()
     convert_to_html()
     convert_to_markdown()
     reconstruct_source_code_files()
