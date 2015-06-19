@@ -1,0 +1,21 @@
+@font-face {
+    font-family: Ubuntu Mono;
+    src: url('ubuntumono-r-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+code { font-family:"Ubuntu Mono", monospace; }
+blockquote { font-size: larger;}
+body { }
+h1 { }
+h2 { }
+h3 { }
+h4 { }
+h5 { }
+h6 { }
+h1.title { }
+h2.author { }
+h3.date { }
+ol.toc {  }
+ol.toc li {  }
+a.footnoteRef {  }

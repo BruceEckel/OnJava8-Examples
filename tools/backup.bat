@@ -52,12 +52,13 @@ tools = [
     "ProcessEbook.py",
     "backup.bat",
     "go.bat",
-     shortcut / "a.bat",
-     shortcut / "v.bat",
-     shortcut / "e.bat",
-     shortcut / "g.bat",
-     shortcut / "p.bat",
-     shortcut / "home.bat"
+    Path(".") / "ebook_resources" / "onjava.css",
+    shortcut / "a.bat",
+    shortcut / "v.bat",
+    shortcut / "e.bat",
+    shortcut / "g.bat",
+    shortcut / "p.bat",
+    shortcut / "home.bat"
 ]
 
 print("\nCopying tools to Github")
