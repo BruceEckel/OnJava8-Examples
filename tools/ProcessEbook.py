@@ -228,14 +228,13 @@ def convert_to_html():
 def convert_to_markdown():
     "Convert to markdown"
     os.chdir(str(ebookBuildPath))
-    cmd = "pandoc {} -f html -t markdown -o {}.md".format("onjava-3.html", "onjava")
+    cmd = "pandoc onjava-3.html -f html -t markdown -o onjava.md"
     print(cmd)
     os.system(cmd)
-    with Path("onjava.md").open(encoding="utf8") as mdown:
-        markdown = mdown.read()
-    markdown = markdown.replace("****", "") # Clean out reduntant bolding
-    with Path("onjava.md").open('w', encoding="utf8") as mdown:
-        mdown.write(markdown)
+    # with Path("onjava.md").open(encoding="utf8") as mdown:
+    #     markdown = mdown.read()
+    # with Path("onjava.md").open('w', encoding="utf8") as mdown:
+    #     mdown.write(markdown)
 
 
 silly = r"""</div>
@@ -273,7 +272,14 @@ def reconstruct_source_code_files():
                 "```\n"
 
     with Path("onjava.md").open(encoding="utf8", errors="ignore") as md:
-        restored = example.sub(restore_example, md.read())
+        markdown = md.read()
+        markdown = markdown.replace(" **** ", "") # Clean out empty bolding
+        markdown = markdown.replace("\n**** ", "\n") # Clean out empty bolding
+        markdown = markdown.replace(" ****\n", "\n") # Clean out empty bolding
+        markdown = markdown.replace(" ** ", "") # Clean out empty italics
+        markdown = markdown.replace("\n** ", "\n") # Clean out empty italics
+        markdown = markdown.replace(" **\n", "\n") # Clean out empty italics
+        restored = example.sub(restore_example, markdown)
         restored = restored.replace(start_marker("br"), "\n")
 
     restored = restored.replace(silly, "")
@@ -351,12 +357,13 @@ def reassemble_and_convert_to_epub():
             assembled += part.read() + "\n"
     with Path(output_name).open('w', encoding="utf8") as book:
         book.write(assembled)
+    shutil.copy(str(css), ".")
     pandoc = ("pandoc {} -f markdown-native_divs -t epub -o OnJava.epub" + \
         " --epub-cover-image=cover.jpg " + \
         " --epub-embed-font=ubuntumono-r-webfont.ttf " + \
         " --epub-chapter-level=1 " + \
         " --toc-depth=2 " + \
-        " --no-highlight " + \
+        # " --no-highlight " + \
         " --epub-stylesheet=onjava.css "
         ).format(output_name)
     print(pandoc)

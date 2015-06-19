@@ -5,9 +5,20 @@
     font-style: normal;
 }
 code { font-family:"Ubuntu Mono", monospace; }
+.sourceCode { font-family:"Ubuntu Mono", monospace; }
 blockquote { font-size: larger;}
+thead {
+    font-weight: bold;
+    font-size: 120%;
+}
+table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+    padding-left: 10px;
+    padding-right: 10px;
+}
 body { }
-h1 { }
+h1 { font-size: larger;}
 h2 { }
 h3 { }
 h4 { }
