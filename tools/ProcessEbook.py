@@ -12,6 +12,8 @@ from sortedcontainers import SortedSet
 from collections import OrderedDict
 from betools import CmdLine, visitDir, ruler, head
 import webbrowser
+import textwrap
+
 
 ebookName = "onjava"
 rootPath = Path(r"C:\Users\Bruce\Dropbox\___OnJava")
@@ -92,7 +94,6 @@ def fresh_start():
     """
     Create book build directory and copy resources into it
     """
-    # shutil.copy(str(css), str(ebookBuildPath))
     print("Cleaning ...")
     if ebookBuildPath.exists():
         shutil.rmtree(str(ebookBuildPath))
@@ -104,11 +105,12 @@ def fresh_start():
     for font in fonts:
         _cp(font)
     _cp(cover)
+    _cp(css)
 
 
 
 count = 0
-@CmdLine('r')
+# @CmdLine('r')
 def rewrite_html():
     """
     Pre-processing HTML tagging and fixups.
@@ -226,10 +228,15 @@ def convert_to_html():
 def convert_to_markdown():
     "Convert to markdown"
     os.chdir(str(ebookBuildPath))
-    # cmd = "pandoc {} -f html -t markdown -o {}.md  --toc --toc-depth=2".format("onjava-3.html", "onjava")
     cmd = "pandoc {} -f html -t markdown -o {}.md".format("onjava-3.html", "onjava")
     print(cmd)
     os.system(cmd)
+    with Path("onjava.md").open(encoding="utf8") as mdown:
+        markdown = mdown.read()
+    markdown = markdown.replace("****", "") # Clean out reduntant bolding
+    with Path("onjava.md").open('w', encoding="utf8") as mdown:
+        mdown.write(markdown)
+
 
 silly = r"""</div>
 
@@ -245,12 +252,12 @@ standalone_end_old = r"""
  `
 """
 standalone_end_new = r"""
-```
-"""
+```"""
 
 @CmdLine('s')
 def reconstruct_source_code_files():
     "Reconstruct source code from examples, make sure you attach output first"
+    print("reconstruct_source_code_files")
     os.chdir(str(ebookBuildPath))
     example = re.compile(r"` //: (.*?\.(java|txt|cpp|py|prop))(.*?)///:~.*?`", re.DOTALL)
 
@@ -311,6 +318,7 @@ def break_up_markdown_file():
             chp.write("=" * len(p) + "\n")
             chp.write(chaps[p])
 
+
 @CmdLine('w')
 def view_in_texts():
     "Show all separate .md files in wysiwyg markdown editor"
@@ -321,10 +329,40 @@ def view_in_texts():
 
 @CmdLine('e')
 def everything():
+    """Produce Markdown file from Word doc"""
     # fresh_start()
     convert_to_html()
     convert_to_markdown()
     reconstruct_source_code_files()
     break_up_markdown_file()
+
+
+@CmdLine('r')
+def reassemble_and_convert_to_epub():
+    """
+    Put markdown files together, then pandoc to epub
+    """
+    output_name = "onjava-assembled.md"
+    os.chdir(str(ebookBuildPath))
+    assembled = ""
+    for md in Path(".").glob("[0-9][0-9]_*.md"):
+        print(str(md))
+        with md.open(encoding="utf8") as part:
+            assembled += part.read() + "\n"
+    with Path(output_name).open('w', encoding="utf8") as book:
+        book.write(assembled)
+    pandoc = ("pandoc {} -f markdown-native_divs -t epub -o OnJava.epub" + \
+        " --epub-cover-image=cover.jpg " + \
+        " --epub-embed-font=ubuntumono-r-webfont.ttf " + \
+        " --epub-chapter-level=1 " + \
+        " --toc-depth=2 " + \
+        " --no-highlight " + \
+        " --epub-stylesheet=onjava.css "
+        ).format(output_name)
+    print(pandoc)
+    os.system(pandoc)
+    shutil.copy("OnJava.epub", "OnJava.zip")
+    os.system("unzip OnJava.zip -d epub_files")
+
 
 if __name__ == '__main__': CmdLine.run()
