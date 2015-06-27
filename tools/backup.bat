@@ -50,6 +50,7 @@ tools = [
     "AttachResults.py",
     "update_git.py",
     "ProcessEbook.py",
+    "Images.py",
     "backup.bat",
     "go.bat",
     Path(".") / "ebook_resources" / "onjava.css",
