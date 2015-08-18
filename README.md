@@ -2,7 +2,7 @@
 
 ## Get the Examples ##
 
-[Click here](https://github.com/BruceEckel/On-Java/archive/master.zip) to download the zip file. Unzip the file into a directory of your choice.
+[Click here](https://github.com/BruceEckel/OnJava-Examples/archive/master.zip) to download the zip file. Unzip the file into a directory of your choice.
 
 ## Build the Examples ##
 1. Install the [latest version of Java 8 (JDK8)](http://www.oracle.com/technetwork/java/javase/downloads/index.html). (Use the 32-bit version on Windows because of some library issues).
@@ -12,7 +12,7 @@
 1. Start a command prompt in the directory where you installed the examples. If your installation is successful, you should be able to type **ant build** and build everything. **ant run** will build AND run the examples. You will initially get some error messages instructing you to install specified packages (jar files), but eventually you should get through the whole build process successfully.
 
 
-Report bugs in the examples or in the book [here](https://github.com/BruceEckel/On-Java/issues).
+Report bugs in the examples or in the book [here](https://github.com/BruceEckel/OnJava-Examples/issues).
 
 ----------
 **&copy;2015 Bruce Eckel, MindView LLC. All Rights Reserved. See *Copyright.txt* for usage details.**
