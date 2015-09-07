@@ -9,7 +9,7 @@ public class RecycleAP {
   public static void main(String[] args) {
     ArrayList<Trash> bin = new ArrayList<>();
     // Fill up the Trash bin:
-    ParseTrash.fillBin("Trash.dat", bin);
+    ParseTrash.fillBin("recycleap", "Trash.dat", bin);
     List<Glass> glassBin = new ArrayList<>();
     List<Paper> paperBin = new ArrayList<>();
     List<Aluminum> alBin = new ArrayList<>();

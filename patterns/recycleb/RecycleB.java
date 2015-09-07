@@ -41,7 +41,7 @@ public class RecycleB {
   static Tbin<Trash> bin = new Tbin<>(Trash.class);
   public static void main(String[] args) {
     // Fill up the Trash bin:
-    ParseTrash.fillBin("Trash.dat", bin);
+    ParseTrash.fillBin("recycleap", "Trash.dat", bin);
 
     TbinList<Trash> trashBins = new TbinList<>();
     trashBins.add(new Tbin<>(Aluminum.class));

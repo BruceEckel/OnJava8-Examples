@@ -44,7 +44,7 @@ public class DynaTrash {
   @SuppressWarnings("unchecked")
   public static void main(String[] args) {
     TypeMap<Trash> bin = new TypeMap<>();
-    ParseTrash.fillBin("Trash.dat",
+    ParseTrash.fillBin("recycleap", "Trash.dat",
       new TypeMapAdapter(bin));
     Iterator<Class> keys = bin.keys();
     while(keys.hasNext())

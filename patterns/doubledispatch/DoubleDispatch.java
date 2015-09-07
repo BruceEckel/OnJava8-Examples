@@ -56,7 +56,7 @@ public class DoubleDispatch {
     ArrayList<Trash> bin = new ArrayList<>();
     TrashBinSet bins = new TrashBinSet();
     // ParseTrash still works, without changes:
-    ParseTrash.fillBin("DDTrash.dat", bin);
+    ParseTrash.fillBin("doubledispatch", "DDTrash.dat", bin);
     // Sort from the master bin into the
     // individually-typed bins:
     bins.sortIntoBins(bin);

@@ -83,7 +83,7 @@ public class TrashVisitor {
   public static void main(String[] args) {
     ArrayList<Trash> bin = new ArrayList<>();
     // ParseTrash still works, without changes:
-    ParseTrash.fillBin("VTrash.dat", bin);
+    ParseTrash.fillBin("trashvisitor", "VTrash.dat", bin);
     // You could even iterate through
     // a list of visitors!
     PriceVisitor pv = new PriceVisitor();
