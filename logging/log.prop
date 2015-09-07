@@ -1,12 +1,12 @@
-//: logging/log.prop
+// logging/log.prop
 #### Configuration File ####
 # Global Params
 # Handlers installed for the root logger
 handlers= java.util.logging.ConsoleHandler java.util.logging.FileHandler
-# Level for root loggeris used by any logger 
+# Level for root logger—is used by any logger
 # that does not have its level set
 .level= FINEST
-# Initialization classthe public default constructor 
+# Initialization class—the public default constructor
 # of this class is called by the Logging framework
 config = ConfigureLogging
 
@@ -30,4 +30,3 @@ com.mindviewinc.level = FINEST
 com.mindviewinc.util.level = INFO
 com.mindviewinc.test.level = FINER
 random.level= SEVERE
-///:~

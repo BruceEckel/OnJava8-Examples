@@ -1,4 +1,4 @@
-//: reuse/FinalArguments.java
+// reuse/FinalArguments.java
 // ©2015 MindView LLC: see Copyright.txt
 // Using "final" with method arguments.
 
@@ -22,4 +22,5 @@ public class FinalArguments {
     bf.without(null);
     bf.with(null);
   }
-} /* Output: (None) *///:~
+}
+/* Output: (None) */

@@ -1,4 +1,4 @@
-//: generics/Holder2.java
+// generics/Holder2.java
 // ©2015 MindView LLC: see Copyright.txt
 
 public class Holder2 {
@@ -14,4 +14,5 @@ public class Holder2 {
     h2.set(1); // Autoboxes to Integer
     Integer x = (Integer)h2.get();
   }
-} /* Output: (None) *///:~
+}
+/* Output: (None) */

@@ -1,4 +1,4 @@
-//: hiding/dessert/Cookie.java
+// hiding/dessert/Cookie.java
 // ©2015 MindView LLC: see Copyright.txt
 // Creates a library.
 package hiding.dessert;
@@ -8,4 +8,4 @@ public class Cookie {
    System.out.println("Cookie constructor");
   }
   void bite() { System.out.println("bite"); }
-} ///:~
+}

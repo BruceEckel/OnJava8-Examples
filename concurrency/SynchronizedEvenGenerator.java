@@ -1,4 +1,4 @@
-//: concurrency/SynchronizedEvenGenerator.java
+// concurrency/SynchronizedEvenGenerator.java
 // ©2015 MindView LLC: see Copyright.txt
 // Simplifying mutexes with the synchronized keyword.
 // {TimeOutDuringTesting}
@@ -16,4 +16,5 @@ SynchronizedEvenGenerator extends IntGenerator {
   public static void main(String[] args) {
     EvenChecker.test(new SynchronizedEvenGenerator());
   }
-} /* Output: (None) *///:~
+}
+/* Output: (None) */

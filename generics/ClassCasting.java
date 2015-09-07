@@ -1,4 +1,4 @@
-//: generics/ClassCasting.java
+// generics/ClassCasting.java
 // ©2015 MindView LLC: see Copyright.txt
 import java.io.*;
 import java.util.*;
@@ -13,4 +13,4 @@ public class ClassCasting {
 //    List<>.class.cast(in.readObject());
     List<Widget> lw2 = List.class.cast(in.readObject());
   }
-} ///:~
+}

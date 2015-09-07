@@ -1,4 +1,4 @@
-//: typeinfo/pets/PetCreator.java
+// typeinfo/pets/PetCreator.java
 // ©2015 MindView LLC: see Copyright.txt
 // Creates random sequences of Pets.
 package typeinfo.pets;
@@ -28,4 +28,4 @@ public abstract class PetCreator {
     Collections.addAll(result, createArray(size));
     return result;
   }
-} ///:~
+}

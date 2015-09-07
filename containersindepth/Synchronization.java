@@ -1,4 +1,4 @@
-//: containersindepth/Synchronization.java
+// containersindepth/Synchronization.java
 // ©2015 MindView LLC: see Copyright.txt
 // Using the Collections.synchronized methods.
 import java.util.*;
@@ -19,4 +19,5 @@ public class Synchronization {
     Map<String,String> sm =
       Collections.synchronizedSortedMap(new TreeMap<>());
   }
-} /* Output: (None) *///:~
+}
+/* Output: (None) */

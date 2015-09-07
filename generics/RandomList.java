@@ -1,4 +1,4 @@
-//: generics/RandomList.java
+// generics/RandomList.java
 // ©2015 MindView LLC: see Copyright.txt
 import java.util.*;
 
@@ -17,6 +17,7 @@ public class RandomList<T> {
     for(int i = 0; i < 11; i++)
       System.out.print(rs.select() + " ");
   }
-} /* Output:
+}
+/* Output:
 brown over fox quick quick dog brown The brown lazy brown
-*///:~
+*/

@@ -1,4 +1,4 @@
-//: control/LabeledFor.java
+// control/LabeledFor.java
 // ©2015 MindView LLC: see Copyright.txt
 // For loops with "labeled break" and "labeled continue."
 import static com.mindviewinc.util.Print.*;
@@ -41,7 +41,8 @@ public class LabeledFor {
     }
     // Can't break or continue to labels here
   }
-} /* Output:
+}
+/* Output:
 i = 0
 continue inner
 i = 1
@@ -60,4 +61,4 @@ i = 7
 continue outer
 i = 8
 break outer
-*///:~
+*/

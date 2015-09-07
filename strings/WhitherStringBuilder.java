@@ -1,4 +1,4 @@
-//: strings/WhitherStringBuilder.java
+// strings/WhitherStringBuilder.java
 // ©2015 MindView LLC: see Copyright.txt
 
 public class WhitherStringBuilder {
@@ -16,4 +16,4 @@ public class WhitherStringBuilder {
     }
     return result.toString();
   }
-} ///:~
+}

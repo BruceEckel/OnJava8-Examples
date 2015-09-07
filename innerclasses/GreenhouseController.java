@@ -1,4 +1,4 @@
-//: innerclasses/GreenhouseController.java
+// innerclasses/GreenhouseController.java
 // ©2015 MindView LLC: see Copyright.txt
 // Configure and execute the greenhouse system.
 // {Args: 5000}
@@ -25,7 +25,8 @@ public class GreenhouseController {
           new Integer(args[0])));
     gc.run();
   }
-} /* Output:
+}
+/* Output:
 Bing!
 Thermostat on night setting
 Light is on
@@ -35,4 +36,4 @@ Greenhouse water is off
 Thermostat on day setting
 Restarting system
 Terminating
-*///:~
+*/

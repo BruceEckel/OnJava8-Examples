@@ -1,4 +1,4 @@
-//: polymorphism/music/Music.java
+// polymorphism/music/Music.java
 // ©2015 MindView LLC: see Copyright.txt
 // Inheritance & upcasting.
 package polymorphism.music;
@@ -12,6 +12,7 @@ public class Music {
     Wind flute = new Wind();
     tune(flute); // Upcasting
   }
-} /* Output:
+}
+/* Output:
 Wind.play() MIDDLE_C
-*///:~
+*/

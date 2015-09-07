@@ -1,4 +1,4 @@
-//: network/Dgram.java
+// network/Dgram.java
 // ©2015 MindView LLC: see Copyright.txt
 // A utility class to convert back and forth
 // Between Strings and DataGramPackets.
@@ -15,4 +15,4 @@ public class Dgram {
     return
       new String(p.getData(), 0, p.getLength());
   }
-} ///:~
+}

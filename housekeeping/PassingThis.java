@@ -1,4 +1,4 @@
-//: housekeeping/PassingThis.java
+// housekeeping/PassingThis.java
 // ©2015 MindView LLC: see Copyright.txt
 
 class Person {
@@ -23,6 +23,7 @@ public class PassingThis {
   public static void main(String[] args) {
     new Person().eat(new Apple());
   }
-} /* Output:
+}
+/* Output:
 Yummy
-*///:~
+*/

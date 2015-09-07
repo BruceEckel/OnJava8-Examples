@@ -1,4 +1,4 @@
-//: generics/Manipulation.java
+// generics/Manipulation.java
 // ©2015 MindView LLC: see Copyright.txt
 // {CompileTimeError} (Will not compile)
 
@@ -16,4 +16,5 @@ public class Manipulation {
       new Manipulator<>(hf);
     manipulator.manipulate();
   }
-} /* Output: (None) *///:~
+}
+/* Output: (None) */

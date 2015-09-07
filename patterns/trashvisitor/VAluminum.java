@@ -1,4 +1,4 @@
-//: patterns/trashvisitor/VAluminum.java
+// patterns/trashvisitor/VAluminum.java
 // ©2015 MindView LLC: see Copyright.txt
 // Aluminum for the visitor pattern.
 package patterns.trashvisitor;
@@ -11,4 +11,4 @@ public class VAluminum extends Aluminum
   public void accept(Visitor v) {
     v.visit(this);
   }
-} ///:~
+}

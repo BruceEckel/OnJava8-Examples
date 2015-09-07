@@ -1,4 +1,4 @@
-//: references/Immutable2.java
+// references/Immutable2.java
 // ©2015 MindView LLC: see Copyright.txt
 // A companion class to modify immutable objects
 
@@ -61,8 +61,9 @@ public class Immutable2 {
     System.out.println("r1 = " + r1.read());
     System.out.println("r2 = " + r2.read());
   }
-} /* Output:
+}
+/* Output:
 i2 = 47
 r1 = 376
 r2 = 376
-*///:~
+*/

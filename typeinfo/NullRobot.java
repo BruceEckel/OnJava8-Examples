@@ -1,4 +1,4 @@
-//: typeinfo/NullRobot.java
+// typeinfo/NullRobot.java
 // ©2015 MindView LLC: see Copyright.txt
 // Using a dynamic proxy to create a Null Object.
 import java.lang.reflect.*;
@@ -45,7 +45,8 @@ public class NullRobot {
     for(Robot bot : bots)
       Robot.Test.test(bot);
   }
-} /* Output:
+}
+/* Output:
 Robot name: SnowBee
 Robot model: SnowBot Series 11
 SnowBee can shovel snow
@@ -57,4 +58,4 @@ SnowBee clearing roof
 [Null Robot]
 Robot name: SnowRemovalRobot NullRobot
 Robot model: SnowRemovalRobot NullRobot
-*///:~
+*/

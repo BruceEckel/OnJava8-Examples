@@ -1,4 +1,4 @@
-//: generics/Holder.java
+// generics/Holder.java
 // ©2015 MindView LLC: see Copyright.txt
 
 public class Holder<T> {
@@ -26,8 +26,9 @@ public class Holder<T> {
     // fruit.set(new Fruit()); // Cannot call set()
     System.out.println(fruit.equals(d)); // OK
   }
-} /* Output:
+}
+/* Output:
 java.lang.ClassCastException: Apple cannot be cast to
 Orange
 true
-*///:~
+*/

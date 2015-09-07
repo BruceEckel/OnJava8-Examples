@@ -1,4 +1,4 @@
-//: concurrency/Fat.java
+// concurrency/Fat.java
 // ©2015 MindView LLC: see Copyright.txt
 // Objects that are expensive to create.
 
@@ -15,4 +15,4 @@ public class Fat {
   public void operation() { System.out.println(this); }
   @Override
   public String toString() { return "Fat id: " + id; }
-} ///:~
+}

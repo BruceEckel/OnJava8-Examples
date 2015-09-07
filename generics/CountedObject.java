@@ -1,4 +1,4 @@
-//: generics/CountedObject.java
+// generics/CountedObject.java
 // ©2015 MindView LLC: see Copyright.txt
 
 public class CountedObject {
@@ -7,4 +7,4 @@ public class CountedObject {
   public long id() { return id; }
   @Override
   public String toString() { return "CountedObject " + id;}
-} ///:~
+}

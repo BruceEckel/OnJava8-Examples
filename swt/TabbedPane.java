@@ -1,4 +1,4 @@
-//: swt/TabbedPane.java
+// swt/TabbedPane.java
 // ©2015 MindView LLC: see Copyright.txt
 // Placing SWT components in tabbed panes.
 import swt.util.*;
@@ -144,4 +144,4 @@ public class TabbedPane implements SWTApplication {
   public static void main(String[] args) {
     SWTConsole.run(new TabbedPane(), 800, 600);
   }
-} ///:~
+}

@@ -1,4 +1,4 @@
-//: generics/InstantiateGenericType.java
+// generics/InstantiateGenericType.java
 // ©2015 MindView LLC: see Copyright.txt
 import static com.mindviewinc.util.Print.*;
 
@@ -28,7 +28,8 @@ public class InstantiateGenericType {
       print("ClassAsFactory<Integer> failed");
     }
   }
-} /* Output:
+}
+/* Output:
 ClassAsFactory<Employee> succeeded
 ClassAsFactory<Integer> failed
-*///:~
+*/

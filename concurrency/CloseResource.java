@@ -1,4 +1,4 @@
-//: concurrency/CloseResource.java
+// concurrency/CloseResource.java
 // ©2015 MindView LLC: see Copyright.txt
 // Interrupting a blocked task by
 // closing the underlying resource.
@@ -27,7 +27,8 @@ public class CloseResource {
     print("Closing " + System.in.getClass().getName());
     System.in.close(); // Releases blocked thread
   }
-} /* Output:
+}
+/* Output:
 Waiting for read():
 Waiting for read():
 Shutting down all threads
@@ -36,4 +37,4 @@ Interrupted from blocked I/O
 Exiting IOBlocked.run()
 Closing java.io.BufferedInputStream
 Exiting IOBlocked.run()
-*///:~
+*/

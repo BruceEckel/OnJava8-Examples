@@ -1,4 +1,4 @@
-//: concurrency/MapComparisons.java
+// concurrency/MapComparisons.java
 // ©2015 MindView LLC: see Copyright.txt
 // {Args: 1 10 10} (Fast verification check during build)
 // Rough comparison of thread-safe Map performance.
@@ -78,7 +78,8 @@ public class MapComparisons {
     new ConcurrentHashMapTest(5, 5);
     Tester.exec.shutdown();
   }
-} /* Output:
+}
+/* Output:
 Type                             Read time     Write time
 Synched HashMap 10r 0w             2825885              0
 Synched HashMap 9r 1w              3463976          74283
@@ -90,4 +91,4 @@ ConcurrentHashMap 9r 1w             545597          78268
 readTime + writeTime =              623865
 ConcurrentHashMap 5r 5w              58343         232524
 readTime + writeTime =              290867
-*///:~
+*/

@@ -1,4 +1,4 @@
-//: com/mindviewinc/util/ProcessFiles.java
+// com/mindviewinc/util/ProcessFiles.java
 // ©2015 MindView LLC: see Copyright.txt
 // {ValidateByHand}
 package com.mindviewinc.util;
@@ -46,4 +46,5 @@ public class ProcessFiles {
     new ProcessFiles(file -> System.out.println(file),
       "java").start(args);
   }
-} /* Output: (Execute to see) *///:~
+}
+/* Output: (Execute to see) */

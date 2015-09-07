@@ -1,4 +1,4 @@
-//: logging/LoggingLevelManipulation.java
+// logging/LoggingLevelManipulation.java
 // ©2015 MindView LLC: see Copyright.txt
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -57,19 +57,20 @@ public class LoggingLevelManipulation {
     System.out.println("net level: FINEST");
     logMessages();
   }
-} /* Output:
+}
+/* Output:
 -- printing levels -- net : null com.mindviewinc : null
 com.mindviewinc.util : null com.mindviewinc.test : null
 random : null
- -- printing levels -- net : SEVERE com.mindviewinc : null
+-- printing levels -- net : SEVERE com.mindviewinc : null
 com.mindviewinc.util : null com.mindviewinc.test : null
 random : null
 net level: SEVERE
- -- printing levels -- net : SEVERE com.mindviewinc : null
+-- printing levels -- net : SEVERE com.mindviewinc : null
 com.mindviewinc.util : FINEST com.mindviewinc.test : FINEST
 random : FINEST
 individual loggers set to FINEST
- -- printing levels -- net : FINEST com.mindviewinc : null
+-- printing levels -- net : FINEST com.mindviewinc : null
 com.mindviewinc.util : FINEST com.mindviewinc.test : FINEST
 random : FINEST
 net level: FINEST
@@ -197,4 +198,4 @@ WARNING: random Warning
 Jun 15, 2015 3:47:52 PM LoggingLevelManipulation
 printLogMessages
 SEVERE: random Severe
-*///:~
+*/

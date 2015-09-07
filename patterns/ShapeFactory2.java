@@ -1,4 +1,4 @@
-//: patterns/ShapeFactory2.java
+// patterns/ShapeFactory2.java
 // ©2015 MindView LLC: see Copyright.txt
 // Polymorphic factory methods.
 import java.util.*;
@@ -69,7 +69,8 @@ public class ShapeFactory2 {
     shapes.forEach(Shape::draw);
     shapes.forEach(Shape::erase);
   }
-} /* Output:
+}
+/* Output:
 Circle.draw
 Square.draw
 Square.draw
@@ -82,4 +83,4 @@ Square.erase
 Circle.erase
 Circle.erase
 Square.erase
-*///:~
+*/

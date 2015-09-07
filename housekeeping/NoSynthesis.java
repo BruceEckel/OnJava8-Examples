@@ -1,4 +1,4 @@
-//: housekeeping/NoSynthesis.java
+// housekeeping/NoSynthesis.java
 // ©2015 MindView LLC: see Copyright.txt
 
 class Bird2 {
@@ -12,4 +12,5 @@ public class NoSynthesis {
     Bird2 b2 = new Bird2(1);
     Bird2 b3 = new Bird2(1.0);
   }
-} /* Output: (None) *///:~
+}
+/* Output: (None) */

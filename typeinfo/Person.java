@@ -1,4 +1,4 @@
-//: typeinfo/Person.java
+// typeinfo/Person.java
 // ©2015 MindView LLC: see Copyright.txt
 // A class with a Null Object.
 import com.mindviewinc.util.*;
@@ -24,4 +24,4 @@ class Person {
     public String toString() { return "NullPerson"; }
   }
   public static final Person NULL = new NullPerson();
-} ///:~
+}

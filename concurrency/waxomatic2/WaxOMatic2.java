@@ -1,4 +1,4 @@
-//: concurrency/waxomatic2/WaxOMatic2.java
+// concurrency/waxomatic2/WaxOMatic2.java
 // ©2015 MindView LLC: see Copyright.txt
 // Using Lock and Condition objects.
 package concurrency.waxomatic2;
@@ -95,7 +95,8 @@ public class WaxOMatic2 {
     TimeUnit.SECONDS.sleep(5);
     exec.shutdownNow();
   }
-} /* Output:
+}
+/* Output:
 Wax On! Wax Off! Wax On! Wax Off! Wax On! Wax Off! Wax On!
 Wax Off! Wax On! Wax Off! Wax On! Wax Off! Wax On! Wax Off!
 Wax On! Wax Off! Wax On! Wax Off! Wax On! Wax Off! Wax On!
@@ -103,4 +104,4 @@ Wax Off! Wax On! Wax Off! Wax On! Exiting via interrupt
 Exiting via interrupt
 Ending Wax On task
 Ending Wax Off task
-*///:~
+*/

@@ -1,4 +1,4 @@
-//: patterns/ProxyDemo.java
+// patterns/ProxyDemo.java
 // ©2015 MindView LLC: see Copyright.txt
 // Simple demonstration of the Proxy pattern.
 
@@ -41,8 +41,9 @@ public class ProxyDemo {
     p.g();
     p.h();
   }
-} /* Output:
+}
+/* Output:
 Implementation.f()
 Implementation.g()
 Implementation.h()
-*///:~
+*/

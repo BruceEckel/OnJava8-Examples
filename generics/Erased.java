@@ -1,4 +1,4 @@
-//: generics/Erased.java
+// generics/Erased.java
 // ©2015 MindView LLC: see Copyright.txt
 // {CompileTimeError} (Won't compile)
 
@@ -10,4 +10,4 @@ public class Erased<T> {
     T[] array = new T[SIZE];         // Error
     T[] array = (T)new Object[SIZE]; // Unchecked warning
   }
-} ///:~
+}

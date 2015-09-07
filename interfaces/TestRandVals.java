@@ -1,4 +1,4 @@
-//: interfaces/TestRandVals.java
+// interfaces/TestRandVals.java
 // ©2015 MindView LLC: see Copyright.txt
 import static com.mindviewinc.util.Print.*;
 
@@ -9,9 +9,10 @@ public class TestRandVals {
     print(RandVals.RANDOM_FLOAT);
     print(RandVals.RANDOM_DOUBLE);
   }
-} /* Output:
+}
+/* Output:
 8
 -32032247016559954
 -8.5939291E18
 5.779976127815049
-*///:~
+*/

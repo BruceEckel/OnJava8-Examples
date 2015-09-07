@@ -1,4 +1,4 @@
-//: containers/ContainerMethods.java
+// containers/ContainerMethods.java
 // ©2015 MindView LLC: see Copyright.txt
 import com.mindviewinc.util.*;
 
@@ -6,7 +6,8 @@ public class ContainerMethods {
   public static void main(String[] args) {
     ContainerMethodDifferences.main(args);
   }
-} /* Output:
+}
+/* Output:
 Collection: [add, addAll, clear, contains, containsAll,
 equals, forEach, hashCode, isEmpty, iterator,
 parallelStream, remove, removeAll, removeIf, retainAll,
@@ -61,4 +62,4 @@ pollFirstEntry, lastKey, firstEntry, floorEntry,
 comparator, lastEntry]
 Interfaces in TreeMap: [NavigableMap, Cloneable,
 Serializable]
-*///:~
+*/

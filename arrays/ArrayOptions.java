@@ -1,4 +1,4 @@
-//: arrays/ArrayOptions.java
+// arrays/ArrayOptions.java
 // ©2015 MindView LLC: see Copyright.txt
 // Initialization & re-assignment of arrays.
 import java.util.*;
@@ -52,7 +52,8 @@ public class ArrayOptions {
     e = new int[]{ 1, 2 };
     print("e.length = " + e.length);
   }
-} /* Output:
+}
+/* Output:
 b: [null, null, null, null, null]
 a.length = 2
 b.length = 5
@@ -65,4 +66,4 @@ g.length = 4
 h.length = 3
 e.length = 3
 e.length = 2
-*///:~
+*/

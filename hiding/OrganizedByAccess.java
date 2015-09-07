@@ -1,4 +1,4 @@
-//: hiding/OrganizedByAccess.java
+// hiding/OrganizedByAccess.java
 // ©2015 MindView LLC: see Copyright.txt
 
 public class OrganizedByAccess {
@@ -10,4 +10,4 @@ public class OrganizedByAccess {
   private void priv3() { /* ... */ }
   private int i;
   // ...
-} ///:~
+}

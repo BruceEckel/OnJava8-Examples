@@ -1,4 +1,4 @@
-//: polymorphism/Shapes.java
+// polymorphism/Shapes.java
 // ©2015 MindView LLC: see Copyright.txt
 // Polymorphism in Java.
 import polymorphism.shape.*;
@@ -15,7 +15,8 @@ public class Shapes {
     for(Shape shp : s)
       shp.draw();
   }
-} /* Output:
+}
+/* Output:
 Triangle.draw()
 Triangle.draw()
 Square.draw()
@@ -25,4 +26,4 @@ Triangle.draw()
 Square.draw()
 Triangle.draw()
 Circle.draw()
-*///:~
+*/

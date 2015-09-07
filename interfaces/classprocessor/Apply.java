@@ -1,4 +1,4 @@
-//: interfaces/classprocessor/Apply.java
+// interfaces/classprocessor/Apply.java
 // ©2015 MindView LLC: see Copyright.txt
 package interfaces.classprocessor;
 import java.util.*;
@@ -45,7 +45,8 @@ public class Apply {
     process(new Downcase(), s);
     process(new Splitter(), s);
   }
-} /* Output:
+}
+/* Output:
 Using Processor Upcase
 DISAGREEMENT WITH BELIEFS IS BY DEFINITION INCORRECT
 Using Processor Downcase
@@ -53,4 +54,4 @@ disagreement with beliefs is by definition incorrect
 Using Processor Splitter
 [Disagreement, with, beliefs, is, by, definition,
 incorrect]
-*///:~
+*/

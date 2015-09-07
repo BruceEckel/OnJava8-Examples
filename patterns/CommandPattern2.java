@@ -1,4 +1,4 @@
-//: patterns/CommandPattern2.java
+// patterns/CommandPattern2.java
 // ©2015 MindView LLC: see Copyright.txt
 // Using the Runnable functional interface
 import java.util.*;
@@ -45,6 +45,7 @@ public class CommandPattern2 {
     macro.add(new IAm2());
     macro.execute.run();
   }
-} /* Output:
+}
+/* Output:
 Hello World! I'm the command pattern!
-*///:~
+*/

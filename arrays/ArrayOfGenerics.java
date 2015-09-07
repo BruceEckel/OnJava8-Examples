@@ -1,4 +1,4 @@
-//: arrays/ArrayOfGenerics.java
+// arrays/ArrayOfGenerics.java
 // ©2015 MindView LLC: see Copyright.txt
 // It is possible to create arrays of generics.
 import java.util.*;
@@ -26,4 +26,5 @@ public class ArrayOfGenerics {
     for(int i = 0; i < spheres.length; i++)
       spheres[i] = new ArrayList<>();
   }
-} /* Output: (None) *///:~
+}
+/* Output: (None) */

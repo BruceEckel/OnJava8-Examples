@@ -1,4 +1,4 @@
-//: com/mindviewinc/util/Range.java
+// com/mindviewinc/util/Range.java
 // ©2015 MindView LLC: see Copyright.txt
 // Array creation methods that can be used without
 // qualifiers, using static imports:
@@ -28,4 +28,4 @@ public class Range {
       result[i] = start + (i * step);
     return result;
   }
-} ///:~
+}

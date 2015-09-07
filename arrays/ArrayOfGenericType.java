@@ -1,4 +1,4 @@
-//: arrays/ArrayOfGenericType.java
+// arrays/ArrayOfGenericType.java
 // ©2015 MindView LLC: see Copyright.txt
 // Arrays of generic types won't compile.
 
@@ -11,4 +11,4 @@ public class ArrayOfGenericType<T> {
   }
   // Illegal:
   //! public <U> U[] makeArray() { return new U[10]; }
-} ///:~
+}

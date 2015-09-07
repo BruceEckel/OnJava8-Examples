@@ -1,4 +1,4 @@
-//: io/LargeMappedFiles.java
+// io/LargeMappedFiles.java
 // ©2015 MindView LLC: see Copyright.txt
 // Creating a very large file using mapping.
 import java.nio.*;
@@ -18,7 +18,8 @@ public class LargeMappedFiles {
     for(int i = length/2; i < length/2 + 6; i++)
       printnb((char)out.get(i));
   }
-} /* Output:
+}
+/* Output:
 Finished writing
 xxxxxx
-*///:~
+*/

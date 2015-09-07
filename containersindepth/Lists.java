@@ -1,4 +1,4 @@
-//: containersindepth/Lists.java
+// containersindepth/Lists.java
 // ©2015 MindView LLC: see Copyright.txt
 // Things you can do with Lists.
 import java.util.*;
@@ -123,7 +123,8 @@ public class Lists {
       new LinkedList<>(Countries.names(25)));
     testLinkedList();
   }
-} /* Output: (First and last 2 Lines)
+}
+/* Output: (First and last 2 Lines)
 [ALGERIA, ANGOLA, BENIN, BOTSWANA, BURKINA FASO, BURUNDI,
 CAMEROON, CAPE VERDE, CENTRAL AFRICAN REPUBLIC, CHAD,
 COMOROS, CONGO, DJIBOUTI, EGYPT, EQUATORIAL GUINEA,
@@ -141,4 +142,4 @@ CAMEROON, CAPE VERDE, CENTRAL AFRICAN REPUBLIC, CHAD,
 COMOROS, CONGO, DJIBOUTI, EGYPT, EQUATORIAL GUINEA,
 ERITREA, ETHIOPIA, GABON, THE GAMBIA, GHANA, GUINEA,
 BISSAU, COTE D'IVOIR (IVORY COAST), KENYA]
-*///:~
+*/

@@ -1,4 +1,4 @@
-//: operators/EqualsMethod2.java
+// operators/EqualsMethod2.java
 // ©2015 MindView LLC: see Copyright.txt
 // Default equals() does not compare contents.
 
@@ -13,6 +13,7 @@ public class EqualsMethod2 {
     v1.i = v2.i = 100;
     System.out.println(v1.equals(v2));
   }
-} /* Output:
+}
+/* Output:
 false
-*///:~
+*/

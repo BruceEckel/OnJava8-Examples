@@ -1,4 +1,4 @@
-//: interfaces/nesting/NestingInterfaces.java
+// interfaces/nesting/NestingInterfaces.java
 // ©2015 MindView LLC: see Copyright.txt
 package interfaces.nesting;
 
@@ -99,4 +99,5 @@ public class NestingInterfaces {
     A a2 = new A();
     a2.receiveD(a.getD());
   }
-} /* Output: (None) *///:~
+}
+/* Output: (None) */

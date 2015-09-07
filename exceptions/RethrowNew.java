@@ -1,4 +1,4 @@
-//: exceptions/RethrowNew.java
+// exceptions/RethrowNew.java
 // ©2015 MindView LLC: see Copyright.txt
 // Rethrow a different object from the one that was caught.
 
@@ -31,7 +31,8 @@ public class RethrowNew {
       e.printStackTrace(System.out);
     }
   }
-} /* Output:
+}
+/* Output:
 originating the exception in f()
 Caught in inner try, e.printStackTrace()
 OneException: thrown from f()
@@ -40,4 +41,4 @@ OneException: thrown from f()
 Caught in outer try, e.printStackTrace()
 TwoException: from inner try
         at RethrowNew.main(RethrowNew.java:25)
-*///:~
+*/

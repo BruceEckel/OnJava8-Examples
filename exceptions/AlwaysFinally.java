@@ -1,4 +1,4 @@
-//: exceptions/AlwaysFinally.java
+// exceptions/AlwaysFinally.java
 // ©2015 MindView LLC: see Copyright.txt
 // Finally is always executed.
 import static com.mindviewinc.util.Print.*;
@@ -22,10 +22,11 @@ public class AlwaysFinally {
       System.out.println("finally in 1st try block");
     }
   }
-} /* Output:
+}
+/* Output:
 Entering first try block
 Entering second try block
 finally in 2nd try block
 Caught FourException in 1st try block
 finally in 1st try block
-*///:~
+*/

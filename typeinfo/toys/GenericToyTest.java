@@ -1,4 +1,4 @@
-//: typeinfo/toys/GenericToyTest.java
+// typeinfo/toys/GenericToyTest.java
 // ©2015 MindView LLC: see Copyright.txt
 // Testing class Class.
 package typeinfo.toys;
@@ -14,4 +14,5 @@ public class GenericToyTest {
     // Only produces Object:
     Object obj = up.newInstance();
   }
-} /* Output: (None) *///:~
+}
+/* Output: (None) */

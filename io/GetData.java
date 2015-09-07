@@ -1,4 +1,4 @@
-//: io/GetData.java
+// io/GetData.java
 // ©2015 MindView LLC: see Copyright.txt
 // Getting different representations from a ByteBuffer
 import java.nio.*;
@@ -43,7 +43,8 @@ public class GetData {
     print(bb.getDouble());
     bb.rewind();
   }
-} /* Output:
+}
+/* Output:
 i = 1025
 H o w d y !
 12390
@@ -51,4 +52,4 @@ H o w d y !
 99471142
 9.9471144E7
 9.9471142E7
-*///:~
+*/

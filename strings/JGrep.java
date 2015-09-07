@@ -1,4 +1,4 @@
-//: strings/JGrep.java
+// strings/JGrep.java
 // ©2015 MindView LLC: see Copyright.txt
 // A very simple version of the "grep" program.
 // {Args: JGrep.java 'void|int|String'}
@@ -22,7 +22,8 @@ public class JGrep {
           m.group() + ": " + m.start());
     }
   }
-} /* Output:
+}
+/* Output:
 0: 'void: 21
 1: int: 27
 2: String': 31
@@ -47,4 +48,4 @@ public class JGrep {
 21: int: 4
 22: int: 4
 23: int: 4
-*///:~
+*/

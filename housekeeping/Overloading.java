@@ -1,4 +1,4 @@
-//: housekeeping/Overloading.java
+// housekeeping/Overloading.java
 // ©2015 MindView LLC: see Copyright.txt
 // Demonstration of both constructor
 // and ordinary method overloading.
@@ -33,7 +33,8 @@ public class Overloading {
     // Overloaded constructor:
     new Tree();
   }
-} /* Output:
+}
+/* Output:
 Creating new Tree that is 0 feet tall
 Tree is 0 feet tall
 overloaded method: Tree is 0 feet tall
@@ -50,4 +51,4 @@ Creating new Tree that is 4 feet tall
 Tree is 4 feet tall
 overloaded method: Tree is 4 feet tall
 Planting a seedling
-*///:~
+*/

@@ -1,4 +1,4 @@
-//: containersindepth/CountedString.java
+// containersindepth/CountedString.java
 // ©2015 MindView LLC: see Copyright.txt
 // Creating a good hashCode().
 import java.util.*;
@@ -53,7 +53,8 @@ public class CountedString {
       print(map.get(cstring));
     }
   }
-} /* Output:
+}
+/* Output:
 {String: hi id: 4 hashCode(): 146450=3, String: hi id: 5
 hashCode(): 146451=4, String: hi id: 2 hashCode():
 146448=1, String: hi id: 3 hashCode(): 146449=2, String: hi
@@ -68,4 +69,4 @@ Looking up String: hi id: 4 hashCode(): 146450
 3
 Looking up String: hi id: 5 hashCode(): 146451
 4
-*///:~
+*/

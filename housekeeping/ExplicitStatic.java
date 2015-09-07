@@ -1,4 +1,4 @@
-//: housekeeping/ExplicitStatic.java
+// housekeeping/ExplicitStatic.java
 // ©2015 MindView LLC: see Copyright.txt
 // Explicit static initialization with the "static" clause.
 import static com.mindviewinc.util.Print.*;
@@ -31,9 +31,10 @@ public class ExplicitStatic {
   }
   // static Cups cups1 = new Cups();  // (2)
   // static Cups cups2 = new Cups();  // (2)
-} /* Output:
+}
+/* Output:
 Inside main()
 Cup(1)
 Cup(2)
 f(99)
-*///:~
+*/

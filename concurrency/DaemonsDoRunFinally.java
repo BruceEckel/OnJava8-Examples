@@ -1,4 +1,4 @@
-//: concurrency/DaemonsDoRunFinally.java
+// concurrency/DaemonsDoRunFinally.java
 // ©2015 MindView LLC: see Copyright.txt
 // Daemon threads now run the finally clause
 import java.util.concurrent.*;
@@ -25,7 +25,8 @@ public class DaemonsDoRunFinally {
     t.start();
     TimeUnit.SECONDS.sleep(2);
   }
-} /* Output:
+}
+/* Output:
 Starting ADaemon
 ADaemon finally clause
-*///:~
+*/

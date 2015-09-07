@@ -1,4 +1,4 @@
-//: logging/PrintableLogRecord.java
+// logging/PrintableLogRecord.java
 // ©2015 MindView LLC: see Copyright.txt
 // Override LogRecord toString()
 import java.util.logging.*;
@@ -43,7 +43,8 @@ PrintableLogRecord extends LogRecord {
         Level.FINEST, "Simple Log Record");
     System.out.println(logRecord);
   }
-} /* Output:
+}
+/* Output:
 Level<FINEST>
 LoggerName<null>
 Message<Simple Log Record>
@@ -56,4 +57,4 @@ SourceClassName<null>
 SourceMethodName<null>
 Thread Id<1>
 Thrown<null>
-*///:~
+*/

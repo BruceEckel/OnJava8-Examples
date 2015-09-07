@@ -1,4 +1,4 @@
-//: remote/PerfectTimeServer.java
+// remote/PerfectTimeServer.java
 // ©2015 MindView LLC: see Copyright.txt
 // Server for the PerfectTime remote object.
 // {ValidateByHand}
@@ -17,4 +17,4 @@ public class PerfectTimeServer {
     registry.rebind("PerfectTime", stub);
     System.out.println("Ready to do time");
   }
-} ///:~
+}

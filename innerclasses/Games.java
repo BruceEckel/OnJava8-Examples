@@ -1,4 +1,4 @@
-//: innerclasses/Games.java
+// innerclasses/Games.java
 // ©2015 MindView LLC: see Copyright.txt
 // Using anonymous inner classes with the Game framework.
 import static com.mindviewinc.util.Print.*;
@@ -55,7 +55,8 @@ public class Games {
     playGame(Chess.factory);
     playGame(TicTacToe.factory);
   }
-} /* Output:
+}
+/* Output:
 Checkers move 0
 Checkers move 1
 Checkers move 2
@@ -67,4 +68,4 @@ TicTacToe move 0
 TicTacToe move 1
 TicTacToe move 2
 TicTacToe move 3
-*///:~
+*/

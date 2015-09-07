@@ -1,4 +1,4 @@
-//: concurrency/AttemptLocking.java
+// concurrency/AttemptLocking.java
 // ©2015 MindView LLC: see Copyright.txt
 // Locks in the concurrent library allow you
 // to give up on trying to acquire a lock.
@@ -48,10 +48,11 @@ public class AttemptLocking {
     al.untimed(); // False -- lock grabbed by task
     al.timed();   // False -- lock grabbed by task
   }
-} /* Output:
+}
+/* Output:
 tryLock(): true
 tryLock(2, TimeUnit.SECONDS): true
 tryLock(): true
 tryLock(2, TimeUnit.SECONDS): true
 acquired
-*///:~
+*/

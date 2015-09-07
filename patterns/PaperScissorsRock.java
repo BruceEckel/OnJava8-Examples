@@ -1,4 +1,4 @@
-//: patterns/PaperScissorsRock.java
+// patterns/PaperScissorsRock.java
 // ©2015 MindView LLC: see Copyright.txt
 // Demonstration of multiple dispatching.
 import java.util.*;
@@ -106,7 +106,8 @@ public class PaperScissorsRock {
         Compete.match(
           items.get(i), items.get(i*2)));
   }
-} /* Output:
+}
+/* Output:
 Paper <--> Paper : DRAW
 Paper <--> Rock : WIN
 Rock <--> Scissors : WIN
@@ -127,4 +128,4 @@ Scissors <--> Rock : LOSE
 Rock <--> Paper : LOSE
 Scissors <--> Paper : WIN
 Paper <--> Rock : WIN
-*///:~
+*/

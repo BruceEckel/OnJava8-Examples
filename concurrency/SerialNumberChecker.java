@@ -1,4 +1,4 @@
-//: concurrency/SerialNumberChecker.java
+// concurrency/SerialNumberChecker.java
 // ©2015 MindView LLC: see Copyright.txt
 // Operations that might seem safe are not,
 // when threads are present.
@@ -60,7 +60,8 @@ public class SerialNumberChecker {
       System.exit(0);
     }
   }
-} /* Output:
+}
+/* Output:
 Duplicate: 5453
 Duplicate: 5639
-*///:~
+*/

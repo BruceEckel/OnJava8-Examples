@@ -1,4 +1,4 @@
-//: patterns/CommandPattern3.java
+// patterns/CommandPattern3.java
 // ©2015 MindView LLC: see Copyright.txt
 // Just implement the Runnable interface!
 import java.util.*;
@@ -32,6 +32,7 @@ public class CommandPattern3 {
     macro.commands.add(new IAm3());
     macro.run();
   }
-} /* Output:
+}
+/* Output:
 Hello World! I'm the command pattern!
-*///:~
+*/

@@ -1,4 +1,4 @@
-//: innerclasses/RunnableMethodReference.java
+// innerclasses/RunnableMethodReference.java
 // ©2015 MindView LLC: see Copyright.txt
 // Demonstrates method references
 import static com.mindviewinc.util.Print.*;
@@ -29,9 +29,10 @@ public class RunnableMethodReference {
     rmr.robject = rmr::f;
     rmr.robject.run();
   }
-} /* Output:
+}
+/* Output:
 f()
 g()
 External.go()
 f()
-*///:~
+*/

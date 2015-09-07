@@ -1,4 +1,4 @@
-//: generics/Mixins.java
+// generics/Mixins.java
 // ©2015 MindView LLC: see Copyright.txt
 import java.util.*;
 
@@ -58,7 +58,8 @@ public class Mixins {
     System.out.println(mixin2.get() + " " +
       mixin2.getStamp() +  " " + mixin2.getSerialNumber());
   }
-} /* Output:
+}
+/* Output:
 test string 1 1434408464412 1
 test string 2 1434408464413 2
-*///:~
+*/

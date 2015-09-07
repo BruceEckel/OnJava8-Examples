@@ -1,4 +1,4 @@
-//: typeinfo/GenericClassReferences.java
+// typeinfo/GenericClassReferences.java
 // ©2015 MindView LLC: see Copyright.txt
 
 public class GenericClassReferences {
@@ -9,4 +9,5 @@ public class GenericClassReferences {
     intClass = double.class;
     // genericIntClass = double.class; // Illegal
   }
-} /* Output: (None) *///:~
+}
+/* Output: (None) */

@@ -1,4 +1,4 @@
-//: io/AvailableCharSets.java
+// io/AvailableCharSets.java
 // ©2015 MindView LLC: see Copyright.txt
 // Displays Charsets and aliases
 import java.nio.charset.*;
@@ -23,7 +23,8 @@ public class AvailableCharSets {
       print();
     }
   }
-} /* Output: (First 7 Lines)
+}
+/* Output: (First 7 Lines)
 Big5: csBig5
 Big5-HKSCS: big5-hkscs, big5hk, Big5_HKSCS, big5hkscs
 CESU-8: CESU8, csCESU-8
@@ -36,4 +37,4 @@ GB18030: gb18030-2000
 GB2312: gb2312, euc-cn, x-EUC-CN, euccn, EUC_CN, gb2312-80,
 gb2312-1980
                   ...
-*///:~
+*/

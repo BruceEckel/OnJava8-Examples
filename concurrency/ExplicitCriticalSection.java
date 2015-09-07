@@ -1,4 +1,4 @@
-//: concurrency/ExplicitCriticalSection.java
+// concurrency/ExplicitCriticalSection.java
 // ©2015 MindView LLC: see Copyright.txt
 // {ThrowsException} on a multiprocessor machine
 // Using explicit Lock objects to create
@@ -48,7 +48,8 @@ public class ExplicitCriticalSection {
       pman2 = new ExplicitPairManager2();
     CriticalSection.testApproaches(pman1, pman2);
   }
-} /* Output:
+}
+/* Output:
 pm1: Pair: x: 10, y: 10 checkCounter = 68453
 pm2: Pair: x: 11, y: 11 checkCounter = 663407
 ___[ Error Output ]___
@@ -81,4 +82,4 @@ java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown
 Source)
         at java.lang.Thread.run(Unknown Source)
 ___[ Exception is Expected ]___
-*///:~
+*/

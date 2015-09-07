@@ -1,4 +1,4 @@
-//: ui/Button2b.java
+// ui/Button2b.java
 // ©2015 MindView LLC: see Copyright.txt
 // Using anonymous inner classes.
 import javax.swing.*;
@@ -26,4 +26,4 @@ public class Button2b extends JFrame {
   public static void main(String[] args) {
     run(new Button2b(), 200, 150);
   }
-} ///:~
+}

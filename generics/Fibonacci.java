@@ -1,4 +1,4 @@
-//: generics/Fibonacci.java
+// generics/Fibonacci.java
 // ©2015 MindView LLC: see Copyright.txt
 // Generate a Fibonacci sequence.
 import com.mindviewinc.util.*;
@@ -16,6 +16,7 @@ public class Fibonacci implements Generator<Integer> {
     for(int i = 0; i < 18; i++)
       System.out.print(gen.next() + " ");
   }
-} /* Output:
+}
+/* Output:
 1 1 2 3 5 8 13 21 34 55 89 144 233 377 610 987 1597 2584
-*///:~
+*/

@@ -1,4 +1,4 @@
-//: io/TransferTo.java
+// io/TransferTo.java
 // ©2015 MindView LLC: see Copyright.txt
 // Using transferTo() between channels
 // {Args: TransferTo.java TransferTo.txt}
@@ -18,4 +18,5 @@ public class TransferTo {
     // Or:
     // out.transferFrom(in, 0, in.size());
   }
-} /* Output: (None) *///:~
+}
+/* Output: (None) */

@@ -1,4 +1,4 @@
-//: typeinfo/SnowRemovalRobot.java
+// typeinfo/SnowRemovalRobot.java
 // ©2015 MindView LLC: see Copyright.txt
 import java.util.*;
 
@@ -46,7 +46,8 @@ public class SnowRemovalRobot implements Robot {
   public static void main(String[] args) {
     Robot.Test.test(new SnowRemovalRobot("Slusher"));
   }
-} /* Output:
+}
+/* Output:
 Robot name: Slusher
 Robot model: SnowBot Series 11
 Slusher can shovel snow
@@ -55,4 +56,4 @@ Slusher can chip ice
 Slusher chipping ice
 Slusher can clear the roof
 Slusher clearing roof
-*///:~
+*/

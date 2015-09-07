@@ -1,4 +1,4 @@
-//: enums/EnumClass.java
+// enums/EnumClass.java
 // ©2015 MindView LLC: see Copyright.txt
 // Capabilities of the Enum class
 import static com.mindviewinc.util.Print.*;
@@ -22,7 +22,8 @@ public class EnumClass {
       print(shrub);
     }
   }
-} /* Output:
+}
+/* Output:
 GROUND ordinal: 0
 -1 false false
 class Shrubbery
@@ -41,4 +42,4 @@ HANGING
 HANGING
 CRAWLING
 GROUND
-*///:~
+*/

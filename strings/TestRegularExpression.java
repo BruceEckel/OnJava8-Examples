@@ -1,4 +1,4 @@
-//: strings/TestRegularExpression.java
+// strings/TestRegularExpression.java
 // ©2015 MindView LLC: see Copyright.txt
 // Easily try out regular expressions.
 // {Args: abcabcabcdefabc "abc+" "(abc)+" "(abc){2,}" }
@@ -23,7 +23,8 @@ public class TestRegularExpression {
       }
     }
   }
-} /* Output:
+}
+/* Output:
 Input: "abcabcabcdefabc"
 Regular expression: "abcabcabcdefabc"
 Match "abcabcabcdefabc" at positions 0-14
@@ -37,4 +38,4 @@ Match "abcabcabc" at positions 0-8
 Match "abc" at positions 12-14
 Regular expression: "(abc){2,}"
 Match "abcabcabc" at positions 0-8
-*///:~
+*/

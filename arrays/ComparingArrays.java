@@ -1,4 +1,4 @@
-//: arrays/ComparingArrays.java
+// arrays/ComparingArrays.java
 // ©2015 MindView LLC: see Copyright.txt
 // Using Arrays.equals()
 import java.util.*;
@@ -19,8 +19,9 @@ public class ComparingArrays {
       new String("Hi"), new String("Hi") };
     print(Arrays.equals(s1, s2));
   }
-} /* Output:
+}
+/* Output:
 true
 false
 true
-*///:~
+*/

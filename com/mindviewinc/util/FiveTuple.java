@@ -1,9 +1,9 @@
-//: com/mindviewinc/util/FiveTuple.java
+// com/mindviewinc/util/FiveTuple.java
 // ©2015 MindView LLC: see Copyright.txt
 package com.mindviewinc.util;
 
-public class FiveTuple<A,B,C,D,E>
-extends FourTuple<A,B,C,D> {
+public class FiveTuple<A, B, C, D, E>
+extends FourTuple<A, B, C, D> {
   public final E fifth;
   public FiveTuple(A a, B b, C c, D d, E e) {
     super(a, b, c, d);
@@ -14,4 +14,4 @@ extends FourTuple<A,B,C,D> {
     return "(" + first + ", " + second + ", " +
       third + ", " + fourth + ", " + fifth + ")";
   }
-} ///:~
+}

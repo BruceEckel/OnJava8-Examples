@@ -1,4 +1,4 @@
-//: patterns/chain/ChainOfResponsibility.java
+// patterns/chain/ChainOfResponsibility.java
 // ©2015 MindView LLC: see Copyright.txt
 package patterns.chain;
 import java.util.*;
@@ -84,9 +84,10 @@ public class ChainOfResponsibility {
     else
       System.out.println("No algorithm found");
   }
-} /* Output:
+}
+/* Output:
 LeastSquares.algorithm
 Perturbation.algorithm
 Bisection.algorithm
 5.5, 6.6
-*///:~
+*/

@@ -1,4 +1,4 @@
-//: housekeeping/ArrayNew.java
+// housekeeping/ArrayNew.java
 // ©2015 MindView LLC: see Copyright.txt
 // Creating arrays with new.
 import java.util.*;
@@ -12,7 +12,8 @@ public class ArrayNew {
     print("length of a = " + a.length);
     print(Arrays.toString(a));
   }
-} /* Output:
+}
+/* Output:
 length of a = 18
 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-*///:~
+*/

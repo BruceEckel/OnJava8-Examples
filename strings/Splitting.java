@@ -1,4 +1,4 @@
-//: strings/Splitting.java
+// strings/Splitting.java
 // ©2015 MindView LLC: see Copyright.txt
 import java.util.*;
 
@@ -16,7 +16,8 @@ public class Splitting {
     split("\\W+"); // Non-word characters
     split("n\\W+"); // 'n' followed by non-word characters
   }
-} /* Output:
+}
+/* Output:
 [Then,, when, you, have, found, the, shrubbery,, you, must,
 cut, down, the, mightiest, tree, in, the, forest...,
 with..., a, herring!]
@@ -25,4 +26,4 @@ cut, down, the, mightiest, tree, in, the, forest, with, a,
 herring]
 [The, whe, you have found the shrubbery, you must cut dow,
 the mightiest tree i, the forest... with... a herring!]
-*///:~
+*/

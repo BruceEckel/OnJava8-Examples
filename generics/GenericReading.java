@@ -1,4 +1,4 @@
-//: generics/GenericReading.java
+// generics/GenericReading.java
 // ©2015 MindView LLC: see Copyright.txt
 import java.util.*;
 
@@ -40,4 +40,5 @@ public class GenericReading {
   public static void main(String[] args) {
     f1(); f2(); f3();
   }
-} /* Output: (None) *///:~
+}
+/* Output: (None) */

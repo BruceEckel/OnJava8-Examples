@@ -1,4 +1,4 @@
-//: innerclasses/Parcel1.java
+// innerclasses/Parcel1.java
 // ©2015 MindView LLC: see Copyright.txt
 // Creating inner classes.
 
@@ -25,6 +25,7 @@ public class Parcel1 {
     Parcel1 p = new Parcel1();
     p.ship("Tasmania");
   }
-} /* Output:
+}
+/* Output:
 Tasmania
-*///:~
+*/

@@ -1,4 +1,4 @@
-//: io/TestEOF.java
+// io/TestEOF.java
 // ©2015 MindView LLC: see Copyright.txt
 // Testing for end of file while reading a byte at a time.
 import java.io.*;
@@ -12,4 +12,5 @@ public class TestEOF {
     while(in.available() != 0)
       System.out.write(in.readByte());
   }
-} /* Output: (Execute to see) *///:~
+}
+/* Output: (Execute to see) */

@@ -1,4 +1,4 @@
-//: interfaces/Months.java
+// interfaces/Months.java
 // ©2015 MindView LLC: see Copyright.txt
 // Using interfaces to create groups of constants.
 package interfaces;
@@ -9,4 +9,4 @@ public interface Months {
     APRIL = 4, MAY = 5, JUNE = 6, JULY = 7,
     AUGUST = 8, SEPTEMBER = 9, OCTOBER = 10,
     NOVEMBER = 11, DECEMBER = 12;
-} ///:~
+}

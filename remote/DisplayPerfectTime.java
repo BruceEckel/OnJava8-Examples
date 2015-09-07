@@ -1,4 +1,4 @@
-//: remote/DisplayPerfectTime.java
+// remote/DisplayPerfectTime.java
 // ©2015 MindView LLC: see Copyright.txt
 // Uses remote object PerfectTime
 // {ValidateByHand}
@@ -14,4 +14,4 @@ public class DisplayPerfectTime {
     for(int i = 0; i < 10; i++)
       System.out.println("Time: "+ pt.getPerfectTime());
   }
-} ///:~
+}

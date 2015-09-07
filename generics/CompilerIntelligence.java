@@ -1,4 +1,4 @@
-//: generics/CompilerIntelligence.java
+// generics/CompilerIntelligence.java
 // ©2015 MindView LLC: see Copyright.txt
 import java.util.*;
 
@@ -10,4 +10,5 @@ public class CompilerIntelligence {
     flist.contains(new Apple()); // Argument is 'Object'
     flist.indexOf(new Apple()); // Argument is 'Object'
   }
-} /* Output: (None) *///:~
+}
+/* Output: (None) */

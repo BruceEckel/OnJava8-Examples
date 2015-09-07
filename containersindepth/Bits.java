@@ -1,4 +1,4 @@
-//: containersindepth/Bits.java
+// containersindepth/Bits.java
 // ©2015 MindView LLC: see Copyright.txt
 // Demonstration of BitSet.
 import java.util.*;
@@ -57,7 +57,8 @@ public class Bits {
     b1023.set(1024);
     print("set bit 1023: " + b1023);
   }
-} /* Output:
+}
+/* Output:
 byte value: -107
 bits: {0, 2, 4, 7}
 bit pattern: 1010100100000000000000000000000000000000000000
@@ -74,4 +75,4 @@ bit pattern: 1101010101010000001101111110000100000000000000
 set bit 127: {127}
 set bit 255: {255}
 set bit 1023: {1023, 1024}
-*///:~
+*/

@@ -1,4 +1,4 @@
-//: housekeeping/InitialValues2.java
+// housekeeping/InitialValues2.java
 // ©2015 MindView LLC: see Copyright.txt
 // Providing explicit initial values.
 
@@ -11,4 +11,4 @@ public class InitialValues2 {
   long lng = 1;
   float f = 3.14f;
   double d = 3.14159;
-} ///:~
+}

@@ -1,4 +1,4 @@
-//: concurrency/SimpleDaemons.java
+// concurrency/SimpleDaemons.java
 // ©2015 MindView LLC: see Copyright.txt
 // Daemon threads don't prevent the program from ending.
 import java.util.concurrent.*;
@@ -25,7 +25,8 @@ public class SimpleDaemons implements Runnable {
     print("All daemons started");
     TimeUnit.MILLISECONDS.sleep(175);
   }
-} /* Output:
+}
+/* Output:
 All daemons started
 Thread[Thread-6,5,main] SimpleDaemons@b87187
 Thread[Thread-4,5,main] SimpleDaemons@1fb28c1
@@ -37,4 +38,4 @@ Thread[Thread-3,5,main] SimpleDaemons@4683f2
 Thread[Thread-2,5,main] SimpleDaemons@4f80f2
 Thread[Thread-5,5,main] SimpleDaemons@29c11d
 Thread[Thread-1,5,main] SimpleDaemons@9df74c
-*///:~
+*/

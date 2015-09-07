@@ -1,4 +1,4 @@
-//: operators/Precedence.java
+// operators/Precedence.java
 // ©2015 MindView LLC: see Copyright.txt
 
 public class Precedence {
@@ -8,6 +8,7 @@ public class Precedence {
     int b = x + (y - 2)/(2 + z);       // (2)
     System.out.println("a = " + a + " b = " + b);
   }
-} /* Output:
+}
+/* Output:
 a = 5 b = 1
-*///:~
+*/

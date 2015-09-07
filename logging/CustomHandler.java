@@ -1,4 +1,4 @@
-//: logging/CustomHandler.java
+// logging/CustomHandler.java
 // ©2015 MindView LLC: see Copyright.txt
 // How to write custom handler
 import java.util.logging.*;
@@ -31,7 +31,8 @@ public class CustomHandler {
     logger.info("Logging Info");
     System.out.print(trace);
   }
-} /* Output:
+}
+/* Output:
 [WARNING:, CustomHandler:, main:, <Logging Warning>,
 , INFO:, CustomHandler:, main:, <Logging Info>,
 ]
@@ -40,4 +41,4 @@ Jun 15, 2015 3:47:52 PM CustomHandler main
 WARNING: Logging Warning
 Jun 15, 2015 3:47:52 PM CustomHandler main
 INFO: Logging Info
-*///:~
+*/

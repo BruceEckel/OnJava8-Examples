@@ -1,4 +1,4 @@
-//: generics/LimitsOfInference.java
+// generics/LimitsOfInference.java
 // ©2015 MindView LLC: see Copyright.txt
 import typeinfo.pets.*;
 import java.util.*;
@@ -9,4 +9,5 @@ public class LimitsOfInference {
   public static void main(String[] args) {
     // f(New.map()); // Does not compile
   }
-} /* Output: (None) *///:~
+}
+/* Output: (None) */

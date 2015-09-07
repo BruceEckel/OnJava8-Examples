@@ -1,4 +1,4 @@
-//: staticchecking/dr/DogsAndRobots.java
+// staticchecking/dr/DogsAndRobots.java
 // ©2015 MindView LLC: see Copyright.txt
 package staticchecking.dr;
 
@@ -32,7 +32,8 @@ public class DogsAndRobots {
     Communicate.speak(d);
     Communicate.speak(r);
   }
-} /* Output:
+}
+/* Output:
 Woof!
 Click!
-*///:~
+*/

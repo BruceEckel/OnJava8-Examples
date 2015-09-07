@@ -1,4 +1,4 @@
-//: housekeeping/ArrayClassObj.java
+// housekeeping/ArrayClassObj.java
 // ©2015 MindView LLC: see Copyright.txt
 // Creating an array of nonprimitive objects.
 import java.util.*;
@@ -13,8 +13,9 @@ public class ArrayClassObj {
       a[i] = rand.nextInt(500); // Autoboxing
     print(Arrays.toString(a));
   }
-} /* Output:
+}
+/* Output:
 length of a = 18
 [55, 193, 361, 461, 429, 368, 200, 22, 207, 288, 128, 51,
 89, 309, 278, 498, 361, 20]
-*///:~
+*/

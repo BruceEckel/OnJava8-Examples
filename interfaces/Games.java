@@ -1,4 +1,4 @@
-//: interfaces/Games.java
+// interfaces/Games.java
 // ©2015 MindView LLC: see Copyright.txt
 // A Game framework using Factory Methods.
 import static com.mindviewinc.util.Print.*;
@@ -46,7 +46,8 @@ public class Games {
     playGame(new CheckersFactory());
     playGame(new ChessFactory());
   }
-} /* Output:
+}
+/* Output:
 Checkers move 0
 Checkers move 1
 Checkers move 2
@@ -54,4 +55,4 @@ Chess move 0
 Chess move 1
 Chess move 2
 Chess move 3
-*///:~
+*/

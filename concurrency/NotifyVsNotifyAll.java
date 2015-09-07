@@ -1,4 +1,4 @@
-//: concurrency/NotifyVsNotifyAll.java
+// concurrency/NotifyVsNotifyAll.java
 // ©2015 MindView LLC: see Copyright.txt
 import java.util.concurrent.*;
 import java.util.*;
@@ -63,7 +63,8 @@ public class NotifyVsNotifyAll {
     System.out.println("\nShutting down");
     exec.shutdownNow(); // Interrupt all tasks
   }
-} /* Output:
+}
+/* Output:
 notify() Thread[pool-1-thread-1,5,main]
 notifyAll() Thread[pool-1-thread-1,5,main]
 Thread[pool-1-thread-5,5,main]
@@ -103,4 +104,4 @@ Thread[pool-1-thread-5,5,main]
 Timer canceled
 Task2.blocker.prodAll() Thread[pool-1-thread-6,5,main]
 Shutting down
-*///:~
+*/

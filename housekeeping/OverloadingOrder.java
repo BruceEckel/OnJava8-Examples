@@ -1,4 +1,4 @@
-//: housekeeping/OverloadingOrder.java
+// housekeeping/OverloadingOrder.java
 // ©2015 MindView LLC: see Copyright.txt
 // Overloading based on the order of the arguments.
 import static com.mindviewinc.util.Print.*;
@@ -14,7 +14,8 @@ public class OverloadingOrder {
     f("String first", 11);
     f(99, "Int first");
   }
-} /* Output:
+}
+/* Output:
 String: String first, int: 11
 int: 99, String: Int first
-*///:~
+*/

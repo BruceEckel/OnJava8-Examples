@@ -1,4 +1,4 @@
-//: concurrency/TestBlockingQueues.java
+// concurrency/TestBlockingQueues.java
 // ©2015 MindView LLC: see Copyright.txt
 // {TimeOutDuringTesting}
 import java.util.concurrent.*;
@@ -66,4 +66,5 @@ public class TestBlockingQueues {
     test("SynchronousQueue", // Size of 1
       new SynchronousQueue<>());
   }
-} /* Output: (Execute to see) *///:~
+}
+/* Output: (Execute to see) */

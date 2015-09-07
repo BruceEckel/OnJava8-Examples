@@ -1,4 +1,4 @@
-//: io/RecoverCADState.java
+// io/RecoverCADState.java
 // ©2015 MindView LLC: see Copyright.txt
 // Restoring the state of the pretend CAD system.
 // {RunFirst: AStoreCADState}
@@ -17,7 +17,8 @@ public class RecoverCADState {
     List<Shape> shapes = (List<Shape>)in.readObject();
     System.out.println(shapes);
   }
-} /* Output:
+}
+/* Output:
 [class Circlecolor[1] xPos[58] yPos[55] dim[93]
 , class Squarecolor[0] xPos[61] yPos[61] dim[29]
 , class Linecolor[3] xPos[68] yPos[0] dim[22]
@@ -29,4 +30,4 @@ public class RecoverCADState {
 , class Linecolor[3] xPos[4] yPos[83] dim[6]
 , class Circlecolor[1] xPos[75] yPos[10] dim[42]
 ]
-*///:~
+*/

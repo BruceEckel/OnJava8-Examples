@@ -1,4 +1,4 @@
-//: io/MappedIO.java
+// io/MappedIO.java
 // ©2015 MindView LLC: see Copyright.txt
 import java.nio.*;
 import java.nio.channels.*;
@@ -106,11 +106,12 @@ public class MappedIO {
     for(Tester test : tests)
       test.runTest();
   }
-} /* Output:
+}
+/* Output:
 Stream Write: 0.45
 Mapped Write: 0.04
 Stream Read: 0.42
 Mapped Read: 0.03
 Stream Read/Write: 3.43
 Mapped Read/Write: 0.00
-*///:~
+*/

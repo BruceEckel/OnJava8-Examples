@@ -1,4 +1,4 @@
-//: ui/Dialogs.java
+// ui/Dialogs.java
 // ©2015 MindView LLC: see Copyright.txt
 // Creating and using Dialog Boxes.
 import javax.swing.*;
@@ -28,4 +28,4 @@ public class Dialogs extends JFrame {
   public static void main(String[] args) {
     run(new Dialogs(), 125, 75);
   }
-} ///:~
+}

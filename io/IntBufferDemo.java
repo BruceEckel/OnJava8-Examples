@@ -1,4 +1,4 @@
-//: io/IntBufferDemo.java
+// io/IntBufferDemo.java
 // ©2015 MindView LLC: see Copyright.txt
 // Manipulating ints in a ByteBuffer with an IntBuffer
 import java.nio.*;
@@ -20,7 +20,8 @@ public class IntBufferDemo {
       System.out.println(i);
     }
   }
-} /* Output:
+}
+/* Output:
 99
 11
 42
@@ -29,4 +30,4 @@ public class IntBufferDemo {
 143
 811
 1016
-*///:~
+*/

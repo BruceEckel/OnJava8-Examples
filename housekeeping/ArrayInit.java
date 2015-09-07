@@ -1,4 +1,4 @@
-//: housekeeping/ArrayInit.java
+// housekeeping/ArrayInit.java
 // ©2015 MindView LLC: see Copyright.txt
 // Array initialization.
 import java.util.*;
@@ -16,7 +16,8 @@ public class ArrayInit {
     System.out.println(Arrays.toString(a));
     System.out.println(Arrays.toString(b));
   }
-} /* Output:
+}
+/* Output:
 [1, 2, 3]
 [1, 2, 3]
-*///:~
+*/

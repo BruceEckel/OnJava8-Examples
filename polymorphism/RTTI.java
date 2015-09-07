@@ -1,4 +1,4 @@
-//: polymorphism/RTTI.java
+// polymorphism/RTTI.java
 // ©2015 MindView LLC: see Copyright.txt
 // Downcasting & Runtime type information (RTTI).
 // {ThrowsException}
@@ -31,10 +31,11 @@ public class RTTI {
     ((MoreUseful)x[1]).u(); // Downcast/RTTI
     ((MoreUseful)x[0]).u(); // Exception thrown
   }
-} /* Output:
+}
+/* Output:
 ___[ Error Output ]___
 Exception in thread "main" java.lang.ClassCastException:
 Useful cannot be cast to MoreUseful
         at RTTI.main(RTTI.java:31)
 ___[ Exception is Expected ]___
-*///:~
+*/

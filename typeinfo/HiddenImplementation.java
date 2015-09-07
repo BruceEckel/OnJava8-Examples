@@ -1,4 +1,4 @@
-//: typeinfo/HiddenImplementation.java
+// typeinfo/HiddenImplementation.java
 // ©2015 MindView LLC: see Copyright.txt
 // Sneaking around package hiding.
 import typeinfo.interfacea.*;
@@ -28,11 +28,12 @@ public class HiddenImplementation {
     g.setAccessible(true);
     g.invoke(a);
   }
-} /* Output:
+}
+/* Output:
 public C.f()
 typeinfo.packageaccess.C
 public C.g()
 package C.u()
 protected C.v()
 private C.w()
-*///:~
+*/

@@ -1,4 +1,4 @@
-//: innerclasses/BigEgg2.java
+// innerclasses/BigEgg2.java
 // ©2015 MindView LLC: see Copyright.txt
 // Proper inheritance of an inner class.
 import static com.mindviewinc.util.Print.*;
@@ -25,10 +25,11 @@ public class BigEgg2 extends Egg2 {
     Egg2 e2 = new BigEgg2();
     e2.g();
   }
-} /* Output:
+}
+/* Output:
 Egg2.Yolk()
 New Egg2()
 Egg2.Yolk()
 BigEgg2.Yolk()
 BigEgg2.Yolk.f()
-*///:~
+*/

@@ -1,4 +1,4 @@
-//: generics/SelfBoundingMethods.java
+// generics/SelfBoundingMethods.java
 // ©2015 MindView LLC: see Copyright.txt
 
 public class SelfBoundingMethods {
@@ -8,4 +8,5 @@ public class SelfBoundingMethods {
   public static void main(String[] args) {
     A a = f(new A());
   }
-} /* Output: (None) *///:~
+}
+/* Output: (None) */

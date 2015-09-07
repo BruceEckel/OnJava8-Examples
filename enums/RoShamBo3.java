@@ -1,4 +1,4 @@
-//: enums/RoShamBo3.java
+// enums/RoShamBo3.java
 // ©2015 MindView LLC: see Copyright.txt
 // Using constant-specific methods.
 package enums;
@@ -43,7 +43,8 @@ public enum RoShamBo3 implements Competitor<RoShamBo3> {
   public static void main(String[] args) {
     RoShamBo.play(RoShamBo3.class, 20);
   }
-} /* Output:
+}
+/* Output:
 ROCK vs. ROCK: DRAW
 SCISSORS vs. ROCK: LOSE
 SCISSORS vs. ROCK: LOSE
@@ -64,4 +65,4 @@ SCISSORS vs. PAPER: WIN
 SCISSORS vs. PAPER: WIN
 SCISSORS vs. PAPER: WIN
 SCISSORS vs. PAPER: WIN
-*///:~
+*/

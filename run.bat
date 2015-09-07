@@ -1,3 +1,3 @@
-python ..\Validate.py -p
+python ..\tools\Validate.py -p
 powershell .\runall.ps1
-python ..\Validate.py -e
+python ..\tools\Validate.py -e

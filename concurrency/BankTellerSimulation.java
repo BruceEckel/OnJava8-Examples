@@ -1,4 +1,4 @@
-//: concurrency/BankTellerSimulation.java
+// concurrency/BankTellerSimulation.java
 // ©2015 MindView LLC: see Copyright.txt
 // Using queues and multithreading.
 // {Args: 5}
@@ -189,7 +189,8 @@ public class BankTellerSimulation {
     }
     exec.shutdownNow();
   }
-} /* Output:
+}
+/* Output:
 [200][207] { T1 T0 }
 [861][258][140][322] { T1 T0 }
 [575][342][804][826][896] { T1 T0 }
@@ -204,4 +205,4 @@ Teller 0 terminating
 CustomerGenerator terminating
 TellerManager terminating
 Teller 1 terminating
-*///:~
+*/

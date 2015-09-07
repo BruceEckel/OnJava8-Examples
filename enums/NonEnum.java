@@ -1,4 +1,4 @@
-//: enums/NonEnum.java
+// enums/NonEnum.java
 // ©2015 MindView LLC: see Copyright.txt
 
 public class NonEnum {
@@ -11,6 +11,7 @@ public class NonEnum {
       System.out.println("Expected: " + e);
     }
   }
-} /* Output:
+}
+/* Output:
 Expected: java.lang.NullPointerException
-*///:~
+*/

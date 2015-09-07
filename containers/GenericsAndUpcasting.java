@@ -1,4 +1,4 @@
-//: containers/GenericsAndUpcasting.java
+// containers/GenericsAndUpcasting.java
 // ©2015 MindView LLC: see Copyright.txt
 import java.util.*;
 
@@ -17,9 +17,10 @@ public class GenericsAndUpcasting {
     for(Apple c : apples)
       System.out.println(c);
   }
-} /* Output:
+}
+/* Output:
 GrannySmith@19e0bfd
 Gala@139a55
 Fuji@1db9742
 Braeburn@106d69c
-*///:~
+*/

@@ -1,4 +1,4 @@
-//: enums/RoShamBo5.java
+// enums/RoShamBo5.java
 // ©2015 MindView LLC: see Copyright.txt
 // Multiple dispatching using an EnumMap of EnumMaps.
 package enums;
@@ -31,7 +31,8 @@ enum RoShamBo5 implements Competitor<RoShamBo5> {
   public static void main(String[] args) {
     RoShamBo.play(RoShamBo5.class, 20);
   }
-} /* Output:
+}
+/* Output:
 ROCK vs. ROCK: DRAW
 SCISSORS vs. ROCK: LOSE
 SCISSORS vs. ROCK: LOSE
@@ -52,4 +53,4 @@ SCISSORS vs. PAPER: WIN
 SCISSORS vs. PAPER: WIN
 SCISSORS vs. PAPER: WIN
 SCISSORS vs. PAPER: WIN
-*///:~
+*/

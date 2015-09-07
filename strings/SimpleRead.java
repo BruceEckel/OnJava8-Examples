@@ -1,4 +1,4 @@
-//: strings/SimpleRead.java
+// strings/SimpleRead.java
 // ©2015 MindView LLC: see Copyright.txt
 import java.io.*;
 
@@ -27,7 +27,8 @@ public class SimpleRead {
       System.err.println("I/O exception");
     }
   }
-} /* Output:
+}
+/* Output:
 What is your name?
 Sir Robin of Camelot
 How old are you? What is your favorite double?
@@ -36,4 +37,4 @@ How old are you? What is your favorite double?
 Hi Sir Robin of Camelot.
 In 5 years you will be 27.
 My favorite double is 0.809015.
-*///:~
+*/

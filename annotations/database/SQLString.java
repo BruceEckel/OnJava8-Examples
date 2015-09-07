@@ -1,4 +1,4 @@
-//: annotations/database/SQLString.java
+// annotations/database/SQLString.java
 // ©2015 MindView LLC: see Copyright.txt
 package annotations.database;
 import java.lang.annotation.*;
@@ -9,4 +9,4 @@ public @interface SQLString {
   int value() default 0;
   String name() default "";
   Constraints constraints() default @Constraints;
-} ///:~
+}

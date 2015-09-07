@@ -1,3 +1,4 @@
+// patterns/trashvisitor/VTrash.dat
 patterns.trashvisitor.VGlass:54
 patterns.trashvisitor.VPaper:22
 patterns.trashvisitor.VPaper:11
@@ -32,4 +33,3 @@ patterns.trashvisitor.VGlass:60
 patterns.trashvisitor.VPaper:66
 patterns.trashvisitor.VAluminum:36
 patterns.trashvisitor.VCardboard:22
-

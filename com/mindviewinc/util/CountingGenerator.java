@@ -1,4 +1,4 @@
-//: com/mindviewinc/util/CountingGenerator.java
+// com/mindviewinc/util/CountingGenerator.java
 // ©2015 MindView LLC: see Copyright.txt
 // Simple generator implementations.
 package com.mindviewinc.util;
@@ -82,4 +82,4 @@ public class CountingGenerator {
       return result;
     }
   }
-} ///:~
+}

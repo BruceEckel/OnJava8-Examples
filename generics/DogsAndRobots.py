@@ -1,4 +1,4 @@
-#: generics/DogsAndRobots.py
+# generics/DogsAndRobots.py
 # ©2015 MindView LLC: see Copyright.txt
 
 class Dog:
@@ -25,4 +25,4 @@ a = Dog()
 b = Robot()
 perform(a)
 perform(b)
-#:~
+#>

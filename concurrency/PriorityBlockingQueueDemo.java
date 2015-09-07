@@ -1,4 +1,4 @@
-//: concurrency/PriorityBlockingQueueDemo.java
+// concurrency/PriorityBlockingQueueDemo.java
 // ©2015 MindView LLC: see Copyright.txt
 import java.util.concurrent.*;
 import java.util.*;
@@ -121,7 +121,8 @@ public class PriorityBlockingQueueDemo {
     exec.execute(new PrioritizedTaskProducer(queue, exec));
     exec.execute(new PrioritizedTaskConsumer(queue));
   }
-} /* Output: (First and last 12 Lines)
+}
+/* Output: (First and last 12 Lines)
 [8  ] Task 0
 [9  ] Task 5
 [9  ] Task 13
@@ -147,4 +148,4 @@ ________...________...________...________...________
 (40:-1)
 [-1 ] Task 40 Calling shutdownNow()
 Finished PrioritizedTaskConsumer
-*///:~
+*/

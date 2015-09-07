@@ -1,4 +1,4 @@
-//: io/FreezeAlien.java
+// io/FreezeAlien.java
 // ©2015 MindView LLC: see Copyright.txt
 // Create a serialized output file.
 import java.io.*;
@@ -10,4 +10,5 @@ public class FreezeAlien {
     Alien quellek = new Alien();
     out.writeObject(quellek);
   }
-} /* Output: (None) *///:~
+}
+/* Output: (None) */

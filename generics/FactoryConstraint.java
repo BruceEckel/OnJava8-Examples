@@ -1,4 +1,4 @@
-//: generics/FactoryConstraint.java
+// generics/FactoryConstraint.java
 // ©2015 MindView LLC: see Copyright.txt
 
 interface FactoryI<T> {
@@ -34,4 +34,5 @@ public class FactoryConstraint {
     new Foo2<>(new IntegerFactory());
     new Foo2<>(new Widget.Factory());
   }
-} /* Output: (None) *///:~
+}
+/* Output: (None) */

@@ -1,4 +1,4 @@
-//: typeinfo/RegisteredFactories.java
+// typeinfo/RegisteredFactories.java
 // ©2015 MindView LLC: see Copyright.txt
 // Registering Class Factories in the base class.
 import typeinfo.factory.*;
@@ -101,7 +101,8 @@ public class RegisteredFactories {
     for(int i = 0; i < 10; i++)
       System.out.println(Part.createRandom());
   }
-} /* Output:
+}
+/* Output:
 GeneratorBelt
 CabinAirFilter
 GeneratorBelt
@@ -112,4 +113,4 @@ FuelFilter
 PowerSteeringBelt
 PowerSteeringBelt
 FuelFilter
-*///:~
+*/

@@ -1,4 +1,4 @@
-//: patterns/factory/ShapeFactory1.java
+// patterns/factory/ShapeFactory1.java
 // ©2015 MindView LLC: see Copyright.txt
 // A simple static factory method.
 package patterns.factory;
@@ -56,7 +56,8 @@ public class ShapeFactory1 {
     shapes.forEach(Shape::draw);
     shapes.forEach(Shape::erase);
   }
-} /* Output:
+}
+/* Output:
 Circle.draw
 Square.draw
 Square.draw
@@ -69,4 +70,4 @@ Square.erase
 Circle.erase
 Circle.erase
 Square.erase
-*///:~
+*/

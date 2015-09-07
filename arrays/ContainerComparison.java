@@ -1,4 +1,4 @@
-//: arrays/ContainerComparison.java
+// arrays/ContainerComparison.java
 // ©2015 MindView LLC: see Copyright.txt
 import java.util.*;
 import static com.mindviewinc.util.Print.*;
@@ -34,7 +34,8 @@ public class ContainerComparison {
     print(intList);
     print(intList.get(4));
   }
-} /* Output:
+}
+/* Output:
 [Sphere 0, Sphere 1, Sphere 2, Sphere 3, Sphere 4, null,
 null, null, null, null]
 Sphere 4
@@ -44,4 +45,4 @@ Sphere 9
 4
 [0, 1, 2, 3, 4, 5, 97]
 4
-*///:~
+*/

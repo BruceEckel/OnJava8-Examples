@@ -1,4 +1,4 @@
-//: annotations/ifx/IfaceExtractorProcessor.java
+// annotations/ifx/IfaceExtractorProcessor.java
 // ©2015 MindView LLC: see Copyright.txt
 // javac-based annotation processing.
 package annotations.ifx;
@@ -89,4 +89,4 @@ extends AbstractProcessor {
     args += ")";
     return args;
   }
-} ///:~
+}

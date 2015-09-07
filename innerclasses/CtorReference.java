@@ -1,4 +1,4 @@
-//: innerclasses/CtorReference.java
+// innerclasses/CtorReference.java
 // ©2015 MindView LLC: see Copyright.txt
 // Demonstrates java.util.function
 import java.util.function.*;
@@ -27,8 +27,9 @@ public class CtorReference {
       CtorReference::new;
     CtorReference r2 = cr2.apply(1, 2.0);
   }
-} /* Output:
+}
+/* Output:
 Inside CtorReference()
 Inside CtorReference(i)
 Inside CtorReference(i, d)
-*///:~
+*/

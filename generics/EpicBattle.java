@@ -1,4 +1,4 @@
-//: generics/EpicBattle.java
+// generics/EpicBattle.java
 // ©2015 MindView LLC: see Copyright.txt
 // Demonstrating bounds in Java generics.
 import java.util.*;
@@ -64,4 +64,5 @@ public class EpicBattle {
     // But you can't do this:
     // List<? extends SuperHearing & SuperSmell> dogBoys;
   }
-} /* Output: (None) *///:~
+}
+/* Output: (None) */

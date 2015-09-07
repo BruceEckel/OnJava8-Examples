@@ -1,4 +1,4 @@
-//: io/UsingRandomAccessFile.java
+// io/UsingRandomAccessFile.java
 // ©2015 MindView LLC: see Copyright.txt
 import java.io.*;
 
@@ -27,7 +27,8 @@ public class UsingRandomAccessFile {
     rf.close();
     display();
   }
-} /* Output:
+}
+/* Output:
 Value 0: 0.0
 Value 1: 1.414
 Value 2: 2.828
@@ -44,4 +45,4 @@ Value 4: 5.656
 Value 5: 47.0001
 Value 6: 8.484
 The end of the file
-*///:~
+*/

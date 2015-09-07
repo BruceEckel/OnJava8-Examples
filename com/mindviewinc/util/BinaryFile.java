@@ -1,4 +1,4 @@
-//: com/mindviewinc/util/BinaryFile.java
+// com/mindviewinc/util/BinaryFile.java
 // ©2015 MindView LLC: see Copyright.txt
 // Utility for reading files in binary form.
 package com.mindviewinc.util;
@@ -17,4 +17,4 @@ public class BinaryFile {
   read(String bFile) throws IOException {
     return read(new File(bFile).getAbsoluteFile());
   }
-} ///:~
+}

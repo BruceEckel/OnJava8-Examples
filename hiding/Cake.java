@@ -1,4 +1,4 @@
-//: hiding/Cake.java
+// hiding/Cake.java
 // ©2015 MindView LLC: see Copyright.txt
 // Accesses a class in a separate compilation unit.
 
@@ -7,6 +7,7 @@ class Cake {
     Pie x = new Pie();
     x.f();
   }
-} /* Output:
+}
+/* Output:
 Pie.f()
-*///:~
+*/

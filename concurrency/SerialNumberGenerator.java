@@ -1,4 +1,4 @@
-//: concurrency/SerialNumberGenerator.java
+// concurrency/SerialNumberGenerator.java
 // ©2015 MindView LLC: see Copyright.txt
 
 public class SerialNumberGenerator {
@@ -6,4 +6,4 @@ public class SerialNumberGenerator {
   public static int nextSerialNumber() {
     return serialNumber++; // Not thread-safe
   }
-} ///:~
+}

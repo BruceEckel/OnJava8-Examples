@@ -1,4 +1,4 @@
-//: swt/Menus.java
+// swt/Menus.java
 // ©2015 MindView LLC: see Copyright.txt
 // Fun with menus.
 import swt.util.*;
@@ -46,4 +46,4 @@ public class Menus implements SWTApplication {
   public static void main(String[] args) {
     SWTConsole.run(new Menus(), 600, 200);
   }
-} ///:~
+}

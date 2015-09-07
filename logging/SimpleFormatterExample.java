@@ -1,4 +1,4 @@
-//: logging/SimpleFormatterExample.java
+// logging/SimpleFormatterExample.java
 // ©2015 MindView LLC: see Copyright.txt
 import java.util.logging.*;
 
@@ -25,10 +25,11 @@ public class SimpleFormatterExample {
     logger.addHandler(conHdlr);
     logMessages();
   }
-} /* Output:
+}
+/* Output:
 ___[ Error Output ]___
 INFO  :  SimpleFormatterExample -:- logMessages -:- Line
 One
 INFO  :  SimpleFormatterExample -:- logMessages -:- Line
 Two
-*///:~
+*/

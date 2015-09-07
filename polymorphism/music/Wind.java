@@ -1,4 +1,4 @@
-//: polymorphism/music/Wind.java
+// polymorphism/music/Wind.java
 // ©2015 MindView LLC: see Copyright.txt
 package polymorphism.music;
 
@@ -10,4 +10,4 @@ public class Wind extends Instrument {
   public void play(Note n) {
     System.out.println("Wind.play() " + n);
   }
-} ///:~
+}

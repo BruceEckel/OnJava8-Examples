@@ -1,4 +1,4 @@
-//: exceptions/FullConstructors.java
+// exceptions/FullConstructors.java
 // ©2015 MindView LLC: see Copyright.txt
 
 class MyException extends Exception {
@@ -27,7 +27,8 @@ public class FullConstructors {
       e.printStackTrace(System.out);
     }
   }
-} /* Output:
+}
+/* Output:
 Throwing MyException from f()
 MyException
         at FullConstructors.f(FullConstructors.java:11)
@@ -36,4 +37,4 @@ Throwing MyException from g()
 MyException: Originated in g()
         at FullConstructors.g(FullConstructors.java:15)
         at FullConstructors.main(FullConstructors.java:24)
-*///:~
+*/

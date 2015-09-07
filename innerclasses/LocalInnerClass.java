@@ -1,4 +1,4 @@
-//: innerclasses/LocalInnerClass.java
+// innerclasses/LocalInnerClass.java
 // ©2015 MindView LLC: see Copyright.txt
 // Holds a sequence of Objects.
 import static com.mindviewinc.util.Print.*;
@@ -49,7 +49,8 @@ public class LocalInnerClass {
     for(int i = 0; i < 5; i++)
       print(c2.next());
   }
-} /* Output:
+}
+/* Output:
 LocalCounter()
 Counter()
 Local inner 0
@@ -62,4 +63,4 @@ Anonymous inner 6
 Anonymous inner 7
 Anonymous inner 8
 Anonymous inner 9
-*///:~
+*/

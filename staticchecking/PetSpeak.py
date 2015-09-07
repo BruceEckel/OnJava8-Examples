@@ -1,4 +1,4 @@
-#: staticchecking/PetSpeak.py
+# staticchecking/PetSpeak.py
 # ©2015 MindView LLC: see Copyright.txt
 # Speaking pets in Python
 
@@ -19,4 +19,4 @@ def command(pet):
 pets = [ Cat(), Dog() ]
 for pet in pets:
     command(pet)
-#:~
+#>

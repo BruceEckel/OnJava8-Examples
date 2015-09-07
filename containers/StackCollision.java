@@ -1,4 +1,4 @@
-//: containers/StackCollision.java
+// containers/StackCollision.java
 // ©2015 MindView LLC: see Copyright.txt
 
 public class StackCollision {
@@ -17,7 +17,8 @@ public class StackCollision {
     while(!stack2.empty())
       System.out.print(stack2.pop() + " ");
   }
-} /* Output:
+}
+/* Output:
 fleas has dog My
 fleas has dog My
-*///:~
+*/

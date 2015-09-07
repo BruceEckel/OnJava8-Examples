@@ -1,4 +1,4 @@
-//: patterns/trashvisitor/VGlass.java
+// patterns/trashvisitor/VGlass.java
 // ©2015 MindView LLC: see Copyright.txt
 // Glass for the visitor pattern.
 package patterns.trashvisitor;
@@ -11,4 +11,4 @@ public class VGlass extends Glass
   public void accept(Visitor v) {
     v.visit(this);
   }
-} ///:~
+}

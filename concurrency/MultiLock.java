@@ -1,4 +1,4 @@
-//: concurrency/MultiLock.java
+// concurrency/MultiLock.java
 // ©2015 MindView LLC: see Copyright.txt
 // One thread can reacquire the same lock.
 import static com.mindviewinc.util.Print.*;
@@ -25,7 +25,8 @@ public class MultiLock {
       }
     }.start();
   }
-} /* Output:
+}
+/* Output:
 f1() calling f2() with count 9
 f2() calling f1() with count 8
 f1() calling f2() with count 7
@@ -36,4 +37,4 @@ f1() calling f2() with count 3
 f2() calling f1() with count 2
 f1() calling f2() with count 1
 f2() calling f1() with count 0
-*///:~
+*/

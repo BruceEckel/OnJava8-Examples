@@ -1,4 +1,4 @@
-//: ui/SubmitLabelManipulationTask.java
+// ui/SubmitLabelManipulationTask.java
 // ©2015 MindView LLC: see Copyright.txt
 import javax.swing.*;
 import java.util.concurrent.*;
@@ -15,4 +15,4 @@ public class SubmitLabelManipulationTask {
     SwingUtilities.invokeLater(() ->
       label.setText("Hey! This is Different!"));
   }
-} ///:~
+}

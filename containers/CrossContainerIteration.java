@@ -1,4 +1,4 @@
-//: containers/CrossContainerIteration.java
+// containers/CrossContainerIteration.java
 // ©2015 MindView LLC: see Copyright.txt
 import typeinfo.pets.*;
 import java.util.*;
@@ -21,9 +21,10 @@ public class CrossContainerIteration {
     display(petsHS.iterator());
     display(petsTS.iterator());
   }
-} /* Output:
+}
+/* Output:
 0:Rat 1:Manx 2:Cymric 3:Mutt 4:Pug 5:Cymric 6:Pug 7:Manx
 0:Rat 1:Manx 2:Cymric 3:Mutt 4:Pug 5:Cymric 6:Pug 7:Manx
 0:Rat 1:Manx 2:Cymric 3:Mutt 4:Pug 5:Cymric 6:Pug 7:Manx
 5:Cymric 2:Cymric 7:Manx 1:Manx 3:Mutt 6:Pug 4:Pug 0:Rat
-*///:~
+*/

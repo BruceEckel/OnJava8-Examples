@@ -1,4 +1,4 @@
-//: concurrency/restaurant2/RestaurantWithQueues.java
+// concurrency/restaurant2/RestaurantWithQueues.java
 // ©2015 MindView LLC: see Copyright.txt
 // {Args: 5}
 package concurrency.restaurant2;
@@ -198,7 +198,8 @@ public class RestaurantWithQueues {
     }
     exec.shutdownNow();
   }
-} /* Output: (First and last 10 Lines)
+}
+/* Output: (First and last 10 Lines)
 WaitPerson 0 received SPRING_ROLLS delivering to Customer 1
 Customer 1 eating SPRING_ROLLS
 WaitPerson 3 received SPRING_ROLLS delivering to Customer 0
@@ -220,4 +221,4 @@ Customer 9 finished meal, leaving
 Customer 15 finished meal, leaving
 Customer 21 finished meal, leaving
 Customer 0 finished meal, leaving
-*///:~
+*/

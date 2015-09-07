@@ -1,4 +1,4 @@
-//: io/ChannelCopy.java
+// io/ChannelCopy.java
 // ©2015 MindView LLC: see Copyright.txt
 // Copying a file using channels and buffers
 // {Args: ChannelCopy.java test.txt}
@@ -23,4 +23,5 @@ public class ChannelCopy {
       buffer.clear();  // Prepare for reading
     }
   }
-} /* Output: (None) *///:~
+}
+/* Output: (None) */

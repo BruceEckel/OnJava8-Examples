@@ -1,4 +1,4 @@
-//: patterns/CommandPattern.java
+// patterns/CommandPattern.java
 // ©2015 MindView LLC: see Copyright.txt
 import java.util.*;
 
@@ -46,6 +46,7 @@ public class CommandPattern {
     macro.add(new IAm());
     macro.execute();
   }
-} /* Output:
+}
+/* Output:
 Hello World! I'm the command pattern!
-*///:~
+*/

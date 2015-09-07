@@ -1,4 +1,4 @@
-//: control/ListCharacters.java
+// control/ListCharacters.java
 // ©2015 MindView LLC: see Copyright.txt
 // Demonstrates "for" loop by listing
 // all the lowercase ASCII letters.
@@ -10,7 +10,8 @@ public class ListCharacters {
         System.out.println("value: " + (int)c +
           " character: " + c);
   }
-} /* Output: (First 10 Lines)
+}
+/* Output: (First 10 Lines)
 value: 97 character: a
 value: 98 character: b
 value: 99 character: c
@@ -22,4 +23,4 @@ value: 104 character: h
 value: 105 character: i
 value: 106 character: j
                   ...
-*///:~
+*/

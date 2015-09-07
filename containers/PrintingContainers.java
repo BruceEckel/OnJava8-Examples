@@ -1,4 +1,4 @@
-//: containers/PrintingContainers.java
+// containers/PrintingContainers.java
 // ©2015 MindView LLC: see Copyright.txt
 // Containers print themselves automatically.
 import java.util.*;
@@ -12,7 +12,7 @@ public class PrintingContainers {
     collection.add("dog");
     return collection;
   }
-  static Map fill(Map<String,String> map) {
+  static Map fill(Map<String, String> map) {
     map.put("rat", "Fuzzy");
     map.put("cat", "Rags");
     map.put("dog", "Bosco");
@@ -29,7 +29,8 @@ public class PrintingContainers {
     print(fill(new TreeMap<>()));
     print(fill(new LinkedHashMap<>()));
   }
-} /* Output:
+}
+/* Output:
 [rat, cat, dog, dog]
 [rat, cat, dog, dog]
 [rat, cat, dog]
@@ -38,4 +39,4 @@ public class PrintingContainers {
 {rat=Fuzzy, cat=Rags, dog=Spot}
 {cat=Rags, dog=Spot, rat=Fuzzy}
 {rat=Fuzzy, cat=Rags, dog=Spot}
-*///:~
+*/

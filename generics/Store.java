@@ -1,4 +1,4 @@
-//: generics/Store.java
+// generics/Store.java
 // ©2015 MindView LLC: see Copyright.txt
 // Building up a complex model using generic containers.
 import java.util.*;
@@ -70,7 +70,8 @@ public class Store extends ArrayList<Aisle> {
   public static void main(String[] args) {
     System.out.println(new Store(14, 5, 10));
   }
-} /* Output: (First 8 Lines)
+}
+/* Output: (First 8 Lines)
 258: Test, price: $400.99
 861: Test, price: $160.99
 868: Test, price: $417.99
@@ -80,4 +81,4 @@ public class Store extends ArrayList<Aisle> {
 520: Test, price: $554.99
 140: Test, price: $530.99
                   ...
-*///:~
+*/

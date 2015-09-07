@@ -1,4 +1,4 @@
-//: typeinfo/ClassCasts.java
+// typeinfo/ClassCasts.java
 // ©2015 MindView LLC: see Copyright.txt
 
 class Building {}
@@ -11,4 +11,5 @@ public class ClassCasts {
     House h = houseType.cast(b);
     h = (House)b; // ... or just do this.
   }
-} /* Output: (None) *///:~
+}
+/* Output: (None) */

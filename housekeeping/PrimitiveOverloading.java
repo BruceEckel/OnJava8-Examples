@@ -1,4 +1,4 @@
-//: housekeeping/PrimitiveOverloading.java
+// housekeeping/PrimitiveOverloading.java
 // ©2015 MindView LLC: see Copyright.txt
 // Promotion of primitives and overloading.
 import static com.mindviewinc.util.Print.*;
@@ -90,7 +90,8 @@ public class PrimitiveOverloading {
     p.testFloat();
     p.testDouble();
   }
-} /* Output:
+}
+/* Output:
 5: f1(int) f2(int) f3(int) f4(int) f5(long) f6(float)
 f7(double)
 char: f1(char) f2(int) f3(int) f4(int) f5(long) f6(float)
@@ -107,4 +108,4 @@ float: f1(float) f2(float) f3(float) f4(float) f5(float)
 f6(float) f7(double)
 double: f1(double) f2(double) f3(double) f4(double)
 f5(double) f6(double) f7(double)
-*///:~
+*/

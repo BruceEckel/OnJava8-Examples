@@ -1,4 +1,4 @@
-//: ui/Buttons.java
+// ui/Buttons.java
 // ©2015 MindView LLC: see Copyright.txt
 // Various Swing buttons.
 import javax.swing.*;
@@ -31,4 +31,4 @@ public class Buttons extends JFrame {
   public static void main(String[] args) {
     run(new Buttons(), 350, 200);
   }
-} ///:~
+}

@@ -1,4 +1,4 @@
-//: concurrency/NaiveExceptionHandling.java
+// concurrency/NaiveExceptionHandling.java
 // ©2015 MindView LLC: see Copyright.txt
 // {ValidateByHand}
 // {ThrowsException}
@@ -15,4 +15,4 @@ public class NaiveExceptionHandling {
       System.out.println("Exception was handled!");
     }
   }
-} ///:~
+}

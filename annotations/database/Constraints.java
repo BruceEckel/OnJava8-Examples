@@ -1,4 +1,4 @@
-//: annotations/database/Constraints.java
+// annotations/database/Constraints.java
 // ©2015 MindView LLC: see Copyright.txt
 package annotations.database;
 import java.lang.annotation.*;
@@ -9,4 +9,4 @@ public @interface Constraints {
   boolean primaryKey() default false;
   boolean allowNull() default true;
   boolean unique() default false;
-} ///:~
+}

@@ -1,4 +1,4 @@
-//: operators/CastingNumbers.java
+// operators/CastingNumbers.java
 // ©2015 MindView LLC: see Copyright.txt
 // What happens when you cast a float
 // or double to an integral value?
@@ -13,9 +13,10 @@ public class CastingNumbers {
     print("(int)fabove: " + (int)fabove);
     print("(int)fbelow: " + (int)fbelow);
   }
-} /* Output:
+}
+/* Output:
 (int)above: 0
 (int)below: 0
 (int)fabove: 0
 (int)fbelow: 0
-*///:~
+*/

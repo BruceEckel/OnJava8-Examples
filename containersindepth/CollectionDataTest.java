@@ -1,4 +1,4 @@
-//: containersindepth/CollectionDataTest.java
+// containersindepth/CollectionDataTest.java
 // ©2015 MindView LLC: see Copyright.txt
 import java.util.*;
 import com.mindviewinc.util.*;
@@ -20,7 +20,8 @@ public class CollectionDataTest {
     set.addAll(CollectionData.list(new Government(), 15));
     System.out.println(set);
   }
-} /* Output:
+}
+/* Output:
 [strange, women, lying, in, ponds, distributing, swords,
 is, no, basis, for, a, system, of, government]
-*///:~
+*/

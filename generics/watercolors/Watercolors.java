@@ -1,4 +1,4 @@
-//: generics/watercolors/Watercolors.java
+// generics/watercolors/Watercolors.java
 // ©2015 MindView LLC: see Copyright.txt
 package generics.watercolors;
 
@@ -9,4 +9,4 @@ public enum Watercolors {
   COBALT_BLUE_HUE, PERMANENT_GREEN, VIRIDIAN_HUE,
   SAP_GREEN, YELLOW_OCHRE, BURNT_SIENNA, RAW_UMBER,
   BURNT_UMBER, PAYNES_GRAY, IVORY_BLACK
-} ///:~
+}

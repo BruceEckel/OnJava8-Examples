@@ -1,4 +1,4 @@
-//: strings/Rudolph.java
+// strings/Rudolph.java
 // ©2015 MindView LLC: see Copyright.txt
 
 public class Rudolph {
@@ -7,9 +7,10 @@ public class Rudolph {
       "[rR]udolph", "[rR][aeiou][a-z]ol.*", "R.*" })
       System.out.println("Rudolph".matches(pattern));
   }
-} /* Output:
+}
+/* Output:
 true
 true
 true
 true
-*///:~
+*/

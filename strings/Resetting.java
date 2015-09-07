@@ -1,4 +1,4 @@
-//: strings/Resetting.java
+// strings/Resetting.java
 // ©2015 MindView LLC: see Copyright.txt
 import java.util.regex.*;
 
@@ -13,7 +13,8 @@ public class Resetting {
     while(m.find())
       System.out.print(m.group() + " ");
   }
-} /* Output:
+}
+/* Output:
 fix rug bag
 fix rig rag
-*///:~
+*/

@@ -1,4 +1,4 @@
-//: arrays/CopyingArrays.java
+// arrays/CopyingArrays.java
 // ©2015 MindView LLC: see Copyright.txt
 // Using System.arraycopy()
 import java.util.*;
@@ -31,7 +31,8 @@ public class CopyingArrays {
     System.arraycopy(v, 0, u, u.length/2, v.length);
     print("u = " + Arrays.toString(u));
   }
-} /* Output:
+}
+/* Output:
 i = [47, 47, 47, 47, 47, 47, 47]
 j = [99, 99, 99, 99, 99, 99, 99, 99, 99, 99]
 j = [47, 47, 47, 47, 47, 47, 47, 99, 99, 99]
@@ -40,4 +41,4 @@ i = [103, 103, 103, 103, 103, 47, 47]
 u = [47, 47, 47, 47, 47, 47, 47, 47, 47, 47]
 v = [99, 99, 99, 99, 99]
 u = [47, 47, 47, 47, 47, 99, 99, 99, 99, 99]
-*///:~
+*/

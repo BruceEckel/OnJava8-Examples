@@ -1,4 +1,4 @@
-//: io/GetChannel.java
+// io/GetChannel.java
 // ©2015 MindView LLC: see Copyright.txt
 // Getting channels from streams
 import java.nio.*;
@@ -27,6 +27,7 @@ public class GetChannel {
       System.out.write(buff.get());
     System.out.flush();
   }
-} /* Output:
+}
+/* Output:
 Some text Some more
-*///:~
+*/

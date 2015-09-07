@@ -1,4 +1,4 @@
-//: containersindepth/SetPerformance.java
+// containersindepth/SetPerformance.java
 // ©2015 MindView LLC: see Copyright.txt
 // Demonstrates performance differences in Sets.
 // {Args: 100 5000} Small to keep build testing short
@@ -53,14 +53,15 @@ public class SetPerformance {
     Tester.run(new HashSet<>(), tests);
     Tester.run(new LinkedHashSet<>(), tests);
   }
-} /* Output:
+}
+/* Output:
 ------------- TreeSet -------------
- size       add  contains   iterate
+size       add  contains   iterate
   100       162        90        16
 ------------- HashSet -------------
- size       add  contains   iterate
+size       add  contains   iterate
   100        43        18        18
 ---------- LinkedHashSet ----------
- size       add  contains   iterate
+size       add  contains   iterate
   100        49        16        10
-*///:~
+*/

@@ -1,4 +1,4 @@
-//: operators/Overflow.java
+// operators/Overflow.java
 // ©2015 MindView LLC: see Copyright.txt
 // Surprise! Java lets you overflow.
 
@@ -9,7 +9,8 @@ public class Overflow {
     int bigger = big * 4;
     System.out.println("bigger = " + bigger);
   }
-} /* Output:
+}
+/* Output:
 big = 2147483647
 bigger = -4
-*///:~
+*/

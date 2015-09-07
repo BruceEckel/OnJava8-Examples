@@ -1,4 +1,4 @@
-//: concurrency/Atomicity.java
+// concurrency/Atomicity.java
 // ©2015 MindView LLC: see Copyright.txt
 // {Exec: javap -c Atomicity}
 
@@ -6,7 +6,8 @@ public class Atomicity {
   int i;
   void f1() { i++; }
   void f2() { i += 3; }
-} /* Output:
+}
+/* Output:
 Compiled from "Atomicity.java"
 public class Atomicity {
   int i;
@@ -35,4 +36,4 @@ java/lang/Object."<init>":()V
        7: putfield      #2                  // Field i:I
       10: return
 }
-*///:~
+*/

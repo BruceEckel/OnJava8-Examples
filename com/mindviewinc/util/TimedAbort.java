@@ -1,4 +1,4 @@
-//: com/mindviewinc/util/TimedAbort.java
+// com/mindviewinc/util/TimedAbort.java
 // ©2015 MindView LLC: see Copyright.txt
 // Terminate a program after n seconds.
 package com.mindviewinc.util;
@@ -14,4 +14,4 @@ public class TimedAbort {
       }
     }, n * 1000);
   }
-} ///:~
+}

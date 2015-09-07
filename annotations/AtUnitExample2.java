@@ -1,4 +1,4 @@
-//: annotations/AtUnitExample2.java
+// annotations/AtUnitExample2.java
 // ©2015 MindView LLC: see Copyright.txt
 // Assertions and exceptions can be used in @Tests.
 package annotations;
@@ -32,7 +32,8 @@ public class AtUnitExample2 {
     OSExecute.command(
       "java com.mindviewinc.atunit.AtUnit AtUnitExample2");
   }
-} /* Output:
+}
+/* Output:
 annotations.AtUnitExample2
   . assertFailureExample java.lang.AssertionError: What a
 surprise!
@@ -46,4 +47,4 @@ nofile.txt (The system cannot find the file specified)
 >>> 2 FAILURES <<<
   annotations.AtUnitExample2: assertFailureExample
   annotations.AtUnitExample2: exceptionExample
-*///:~
+*/

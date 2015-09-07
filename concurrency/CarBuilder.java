@@ -1,4 +1,4 @@
-//: concurrency/CarBuilder.java
+// concurrency/CarBuilder.java
 // ©2015 MindView LLC: see Copyright.txt
 // A complex example of tasks working together.
 import java.util.concurrent.*;
@@ -209,7 +209,8 @@ public class CarBuilder {
     TimeUnit.SECONDS.sleep(7);
     exec.shutdownNow();
   }
-} /* Output:
+}
+/* Output:
 ChassisBuilder created Car 0 [ engine: false driveTrain:
 false wheels: false ]
 WheelRobot installing Wheels
@@ -288,4 +289,4 @@ WheelRobot off
 ChassisBuilder off
 EngineRobot off
 Reporter off
-*///:~
+*/

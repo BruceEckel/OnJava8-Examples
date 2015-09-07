@@ -1,4 +1,4 @@
-//: reuse/Jurassic.java
+// reuse/Jurassic.java
 // ©2015 MindView LLC: see Copyright.txt
 // Making an entire class final.
 
@@ -21,4 +21,5 @@ public class Jurassic {
     n.i = 40;
     n.j++;
   }
-} /* Output: (None) *///:~
+}
+/* Output: (None) */

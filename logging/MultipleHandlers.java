@@ -1,4 +1,4 @@
-//: logging/MultipleHandlers.java
+// logging/MultipleHandlers.java
 // ©2015 MindView LLC: see Copyright.txt
 import java.util.logging.*;
 
@@ -14,10 +14,11 @@ public class MultipleHandlers {
     logger.warning(
       "Output to multiple handlers");
   }
-} /* Output:
+}
+/* Output:
 ___[ Error Output ]___
 Jun 15, 2015 3:47:52 PM MultipleHandlers main
 WARNING: Output to multiple handlers
 Jun 15, 2015 3:47:52 PM MultipleHandlers main
 WARNING: Output to multiple handlers
-*///:~
+*/

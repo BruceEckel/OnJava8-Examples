@@ -1,4 +1,4 @@
-//: references/ImmutableInteger.java
+// references/ImmutableInteger.java
 // ©2015 MindView LLC: see Copyright.txt
 // The Integer class cannot be changed.
 import java.util.*;
@@ -11,4 +11,5 @@ public class ImmutableInteger {
     // But how do you change the int
     // inside the Integer?
   }
-} /* Output: (None) *///:~
+}
+/* Output: (None) */

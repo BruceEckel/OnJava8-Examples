@@ -1,4 +1,4 @@
-//: housekeeping/EnumOrder.java
+// housekeeping/EnumOrder.java
 // ©2015 MindView LLC: see Copyright.txt
 
 public class EnumOrder {
@@ -6,10 +6,11 @@ public class EnumOrder {
     for(Spiciness s : Spiciness.values())
       System.out.println(s + ", ordinal " + s.ordinal());
   }
-} /* Output:
+}
+/* Output:
 NOT, ordinal 0
 MILD, ordinal 1
 MEDIUM, ordinal 2
 HOT, ordinal 3
 FLAMING, ordinal 4
-*///:~
+*/

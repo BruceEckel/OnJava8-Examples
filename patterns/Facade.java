@@ -1,4 +1,4 @@
-//: patterns/Facade.java
+// patterns/Facade.java
 // ©2015 MindView LLC: see Copyright.txt
 
 class A { public A(int x) {} }
@@ -19,4 +19,5 @@ public class Facade {
     B b = Facade.makeB(1);
     C c = Facade.makeC(1.0);
   }
-} /* Output: (None) *///:~
+}
+/* Output: (None) */

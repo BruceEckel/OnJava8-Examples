@@ -1,4 +1,4 @@
-//: enums/RoShamBo2.java
+// enums/RoShamBo2.java
 // ©2015 MindView LLC: see Copyright.txt
 // Switching one enum on another.
 package enums;
@@ -26,7 +26,8 @@ public enum RoShamBo2 implements Competitor<RoShamBo2> {
   public static void main(String[] args) {
     RoShamBo.play(RoShamBo2.class, 20);
   }
-} /* Output:
+}
+/* Output:
 ROCK vs. ROCK: DRAW
 SCISSORS vs. ROCK: LOSE
 SCISSORS vs. ROCK: LOSE
@@ -47,4 +48,4 @@ SCISSORS vs. PAPER: WIN
 SCISSORS vs. PAPER: WIN
 SCISSORS vs. PAPER: WIN
 SCISSORS vs. PAPER: WIN
-*///:~
+*/

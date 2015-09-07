@@ -1,4 +1,4 @@
-//: patterns/StateDemo.java
+// patterns/StateDemo.java
 // ©2015 MindView LLC: see Copyright.txt
 // Simple demonstration of the State pattern.
 import static com.mindviewinc.util.Print.*;
@@ -75,11 +75,12 @@ public class StateDemo {
     b.changeImp(new Implementation2());
     test(b);
   }
-} /* Output:
+}
+/* Output:
 Implementation1.f()
 Implementation1.g()
 Implementation1.h()
 Implementation2.f()
 Implementation2.g()
 Implementation2.h()
-*///:~
+*/

@@ -1,4 +1,4 @@
-//: housekeeping/SimpleConstructor.java
+// housekeeping/SimpleConstructor.java
 // ©2015 MindView LLC: see Copyright.txt
 // Demonstration of a simple constructor.
 
@@ -13,6 +13,7 @@ public class SimpleConstructor {
     for(int i = 0; i < 10; i++)
       new Rock();
   }
-} /* Output:
+}
+/* Output:
 Rock Rock Rock Rock Rock Rock Rock Rock Rock Rock
-*///:~
+*/

@@ -1,4 +1,4 @@
-//: generics/Holder3.java
+// generics/Holder3.java
 // ©2015 MindView LLC: see Copyright.txt
 
 public class Holder3<T> {
@@ -13,4 +13,5 @@ public class Holder3<T> {
     // h3.set("Not an Automobile"); // Error
     // h3.set(1); // Error
   }
-} /* Output: (None) *///:~
+}
+/* Output: (None) */

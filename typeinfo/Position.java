@@ -1,4 +1,4 @@
-//: typeinfo/Position.java
+// typeinfo/Position.java
 // ©2015 MindView LLC: see Copyright.txt
 
 class Position {
@@ -28,4 +28,4 @@ class Position {
   public String toString() {
     return "Position: " + title + " " + person;
   }
-} ///:~
+}

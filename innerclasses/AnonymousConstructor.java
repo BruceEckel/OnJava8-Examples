@@ -1,4 +1,4 @@
-//: innerclasses/AnonymousConstructor.java
+// innerclasses/AnonymousConstructor.java
 // ©2015 MindView LLC: see Copyright.txt
 // Creating a constructor for an anonymous inner class.
 import static com.mindviewinc.util.Print.*;
@@ -24,8 +24,9 @@ public class AnonymousConstructor {
     Base base = getBase(47);
     base.f();
   }
-} /* Output:
+}
+/* Output:
 Base constructor, i = 47
 Inside instance initializer
 In anonymous f()
-*///:~
+*/

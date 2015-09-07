@@ -1,4 +1,4 @@
-//: generics/GenericMethods.java
+// generics/GenericMethods.java
 // ©2015 MindView LLC: see Copyright.txt
 
 public class GenericMethods {
@@ -14,11 +14,12 @@ public class GenericMethods {
     gm.f('c');
     gm.f(gm);
   }
-} /* Output:
+}
+/* Output:
 java.lang.String
 java.lang.Integer
 java.lang.Double
 java.lang.Float
 java.lang.Character
 GenericMethods
-*///:~
+*/

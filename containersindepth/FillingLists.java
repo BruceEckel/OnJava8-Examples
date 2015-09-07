@@ -1,4 +1,4 @@
-//: containersindepth/FillingLists.java
+// containersindepth/FillingLists.java
 // ©2015 MindView LLC: see Copyright.txt
 // The Collections.fill() & Collections.nCopies() methods.
 import java.util.*;
@@ -20,9 +20,10 @@ public class FillingLists {
     Collections.fill(list, new StringAddress("World!"));
     System.out.println(list);
   }
-} /* Output:
+}
+/* Output:
 [StringAddress@19e0bfd Hello, StringAddress@19e0bfd Hello,
 StringAddress@19e0bfd Hello, StringAddress@19e0bfd Hello]
 [StringAddress@139a55 World!, StringAddress@139a55 World!,
 StringAddress@139a55 World!, StringAddress@139a55 World!]
-*///:~
+*/

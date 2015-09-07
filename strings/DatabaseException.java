@@ -1,4 +1,4 @@
-//: strings/DatabaseException.java
+// strings/DatabaseException.java
 // ©2015 MindView LLC: see Copyright.txt
 
 public class DatabaseException extends Exception {
@@ -14,6 +14,7 @@ public class DatabaseException extends Exception {
       System.out.println(e);
     }
   }
-} /* Output:
+}
+/* Output:
 DatabaseException: (t3, q7) Write failed
-*///:~
+*/

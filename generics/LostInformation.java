@@ -1,4 +1,4 @@
-//: generics/LostInformation.java
+// generics/LostInformation.java
 // ©2015 MindView LLC: see Copyright.txt
 import java.util.*;
 
@@ -22,9 +22,10 @@ public class LostInformation {
     System.out.println(Arrays.toString(
       p.getClass().getTypeParameters()));
   }
-} /* Output:
+}
+/* Output:
 [E]
 [K, V]
 [Q]
 [POSITION, MOMENTUM]
-*///:~
+*/

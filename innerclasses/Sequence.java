@@ -1,4 +1,4 @@
-//: innerclasses/Sequence.java
+// innerclasses/Sequence.java
 // ©2015 MindView LLC: see Copyright.txt
 // Holds a sequence of Objects.
 
@@ -38,6 +38,7 @@ public class Sequence {
       selector.next();
     }
   }
-} /* Output:
+}
+/* Output:
 0 1 2 3 4 5 6 7 8 9
-*///:~
+*/

@@ -1,4 +1,4 @@
-//: typeinfo/InterfaceViolation.java
+// typeinfo/InterfaceViolation.java
 // ©2015 MindView LLC: see Copyright.txt
 // Sneaking around an interface.
 import typeinfo.interfacea.*;
@@ -19,6 +19,7 @@ public class InterfaceViolation {
       b.g();
     }
   }
-} /* Output:
+}
+/* Output:
 B
-*///:~
+*/

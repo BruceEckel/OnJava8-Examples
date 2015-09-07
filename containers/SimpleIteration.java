@@ -1,4 +1,4 @@
-//: containers/SimpleIteration.java
+// containers/SimpleIteration.java
 // ©2015 MindView LLC: see Copyright.txt
 import typeinfo.pets.*;
 import java.util.*;
@@ -24,10 +24,11 @@ public class SimpleIteration {
     }
     System.out.println(pets);
   }
-} /* Output:
+}
+/* Output:
 0:Rat 1:Manx 2:Cymric 3:Mutt 4:Pug 5:Cymric 6:Pug 7:Manx
 8:Cymric 9:Rat 10:EgyptianMau 11:Hamster
 0:Rat 1:Manx 2:Cymric 3:Mutt 4:Pug 5:Cymric 6:Pug 7:Manx
 8:Cymric 9:Rat 10:EgyptianMau 11:Hamster
 [Pug, Manx, Cymric, Rat, EgyptianMau, Hamster]
-*///:~
+*/

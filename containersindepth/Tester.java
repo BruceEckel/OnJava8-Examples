@@ -1,4 +1,4 @@
-//: containersindepth/Tester.java
+// containersindepth/Tester.java
 // ©2015 MindView LLC: see Copyright.txt
 // Applies Test objects to lists of different containers.
 import java.util.*;
@@ -79,4 +79,4 @@ public class Tester<C> {
       System.out.println();
     }
   }
-} ///:~
+}

@@ -1,4 +1,4 @@
-//: generics/SimpleQueue.java
+// generics/SimpleQueue.java
 // ©2015 MindView LLC: see Copyright.txt
 // A different kind of container that is Iterable
 import java.util.*;
@@ -11,4 +11,4 @@ public class SimpleQueue<T> implements Iterable<T> {
   public Iterator<T> iterator() {
     return storage.iterator();
   }
-} ///:~
+}

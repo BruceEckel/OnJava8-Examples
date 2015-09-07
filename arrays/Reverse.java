@@ -1,4 +1,4 @@
-//: arrays/Reverse.java
+// arrays/Reverse.java
 // ©2015 MindView LLC: see Copyright.txt
 // The Collections.reverseOrder() Comparator
 import java.util.*;
@@ -15,7 +15,8 @@ public class Reverse {
     print("after sorting:");
     print(Arrays.toString(a));
   }
-} /* Output:
+}
+/* Output:
 before sorting:
 [[i = 58, j = 55], [i = 93, j = 61], [i = 61, j = 29]
 , [i = 68, j = 0], [i = 22, j = 7], [i = 88, j = 28]
@@ -28,4 +29,4 @@ after sorting:
 , [i = 51, j = 89], [i = 22, j = 7], [i = 20, j = 58]
 , [i = 16, j = 40], [i = 11, j = 22], [i = 9, j = 78]
 ]
-*///:~
+*/

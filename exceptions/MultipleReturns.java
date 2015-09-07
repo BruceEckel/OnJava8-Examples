@@ -1,4 +1,4 @@
-//: exceptions/MultipleReturns.java
+// exceptions/MultipleReturns.java
 // ©2015 MindView LLC: see Copyright.txt
 import static com.mindviewinc.util.Print.*;
 
@@ -22,7 +22,8 @@ public class MultipleReturns {
     for(int i = 1; i <= 4; i++)
       f(i);
   }
-} /* Output:
+}
+/* Output:
 Initialization that requires cleanup
 Point 1
 Performing cleanup
@@ -41,4 +42,4 @@ Point 2
 Point 3
 End
 Performing cleanup
-*///:~
+*/

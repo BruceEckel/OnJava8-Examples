@@ -1,4 +1,4 @@
-//: enums/OverrideConstantSpecific.java
+// enums/OverrideConstantSpecific.java
 // ©2015 MindView LLC: see Copyright.txt
 import static com.mindviewinc.util.Print.*;
 
@@ -15,8 +15,9 @@ public enum OverrideConstantSpecific {
       ocs.f();
     }
   }
-} /* Output:
+}
+/* Output:
 NUT: default behavior
 BOLT: default behavior
 WASHER: Overridden method
-*///:~
+*/

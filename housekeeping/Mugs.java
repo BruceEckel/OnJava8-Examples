@@ -1,4 +1,4 @@
-//: housekeeping/Mugs.java
+// housekeeping/Mugs.java
 // ©2015 MindView LLC: see Copyright.txt
 // Java "Instance Initialization."
 import static com.mindviewinc.util.Print.*;
@@ -33,7 +33,8 @@ public class Mugs {
     new Mugs(1);
     print("new Mugs(1) completed");
   }
-} /* Output:
+}
+/* Output:
 Inside main()
 Mug(1)
 Mug(2)
@@ -45,4 +46,4 @@ Mug(2)
 mug1 & mug2 initialized
 Mugs(int)
 new Mugs(1) completed
-*///:~
+*/

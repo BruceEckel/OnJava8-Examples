@@ -1,4 +1,4 @@
-//: generics/coffee/CoffeeGenerator.java
+// generics/coffee/CoffeeGenerator.java
 // ©2015 MindView LLC: see Copyright.txt
 // Generate different types of Coffee:
 package generics.coffee;
@@ -50,7 +50,8 @@ implements Generator<Coffee>, Iterable<Coffee> {
     for(Coffee c : new CoffeeGenerator(5))
       System.out.println(c);
   }
-} /* Output:
+}
+/* Output:
 Americano 0
 Latte 1
 Americano 2
@@ -61,4 +62,4 @@ Americano 6
 Latte 7
 Cappuccino 8
 Cappuccino 9
-*///:~
+*/

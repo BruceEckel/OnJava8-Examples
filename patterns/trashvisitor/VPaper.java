@@ -1,4 +1,4 @@
-//: patterns/trashvisitor/VPaper.java
+// patterns/trashvisitor/VPaper.java
 // ©2015 MindView LLC: see Copyright.txt
 // Paper for the visitor pattern.
 package patterns.trashvisitor;
@@ -11,4 +11,4 @@ public class VPaper extends Paper
   public void accept(Visitor v) {
     v.visit(this);
   }
-} ///:~
+}

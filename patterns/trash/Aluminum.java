@@ -1,4 +1,4 @@
-//: patterns/trash/Aluminum.java
+// patterns/trash/Aluminum.java
 // ©2015 MindView LLC: see Copyright.txt
 // The Aluminum class with prototyping.
 package patterns.trash;
@@ -11,4 +11,4 @@ public class Aluminum extends Trash {
   public static void value(double newVal) {
     val = newVal;
   }
-} ///:~
+}

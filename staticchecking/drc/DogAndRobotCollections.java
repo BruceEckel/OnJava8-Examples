@@ -1,4 +1,4 @@
-//: staticchecking/drc/DogAndRobotCollections.java
+// staticchecking/drc/DogAndRobotCollections.java
 // ©2015 MindView LLC: see Copyright.txt
 package staticchecking.drc;
 import java.util.*;
@@ -32,7 +32,8 @@ public class DogAndRobotCollections {
     // No cast necessary
     robotList.forEach(Robot::talk);
   }
-} /* Output:
+}
+/* Output:
 Woof!
 Woof!
 Woof!
@@ -53,4 +54,4 @@ Click!
 Click!
 Click!
 Click!
-*///:~
+*/

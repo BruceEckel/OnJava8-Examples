@@ -1,4 +1,4 @@
-//: com/mindviewinc/util/BasicGenerator.java
+// com/mindviewinc/util/BasicGenerator.java
 // ©2015 MindView LLC: see Copyright.txt
 // Automatically create a Generator, given a class
 // with a default (no-arg) constructor.
@@ -21,4 +21,4 @@ public class BasicGenerator<T> implements Generator<T> {
   public static <T> Generator<T> create(Class<T> type) {
     return new BasicGenerator<>(type);
   }
-} ///:~
+}

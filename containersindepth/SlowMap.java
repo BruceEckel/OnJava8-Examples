@@ -1,10 +1,10 @@
-//: containersindepth/SlowMap.java
+// containersindepth/SlowMap.java
 // ©2015 MindView LLC: see Copyright.txt
 // A Map implemented with ArrayLists.
 import java.util.*;
 import com.mindviewinc.util.*;
 
-public class SlowMap<K,V> extends AbstractMap<K,V> {
+public class SlowMap<K, V> extends AbstractMap<K, V> {
   private List<K> keys = new ArrayList<>();
   private List<V> values = new ArrayList<>();
   @Override
@@ -24,8 +24,8 @@ public class SlowMap<K,V> extends AbstractMap<K,V> {
     return values.get(keys.indexOf(key));
   }
   @Override
-  public Set<Map.Entry<K,V>> entrySet() {
-    Set<Map.Entry<K,V>> set= new HashSet<>();
+  public Set<Map.Entry<K, V>> entrySet() {
+    Set<Map.Entry<K, V>> set= new HashSet<>();
     Iterator<K> ki = keys.iterator();
     Iterator<V> vi = values.iterator();
     while(ki.hasNext())
@@ -39,7 +39,8 @@ public class SlowMap<K,V> extends AbstractMap<K,V> {
     System.out.println(m.get("BULGARIA"));
     System.out.println(m.entrySet());
   }
-} /* Output:
+}
+/* Output:
 {ANGOLA=Luanda, CAPE VERDE=Praia, EGYPT=Cairo,
 BURUNDI=Bujumbura, BENIN=Porto-Novo, ALGERIA=Algiers,
 CAMEROON=Yaounde, CONGO=Brazzaville, CENTRAL AFRICAN
@@ -53,4 +54,4 @@ CAMEROON=Yaounde, CONGO=Brazzaville, CENTRAL AFRICAN
 REPUBLIC=Bangui, EQUATORIAL GUINEA=Malabo, COMOROS=Moroni,
 DJIBOUTI=Dijibouti, BURKINA FASO=Ouagadougou,
 CHAD=N'djamena, BOTSWANA=Gaberone]
-*///:~
+*/

@@ -1,4 +1,4 @@
-//: control/IfElse.java
+// control/IfElse.java
 // ©2015 MindView LLC: see Copyright.txt
 import static com.mindviewinc.util.Print.*;
 
@@ -20,8 +20,9 @@ public class IfElse {
     test(5, 5);
     print(result);
   }
-} /* Output:
+}
+/* Output:
 1
 -1
 0
-*///:~
+*/

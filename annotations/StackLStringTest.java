@@ -1,4 +1,4 @@
-//: annotations/StackLStringTest.java
+// annotations/StackLStringTest.java
 // ©2015 MindView LLC: see Copyright.txt
 // Applying @Unit to generics.
 package annotations;
@@ -28,10 +28,11 @@ public class StackLStringTest extends StackL<String> {
     OSExecute.command(
       "java com.mindviewinc.atunit.AtUnit StackLStringTest");
   }
-} /* Output:
+}
+/* Output:
 annotations.StackLStringTest
   . _push
   . _top
   . _pop
 OK (3 tests)
-*///:~
+*/

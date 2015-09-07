@@ -1,4 +1,4 @@
-//: containersindepth/ListSortSearch.java
+// containersindepth/ListSortSearch.java
 // ©2015 MindView LLC: see Copyright.txt
 // Sorting and searching Lists with Collections utilities.
 import java.util.*;
@@ -33,7 +33,8 @@ public class ListSortSearch {
     print("Location of " + key + " is " + index +
       ", list.get(" + index + ") = " + list.get(index));
   }
-} /* Output:
+}
+/* Output:
 [one, Two, three, Four, five, six, one, one, Two, three,
 Four, five, six, one]
 Shuffled: [Four, five, one, one, Two, six, six, three,
@@ -46,4 +47,4 @@ Location of six is 7, list.get(7) = six
 Case-insensitive sorted: [five, five, Four, one, one, six,
 six, three, three, Two]
 Location of three is 7, list.get(7) = three
-*///:~
+*/

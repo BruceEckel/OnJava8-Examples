@@ -1,4 +1,4 @@
-//: patterns/trash/Trash.java
+// patterns/trash/Trash.java
 // ©2015 MindView LLC: see Copyright.txt
 // Base class for Trash recycling examples.
 package patterns.trash;
@@ -83,4 +83,4 @@ public abstract class Trash {
       this.data = data;
     }
   }
-} ///:~
+}

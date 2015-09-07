@@ -1,4 +1,4 @@
-//: generics/SimpleHolder.java
+// generics/SimpleHolder.java
 // ©2015 MindView LLC: see Copyright.txt
 
 public class SimpleHolder {
@@ -10,4 +10,5 @@ public class SimpleHolder {
     holder.set("Item");
     String s = (String)holder.get();
   }
-} /* Output: (None) *///:~
+}
+/* Output: (None) */

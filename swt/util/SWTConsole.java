@@ -1,4 +1,4 @@
-//: swt/util/SWTConsole.java
+// swt/util/SWTConsole.java
 // ©2015 MindView LLC: see Copyright.txt
 package swt.util;
 import org.eclipse.swt.widgets.*;
@@ -18,4 +18,4 @@ public class SWTConsole {
     }
     display.dispose();
   }
-} ///:~
+}

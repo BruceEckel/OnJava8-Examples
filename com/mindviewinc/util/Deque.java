@@ -1,4 +1,4 @@
-//: com/mindviewinc/util/Deque.java
+// com/mindviewinc/util/Deque.java
 // ©2015 MindView LLC: see Copyright.txt
 // Creating a Deque from a LinkedList.
 package com.mindviewinc.util;
@@ -16,4 +16,4 @@ public class Deque<T> {
   @Override
   public String toString() { return deque.toString(); }
   // And other methods as necessary...
-} ///:~
+}

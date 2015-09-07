@@ -1,4 +1,4 @@
-//: patterns/observer/ObservedFlower.java
+// patterns/observer/ObservedFlower.java
 // ©2015 MindView LLC: see Copyright.txt
 // Demonstration of "observer" pattern.
 package patterns.observer;
@@ -141,7 +141,8 @@ public class ObservedFlower {
     f.open();
     f.close();
   }
-} /* Output:
+}
+/* Output:
 Bee B's breakfast time!
 Bee A's breakfast time!
 Hummingbird A's breakfast time!
@@ -151,4 +152,4 @@ Hummingbird A's bed time!
 Bee B's bed time!
 Hummingbird B's bed time!
 Hummingbird A's bed time!
-*///:~
+*/

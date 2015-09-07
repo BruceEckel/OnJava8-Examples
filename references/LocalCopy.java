@@ -1,4 +1,4 @@
-//: references/LocalCopy.java
+// references/LocalCopy.java
 // ©2015 MindView LLC: see Copyright.txt
 // Creating local copies with clone().
 
@@ -44,11 +44,12 @@ public class LocalCopy {
     System.out.println("c == d: " + (c == d) +
       "\nc = " + c + "\nd = " + d);
   }
-} /* Output:
+}
+/* Output:
 a == b: true
 a = 12
 b = 12
 c == d: false
 c = 47
 d = 48
-*///:~
+*/

@@ -1,4 +1,4 @@
-//: generics/GenericArray.java
+// generics/GenericArray.java
 // ©2015 MindView LLC: see Copyright.txt
 
 public class GenericArray<T> {
@@ -20,4 +20,5 @@ public class GenericArray<T> {
     // This is OK:
     Object[] oa = gai.rep();
   }
-} /* Output: (None) *///:~
+}
+/* Output: (None) */

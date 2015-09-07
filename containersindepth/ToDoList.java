@@ -1,4 +1,4 @@
-//: containersindepth/ToDoList.java
+// containersindepth/ToDoList.java
 // ©2015 MindView LLC: see Copyright.txt
 // A more complex use of PriorityQueue.
 import java.util.*;
@@ -44,11 +44,12 @@ class ToDoList extends PriorityQueue<ToDoList.ToDoItem> {
     while(!toDoList.isEmpty())
       System.out.println(toDoList.remove());
   }
-} /* Output:
+}
+/* Output:
 A1: Water lawn
 A2: Feed dog
 B1: Feed cat
 B7: Feed bird
 C3: Mow lawn
 C4: Empty trash
-*///:~
+*/

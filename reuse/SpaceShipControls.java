@@ -1,4 +1,4 @@
-//: reuse/SpaceShipControls.java
+// reuse/SpaceShipControls.java
 // ©2015 MindView LLC: see Copyright.txt
 
 public class SpaceShipControls {
@@ -9,4 +9,4 @@ public class SpaceShipControls {
   void forward(int velocity) {}
   void back(int velocity) {}
   void turboBoost() {}
-} ///:~
+}

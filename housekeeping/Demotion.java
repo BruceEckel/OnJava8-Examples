@@ -1,4 +1,4 @@
-//: housekeeping/Demotion.java
+// housekeeping/Demotion.java
 // ©2015 MindView LLC: see Copyright.txt
 // Demotion of primitives and overloading.
 import static com.mindviewinc.util.Print.*;
@@ -49,7 +49,8 @@ public class Demotion {
     Demotion p = new Demotion();
     p.testDouble();
   }
-} /* Output:
+}
+/* Output:
 double argument:
 f1(double)
 f2(float)
@@ -58,4 +59,4 @@ f4(int)
 f5(short)
 f6(byte)
 f7(char)
-*///:~
+*/

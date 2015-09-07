@@ -1,4 +1,4 @@
-//: operators/AllOps.java
+// operators/AllOps.java
 // ©2015 MindView LLC: see Copyright.txt
 // Tests all the operators on all the primitive data types
 // to show which ones are accepted by the Java compiler.
@@ -406,4 +406,4 @@ public class AllOps {
     long l = (long)x;
     float f = (float)x;
   }
-} ///:~
+}

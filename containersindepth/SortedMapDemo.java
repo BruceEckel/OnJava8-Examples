@@ -1,4 +1,4 @@
-//: containersindepth/SortedMapDemo.java
+// containersindepth/SortedMapDemo.java
 // ©2015 MindView LLC: see Copyright.txt
 // What you can do with a TreeMap.
 import java.util.*;
@@ -26,7 +26,8 @@ public class SortedMapDemo {
     print(sortedMap.headMap(high));
     print(sortedMap.tailMap(low));
   }
-} /* Output:
+}
+/* Output:
 {0=A0, 1=B0, 2=C0, 3=D0, 4=E0, 5=F0, 6=G0, 7=H0, 8=I0,
 9=J0}
 0
@@ -36,4 +37,4 @@ public class SortedMapDemo {
 {3=D0, 4=E0, 5=F0, 6=G0}
 {0=A0, 1=B0, 2=C0, 3=D0, 4=E0, 5=F0, 6=G0}
 {3=D0, 4=E0, 5=F0, 6=G0, 7=H0, 8=I0, 9=J0}
-*///:~
+*/

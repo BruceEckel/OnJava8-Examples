@@ -1,4 +1,4 @@
-//: concurrency/EvenChecker.java
+// concurrency/EvenChecker.java
 // ©2015 MindView LLC: see Copyright.txt
 import java.util.concurrent.*;
 
@@ -31,4 +31,4 @@ public class EvenChecker implements Runnable {
   public static void test(IntGenerator gp) {
     test(gp, 10);
   }
-} ///:~
+}

@@ -1,4 +1,4 @@
-//: containersindepth/ReadOnly.java
+// containersindepth/ReadOnly.java
 // ©2015 MindView LLC: see Copyright.txt
 // Using the Collections.unmodifiable methods.
 import java.util.*;
@@ -40,11 +40,12 @@ public class ReadOnly {
       Collections.unmodifiableSortedMap(
         new TreeMap<>(Countries.capitals(6)));
   }
-} /* Output:
+}
+/* Output:
 [ALGERIA, ANGOLA, BENIN, BOTSWANA, BURKINA FASO, BURUNDI]
 ALGERIA
 [BENIN, BOTSWANA, ANGOLA, BURKINA FASO, ALGERIA, BURUNDI]
 {BENIN=Porto-Novo, BOTSWANA=Gaberone, ANGOLA=Luanda,
 BURKINA FASO=Ouagadougou, ALGERIA=Algiers,
 BURUNDI=Bujumbura}
-*///:~
+*/

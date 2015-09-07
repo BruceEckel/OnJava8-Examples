@@ -1,4 +1,4 @@
-//: references/MutableInteger.java
+// references/MutableInteger.java
 // ©2015 MindView LLC: see Copyright.txt
 // A changeable wrapper class.
 import java.util.*;
@@ -25,7 +25,8 @@ public class MutableInteger {
       v.get(i).increment();
     System.out.println(v);
   }
-} /* Output:
+}
+/* Output:
 [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-*///:~
+*/

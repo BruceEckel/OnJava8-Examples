@@ -1,4 +1,4 @@
-//: concurrency/Tester.java
+// concurrency/Tester.java
 // ©2015 MindView LLC: see Copyright.txt
 // Framework to test performance of concurrency containers.
 import java.util.concurrent.*;
@@ -73,4 +73,4 @@ public abstract class Tester<C> {
     System.out.printf("%-27s %14s %14s\n",
       "Type", "Read time", "Write time");
   }
-} ///:~
+}

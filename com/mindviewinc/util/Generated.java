@@ -1,4 +1,4 @@
-//: com/mindviewinc/util/Generated.java
+// com/mindviewinc/util/Generated.java
 // ©2015 MindView LLC: see Copyright.txt
 package com.mindviewinc.util;
 
@@ -15,4 +15,4 @@ public class Generated {
       (T[])java.lang.reflect.Array.newInstance(type, size);
     return new CollectionData<>(gen, size).toArray(a);
   }
-} ///:~
+}

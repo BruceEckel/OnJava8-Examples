@@ -1,4 +1,4 @@
-//: containers/CollectionSequence.java
+// containers/CollectionSequence.java
 // ©2015 MindView LLC: see Copyright.txt
 import typeinfo.pets.*;
 import java.util.*;
@@ -29,7 +29,8 @@ extends AbstractCollection<Pet> {
     InterfaceVsIterator.display(c);
     InterfaceVsIterator.display(c.iterator());
   }
-} /* Output:
+}
+/* Output:
 0:Rat 1:Manx 2:Cymric 3:Mutt 4:Pug 5:Cymric 6:Pug 7:Manx
 0:Rat 1:Manx 2:Cymric 3:Mutt 4:Pug 5:Cymric 6:Pug 7:Manx
-*///:~
+*/

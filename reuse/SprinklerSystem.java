@@ -1,4 +1,4 @@
-//: reuse/SprinklerSystem.java
+// reuse/SprinklerSystem.java
 // ©2015 MindView LLC: see Copyright.txt
 // Composition for code reuse.
 
@@ -31,8 +31,9 @@ public class SprinklerSystem {
     SprinklerSystem sprinklers = new SprinklerSystem();
     System.out.println(sprinklers);
   }
-} /* Output:
+}
+/* Output:
 WaterSource()
 valve1 = null valve2 = null valve3 = null valve4 = null
 i = 0 f = 0.0 source = Constructed
-*///:~
+*/

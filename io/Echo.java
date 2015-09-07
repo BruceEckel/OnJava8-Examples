@@ -1,4 +1,4 @@
-//: io/Echo.java
+// io/Echo.java
 // ©2015 MindView LLC: see Copyright.txt
 // How to read from standard input.
 // {TimeOutDuringTesting}
@@ -14,4 +14,5 @@ public class Echo {
       System.out.println(s);
     // An empty line or Ctrl-Z terminates the program
   }
-} /* Output: (None) *///:~
+}
+/* Output: (None) */

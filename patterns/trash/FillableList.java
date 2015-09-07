@@ -1,4 +1,4 @@
-//: patterns/trash/FillableList.java
+// patterns/trash/FillableList.java
 // ©2015 MindView LLC: see Copyright.txt
 // Adapter that makes an ArrayList Fillable.
 package patterns.trash;
@@ -12,4 +12,4 @@ implements Fillable<T> {
   }
   @Override
   public void addTrash(T t) { v.add(t); }
-} ///:~
+}

@@ -1,4 +1,4 @@
-//: generics/CRGWithBasicHolder.java
+// generics/CRGWithBasicHolder.java
 // ©2015 MindView LLC: see Copyright.txt
 
 class Subtype extends BasicHolder<Subtype> {}
@@ -10,6 +10,7 @@ public class CRGWithBasicHolder {
     Subtype st3 = st1.get();
     st1.f();
   }
-} /* Output:
+}
+/* Output:
 Subtype
-*///:~
+*/

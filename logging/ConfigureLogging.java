@@ -1,4 +1,4 @@
-//: logging/ConfigureLogging.java
+// logging/ConfigureLogging.java
 // ©2015 MindView LLC: see Copyright.txt
 // {JVMArgs: -Djava.util.logging.config.file=log.prop}
 import java.util.logging.*;
@@ -39,12 +39,13 @@ public class ConfigureLogging {
     logger.warning("Warning");
     logger.severe("Severe");
   }
-} /* Output:
+}
+/* Output:
 Logger Name : net Level: SEVERE
- Logger Name : com.mindviewinc Level: FINEST
- Logger Name : com.mindviewinc.util Level: INFO
- Logger Name : com.mindviewinc.test Level: FINER
- Logger Name : random Level: SEVERE
+Logger Name : com.mindviewinc Level: FINEST
+Logger Name : com.mindviewinc.util Level: INFO
+Logger Name : com.mindviewinc.test Level: FINER
+Logger Name : random Level: SEVERE
 ___[ Error Output ]___
 Jun 15, 2015 3:47:52 PM ConfigureLogging sendLogMessages
 SEVERE: Severe
@@ -82,4 +83,4 @@ Jun 15, 2015 3:47:52 PM ConfigureLogging sendLogMessages
 SEVERE: Severe
 Jun 15, 2015 3:47:52 PM ConfigureLogging sendLogMessages
 SEVERE: Severe
-*///:~
+*/

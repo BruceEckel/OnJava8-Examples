@@ -1,4 +1,4 @@
-//: generics/BankTeller.java
+// generics/BankTeller.java
 // ©2015 MindView LLC: see Copyright.txt
 // A very simple bank teller simulation.
 import java.util.*;
@@ -39,7 +39,8 @@ public class BankTeller {
     for(Customer c : line)
       serve(tellers.get(rand.nextInt(tellers.size())), c);
   }
-} /* Output:
+}
+/* Output:
 Teller 3 serves Customer 1
 Teller 2 serves Customer 2
 Teller 3 serves Customer 3
@@ -55,4 +56,4 @@ Teller 4 serves Customer 12
 Teller 2 serves Customer 13
 Teller 1 serves Customer 14
 Teller 1 serves Customer 15
-*///:~
+*/

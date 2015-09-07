@@ -1,4 +1,4 @@
-//: strings/ReFlags.java
+// strings/ReFlags.java
 // ©2015 MindView LLC: see Copyright.txt
 import java.util.regex.*;
 
@@ -13,8 +13,9 @@ public class ReFlags {
     while(m.find())
       System.out.println(m.group());
   }
-} /* Output:
+}
+/* Output:
 java
 Java
 JAVA
-*///:~
+*/

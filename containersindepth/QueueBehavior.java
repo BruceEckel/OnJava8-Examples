@@ -1,4 +1,4 @@
-//: containersindepth/QueueBehavior.java
+// containersindepth/QueueBehavior.java
 // ©2015 MindView LLC: see Copyright.txt
 // Compares the behavior of some of the queues
 import java.util.concurrent.*;
@@ -29,11 +29,12 @@ public class QueueBehavior {
     test(new LinkedBlockingQueue<>(), new Gen());
     test(new PriorityBlockingQueue<>(), new Gen());
   }
-} /* Output:
+}
+/* Output:
 one two three four five six seven eight nine ten
 eight five four nine one seven six ten three two
 one two three four five six seven eight nine ten
 one two three four five six seven eight nine ten
 one two three four five six seven eight nine ten
 eight five four nine one seven six ten three two
-*///:~
+*/

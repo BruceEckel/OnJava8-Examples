@@ -1,4 +1,4 @@
-//: ui/Borders.java
+// ui/Borders.java
 // ©2015 MindView LLC: see Copyright.txt
 // Different Swing borders.
 import javax.swing.*;
@@ -35,4 +35,4 @@ public class Borders extends JFrame {
   public static void main(String[] args) {
     run(new Borders(), 500, 300);
   }
-} ///:~
+}

@@ -1,4 +1,4 @@
-//: annotations/PasswordUtils.java
+// annotations/PasswordUtils.java
 // ©2015 MindView LLC: see Copyright.txt
 import java.util.*;
 
@@ -18,4 +18,4 @@ public class PasswordUtils {
     List<String> prevPasswords, String password) {
     return !prevPasswords.contains(password);
   }
-} ///:~
+}

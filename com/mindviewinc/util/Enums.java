@@ -1,4 +1,4 @@
-//: com/mindviewinc/util/Enums.java
+// com/mindviewinc/util/Enums.java
 // ©2015 MindView LLC: see Copyright.txt
 package com.mindviewinc.util;
 import java.util.*;
@@ -11,4 +11,4 @@ public class Enums {
   public static <T> T random(T[] values) {
     return values[rand.nextInt(values.length)];
   }
-} ///:~
+}

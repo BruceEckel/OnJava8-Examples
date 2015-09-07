@@ -1,4 +1,4 @@
-//: containers/UniqueWordsAlphabetic.java
+// containers/UniqueWordsAlphabetic.java
 // ©2015 MindView LLC: see Copyright.txt
 // Producing an alphabetic listing.
 import java.util.*;
@@ -12,11 +12,12 @@ public class UniqueWordsAlphabetic {
       new TextFile("SetOperations.java", "\\W+"));
     System.out.println(words);
   }
-} /* Output:
+}
+/* Output:
 [A, add, addAll, added, args, B, C, class, Collections,
 com, containers, contains, containsAll, D, E, F, false,
 from, G, H, HashSet, I, import, in, J, java, K, L, M, main,
 mindviewinc, N, new, Output, Print, public, remove,
 removeAll, removed, Set, set1, set2, SetOperations, split,
 static, String, to, true, util, void, X, Y, Z]
-*///:~
+*/

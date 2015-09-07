@@ -1,4 +1,4 @@
-//: operators/StringOperators.java
+// operators/StringOperators.java
 // ©2015 MindView LLC: see Copyright.txt
 import static com.mindviewinc.util.Print.*;
 
@@ -12,9 +12,10 @@ public class StringOperators {
     print(s + (x + y + z));
     print("" + x); // Shorthand for Integer.toString()
   }
-} /* Output:
+}
+/* Output:
 x, y, z 012
 0 x, y, z
 x, y, z (summed) = 3
 0
-*///:~
+*/

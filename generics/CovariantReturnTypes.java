@@ -1,4 +1,4 @@
-//: generics/CovariantReturnTypes.java
+// generics/CovariantReturnTypes.java
 // ©2015 MindView LLC: see Copyright.txt
 
 class Base {}
@@ -18,4 +18,4 @@ public class CovariantReturnTypes {
   void test(DerivedGetter d) {
     Derived d2 = d.get();
   }
-} ///:~
+}

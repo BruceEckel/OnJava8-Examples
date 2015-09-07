@@ -1,4 +1,4 @@
-//: arrays/RaggedArray.java
+// arrays/RaggedArray.java
 // ©2015 MindView LLC: see Copyright.txt
 import java.util.*;
 
@@ -14,8 +14,9 @@ public class RaggedArray {
     }
     System.out.println(Arrays.deepToString(a));
   }
-} /* Output:
+}
+/* Output:
 [[], [[0], [0], [0, 0, 0, 0]], [[], [0, 0], [0, 0]], [[0,
 0, 0], [0], [0, 0, 0, 0]], [[0, 0, 0], [0, 0, 0], [0], []],
 [[0], [], [0]]]
-*///:~
+*/

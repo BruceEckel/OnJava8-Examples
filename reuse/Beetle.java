@@ -1,4 +1,4 @@
-//: reuse/Beetle.java
+// reuse/Beetle.java
 // ©2015 MindView LLC: see Copyright.txt
 // The full process of initialization.
 import static com.mindviewinc.util.Print.*;
@@ -30,7 +30,8 @@ public class Beetle extends Insect {
     print("Beetle constructor");
     Beetle b = new Beetle();
   }
-} /* Output:
+}
+/* Output:
 static Insect.x1 initialized
 static Beetle.x2 initialized
 Beetle constructor
@@ -38,4 +39,4 @@ i = 9, j = 0
 Beetle.k initialized
 k = 47
 j = 39
-*///:~
+*/

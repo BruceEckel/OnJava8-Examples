@@ -1,4 +1,4 @@
-//: ui/LookAndFeel.java
+// ui/LookAndFeel.java
 // ©2015 MindView LLC: see Copyright.txt
 // Selecting different looks & feels.
 // {Args: motif}
@@ -85,4 +85,4 @@ public class LookAndFeel extends JFrame {
     // any components are created.
     run(new LookAndFeel(), 300, 300);
   }
-} ///:~
+}

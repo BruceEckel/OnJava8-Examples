@@ -1,4 +1,4 @@
-//: generics/UnboundedWildcards2.java
+// generics/UnboundedWildcards2.java
 // ©2015 MindView LLC: see Copyright.txt
 import java.util.*;
 
@@ -19,4 +19,5 @@ public class UnboundedWildcards2 {
     assign2(new HashMap<>());
     assign3(new HashMap<>());
   }
-} /* Output: (None) *///:~
+}
+/* Output: (None) */

@@ -1,4 +1,4 @@
-//: ui/CheckBoxes.java
+// ui/CheckBoxes.java
 // ©2015 MindView LLC: see Copyright.txt
 // Using JCheckBoxes.
 import javax.swing.*;
@@ -30,4 +30,4 @@ public class CheckBoxes extends JFrame {
   public static void main(String[] args) {
     run(new CheckBoxes(), 200, 300);
   }
-} ///:~
+}

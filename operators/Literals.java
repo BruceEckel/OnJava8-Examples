@@ -1,4 +1,4 @@
-//: operators/Literals.java
+// operators/Literals.java
 // ©2015 MindView LLC: see Copyright.txt
 import static com.mindviewinc.util.Print.*;
 
@@ -35,7 +35,8 @@ public class Literals {
     double d2 = 1D; // double suffix
     // (Hex and Octal also work with long)
   }
-} /* Output:
+}
+/* Output:
 i1: 101111
 i2: 101111
 i3: 1111111
@@ -46,4 +47,4 @@ blb: 110101
 bls: 10111110101111
 bli: 101111101011111010111110101111
 bll: 101111101011111010111110101111
-*///:~
+*/

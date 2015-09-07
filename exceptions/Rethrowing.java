@@ -1,4 +1,4 @@
-//: exceptions/Rethrowing.java
+// exceptions/Rethrowing.java
 // ©2015 MindView LLC: see Copyright.txt
 // Demonstrating fillInStackTrace()
 
@@ -11,7 +11,7 @@ public class Rethrowing {
     try {
       f();
     } catch(Exception e) {
-      System.out.println("Inside g(),e.printStackTrace()");
+      System.out.println("Inside g(), e.printStackTrace()");
       e.printStackTrace(System.out);
       throw e;
     }
@@ -20,7 +20,7 @@ public class Rethrowing {
     try {
       f();
     } catch(Exception e) {
-      System.out.println("Inside h(),e.printStackTrace()");
+      System.out.println("Inside h(), e.printStackTrace()");
       e.printStackTrace(System.out);
       throw (Exception)e.fillInStackTrace();
     }
@@ -39,9 +39,10 @@ public class Rethrowing {
       e.printStackTrace(System.out);
     }
   }
-} /* Output:
+}
+/* Output:
 originating the exception in f()
-Inside g(),e.printStackTrace()
+Inside g(), e.printStackTrace()
 java.lang.Exception: thrown from f()
         at Rethrowing.f(Rethrowing.java:7)
         at Rethrowing.g(Rethrowing.java:11)
@@ -52,7 +53,7 @@ java.lang.Exception: thrown from f()
         at Rethrowing.g(Rethrowing.java:11)
         at Rethrowing.main(Rethrowing.java:29)
 originating the exception in f()
-Inside h(),e.printStackTrace()
+Inside h(), e.printStackTrace()
 java.lang.Exception: thrown from f()
         at Rethrowing.f(Rethrowing.java:7)
         at Rethrowing.h(Rethrowing.java:20)
@@ -61,4 +62,4 @@ main: printStackTrace()
 java.lang.Exception: thrown from f()
         at Rethrowing.h(Rethrowing.java:24)
         at Rethrowing.main(Rethrowing.java:35)
-*///:~
+*/

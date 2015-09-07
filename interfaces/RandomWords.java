@@ -1,4 +1,4 @@
-//: interfaces/RandomWords.java
+// interfaces/RandomWords.java
 // ©2015 MindView LLC: see Copyright.txt
 // Implementing an interface to conform to a method.
 import java.nio.*;
@@ -31,7 +31,8 @@ public class RandomWords implements Readable {
     while(s.hasNext())
       System.out.println(s.next());
   }
-} /* Output:
+}
+/* Output:
 Yazeruyac
 Fowenucor
 Goeazimom
@@ -42,4 +43,4 @@ Ruqicibui
 Numasetih
 Kuuuuozog
 Waqizeyoy
-*///:~
+*/

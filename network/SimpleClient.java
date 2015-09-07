@@ -1,4 +1,4 @@
-//: network/SimpleClient.java
+// network/SimpleClient.java
 // ©2015 MindView LLC: see Copyright.txt
 // Very simple client that just sends
 // lines to the server and reads lines
@@ -44,4 +44,4 @@ public class SimpleClient {
       socket.close();
     }
   }
-} ///:~
+}

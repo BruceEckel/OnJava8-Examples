@@ -1,4 +1,4 @@
-//: io/Endians.java
+// io/Endians.java
 // ©2015 MindView LLC: see Copyright.txt
 // Endian differences and data storage.
 import java.nio.*;
@@ -19,8 +19,9 @@ public class Endians {
     bb.asCharBuffer().put("abcdef");
     print(Arrays.toString(bb.array()));
   }
-} /* Output:
+}
+/* Output:
 [0, 97, 0, 98, 0, 99, 0, 100, 0, 101, 0, 102]
 [0, 97, 0, 98, 0, 99, 0, 100, 0, 101, 0, 102]
 [97, 0, 98, 0, 99, 0, 100, 0, 101, 0, 102, 0]
-*///:~
+*/

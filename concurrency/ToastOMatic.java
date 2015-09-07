@@ -1,4 +1,4 @@
-//: concurrency/ToastOMatic.java
+// concurrency/ToastOMatic.java
 // ©2015 MindView LLC: see Copyright.txt
 // A toaster that uses queues.
 import java.util.concurrent.*;
@@ -136,7 +136,8 @@ public class ToastOMatic {
     TimeUnit.SECONDS.sleep(5);
     exec.shutdownNow();
   }
-} /* Output:
+}
+/* Output:
 Toast 0: DRY
 Toast 0: BUTTERED
 Toast 0: JAMMED
@@ -205,4 +206,4 @@ Toaster interrupted
 Eater interrupted
 Toaster off
 Eater off
-*///:~
+*/

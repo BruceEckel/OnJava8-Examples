@@ -1,4 +1,4 @@
-//: swt/DisplayEnvironment.java
+// swt/DisplayEnvironment.java
 // ©2015 MindView LLC: see Copyright.txt
 import swt.util.*;
 import org.eclipse.swt.*;
@@ -19,4 +19,4 @@ public class DisplayEnvironment implements SWTApplication {
   public static void main(String [] args) {
     SWTConsole.run(new DisplayEnvironment(), 800, 600);
   }
-} ///:~
+}

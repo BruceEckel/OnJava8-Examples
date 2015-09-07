@@ -1,4 +1,4 @@
-//: control/CommaOperator.java
+// control/CommaOperator.java
 // ©2015 MindView LLC: see Copyright.txt
 
 public class CommaOperator {
@@ -7,9 +7,10 @@ public class CommaOperator {
       System.out.println("i = " + i + " j = " + j);
     }
   }
-} /* Output:
+}
+/* Output:
 i = 1 j = 11
 i = 2 j = 4
 i = 3 j = 6
 i = 4 j = 8
-*///:~
+*/

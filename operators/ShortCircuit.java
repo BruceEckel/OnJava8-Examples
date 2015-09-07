@@ -1,4 +1,4 @@
-//: operators/ShortCircuit.java
+// operators/ShortCircuit.java
 // ©2015 MindView LLC: see Copyright.txt
 // Demonstrates short-circuiting behavior
 // with logical operators.
@@ -24,10 +24,11 @@ public class ShortCircuit {
     boolean b = test1(0) && test2(2) && test3(2);
     print("expression is " + b);
   }
-} /* Output:
+}
+/* Output:
 test1(0)
 result: true
 test2(2)
 result: false
 expression is false
-*///:~
+*/

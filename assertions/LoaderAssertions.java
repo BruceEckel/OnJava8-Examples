@@ -1,4 +1,4 @@
-//: assertions/LoaderAssertions.java
+// assertions/LoaderAssertions.java
 // ©2015 MindView LLC: see Copyright.txt
 // Using the class loader to enable assertions
 // {ThrowsException}
@@ -15,11 +15,12 @@ class Loaded {
   public void go() {
     assert false: "Loaded.go()";
   }
-} /* Output:
+}
+/* Output:
 ___[ Error Output ]___
 Exception in thread "main" java.lang.AssertionError:
 Loaded.go()
         at Loaded.go(LoaderAssertions.java:15)
         at LoaderAssertions.main(LoaderAssertions.java:9)
 ___[ Exception is Expected ]___
-*///:~
+*/

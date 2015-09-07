@@ -1,4 +1,4 @@
-//: exceptions/StormyInning.java
+// exceptions/StormyInning.java
 // ©2015 MindView LLC: see Copyright.txt
 // Overridden methods can throw only the exceptions
 // specified in their base-class versions, or exceptions
@@ -77,4 +77,5 @@ public class StormyInning extends Inning implements Storm {
       System.out.println("Generic baseball exception");
     }
   }
-} /* Output: (None) *///:~
+}
+/* Output: (None) */

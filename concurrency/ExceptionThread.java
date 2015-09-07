@@ -1,4 +1,4 @@
-//: concurrency/ExceptionThread.java
+// concurrency/ExceptionThread.java
 // ©2015 MindView LLC: see Copyright.txt
 // {ValidateByHand}
 // {ThrowsException}
@@ -13,4 +13,4 @@ public class ExceptionThread implements Runnable {
     ExecutorService exec = Executors.newCachedThreadPool();
     exec.execute(new ExceptionThread());
   }
-} ///:~
+}

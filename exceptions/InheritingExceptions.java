@@ -1,4 +1,4 @@
-//: exceptions/InheritingExceptions.java
+// exceptions/InheritingExceptions.java
 // ©2015 MindView LLC: see Copyright.txt
 // Creating your own exceptions.
 
@@ -17,7 +17,8 @@ public class InheritingExceptions {
       System.out.println("Caught it!");
     }
   }
-} /* Output:
+}
+/* Output:
 Throw SimpleException from f()
 Caught it!
-*///:~
+*/

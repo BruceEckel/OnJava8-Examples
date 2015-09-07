@@ -1,4 +1,4 @@
-//: containers/ApplesAndOrangesWithoutGenerics.java
+// containers/ApplesAndOrangesWithoutGenerics.java
 // ©2015 MindView LLC: see Copyright.txt
 // Simple container use (suppressing compiler warnings)
 // {ThrowsException}
@@ -25,11 +25,12 @@ public class ApplesAndOrangesWithoutGenerics {
       // Orange is detected only at run time
     }
   }
-} /* Output:
+}
+/* Output:
 ___[ Error Output ]___
 Exception in thread "main" java.lang.ClassCastException:
 Orange cannot be cast to Apple
         at ApplesAndOrangesWithoutGenerics.main(ApplesAndOr
 angesWithoutGenerics.java:23)
 ___[ Exception is Expected ]___
-*///:~
+*/

@@ -1,4 +1,4 @@
-//: com/mindviewinc/util/Countries.java
+// com/mindviewinc/util/Countries.java
 // ©2015 MindView LLC: see Copyright.txt
 // "Flyweight" Maps and Lists of sample data.
 package com.mindviewinc.util;
@@ -239,7 +239,8 @@ public class Countries {
     print(new LinkedList<>(names(6)));
     print(capitals().get("BRAZIL"));
   }
-} /* Output:
+}
+/* Output:
 {ALGERIA=Algiers, ANGOLA=Luanda, BENIN=Porto-Novo,
 BOTSWANA=Gaberone, BURKINA FASO=Ouagadougou,
 BURUNDI=Bujumbura, CAMEROON=Yaounde, CAPE VERDE=Praia,
@@ -256,4 +257,4 @@ CAMEROON, CAPE VERDE, CENTRAL AFRICAN REPUBLIC, CHAD]
 [ALGERIA, ANGOLA, BENIN, BOTSWANA, BURKINA FASO, BURUNDI]
 [ALGERIA, ANGOLA, BENIN, BOTSWANA, BURKINA FASO, BURUNDI]
 Brasilia
-*///:~
+*/

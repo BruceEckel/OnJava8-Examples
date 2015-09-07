@@ -1,4 +1,4 @@
-//: reuse/Chess.java
+// reuse/Chess.java
 // ©2015 MindView LLC: see Copyright.txt
 // Inheritance, constructors and arguments.
 import static com.mindviewinc.util.Print.*;
@@ -24,8 +24,9 @@ public class Chess extends BoardGame {
   public static void main(String[] args) {
     Chess x = new Chess();
   }
-} /* Output:
+}
+/* Output:
 Game constructor
 BoardGame constructor
 Chess constructor
-*///:~
+*/

@@ -1,4 +1,4 @@
-//: generics/GenericWriting.java
+// generics/GenericWriting.java
 // ©2015 MindView LLC: see Copyright.txt
 import java.util.*;
 
@@ -21,4 +21,5 @@ public class GenericWriting {
     writeWithWildcard(fruit, new Apple());
   }
   public static void main(String[] args) { f1(); f2(); }
-} /* Output: (None) *///:~
+}
+/* Output: (None) */

@@ -1,4 +1,4 @@
-//: ui/RadioButtons.java
+// ui/RadioButtons.java
 // ©2015 MindView LLC: see Copyright.txt
 // Using JRadioButtons.
 import javax.swing.*;
@@ -31,4 +31,4 @@ public class RadioButtons extends JFrame {
   public static void main(String[] args) {
     run(new RadioButtons(), 200, 125);
   }
-} ///:~
+}

@@ -1,4 +1,4 @@
-//: patterns/adapt/Adapter.java
+// patterns/adapt/Adapter.java
 // ©2015 MindView LLC: see Copyright.txt
 // Variations on the Adapter pattern.
 package patterns.adapt;
@@ -79,4 +79,5 @@ public class Adapter {
     WhatIHave3 whatIHave3 = new WhatIHave3();
     whatIUse.op(whatIHave3.whatIWant());
   }
-} /* Output: (None) *///:~
+}
+/* Output: (None) */

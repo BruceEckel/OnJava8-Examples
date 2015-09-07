@@ -1,4 +1,4 @@
-//: concurrency/CountDownLatchDemo.java
+// concurrency/CountDownLatchDemo.java
 // ©2015 MindView LLC: see Copyright.txt
 import java.util.concurrent.*;
 import java.util.*;
@@ -68,7 +68,8 @@ public class CountDownLatchDemo {
     print("Launched all tasks");
     exec.shutdown(); // Quit when all tasks complete
   }
-} /* Output: (First and last 10 Lines)
+}
+/* Output: (First and last 10 Lines)
 Launched all tasks
 56  completed
 99  completed
@@ -90,4 +91,4 @@ Latch barrier passed for WaitingTask 4
 Latch barrier passed for WaitingTask 3
 Latch barrier passed for WaitingTask 1
 Latch barrier passed for WaitingTask 7
-*///:~
+*/

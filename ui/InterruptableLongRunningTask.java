@@ -1,4 +1,4 @@
-//: ui/InterruptableLongRunningTask.java
+// ui/InterruptableLongRunningTask.java
 // ©2015 MindView LLC: see Copyright.txt
 // Long-running tasks in threads.
 import javax.swing.*;
@@ -47,4 +47,4 @@ public class InterruptableLongRunningTask extends JFrame {
   public static void main(String[] args) {
     run(new InterruptableLongRunningTask(), 200, 150);
   }
-} ///:~
+}

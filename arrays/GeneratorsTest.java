@@ -1,4 +1,4 @@
-//: arrays/GeneratorsTest.java
+// arrays/GeneratorsTest.java
 // ©2015 MindView LLC: see Copyright.txt
 import com.mindviewinc.util.*;
 
@@ -21,7 +21,8 @@ public class GeneratorsTest {
   public static void main(String[] args) {
     test(CountingGenerator.class);
   }
-} /* Output:
+}
+/* Output:
 Double: 0.0 1.0 2.0 3.0 4.0 5.0 6.0 7.0 8.0 9.0
 Float: 0.0 1.0 2.0 3.0 4.0 5.0 6.0 7.0 8.0 9.0
 Long: 0 1 2 3 4 5 6 7 8 9
@@ -33,4 +34,4 @@ Character: a b c d e f g h i j
 Byte: 0 1 2 3 4 5 6 7 8 9
 Boolean: true false true false true false true false true
 false
-*///:~
+*/

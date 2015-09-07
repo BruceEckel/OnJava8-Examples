@@ -1,4 +1,4 @@
-//: arrays/IceCream.java
+// arrays/IceCream.java
 // ©2015 MindView LLC: see Copyright.txt
 // Returning arrays from methods.
 import java.util.*;
@@ -29,7 +29,8 @@ public class IceCream {
     for(int i = 0; i < 7; i++)
       System.out.println(Arrays.toString(flavorSet(3)));
   }
-} /* Output:
+}
+/* Output:
 [Rum Raisin, Mint Chip, Mocha Almond Fudge]
 [Chocolate, Strawberry, Mocha Almond Fudge]
 [Strawberry, Mint Chip, Mocha Almond Fudge]
@@ -37,4 +38,4 @@ public class IceCream {
 [Vanilla Fudge Swirl, Chocolate, Mocha Almond Fudge]
 [Praline Cream, Strawberry, Mocha Almond Fudge]
 [Mocha Almond Fudge, Strawberry, Mint Chip]
-*///:~
+*/

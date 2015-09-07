@@ -1,4 +1,4 @@
-//: strings/SimpleFormat.java
+// strings/SimpleFormat.java
 // ©2015 MindView LLC: see Copyright.txt
 
 public class SimpleFormat {
@@ -12,8 +12,9 @@ public class SimpleFormat {
     // or
     System.out.printf("Row 1: [%d %f]\n", x, y);
   }
-} /* Output:
+}
+/* Output:
 Row 1: [5 5.332542]
 Row 1: [5 5.332542]
 Row 1: [5 5.332542]
-*///:~
+*/

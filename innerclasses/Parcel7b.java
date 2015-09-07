@@ -1,4 +1,4 @@
-//: innerclasses/Parcel7b.java
+// innerclasses/Parcel7b.java
 // ©2015 MindView LLC: see Copyright.txt
 // Expanded version of Parcel7.java
 
@@ -13,4 +13,5 @@ public class Parcel7b {
     Parcel7b p = new Parcel7b();
     Contents c = p.contents();
   }
-} /* Output: (None) *///:~
+}
+/* Output: (None) */

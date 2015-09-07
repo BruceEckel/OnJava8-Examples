@@ -1,4 +1,4 @@
-//: containers/PriorityQueueDemo.java
+// containers/PriorityQueueDemo.java
 // ©2015 MindView LLC: see Copyright.txt
 import java.util.*;
 
@@ -37,7 +37,8 @@ public class PriorityQueueDemo {
       new PriorityQueue<>(charSet);
     QueueDemo.printQ(characterPQ);
   }
-} /* Output:
+}
+/* Output:
 0 1 1 1 1 1 3 5 8 14
 1 1 2 3 3 9 9 14 14 18 18 20 21 22 23 25 25
 25 25 23 22 21 20 18 18 14 14 9 9 3 3 2 1 1
@@ -46,4 +47,4 @@ T U U U W
 W U U U T T S S S O O O O N N L I I H H F E E E D D C C C B
 A A
   A B C D E F H I L N O S T U W
-*///:~
+*/

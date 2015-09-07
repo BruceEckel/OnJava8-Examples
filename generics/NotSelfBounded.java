@@ -1,4 +1,4 @@
-//: generics/NotSelfBounded.java
+// generics/NotSelfBounded.java
 // ©2015 MindView LLC: see Copyright.txt
 
 public class NotSelfBounded<T> {
@@ -19,4 +19,4 @@ class C2 extends NotSelfBounded<C2> {
 
 class D2 {}
 // Now this is OK:
-class E2 extends NotSelfBounded<D2> {} ///:~
+class E2 extends NotSelfBounded<D2> {}

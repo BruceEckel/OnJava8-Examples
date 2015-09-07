@@ -1,4 +1,4 @@
-//: concurrency/Interrupting2.java
+// concurrency/Interrupting2.java
 // ©2015 MindView LLC: see Copyright.txt
 // Interrupting a task blocked with a ReentrantLock.
 import java.util.concurrent.*;
@@ -41,9 +41,10 @@ public class Interrupting2 {
     System.out.println("Issuing t.interrupt()");
     t.interrupt();
   }
-} /* Output:
+}
+/* Output:
 Waiting for f() in BlockedMutex
 Issuing t.interrupt()
 Interrupted from lock acquisition in f()
 Broken out of blocked call
-*///:~
+*/

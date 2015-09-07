@@ -1,4 +1,4 @@
-//: io/PreferencesDemo.java
+// io/PreferencesDemo.java
 // ©2015 MindView LLC: see Copyright.txt
 import java.util.prefs.*;
 import static com.mindviewinc.util.Print.*;
@@ -20,11 +20,12 @@ public class PreferencesDemo {
     print("How many companions does Dorothy have? " +
       prefs.getInt("Companions", 0));
   }
-} /* Output:
+}
+/* Output:
 Location: Oz
 Footwear: Ruby Slippers
 Companions: 4
 Are there witches?: true
 UsageCount: 33
 How many companions does Dorothy have? 4
-*///:~
+*/

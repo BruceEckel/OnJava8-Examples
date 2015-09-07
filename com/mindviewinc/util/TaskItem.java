@@ -1,4 +1,4 @@
-//: com/mindviewinc/util/TaskItem.java
+// com/mindviewinc/util/TaskItem.java
 // ©2015 MindView LLC: see Copyright.txt
 // A Future and the Callable that produced it.
 package com.mindviewinc.util;
@@ -11,4 +11,4 @@ public class TaskItem<R,C extends Callable<R>> {
     this.future = future;
     this.task = task;
   }
-} ///:~
+}

@@ -1,4 +1,4 @@
-//: containersindepth/TypesForSets.java
+// containersindepth/TypesForSets.java
 // ©2015 MindView LLC: see Copyright.txt
 // Methods necessary to put your own type in a Set.
 import java.lang.reflect.InvocationTargetException;
@@ -72,7 +72,8 @@ public class TypesForSets {
       System.out.println("Expected: " + e.getMessage());
     }
   }
-} /* Output:
+}
+/* Output:
 [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 [9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
@@ -86,4 +87,4 @@ public class TypesForSets {
 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 Expected: SetType cannot be cast to java.lang.Comparable
 Expected: HashType cannot be cast to java.lang.Comparable
-*///:~
+*/

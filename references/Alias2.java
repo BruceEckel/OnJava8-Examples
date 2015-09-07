@@ -1,4 +1,4 @@
-//: references/Alias2.java
+// references/Alias2.java
 // ©2015 MindView LLC: see Copyright.txt
 // Method calls implicitly alias their arguments.
 
@@ -13,8 +13,9 @@ public class Alias2 {
     f(x);
     System.out.println("x: " + x.i);
   }
-} /* Output:
+}
+/* Output:
 x: 7
 Calling f(x)
 x: 8
-*///:~
+*/

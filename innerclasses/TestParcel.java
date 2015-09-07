@@ -1,4 +1,4 @@
-//: innerclasses/TestParcel.java
+// innerclasses/TestParcel.java
 // ©2015 MindView LLC: see Copyright.txt
 
 class Parcel4 {
@@ -31,4 +31,5 @@ public class TestParcel {
     // Illegal -- can't access private class:
     //! Parcel4.PContents pc = p.new PContents();
   }
-} /* Output: (None) *///:~
+}
+/* Output: (None) */

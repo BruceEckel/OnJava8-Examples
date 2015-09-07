@@ -1,3 +1,4 @@
+// patterns/recycleap/Trash.dat
 patterns.trash.Glass:54
 patterns.trash.Paper:22
 patterns.trash.Paper:11
@@ -32,4 +33,3 @@ patterns.trash.Glass:60
 patterns.trash.Paper:66
 patterns.trash.Aluminum:36
 patterns.trash.Cardboard:22
-

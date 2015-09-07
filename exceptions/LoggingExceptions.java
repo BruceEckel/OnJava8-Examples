@@ -1,4 +1,4 @@
-//: exceptions/LoggingExceptions.java
+// exceptions/LoggingExceptions.java
 // ©2015 MindView LLC: see Copyright.txt
 // An exception that reports through a Logger.
 import java.util.logging.*;
@@ -27,7 +27,8 @@ public class LoggingExceptions {
       System.err.println("Caught " + e);
     }
   }
-} /* Output:
+}
+/* Output:
 ___[ Error Output ]___
 Jun 15, 2015 3:47:40 PM LoggingException <init>
 SEVERE: LoggingException
@@ -39,4 +40,4 @@ SEVERE: LoggingException
         at
 LoggingExceptions.main(LoggingExceptions.java:24)
 Caught LoggingException
-*///:~
+*/

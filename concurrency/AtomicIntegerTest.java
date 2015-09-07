@@ -1,4 +1,4 @@
-//: concurrency/AtomicIntegerTest.java
+// concurrency/AtomicIntegerTest.java
 // ©2015 MindView LLC: see Copyright.txt
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.*;
@@ -28,6 +28,7 @@ public class AtomicIntegerTest implements Runnable {
       }
     }
   }
-} /* Output:
+}
+/* Output:
 TimedAbort 5
-*///:~
+*/

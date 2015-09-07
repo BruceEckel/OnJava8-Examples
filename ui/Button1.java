@@ -1,4 +1,4 @@
-//: ui/Button1.java
+// ui/Button1.java
 // ©2015 MindView LLC: see Copyright.txt
 // Putting buttons on a Swing application.
 import javax.swing.*;
@@ -17,4 +17,4 @@ public class Button1 extends JFrame {
   public static void main(String[] args) {
     run(new Button1(), 200, 100);
   }
-} ///:~
+}

@@ -1,4 +1,4 @@
-//: typeinfo/FilledList.java
+// typeinfo/FilledList.java
 // ©2015 MindView LLC: see Copyright.txt
 import java.util.*;
 
@@ -28,6 +28,7 @@ public class FilledList<T> {
       new FilledList<>(CountedInteger.class);
     System.out.println(fl.create(15));
   }
-} /* Output:
+}
+/* Output:
 [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
-*///:~
+*/

@@ -1,4 +1,4 @@
-//: reuse/PlaceSetting.java
+// reuse/PlaceSetting.java
 // ©2015 MindView LLC: see Copyright.txt
 // Combining composition & inheritance.
 import static com.mindviewinc.util.Print.*;
@@ -66,7 +66,8 @@ public class PlaceSetting extends Custom {
   public static void main(String[] args) {
     PlaceSetting x = new PlaceSetting(9);
   }
-} /* Output:
+}
+/* Output:
 Custom constructor
 Utensil constructor
 Spoon constructor
@@ -77,4 +78,4 @@ Knife constructor
 Plate constructor
 DinnerPlate constructor
 PlaceSetting constructor
-*///:~
+*/

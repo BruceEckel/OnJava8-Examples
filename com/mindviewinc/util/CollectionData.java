@@ -1,4 +1,4 @@
-//: com/mindviewinc/util/CollectionData.java
+// com/mindviewinc/util/CollectionData.java
 // ©2015 MindView LLC: see Copyright.txt
 // A Collection filled with data using a generator object.
 package com.mindviewinc.util;
@@ -14,4 +14,4 @@ public class CollectionData<T> extends ArrayList<T> {
   list(Generator<T> gen, int quantity) {
     return new CollectionData<>(gen, quantity);
   }
-} ///:~
+}

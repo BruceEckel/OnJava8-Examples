@@ -1,4 +1,4 @@
-//: reuse/Orc.java
+// reuse/Orc.java
 // ©2015 MindView LLC: see Copyright.txt
 // The protected keyword.
 import static com.mindviewinc.util.Print.*;
@@ -33,7 +33,8 @@ public class Orc extends Villain {
     orc.change("Bob", 19);
     print(orc);
   }
-} /* Output:
+}
+/* Output:
 Orc 12: I'm a Villain and my name is Limburger
 Orc 19: I'm a Villain and my name is Bob
-*///:~
+*/

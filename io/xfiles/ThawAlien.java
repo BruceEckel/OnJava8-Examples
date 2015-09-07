@@ -1,4 +1,4 @@
-//: io/xfiles/ThawAlien.java
+// io/xfiles/ThawAlien.java
 // ©2015 MindView LLC: see Copyright.txt
 // Recover a serialized file
 package io.xfiles;
@@ -11,6 +11,7 @@ public class ThawAlien {
     Object mystery = in.readObject();
     System.out.println(mystery.getClass());
   }
-} /* Output:
+}
+/* Output:
 class Alien
-*///:~
+*/

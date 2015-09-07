@@ -1,4 +1,4 @@
-//: reuse/Cartoon.java
+// reuse/Cartoon.java
 // ©2015 MindView LLC: see Copyright.txt
 // Constructor calls during inheritance.
 import static com.mindviewinc.util.Print.*;
@@ -16,8 +16,9 @@ public class Cartoon extends Drawing {
   public static void main(String[] args) {
     Cartoon x = new Cartoon();
   }
-} /* Output:
+}
+/* Output:
 Art constructor
 Drawing constructor
 Cartoon constructor
-*///:~
+*/

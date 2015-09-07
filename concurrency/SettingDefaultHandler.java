@@ -1,4 +1,4 @@
-//: concurrency/SettingDefaultHandler.java
+// concurrency/SettingDefaultHandler.java
 // ©2015 MindView LLC: see Copyright.txt
 // {TimeOutDuringTesting}
 import java.util.concurrent.*;
@@ -10,6 +10,7 @@ public class SettingDefaultHandler {
     ExecutorService exec = Executors.newCachedThreadPool();
     exec.execute(new ExceptionThread());
   }
-} /* Output:
+}
+/* Output:
 caught java.lang.RuntimeException
-*///:~
+*/

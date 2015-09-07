@@ -1,4 +1,4 @@
-//: enums/Reflection.java
+// enums/Reflection.java
 // ©2015 MindView LLC: see Copyright.txt
 // Analyzing enums using reflection.
 import java.lang.reflect.*;
@@ -33,7 +33,8 @@ public class Reflection {
     // Decompile the code for the enum:
     OSExecute.command("javap Explore");
   }
-} /* Output:
+}
+/* Output:
 ----- Analyzing class Explore -----
 Interfaces:
 Base: class java.lang.Enum
@@ -59,4 +60,4 @@ final class Explore extends java.lang.Enum<Explore> {
   public static Explore valueOf(java.lang.String);
   static {};
 }
-*///:~
+*/

@@ -1,4 +1,4 @@
-//: generics/BasicBounds.java
+// generics/BasicBounds.java
 // ©2015 MindView LLC: see Copyright.txt
 
 interface HasColor { java.awt.Color getColor(); }
@@ -58,4 +58,5 @@ public class BasicBounds {
     solid.getY();
     solid.weight();
   }
-} /* Output: (None) *///:~
+}
+/* Output: (None) */

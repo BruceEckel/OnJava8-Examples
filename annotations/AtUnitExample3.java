@@ -1,4 +1,4 @@
-//: annotations/AtUnitExample3.java
+// annotations/AtUnitExample3.java
 // ©2015 MindView LLC: see Copyright.txt
 package annotations;
 import com.mindviewinc.atunit.*;
@@ -27,10 +27,11 @@ public class AtUnitExample3 {
     OSExecute.command(
       "java com.mindviewinc.atunit.AtUnit AtUnitExample3");
   }
-} /* Output:
+}
+/* Output:
 annotations.AtUnitExample3
   . methodOneTest
   . initialization
   . m2 This is methodTwo
 OK (3 tests)
-*///:~
+*/

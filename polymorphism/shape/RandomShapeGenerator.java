@@ -1,4 +1,4 @@
-//: polymorphism/shape/RandomShapeGenerator.java
+// polymorphism/shape/RandomShapeGenerator.java
 // ©2015 MindView LLC: see Copyright.txt
 // A "factory" that randomly creates shapes.
 package polymorphism.shape;
@@ -14,4 +14,4 @@ public class RandomShapeGenerator {
       case 2: return new Triangle();
     }
   }
-} ///:~
+}

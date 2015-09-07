@@ -1,4 +1,4 @@
-//: com/mindviewinc/atunit/TestObjectCreate.java
+// com/mindviewinc/atunit/TestObjectCreate.java
 // ©2015 MindView LLC: see Copyright.txt
 // The @Unit @TestObjectCreate tag.
 package com.mindviewinc.atunit;
@@ -6,4 +6,4 @@ import java.lang.annotation.*;
 
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
-public @interface TestObjectCreate {} ///:~
+public @interface TestObjectCreate {}

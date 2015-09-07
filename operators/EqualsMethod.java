@@ -1,4 +1,4 @@
-//: operators/EqualsMethod.java
+// operators/EqualsMethod.java
 // ©2015 MindView LLC: see Copyright.txt
 
 public class EqualsMethod {
@@ -7,6 +7,7 @@ public class EqualsMethod {
     Integer n2 = 47;
     System.out.println(n1.equals(n2));
   }
-} /* Output:
+}
+/* Output:
 true
-*///:~
+*/

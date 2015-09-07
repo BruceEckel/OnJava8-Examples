@@ -1,5 +1,5 @@
-//: Copyright.txt
-This computer source code is Copyright 2015 MindView LLC
+// Copyright.txt
+This computer source code is Copyright ©2015 MindView LLC
 All Rights Reserved.
 
 Permission to use, copy, modify, and distribute this
@@ -70,4 +70,3 @@ where it is freely available under the terms stated above.
 If you think you've found an error in the Source Code,
 please submit a correction at:
 https://github.com/BruceEckel/OnJava-Examples/issues
-///:~

@@ -1,4 +1,4 @@
-//: exceptions/TurnOffChecking.java
+// exceptions/TurnOffChecking.java
 // ©2015 MindView LLC: see Copyright.txt
 // "Turning off" Checked exceptions.
 import java.io.*;
@@ -49,9 +49,10 @@ public class TurnOffChecking {
         }
       }
   }
-} /* Output:
+}
+/* Output:
 FileNotFoundException: java.io.FileNotFoundException
 IOException: java.io.IOException
 Throwable: java.lang.RuntimeException: Where am I?
 SomeOtherException: SomeOtherException
-*///:~
+*/

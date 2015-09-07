@@ -1,4 +1,4 @@
-//: patterns/visualobserver/BoxObserver.java
+// patterns/visualobserver/BoxObserver.java
 // ©2015 MindView LLC: see Copyright.txt
 // Demonstration of Observer pattern using
 // Java's built-in observer classes.
@@ -88,4 +88,5 @@ class OCBox extends JPanel implements Observer {
     return Math.abs(x - b.x) <= 1 &&
            Math.abs(y - b.y) <= 1;
   }
-} /* Output: (None) *///:~
+}
+/* Output: (None) */

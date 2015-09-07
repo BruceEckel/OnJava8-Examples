@@ -1,4 +1,4 @@
-//: io/Redirecting.java
+// io/Redirecting.java
 // ©2015 MindView LLC: see Copyright.txt
 // Demonstrates standard I/O redirection.
 import java.io.*;
@@ -24,4 +24,5 @@ public class Redirecting {
     }
     System.setOut(console);
   }
-} /* Output: (None) *///:~
+}
+/* Output: (None) */

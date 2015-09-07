@@ -1,4 +1,4 @@
-//: ui/FlowLayout1.java
+// ui/FlowLayout1.java
 // ©2015 MindView LLC: see Copyright.txt
 // Demonstrates FlowLayout.
 import javax.swing.*;
@@ -14,4 +14,4 @@ public class FlowLayout1 extends JFrame {
   public static void main(String[] args) {
     run(new FlowLayout1(), 300, 300);
   }
-} ///:~
+}

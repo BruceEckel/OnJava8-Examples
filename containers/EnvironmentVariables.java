@@ -1,4 +1,4 @@
-//: containers/EnvironmentVariables.java
+// containers/EnvironmentVariables.java
 // ©2015 MindView LLC: see Copyright.txt
 import java.util.*;
 
@@ -9,4 +9,5 @@ public class EnvironmentVariables {
         entry.getValue());
     }
   }
-} /* Output: (Execute to see) *///:~
+}
+/* Output: (Execute to see) */

@@ -1,4 +1,4 @@
-//: containersindepth/StringHashCode.java
+// containersindepth/StringHashCode.java
 // ©2015 MindView LLC: see Copyright.txt
 
 public class StringHashCode {
@@ -7,7 +7,8 @@ public class StringHashCode {
     System.out.println(hellos[0].hashCode());
     System.out.println(hellos[1].hashCode());
   }
-} /* Output:
+}
+/* Output:
 69609650
 69609650
-*///:~
+*/

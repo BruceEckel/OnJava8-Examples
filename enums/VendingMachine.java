@@ -1,4 +1,4 @@
-//: enums/VendingMachine.java
+// enums/VendingMachine.java
 // ©2015 MindView LLC: see Copyright.txt
 // {Args: VendingMachineInput.txt}
 import java.util.*;
@@ -87,7 +87,7 @@ public class VendingMachine {
       }
     },
     TERMINAL {@Override
- void output() { print("Halted"); } };
+void output() { print("Halted"); } };
     private boolean isTransient = false;
     State() {}
     State(StateDuration trans) { isTransient = true; }
@@ -136,7 +136,8 @@ class FileInputGenerator implements Generator<Input> {
       return null;
     return Enum.valueOf(Input.class, input.next().trim());
   }
-} /* Output:
+}
+/* Output:
 25
 50
 Insufficient money for CHIPS
@@ -162,4 +163,4 @@ Insufficient money for SODA
 Your change: 75
 0
 Halted
-*///:~
+*/

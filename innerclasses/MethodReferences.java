@@ -1,4 +1,4 @@
-//: innerclasses/MethodReferences.java
+// innerclasses/MethodReferences.java
 // ©2015 MindView LLC: see Copyright.txt
 import java.util.*;
 
@@ -20,7 +20,8 @@ public class MethodReferences {
       descriptions.add(new Description(k));
     descriptions.forEach(Description::show); // (2)
   }
-} /* Output:
+}
+/* Output:
 Every
 Good
 Boy
@@ -31,4 +32,4 @@ Good
 Boy
 Deserves
 Fudge
-*///:~
+*/

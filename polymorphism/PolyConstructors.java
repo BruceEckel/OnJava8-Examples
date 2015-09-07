@@ -1,4 +1,4 @@
-//: polymorphism/PolyConstructors.java
+// polymorphism/PolyConstructors.java
 // ©2015 MindView LLC: see Copyright.txt
 // Constructors and polymorphism
 // don't produce what you might expect.
@@ -29,9 +29,10 @@ public class PolyConstructors {
   public static void main(String[] args) {
     new RoundGlyph(5);
   }
-} /* Output:
+}
+/* Output:
 Glyph() before draw()
 RoundGlyph.draw(), radius = 0
 Glyph() after draw()
 RoundGlyph.RoundGlyph(), radius = 5
-*///:~
+*/

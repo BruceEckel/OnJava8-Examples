@@ -1,4 +1,4 @@
-//: generics/ThrowGenericException.java
+// generics/ThrowGenericException.java
 // ©2015 MindView LLC: see Copyright.txt
 import java.util.*;
 
@@ -71,7 +71,8 @@ public class ThrowGenericException {
       System.out.println(e);
     }
   }
-} /* Output:
+}
+/* Output:
 [Hep!, Hep!, Ho!]
 Failure2
-*///:~
+*/

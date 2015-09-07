@@ -1,4 +1,4 @@
-//: concurrency/ReaderWriterList.java
+// concurrency/ReaderWriterList.java
 // ©2015 MindView LLC: see Copyright.txt
 import java.util.concurrent.*;
 import java.util.concurrent.locks.*;
@@ -83,7 +83,8 @@ class ReaderWriterListTest {
     for(int i = 0; i < writers; i++)
       exec.execute(new Writer());
   }
-} /* Output: (First and last 10 Lines)
+}
+/* Output: (First and last 10 Lines)
 6
 15
 14
@@ -105,4 +106,4 @@ ________...________...________...________...________
 28
 27
 26
-*///:~
+*/

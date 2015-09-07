@@ -1,4 +1,4 @@
-//: typeinfo/SweetShop.java
+// typeinfo/SweetShop.java
 // ©2015 MindView LLC: see Copyright.txt
 // Examination of the way the class loader works.
 import static com.mindviewinc.util.Print.*;
@@ -29,7 +29,8 @@ public class SweetShop {
     new Cookie();
     print("After creating Cookie");
   }
-} /* Output:
+}
+/* Output:
 inside main
 Loading Candy
 After creating Candy
@@ -37,4 +38,4 @@ Loading Gum
 After Class.forName("Gum")
 Loading Cookie
 After creating Cookie
-*///:~
+*/

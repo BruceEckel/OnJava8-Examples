@@ -1,4 +1,4 @@
-//: io/MemoryInput.java
+// io/MemoryInput.java
 // ©2015 MindView LLC: see Copyright.txt
 import java.io.*;
 
@@ -11,4 +11,5 @@ public class MemoryInput {
     while((c = in.read()) != -1)
       System.out.print((char)c);
   }
-} /* Output: (Execute to see) *///:~
+}
+/* Output: (Execute to see) */

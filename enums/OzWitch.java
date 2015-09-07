@@ -1,4 +1,4 @@
-//: enums/OzWitch.java
+// enums/OzWitch.java
 // ©2015 MindView LLC: see Copyright.txt
 // The witches in the land of Oz.
 import static com.mindviewinc.util.Print.*;
@@ -20,10 +20,11 @@ public enum OzWitch {
     for(OzWitch witch : OzWitch.values())
       print(witch + ": " + witch.getDescription());
   }
-} /* Output:
+}
+/* Output:
 WEST: Miss Gulch, aka the Wicked Witch of the West
 NORTH: Glinda, the Good Witch of the North
 EAST: Wicked Witch of the East, wearer of the Ruby
 Slippers, crushed by Dorothy's house
 SOUTH: Good by inference, but missing
-*///:~
+*/

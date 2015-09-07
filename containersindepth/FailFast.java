@@ -1,4 +1,4 @@
-//: containersindepth/FailFast.java
+// containersindepth/FailFast.java
 // ©2015 MindView LLC: see Copyright.txt
 // Demonstrates the "fail-fast" behavior.
 import java.util.*;
@@ -14,6 +14,7 @@ public class FailFast {
       System.out.println(e);
     }
   }
-} /* Output:
+}
+/* Output:
 java.util.ConcurrentModificationException
-*///:~
+*/

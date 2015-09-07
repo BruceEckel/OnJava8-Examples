@@ -1,4 +1,4 @@
-//: control/StringSwitch.java
+// control/StringSwitch.java
 // ©2015 MindView LLC: see Copyright.txt
 import static com.mindviewinc.util.Print.*;
 
@@ -36,7 +36,8 @@ public class StringSwitch {
         break;
     }
   }
-} /* Output:
+}
+/* Output:
 RED
 RED
-*///:~
+*/

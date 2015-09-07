@@ -1,4 +1,4 @@
-//: references/Immutable1.java
+// references/Immutable1.java
 // ©2015 MindView LLC: see Copyright.txt
 // Immutable objects are immune to aliasing.
 
@@ -23,9 +23,10 @@ public class Immutable1 {
     f(x);
     System.out.println("x = " + x.read());
   }
-} /* Output:
+}
+/* Output:
 x = 47
 i1 = 47
 quad = 188
 x = 47
-*///:~
+*/

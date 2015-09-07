@@ -1,4 +1,4 @@
-//: operators/BitManipulation.java
+// operators/BitManipulation.java
 // ©2015 MindView LLC: see Copyright.txt
 // Using the bitwise operators.
 import java.util.*;
@@ -57,7 +57,8 @@ public class BitManipulation {
     print(s + ", long: " + l + ", binary:\n    " +
       Long.toBinaryString(l));
   }
-} /* Output: (First 32 Lines)
+}
+/* Output: (First 32 Lines)
 -1, int: -1, binary:
    11111111111111111111111111111111
 +1, int: 1, binary:
@@ -91,4 +92,4 @@ i >>> 5, int: 97591828, binary:
 (~i) >>> 5, int: 36625899, binary:
    10001011101101110111101011
                   ...
-*///:~
+*/

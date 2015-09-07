@@ -1,4 +1,4 @@
-//: enums/SecurityCategory.java
+// enums/SecurityCategory.java
 // ©2015 MindView LLC: see Copyright.txt
 // More succinct subcategorization of enums.
 import com.mindviewinc.util.*;
@@ -24,7 +24,8 @@ enum SecurityCategory {
         category.randomSelection());
     }
   }
-} /* Output:
+}
+/* Output:
 BOND: MUNICIPAL
 BOND: MUNICIPAL
 STOCK: MARGIN
@@ -35,4 +36,4 @@ STOCK: LONG
 STOCK: LONG
 BOND: MUNICIPAL
 BOND: JUNK
-*///:~
+*/

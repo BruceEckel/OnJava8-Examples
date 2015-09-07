@@ -1,4 +1,4 @@
-//: innerclasses/arr/ArgReturnReferences.java
+// innerclasses/arr/ArgReturnReferences.java
 // ©2015 MindView LLC: see Copyright.txt
 // Demonstrates method references
 package innerclasses.arr;
@@ -28,7 +28,8 @@ public class ArgReturnReferences {
     print(arr.f1arg.apply(y));
     print(arr.f2arg.apply(y, "Howdy"));
   }
-} /* Output:
+}
+/* Output:
 Y
 Y Howdy
-*///:~
+*/

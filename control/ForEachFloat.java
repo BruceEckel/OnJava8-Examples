@@ -1,4 +1,4 @@
-//: control/ForEachFloat.java
+// control/ForEachFloat.java
 // ©2015 MindView LLC: see Copyright.txt
 import java.util.*;
 
@@ -11,7 +11,8 @@ public class ForEachFloat {
     for(float x : f)
       System.out.println(x);
   }
-} /* Output:
+}
+/* Output:
 0.72711575
 0.39982635
 0.5309454
@@ -22,4 +23,4 @@ public class ForEachFloat {
 0.4170137
 0.51660204
 0.73734957
-*///:~
+*/

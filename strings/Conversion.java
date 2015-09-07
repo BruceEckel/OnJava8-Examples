@@ -1,4 +1,4 @@
-//: strings/Conversion.java
+// strings/Conversion.java
 // ©2015 MindView LLC: see Copyright.txt
 import java.math.*;
 import java.util.*;
@@ -74,7 +74,8 @@ public class Conversion {
     // f.format("x: %x\n", z);
     f.format("h: %h\n", z);
   }
-} /* Output:
+}
+/* Output:
 u = 'a'
 s: a
 c: a
@@ -107,4 +108,4 @@ z = false
 b: false
 s: false
 h: 4d5
-*///:~
+*/

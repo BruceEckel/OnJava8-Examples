@@ -1,4 +1,4 @@
-//: references/CheckCloneable.java
+// references/CheckCloneable.java
 // ©2015 MindView LLC: see Copyright.txt
 // Check to see if a reference can be cloned.
 
@@ -95,7 +95,8 @@ public class CheckCloneable {
       tryToClone(ord1);
     }
   }
-} /* Output:
+}
+/* Output:
 Attempting IsCloneable
 Cloned IsCloneable
 Attempting WrongClone
@@ -108,4 +109,4 @@ Attempting BackOn
 Cloned BackOn
 Attempting ReallyNoMore
 Could not clone ReallyNoMore
-*///:~
+*/

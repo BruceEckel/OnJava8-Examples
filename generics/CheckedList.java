@@ -1,4 +1,4 @@
-//: generics/CheckedList.java
+// generics/CheckedList.java
 // ©2015 MindView LLC: see Copyright.txt
 // Using Collection.checkedList().
 import typeinfo.pets.*;
@@ -25,8 +25,9 @@ public class CheckedList {
     pets.add(new Dog());
     pets.add(new Cat());
   }
-} /* Output:
+}
+/* Output:
 Expected: java.lang.ClassCastException: Attempt to insert
 class typeinfo.pets.Cat element into collection with
 element type class typeinfo.pets.Dog
-*///:~
+*/

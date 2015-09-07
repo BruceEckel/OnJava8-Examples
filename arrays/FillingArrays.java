@@ -1,4 +1,4 @@
-//: arrays/FillingArrays.java
+// arrays/FillingArrays.java
 // ©2015 MindView LLC: see Copyright.txt
 // Using Arrays.fill()
 import java.util.*;
@@ -38,7 +38,8 @@ public class FillingArrays {
     Arrays.fill(a9, 3, 5, "World");
     print("a9 = " + Arrays.toString(a9));
   }
-} /* Output:
+}
+/* Output:
 a1 = [true, true, true, true, true, true]
 a2 = [11, 11, 11, 11, 11, 11]
 a3 = [x, x, x, x, x, x]
@@ -49,4 +50,4 @@ a7 = [29.0, 29.0, 29.0, 29.0, 29.0, 29.0]
 a8 = [47.0, 47.0, 47.0, 47.0, 47.0, 47.0]
 a9 = [Hello, Hello, Hello, Hello, Hello, Hello]
 a9 = [Hello, Hello, Hello, World, World, Hello]
-*///:~
+*/

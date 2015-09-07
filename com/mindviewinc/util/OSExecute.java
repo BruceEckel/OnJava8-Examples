@@ -1,4 +1,4 @@
-//: com/mindviewinc/util/OSExecute.java
+// com/mindviewinc/util/OSExecute.java
 // ©2015 MindView LLC: see Copyright.txt
 // Run an operating system command
 // and send the output to the console.
@@ -36,4 +36,4 @@ public class OSExecute {
       throw new OSExecuteException("Errors executing " +
         command);
   }
-} ///:~
+}

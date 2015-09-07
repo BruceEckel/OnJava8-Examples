@@ -1,4 +1,4 @@
-//: containersindepth/Prediction.java
+// containersindepth/Prediction.java
 // ©2015 MindView LLC: see Copyright.txt
 // Predicting the weather with groundhogs.
 import java.util.*;
@@ -13,4 +13,4 @@ public class Prediction {
     else
       return "Early Spring!";
   }
-} ///:~
+}

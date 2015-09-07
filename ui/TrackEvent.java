@@ -1,4 +1,4 @@
-//: ui/TrackEvent.java
+// ui/TrackEvent.java
 // ©2015 MindView LLC: see Copyright.txt
 // Show events as they happen.
 import javax.swing.*;
@@ -103,4 +103,4 @@ public class TrackEvent extends JFrame {
   public static void main(String[] args) {
     run(new TrackEvent(), 700, 500);
   }
-} ///:~
+}

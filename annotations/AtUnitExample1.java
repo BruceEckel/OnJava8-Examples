@@ -1,4 +1,4 @@
-//: annotations/AtUnitExample1.java
+// annotations/AtUnitExample1.java
 // ©2015 MindView LLC: see Copyright.txt
 package annotations;
 import com.mindviewinc.atunit.*;
@@ -24,7 +24,8 @@ public class AtUnitExample1 {
     OSExecute.command(
       "java com.mindviewinc.atunit.AtUnit AtUnitExample1");
   }
-} /* Output:
+}
+/* Output:
 annotations.AtUnitExample1
   . anotherDisappointment (failed)
   . failureTest (failed)
@@ -35,4 +36,4 @@ annotations.AtUnitExample1
 >>> 2 FAILURES <<<
   annotations.AtUnitExample1: anotherDisappointment
   annotations.AtUnitExample1: failureTest
-*///:~
+*/

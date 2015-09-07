@@ -1,4 +1,4 @@
-//: annotations/database/TableCreator.java
+// annotations/database/TableCreator.java
 // ©2015 MindView LLC: see Copyright.txt
 // Reflection-based annotation processor.
 // {Args: annotations.database.Member}
@@ -74,7 +74,8 @@ public class TableCreator {
       constraints += " UNIQUE";
     return constraints;
   }
-} /* Output:
+}
+/* Output:
 Table Creation SQL for annotations.database.Member is :
 CREATE TABLE MEMBER(
     FIRSTNAME VARCHAR(30));
@@ -93,4 +94,4 @@ CREATE TABLE MEMBER(
     LASTNAME VARCHAR(50),
     AGE INT,
     HANDLE VARCHAR(30) PRIMARY KEY);
-*///:~
+*/

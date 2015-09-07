@@ -1,4 +1,4 @@
-//: typeinfo/pets/LiteralPetCreator.java
+// typeinfo/pets/LiteralPetCreator.java
 // ©2015 MindView LLC: see Copyright.txt
 // Using class literals.
 package typeinfo.pets;
@@ -23,9 +23,10 @@ public class LiteralPetCreator extends PetCreator {
   public static void main(String[] args) {
     System.out.println(types);
   }
-} /* Output:
+}
+/* Output:
 [class typeinfo.pets.Mutt, class typeinfo.pets.Pug, class
 typeinfo.pets.EgyptianMau, class typeinfo.pets.Manx, class
 typeinfo.pets.Cymric, class typeinfo.pets.Rat, class
 typeinfo.pets.Mouse, class typeinfo.pets.Hamster]
-*///:~
+*/

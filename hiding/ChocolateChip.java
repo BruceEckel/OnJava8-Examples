@@ -1,4 +1,4 @@
-//: hiding/ChocolateChip.java
+// hiding/ChocolateChip.java
 // ©2015 MindView LLC: see Copyright.txt
 // Can't use package-access member from another package.
 import hiding.dessert.*;
@@ -14,7 +14,8 @@ public class ChocolateChip extends Cookie {
     ChocolateChip x = new ChocolateChip();
     x.chomp();
   }
-} /* Output:
+}
+/* Output:
 Cookie constructor
 ChocolateChip constructor
-*///:~
+*/

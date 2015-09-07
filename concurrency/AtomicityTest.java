@@ -1,4 +1,4 @@
-//: concurrency/AtomicityTest.java
+// concurrency/AtomicityTest.java
 // ©2015 MindView LLC: see Copyright.txt
 import java.util.concurrent.*;
 
@@ -23,6 +23,7 @@ public class AtomicityTest implements Runnable {
       }
     }
   }
-} /* Output:
+}
+/* Output:
 1
-*///:~
+*/

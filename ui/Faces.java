@@ -1,4 +1,4 @@
-//: ui/Faces.java
+// ui/Faces.java
 // ©2015 MindView LLC: see Copyright.txt
 // Icon behavior in JButtons.
 import javax.swing.*;
@@ -50,4 +50,4 @@ public class Faces extends JFrame {
   public static void main(String[] args) {
     run(new Faces(), 250, 125);
   }
-} ///:~
+}

@@ -1,4 +1,4 @@
-//: innerclasses/Factories.java
+// innerclasses/Factories.java
 // ©2015 MindView LLC: see Copyright.txt
 import static com.mindviewinc.util.Print.*;
 
@@ -53,11 +53,12 @@ public class Factories {
     serviceConsumer(Implementation2.factory);
     serviceConsumer(Implementation3.factory);
   }
-} /* Output:
+}
+/* Output:
 Implementation1 method1
 Implementation1 method2
 Implementation2 method1
 Implementation2 method2
 Implementation3 method1
 Implementation3 method2
-*///:~
+*/

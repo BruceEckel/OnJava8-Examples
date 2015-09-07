@@ -1,4 +1,4 @@
-//: containers/ListFeatures.java
+// containers/ListFeatures.java
 // ©2015 MindView LLC: see Copyright.txt
 import typeinfo.pets.*;
 import java.util.*;
@@ -59,7 +59,8 @@ public class ListFeatures {
     Pet[] pa = pets.toArray(new Pet[0]);
     print("23: " + pa[3].id());
   }
-} /* Output:
+}
+/* Output:
 1: [Rat, Manx, Cymric, Mutt, Pug, Cymric, Pug]
 2: [Rat, Manx, Cymric, Mutt, Pug, Cymric, Pug, Hamster]
 3: true
@@ -87,4 +88,4 @@ sub: [Mouse, Pug]
 21: [Manx, Cymric, Rat, EgyptianMau]
 22: EgyptianMau
 23: 14
-*///:~
+*/

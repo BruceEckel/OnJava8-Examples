@@ -1,4 +1,4 @@
-//: enums/menu/Course.java
+// enums/menu/Course.java
 // ©2015 MindView LLC: see Copyright.txt
 package enums.menu;
 import com.mindviewinc.util.*;
@@ -15,4 +15,4 @@ public enum Course {
   public Food randomSelection() {
     return Enums.random(values);
   }
-} ///:~
+}

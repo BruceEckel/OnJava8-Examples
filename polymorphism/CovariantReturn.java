@@ -1,4 +1,4 @@
-//: polymorphism/CovariantReturn.java
+// polymorphism/CovariantReturn.java
 // ©2015 MindView LLC: see Copyright.txt
 
 class Grain {
@@ -29,7 +29,8 @@ public class CovariantReturn {
     g = m.process();
     System.out.println(g);
   }
-} /* Output:
+}
+/* Output:
 Grain
 Wheat
-*///:~
+*/

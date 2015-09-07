@@ -1,4 +1,4 @@
-//: reuse/SpaceShipDelegation.java
+// reuse/SpaceShipDelegation.java
 // ©2015 MindView LLC: see Copyright.txt
 
 public class SpaceShipDelegation {
@@ -35,4 +35,5 @@ public class SpaceShipDelegation {
       new SpaceShipDelegation("NSEA Protector");
     protector.forward(100);
   }
-} /* Output: (None) *///:~
+}
+/* Output: (None) */

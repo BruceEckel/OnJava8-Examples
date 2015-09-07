@@ -1,4 +1,4 @@
-//: annotations/AtUnitExternalTest.java
+// annotations/AtUnitExternalTest.java
 // ©2015 MindView LLC: see Copyright.txt
 // Creating non-embedded tests.
 package annotations;
@@ -14,9 +14,10 @@ public class AtUnitExternalTest extends AtUnitExample1 {
     OSExecute.command(
      "java com.mindviewinc.atunit.AtUnit AtUnitExternalTest");
   }
-} /* Output:
+}
+/* Output:
 annotations.AtUnitExternalTest
   . _methodTwo This is methodTwo
   . _methodOne
 OK (2 tests)
-*///:~
+*/

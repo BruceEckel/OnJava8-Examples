@@ -1,4 +1,4 @@
-//: xml/APerson.java
+// xml/APerson.java
 // ©2015 MindView LLC: see Copyright.txt
 // Use the XOM library to write and read XML
 // {Requires: nu.xom.Node; You must install
@@ -54,7 +54,8 @@ public class APerson {
     format(new BufferedOutputStream(new FileOutputStream(
       "People.xml")), doc);
   }
-} /* Output:
+}
+/* Output:
 [Dr. Bunsen Honeydew, Gonzo The Great, Phillip J. Fry]
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <people>
@@ -71,4 +72,4 @@ public class APerson {
         <last>Fry</last>
     </person>
 </people>
-*///:~
+*/

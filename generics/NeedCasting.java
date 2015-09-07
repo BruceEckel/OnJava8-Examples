@@ -1,4 +1,4 @@
-//: generics/NeedCasting.java
+// generics/NeedCasting.java
 // ©2015 MindView LLC: see Copyright.txt
 import java.io.*;
 import java.util.*;
@@ -10,4 +10,4 @@ public class NeedCasting {
       new FileInputStream(args[0]));
     List<Widget> shapes = (List<Widget>)in.readObject();
   }
-} ///:~
+}

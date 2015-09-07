@@ -1,4 +1,4 @@
-//: staticchecking/DogsAndRobots.cpp
+// staticchecking/DogsAndRobots.cpp
 // ©2015 MindView LLC: see Copyright.txt
 #include <iostream>
 using namespace std;
@@ -24,4 +24,4 @@ int main() {
   Robot r;
   speak(d);
   speak(r);
-} ///:~
+}

@@ -1,4 +1,4 @@
-//: ui/TextArea.java
+// ui/TextArea.java
 // ©2015 MindView LLC: see Copyright.txt
 // Using the JTextArea control.
 import javax.swing.*;
@@ -29,4 +29,4 @@ public class TextArea extends JFrame {
   public static void main(String[] args) {
     run(new TextArea(), 475, 425);
   }
-} ///:~
+}

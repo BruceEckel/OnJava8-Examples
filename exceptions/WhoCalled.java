@@ -1,4 +1,4 @@
-//: exceptions/WhoCalled.java
+// exceptions/WhoCalled.java
 // ©2015 MindView LLC: see Copyright.txt
 // Programmatic access to stack trace information.
 
@@ -21,7 +21,8 @@ public class WhoCalled {
     System.out.println("--------------------------------");
     h();
   }
-} /* Output:
+}
+/* Output:
 f
 main
 --------------------------------
@@ -33,4 +34,4 @@ f
 g
 h
 main
-*///:~
+*/

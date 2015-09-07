@@ -1,4 +1,4 @@
-//: generics/Apply.java
+// generics/Apply.java
 // ©2015 MindView LLC: see Copyright.txt
 // {main: ApplyTest}
 import java.lang.reflect.*;
@@ -69,7 +69,8 @@ class ApplyTest {
     }
     Apply.apply(shapeQ, Shape.class.getMethod("rotate"));
   }
-} /* Output: (First and last 10 Lines)
+}
+/* Output: (First and last 10 Lines)
 Shape@139a55 rotate
 Shape@106d69c rotate
 Shape@52e922 rotate
@@ -91,4 +92,4 @@ Shape@1f3c5b5 rotate
 Square@164951d rotate
 Shape@11210ee rotate
 Square@17e1886 rotate
-*///:~
+*/

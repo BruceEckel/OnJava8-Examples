@@ -1,4 +1,4 @@
-//: patterns/trashvisitor/TrashVisitor.java
+// patterns/trashvisitor/TrashVisitor.java
 // ©2015 MindView LLC: see Copyright.txt
 // The "visitor" pattern.
 package patterns.trashvisitor;
@@ -96,7 +96,8 @@ public class TrashVisitor {
     pv.total();
     wv.total();
   }
-} /* Output: (First and last 10 Lines)
+}
+/* Output: (First and last 10 Lines)
 Loading patterns.trashvisitor.VGlass
 Loading patterns.trashvisitor.VPaper
 Loading patterns.trashvisitor.VAluminum
@@ -118,4 +119,4 @@ Total weight Aluminum:515.0
 Total weight Paper:358.0
 Total weight Glass:653.0
 Total weight Cardboard:174.0
-*///:~
+*/

@@ -1,4 +1,4 @@
-//: annotations/UseCase.java
+// annotations/UseCase.java
 // ©2015 MindView LLC: see Copyright.txt
 import java.lang.annotation.*;
 
@@ -7,4 +7,4 @@ import java.lang.annotation.*;
 public @interface UseCase {
   public int id();
   public String description() default "no description";
-} ///:~
+}

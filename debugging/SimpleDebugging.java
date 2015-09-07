@@ -1,4 +1,4 @@
-//: debugging/SimpleDebugging.java
+// debugging/SimpleDebugging.java
 // ©2015 MindView LLC: see Copyright.txt
 // {ThrowsException}
 public class SimpleDebugging {
@@ -19,7 +19,8 @@ public class SimpleDebugging {
   public static void main(String[] args) {
     foo1();
   }
-} /* Output:
+}
+/* Output:
 In foo1
 In foo2
 In foo3
@@ -31,4 +32,4 @@ by zero
         at SimpleDebugging.foo1(SimpleDebugging.java:6)
         at SimpleDebugging.main(SimpleDebugging.java:19)
 ___[ Exception is Expected ]___
-*///:~
+*/

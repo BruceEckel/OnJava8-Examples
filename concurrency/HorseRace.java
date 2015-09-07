@@ -1,4 +1,4 @@
-//: concurrency/HorseRace.java
+// concurrency/HorseRace.java
 // ©2015 MindView LLC: see Copyright.txt
 // Using CyclicBarriers.
 import java.util.concurrent.*;
@@ -85,7 +85,8 @@ public class HorseRace {
     }
     new HorseRace(nHorses, pause);
   }
-} /* Output: (First and last 18 Lines)
+}
+/* Output: (First and last 18 Lines)
 ===========================================================
 ================
 *0
@@ -140,4 +141,4 @@ ________...________...________...________...________
 *************5
 ********************************************************6
 Horse 3 won!
-*///:~
+*/

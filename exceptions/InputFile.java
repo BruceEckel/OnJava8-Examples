@@ -1,4 +1,4 @@
-//: exceptions/InputFile.java
+// exceptions/InputFile.java
 // ©2015 MindView LLC: see Copyright.txt
 // Paying attention to exceptions in constructors.
 import java.io.*;
@@ -42,4 +42,4 @@ public class InputFile {
       throw new RuntimeException("in.close() failed");
     }
   }
-} ///:~
+}

@@ -1,4 +1,4 @@
-//: typeinfo/ClassInitialization.java
+// typeinfo/ClassInitialization.java
 // ©2015 MindView LLC: see Copyright.txt
 import java.util.*;
 
@@ -40,7 +40,8 @@ public class ClassInitialization {
     System.out.println("After creating Initable3 ref");
     System.out.println(Initable3.staticNonFinal);
   }
-} /* Output:
+}
+/* Output:
 After creating Initable ref
 47
 Initializing Initable
@@ -50,4 +51,4 @@ Initializing Initable2
 Initializing Initable3
 After creating Initable3 ref
 74
-*///:~
+*/

@@ -1,4 +1,4 @@
-//: ui/ButtonGroups.java
+// ui/ButtonGroups.java
 // ©2015 MindView LLC: see Copyright.txt
 // Uses reflection to create groups
 // of different types of AbstractButton.
@@ -51,4 +51,4 @@ public class ButtonGroups extends JFrame {
   public static void main(String[] args) {
     run(new ButtonGroups(), 500, 350);
   }
-} ///:~
+}

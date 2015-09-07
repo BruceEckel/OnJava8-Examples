@@ -1,4 +1,4 @@
-//: strings/ReplacingStringTokenizer.java
+// strings/ReplacingStringTokenizer.java
 // ©2015 MindView LLC: see Copyright.txt
 import java.util.*;
 
@@ -14,8 +14,9 @@ public class ReplacingStringTokenizer {
     while(scanner.hasNext())
       System.out.print(scanner.next() + " ");
   }
-} /* Output:
+}
+/* Output:
 But I'm not dead yet! I feel happy!
 [But, I'm, not, dead, yet!, I, feel, happy!]
 But I'm not dead yet! I feel happy!
-*///:~
+*/

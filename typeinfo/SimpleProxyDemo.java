@@ -1,4 +1,4 @@
-//: typeinfo/SimpleProxyDemo.java
+// typeinfo/SimpleProxyDemo.java
 // ©2015 MindView LLC: see Copyright.txt
 import static com.mindviewinc.util.Print.*;
 
@@ -42,11 +42,12 @@ class SimpleProxyDemo {
     consumer(new RealObject());
     consumer(new SimpleProxy(new RealObject()));
   }
-} /* Output:
+}
+/* Output:
 doSomething
 somethingElse bonobo
 SimpleProxy doSomething
 doSomething
 SimpleProxy somethingElse bonobo
 somethingElse bonobo
-*///:~
+*/

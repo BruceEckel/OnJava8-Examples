@@ -1,4 +1,4 @@
-//: concurrency/SyncObject.java
+// concurrency/SyncObject.java
 // ©2015 MindView LLC: see Copyright.txt
 // Synchronizing on another object.
 import static com.mindviewinc.util.Print.*;
@@ -32,7 +32,8 @@ public class SyncObject {
     }.start();
     ds.g();
   }
-} /* Output:
+}
+/* Output:
 f()
 g()
 g()
@@ -43,4 +44,4 @@ g()
 f()
 f()
 g()
-*///:~
+*/

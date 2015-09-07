@@ -1,4 +1,4 @@
-//: ui/ComboBoxes.java
+// ui/ComboBoxes.java
 // ©2015 MindView LLC: see Copyright.txt
 // Using drop-down lists.
 import javax.swing.*;
@@ -33,4 +33,4 @@ public class ComboBoxes extends JFrame {
   public static void main(String[] args) {
     run(new ComboBoxes(), 200, 175);
   }
-} ///:~
+}

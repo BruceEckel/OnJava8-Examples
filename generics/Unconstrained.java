@@ -1,4 +1,4 @@
-//: generics/Unconstrained.java
+// generics/Unconstrained.java
 // ©2015 MindView LLC: see Copyright.txt
 
 class Other {}
@@ -11,6 +11,7 @@ public class Unconstrained {
     Other other = b.get();
     b.f();
   }
-} /* Output:
+}
+/* Output:
 Other
-*///:~
+*/

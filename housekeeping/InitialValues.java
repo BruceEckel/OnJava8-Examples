@@ -1,4 +1,4 @@
-//: housekeeping/InitialValues.java
+// housekeeping/InitialValues.java
 // ©2015 MindView LLC: see Copyright.txt
 // Shows default initial values.
 import static com.mindviewinc.util.Print.*;
@@ -32,7 +32,8 @@ public class InitialValues {
     new InitialValues().printInitialValues();
     */
   }
-} /* Output:
+}
+/* Output:
 Data type      Initial value
 boolean        false
 char           [NUL]
@@ -43,4 +44,4 @@ long           0
 float          0.0
 double         0.0
 reference      null
-*///:~
+*/

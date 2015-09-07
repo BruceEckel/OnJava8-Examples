@@ -1,4 +1,4 @@
-//: patterns/trashvisitor/VCardboard.java
+// patterns/trashvisitor/VCardboard.java
 // ©2015 MindView LLC: see Copyright.txt
 // Cardboard for the visitor pattern.
 package patterns.trashvisitor;
@@ -11,4 +11,4 @@ public class VCardboard extends Cardboard
   public void accept(Visitor v) {
     v.visit(this);
   }
-} ///:~
+}

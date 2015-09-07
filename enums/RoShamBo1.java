@@ -1,4 +1,4 @@
-//: enums/RoShamBo1.java
+// enums/RoShamBo1.java
 // ©2015 MindView LLC: see Copyright.txt
 // Demonstration of multiple dispatching.
 package enums;
@@ -70,7 +70,8 @@ public class RoShamBo1 {
     for(int i = 0; i < SIZE; i++)
       match(newItem(), newItem());
   }
-} /* Output:
+}
+/* Output:
 Rock vs. Rock: DRAW
 Paper vs. Rock: WIN
 Paper vs. Rock: WIN
@@ -91,4 +92,4 @@ Paper vs. Scissors: LOSE
 Paper vs. Scissors: LOSE
 Paper vs. Scissors: LOSE
 Paper vs. Scissors: LOSE
-*///:~
+*/

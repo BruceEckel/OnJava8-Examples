@@ -1,4 +1,4 @@
-//: interfaces/music5/Music5.java
+// interfaces/music5/Music5.java
 // ©2015 MindView LLC: see Copyright.txt
 // Interfaces.
 package interfaces.music5;
@@ -78,10 +78,11 @@ public class Music5 {
     };
     tuneAll(orchestra);
   }
-} /* Output:
+}
+/* Output:
 Wind.play() MIDDLE_C
 Percussion.play() MIDDLE_C
 Stringed.play() MIDDLE_C
 Brass.play() MIDDLE_C
 Woodwind.play() MIDDLE_C
-*///:~
+*/

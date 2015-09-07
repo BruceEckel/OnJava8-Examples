@@ -1,4 +1,4 @@
-//: containers/AsListInference.java
+// containers/AsListInference.java
 // ©2015 MindView LLC: see Copyright.txt
 // Arrays.asList() makes its best guess about type.
 import java.util.*;
@@ -31,4 +31,5 @@ public class AsListInference {
     List<Snow> snow4 = Arrays.<Snow>asList(
        new Light(), new Heavy());
   }
-} /* Output: (None) *///:~
+}
+/* Output: (None) */

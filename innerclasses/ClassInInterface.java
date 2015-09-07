@@ -1,4 +1,4 @@
-//: innerclasses/ClassInInterface.java
+// innerclasses/ClassInInterface.java
 // ©2015 MindView LLC: see Copyright.txt
 // {main: ClassInInterface$Test}
 
@@ -13,6 +13,7 @@ public interface ClassInInterface {
       new Test().howdy();
     }
   }
-} /* Output:
+}
+/* Output:
 Howdy!
-*///:~
+*/

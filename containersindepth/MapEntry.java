@@ -1,9 +1,9 @@
-//: containersindepth/MapEntry.java
+// containersindepth/MapEntry.java
 // ©2015 MindView LLC: see Copyright.txt
 // A simple Map.Entry for sample Map implementations.
 import java.util.*;
 
-public class MapEntry<K,V> implements Map.Entry<K,V> {
+public class MapEntry<K, V> implements Map.Entry<K, V> {
   private K key;
   private V value;
   public MapEntry(K key, V value) {
@@ -29,7 +29,7 @@ public class MapEntry<K,V> implements Map.Entry<K,V> {
   public boolean equals(Object o) {
     if(!(o instanceof MapEntry)) return false;
     @SuppressWarnings("unchecked")
-    MapEntry<K,V> me = (MapEntry<K,V>)o;
+    MapEntry<K, V> me = (MapEntry<K, V>)o;
     return
       (key == null ?
        me.getKey() == null : key.equals(me.getKey())) &&
@@ -38,4 +38,4 @@ public class MapEntry<K,V> implements Map.Entry<K,V> {
   }
   @Override
   public String toString() { return key + "=" + value; }
-} ///:~
+}

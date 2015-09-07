@@ -1,4 +1,4 @@
-//: concurrency/SimpleMicroBenchmark.java
+// concurrency/SimpleMicroBenchmark.java
 // ©2015 MindView LLC: see Copyright.txt
 // The dangers of microbenchmarking.
 import java.util.concurrent.locks.*;
@@ -41,8 +41,9 @@ public class SimpleMicroBenchmark {
     System.out.printf("Lock/synchronized = %1$.3f",
       (double)lockTime/(double)synchTime);
   }
-} /* Output:
+}
+/* Output:
 synchronized:  243572959
 Lock:          365176719
 Lock/synchronized = 1.499
-*///:~
+*/

@@ -1,4 +1,4 @@
-//: enums/PostOffice.java
+// enums/PostOffice.java
 // ©2015 MindView LLC: see Copyright.txt
 // Modeling a post office.
 import java.util.*;
@@ -128,7 +128,8 @@ public class PostOffice {
       print("*****");
     }
   }
-} /* Output:
+}
+/* Output:
 Mail 0, General Delivery: NO2, Address Scanability:
 UNSCANNABLE, Address Readability: YES3, Address Address:
 OK1, Return address: OK1
@@ -179,4 +180,4 @@ UNSCANNABLE, Address Readability: YES2, Address Address:
 OK1, Return address: OK4
 Delivering Mail 9 normally
 *****
-*///:~
+*/

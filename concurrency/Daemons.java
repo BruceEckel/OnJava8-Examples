@@ -1,4 +1,4 @@
-//: concurrency/Daemons.java
+// concurrency/Daemons.java
 // ©2015 MindView LLC: see Copyright.txt
 // Daemon threads spawn other daemon threads.
 import java.util.concurrent.*;
@@ -39,7 +39,8 @@ public class Daemons {
     // finish their startup processes:
     TimeUnit.SECONDS.sleep(1);
   }
-} /* Output:
+}
+/* Output:
 d.isDaemon() = true, DaemonSpawn 0 started, DaemonSpawn 1
 started, DaemonSpawn 2 started, DaemonSpawn 3 started,
 DaemonSpawn 4 started, DaemonSpawn 5 started, DaemonSpawn 6
@@ -50,4 +51,4 @@ t[3].isDaemon() = true, t[4].isDaemon() = true,
 t[5].isDaemon() = true, t[6].isDaemon() = true,
 t[7].isDaemon() = true, t[8].isDaemon() = true,
 t[9].isDaemon() = true,
-*///:~
+*/

@@ -1,4 +1,4 @@
-//: polymorphism/music3/Music3.java
+// polymorphism/music3/Music3.java
 // ©2015 MindView LLC: see Copyright.txt
 // An extensible program.
 package polymorphism.music3;
@@ -74,10 +74,11 @@ public class Music3 {
     };
     tuneAll(orchestra);
   }
-} /* Output:
+}
+/* Output:
 Wind.play() MIDDLE_C
 Percussion.play() MIDDLE_C
 Stringed.play() MIDDLE_C
 Brass.play() MIDDLE_C
 Woodwind.play() MIDDLE_C
-*///:~
+*/

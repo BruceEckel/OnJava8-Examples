@@ -1,4 +1,4 @@
-//: containers/InterfaceVsIterator.java
+// containers/InterfaceVsIterator.java
 // ©2015 MindView LLC: see Copyright.txt
 import typeinfo.pets.*;
 import java.util.*;
@@ -19,7 +19,7 @@ public class InterfaceVsIterator {
   public static void main(String[] args) {
     List<Pet> petList = Pets.arrayList(8);
     Set<Pet> petSet = new HashSet<>(petList);
-    Map<String,Pet> petMap = new LinkedHashMap<>();
+    Map<String, Pet> petMap = new LinkedHashMap<>();
     String[] names = ("Ralph, Eric, Robin, Lacey, " +
       "Britney, Sam, Spot, Fluffy").split(", ");
     for(int i = 0; i < names.length; i++)
@@ -33,7 +33,8 @@ public class InterfaceVsIterator {
     display(petMap.values());
     display(petMap.values().iterator());
   }
-} /* Output:
+}
+/* Output:
 0:Rat 1:Manx 2:Cymric 3:Mutt 4:Pug 5:Cymric 6:Pug 7:Manx
 0:Rat 1:Manx 2:Cymric 3:Mutt 4:Pug 5:Cymric 6:Pug 7:Manx
 0:Rat 1:Manx 2:Cymric 3:Mutt 4:Pug 5:Cymric 6:Pug 7:Manx
@@ -43,4 +44,4 @@ Britney=Pug, Sam=Cymric, Spot=Pug, Fluffy=Manx}
 [Ralph, Eric, Robin, Lacey, Britney, Sam, Spot, Fluffy]
 0:Rat 1:Manx 2:Cymric 3:Mutt 4:Pug 5:Cymric 6:Pug 7:Manx
 0:Rat 1:Manx 2:Cymric 3:Mutt 4:Pug 5:Cymric 6:Pug 7:Manx
-*///:~
+*/

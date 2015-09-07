@@ -1,4 +1,4 @@
-//: annotations/AtUnitComposition.java
+// annotations/AtUnitComposition.java
 // ©2015 MindView LLC: see Copyright.txt
 // Creating non-embedded tests.
 package annotations;
@@ -18,9 +18,10 @@ public class AtUnitComposition {
     OSExecute.command(
      "java com.mindviewinc.atunit.AtUnit AtUnitComposition");
   }
-} /* Output:
+}
+/* Output:
 annotations.AtUnitComposition
   . _methodOne
   . _methodTwo This is methodTwo
 OK (2 tests)
-*///:~
+*/

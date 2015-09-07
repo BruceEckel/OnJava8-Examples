@@ -1,4 +1,4 @@
-//: com/mindviewinc/atunit/AtUnit.java
+// com/mindviewinc/atunit/AtUnit.java
 // ©2015 MindView LLC: see Copyright.txt
 // An annotation-based unit-test framework.
 package com.mindviewinc.atunit;
@@ -156,6 +156,7 @@ public class AtUnit implements ProcessFiles.Strategy {
       }
     }
   }
-} /* Output:
+}
+/* Output:
 OK (0 tests)
-*///:~
+*/

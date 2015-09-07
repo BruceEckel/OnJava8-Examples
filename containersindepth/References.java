@@ -1,4 +1,4 @@
-//: containersindepth/References.java
+// containersindepth/References.java
 // ©2015 MindView LLC: see Copyright.txt
 // Demonstrates Reference objects
 import java.lang.ref.*;
@@ -60,7 +60,8 @@ public class References {
       checkQueue();
     }
   }
-} /* Output: (First and last 10 Lines)
+}
+/* Output: (First and last 10 Lines)
 Just created: java.lang.ref.SoftReference@19e0bfd
 Just created: java.lang.ref.SoftReference@139a55
 Just created: java.lang.ref.SoftReference@1db9742
@@ -82,4 +83,4 @@ Just created: java.lang.ref.PhantomReference@10bedb4
 In queue: null
 Just created: java.lang.ref.PhantomReference@103dbd3
 In queue: null
-*///:~
+*/

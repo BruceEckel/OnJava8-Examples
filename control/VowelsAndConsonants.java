@@ -1,4 +1,4 @@
-//: control/VowelsAndConsonants.java
+// control/VowelsAndConsonants.java
 // ©2015 MindView LLC: see Copyright.txt
 // Demonstrates the switch statement.
 import java.util.*;
@@ -24,7 +24,8 @@ public class VowelsAndConsonants {
       }
     }
   }
-} /* Output: (First 13 Lines)
+}
+/* Output: (First 13 Lines)
 y, 121: Sometimes a vowel
 n, 110: consonant
 z, 122: consonant
@@ -39,4 +40,4 @@ o, 111: vowel
 w, 119: Sometimes a vowel
 z, 122: consonant
                   ...
-*///:~
+*/

@@ -1,4 +1,4 @@
-//: io/ViewBuffers.java
+// io/ViewBuffers.java
 // ©2015 MindView LLC: see Copyright.txt
 import java.nio.*;
 import static com.mindviewinc.util.Print.*;
@@ -48,7 +48,8 @@ public class ViewBuffers {
     while(db.hasRemaining())
       printnb(db.position()+ " -> " + db.get() + ", ");
   }
-} /* Output:
+}
+/* Output:
 Byte Buffer 0 -> 0, 1 -> 0, 2 -> 0, 3 -> 0, 4 -> 0, 5 -> 0,
 6 -> 0, 7 -> 97,
 Char Buffer 0 -> NUL, 1 -> NUL, 2 -> NUL, 3 -> a,
@@ -57,4 +58,4 @@ Int Buffer 0 -> 0, 1 -> 97,
 Long Buffer 0 -> 97,
 Short Buffer 0 -> 0, 1 -> 0, 2 -> 0, 3 -> 97,
 Double Buffer 0 -> 4.8E-322,
-*///:~
+*/

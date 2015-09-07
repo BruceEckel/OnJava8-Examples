@@ -1,4 +1,4 @@
-//: annotations/database/SQLInteger.java
+// annotations/database/SQLInteger.java
 // ©2015 MindView LLC: see Copyright.txt
 package annotations.database;
 import java.lang.annotation.*;
@@ -8,4 +8,4 @@ import java.lang.annotation.*;
 public @interface SQLInteger {
   String name() default "";
   Constraints constraints() default @Constraints;
-} ///:~
+}

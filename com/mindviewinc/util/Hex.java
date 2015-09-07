@@ -1,4 +1,4 @@
-//: com/mindviewinc/util/Hex.java
+// com/mindviewinc/util/Hex.java
 // ©2015 MindView LLC: see Copyright.txt
 package com.mindviewinc.util;
 import java.io.*;
@@ -26,7 +26,8 @@ public class Hex {
       System.out.println(
         format(BinaryFile.read(new File(args[0]))));
   }
-} /* Output: (First 6 Lines)
+}
+/* Output: (First 6 Lines)
 00000: CA FE BA BE 00 00 00 34 00 53 0A 00 05 00 22 07
 00010: 00 23 0A 00 02 00 22 08 00 24 07 00 25 0A 00 26
 00020: 00 27 0A 00 28 00 29 0A 00 02 00 2A 08 00 2B 0A
@@ -34,4 +35,4 @@ public class Hex {
 00040: 31 08 00 32 0A 00 33 00 34 0A 00 15 00 35 0A 00
 00050: 36 00 37 07 00 38 0A 00 12 00 39 0A 00 33 00 3A
                   ...
-*///:~
+*/

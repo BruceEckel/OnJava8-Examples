@@ -1,4 +1,4 @@
-//: references/Cloning.java
+// references/Cloning.java
 // ©2015 MindView LLC: see Copyright.txt
 // The clone() operation works for only a few
 // items in the standard Java library.
@@ -28,7 +28,8 @@ public class Cloning {
     // See if it changed v's elements:
     System.out.println("v: " + v);
   }
-} /* Output:
+}
+/* Output:
 v: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 v: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-*///:~
+*/

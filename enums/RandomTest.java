@@ -1,4 +1,4 @@
-//: enums/RandomTest.java
+// enums/RandomTest.java
 // ©2015 MindView LLC: see Copyright.txt
 import com.mindviewinc.util.*;
 
@@ -10,8 +10,9 @@ public class RandomTest {
     for(int i = 0; i < 20; i++)
       System.out.print(Enums.random(Activity.class) + " ");
   }
-} /* Output:
+}
+/* Output:
 STANDING FLYING RUNNING STANDING RUNNING STANDING LYING
 DODGING SITTING RUNNING HOPPING HOPPING HOPPING RUNNING
 STANDING LYING FALLING RUNNING FLYING LYING
-*///:~
+*/

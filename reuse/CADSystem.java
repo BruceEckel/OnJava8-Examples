@@ -1,4 +1,4 @@
-//: reuse/CADSystem.java
+// reuse/CADSystem.java
 // ©2015 MindView LLC: see Copyright.txt
 // Ensuring proper cleanup.
 package reuse;
@@ -79,7 +79,8 @@ public class CADSystem extends Shape {
       x.dispose();
     }
   }
-} /* Output:
+}
+/* Output:
 Shape constructor
 Shape constructor
 Drawing Line: 0, 0
@@ -104,4 +105,4 @@ Shape dispose
 Erasing Line: 0, 0
 Shape dispose
 Shape dispose
-*///:~
+*/

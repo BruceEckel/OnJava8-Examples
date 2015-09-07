@@ -1,4 +1,4 @@
-//: generics/ListOfInt.java
+// generics/ListOfInt.java
 // ©2015 MindView LLC: see Copyright.txt
 // Autoboxing compensates for the inability to use
 // primitives in generics.
@@ -12,6 +12,7 @@ public class ListOfInt {
     for(int i : li)
       System.out.print(i + " ");
   }
-} /* Output:
+}
+/* Output:
 0 1 2 3 4
-*///:~
+*/

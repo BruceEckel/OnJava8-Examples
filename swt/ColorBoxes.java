@@ -1,4 +1,4 @@
-//: swt/ColorBoxes.java
+// swt/ColorBoxes.java
 // ©2015 MindView LLC: see Copyright.txt
 // SWT translation of Swing ColorBoxes.java.
 import swt.util.*;
@@ -78,4 +78,4 @@ public class ColorBoxes implements SWTApplication {
       boxes.pause = new Integer(args[1]);
     SWTConsole.run(boxes, 500, 400);
   }
-} ///:~
+}

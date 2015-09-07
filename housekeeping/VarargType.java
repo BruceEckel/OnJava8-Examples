@@ -1,4 +1,4 @@
-//: housekeeping/VarargType.java
+// housekeeping/VarargType.java
 // ©2015 MindView LLC: see Copyright.txt
 
 public class VarargType {
@@ -17,10 +17,11 @@ public class VarargType {
     g();
     System.out.println("int[]: " + new int[0].getClass());
   }
-} /* Output:
+}
+/* Output:
 class [Ljava.lang.Character; length 1
 class [Ljava.lang.Character; length 0
 class [I length 1
 class [I length 0
 int[]: class [I
-*///:~
+*/

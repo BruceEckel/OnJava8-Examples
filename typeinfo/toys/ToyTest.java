@@ -1,4 +1,4 @@
-//: typeinfo/toys/ToyTest.java
+// typeinfo/toys/ToyTest.java
 // ©2015 MindView LLC: see Copyright.txt
 // Testing class Class.
 package typeinfo.toys;
@@ -52,7 +52,8 @@ public class ToyTest {
     }
     printInfo(obj.getClass());
   }
-} /* Output:
+}
+/* Output:
 Class name: typeinfo.toys.FancyToy is interface? [false]
 Simple name: FancyToy
 Canonical name : typeinfo.toys.FancyToy
@@ -68,4 +69,4 @@ Canonical name : typeinfo.toys.Shoots
 Class name: typeinfo.toys.Toy is interface? [false]
 Simple name: Toy
 Canonical name : typeinfo.toys.Toy
-*///:~
+*/

@@ -1,4 +1,4 @@
-//: ui/TicTacToe.java
+// ui/TicTacToe.java
 // ©2015 MindView LLC: see Copyright.txt
 // Dialog boxes and creating your own components.
 import javax.swing.*;
@@ -82,4 +82,4 @@ public class TicTacToe extends JFrame {
   public static void main(String[] args) {
     run(new TicTacToe(), 200, 200);
   }
-} ///:~
+}

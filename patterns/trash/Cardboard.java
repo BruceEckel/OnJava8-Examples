@@ -1,4 +1,4 @@
-//: patterns/trash/Cardboard.java
+// patterns/trash/Cardboard.java
 // ©2015 MindView LLC: see Copyright.txt
 // The Cardboard class with prototyping.
 package patterns.trash;
@@ -11,4 +11,4 @@ public class Cardboard extends Trash {
   public static void value(double newVal) {
     val = newVal;
   }
-} ///:~
+}

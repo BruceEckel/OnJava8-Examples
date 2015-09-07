@@ -1,4 +1,4 @@
-//: remote/PerfectTimeImpl.java
+// remote/PerfectTimeImpl.java
 // ©2015 MindView LLC: see Copyright.txt
 // The implementation of the PerfectTime
 // remote object.
@@ -8,4 +8,4 @@ public class PerfectTimeImpl implements PerfectTime {
   public long getPerfectTime() throws RemoteException {
     return System.currentTimeMillis();
   }
-} ///:~
+}

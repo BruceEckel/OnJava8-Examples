@@ -1,4 +1,4 @@
-//: annotations/AtUnitExample4.java
+// annotations/AtUnitExample4.java
 // ©2015 MindView LLC: see Copyright.txt
 package annotations;
 import java.util.*;
@@ -58,7 +58,8 @@ public class AtUnitExample4 {
     OSExecute.command(
       "java com.mindviewinc.atunit.AtUnit AtUnitExample4");
   }
-} /* Output:
+}
+/* Output:
 starting
 annotations.AtUnitExample4
   . scramble1 'All'
@@ -67,4 +68,4 @@ lAl
 tsaeborornussu
   . words 'are'
 OK (3 tests)
-*///:~
+*/

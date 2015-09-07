@@ -1,4 +1,4 @@
-//: io/BufferedInputFile.java
+// io/BufferedInputFile.java
 // ©2015 MindView LLC: see Copyright.txt
 import java.io.*;
 
@@ -21,4 +21,5 @@ public class BufferedInputFile {
   throws IOException {
     System.out.print(read("BufferedInputFile.java"));
   }
-} /* Output: (Execute to see) *///:~
+}
+/* Output: (Execute to see) */

@@ -1,4 +1,4 @@
-//: containersindepth/ListPerformance.java
+// containersindepth/ListPerformance.java
 // ©2015 MindView LLC: see Copyright.txt
 // Demonstrates performance differences in Lists.
 // {Args: 100 500} Small to keep build testing short
@@ -185,20 +185,21 @@ public class ListPerformance {
     qTest.setHeadline("Queue tests");
     qTest.timedTest();
   }
-} /* Output:
+}
+/* Output:
 --- Array as List ---
- size     get     set
+size     get     set
   100      34      32
 --------------------- ArrayList ---------------------
- size     add     get     set iteradd  insert  remove
+size     add     get     set iteradd  insert  remove
   100      48      27      36      54     225     167
 --------------------- LinkedList ---------------------
- size     add     get     set iteradd  insert  remove
+size     add     get     set iteradd  insert  remove
   100      63      64      77     125     219      97
 ----------------------- Vector -----------------------
- size     add     get     set iteradd  insert  remove
+size     add     get     set iteradd  insert  remove
   100      35      48      49     117     213      98
 -------------------- Queue tests --------------------
- size    addFirst     addLast     rmFirst      rmLast
+size    addFirst     addLast     rmFirst      rmLast
   100          49          95          78          74
-*///:~
+*/

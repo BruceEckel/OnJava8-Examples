@@ -1,4 +1,4 @@
-//: ui/HelloSwing.java
+// ui/HelloSwing.java
 // ©2015 MindView LLC: see Copyright.txt
 import javax.swing.*;
 
@@ -9,4 +9,4 @@ public class HelloSwing {
     frame.setSize(300, 100);
     frame.setVisible(true);
   }
-} ///:~
+}

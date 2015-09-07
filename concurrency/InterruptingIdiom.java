@@ -1,4 +1,4 @@
-//: concurrency/InterruptingIdiom.java
+// concurrency/InterruptingIdiom.java
 // ©2015 MindView LLC: see Copyright.txt
 // General idiom for interrupting a task.
 // {Args: 1100}
@@ -63,7 +63,8 @@ public class InterruptingIdiom {
     TimeUnit.MILLISECONDS.sleep(new Integer(args[0]));
     t.interrupt();
   }
-} /* Output:
+}
+/* Output:
 NeedsCleanup 1
 Sleeping
 NeedsCleanup 2
@@ -72,4 +73,4 @@ Finished time-consuming operation
 Cleaning up 2
 Cleaning up 1
 Exiting via while() test
-*///:~
+*/

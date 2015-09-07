@@ -1,4 +1,4 @@
-//: ui/Progress.java
+// ui/Progress.java
 // ©2015 MindView LLC: see Copyright.txt
 // Using sliders, progress bars and progress monitors.
 import javax.swing.*;
@@ -30,4 +30,4 @@ public class Progress extends JFrame {
   public static void main(String[] args) {
     run(new Progress(), 300, 200);
   }
-} ///:~
+}

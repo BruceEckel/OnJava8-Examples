@@ -1,4 +1,4 @@
-//: control/BreakAndContinue.java
+// control/BreakAndContinue.java
 // ©2015 MindView LLC: see Copyright.txt
 // Demonstrates break and continue keywords.
 import static com.mindviewinc.util.Range.*;
@@ -11,7 +11,7 @@ public class BreakAndContinue {
       System.out.print(i + " ");
     }
     System.out.println();
-    // Using foreach:
+    // Using forEach:
     for(int i : range(100)) {
       if(i == 74) break; // Out of for loop
       if(i % 9 != 0) continue; // Next iteration
@@ -28,8 +28,9 @@ public class BreakAndContinue {
       System.out.print(i + " ");
     }
   }
-} /* Output:
+}
+/* Output:
 0 9 18 27 36 45 54 63 72
 0 9 18 27 36 45 54 63 72
 10 20 30 40
-*///:~
+*/

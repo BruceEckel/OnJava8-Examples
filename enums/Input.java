@@ -1,4 +1,4 @@
-//: enums/Input.java
+// enums/Input.java
 // ©2015 MindView LLC: see Copyright.txt
 import java.util.*;
 
@@ -26,4 +26,4 @@ public enum Input {
     // Don't include STOP:
     return values()[rand.nextInt(values().length - 1)];
   }
-} ///:~
+}

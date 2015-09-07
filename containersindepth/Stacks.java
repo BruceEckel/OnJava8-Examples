@@ -1,4 +1,4 @@
-//: containersindepth/Stacks.java
+// containersindepth/Stacks.java
 // ©2015 MindView LLC: see Copyright.txt
 // Demonstration of Stack Class.
 import java.util.*;
@@ -39,7 +39,8 @@ public class Stacks {
       printnb(stack2.pop() + " ");
 
   }
-} /* Output:
+}
+/* Output:
 stack = [JANUARY, FEBRUARY, MARCH, APRIL, MAY, JUNE, JULY,
 AUGUST, SEPTEMBER, OCTOBER, NOVEMBER]
 element 5 = JUNE
@@ -53,4 +54,4 @@ FEBRUARY JANUARY stack2 = [NOVEMBER, OCTOBER, SEPTEMBER,
 AUGUST, JULY, JUNE, MAY, APRIL, MARCH, FEBRUARY, JANUARY]
 NOVEMBER OCTOBER SEPTEMBER AUGUST JULY JUNE MAY APRIL MARCH
 FEBRUARY JANUARY
-*///:~
+*/

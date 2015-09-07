@@ -1,4 +1,4 @@
-//: reuse/SpaceShip.java
+// reuse/SpaceShip.java
 // ©2015 MindView LLC: see Copyright.txt
 
 public class SpaceShip extends SpaceShipControls {
@@ -10,4 +10,5 @@ public class SpaceShip extends SpaceShipControls {
     SpaceShip protector = new SpaceShip("NSEA Protector");
     protector.forward(100);
   }
-} /* Output: (None) *///:~
+}
+/* Output: (None) */

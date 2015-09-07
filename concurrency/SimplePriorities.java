@@ -1,4 +1,4 @@
-//: concurrency/SimplePriorities.java
+// concurrency/SimplePriorities.java
 // ©2015 MindView LLC: see Copyright.txt
 // Shows thread priorities.
 import java.util.concurrent.*;
@@ -37,7 +37,8 @@ public class SimplePriorities implements Runnable {
         new SimplePriorities(Thread.MAX_PRIORITY));
     exec.shutdown();
   }
-} /* Output: (First 10 Lines)
+}
+/* Output: (First 10 Lines)
 Thread[pool-1-thread-6,10,main]: 5
 Thread[pool-1-thread-1,1,main]: 5
 Thread[pool-1-thread-4,1,main]: 5
@@ -49,4 +50,4 @@ Thread[pool-1-thread-5,1,main]: 4
 Thread[pool-1-thread-4,1,main]: 4
 Thread[pool-1-thread-1,1,main]: 4
                   ...
-*///:~
+*/

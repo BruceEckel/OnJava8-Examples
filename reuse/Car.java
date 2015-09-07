@@ -1,4 +1,4 @@
-//: reuse/Car.java
+// reuse/Car.java
 // ©2015 MindView LLC: see Copyright.txt
 // Composition with public objects.
 
@@ -38,4 +38,5 @@ public class Car {
     car.left.window.rollup();
     car.wheel[0].inflate(72);
   }
-} /* Output: (None) *///:~
+}
+/* Output: (None) */

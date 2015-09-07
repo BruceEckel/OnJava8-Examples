@@ -1,4 +1,4 @@
-//: containers/AddingGroups.java
+// containers/AddingGroups.java
 // ©2015 MindView LLC: see Copyright.txt
 // Adding groups of elements to Collection objects.
 import java.util.*;
@@ -19,4 +19,5 @@ public class AddingGroups {
     // list.add(21); // Runtime error because the
                      // underlying array cannot be resized.
   }
-} /* Output: (None) *///:~
+}
+/* Output: (None) */

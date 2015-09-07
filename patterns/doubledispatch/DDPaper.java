@@ -1,4 +1,4 @@
-//: patterns/doubledispatch/DDPaper.java
+// patterns/doubledispatch/DDPaper.java
 // ©2015 MindView LLC: see Copyright.txt
 // Paper for double dispatching.
 package patterns.doubledispatch;
@@ -16,4 +16,4 @@ public class DDPaper extends Paper
     }
     return false;
   }
-} ///:~
+}

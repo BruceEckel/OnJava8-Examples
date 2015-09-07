@@ -1,4 +1,4 @@
-//: patterns/dynatrash/DynaTrash.java
+// patterns/dynatrash/DynaTrash.java
 // ©2015 MindView LLC: see Copyright.txt
 // Using a Map of Lists and RTTI
 // to automatically sort trash into
@@ -50,7 +50,8 @@ public class DynaTrash {
     while(keys.hasNext())
       Trash.sumValue(bin.get(keys.next()));
   }
-} /* Output: (First and last 10 Lines)
+}
+/* Output: (First and last 10 Lines)
 Loading patterns.trash.Glass
 Loading patterns.trash.Paper
 Loading patterns.trash.Aluminum
@@ -72,4 +73,4 @@ weight of patterns.trash.Paper = 91.0
 weight of patterns.trash.Paper = 80.0
 weight of patterns.trash.Paper = 66.0
 Total value = 35.80000053346157
-*///:~
+*/

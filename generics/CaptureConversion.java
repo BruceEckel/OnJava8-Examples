@@ -1,4 +1,4 @@
-//: generics/CaptureConversion.java
+// generics/CaptureConversion.java
 // ©2015 MindView LLC: see Copyright.txt
 
 public class CaptureConversion {
@@ -21,8 +21,9 @@ public class CaptureConversion {
     Holder<?> wildcarded = new Holder<>(1.0);
     f2(wildcarded);
   }
-} /* Output:
+}
+/* Output:
 Integer
 Object
 Double
-*///:~
+*/

@@ -1,4 +1,4 @@
-//: strings/StartEnd.java
+// strings/StartEnd.java
 // ©2015 MindView LLC: see Copyright.txt
 import java.util.regex.*;
 import static com.mindviewinc.util.Print.*;
@@ -44,7 +44,8 @@ public class StartEnd {
         examine(in, regex);
     }
   }
-} /* Output:
+}
+/* Output:
 input : As long as there is injustice, whenever a
 \w*ere\w*
 find() 'there' start = 11 end = 16
@@ -75,4 +76,4 @@ find() 'Never give up!' start = 0 end = 14
 find() 'Never surrender!' start = 15 end = 31
 lookingAt() start = 0 end = 14
 matches() start = 0 end = 31
-*///:~
+*/

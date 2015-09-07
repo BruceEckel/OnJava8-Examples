@@ -1,4 +1,4 @@
-//: references/CopyConstructor.java
+// references/CopyConstructor.java
 // ©2015 MindView LLC: see Copyright.txt
 // A constructor to copy an object of the same
 // type, as an attempt to create a local copy.
@@ -171,7 +171,8 @@ public class CopyConstructor {
     slice2(g); // OK
     g.evaluate();
   }
-} /* Output:
+}
+/* Output:
 In ripen, t is a Tomato
 In slice, f is a Fruit
 In ripen2, t is a Tomato
@@ -180,4 +181,4 @@ In ripen, t is a Tomato
 In slice, f is a Fruit
 In ripen2, t is a GreenZebra
 In slice2, f is a GreenZebra
-*///:~
+*/

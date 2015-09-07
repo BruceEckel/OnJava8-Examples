@@ -1,4 +1,4 @@
-//: polymorphism/shape/Triangle.java
+// polymorphism/shape/Triangle.java
 // ©2015 MindView LLC: see Copyright.txt
 package polymorphism.shape;
 import static com.mindviewinc.util.Print.*;
@@ -8,4 +8,4 @@ public class Triangle extends Shape {
   public void draw() { print("Triangle.draw()"); }
   @Override
   public void erase() { print("Triangle.erase()"); }
-} ///:~
+}

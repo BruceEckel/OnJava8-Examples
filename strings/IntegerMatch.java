@@ -1,4 +1,4 @@
-//: strings/IntegerMatch.java
+// strings/IntegerMatch.java
 // ©2015 MindView LLC: see Copyright.txt
 
 public class IntegerMatch {
@@ -8,9 +8,10 @@ public class IntegerMatch {
     System.out.println("+911".matches("-?\\d+"));
     System.out.println("+911".matches("(-|\\+)?\\d+"));
   }
-} /* Output:
+}
+/* Output:
 true
 true
 false
 true
-*///:~
+*/

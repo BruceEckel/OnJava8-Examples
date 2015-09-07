@@ -1,4 +1,4 @@
-//: annotations/simplest/SimpleTest.java
+// annotations/simplest/SimpleTest.java
 // ©2015 MindView LLC: see Copyright.txt
 // Test the "Simple" annotation
 package annotations.simplest;
@@ -23,6 +23,7 @@ public class SimpleTest {
     SimpleTest st = new SimpleTest();
     st.foo();
   }
-} /* Output:
+}
+/* Output:
 SimpleTest.foo()
-*///:~
+*/

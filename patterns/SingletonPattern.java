@@ -1,4 +1,4 @@
-//: patterns/SingletonPattern.java
+// patterns/SingletonPattern.java
 // ©2015 MindView LLC: see Copyright.txt
 // The Singleton design pattern: you can
 // never instantiate more than one.
@@ -30,7 +30,8 @@ public class SingletonPattern {
       // Singleton s3 = (Singleton)s2.clone();
     } catch(Exception e) {}
   }
-} /* Output:
+}
+/* Output:
 47
 9
-*///:~
+*/

@@ -1,4 +1,4 @@
-//: com/mindviewinc/util/Print.java
+// com/mindviewinc/util/Print.java
 // ©2015 MindView LLC: see Copyright.txt
 // Print methods that can be used without
 // qualifiers, using static imports:
@@ -23,4 +23,4 @@ public class Print {
   printf(String format, Object... args) {
     return System.out.printf(format, args);
   }
-} ///:~
+}

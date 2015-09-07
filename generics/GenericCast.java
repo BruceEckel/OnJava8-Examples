@@ -1,4 +1,4 @@
-//: generics/GenericCast.java
+// generics/GenericCast.java
 // ©2015 MindView LLC: see Copyright.txt
 
 class FixedSizeStack<T> {
@@ -24,6 +24,7 @@ public class GenericCast {
       System.out.print(s + " ");
     }
   }
-} /* Output:
+}
+/* Output:
 J I H G F E D C B A
-*///:~
+*/

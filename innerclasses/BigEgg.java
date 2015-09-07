@@ -1,4 +1,4 @@
-//: innerclasses/BigEgg.java
+// innerclasses/BigEgg.java
 // ©2015 MindView LLC: see Copyright.txt
 // An inner class cannot be overriden like a method.
 import static com.mindviewinc.util.Print.*;
@@ -21,7 +21,8 @@ public class BigEgg extends Egg {
   public static void main(String[] args) {
     new BigEgg();
   }
-} /* Output:
+}
+/* Output:
 New Egg()
 Egg.Yolk()
-*///:~
+*/

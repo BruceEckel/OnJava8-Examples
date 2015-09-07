@@ -1,4 +1,4 @@
-//: patterns/strategy/StrategyPattern.java
+// patterns/strategy/StrategyPattern.java
 // ©2015 MindView LLC: see Copyright.txt
 package patterns.strategy;
 import java.util.function.*;
@@ -54,7 +54,8 @@ public class StrategyPattern {
     solver.changeAlgorithm(new Bisection());
     printArray(solver.minima(line));
   }
-} /* Output:
+}
+/* Output:
 1.1, 2.2
 5.5, 6.6
-*///:~
+*/

@@ -1,4 +1,4 @@
-//: strings/Groups.java
+// strings/Groups.java
 // ©2015 MindView LLC: see Copyright.txt
 import java.util.regex.*;
 import static com.mindviewinc.util.Print.*;
@@ -23,7 +23,8 @@ public class Groups {
       print();
     }
   }
-} /* Output:
+}
+/* Output:
 [the slithy toves][the][slithy toves][slithy][toves]
 [in the wabe.][in][the wabe.][the][wabe.]
 [were the borogoves,][were][the
@@ -35,4 +36,4 @@ outgrabe.][raths][outgrabe.]
 [bird, and shun][bird,][and shun][and][shun]
 [The frumious Bandersnatch.][The][frumious
 Bandersnatch.][frumious][Bandersnatch.]
-*///:~
+*/

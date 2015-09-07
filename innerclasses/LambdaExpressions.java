@@ -1,4 +1,4 @@
-//: innerclasses/LambdaExpressions.java
+// innerclasses/LambdaExpressions.java
 // ©2015 MindView LLC: see Copyright.txt
 import static com.mindviewinc.util.Print.*;
 
@@ -39,10 +39,11 @@ public class LambdaExpressions {
     print(le.bod2.detailed("Oh!"));
     print(le.mult.twoArg("Pi! ", 3.14159));
   }
-} /* Output:
+}
+/* Output:
 Short info
 Short info
 Hi! More details
 Oh! No Parens!
 Pi! 3.14159
-*///:~
+*/

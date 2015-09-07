@@ -1,4 +1,4 @@
-//: arrays/StringSorting.java
+// arrays/StringSorting.java
 // ©2015 MindView LLC: see Copyright.txt
 // Sorting an array of Strings.
 import java.util.*;
@@ -17,7 +17,8 @@ public class StringSorting {
     Arrays.sort(sa, String.CASE_INSENSITIVE_ORDER);
     print("Case-insensitive sort: " + Arrays.toString(sa));
   }
-} /* Output:
+}
+/* Output:
 Before sort: [YNzbr, nyGcF, OWZnT, cQrGs, eGZMm, JMRoE,
 suEcU, OneOE, dLsmw, HLGEa, hKcxr, EqUCB, bkIna, Mesbt,
 WHkjU, rUkZP, gwsqP, zDyCy, RFJQA, HxxHv]
@@ -30,4 +31,4 @@ OWZnT, Mesbt, JMRoE, HxxHv, HLGEa, EqUCB]
 Case-insensitive sort: [bkIna, cQrGs, dLsmw, eGZMm, EqUCB,
 gwsqP, hKcxr, HLGEa, HxxHv, JMRoE, Mesbt, nyGcF, OneOE,
 OWZnT, RFJQA, rUkZP, suEcU, WHkjU, YNzbr, zDyCy]
-*///:~
+*/

@@ -1,4 +1,4 @@
-//: concurrency/Interrupting.java
+// concurrency/Interrupting.java
 // ©2015 MindView LLC: see Copyright.txt
 // Interrupting a blocked thread.
 import java.util.concurrent.*;
@@ -75,7 +75,8 @@ public class Interrupting {
     print("Aborting with System.exit(0)");
     System.exit(0); // ... since last 2 interrupts failed
   }
-} /* Output:
+}
+/* Output:
 Interrupting SleepBlocked
 InterruptedException
 Exiting SleepBlocked.run()
@@ -87,4 +88,4 @@ Trying to call f()
 Interrupting SynchronizedBlocked
 Interrupt sent to SynchronizedBlocked
 Aborting with System.exit(0)
-*///:~
+*/

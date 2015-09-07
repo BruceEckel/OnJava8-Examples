@@ -1,4 +1,4 @@
-//: concurrency/OrnamentalGarden.java
+// concurrency/OrnamentalGarden.java
 // ©2015 MindView LLC: see Copyright.txt
 import java.util.concurrent.*;
 import java.util.*;
@@ -78,7 +78,8 @@ public class OrnamentalGarden {
     print("Total: " + Entrance.getTotalCount());
     print("Sum of Entrances: " + Entrance.sumEntrances());
   }
-} /* Output: (First and last 10 Lines)
+}
+/* Output: (First and last 10 Lines)
 Entrance 0: 1 Total: 1
 Entrance 1: 1 Total: 2
 Entrance 4: 1 Total: 5
@@ -100,4 +101,4 @@ Stopping Entrance 2: 30
 Stopping Entrance 3: 30
 Total: 150
 Sum of Entrances: 150
-*///:~
+*/

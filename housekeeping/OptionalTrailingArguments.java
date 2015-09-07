@@ -1,4 +1,4 @@
-//: housekeeping/OptionalTrailingArguments.java
+// housekeeping/OptionalTrailingArguments.java
 // ©2015 MindView LLC: see Copyright.txt
 
 public class OptionalTrailingArguments {
@@ -13,8 +13,9 @@ public class OptionalTrailingArguments {
     f(2, "two", "three");
     f(0);
   }
-} /* Output:
+}
+/* Output:
 required: 1 one
 required: 2 two three
 required: 0
-*///:~
+*/

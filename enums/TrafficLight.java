@@ -1,4 +1,4 @@
-//: enums/TrafficLight.java
+// enums/TrafficLight.java
 // ©2015 MindView LLC: see Copyright.txt
 // Enums in switch statements.
 import static com.mindviewinc.util.Print.*;
@@ -31,7 +31,8 @@ public class TrafficLight {
       t.change();
     }
   }
-} /* Output:
+}
+/* Output:
 The traffic light is RED
 The traffic light is GREEN
 The traffic light is YELLOW
@@ -39,4 +40,4 @@ The traffic light is RED
 The traffic light is GREEN
 The traffic light is YELLOW
 The traffic light is RED
-*///:~
+*/

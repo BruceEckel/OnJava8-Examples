@@ -1,4 +1,4 @@
-#: arrays/PythonLists.py
+# arrays/PythonLists.py
 # ©2015 MindView LLC: see Copyright.txt
 
 aList = [1, 2, 3, 4, 5]
@@ -22,4 +22,4 @@ class MyList(list): # Inherit from list
 list2 = MyList(aList)
 print(type(list2)) # <class '__main__.MyList'>
 print(list2.getReversed()) # [8, 7, 6, 5, 4, 3, 2, 1]
-#:~
+#>

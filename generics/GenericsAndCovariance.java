@@ -1,4 +1,4 @@
-//: generics/GenericsAndCovariance.java
+// generics/GenericsAndCovariance.java
 // ©2015 MindView LLC: see Copyright.txt
 import java.util.*;
 
@@ -14,4 +14,5 @@ public class GenericsAndCovariance {
     // We know that it returns at least Fruit:
     Fruit f = flist.get(0);
   }
-} /* Output: (None) *///:~
+}
+/* Output: (None) */

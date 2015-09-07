@@ -1,6 +1,6 @@
-//: containers/IterableClass.java
+// containers/IterableClass.java
 // ©2015 MindView LLC: see Copyright.txt
-// Anything Iterable works with foreach.
+// Anything Iterable works with forEach.
 import java.util.*;
 
 public class IterableClass implements Iterable<String> {
@@ -26,6 +26,7 @@ public class IterableClass implements Iterable<String> {
     for(String s : new IterableClass())
       System.out.print(s + " ");
   }
-} /* Output:
+}
+/* Output:
 And that is how we know the Earth to be banana-shaped.
-*///:~
+*/

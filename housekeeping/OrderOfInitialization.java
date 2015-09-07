@@ -1,4 +1,4 @@
-//: housekeeping/OrderOfInitialization.java
+// housekeeping/OrderOfInitialization.java
 // ©2015 MindView LLC: see Copyright.txt
 // Demonstrates initialization order.
 import static com.mindviewinc.util.Print.*;
@@ -26,11 +26,12 @@ public class OrderOfInitialization {
     House h = new House();
     h.f(); // Shows that construction is done
   }
-} /* Output:
+}
+/* Output:
 Window(1)
 Window(2)
 Window(3)
 House()
 Window(33)
 f()
-*///:~
+*/

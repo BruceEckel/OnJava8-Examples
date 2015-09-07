@@ -1,4 +1,4 @@
-//: com/mindviewinc/util/Directory.java
+// com/mindviewinc/util/Directory.java
 // ©2015 MindView LLC: see Copyright.txt
 // Produce a sequence of File objects that match a
 // regular expression in either a local directory,
@@ -77,7 +77,8 @@ public final class Directory {
       for(String arg : args)
        System.out.println(walk(arg));
   }
-} /* Output: (First 20 Lines)
+}
+/* Output: (First 20 Lines)
 dirs: []
 files: [
   .\BasicGenerator.class
@@ -98,4 +99,4 @@ files: [
   .\CountingGenerator$Double.class
   .\CountingGenerator$Float.class
                   ...
-*///:~
+*/

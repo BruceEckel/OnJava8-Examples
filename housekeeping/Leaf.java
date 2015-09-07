@@ -1,4 +1,4 @@
-//: housekeeping/Leaf.java
+// housekeeping/Leaf.java
 // ©2015 MindView LLC: see Copyright.txt
 // Simple use of the "this" keyword.
 
@@ -15,6 +15,7 @@ public class Leaf {
     Leaf x = new Leaf();
     x.increment().increment().increment().print();
   }
-} /* Output:
+}
+/* Output:
 i = 3
-*///:~
+*/

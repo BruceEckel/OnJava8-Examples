@@ -1,4 +1,4 @@
-//: generics/IterableFibonacci.java
+// generics/IterableFibonacci.java
 // ©2015 MindView LLC: see Copyright.txt
 // Adapt the Fibonacci class to make it Iterable.
 import java.util.*;
@@ -27,6 +27,7 @@ extends Fibonacci implements Iterable<Integer> {
     for(int i : new IterableFibonacci(18))
       System.out.print(i + " ");
   }
-} /* Output:
+}
+/* Output:
 1 1 2 3 5 8 13 21 34 55 89 144 233 377 610 987 1597 2584
-*///:~
+*/

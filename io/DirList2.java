@@ -1,4 +1,4 @@
-//: io/DirList2.java
+// io/DirList2.java
 // ©2015 MindView LLC: see Copyright.txt
 // Uses anonymous inner classes.
 // {Args: "D.*\.java"}
@@ -28,9 +28,10 @@ public class DirList2 {
     for(String dirItem : list)
       System.out.println(dirItem);
   }
-} /* Output:
+}
+/* Output:
 DirectoryDemo.java
 DirList.java
 DirList2.java
 DirList3.java
-*///:~
+*/

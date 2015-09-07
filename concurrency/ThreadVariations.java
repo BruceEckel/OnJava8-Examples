@@ -1,4 +1,4 @@
-//: concurrency/ThreadVariations.java
+// concurrency/ThreadVariations.java
 // ©2015 MindView LLC: see Copyright.txt
 // Creating threads with inner classes.
 import java.util.concurrent.*;
@@ -161,7 +161,8 @@ public class ThreadVariations {
     new InnerRunnable2("InnerRunnable2");
     new ThreadMethod("ThreadMethod").runTask();
   }
-} /* Output:
+}
+/* Output:
 InnerThread1: 5
 InnerThread2: 5
 InnerThread1: 4
@@ -187,4 +188,4 @@ ThreadMethod: 4
 ThreadMethod: 3
 ThreadMethod: 2
 ThreadMethod: 1
-*///:~
+*/

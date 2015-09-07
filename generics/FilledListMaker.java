@@ -1,4 +1,4 @@
-//: generics/FilledListMaker.java
+// generics/FilledListMaker.java
 // ©2015 MindView LLC: see Copyright.txt
 import java.util.*;
 
@@ -15,6 +15,7 @@ public class FilledListMaker<T> {
     List<String> list = stringMaker.create("Hello", 4);
     System.out.println(list);
   }
-} /* Output:
+}
+/* Output:
 [Hello, Hello, Hello, Hello]
-*///:~
+*/

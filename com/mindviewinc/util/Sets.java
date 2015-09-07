@@ -1,4 +1,4 @@
-//: com/mindviewinc/util/Sets.java
+// com/mindviewinc/util/Sets.java
 // ©2015 MindView LLC: see Copyright.txt
 package com.mindviewinc.util;
 import java.util.*;
@@ -26,4 +26,4 @@ public class Sets {
   public static <T> Set<T> complement(Set<T> a, Set<T> b) {
     return difference(union(a, b), intersection(a, b));
   }
-} ///:~
+}

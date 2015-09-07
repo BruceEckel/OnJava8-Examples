@@ -1,4 +1,4 @@
-//: concurrency/ResponsiveUI.java
+// concurrency/ResponsiveUI.java
 // ©2015 MindView LLC: see Copyright.txt
 // User interface responsiveness.
 // {TimeOutDuringTesting}
@@ -30,4 +30,5 @@ public class ResponsiveUI extends Thread {
     System.in.read();
     System.out.println(d); // Shows progress
   }
-} /* Output: (None) *///:~
+}
+/* Output: (None) */

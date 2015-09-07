@@ -1,4 +1,4 @@
-//: io/LockingMappedFiles.java
+// io/LockingMappedFiles.java
 // ©2015 MindView LLC: see Copyright.txt
 // Locking portions of a mapped file.
 import java.nio.*;
@@ -45,9 +45,10 @@ public class LockingMappedFiles {
       }
     }
   }
-} /* Output:
+}
+/* Output:
 Locked: 75497471 to 113246206
 Locked: 0 to 50331647
 Released: 75497471 to 113246206
 Released: 0 to 50331647
-*///:~
+*/

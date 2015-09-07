@@ -1,4 +1,4 @@
-//: innerclasses/Parcel11.java
+// innerclasses/Parcel11.java
 // ©2015 MindView LLC: see Copyright.txt
 // Nested classes (static inner classes).
 
@@ -34,4 +34,5 @@ public class Parcel11 {
     Contents c = contents();
     Destination d = destination("Tasmania");
   }
-} /* Output: (None) *///:~
+}
+/* Output: (None) */

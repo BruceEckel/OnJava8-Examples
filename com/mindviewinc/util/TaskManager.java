@@ -1,4 +1,4 @@
-//: com/mindviewinc/util/TaskManager.java
+// com/mindviewinc/util/TaskManager.java
 // ©2015 MindView LLC: see Copyright.txt
 // Managing and executing a queue of tasks.
 package com.mindviewinc.util;
@@ -43,4 +43,4 @@ extends ArrayList<TaskItem<R,C>> {
     }
     return results;
   }
-} ///:~
+}

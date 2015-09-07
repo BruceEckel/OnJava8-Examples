@@ -1,4 +1,4 @@
-//: innerclasses/DotThis.java
+// innerclasses/DotThis.java
 // ©2015 MindView LLC: see Copyright.txt
 // Qualifying access to the outer-class object.
 
@@ -16,6 +16,7 @@ public class DotThis {
     DotThis.Inner dti = dt.inner();
     dti.outer().f();
   }
-} /* Output:
+}
+/* Output:
 DotThis.f()
-*///:~
+*/

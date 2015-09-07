@@ -1,4 +1,4 @@
-//: ui/List.java
+// ui/List.java
 // ©2015 MindView LLC: see Copyright.txt
 import javax.swing.*;
 import javax.swing.border.*;
@@ -56,4 +56,4 @@ public class List extends JFrame {
   public static void main(String[] args) {
     run(new List(), 250, 375);
   }
-} ///:~
+}

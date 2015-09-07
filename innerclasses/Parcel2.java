@@ -1,4 +1,4 @@
-//: innerclasses/Parcel2.java
+// innerclasses/Parcel2.java
 // ©2015 MindView LLC: see Copyright.txt
 // Returning a reference to an inner class.
 
@@ -33,6 +33,7 @@ public class Parcel2 {
     Parcel2.Contents c = q.contents();
     Parcel2.Destination d = q.to("Borneo");
   }
-} /* Output:
+}
+/* Output:
 Tasmania
-*///:~
+*/

@@ -1,4 +1,4 @@
-//: generics/ErasureAndInheritance.java
+// generics/ErasureAndInheritance.java
 // ©2015 MindView LLC: see Copyright.txt
 
 class GenericBase<T> {
@@ -23,4 +23,5 @@ public class ErasureAndInheritance {
     Object obj = d2.get();
     d2.set(obj); // Warning here!
   }
-} /* Output: (None) *///:~
+}
+/* Output: (None) */

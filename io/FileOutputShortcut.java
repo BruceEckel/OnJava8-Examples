@@ -1,4 +1,4 @@
-//: io/FileOutputShortcut.java
+// io/FileOutputShortcut.java
 // ©2015 MindView LLC: see Copyright.txt
 import java.io.*;
 
@@ -19,4 +19,5 @@ public class FileOutputShortcut {
     // Show the stored file:
     System.out.println(BufferedInputFile.read(file));
   }
-} /* Output: (Execute to see) *///:~
+}
+/* Output: (Execute to see) */

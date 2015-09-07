@@ -1,4 +1,4 @@
-//: com/mindviewinc/util/ContainerMethodDifferences.java
+// com/mindviewinc/util/ContainerMethodDifferences.java
 // ©2015 MindView LLC: see Copyright.txt
 package com.mindviewinc.util;
 import java.lang.reflect.*;
@@ -50,7 +50,8 @@ public class ContainerMethodDifferences {
     difference(SortedMap.class, Map.class);
     difference(TreeMap.class, Map.class);
   }
-} /* Output:
+}
+/* Output:
 Collection: [add, addAll, clear, contains, containsAll,
 equals, forEach, hashCode, isEmpty, iterator,
 parallelStream, remove, removeAll, removeIf, retainAll,
@@ -105,4 +106,4 @@ pollFirstEntry, lastKey, firstEntry, floorEntry,
 comparator, lastEntry]
 Interfaces in TreeMap: [NavigableMap, Cloneable,
 Serializable]
-*///:~
+*/

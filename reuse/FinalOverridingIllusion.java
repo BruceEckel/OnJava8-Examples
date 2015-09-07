@@ -1,4 +1,4 @@
-//: reuse/FinalOverridingIllusion.java
+// reuse/FinalOverridingIllusion.java
 // ©2015 MindView LLC: see Copyright.txt
 // It only looks like you can override
 // a private or private final method.
@@ -44,7 +44,8 @@ public class FinalOverridingIllusion {
     //! wf.f();
     //! wf.g();
   }
-} /* Output:
+}
+/* Output:
 OverridingPrivate2.f()
 OverridingPrivate2.g()
-*///:~
+*/

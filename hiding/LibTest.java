@@ -1,4 +1,4 @@
-//: hiding/LibTest.java
+// hiding/LibTest.java
 // ©2015 MindView LLC: see Copyright.txt
 // Uses the library.
 import com.mindviewinc.simple.*;
@@ -8,7 +8,8 @@ public class LibTest {
     Vector v = new Vector();
     List l = new List();
   }
-} /* Output:
+}
+/* Output:
 com.mindviewinc.simple.Vector
 com.mindviewinc.simple.List
-*///:~
+*/

@@ -1,4 +1,4 @@
-//: unittesting/JUnitDemo.java
+// unittesting/JUnitDemo.java
 // ©2015 MindView LLC: see Copyright.txt
 // Simple use of JUnit to test ArrayList
 // (Install libraries from www.junit.org)
@@ -92,7 +92,8 @@ public class JUnitDemo {
     org.junit.runner.JUnitCore.runClasses(
       JUnitDemo.class);
   }
-} /* Output:
+}
+/* Output:
 CountedList #0
 Running testAddAll()
 CountedList #1
@@ -103,4 +104,4 @@ CountedList #3
 Running testOrder()
 CountedList #4
 Running testReplace()
-*///:~
+*/

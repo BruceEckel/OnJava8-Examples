@@ -1,4 +1,4 @@
-//: generics/PlainGenericInheritance.java
+// generics/PlainGenericInheritance.java
 // ©2015 MindView LLC: see Copyright.txt
 
 class GenericSetter<T> { // Not self-bounded
@@ -21,7 +21,8 @@ public class PlainGenericInheritance {
     dgs.set(derived);
     dgs.set(base); // Compiles: overloaded, not overridden!
   }
-} /* Output:
+}
+/* Output:
 DerivedGS.set(Derived)
 GenericSetter.set(Base)
-*///:~
+*/

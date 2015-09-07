@@ -1,4 +1,4 @@
-//: references/Compete.java
+// references/Compete.java
 // ©2015 MindView LLC: see Copyright.txt
 import java.io.*;
 
@@ -76,7 +76,8 @@ public class Compete {
       "Duplication via cloning: " +
       (t2 - t1) + " Milliseconds");
   }
-} /* Output:
+}
+/* Output:
 Duplication via serialization: 274 Milliseconds
 Duplication via cloning: 21 Milliseconds
-*///:~
+*/

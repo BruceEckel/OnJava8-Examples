@@ -1,4 +1,4 @@
-//: housekeeping/DynamicArray.java
+// housekeeping/DynamicArray.java
 // ©2015 MindView LLC: see Copyright.txt
 // Array initialization.
 
@@ -13,6 +13,7 @@ class Other {
     for(String s : args)
       System.out.print(s + " ");
   }
-} /* Output:
+}
+/* Output:
 fiddle de dum
-*///:~
+*/

@@ -1,4 +1,4 @@
-//: patterns/TemplateMethod.java
+// patterns/TemplateMethod.java
 // ©2015 MindView LLC: see Copyright.txt
 // Simple demonstration of Template Method.
 
@@ -33,10 +33,11 @@ public class TemplateMethod {
   public static void main(String args[]) {
     new MyApp();
   }
-} /* Output:
+}
+/* Output:
 Hello World!
 Hello World!
 Hello World!
 Hello World!
 Hello World!
-*///:~
+*/

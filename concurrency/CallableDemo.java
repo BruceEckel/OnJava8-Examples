@@ -1,4 +1,4 @@
-//: concurrency/CallableDemo.java
+// concurrency/CallableDemo.java
 // ©2015 MindView LLC: see Copyright.txt
 import java.util.concurrent.*;
 import java.util.*;
@@ -33,7 +33,8 @@ public class CallableDemo {
         exec.shutdown();
       }
   }
-} /* Output:
+}
+/* Output:
 result of TaskWithResult 0
 result of TaskWithResult 1
 result of TaskWithResult 2
@@ -44,4 +45,4 @@ result of TaskWithResult 6
 result of TaskWithResult 7
 result of TaskWithResult 8
 result of TaskWithResult 9
-*///:~
+*/

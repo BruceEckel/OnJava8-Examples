@@ -1,6 +1,6 @@
-//: containers/ForEachCollections.java
+// containers/ForEachCollections.java
 // ©2015 MindView LLC: see Copyright.txt
-// All collections work with foreach.
+// All collections work with forEach.
 import java.util.*;
 
 public class ForEachCollections {
@@ -11,6 +11,7 @@ public class ForEachCollections {
     for(String s : cs)
       System.out.print("'" + s + "' ");
   }
-} /* Output:
+}
+/* Output:
 'Take' 'the' 'long' 'way' 'home'
-*///:~
+*/

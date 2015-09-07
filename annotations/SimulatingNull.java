@@ -1,4 +1,4 @@
-//: annotations/SimulatingNull.java
+// annotations/SimulatingNull.java
 // ©2015 MindView LLC: see Copyright.txt
 import java.lang.annotation.*;
 
@@ -7,4 +7,4 @@ import java.lang.annotation.*;
 public @interface SimulatingNull {
   public int id() default -1;
   public String description() default "";
-} ///:~
+}

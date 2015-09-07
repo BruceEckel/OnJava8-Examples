@@ -1,4 +1,4 @@
-//: innerclasses/UnboundMethodReference.java
+// innerclasses/UnboundMethodReference.java
 // ©2015 MindView LLC: see Copyright.txt
 // Method reference without an object.
 import java.util.*;
@@ -21,10 +21,11 @@ public class UnboundMethodReference {
     Function<X, String> xfr = X::f;
     print(xfr.apply(new X()));
   }
-} /* Output:
+}
+/* Output:
 22
 Rain
 Spain
 Plain
 X.f()
-*///:~
+*/

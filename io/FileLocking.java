@@ -1,4 +1,4 @@
-//: io/FileLocking.java
+// io/FileLocking.java
 // ©2015 MindView LLC: see Copyright.txt
 import java.nio.channels.*;
 import java.util.concurrent.*;
@@ -17,7 +17,8 @@ public class FileLocking {
       }
     }
   }
-} /* Output:
+}
+/* Output:
 Locked File
 Released Lock
-*///:~
+*/

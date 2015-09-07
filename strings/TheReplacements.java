@@ -1,4 +1,4 @@
-//: strings/TheReplacements.java
+// strings/TheReplacements.java
 // ©2015 MindView LLC: see Copyright.txt
 import java.util.regex.*;
 import com.mindviewinc.util.*;
@@ -37,7 +37,8 @@ public class TheReplacements {
     m.appendTail(sbuf);
     print(sbuf);
   }
-} /* Output:
+}
+/* Output:
 Here's a block of text to use as input to
 the regular expression matcher. Note that we
 first extract the block of text by looking for
@@ -48,4 +49,4 @@ thE rEgUlAr ExprEssIOn mAtchEr. NOtE thAt wE
 fIrst ExtrAct thE blOck Of tExt by lOOkIng fOr
 thE spEcIAl dElImItErs, thEn prOcEss thE
 ExtrActEd blOck.
-*///:~
+*/

@@ -1,4 +1,4 @@
-//: generics/CovariantArrays.java
+// generics/CovariantArrays.java
 // ©2015 MindView LLC: see Copyright.txt
 
 class Fruit {}
@@ -21,7 +21,8 @@ public class CovariantArrays {
       fruit[0] = new Orange(); // ArrayStoreException
     } catch(Exception e) { System.out.println(e); }
   }
-} /* Output:
+}
+/* Output:
 java.lang.ArrayStoreException: Fruit
 java.lang.ArrayStoreException: Orange
-*///:~
+*/

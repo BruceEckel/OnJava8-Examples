@@ -1,4 +1,4 @@
-//: innerclasses/Parcel9.java
+// innerclasses/Parcel9.java
 // ©2015 MindView LLC: see Copyright.txt
 // An anonymous inner class that performs
 // initialization. A briefer version of Parcel5.java.
@@ -17,4 +17,5 @@ public class Parcel9 {
     Parcel9 p = new Parcel9();
     Destination d = p.destination("Tasmania");
   }
-} /* Output: (None) *///:~
+}
+/* Output: (None) */

@@ -1,4 +1,4 @@
-//: generics/Wildcards.java
+// generics/Wildcards.java
 // ©2015 MindView LLC: see Copyright.txt
 // Exploring the meaning of wildcards.
 
@@ -117,4 +117,5 @@ public class Wildcards {
     //   wildSupertype(Holder<? super T>,T) cannot be
     //  applied to (Holder<capture of ? extends Long>,Long)
   }
-} /* Output: (None) *///:~
+}
+/* Output: (None) */

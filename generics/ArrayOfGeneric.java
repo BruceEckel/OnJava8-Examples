@@ -1,4 +1,4 @@
-//: generics/ArrayOfGeneric.java
+// generics/ArrayOfGeneric.java
 // ©2015 MindView LLC: see Copyright.txt
 
 public class ArrayOfGeneric {
@@ -16,6 +16,7 @@ public class ArrayOfGeneric {
     // Discovers type mismatch at compile time:
     //! gia[2] = new Generic<Double>();
   }
-} /* Output:
+}
+/* Output:
 Generic[]
-*///:~
+*/

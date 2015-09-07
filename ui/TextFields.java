@@ -1,4 +1,4 @@
-//: ui/TextFields.java
+// ui/TextFields.java
 // ©2015 MindView LLC: see Copyright.txt
 // Text fields and Java events.
 import javax.swing.*;
@@ -87,4 +87,4 @@ class UpperCaseDocument extends PlainDocument {
     if(upperCase) str = str.toUpperCase();
     super.insertString(offset, str, attSet);
   }
-} ///:~
+}

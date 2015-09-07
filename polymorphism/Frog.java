@@ -1,4 +1,4 @@
-//: polymorphism/Frog.java
+// polymorphism/Frog.java
 // ©2015 MindView LLC: see Copyright.txt
 // Cleanup and inheritance.
 package polymorphism;
@@ -89,7 +89,8 @@ public class Frog extends Amphibian {
     print("Bye!");
     frog.dispose();
   }
-} /* Output:
+}
+/* Output:
 Creating Characteristic is alive
 Creating Description Basic Living Creature
 LivingCreature()
@@ -115,4 +116,4 @@ disposing Characteristic has heart
 LivingCreature dispose
 disposing Description Basic Living Creature
 disposing Characteristic is alive
-*///:~
+*/

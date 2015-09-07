@@ -1,4 +1,4 @@
-//: references/PassReferences.java
+// references/PassReferences.java
 // ©2015 MindView LLC: see Copyright.txt
 // Passing references around.
 
@@ -11,7 +11,8 @@ public class PassReferences {
     System.out.println("p inside main(): " + p);
     f(p);
   }
-} /* Output:
+}
+/* Output:
 p inside main(): PassReferences@19e0bfd
 h inside f(): PassReferences@19e0bfd
-*///:~
+*/

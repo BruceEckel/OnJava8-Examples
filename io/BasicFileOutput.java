@@ -1,4 +1,4 @@
-//: io/BasicFileOutput.java
+// io/BasicFileOutput.java
 // ©2015 MindView LLC: see Copyright.txt
 import java.io.*;
 
@@ -19,4 +19,5 @@ public class BasicFileOutput {
     // Show the stored file:
     System.out.println(BufferedInputFile.read(file));
   }
-} /* Output: (Execute to see) *///:~
+}
+/* Output: (Execute to see) */

@@ -1,4 +1,4 @@
-//: exceptions/LoggingExceptions2.java
+// exceptions/LoggingExceptions2.java
 // ©2015 MindView LLC: see Copyright.txt
 // Logging caught exceptions.
 import java.util.logging.*;
@@ -19,10 +19,11 @@ public class LoggingExceptions2 {
       logException(e);
     }
   }
-} /* Output:
+}
+/* Output:
 ___[ Error Output ]___
 Jun 15, 2015 3:47:40 PM LoggingExceptions2 logException
 SEVERE: java.lang.NullPointerException
         at
 LoggingExceptions2.main(LoggingExceptions2.java:16)
-*///:~
+*/

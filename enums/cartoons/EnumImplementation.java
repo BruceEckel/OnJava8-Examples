@@ -1,4 +1,4 @@
-//: enums/cartoons/EnumImplementation.java
+// enums/cartoons/EnumImplementation.java
 // ©2015 MindView LLC: see Copyright.txt
 // An enum can implement an interface
 package enums.cartoons;
@@ -25,7 +25,8 @@ public class EnumImplementation {
     for(int i = 0; i < 10; i++)
       printNext(cc);
   }
-} /* Output:
+}
+/* Output:
 BOB, PUNCHY, BOB, SPANKY, NUTTY, PUNCHY, SLAPPY, NUTTY,
 NUTTY, SLAPPY,
-*///:~
+*/

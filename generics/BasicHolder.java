@@ -1,4 +1,4 @@
-//: generics/BasicHolder.java
+// generics/BasicHolder.java
 // ©2015 MindView LLC: see Copyright.txt
 
 public class BasicHolder<T> {
@@ -8,4 +8,4 @@ public class BasicHolder<T> {
   void f() {
     System.out.println(element.getClass().getSimpleName());
   }
-} ///:~
+}

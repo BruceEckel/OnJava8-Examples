@@ -1,4 +1,4 @@
-//: concurrency/FixedDiningPhilosophers.java
+// concurrency/FixedDiningPhilosophers.java
 // ©2015 MindView LLC: see Copyright.txt
 // Dining philosophers without deadlock.
 // {Args: 5 5 timeout}
@@ -31,7 +31,8 @@ public class FixedDiningPhilosophers {
     }
     exec.shutdownNow();
   }
-} /* Output: (First and last 10 Lines)
+}
+/* Output: (First and last 10 Lines)
 Philosopher 4 thinking
 Philosopher 3 thinking
 Philosopher 0 thinking
@@ -53,4 +54,4 @@ Philosopher 4 grabbing left
 Philosopher 2 exiting via interrupt
 Philosopher 4 eating
 Philosopher 4 exiting via interrupt
-*///:~
+*/

@@ -1,4 +1,4 @@
-//: strings/Turtle.java
+// strings/Turtle.java
 // ©2015 MindView LLC: see Copyright.txt
 import java.io.*;
 import java.util.*;
@@ -26,11 +26,12 @@ public class Turtle {
     tommy.move(3,3);
     terry.move(3,3);
   }
-} /* Output:
+}
+/* Output:
 Tommy The Turtle is at (0,0)
 Terry The Turtle is at (4,8)
 Tommy The Turtle is at (3,4)
 Terry The Turtle is at (2,5)
 Tommy The Turtle is at (3,3)
 Terry The Turtle is at (3,3)
-*///:~
+*/

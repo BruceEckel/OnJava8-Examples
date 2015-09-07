@@ -1,4 +1,4 @@
-//: innerclasses/Parcel3.java
+// innerclasses/Parcel3.java
 // ©2015 MindView LLC: see Copyright.txt
 // Using .new to create instances of inner classes.
 
@@ -19,4 +19,5 @@ public class Parcel3 {
     Parcel3.Contents c = p.new Contents();
     Parcel3.Destination d = p.new Destination("Tasmania");
   }
-} /* Output: (None) *///:~
+}
+/* Output: (None) */

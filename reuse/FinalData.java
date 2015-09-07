@@ -1,4 +1,4 @@
-//: reuse/FinalData.java
+// reuse/FinalData.java
 // ©2015 MindView LLC: see Copyright.txt
 // The effect of final on fields.
 import java.util.*;
@@ -46,9 +46,10 @@ public class FinalData {
     print(fd1);
     print(fd2);
   }
-} /* Output:
+}
+/* Output:
 fd1: i4 = 15, INT_5 = 18
 Creating new FinalData
 fd1: i4 = 15, INT_5 = 18
 fd2: i4 = 13, INT_5 = 18
-*///:~
+*/

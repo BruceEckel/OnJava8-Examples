@@ -1,4 +1,4 @@
-//: containersindepth/CollectionMethods.java
+// containersindepth/CollectionMethods.java
 // ©2015 MindView LLC: see Copyright.txt
 // Things you can do with all Collections.
 import java.util.*;
@@ -57,7 +57,8 @@ public class CollectionMethods {
     c.clear(); // Remove all elements
     print("after c.clear():" + c);
   }
-} /* Output:
+}
+/* Output:
 [ALGERIA, ANGOLA, BENIN, BOTSWANA, BURKINA FASO, BURUNDI,
 ten, eleven]
 Collections.max(c) = ten
@@ -79,4 +80,4 @@ c.containsAll(c2) = true
 c2.isEmpty() = true
 [ALGERIA, ANGOLA, BENIN, BOTSWANA, BURKINA FASO, BURUNDI]
 after c.clear():[]
-*///:~
+*/

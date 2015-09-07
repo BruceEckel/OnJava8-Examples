@@ -1,4 +1,4 @@
-#: staticchecking/DogsAndRobots.py
+# staticchecking/DogsAndRobots.py
 # ©2015 MindView LLC: see Copyright.txt
 
 def speak(anything):
@@ -17,4 +17,4 @@ b = Robot()
 
 speak(a)
 speak(b)
-#:~
+#>

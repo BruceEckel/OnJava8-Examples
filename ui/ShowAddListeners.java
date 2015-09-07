@@ -1,4 +1,4 @@
-//: ui/ShowAddListeners.java
+// ui/ShowAddListeners.java
 // ©2015 MindView LLC: see Copyright.txt
 // Display the "addXXXListener" methods of any Swing class.
 import javax.swing.*;
@@ -57,4 +57,4 @@ public class ShowAddListeners extends JFrame {
   public static void main(String[] args) {
     run(new ShowAddListeners(), 500, 400);
   }
-} ///:~
+}

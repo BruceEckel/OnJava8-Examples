@@ -1,4 +1,4 @@
-//: generics/InstantiateGenericType.cpp
+// generics/InstantiateGenericType.cpp
 // ©2015 MindView LLC: see Copyright.txt
 // C++, not Java!
 
@@ -15,4 +15,4 @@ class Bar {};
 int main() {
   Foo<Bar> fb;
   Foo<int> fi; // ... and it works with primitives
-} ///:~
+}

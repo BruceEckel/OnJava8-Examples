@@ -1,4 +1,4 @@
-//: reuse/Detergent.java
+// reuse/Detergent.java
 // ©2015 MindView LLC: see Copyright.txt
 // Inheritance syntax & properties.
 import static com.mindviewinc.util.Print.*;
@@ -38,8 +38,9 @@ public class Detergent extends Cleanser {
     print("Testing base class:");
     Cleanser.main(args);
   }
-} /* Output:
+}
+/* Output:
 Cleanser dilute() apply() Detergent.scrub() scrub() foam()
 Testing base class:
 Cleanser dilute() apply() scrub()
-*///:~
+*/

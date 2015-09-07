@@ -1,4 +1,4 @@
-//: containersindepth/DequeTest.java
+// containersindepth/DequeTest.java
 // ©2015 MindView LLC: see Copyright.txt
 import com.mindviewinc.util.*;
 import static com.mindviewinc.util.Print.*;
@@ -21,8 +21,9 @@ public class DequeTest {
     while(di.size() != 0)
       printnb(di.removeLast() + " ");
   }
-} /* Output:
+}
+/* Output:
 [26, 25, 24, 23, 22, 21, 20, 50, 51, 52, 53, 54]
 26 25 24 23 22 21 20 50 51 52 53 54
 54 53 52 51 50 20 21 22 23 24 25 26
-*///:~
+*/

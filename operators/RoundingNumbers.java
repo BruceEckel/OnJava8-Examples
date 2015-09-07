@@ -1,4 +1,4 @@
-//: operators/RoundingNumbers.java
+// operators/RoundingNumbers.java
 // ©2015 MindView LLC: see Copyright.txt
 // Rounding floats and doubles.
 import static com.mindviewinc.util.Print.*;
@@ -12,9 +12,10 @@ public class RoundingNumbers {
     print("Math.round(fabove): " + Math.round(fabove));
     print("Math.round(fbelow): " + Math.round(fbelow));
   }
-} /* Output:
+}
+/* Output:
 Math.round(above): 1
 Math.round(below): 0
 Math.round(fabove): 1
 Math.round(fbelow): 0
-*///:~
+*/

@@ -1,4 +1,4 @@
-//: ui/ColorBoxes.java
+// ui/ColorBoxes.java
 // ©2015 MindView LLC: see Copyright.txt
 // A visual demonstration of threading.
 import javax.swing.*;
@@ -52,4 +52,4 @@ public class ColorBoxes extends JFrame {
     boxes.setUp();
     run(boxes, 500, 400);
   }
-} ///:~
+}

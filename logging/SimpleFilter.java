@@ -1,4 +1,4 @@
-//: logging/SimpleFilter.java
+// logging/SimpleFilter.java
 // ©2015 MindView LLC: see Copyright.txt
 import java.util.logging.*;
 
@@ -28,7 +28,8 @@ public class SimpleFilter {
     logger.info("After setting filter..");
     sendLogMessages();
   }
-} /* Output:
+}
+/* Output:
 ___[ Error Output ]___
 Jun 15, 2015 3:47:52 PM SimpleFilter sendLogMessages
 WARNING: A duck in the house!
@@ -38,4 +39,4 @@ Jun 15, 2015 3:47:52 PM SimpleFilter main
 INFO: After setting filter..
 Jun 15, 2015 3:47:52 PM SimpleFilter sendLogMessages
 WARNING: A duck in the house!
-*///:~
+*/

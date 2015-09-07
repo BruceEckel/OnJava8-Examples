@@ -1,4 +1,4 @@
-//: typeinfo/BoundedClassReferences.java
+// typeinfo/BoundedClassReferences.java
 // ©2015 MindView LLC: see Copyright.txt
 
 public class BoundedClassReferences {
@@ -8,4 +8,5 @@ public class BoundedClassReferences {
     bounded = Number.class;
     // Or anything else derived from Number.
   }
-} /* Output: (None) *///:~
+}
+/* Output: (None) */

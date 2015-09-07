@@ -1,4 +1,4 @@
-//: arrays/MultidimensionalPrimitiveArray.java
+// arrays/MultidimensionalPrimitiveArray.java
 // ©2015 MindView LLC: see Copyright.txt
 // Creating multidimensional arrays.
 import java.util.*;
@@ -11,6 +11,7 @@ public class MultidimensionalPrimitiveArray {
     };
     System.out.println(Arrays.deepToString(a));
   }
-} /* Output:
+}
+/* Output:
 [[1, 2, 3], [4, 5, 6]]
-*///:~
+*/

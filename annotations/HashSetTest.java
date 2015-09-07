@@ -1,4 +1,4 @@
-//: annotations/HashSetTest.java
+// annotations/HashSetTest.java
 // ©2015 MindView LLC: see Copyright.txt
 package annotations;
 import java.util.*;
@@ -23,10 +23,11 @@ public class HashSetTest {
     OSExecute.command(
       "java com.mindviewinc.atunit.AtUnit HashSetTest");
   }
-} /* Output:
+}
+/* Output:
 annotations.HashSetTest
   . initialization
   . _remove
   . _contains
 OK (3 tests)
-*///:~
+*/

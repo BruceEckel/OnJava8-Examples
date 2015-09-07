@@ -1,4 +1,4 @@
-//: staticchecking/latent/Latent.java
+// staticchecking/latent/Latent.java
 // ©2015 MindView LLC: see Copyright.txt
 package staticchecking.latent;
 import java.lang.reflect.*;
@@ -49,8 +49,9 @@ public class Latent {
     Communicate.speak(new Robot());
     Communicate.speak(new Mime());
   }
-} /* Output:
+}
+/* Output:
 Woof!
 Click!
 Mime cannot talk
-*///:~
+*/

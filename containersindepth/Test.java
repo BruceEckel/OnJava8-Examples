@@ -1,4 +1,4 @@
-//: containersindepth/Test.java
+// containersindepth/Test.java
 // ©2015 MindView LLC: see Copyright.txt
 // Framework for performing timed tests of containers.
 
@@ -8,4 +8,4 @@ public abstract class Test<C> {
   // Override this method for different tests.
   // Returns actual number of repetitions of test.
   abstract int test(C container, TestParam tp);
-} ///:~
+}

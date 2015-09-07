@@ -1,4 +1,4 @@
-//: housekeeping/AutoboxingVarargs.java
+// housekeeping/AutoboxingVarargs.java
 // ©2015 MindView LLC: see Copyright.txt
 
 public class AutoboxingVarargs {
@@ -12,8 +12,9 @@ public class AutoboxingVarargs {
     f(4, 5, 6, 7, 8, 9);
     f(10, 11, 12);
   }
-} /* Output:
+}
+/* Output:
 1 2
 4 5 6 7 8 9
 10 11 12
-*///:~
+*/

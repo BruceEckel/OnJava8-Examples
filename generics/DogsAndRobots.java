@@ -1,4 +1,4 @@
-//: generics/DogsAndRobots.java
+// generics/DogsAndRobots.java
 // ©2015 MindView LLC: see Copyright.txt
 // No latent typing in Java
 import typeinfo.pets.*;
@@ -33,9 +33,10 @@ public class DogsAndRobots {
     Communicate.perform(d);
     Communicate.perform(r);
   }
-} /* Output:
+}
+/* Output:
 Woof!
 Sitting
 Click!
 Clank!
-*///:~
+*/

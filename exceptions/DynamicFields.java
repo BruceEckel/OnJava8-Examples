@@ -1,4 +1,4 @@
-//: exceptions/DynamicFields.java
+// exceptions/DynamicFields.java
 // ©2015 MindView LLC: see Copyright.txt
 // A Class that dynamically adds fields to itself.
 // Demonstrates exception chaining.
@@ -98,7 +98,8 @@ public class DynamicFields {
       e.printStackTrace(System.out);
     }
   }
-} /* Output:
+}
+/* Output:
 null: null
 null: null
 null: null
@@ -116,4 +117,4 @@ DynamicFieldsException
 Caused by: java.lang.NullPointerException
         at DynamicFields.setField(DynamicFields.java:66)
         ... 1 more
-*///:~
+*/

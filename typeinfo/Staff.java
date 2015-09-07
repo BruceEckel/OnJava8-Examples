@@ -1,4 +1,4 @@
-//: typeinfo/Staff.java
+// typeinfo/Staff.java
 // ©2015 MindView LLC: see Copyright.txt
 import java.util.*;
 
@@ -44,7 +44,8 @@ public class Staff extends ArrayList<Position> {
         new Person("Bob", "Coder", "Bright Light City"));
     System.out.println(staff);
   }
-} /* Output:
+}
+/* Output:
 [Position: President Person: Me Last The Top, Lonely At,
 Position: CTO NullPerson, Position: Marketing Manager
 NullPerson, Position: Product Manager NullPerson, Position:
@@ -54,4 +55,4 @@ Position: Software Engineer NullPerson, Position: Software
 Engineer NullPerson, Position: Software Engineer
 NullPerson, Position: Test Engineer NullPerson, Position:
 Technical Writer NullPerson]
-*///:~
+*/

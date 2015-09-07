@@ -1,4 +1,4 @@
-//: containers/SetOperations.java
+// containers/SetOperations.java
 // ©2015 MindView LLC: see Copyright.txt
 import java.util.*;
 import static com.mindviewinc.util.Print.*;
@@ -22,7 +22,8 @@ public class SetOperations {
     Collections.addAll(set1, "X Y Z".split(" "));
     print("'X Y Z' added to set1: " + set1);
   }
-} /* Output:
+}
+/* Output:
 H: true
 N: false
 set2 in set1: true
@@ -30,4 +31,4 @@ set1: [A, B, C, D, E, F, G, I, J, K, L, M]
 set2 in set1: false
 set2 removed from set1: [A, B, C, D, E, F, G, M]
 'X Y Z' added to set1: [A, B, C, D, E, F, G, M, X, Y, Z]
-*///:~
+*/

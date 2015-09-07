@@ -1,4 +1,4 @@
-//: control/ForEachInt.java
+// control/ForEachInt.java
 // ©2015 MindView LLC: see Copyright.txt
 import static com.mindviewinc.util.Range.*;
 import static com.mindviewinc.util.Print.*;
@@ -15,8 +15,9 @@ public class ForEachInt {
       printnb(i + " ");
     print();
   }
-} /* Output:
+}
+/* Output:
 0 1 2 3 4 5 6 7 8 9
 5 6 7 8 9
 5 8 11 14 17
-*///:~
+*/

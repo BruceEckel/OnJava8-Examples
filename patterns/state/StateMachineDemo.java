@@ -1,4 +1,4 @@
-//: patterns/state/StateMachineDemo.java
+// patterns/state/StateMachineDemo.java
 // ©2015 MindView LLC: see Copyright.txt
 // Demonstrates StateMachine pattern
 // and Template method.
@@ -74,9 +74,10 @@ public class StateMachineDemo {
   public static void main(String args[]) {
     new Washer();
   }
-} /* Output:
+}
+/* Output:
 Washing
 Spinning
 Rinsing
 Spinning
-*///:~
+*/

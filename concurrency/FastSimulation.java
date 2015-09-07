@@ -1,4 +1,4 @@
-//: concurrency/FastSimulation.java
+// concurrency/FastSimulation.java
 // ©2015 MindView LLC: see Copyright.txt
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.*;
@@ -49,7 +49,8 @@ public class FastSimulation {
     TimeUnit.SECONDS.sleep(5);
     exec.shutdownNow();
   }
-} /* Output: (First and last 10 Lines)
+}
+/* Output: (First and last 10 Lines)
 Old value changed from 542
 Old value changed from 447
 Old value changed from 446
@@ -71,4 +72,4 @@ Old value changed from 467
 Old value changed from 368
 Old value changed from 404
 Old value changed from 428
-*///:~
+*/

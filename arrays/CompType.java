@@ -1,4 +1,4 @@
-//: arrays/CompType.java
+// arrays/CompType.java
 // ©2015 MindView LLC: see Copyright.txt
 // Implementing Comparable in a class.
 import java.util.*;
@@ -27,7 +27,7 @@ public class CompType implements Comparable<CompType> {
   private static Random r = new Random(47);
   public static Generator<CompType> generator() {
     return () ->
-      new CompType(r.nextInt(100),r.nextInt(100));
+      new CompType(r.nextInt(100), r.nextInt(100));
   }
   public static void main(String[] args) {
     CompType[] a =
@@ -38,7 +38,8 @@ public class CompType implements Comparable<CompType> {
     print("after sorting:");
     print(Arrays.toString(a));
   }
-} /* Output:
+}
+/* Output:
 before sorting:
 [[i = 58, j = 55], [i = 93, j = 61], [i = 61, j = 29]
 , [i = 68, j = 0], [i = 22, j = 7], [i = 88, j = 28]
@@ -51,4 +52,4 @@ after sorting:
 , [i = 58, j = 55], [i = 61, j = 29], [i = 68, j = 0]
 , [i = 88, j = 28], [i = 93, j = 61], [i = 98, j = 61]
 ]
-*///:~
+*/

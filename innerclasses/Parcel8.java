@@ -1,4 +1,4 @@
-//: innerclasses/Parcel8.java
+// innerclasses/Parcel8.java
 // ©2015 MindView LLC: see Copyright.txt
 // Calling the base-class constructor.
 
@@ -16,4 +16,5 @@ public class Parcel8 {
     Parcel8 p = new Parcel8();
     Wrapping w = p.wrapping(10);
   }
-} /* Output: (None) *///:~
+}
+/* Output: (None) */

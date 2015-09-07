@@ -1,4 +1,4 @@
-//: containersindepth/Unsupported.java
+// containersindepth/Unsupported.java
 // ©2015 MindView LLC: see Copyright.txt
 // Unsupported operations in Java containers.
 import java.util.*;
@@ -44,7 +44,8 @@ public class Unsupported {
     test("unmodifiableList()",
       Collections.unmodifiableList(new ArrayList<>(list)));
   }
-} /* Output:
+}
+/* Output:
 --- Modifiable Copy ---
 --- Arrays.asList() ---
 retainAll(): java.lang.UnsupportedOperationException
@@ -61,4 +62,4 @@ add(): java.lang.UnsupportedOperationException
 addAll(): java.lang.UnsupportedOperationException
 remove(): java.lang.UnsupportedOperationException
 List.set(): java.lang.UnsupportedOperationException
-*///:~
+*/

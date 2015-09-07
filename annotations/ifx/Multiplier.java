@@ -1,4 +1,4 @@
-//: annotations/ifx/Multiplier.java
+// annotations/ifx/Multiplier.java
 // ©2015 MindView LLC: see Copyright.txt
 // javac-based annotation processing.
 package annotations.ifx;
@@ -25,6 +25,7 @@ public class Multiplier {
     System.out.println(
       "11 * 16 = " + m.multiply(11, 16));
   }
-} /* Output:
+}
+/* Output:
 11 * 16 = 176
-*///:~
+*/

@@ -1,4 +1,4 @@
-//: logging/LogToFile2.java
+// logging/LogToFile2.java
 // ©2015 MindView LLC: see Copyright.txt
 import java.util.logging.*;
 
@@ -13,8 +13,9 @@ public class LogToFile2 {
     logger.addHandler(logFile);
     logger.info("A message logged to the file");
   }
-} /* Output:
+}
+/* Output:
 ___[ Error Output ]___
 Jun 15, 2015 3:47:52 PM LogToFile2 main
 INFO: A message logged to the file
-*///:~
+*/

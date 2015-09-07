@@ -1,4 +1,4 @@
-//: patterns/visitor/BeeAndFlowers.java
+// patterns/visitor/BeeAndFlowers.java
 // ©2015 MindView LLC: see Copyright.txt
 // Demonstration of "visitor" pattern.
 package patterns.visitor;
@@ -93,7 +93,8 @@ public class BeeAndFlowers {
     while(it.hasNext())
       it.next().accept(bee);
   }
-} /* Output:
+}
+/* Output:
 Gladiolus
 Chrysanthemum
 Chrysanthemum
@@ -114,4 +115,4 @@ Bee and Renuculus
 Bee and Renuculus
 Bee and Gladiolus
 Bee and Renuculus
-*///:~
+*/

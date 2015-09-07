@@ -1,4 +1,4 @@
-//: assertions/Queue.java
+// assertions/Queue.java
 // ©2015 MindView LLC: see Copyright.txt
 // Demonstration of Design by Contract (DbC) combined
 // with white-box unit testing.
@@ -177,7 +177,8 @@ public class Queue {
     org.junit.runner.JUnitCore.runClasses(
       Queue.WhiteBoxTest.class);
   }
-} /* Output:
+}
+/* Output:
 testNullPut
 put() null item
 testCircularity
@@ -229,4 +230,4 @@ get() from empty Queue
 in = 5, out = 5, full() = false, empty() = true, queue =
 [null, null, null, null, null, null, null, null, null,
 null]
-*///:~
+*/

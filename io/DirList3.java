@@ -1,4 +1,4 @@
-//: io/DirList3.java
+// io/DirList3.java
 // ©2015 MindView LLC: see Copyright.txt
 // Building the anonymous inner class "in-place."
 // {Args: "D.*\.java"}
@@ -24,9 +24,10 @@ public class DirList3 {
     for(String dirItem : list)
       System.out.println(dirItem);
   }
-} /* Output:
+}
+/* Output:
 DirectoryDemo.java
 DirList.java
 DirList2.java
 DirList3.java
-*///:~
+*/

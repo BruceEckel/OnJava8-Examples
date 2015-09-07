@@ -1,4 +1,4 @@
-//: interfaces/interfaceprocessor/Apply.java
+// interfaces/interfaceprocessor/Apply.java
 // ©2015 MindView LLC: see Copyright.txt
 package interfaces.interfaceprocessor;
 import static com.mindviewinc.util.Print.*;
@@ -8,4 +8,4 @@ public class Apply {
     print("Using Processor " + p.name());
     print(p.process(s));
   }
-} ///:~
+}

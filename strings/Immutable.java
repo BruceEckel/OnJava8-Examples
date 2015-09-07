@@ -1,4 +1,4 @@
-//: strings/Immutable.java
+// strings/Immutable.java
 // ©2015 MindView LLC: see Copyright.txt
 import static com.mindviewinc.util.Print.*;
 
@@ -13,8 +13,9 @@ public class Immutable {
     print(qq); // HOWDY
     print(q); // howdy
   }
-} /* Output:
+}
+/* Output:
 howdy
 HOWDY
 howdy
-*///:~
+*/

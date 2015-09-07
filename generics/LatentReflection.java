@@ -1,4 +1,4 @@
-//: generics/LatentReflection.java
+// generics/LatentReflection.java
 // ©2015 MindView LLC: see Copyright.txt
 // Using Reflection to produce latent typing.
 import java.lang.reflect.*;
@@ -51,11 +51,12 @@ public class LatentReflection {
     CommunicateReflectively.perform(new Robot());
     CommunicateReflectively.perform(new Mime());
   }
-} /* Output:
+}
+/* Output:
 Woof!
 Sitting
 Click!
 Clank!
 Mime cannot speak
 Pretending to sit
-*///:~
+*/

@@ -1,4 +1,4 @@
-//: com/mindviewinc/util/ConvertTo.java
+// com/mindviewinc/util/ConvertTo.java
 // ©2015 MindView LLC: see Copyright.txt
 package com.mindviewinc.util;
 
@@ -51,4 +51,4 @@ public class ConvertTo {
       result[i] = in[i];
     return result;
   }
-} ///:~
+}

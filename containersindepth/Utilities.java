@@ -1,4 +1,4 @@
-//: containersindepth/Utilities.java
+// containersindepth/Utilities.java
 // ©2015 MindView LLC: see Copyright.txt
 // Simple demonstrations of the Collections utilities.
 import java.util.*;
@@ -57,7 +57,8 @@ public class Utilities {
       Collections.list(v.elements());
     print("arrayList: " + arrayList);
   }
-} /* Output:
+}
+/* Output:
 [one, Two, three, Four, five, six, one]
 'list' disjoint (Four)?: false
 max: three
@@ -77,4 +78,4 @@ frequency of 'pop': 7
 dups: [snap, snap, snap]
 'list' disjoint 'dups'?: true
 arrayList: [snap, snap, snap]
-*///:~
+*/

@@ -1,4 +1,4 @@
-//: containersindepth/SortedSetDemo.java
+// containersindepth/SortedSetDemo.java
 // ©2015 MindView LLC: see Copyright.txt
 // What you can do with a TreeSet.
 import java.util.*;
@@ -27,7 +27,8 @@ public class SortedSetDemo {
     print(sortedSet.headSet(high));
     print(sortedSet.tailSet(low));
   }
-} /* Output:
+}
+/* Output:
 [eight, five, four, one, seven, six, three, two]
 eight
 two
@@ -36,4 +37,4 @@ two
 [one, seven, six, three]
 [eight, five, four, one, seven, six, three]
 [one, seven, six, three, two]
-*///:~
+*/

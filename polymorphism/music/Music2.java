@@ -1,4 +1,4 @@
-//: polymorphism/music/Music2.java
+// polymorphism/music/Music2.java
 // ©2015 MindView LLC: see Copyright.txt
 // Overloading instead of upcasting.
 package polymorphism.music;
@@ -36,8 +36,9 @@ public class Music2 {
     tune(violin);
     tune(frenchHorn);
   }
-} /* Output:
+}
+/* Output:
 Wind.play() MIDDLE_C
 Stringed.play() MIDDLE_C
 Brass.play() MIDDLE_C
-*///:~
+*/

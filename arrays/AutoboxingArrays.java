@@ -1,4 +1,4 @@
-//: arrays/AutoboxingArrays.java
+// arrays/AutoboxingArrays.java
 // ©2015 MindView LLC: see Copyright.txt
 import java.util.*;
 
@@ -12,8 +12,9 @@ public class AutoboxingArrays {
     };
     System.out.println(Arrays.deepToString(a));
   }
-} /* Output:
+}
+/* Output:
 [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [21, 22, 23, 24, 25, 26,
 27, 28, 29, 30], [51, 52, 53, 54, 55, 56, 57, 58, 59, 60],
 [71, 72, 73, 74, 75, 76, 77, 78, 79, 80]]
-*///:~
+*/

@@ -1,4 +1,4 @@
-//: innerclasses/Parcel7.java
+// innerclasses/Parcel7.java
 // ©2015 MindView LLC: see Copyright.txt
 // Returning an instance of an anonymous inner class.
 
@@ -14,4 +14,5 @@ public class Parcel7 {
     Parcel7 p = new Parcel7();
     Contents c = p.contents();
   }
-} /* Output: (None) *///:~
+}
+/* Output: (None) */

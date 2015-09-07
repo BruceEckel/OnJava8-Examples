@@ -1,4 +1,4 @@
-//: operators/Equivalence.java
+// operators/Equivalence.java
 // ©2015 MindView LLC: see Copyright.txt
 
 public class Equivalence {
@@ -8,7 +8,8 @@ public class Equivalence {
     System.out.println(n1 == n2);
     System.out.println(n1 != n2);
   }
-} /* Output:
+}
+/* Output:
 true
 false
-*///:~
+*/

@@ -1,4 +1,4 @@
-//: com/mindviewinc/util/Stack.java
+// com/mindviewinc/util/Stack.java
 // ©2015 MindView LLC: see Copyright.txt
 // Making a stack from a LinkedList.
 package com.mindviewinc.util;
@@ -12,4 +12,4 @@ public class Stack<T> {
   public boolean empty() { return storage.isEmpty(); }
   @Override
   public String toString() { return storage.toString(); }
-} ///:~
+}

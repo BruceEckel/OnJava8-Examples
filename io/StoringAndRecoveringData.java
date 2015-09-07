@@ -1,4 +1,4 @@
-//: io/StoringAndRecoveringData.java
+// io/StoringAndRecoveringData.java
 // ©2015 MindView LLC: see Copyright.txt
 import java.io.*;
 
@@ -23,9 +23,10 @@ public class StoringAndRecoveringData {
     System.out.println(in.readDouble());
     System.out.println(in.readUTF());
   }
-} /* Output:
+}
+/* Output:
 3.14159
 That was pi
 1.41413
 Square root of 2
-*///:~
+*/

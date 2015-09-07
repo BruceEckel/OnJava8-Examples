@@ -1,4 +1,4 @@
-//: generics/ArrayMaker.java
+// generics/ArrayMaker.java
 // ©2015 MindView LLC: see Copyright.txt
 import java.lang.reflect.*;
 import java.util.*;
@@ -16,6 +16,7 @@ public class ArrayMaker<T> {
     String[] stringArray = stringMaker.create(9);
     System.out.println(Arrays.toString(stringArray));
   }
-} /* Output:
+}
+/* Output:
 [null, null, null, null, null, null, null, null, null]
-*///:~
+*/

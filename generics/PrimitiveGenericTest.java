@@ -1,4 +1,4 @@
-//: generics/PrimitiveGenericTest.java
+// generics/PrimitiveGenericTest.java
 // ©2015 MindView LLC: see Copyright.txt
 import com.mindviewinc.util.*;
 
@@ -25,7 +25,8 @@ public class PrimitiveGenericTest {
     // int[] b =
     //   FArray.fill(new int[7], new RandIntGenerator());
   }
-} /* Output:
+}
+/* Output:
 YNzbrnyGcF
 OWZnTcQrGs
 eGZMmJMRoE
@@ -40,4 +41,4 @@ bkInaMesbt
 5202
 2209
 5458
-*///:~
+*/

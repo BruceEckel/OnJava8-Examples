@@ -1,4 +1,4 @@
-//: io/DirectoryDemo.java
+// io/DirectoryDemo.java
 // ©2015 MindView LLC: see Copyright.txt
 // Sample use of Directory utilities.
 import java.io.*;
@@ -21,7 +21,8 @@ public class DirectoryDemo {
     for(File file : Directory.walk(".",".*[Zz].*\\.class"))
       print(file);
   }
-} /* Output:
+}
+/* Output:
 [.\xfiles]
 .\TestEOF.class
 .\TestEOF.java
@@ -35,4 +36,4 @@ public class DirectoryDemo {
 .\FreezeAlien.class
 .\GZIPcompress.class
 .\ZipCompress.class
-*///:~
+*/

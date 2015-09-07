@@ -1,4 +1,4 @@
-//: io/BufferToText.java
+// io/BufferToText.java
 // ©2015 MindView LLC: see Copyright.txt
 // Converting text to and from ByteBuffers
 import java.nio.*;
@@ -48,9 +48,10 @@ public class BufferToText {
     buff.flip();
     System.out.println(buff.asCharBuffer());
   }
-} /* Output:
+}
+/* Output:
 ????
 Decoded using Cp1252: Some text
 Some text
 Some textNULNULNUL
-*///:~
+*/

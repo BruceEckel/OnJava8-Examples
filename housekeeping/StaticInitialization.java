@@ -1,4 +1,4 @@
-//: housekeeping/StaticInitialization.java
+// housekeeping/StaticInitialization.java
 // ©2015 MindView LLC: see Copyright.txt
 // Specifying initial values in a class definition.
 import static com.mindviewinc.util.Print.*;
@@ -48,7 +48,8 @@ public class StaticInitialization {
   }
   static Table table = new Table();
   static Cupboard cupboard = new Cupboard();
-} /* Output:
+}
+/* Output:
 Bowl(1)
 Bowl(2)
 Table()
@@ -68,4 +69,4 @@ Cupboard()
 f1(2)
 f2(1)
 f3(1)
-*///:~
+*/

@@ -1,4 +1,4 @@
-//: arrays/ArraySearching.java
+// arrays/ArraySearching.java
 // ©2015 MindView LLC: see Copyright.txt
 // Using Arrays.binarySearch().
 import java.util.*;
@@ -23,9 +23,10 @@ public class ArraySearching {
       }
     }
   }
-} /* Output:
+}
+/* Output:
 Sorted array: [128, 140, 200, 207, 258, 258, 278, 288, 322,
 429, 511, 520, 522, 551, 555, 589, 693, 704, 809, 861, 861,
 868, 916, 961, 998]
 Location of 322 is 8, a[8] = 322
-*///:~
+*/

@@ -1,4 +1,4 @@
-//: concurrency/ThreadLocalVariableHolder.java
+// concurrency/ThreadLocalVariableHolder.java
 // ©2015 MindView LLC: see Copyright.txt
 // Automatically giving each thread its own storage.
 import java.util.concurrent.*;
@@ -42,7 +42,8 @@ public class ThreadLocalVariableHolder {
     TimeUnit.SECONDS.sleep(3);  // Run for a while
     exec.shutdownNow();         // All Accessors will quit
   }
-} /* Output: (First and last 10 Lines)
+}
+/* Output: (First and last 10 Lines)
 #2: 9259
 #1: 962
 #3: 1862
@@ -64,4 +65,4 @@ ________...________...________...________...________
 #1: 3032
 #4: 8404
 #2: 11098
-*///:~
+*/

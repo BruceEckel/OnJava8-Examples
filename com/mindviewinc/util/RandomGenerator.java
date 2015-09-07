@@ -1,4 +1,4 @@
-//: com/mindviewinc/util/RandomGenerator.java
+// com/mindviewinc/util/RandomGenerator.java
 // ©2015 MindView LLC: see Copyright.txt
 // Generators that produce random values.
 package com.mindviewinc.util;
@@ -79,4 +79,4 @@ public class RandomGenerator {
       return ((double)trimmed) / 100;
     }
   }
-} ///:~
+}

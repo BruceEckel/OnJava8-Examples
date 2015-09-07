@@ -1,4 +1,4 @@
-//: concurrency/ExchangerDemo.java
+// concurrency/ExchangerDemo.java
 // ©2015 MindView LLC: see Copyright.txt
 import java.util.concurrent.*;
 import com.mindviewinc.util.*;
@@ -74,6 +74,7 @@ public class ExchangerDemo {
     TimeUnit.SECONDS.sleep(delay);
     exec.shutdownNow();
   }
-} /* Output:
+}
+/* Output:
 Final value: Fat id: 18859
-*///:~
+*/

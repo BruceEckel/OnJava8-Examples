@@ -1,4 +1,4 @@
-//: patterns/recycleb/RecycleB.java
+// patterns/recycleb/RecycleB.java
 // ©2015 MindView LLC: see Copyright.txt
 // Adding more objects to the recycling problem.
 package patterns.recycleb;
@@ -55,7 +55,8 @@ public class RecycleB {
     trashBins.forEach(Trash::sumValue);
     Trash.sumValue(bin);
   }
-} /* Output: (First and last 10 Lines)
+}
+/* Output: (First and last 10 Lines)
 Loading patterns.trash.Glass
 Loading patterns.trash.Paper
 Loading patterns.trash.Aluminum
@@ -77,4 +78,4 @@ weight of patterns.trash.Paper = 66.0
 weight of patterns.trash.Aluminum = 36.0
 weight of patterns.trash.Cardboard = 22.0
 Total value = 1086.0599818825722
-*///:~
+*/

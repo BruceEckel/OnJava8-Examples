@@ -1,4 +1,4 @@
-//: com/mindviewinc/util/TextFile.java
+// com/mindviewinc/util/TextFile.java
 // ©2015 MindView LLC: see Copyright.txt
 // Static functions for reading and writing text files as
 // a single string, and treating a file as an ArrayList.
@@ -70,10 +70,11 @@ public class TextFile extends ArrayList<String> {
     // Display the capitalized words:
     System.out.println(words.headSet("a"));
   }
-} /* Output:
+}
+/* Output:
 [0, ArrayList, Arrays, Break, BufferedReader,
 BufferedWriter, Clean, Display, File, FileReader,
 FileWriter, IOException, Normally, Output, PrintWriter,
 Read, Regular, RuntimeException, Simple, Static, String,
 StringBuilder, System, TextFile, Tools, TreeSet, W, Write]
-*///:~
+*/

@@ -1,4 +1,4 @@
-//: containers/StackTest.java
+// containers/StackTest.java
 // ©2015 MindView LLC: see Copyright.txt
 import com.mindviewinc.util.*;
 
@@ -10,6 +10,7 @@ public class StackTest {
     while(!stack.empty())
       System.out.print(stack.pop() + " ");
   }
-} /* Output:
+}
+/* Output:
 fleas has dog My
-*///:~
+*/

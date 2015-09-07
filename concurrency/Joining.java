@@ -1,4 +1,4 @@
-//: concurrency/Joining.java
+// concurrency/Joining.java
 // ©2015 MindView LLC: see Copyright.txt
 // Understanding join().
 import static com.mindviewinc.util.Print.*;
@@ -51,9 +51,10 @@ public class Joining {
       doc = new Joiner("Doc", grumpy);
     grumpy.interrupt();
   }
-} /* Output:
+}
+/* Output:
 Grumpy was interrupted. isInterrupted(): false
 Doc join completed
 Sleepy has awakened
 Dopey join completed
-*///:~
+*/

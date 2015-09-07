@@ -1,4 +1,4 @@
-//: typeinfo/AnonymousImplementation.java
+// typeinfo/AnonymousImplementation.java
 // ©2015 MindView LLC: see Copyright.txt
 // Anonymous inner classes can't hide from reflection.
 import typeinfo.interfacea.*;
@@ -27,11 +27,12 @@ public class AnonymousImplementation {
     HiddenImplementation.callHiddenMethod(a, "v");
     HiddenImplementation.callHiddenMethod(a, "w");
   }
-} /* Output:
+}
+/* Output:
 public C.f()
 AnonymousA$1
 public C.g()
 package C.u()
 protected C.v()
 private C.w()
-*///:~
+*/

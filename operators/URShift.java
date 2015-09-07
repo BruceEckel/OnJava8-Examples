@@ -1,4 +1,4 @@
-//: operators/URShift.java
+// operators/URShift.java
 // ©2015 MindView LLC: see Copyright.txt
 // Test of unsigned right shift.
 import static com.mindviewinc.util.Print.*;
@@ -25,7 +25,8 @@ public class URShift {
     print(Integer.toBinaryString(b));
     print(Integer.toBinaryString(b>>>10));
   }
-} /* Output:
+}
+/* Output:
 11111111111111111111111111111111
 1111111111111111111111
 11111111111111111111111111111111111111111111111111111111111
@@ -37,4 +38,4 @@ public class URShift {
 11111111111111111111111111111111
 11111111111111111111111111111111
 1111111111111111111111
-*///:~
+*/

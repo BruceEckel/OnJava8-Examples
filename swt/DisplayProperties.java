@@ -1,4 +1,4 @@
-//: swt/DisplayProperties.java
+// swt/DisplayProperties.java
 // ©2015 MindView LLC: see Copyright.txt
 import org.eclipse.swt.*;
 import org.eclipse.swt.widgets.*;
@@ -21,4 +21,4 @@ public class DisplayProperties {
         display.sleep();
     display.dispose();
   }
-} ///:~
+}

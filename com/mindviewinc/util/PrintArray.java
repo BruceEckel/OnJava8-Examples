@@ -1,4 +1,4 @@
-//: com/mindviewinc/util/PrintArray.java
+// com/mindviewinc/util/PrintArray.java
 // ©2015 MindView LLC: see Copyright.txt
 // Display an array of double
 package com.mindviewinc.util;
@@ -12,4 +12,4 @@ public class PrintArray {
     }
     System.out.println();
   }
-} ///:~
+}

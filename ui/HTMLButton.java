@@ -1,4 +1,4 @@
-//: ui/HTMLButton.java
+// ui/HTMLButton.java
 // ©2015 MindView LLC: see Copyright.txt
 // Putting HTML text on Swing components.
 import javax.swing.*;
@@ -22,4 +22,4 @@ public class HTMLButton extends JFrame {
   public static void main(String[] args) {
     run(new HTMLButton(), 200, 500);
   }
-} ///:~
+}

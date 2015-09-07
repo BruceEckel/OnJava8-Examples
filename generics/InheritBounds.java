@@ -1,4 +1,4 @@
-//: generics/InheritBounds.java
+// generics/InheritBounds.java
 // ©2015 MindView LLC: see Copyright.txt
 
 class HoldItem<T> {
@@ -34,4 +34,5 @@ public class InheritBounds {
     solid2.getY();
     solid2.weight();
   }
-} /* Output: (None) *///:~
+}
+/* Output: (None) */

@@ -1,4 +1,4 @@
-//: enums/menu/Food.java
+// enums/menu/Food.java
 // ©2015 MindView LLC: see Copyright.txt
 // Subcategorization of enums within interfaces.
 package enums.menu;
@@ -19,4 +19,4 @@ public interface Food {
     BLACK_COFFEE, DECAF_COFFEE, ESPRESSO,
     LATTE, CAPPUCCINO, TEA, HERB_TEA;
   }
-} ///:~
+}

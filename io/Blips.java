@@ -1,4 +1,4 @@
-//: io/Blips.java
+// io/Blips.java
 // ©2015 MindView LLC: see Copyright.txt
 // Simple use of Externalizable & a pitfall.
 import java.io.*;
@@ -57,7 +57,8 @@ public class Blips {
 //! print("Recovering b2:");
 //! b2 = (Blip2)in.readObject();
   }
-} /* Output:
+}
+/* Output:
 Constructing objects:
 Blip1 Constructor
 Blip2 Constructor
@@ -67,4 +68,4 @@ Blip2.writeExternal
 Recovering b1:
 Blip1 Constructor
 Blip1.readExternal
-*///:~
+*/

@@ -1,4 +1,4 @@
-//: interfaces/Factories.java
+// interfaces/Factories.java
 // ©2015 MindView LLC: see Copyright.txt
 import static com.mindviewinc.util.Print.*;
 
@@ -48,9 +48,10 @@ public class Factories {
     // Implementations are completely interchangeable:
     serviceConsumer(new Implementation2Factory());
   }
-} /* Output:
+}
+/* Output:
 Implementation1 method1
 Implementation1 method2
 Implementation2 method1
 Implementation2 method2
-*///:~
+*/

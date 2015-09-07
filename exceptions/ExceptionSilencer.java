@@ -1,4 +1,4 @@
-//: exceptions/ExceptionSilencer.java
+// exceptions/ExceptionSilencer.java
 // ©2015 MindView LLC: see Copyright.txt
 
 public class ExceptionSilencer {
@@ -11,4 +11,5 @@ public class ExceptionSilencer {
       return;
     }
   }
-} /* Output: (None) *///:~
+}
+/* Output: (None) */

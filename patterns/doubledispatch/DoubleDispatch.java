@@ -1,4 +1,4 @@
-//: patterns/doubledispatch/DoubleDispatch.java
+// patterns/doubledispatch/DoubleDispatch.java
 // ©2015 MindView LLC: see Copyright.txt
 // Using multiple dispatching to handle more
 // than one unknown type during a method call.
@@ -66,7 +66,8 @@ public class DoubleDispatch {
     // ... and for the master bin
     Trash.sumValue(bin);
   }
-} /* Output: (First and last 10 Lines)
+}
+/* Output: (First and last 10 Lines)
 Loading patterns.doubledispatch.DDGlass
 Loading patterns.doubledispatch.DDPaper
 Loading patterns.doubledispatch.DDAluminum
@@ -88,4 +89,4 @@ weight of patterns.doubledispatch.DDPaper = 66.0
 weight of patterns.doubledispatch.DDAluminum = 36.0
 weight of patterns.doubledispatch.DDCardboard = 22.0
 Total value = 1086.0599818825722
-*///:~
+*/

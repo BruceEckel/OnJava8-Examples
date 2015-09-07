@@ -1,4 +1,4 @@
-//: concurrency/MutexEvenGenerator.java
+// concurrency/MutexEvenGenerator.java
 // ©2015 MindView LLC: see Copyright.txt
 // Preventing thread collisions with mutexes.
 // {TimeOutDuringTesting}
@@ -22,4 +22,5 @@ public class MutexEvenGenerator extends IntGenerator {
   public static void main(String[] args) {
     EvenChecker.test(new MutexEvenGenerator());
   }
-} /* Output: (None) *///:~
+}
+/* Output: (None) */

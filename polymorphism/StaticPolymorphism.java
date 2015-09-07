@@ -1,4 +1,4 @@
-//: polymorphism/StaticPolymorphism.java
+// polymorphism/StaticPolymorphism.java
 // ©2015 MindView LLC: see Copyright.txt
 // Static methods are not polymorphic.
 
@@ -27,7 +27,8 @@ public class StaticPolymorphism {
     System.out.println(StaticSuper.staticGet());
     System.out.println(sup.dynamicGet());
   }
-} /* Output:
+}
+/* Output:
 Base staticGet()
 Derived dynamicGet()
-*///:~
+*/

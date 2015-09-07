@@ -1,4 +1,4 @@
-//: strings/SplitDemo.java
+// strings/SplitDemo.java
 // ©2015 MindView LLC: see Copyright.txt
 import java.util.regex.*;
 import java.util.*;
@@ -14,7 +14,8 @@ public class SplitDemo {
     print(Arrays.toString(
       Pattern.compile("!!").split(input, 3)));
   }
-} /* Output:
+}
+/* Output:
 [This, unusual use, of exclamation, points]
 [This, unusual use, of exclamation!!points]
-*///:~
+*/

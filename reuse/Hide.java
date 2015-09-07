@@ -1,4 +1,4 @@
-//: reuse/Hide.java
+// reuse/Hide.java
 // ©2015 MindView LLC: see Copyright.txt
 // Overloading a base-class method name in a derived
 // class does not hide the base-class versions.
@@ -31,9 +31,10 @@ public class Hide {
     b.doh(1.0f);
     b.doh(new Milhouse());
   }
-} /* Output:
+}
+/* Output:
 doh(float)
 doh(char)
 doh(float)
 doh(Milhouse)
-*///:~
+*/

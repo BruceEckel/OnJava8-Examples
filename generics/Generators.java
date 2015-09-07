@@ -1,4 +1,4 @@
-//: generics/Generators.java
+// generics/Generators.java
 // ©2015 MindView LLC: see Copyright.txt
 // A utility to use with Generators.
 import generics.coffee.*;
@@ -22,10 +22,11 @@ public class Generators {
     for(int i : fnumbers)
       System.out.print(i + ", ");
   }
-} /* Output:
+}
+/* Output:
 Americano 0
 Latte 1
 Americano 2
 Mocha 3
 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144,
-*///:~
+*/

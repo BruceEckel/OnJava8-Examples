@@ -1,4 +1,4 @@
-//: housekeeping/TerminationCondition.java
+// housekeeping/TerminationCondition.java
 // ©2015 MindView LLC: see Copyright.txt
 // Using finalize() to detect an object that
 // hasn't been properly cleaned up.
@@ -32,6 +32,7 @@ public class TerminationCondition {
     System.gc();
     new Sleep(1); // Delay
   }
-} /* Output:
+}
+/* Output:
 Error: checked out
-*///:~
+*/

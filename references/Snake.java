@@ -1,4 +1,4 @@
-//: references/Snake.java
+// references/Snake.java
 // ©2015 MindView LLC: see Copyright.txt
 // Tests cloning to see if destination
 // of references are also cloned.
@@ -43,8 +43,9 @@ public class Snake implements Cloneable {
     System.out.println(
       "after s.increment, s2 = " + s2);
   }
-} /* Output:
+}
+/* Output:
 s = :a:b:c:d:e
 s2 = :a:b:c:d:e
 after s.increment, s2 = :a:c:d:e:f
-*///:~
+*/

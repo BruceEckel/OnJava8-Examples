@@ -1,4 +1,4 @@
-//: generics/SimpleDogsAndRobots.java
+// generics/SimpleDogsAndRobots.java
 // ©2015 MindView LLC: see Copyright.txt
 // Removing the generic; code still works.
 
@@ -14,9 +14,10 @@ public class SimpleDogsAndRobots {
     CommunicateSimply.perform(new PerformingDog());
     CommunicateSimply.perform(new Robot());
   }
-} /* Output:
+}
+/* Output:
 Woof!
 Sitting
 Click!
 Clank!
-*///:~
+*/

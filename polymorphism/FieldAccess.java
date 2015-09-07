@@ -1,4 +1,4 @@
-//: polymorphism/FieldAccess.java
+// polymorphism/FieldAccess.java
 // ©2015 MindView LLC: see Copyright.txt
 // Direct field access is determined at compile time.
 
@@ -26,7 +26,8 @@ public class FieldAccess {
       ", sub.getSuperField() = " +
       sub.getSuperField());
   }
-} /* Output:
+}
+/* Output:
 sup.field = 0, sup.getField() = 1
 sub.field = 1, sub.getField() = 1, sub.getSuperField() = 0
-*///:~
+*/

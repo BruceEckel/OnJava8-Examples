@@ -1,4 +1,4 @@
-//: patterns/absfactory/GameEnvironment.java
+// patterns/absfactory/GameEnvironment.java
 // ©2015 MindView LLC: see Copyright.txt
 // An example of the Abstract Factory pattern.
 package patterns.absfactory;
@@ -93,7 +93,8 @@ public class GameEnvironment {
     g1.play();
     g2.play();
   }
-} /* Output:
+}
+/* Output:
 Kitty has encountered a Puzzle
 KungFuGuy now battles a NastyWeapon
-*///:~
+*/

@@ -1,4 +1,4 @@
-//: generics/GenericsAndReturnTypes.java
+// generics/GenericsAndReturnTypes.java
 // ©2015 MindView LLC: see Copyright.txt
 
 interface GenericGetter<T extends GenericGetter<T>> {
@@ -12,4 +12,4 @@ public class GenericsAndReturnTypes {
     Getter result = g.get();
     GenericGetter gg = g.get(); // Also the base type
   }
-} ///:~
+}

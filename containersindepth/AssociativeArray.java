@@ -1,9 +1,9 @@
-//: containersindepth/AssociativeArray.java
+// containersindepth/AssociativeArray.java
 // ©2015 MindView LLC: see Copyright.txt
 // Associates keys with values.
 import static com.mindviewinc.util.Print.*;
 
-public class AssociativeArray<K,V> {
+public class AssociativeArray<K, V> {
   private Object[][] pairs;
   private int index;
   public AssociativeArray(int length) {
@@ -50,7 +50,8 @@ public class AssociativeArray<K,V> {
     print(map);
     print(map.get("ocean"));
   }
-} /* Output:
+}
+/* Output:
 Too many objects!
 sky : blue
 grass : green
@@ -59,4 +60,4 @@ tree : tall
 earth : brown
 sun : warm
 dancing
-*///:~
+*/

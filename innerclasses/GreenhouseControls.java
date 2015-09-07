@@ -1,4 +1,4 @@
-//: innerclasses/GreenhouseControls.java
+// innerclasses/GreenhouseControls.java
 // ©2015 MindView LLC: see Copyright.txt
 // This produces a specific application of the
 // control system, all in a single class. Inner
@@ -124,4 +124,4 @@ public class GreenhouseControls extends Controller {
     @Override
     public String toString() { return "Terminating";  }
   }
-} ///:~
+}

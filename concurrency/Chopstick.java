@@ -1,4 +1,4 @@
-//: concurrency/Chopstick.java
+// concurrency/Chopstick.java
 // ©2015 MindView LLC: see Copyright.txt
 // Chopsticks for dining philosophers.
 
@@ -14,4 +14,4 @@ public class Chopstick {
     taken = false;
     notifyAll();
   }
-} ///:~
+}

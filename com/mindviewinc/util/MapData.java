@@ -1,14 +1,14 @@
-//: com/mindviewinc/util/MapData.java
+// com/mindviewinc/util/MapData.java
 // ©2015 MindView LLC: see Copyright.txt
 // A Map filled with data using a generator object.
 package com.mindviewinc.util;
 import java.util.*;
 
-public class MapData<K,V> extends LinkedHashMap<K,V> {
+public class MapData<K, V> extends LinkedHashMap<K, V> {
   // A single Pair Generator:
-  public MapData(Generator<Pair<K,V>> gen, int quantity) {
+  public MapData(Generator<Pair<K, V>> gen, int quantity) {
     for(int i = 0; i < quantity; i++) {
-      Pair<K,V> p = gen.next();
+      Pair<K, V> p = gen.next();
       put(p.key, p.value);
     }
   }
@@ -38,24 +38,24 @@ public class MapData<K,V> extends LinkedHashMap<K,V> {
     }
   }
   // Generic convenience methods:
-  public static <K,V> MapData<K,V>
-  map(Generator<Pair<K,V>> gen, int quantity) {
+  public static <K, V> MapData<K, V>
+  map(Generator<Pair<K, V>> gen, int quantity) {
     return new MapData<>(gen, quantity);
   }
-  public static <K,V> MapData<K,V>
+  public static <K, V> MapData<K, V>
   map(Generator<K> genK, Generator<V> genV, int quantity) {
     return new MapData<>(genK, genV, quantity);
   }
-  public static <K,V> MapData<K,V>
+  public static <K, V> MapData<K, V>
   map(Generator<K> genK, V value, int quantity) {
     return new MapData<>(genK, value, quantity);
   }
-  public static <K,V> MapData<K,V>
+  public static <K, V> MapData<K, V>
   map(Iterable<K> genK, Generator<V> genV) {
     return new MapData<>(genK, genV);
   }
-  public static <K,V> MapData<K,V>
+  public static <K, V> MapData<K, V>
   map(Iterable<K> genK, V value) {
     return new MapData<>(genK, value);
   }
-} ///:~
+}

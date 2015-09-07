@@ -1,4 +1,4 @@
-//: annotations/simplest/SimpleProcessor.java
+// annotations/simplest/SimpleProcessor.java
 // ©2015 MindView LLC: see Copyright.txt
 // A bare-bones annotation processor.
 package annotations.simplest;
@@ -41,4 +41,4 @@ extends AbstractProcessor {
       System.out.println(ex.getParameters() + ")");
     }
   }
-} ///:~
+}

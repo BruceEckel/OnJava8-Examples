@@ -1,4 +1,4 @@
-//: typeinfo/pets/ForNameCreator.java
+// typeinfo/pets/ForNameCreator.java
 // ©2015 MindView LLC: see Copyright.txt
 package typeinfo.pets;
 import java.util.*;
@@ -30,4 +30,4 @@ public class ForNameCreator extends PetCreator {
   static { loader(); }
   @Override
   public List<Class<? extends Pet>> types() {return types;}
-} ///:~
+}

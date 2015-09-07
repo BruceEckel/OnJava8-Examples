@@ -1,4 +1,4 @@
-//: concurrency/SynchronizationComparisons.java
+// concurrency/SynchronizationComparisons.java
 // ©2015 MindView LLC: see Copyright.txt
 // Comparing the performance of explicit Locks
 // and Atomics versus the synchronized keyword.
@@ -168,7 +168,8 @@ public class SynchronizationComparisons {
     }
     Accumulator.exec.shutdown();
   }
-} /* Output:
+}
+/* Output:
 Warmup
 synch        :      66040963
 ============================
@@ -206,4 +207,4 @@ Lock         :     413671821
 Atomic       :     963264943
 synch/Lock            : 2.63
 synch/(Atomic-synch)  : -8.64
-*///:~
+*/

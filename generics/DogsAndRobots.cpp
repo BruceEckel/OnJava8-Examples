@@ -1,4 +1,4 @@
-//: generics/DogsAndRobots.cpp
+// generics/DogsAndRobots.cpp
 // ©2015 MindView LLC: see Copyright.txt
 
 class Dog {
@@ -25,4 +25,4 @@ int main() {
   Robot r;
   perform(d);
   perform(r);
-} ///:~
+}

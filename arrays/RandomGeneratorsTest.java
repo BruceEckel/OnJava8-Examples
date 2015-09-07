@@ -1,4 +1,4 @@
-//: arrays/RandomGeneratorsTest.java
+// arrays/RandomGeneratorsTest.java
 // ©2015 MindView LLC: see Copyright.txt
 import com.mindviewinc.util.*;
 
@@ -6,7 +6,8 @@ public class RandomGeneratorsTest {
   public static void main(String[] args) {
     GeneratorsTest.test(RandomGenerator.class);
   }
-} /* Output:
+}
+/* Output:
 Double: 0.73 0.53 0.16 0.19 0.52 0.27 0.26 0.05 0.8 0.76
 Float: 0.53 0.16 0.53 0.4 0.49 0.25 0.8 0.11 0.02 0.8
 Long: 7674 8804 8950 7826 4322 896 8033 2984 2344 5810
@@ -19,4 +20,4 @@ Character: x x E A J J m z M s
 Byte: -60 -17 55 -14 -5 115 39 -37 79 115
 Boolean: false true false false true true true true true
 true
-*///:~
+*/

@@ -1,17 +1,17 @@
-//: containersindepth/SimpleHashMap.java
+// containersindepth/SimpleHashMap.java
 // ©2015 MindView LLC: see Copyright.txt
 // A demonstration hashed Map.
 import java.util.*;
 import com.mindviewinc.util.*;
 
-public class SimpleHashMap<K,V> extends AbstractMap<K,V> {
+public class SimpleHashMap<K, V> extends AbstractMap<K, V> {
   // Choose a prime number for the hash table
   // size, to achieve a uniform distribution:
   static final int SIZE = 997;
   // You can't have a physical array of generics,
   // but you can upcast to one:
   @SuppressWarnings("unchecked")
-  LinkedList<MapEntry<K,V>>[] buckets =
+  LinkedList<MapEntry<K, V>>[] buckets =
     new LinkedList[SIZE];
   @Override
   public V put(K key, V value) {
@@ -19,12 +19,12 @@ public class SimpleHashMap<K,V> extends AbstractMap<K,V> {
     int index = Math.abs(key.hashCode()) % SIZE;
     if(buckets[index] == null)
       buckets[index] = new LinkedList<>();
-    LinkedList<MapEntry<K,V>> bucket = buckets[index];
-    MapEntry<K,V> pair = new MapEntry<>(key, value);
+    LinkedList<MapEntry<K, V>> bucket = buckets[index];
+    MapEntry<K, V> pair = new MapEntry<>(key, value);
     boolean found = false;
-    ListIterator<MapEntry<K,V>> it = bucket.listIterator();
+    ListIterator<MapEntry<K, V>> it = bucket.listIterator();
     while(it.hasNext()) {
-      MapEntry<K,V> iPair = it.next();
+      MapEntry<K, V> iPair = it.next();
       if(iPair.getKey().equals(key)) {
         oldValue = iPair.getValue();
         it.set(pair); // Replace old with new
@@ -40,17 +40,17 @@ public class SimpleHashMap<K,V> extends AbstractMap<K,V> {
   public V get(Object key) {
     int index = Math.abs(key.hashCode()) % SIZE;
     if(buckets[index] == null) return null;
-    for(MapEntry<K,V> iPair : buckets[index])
+    for(MapEntry<K, V> iPair : buckets[index])
       if(iPair.getKey().equals(key))
         return iPair.getValue();
     return null;
   }
   @Override
-  public Set<Map.Entry<K,V>> entrySet() {
-    Set<Map.Entry<K,V>> set= new HashSet<>();
-    for(LinkedList<MapEntry<K,V>> bucket : buckets) {
+  public Set<Map.Entry<K, V>> entrySet() {
+    Set<Map.Entry<K, V>> set= new HashSet<>();
+    for(LinkedList<MapEntry<K, V>> bucket : buckets) {
       if(bucket == null) continue;
-      for(MapEntry<K,V> mpair : bucket)
+      for(MapEntry<K, V> mpair : bucket)
         set.add(mpair);
     }
     return set;
@@ -62,7 +62,8 @@ public class SimpleHashMap<K,V> extends AbstractMap<K,V> {
     System.out.println(m.get("ERITREA"));
     System.out.println(m.entrySet());
   }
-} /* Output:
+}
+/* Output:
 {CAPE VERDE=Praia, ANGOLA=Luanda, ETHIOPIA=Addis Ababa,
 BENIN=Porto-Novo, CONGO=Brazzaville, LESOTHO=Maseru,
 CENTRAL AFRICAN REPUBLIC=Bangui, EQUATORIAL GUINEA=Malabo,
@@ -82,4 +83,4 @@ EGYPT=Cairo, BURUNDI=Bujumbura, ALGERIA=Algiers,
 CAMEROON=Yaounde, GHANA=Accra, KENYA=Nairobi, COTE D'IVOIR
 (IVORY COAST)=Yamoussoukro, BISSAU=Bissau,
 DJIBOUTI=Dijibouti, CHAD=N'djamena, BOTSWANA=Gaberone]
-*///:~
+*/

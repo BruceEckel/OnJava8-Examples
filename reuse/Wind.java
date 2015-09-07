@@ -1,4 +1,4 @@
-//: reuse/Wind.java
+// reuse/Wind.java
 // ©2015 MindView LLC: see Copyright.txt
 // Inheritance & upcasting.
 
@@ -17,4 +17,5 @@ public class Wind extends Instrument {
     Wind flute = new Wind();
     Instrument.tune(flute); // Upcasting
   }
-} /* Output: (None) *///:~
+}
+/* Output: (None) */

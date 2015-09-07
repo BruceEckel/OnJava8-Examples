@@ -1,4 +1,4 @@
-//: typeinfo/FamilyVsExactType.java
+// typeinfo/FamilyVsExactType.java
 // ©2015 MindView LLC: see Copyright.txt
 // The difference between instanceof and class
 package typeinfo;
@@ -28,7 +28,8 @@ public class FamilyVsExactType {
     test(new Base());
     test(new Derived());
   }
-} /* Output:
+}
+/* Output:
 Testing x of type class typeinfo.Base
 x instanceof Base true
 x instanceof Derived false
@@ -47,4 +48,4 @@ x.getClass() == Base.class false
 x.getClass() == Derived.class true
 x.getClass().equals(Base.class)) false
 x.getClass().equals(Derived.class)) true
-*///:~
+*/

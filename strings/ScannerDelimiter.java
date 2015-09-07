@@ -1,4 +1,4 @@
-//: strings/ScannerDelimiter.java
+// strings/ScannerDelimiter.java
 // ©2015 MindView LLC: see Copyright.txt
 import java.util.*;
 
@@ -9,10 +9,11 @@ public class ScannerDelimiter {
     while(scanner.hasNextInt())
       System.out.println(scanner.nextInt());
   }
-} /* Output:
+}
+/* Output:
 12
 42
 78
 99
 42
-*///:~
+*/

@@ -1,4 +1,4 @@
-//: generics/OrdinaryArguments.java
+// generics/OrdinaryArguments.java
 // ©2015 MindView LLC: see Copyright.txt
 
 class OrdinarySetter {
@@ -21,7 +21,8 @@ public class OrdinaryArguments {
     ds.set(derived);
     ds.set(base); // Compiles: overloaded, not overridden!
   }
-} /* Output:
+}
+/* Output:
 DerivedSetter.set(Derived)
 OrdinarySetter.set(Base)
-*///:~
+*/

@@ -1,4 +1,4 @@
-//: io/AStoreCADState.java
+// io/AStoreCADState.java
 // ©2015 MindView LLC: see Copyright.txt
 // Saving the state of a pretend CAD system.
 import java.io.*;
@@ -92,7 +92,8 @@ public class AStoreCADState {
     // Display the shapes:
     System.out.println(shapes);
   }
-} /* Output:
+}
+/* Output:
 [class Circlecolor[3] xPos[58] yPos[55] dim[93]
 , class Squarecolor[3] xPos[61] yPos[61] dim[29]
 , class Linecolor[3] xPos[68] yPos[0] dim[22]
@@ -104,4 +105,4 @@ public class AStoreCADState {
 , class Linecolor[3] xPos[4] yPos[83] dim[6]
 , class Circlecolor[3] xPos[75] yPos[10] dim[42]
 ]
-*///:~
+*/

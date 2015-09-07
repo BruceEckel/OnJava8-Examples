@@ -1,4 +1,4 @@
-//: patterns/absfactory/GameEnvironment2.java
+// patterns/absfactory/GameEnvironment2.java
 // ©2015 MindView LLC: see Copyright.txt
 // Using the Supplier<> Functional Interface.
 package patterns.absfactory;
@@ -47,7 +47,8 @@ public class GameEnvironment2 {
     g1.play();
     g2.play();
   }
-} /* Output:
+}
+/* Output:
 Kitty has encountered a Puzzle
 KungFuGuy now battles a NastyWeapon
-*///:~
+*/

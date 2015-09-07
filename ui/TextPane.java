@@ -1,4 +1,4 @@
-//: ui/TextPane.java
+// ui/TextPane.java
 // ©2015 MindView LLC: see Copyright.txt
 // The JTextPane control is a little editor.
 import javax.swing.*;
@@ -22,4 +22,4 @@ public class TextPane extends JFrame {
   public static void main(String[] args) {
     run(new TextPane(), 475, 425);
   }
-} ///:~
+}

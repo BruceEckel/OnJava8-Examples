@@ -1,4 +1,4 @@
-//: ui/InterruptableLongRunningCallable.java
+// ui/InterruptableLongRunningCallable.java
 // ©2015 MindView LLC: see Copyright.txt
 // Using Callables for long-running tasks.
 import javax.swing.*;
@@ -49,4 +49,4 @@ InterruptableLongRunningCallable extends JFrame {
   public static void main(String[] args) {
     run(new InterruptableLongRunningCallable(), 200, 150);
   }
-} ///:~
+}

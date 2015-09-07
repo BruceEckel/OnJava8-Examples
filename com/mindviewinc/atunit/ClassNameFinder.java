@@ -1,4 +1,4 @@
-//: com/mindviewinc/atunit/ClassNameFinder.java
+// com/mindviewinc/atunit/ClassNameFinder.java
 // ©2015 MindView LLC: see Copyright.txt
 package com.mindviewinc.atunit;
 import java.io.*;
@@ -73,7 +73,8 @@ public class ClassNameFinder {
       for(File klass : Directory.walk(".", ".*\\.class"))
         print(thisClass(BinaryFile.read(klass)));
   }
-} /* Output:
+}
+/* Output:
 com.mindviewinc.atunit.AtUnit$TestMethods
 com.mindviewinc.atunit.AtUnit
 com.mindviewinc.atunit.ClassNameFinder
@@ -81,4 +82,4 @@ com.mindviewinc.atunit.Test
 com.mindviewinc.atunit.TestObjectCleanup
 com.mindviewinc.atunit.TestObjectCreate
 com.mindviewinc.atunit.TestProperty
-*///:~
+*/

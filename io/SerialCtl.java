@@ -1,4 +1,4 @@
-//: io/SerialCtl.java
+// io/SerialCtl.java
 // ©2015 MindView LLC: see Copyright.txt
 // Controlling serialization by adding your own
 // writeObject() and readObject() methods.
@@ -36,11 +36,12 @@ public class SerialCtl implements Serializable {
     SerialCtl sc2 = (SerialCtl)in.readObject();
     System.out.println("After:\n" + sc2);
   }
-} /* Output:
+}
+/* Output:
 Before:
 Not Transient: Test1
 Transient: Test2
 After:
 Not Transient: Test1
 Transient: Test2
-*///:~
+*/

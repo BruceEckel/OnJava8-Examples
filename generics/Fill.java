@@ -1,4 +1,4 @@
-//: generics/Fill.java
+// generics/Fill.java
 // ©2015 MindView LLC: see Copyright.txt
 // Generalizing the FilledList idea
 // {main: FillTest}
@@ -45,10 +45,11 @@ class FillTest {
     // Won't work. fill() is not generic enough:
     // Fill.fill(contractQueue, Contract.class, 3);
   }
-} /* Output:
+}
+/* Output:
 Contract 0
 Contract 1
 Contract 2
 TitleTransfer 3
 TitleTransfer 4
-*///:~
+*/

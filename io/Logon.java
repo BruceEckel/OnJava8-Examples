@@ -1,4 +1,4 @@
-//: io/Logon.java
+// io/Logon.java
 // ©2015 MindView LLC: see Copyright.txt
 // Demonstrates the "transient" keyword.
 import java.util.concurrent.*;
@@ -34,7 +34,8 @@ public class Logon implements Serializable {
     a = (Logon)in.readObject();
     print("logon a = " + a);
   }
-} /* Output:
+}
+/* Output:
 logon a = logon info:
    username: Hulk
    date: Mon Jun 15 15:47:51 PDT 2015
@@ -44,4 +45,4 @@ logon a = logon info:
    username: Hulk
    date: Mon Jun 15 15:47:51 PDT 2015
    password: null
-*///:~
+*/

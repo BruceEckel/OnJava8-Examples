@@ -1,4 +1,4 @@
-//: ui/SubmitSwingProgram.java
+// ui/SubmitSwingProgram.java
 // ©2015 MindView LLC: see Copyright.txt
 import javax.swing.*;
 import java.util.concurrent.*;
@@ -21,4 +21,4 @@ public class SubmitSwingProgram extends JFrame {
     SwingUtilities.invokeLater(() ->
       ssp.label.setText("Hey! This is Different!"));
   }
-} ///:~
+}

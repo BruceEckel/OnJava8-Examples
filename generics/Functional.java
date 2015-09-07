@@ -1,4 +1,4 @@
-//: generics/Functional.java
+// generics/Functional.java
 // ©2015 MindView LLC: see Copyright.txt
 import java.math.*;
 import java.util.concurrent.atomic.*;
@@ -170,9 +170,10 @@ public class Functional {
     AtomicLong ral = reduce(lal, new AtomicLongAdder());
     print(ral);
 
-    print(transform(lbd,new BigDecimalUlp()));
+    print(transform(lbd, new BigDecimalUlp()));
   }
-} /* Output:
+}
+/* Output:
 28
 -26
 [5, 6, 7]
@@ -185,4 +186,4 @@ public class Functional {
 true
 265
 [0.000001, 0.000001, 0.000001, 0.000001]
-*///:~
+*/

@@ -1,4 +1,4 @@
-//: ui/BorderLayout1.java
+// ui/BorderLayout1.java
 // ©2015 MindView LLC: see Copyright.txt
 // Demonstrates BorderLayout.
 import javax.swing.*;
@@ -16,4 +16,4 @@ public class BorderLayout1 extends JFrame {
   public static void main(String[] args) {
     run(new BorderLayout1(), 300, 250);
   }
-} ///:~
+}

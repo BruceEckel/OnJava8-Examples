@@ -1,4 +1,4 @@
-//: generics/SuperTypeWildcards.java
+// generics/SuperTypeWildcards.java
 // ©2015 MindView LLC: see Copyright.txt
 import java.util.*;
 
@@ -8,4 +8,4 @@ public class SuperTypeWildcards {
     apples.add(new Jonathan());
     // apples.add(new Fruit()); // Error
   }
-} ///:~
+}

@@ -1,4 +1,4 @@
-//: innerclasses/Parcel5.java
+// innerclasses/Parcel5.java
 // ©2015 MindView LLC: see Copyright.txt
 // Nesting a class within a method.
 
@@ -18,4 +18,5 @@ public class Parcel5 {
     Parcel5 p = new Parcel5();
     Destination d = p.destination("Tasmania");
   }
-} /* Output: (None) *///:~
+}
+/* Output: (None) */

@@ -1,4 +1,4 @@
-//: ui/TabbedPane1.java
+// ui/TabbedPane1.java
 // ©2015 MindView LLC: see Copyright.txt
 // Demonstrates the Tabbed Pane.
 import javax.swing.*;
@@ -27,4 +27,4 @@ public class TabbedPane1 extends JFrame {
   public static void main(String[] args) {
     run(new TabbedPane1(), 400, 250);
   }
-} ///:~
+}

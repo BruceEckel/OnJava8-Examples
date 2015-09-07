@@ -1,4 +1,4 @@
-//: enums/RoShamBo4.java
+// enums/RoShamBo4.java
 // ©2015 MindView LLC: see Copyright.txt
 package enums;
 
@@ -29,7 +29,8 @@ public enum RoShamBo4 implements Competitor<RoShamBo4> {
   public static void main(String[] args) {
     RoShamBo.play(RoShamBo4.class, 20);
   }
-} /* Output:
+}
+/* Output:
 PAPER vs. PAPER: DRAW
 SCISSORS vs. PAPER: WIN
 SCISSORS vs. PAPER: WIN
@@ -50,4 +51,4 @@ SCISSORS vs. ROCK: LOSE
 SCISSORS vs. ROCK: LOSE
 SCISSORS vs. ROCK: LOSE
 SCISSORS vs. ROCK: LOSE
-*///:~
+*/

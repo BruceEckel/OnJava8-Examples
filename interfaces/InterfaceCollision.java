@@ -1,4 +1,4 @@
-//: interfaces/InterfaceCollision.java
+// interfaces/InterfaceCollision.java
 // ©2015 MindView LLC: see Copyright.txt
 package interfaces;
 
@@ -27,4 +27,4 @@ class C4 extends C implements I3 {
 
 // Methods differ only by return type:
 //! class C5 extends C implements I1 {}
-//! interface I4 extends I1, I3 {} ///:~
+//! interface I4 extends I1, I3 {}

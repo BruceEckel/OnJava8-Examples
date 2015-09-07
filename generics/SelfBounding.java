@@ -1,4 +1,4 @@
-//: generics/SelfBounding.java
+// generics/SelfBounding.java
 // ©2015 MindView LLC: see Copyright.txt
 
 class SelfBounded<T extends SelfBounded<T>> {
@@ -34,4 +34,5 @@ public class SelfBounding {
     C c = new C();
     c = c.setAndGet(new C());
   }
-} /* Output: (None) *///:~
+}
+/* Output: (None) */

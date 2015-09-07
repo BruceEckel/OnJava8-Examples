@@ -1,4 +1,4 @@
-//: com/mindviewinc/util/TypeCounter.java
+// com/mindviewinc/util/TypeCounter.java
 // ©2015 MindView LLC: see Copyright.txt
 // Counts instances of a type family.
 package com.mindviewinc.util;
@@ -38,4 +38,4 @@ public class TypeCounter extends HashMap<Class<?>,Integer>{
     result.append("}");
     return result.toString();
   }
-} ///:~
+}

@@ -1,4 +1,4 @@
-//: containersindepth/IndividualTest.java
+// containersindepth/IndividualTest.java
 // ©2015 MindView LLC: see Copyright.txt
 import containers.MapOfList;
 import typeinfo.pets.*;
@@ -13,9 +13,10 @@ public class IndividualTest {
         pets.add(p);
     System.out.println(pets);
   }
-} /* Output:
+}
+/* Output:
 [Cat Elsie May, Cat Pinkola, Cat Shackleton, Cat Stanford
 aka Stinky el Negro, Cymric Molly, Dog Margrett, Mutt Spot,
 Pug Louie aka Louis Snorkelstein Dupree, Rat Fizzy, Rat
 Freckly, Rat Fuzzy]
-*///:~
+*/

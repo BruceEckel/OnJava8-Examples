@@ -1,4 +1,4 @@
-//: typeinfo/ShowMethods.java
+// typeinfo/ShowMethods.java
 // ©2015 MindView LLC: see Copyright.txt
 // Using reflection to show all the methods of a class,
 // even if the methods are defined in the base class.
@@ -50,7 +50,8 @@ public class ShowMethods {
       print("No such class: " + e);
     }
   }
-} /* Output:
+}
+/* Output:
 public static void main(String[])
 public final void wait() throws InterruptedException
 public final void wait(long,int) throws
@@ -64,4 +65,4 @@ public final native Class getClass()
 public final native void notify()
 public final native void notifyAll()
 public ShowMethods()
-*///:~
+*/

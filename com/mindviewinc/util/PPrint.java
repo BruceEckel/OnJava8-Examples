@@ -1,4 +1,4 @@
-//: com/mindviewinc/util/PPrint.java
+// com/mindviewinc/util/PPrint.java
 // ©2015 MindView LLC: see Copyright.txt
 // Pretty-printer for collections
 package com.mindviewinc.util;
@@ -24,4 +24,4 @@ public class PPrint {
   public static void pprint(Object[] c) {
     System.out.println(pformat(Arrays.asList(c)));
   }
-} ///:~
+}

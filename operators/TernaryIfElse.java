@@ -1,4 +1,4 @@
-//: operators/TernaryIfElse.java
+// operators/TernaryIfElse.java
 // ©2015 MindView LLC: see Copyright.txt
 import static com.mindviewinc.util.Print.*;
 
@@ -18,9 +18,10 @@ public class TernaryIfElse {
     print(standardIfElse(9));
     print(standardIfElse(10));
   }
-} /* Output:
+}
+/* Output:
 900
 100
 900
 100
-*///:~
+*/

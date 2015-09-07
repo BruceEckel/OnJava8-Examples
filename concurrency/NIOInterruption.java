@@ -1,4 +1,4 @@
-//: concurrency/NIOInterruption.java
+// concurrency/NIOInterruption.java
 // ©2015 MindView LLC: see Copyright.txt
 // Interrupting a blocked NIO channel.
 import java.net.*;
@@ -45,11 +45,12 @@ public class NIOInterruption {
       // Release the block by closing the channel:
     }
   }
-} /* Output:
+}
+/* Output:
 Waiting for read() in NIOBlocked@14da8ff
 Waiting for read() in NIOBlocked@b280d5
 ClosedByInterruptException
 Exiting NIOBlocked.run() NIOBlocked@14da8ff
 AsynchronousCloseException
 Exiting NIOBlocked.run() NIOBlocked@b280d5
-*///:~
+*/

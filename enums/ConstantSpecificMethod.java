@@ -1,4 +1,4 @@
-//: enums/ConstantSpecificMethod.java
+// enums/ConstantSpecificMethod.java
 // ©2015 MindView LLC: see Copyright.txt
 import java.util.*;
 import java.text.*;
@@ -28,7 +28,8 @@ public enum ConstantSpecificMethod {
     for(ConstantSpecificMethod csm : values())
       System.out.println(csm.getInfo());
   }
-} /* Output:
+}
+/* Output:
 Jun 15, 2015
 .;..;C:\Program Files (x86)\Java\xom-1.2.10.jar;C:\Program
 Files (x86)\Java\jdk1.8.0_45\lib\tools.jar;C:\Program Files
@@ -39,4 +40,4 @@ Java\ExtractedExamples;C:\Program Files
 (x86)\Java\junit-4.12.jar;C:\Program Files (x86)\Java
 \hamcrest-core-1.3.jar;
 1.8.0_45
-*///:~
+*/

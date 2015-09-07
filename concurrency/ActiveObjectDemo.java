@@ -1,4 +1,4 @@
-//: concurrency/ActiveObjectDemo.java
+// concurrency/ActiveObjectDemo.java
 // ©2015 MindView LLC: see Copyright.txt
 // Can only pass constants, immutables, "disconnected
 // objects," or other active objects as arguments
@@ -62,7 +62,8 @@ public class ActiveObjectDemo {
     }
     d1.shutdown();
   }
-} /* Output:
+}
+/* Output:
 starting 0.0 + 0.0
 All asynch calls made
 0.0
@@ -84,4 +85,4 @@ starting 3 + 3
 6
 starting 4 + 4
 8
-*///:~
+*/

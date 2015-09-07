@@ -1,4 +1,4 @@
-//: enums/SpaceShip.java
+// enums/SpaceShip.java
 // ©2015 MindView LLC: see Copyright.txt
 public enum SpaceShip {
   SCOUT, CARGO, TRANSPORT, CRUISER, BATTLESHIP, MOTHERSHIP;
@@ -13,11 +13,12 @@ public enum SpaceShip {
       System.out.println(s);
     }
   }
-} /* Output:
+}
+/* Output:
 Scout
 Cargo
 Transport
 Cruiser
 Battleship
 Mothership
-*///:~
+*/

@@ -1,4 +1,4 @@
-//: reuse/BlankFinal.java
+// reuse/BlankFinal.java
 // ©2015 MindView LLC: see Copyright.txt
 // "Blank" final fields.
 
@@ -24,4 +24,5 @@ public class BlankFinal {
     new BlankFinal();
     new BlankFinal(47);
   }
-} /* Output: (None) *///:~
+}
+/* Output: (None) */

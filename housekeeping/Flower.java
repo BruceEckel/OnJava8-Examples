@@ -1,4 +1,4 @@
-//: housekeeping/Flower.java
+// housekeeping/Flower.java
 // ©2015 MindView LLC: see Copyright.txt
 // Calling constructors with "this"
 import static com.mindviewinc.util.Print.*;
@@ -33,9 +33,10 @@ public class Flower {
     Flower x = new Flower();
     x.printPetalCount();
   }
-} /* Output:
+}
+/* Output:
 Constructor w/ int arg only, petalCount= 47
 String & int args
 default constructor (no args)
 petalCount = 47 s = hi
-*///:~
+*/

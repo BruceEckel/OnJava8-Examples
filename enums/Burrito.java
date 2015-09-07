@@ -1,4 +1,4 @@
-//: enums/Burrito.java
+// enums/Burrito.java
 // ©2015 MindView LLC: see Copyright.txt
 package enums;
 import static enums.Spiciness.*;
@@ -13,8 +13,9 @@ public class Burrito {
     System.out.println(new Burrito(MEDIUM));
     System.out.println(new Burrito(HOT));
   }
-} /* Output:
+}
+/* Output:
 Burrito is NOT
 Burrito is MEDIUM
 Burrito is HOT
-*///:~
+*/

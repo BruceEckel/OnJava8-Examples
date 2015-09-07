@@ -1,4 +1,4 @@
-//: hiding/IceCream.java
+// hiding/IceCream.java
 // ©2015 MindView LLC: see Copyright.txt
 // Demonstrates "private" keyword.
 
@@ -14,4 +14,5 @@ public class IceCream {
     //! Sundae x = new Sundae();
     Sundae x = Sundae.makeASundae();
   }
-} /* Output: (None) *///:~
+}
+/* Output: (None) */

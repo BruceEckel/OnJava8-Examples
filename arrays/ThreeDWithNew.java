@@ -1,4 +1,4 @@
-//: arrays/ThreeDWithNew.java
+// arrays/ThreeDWithNew.java
 // ©2015 MindView LLC: see Copyright.txt
 import java.util.*;
 
@@ -8,7 +8,8 @@ public class ThreeDWithNew {
     int[][][] a = new int[2][2][4];
     System.out.println(Arrays.deepToString(a));
   }
-} /* Output:
+}
+/* Output:
 [[[0, 0, 0, 0], [0, 0, 0, 0]], [[0, 0, 0, 0], [0, 0, 0,
 0]]]
-*///:~
+*/

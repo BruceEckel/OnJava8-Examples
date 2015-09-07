@@ -1,4 +1,4 @@
-//: io/Worm.java
+// io/Worm.java
 // ©2015 MindView LLC: see Copyright.txt
 // Demonstrates object serialization.
 import java.io.*;
@@ -70,7 +70,8 @@ public class Worm implements Serializable {
     Worm w3 = (Worm)in2.readObject();
     print(s + "w3 = " + w3);
   }
-} /* Output:
+}
+/* Output:
 Worm constructor: 6
 Worm constructor: 5
 Worm constructor: 4
@@ -82,4 +83,4 @@ Worm storage
 w2 = :a(853):b(119):c(802):d(788):e(199):f(881)
 Worm storage
 w3 = :a(853):b(119):c(802):d(788):e(199):f(881)
-*///:~
+*/

@@ -1,4 +1,4 @@
-//: concurrency/ListComparisons.java
+// concurrency/ListComparisons.java
 // ©2015 MindView LLC: see Copyright.txt
 // {Args: 1 10 10} (Fast verification check during build)
 // Rough comparison of thread-safe List performance.
@@ -72,7 +72,8 @@ public class ListComparisons {
     new CopyOnWriteArrayListTest(5, 5);
     Tester.exec.shutdown();
   }
-} /* Output:
+}
+/* Output:
 Type                             Read time     Write time
 Synched ArrayList 10r 0w            700989              0
 Synched ArrayList 9r 1w            2531313          60622
@@ -84,4 +85,4 @@ CopyOnWriteArrayList 9r 1w          161945         123521
 readTime + writeTime =              285466
 CopyOnWriteArrayList 5r 5w          549580        4230146
 readTime + writeTime =             4779726
-*///:~
+*/

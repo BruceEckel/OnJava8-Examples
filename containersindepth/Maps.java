@@ -1,4 +1,4 @@
-//: containersindepth/Maps.java
+// containersindepth/Maps.java
 // ©2015 MindView LLC: see Copyright.txt
 // Things you can do with Maps.
 import java.util.concurrent.*;
@@ -45,7 +45,8 @@ public class Maps {
     test(new ConcurrentHashMap<>());
     test(new WeakHashMap<>());
   }
-} /* Output: (First 11 Lines)
+}
+/* Output: (First 11 Lines)
 HashMap
 Size = 25, Keys: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12,
 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24]
@@ -63,4 +64,4 @@ Size = 24, Keys: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12,
 map.isEmpty(): true
 map.isEmpty(): true
                   ...
-*///:~
+*/

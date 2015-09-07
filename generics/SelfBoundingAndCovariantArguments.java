@@ -1,4 +1,4 @@
-//: generics/SelfBoundingAndCovariantArguments.java
+// generics/SelfBoundingAndCovariantArguments.java
 // ©2015 MindView LLC: see Copyright.txt
 
 interface SelfBoundSetter<T extends SelfBoundSetter<T>> {
@@ -14,4 +14,4 @@ public class SelfBoundingAndCovariantArguments {
     // set(Setter) in SelfBoundSetter<Setter>
     // cannot be applied to (SelfBoundSetter)
   }
-} ///:~
+}

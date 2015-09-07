@@ -1,4 +1,4 @@
-//: ui/Button2.java
+// ui/Button2.java
 // ©2015 MindView LLC: see Copyright.txt
 // Responding to button presses.
 import javax.swing.*;
@@ -30,4 +30,4 @@ public class Button2 extends JFrame {
   public static void main(String[] args) {
     run(new Button2(), 200, 150);
   }
-} ///:~
+}

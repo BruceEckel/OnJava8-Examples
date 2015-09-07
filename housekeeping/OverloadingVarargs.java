@@ -1,4 +1,4 @@
-//: housekeeping/OverloadingVarargs.java
+// housekeeping/OverloadingVarargs.java
 // ©2015 MindView LLC: see Copyright.txt
 
 public class OverloadingVarargs {
@@ -25,10 +25,11 @@ public class OverloadingVarargs {
     f(0L);
     //! f(); // Won't compile -- ambiguous
   }
-} /* Output:
+}
+/* Output:
 first a b c
 second 1
 second 2 1
 second 0
 third
-*///:~
+*/

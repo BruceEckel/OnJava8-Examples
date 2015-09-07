@@ -1,4 +1,4 @@
-//: polymorphism/Transmogrify.java
+// polymorphism/Transmogrify.java
 // ©2015 MindView LLC: see Copyright.txt
 // Dynamically changing the behavior of an object
 // via composition (the "State" design pattern).
@@ -31,7 +31,8 @@ public class Transmogrify {
     stage.change();
     stage.performPlay();
   }
-} /* Output:
+}
+/* Output:
 HappyActor
 SadActor
-*///:~
+*/

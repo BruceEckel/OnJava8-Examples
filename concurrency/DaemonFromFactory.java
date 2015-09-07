@@ -1,4 +1,4 @@
-//: concurrency/DaemonFromFactory.java
+// concurrency/DaemonFromFactory.java
 // ©2015 MindView LLC: see Copyright.txt
 // Using a Thread Factory to create daemons.
 import java.util.concurrent.*;
@@ -25,7 +25,8 @@ public class DaemonFromFactory implements Runnable {
     print("All daemons started");
     TimeUnit.MILLISECONDS.sleep(500); // Run for a while
   }
-} /* Output: (First 10 Lines)
+}
+/* Output: (First 10 Lines)
 All daemons started
 Thread[Thread-7,5,main] DaemonFromFactory@e6b01c
 Thread[Thread-5,5,main] DaemonFromFactory@58daee
@@ -37,4 +38,4 @@ Thread[Thread-0,5,main] DaemonFromFactory@1e19df
 Thread[Thread-3,5,main] DaemonFromFactory@963672
 Thread[Thread-6,5,main] DaemonFromFactory@2f2043
                   ...
-*///:~
+*/

@@ -1,4 +1,4 @@
-//: concurrency/IntGenerator.java
+// concurrency/IntGenerator.java
 // ©2015 MindView LLC: see Copyright.txt
 
 public abstract class IntGenerator {
@@ -7,4 +7,4 @@ public abstract class IntGenerator {
   // Allow this to be canceled:
   public void cancel() { canceled = true; }
   public boolean isCanceled() { return canceled; }
-} ///:~
+}

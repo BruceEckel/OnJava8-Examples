@@ -1,4 +1,4 @@
-//: generics/Diamond.java
+// generics/Diamond.java
 // ©2015 MindView LLC: see Copyright.txt
 
 public class Diamond<T> {
@@ -13,4 +13,5 @@ public class Diamond<T> {
     // h3.set("Not an Automobile"); // Error
     // h3.set(1); // Error
   }
-} /* Output: (None) *///:~
+}
+/* Output: (None) */

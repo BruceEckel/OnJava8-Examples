@@ -1,4 +1,4 @@
-//: references/HorrorFlick.java
+// references/HorrorFlick.java
 // ©2015 MindView LLC: see Copyright.txt
 // You can insert Cloneability
 // at any level of inheritance.
@@ -32,4 +32,5 @@ public class HorrorFlick {
     s = (Scientist)s.clone();
     m = (MadScientist)m.clone();
   }
-} /* Output: (None) *///:~
+}
+/* Output: (None) */

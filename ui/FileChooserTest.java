@@ -1,4 +1,4 @@
-//: ui/FileChooserTest.java
+// ui/FileChooserTest.java
 // ©2015 MindView LLC: see Copyright.txt
 // Demonstration of File dialog boxes.
 import javax.swing.*;
@@ -63,4 +63,4 @@ public class FileChooserTest extends JFrame {
   public static void main(String[] args) {
     run(new FileChooserTest(), 250, 150);
   }
-} ///:~
+}

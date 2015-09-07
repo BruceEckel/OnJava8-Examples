@@ -1,4 +1,4 @@
-//: polymorphism/PrivateOverride.java
+// polymorphism/PrivateOverride.java
 // ©2015 MindView LLC: see Copyright.txt
 // Trying to override a private method.
 package polymorphism;
@@ -14,6 +14,7 @@ public class PrivateOverride {
 
 class Derived extends PrivateOverride {
   public void f() { print("public f()"); }
-} /* Output:
+}
+/* Output:
 private f()
-*///:~
+*/

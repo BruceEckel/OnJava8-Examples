@@ -1,4 +1,4 @@
-//: hiding/ChocolateChip2.java
+// hiding/ChocolateChip2.java
 // ©2015 MindView LLC: see Copyright.txt
 import hiding.cookie2.*;
 
@@ -11,8 +11,9 @@ public class ChocolateChip2 extends Cookie {
     ChocolateChip2 x = new ChocolateChip2();
     x.chomp();
   }
-} /* Output:
+}
+/* Output:
 Cookie constructor
 ChocolateChip2 constructor
 bite
-*///:~
+*/

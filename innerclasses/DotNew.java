@@ -1,4 +1,4 @@
-//: innerclasses/DotNew.java
+// innerclasses/DotNew.java
 // ©2015 MindView LLC: see Copyright.txt
 // Creating an inner class directly using the .new syntax.
 
@@ -8,4 +8,5 @@ public class DotNew {
     DotNew dn = new DotNew();
     DotNew.Inner dni = dn.new Inner();
   }
-} /* Output: (None) *///:~
+}
+/* Output: (None) */

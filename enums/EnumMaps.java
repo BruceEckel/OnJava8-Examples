@@ -1,4 +1,4 @@
-//: enums/EnumMaps.java
+// enums/EnumMaps.java
 // ©2015 MindView LLC: see Copyright.txt
 // Basics of EnumMaps.
 package enums;
@@ -24,8 +24,9 @@ public class EnumMaps {
       print("Expected: " + e);
     }
   }
-} /* Output:
+}
+/* Output:
 BATHROOM: Bathroom alert!
 KITCHEN: Kitchen fire!
 Expected: java.lang.NullPointerException
-*///:~
+*/

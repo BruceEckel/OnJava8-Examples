@@ -1,4 +1,4 @@
-//: concurrency/GreenhouseScheduler.java
+// concurrency/GreenhouseScheduler.java
 // ©2015 MindView LLC: see Copyright.txt
 // Rewriting innerclasses/GreenhouseController.java
 // to use a ScheduledThreadPoolExecutor.
@@ -163,7 +163,8 @@ public class GreenhouseScheduler {
     gh.repeat(gh.new ThermostatDay(), 0, 1400);
     gh.repeat(gh.new CollectData(), 500, 500);
   }
-} /* Output: (First and last 10 Lines)
+}
+/* Output: (First and last 10 Lines)
 Bing!
 Thermostat to night setting
 Turning on lights
@@ -194,4 +195,4 @@ Mon Jun 15 19:30:00 PDT 2015 temperature: 70.1 humidity:
 50.25
 Mon Jun 15 20:00:00 PDT 2015 temperature: 68.9 humidity:
 51.00
-*///:~
+*/

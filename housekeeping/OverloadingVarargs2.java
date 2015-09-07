@@ -1,4 +1,4 @@
-//: housekeeping/OverloadingVarargs2.java
+// housekeeping/OverloadingVarargs2.java
 // ©2015 MindView LLC: see Copyright.txt
 // {CompileTimeError} (Won't compile)
 
@@ -13,4 +13,5 @@ public class OverloadingVarargs2 {
     f(1, 'a');
     f('a', 'b');
   }
-} /* Output: (None) *///:~
+}
+/* Output: (None) */

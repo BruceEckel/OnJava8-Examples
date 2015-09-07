@@ -1,4 +1,4 @@
-//: containersindepth/Enumerations.java
+// containersindepth/Enumerations.java
 // ©2015 MindView LLC: see Copyright.txt
 // Java 1.0/1.1 Vector and Enumeration.
 import java.util.*;
@@ -14,7 +14,8 @@ public class Enumerations {
     // Produce an Enumeration from a Collection:
     e = Collections.enumeration(new ArrayList<>());
   }
-} /* Output:
+}
+/* Output:
 ALGERIA, ANGOLA, BENIN, BOTSWANA, BURKINA FASO, BURUNDI,
 CAMEROON, CAPE VERDE, CENTRAL AFRICAN REPUBLIC, CHAD,
-*///:~
+*/

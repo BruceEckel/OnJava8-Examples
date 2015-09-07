@@ -1,4 +1,4 @@
-//: generics/ByteSet.java
+// generics/ByteSet.java
 // ©2015 MindView LLC: see Copyright.txt
 import java.util.*;
 
@@ -9,4 +9,4 @@ public class ByteSet {
   // But you can't do this:
   // Set<Byte> mySet2 = new HashSet<>(
   //   Arrays.<Byte>asList(1,2,3,4,5,6,7,8,9));
-} ///:~
+}

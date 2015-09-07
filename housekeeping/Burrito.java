@@ -1,4 +1,4 @@
-//: housekeeping/Burrito.java
+// housekeeping/Burrito.java
 // ©2015 MindView LLC: see Copyright.txt
 
 public class Burrito {
@@ -26,8 +26,9 @@ public class Burrito {
     greenChile.describe();
     jalapeno.describe();
   }
-} /* Output:
+}
+/* Output:
 This burrito is not spicy at all.
 This burrito is a little hot.
 This burrito is maybe too hot.
-*///:~
+*/

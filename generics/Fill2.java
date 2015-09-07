@@ -1,4 +1,4 @@
-//: generics/Fill2.java
+// generics/Fill2.java
 // ©2015 MindView LLC: see Copyright.txt
 // Using adapters to simulate latent typing.
 // {main: Fill2Test}
@@ -77,7 +77,8 @@ class Fill2Test {
     for(Coffee c: coffeeQueue)
       print(c);
   }
-} /* Output:
+}
+/* Output:
 Coffee 0
 Coffee 1
 Coffee 2
@@ -89,4 +90,4 @@ Mocha 6
 Mocha 7
 Mocha 8
 Latte 9
-*///:~
+*/

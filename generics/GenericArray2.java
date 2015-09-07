@@ -1,4 +1,4 @@
-//: generics/GenericArray2.java
+// generics/GenericArray2.java
 // ©2015 MindView LLC: see Copyright.txt
 
 public class GenericArray2<T> {
@@ -29,8 +29,9 @@ public class GenericArray2<T> {
       System.out.println(e);
     }
   }
-} /* Output:
+}
+/* Output:
 0 1 2 3 4 5 6 7 8 9
 java.lang.ClassCastException: [Ljava.lang.Object; cannot be
 cast to [Ljava.lang.Integer;
-*///:~
+*/

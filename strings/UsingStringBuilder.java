@@ -1,4 +1,4 @@
-//: strings/UsingStringBuilder.java
+// strings/UsingStringBuilder.java
 // ©2015 MindView LLC: see Copyright.txt
 import java.util.*;
 
@@ -19,7 +19,8 @@ public class UsingStringBuilder {
     UsingStringBuilder usb = new UsingStringBuilder();
     System.out.println(usb);
   }
-} /* Output:
+}
+/* Output:
 [58, 55, 93, 61, 61, 29, 68, 0, 22, 7, 88, 28, 51, 89, 9,
 78, 98, 61, 20, 58, 16, 40, 11, 22, 4]
-*///:~
+*/

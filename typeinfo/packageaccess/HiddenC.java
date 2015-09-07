@@ -1,4 +1,4 @@
-//: typeinfo/packageaccess/HiddenC.java
+// typeinfo/packageaccess/HiddenC.java
 // ©2015 MindView LLC: see Copyright.txt
 package typeinfo.packageaccess;
 import typeinfo.interfacea.*;
@@ -15,4 +15,4 @@ class C implements A {
 
 public class HiddenC {
   public static A makeA() { return new C(); }
-} ///:~
+}

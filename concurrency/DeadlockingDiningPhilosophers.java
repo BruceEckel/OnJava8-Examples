@@ -1,4 +1,4 @@
-//: concurrency/DeadlockingDiningPhilosophers.java
+// concurrency/DeadlockingDiningPhilosophers.java
 // ©2015 MindView LLC: see Copyright.txt
 // Demonstrates how deadlock can be hidden in a program.
 // {Args: 0 5 timeout}
@@ -27,7 +27,8 @@ public class DeadlockingDiningPhilosophers {
     }
     exec.shutdownNow();
   }
-} /* Output: (First and last 10 Lines)
+}
+/* Output: (First and last 10 Lines)
 Philosopher 1 thinking
 Philosopher 1 grabbing right
 Philosopher 1 grabbing left
@@ -49,4 +50,4 @@ Philosopher 4 exiting via interrupt
 Philosopher 1 exiting via interrupt
 Philosopher 0 exiting via interrupt
 Philosopher 2 exiting via interrupt
-*///:~
+*/

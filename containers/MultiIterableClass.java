@@ -1,4 +1,4 @@
-//: containers/MultiIterableClass.java
+// containers/MultiIterableClass.java
 // ©2015 MindView LLC: see Copyright.txt
 // Adding several Adapter Methods.
 import java.util.*;
@@ -36,8 +36,9 @@ public class MultiIterableClass extends IterableClass {
     for(String s : mic)
       System.out.print(s + " ");
   }
-} /* Output:
+}
+/* Output:
 banana-shaped. be to Earth the know we how is that And
 is banana-shaped. Earth that how the be And we know to
 And that is how we know the Earth to be banana-shaped.
-*///:~
+*/

@@ -1,4 +1,4 @@
-//: io/GZIPcompress.java
+// io/GZIPcompress.java
 // ©2015 MindView LLC: see Copyright.txt
 // {Args: GZIPcompress.java}
 import java.util.zip.*;
@@ -34,4 +34,5 @@ public class GZIPcompress {
     while((s = in2.readLine()) != null)
       System.out.println(s);
   }
-} /* Output: (Execute to see) *///:~
+}
+/* Output: (Execute to see) */

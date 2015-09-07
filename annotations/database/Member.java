@@ -1,4 +1,4 @@
-//: annotations/database/Member.java
+// annotations/database/Member.java
 // ©2015 MindView LLC: see Copyright.txt
 package annotations.database;
 
@@ -17,4 +17,4 @@ public class Member {
   @Override
   public String toString() { return handle; }
   public Integer getAge() { return age; }
-} ///:~
+}

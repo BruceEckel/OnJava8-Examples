@@ -1,4 +1,4 @@
-//: generics/decorator/Decoration.java
+// generics/decorator/Decoration.java
 // ©2015 MindView LLC: see Copyright.txt
 package generics.decorator;
 import java.util.*;
@@ -45,4 +45,5 @@ public class Decoration {
       new TimeStamped(new Basic()));
     //! s2.getStamp(); // Not available
   }
-} /* Output: (None) *///:~
+}
+/* Output: (None) */

@@ -1,4 +1,4 @@
-//: housekeeping/OverloadingVarargs3.java
+// housekeeping/OverloadingVarargs3.java
 // ©2015 MindView LLC: see Copyright.txt
 
 public class OverloadingVarargs3 {
@@ -12,7 +12,8 @@ public class OverloadingVarargs3 {
     f(1, 'a');
     f('a', 'b');
   }
-} /* Output:
+}
+/* Output:
 first
 second
-*///:~
+*/

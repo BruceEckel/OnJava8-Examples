@@ -1,4 +1,4 @@
-//: enums/CarWash.java
+// enums/CarWash.java
 // ©2015 MindView LLC: see Copyright.txt
 import java.util.*;
 import static com.mindviewinc.util.Print.*;
@@ -56,7 +56,8 @@ public class CarWash {
     print(wash);
     wash.washCar();
   }
-} /* Output:
+}
+/* Output:
 [BASIC, RINSE]
 The basic wash
 Rinsing
@@ -65,4 +66,4 @@ The basic wash
 Applying hot wax
 Rinsing
 Blowing dry
-*///:~
+*/

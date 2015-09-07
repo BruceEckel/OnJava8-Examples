@@ -1,4 +1,4 @@
-//: housekeeping/SimpleEnumUse.java
+// housekeeping/SimpleEnumUse.java
 // ©2015 MindView LLC: see Copyright.txt
 
 public class SimpleEnumUse {
@@ -6,6 +6,7 @@ public class SimpleEnumUse {
     Spiciness howHot = Spiciness.MEDIUM;
     System.out.println(howHot);
   }
-} /* Output:
+}
+/* Output:
 MEDIUM
-*///:~
+*/

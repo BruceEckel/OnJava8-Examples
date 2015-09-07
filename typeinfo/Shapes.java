@@ -1,4 +1,4 @@
-//: typeinfo/Shapes.java
+// typeinfo/Shapes.java
 // ©2015 MindView LLC: see Copyright.txt
 import java.util.*;
 
@@ -31,8 +31,9 @@ public class Shapes {
     for(Shape shape : shapeList)
       shape.draw();
   }
-} /* Output:
+}
+/* Output:
 Circle.draw()
 Square.draw()
 Triangle.draw()
-*///:~
+*/

@@ -1,4 +1,4 @@
-//: enums/NotClasses.java
+// enums/NotClasses.java
 // ©2015 MindView LLC: see Copyright.txt
 // {Exec: javap -c LikeClasses}
 import static com.mindviewinc.util.Print.*;
@@ -21,7 +21,8 @@ enum LikeClasses {
 
 public class NotClasses {
   // void f1(LikeClasses.WINKEN instance) {} // Nope
-} /* Output: (First 12 Lines)
+}
+/* Output: (First 12 Lines)
 Compiled from "NotClasses.java"
 abstract class LikeClasses extends
 java.lang.Enum<LikeClasses> {
@@ -35,4 +36,4 @@ $VALUES:[LLikeClasses;
        3: invokevirtual #3                  // Method
 "[LLikeClasses;".clone:()Ljava/lang/Object;
                   ...
-*///:~
+*/

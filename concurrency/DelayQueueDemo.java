@@ -1,4 +1,4 @@
-//: concurrency/DelayQueueDemo.java
+// concurrency/DelayQueueDemo.java
 // ©2015 MindView LLC: see Copyright.txt
 import java.util.concurrent.*;
 import java.util.*;
@@ -88,7 +88,8 @@ public class DelayQueueDemo {
     queue.add(new DelayedTask.EndSentinel(5000, exec));
     exec.execute(new DelayedTaskConsumer(queue));
   }
-} /* Output:
+}
+/* Output:
 [128 ] Task 11 [200 ] Task 7 [429 ] Task 5 [520 ] Task 18
 [555 ] Task 1 [961 ] Task 4 [998 ] Task 16 [1207] Task 9
 [1693] Task 2 [1809] Task 14 [1861] Task 3 [2278] Task 15
@@ -100,4 +101,4 @@ public class DelayQueueDemo {
 (19:4258) (20:5000)
 [5000] Task 20 Calling shutdownNow()
 Finished DelayedTaskConsumer
-*///:~
+*/

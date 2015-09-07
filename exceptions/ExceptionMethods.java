@@ -1,4 +1,4 @@
-//: exceptions/ExceptionMethods.java
+// exceptions/ExceptionMethods.java
 // ©2015 MindView LLC: see Copyright.txt
 // Demonstrating the Exception Methods.
 import static com.mindviewinc.util.Print.*;
@@ -17,7 +17,8 @@ public class ExceptionMethods {
       e.printStackTrace(System.out);
     }
   }
-} /* Output:
+}
+/* Output:
 Caught Exception
 getMessage():My Exception
 getLocalizedMessage():My Exception
@@ -25,4 +26,4 @@ toString():java.lang.Exception: My Exception
 printStackTrace():
 java.lang.Exception: My Exception
         at ExceptionMethods.main(ExceptionMethods.java:8)
-*///:~
+*/

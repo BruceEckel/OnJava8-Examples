@@ -1,4 +1,4 @@
-//: reuse/Bath.java
+// reuse/Bath.java
 // ©2015 MindView LLC: see Copyright.txt
 // Constructor initialization with composition.
 import static com.mindviewinc.util.Print.*;
@@ -46,7 +46,8 @@ public class Bath {
     Bath b = new Bath();
     print(b);
   }
-} /* Output:
+}
+/* Output:
 Inside Bath()
 Soap()
 s1 = Happy
@@ -56,4 +57,4 @@ s4 = Joy
 i = 47
 toy = 3.14
 castille = Constructed
-*///:~
+*/

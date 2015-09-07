@@ -1,4 +1,4 @@
-//: control/LabeledWhile.java
+// control/LabeledWhile.java
 // ©2015 MindView LLC: see Copyright.txt
 // While loops with "labeled break" and "labeled continue."
 import static com.mindviewinc.util.Print.*;
@@ -31,7 +31,8 @@ public class LabeledWhile {
       }
     }
   }
-} /* Output:
+}
+/* Output:
 Outer while loop
 i = 1
 continue
@@ -46,4 +47,4 @@ Outer while loop
 i = 6
 i = 7
 break outer
-*///:~
+*/

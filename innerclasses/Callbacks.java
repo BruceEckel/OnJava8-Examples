@@ -1,4 +1,4 @@
-//: innerclasses/Callbacks.java
+// innerclasses/Callbacks.java
 // ©2015 MindView LLC: see Copyright.txt
 // Using inner classes for callbacks
 package innerclasses;
@@ -64,7 +64,8 @@ public class Callbacks {
     caller2.go();
     caller2.go();
   }
-} /* Output:
+}
+/* Output:
 Other operation
 1
 1
@@ -73,4 +74,4 @@ Other operation
 2
 Other operation
 3
-*///:~
+*/

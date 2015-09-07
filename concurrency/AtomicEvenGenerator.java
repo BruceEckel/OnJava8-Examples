@@ -1,4 +1,4 @@
-//: concurrency/AtomicEvenGenerator.java
+// concurrency/AtomicEvenGenerator.java
 // ©2015 MindView LLC: see Copyright.txt
 // Atomic classes are occasionally useful in regular code.
 // {TimeOutDuringTesting}
@@ -14,4 +14,5 @@ public class AtomicEvenGenerator extends IntGenerator {
   public static void main(String[] args) {
     EvenChecker.test(new AtomicEvenGenerator());
   }
-} /* Output: (None) *///:~
+}
+/* Output: (None) */

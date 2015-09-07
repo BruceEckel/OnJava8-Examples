@@ -1,4 +1,4 @@
-//: polymorphism/ReferenceCounting.java
+// polymorphism/ReferenceCounting.java
 // ©2015 MindView LLC: see Copyright.txt
 // Cleaning up shared member objects.
 import static com.mindviewinc.util.Print.*;
@@ -45,7 +45,8 @@ public class ReferenceCounting {
     for(Composing c : composing)
       c.dispose();
   }
-} /* Output:
+}
+/* Output:
 Creating Shared 0
 Creating Composing 0
 Creating Composing 1
@@ -58,4 +59,4 @@ disposing Composing 2
 disposing Composing 3
 disposing Composing 4
 Disposing Shared 0
-*///:~
+*/

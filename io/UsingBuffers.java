@@ -1,4 +1,4 @@
-//: io/UsingBuffers.java
+// io/UsingBuffers.java
 // ©2015 MindView LLC: see Copyright.txt
 import java.nio.*;
 import static com.mindviewinc.util.Print.*;
@@ -24,8 +24,9 @@ public class UsingBuffers {
     symmetricScramble(cb);
     print(cb.rewind());
   }
-} /* Output:
+}
+/* Output:
 UsingBuffers
 sUniBgfuefsr
 UsingBuffers
-*///:~
+*/

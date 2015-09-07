@@ -1,4 +1,4 @@
-//: generics/GenericVarargs.java
+// generics/GenericVarargs.java
 // ©2015 MindView LLC: see Copyright.txt
 import java.util.*;
 
@@ -18,9 +18,10 @@ public class GenericVarargs {
     ls = makeList("ABCDEFFHIJKLMNOPQRSTUVWXYZ".split(""));
     System.out.println(ls);
   }
-} /* Output:
+}
+/* Output:
 [A]
 [A, B, C]
 [A, B, C, D, E, F, F, H, I, J, K, L, M, N, O, P, Q, R, S,
 T, U, V, W, X, Y, Z]
-*///:~
+*/

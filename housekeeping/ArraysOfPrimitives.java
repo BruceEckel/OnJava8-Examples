@@ -1,4 +1,4 @@
-//: housekeeping/ArraysOfPrimitives.java
+// housekeeping/ArraysOfPrimitives.java
 // ©2015 MindView LLC: see Copyright.txt
 import static com.mindviewinc.util.Print.*;
 
@@ -12,10 +12,11 @@ public class ArraysOfPrimitives {
     for(int i = 0; i < a1.length; i++)
       print("a1[" + i + "] = " + a1[i]);
   }
-} /* Output:
+}
+/* Output:
 a1[0] = 2
 a1[1] = 3
 a1[2] = 4
 a1[3] = 5
 a1[4] = 6
-*///:~
+*/

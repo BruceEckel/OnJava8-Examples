@@ -1,4 +1,4 @@
-//: ui/Popup.java
+// ui/Popup.java
 // ©2015 MindView LLC: see Copyright.txt
 // Creating popup menus with Swing.
 import javax.swing.*;
@@ -48,4 +48,4 @@ public class Popup extends JFrame {
   public static void main(String[] args) {
     run(new Popup(), 300, 200);
   }
-} ///:~
+}

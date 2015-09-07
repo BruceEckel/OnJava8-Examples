@@ -1,4 +1,4 @@
-//: io/FormattedMemoryInput.java
+// io/FormattedMemoryInput.java
 // ©2015 MindView LLC: see Copyright.txt
 import java.io.*;
 
@@ -16,4 +16,5 @@ public class FormattedMemoryInput {
       System.out.println("End of stream");
     }
   }
-} /* Output: (Execute to see) *///:~
+}
+/* Output: (Execute to see) */

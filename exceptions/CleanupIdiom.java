@@ -1,4 +1,4 @@
-//: exceptions/CleanupIdiom.java
+// exceptions/CleanupIdiom.java
 // ©2015 MindView LLC: see Copyright.txt
 // Each disposable object must be followed by a try-finally
 
@@ -58,10 +58,11 @@ public class CleanupIdiom {
       System.out.println(e);
     }
   }
-} /* Output:
+}
+/* Output:
 NeedsCleanup 1 disposed
 NeedsCleanup 3 disposed
 NeedsCleanup 2 disposed
 NeedsCleanup 5 disposed
 NeedsCleanup 4 disposed
-*///:~
+*/

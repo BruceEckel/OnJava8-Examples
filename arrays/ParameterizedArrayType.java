@@ -1,4 +1,4 @@
-//: arrays/ParameterizedArrayType.java
+// arrays/ParameterizedArrayType.java
 // ©2015 MindView LLC: see Copyright.txt
 
 class ClassParameter<T> {
@@ -20,4 +20,5 @@ public class ParameterizedArrayType {
     ints2 = MethodParameter.f(ints);
     doubles2 = MethodParameter.f(doubles);
   }
-} /* Output: (None) *///:~
+}
+/* Output: (None) */

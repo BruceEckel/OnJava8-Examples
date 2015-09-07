@@ -1,6 +1,6 @@
-//: containers/AdapterMethodIdiom.java
+// containers/AdapterMethodIdiom.java
 // ©2015 MindView LLC: see Copyright.txt
-// The "Adapter Method" idiom uses foreach
+// The "Adapter Method" idiom uses `forEach`
 // with additional kinds of Iterables.
 import java.util.*;
 
@@ -34,7 +34,8 @@ public class AdapterMethodIdiom {
     for(String s : ral.reversed())
       System.out.print(s + " ");
   }
-} /* Output:
+}
+/* Output:
 To be or not to be
 be to not or be To
-*///:~
+*/

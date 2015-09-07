@@ -1,4 +1,4 @@
-//: operators/AutoInc.java
+// operators/AutoInc.java
 // ©2015 MindView LLC: see Copyright.txt
 // Demonstrates the ++ and -- operators.
 import static com.mindviewinc.util.Print.*;
@@ -14,7 +14,8 @@ public class AutoInc {
     print("i-- : " + i--); // Post-decrement
     print("i : " + i);
   }
-} /* Output:
+}
+/* Output:
 i : 1
 ++i : 2
 i++ : 2
@@ -22,4 +23,4 @@ i : 3
 --i : 2
 i-- : 2
 i : 1
-*///:~
+*/

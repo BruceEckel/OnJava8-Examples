@@ -1,4 +1,4 @@
-//: exceptions/LostMessage.java
+// exceptions/LostMessage.java
 // ©2015 MindView LLC: see Copyright.txt
 // How an exception can be lost.
 
@@ -36,6 +36,7 @@ public class LostMessage {
       System.out.println(e);
     }
   }
-} /* Output:
+}
+/* Output:
 A trivial exception
-*///:~
+*/

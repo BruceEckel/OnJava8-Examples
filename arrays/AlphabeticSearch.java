@@ -1,4 +1,4 @@
-//: arrays/AlphabeticSearch.java
+// arrays/AlphabeticSearch.java
 // ©2015 MindView LLC: see Copyright.txt
 // Searching with a Comparator.
 import java.util.*;
@@ -14,11 +14,12 @@ public class AlphabeticSearch {
       String.CASE_INSENSITIVE_ORDER);
     System.out.println("Index: "+ index + "\n"+ sa[index]);
   }
-} /* Output:
+}
+/* Output:
 [bkIna, cQrGs, cXZJo, dLsmw, eGZMm, EqUCB, gwsqP, hKcxr,
 HLGEa, HqXum, HxxHv, JMRoE, JmzMs, Mesbt, MNvqe, nyGcF,
 ogoYW, OneOE, OWZnT, RFJQA, rUkZP, sgqia, slJrL, suEcU,
 uTpnX, vpfFv, WHkjU, xxEAJ, YNzbr, zDyCy]
 Index: 10
 HxxHv
-*///:~
+*/

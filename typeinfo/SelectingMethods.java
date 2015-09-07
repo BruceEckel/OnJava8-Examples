@@ -1,4 +1,4 @@
-//: typeinfo/SelectingMethods.java
+// typeinfo/SelectingMethods.java
 // ©2015 MindView LLC: see Copyright.txt
 // Looking for particular methods in a dynamic proxy.
 import java.lang.reflect.*;
@@ -50,10 +50,11 @@ class SelectingMethods {
     proxy.interesting("bonobo");
     proxy.boring3();
   }
-} /* Output:
+}
+/* Output:
 boring1
 boring2
 Proxy detected the interesting method
 interesting bonobo
 boring3
-*///:~
+*/

@@ -1,4 +1,4 @@
-//: concurrency/PipedIO.java
+// concurrency/PipedIO.java
 // ©2015 MindView LLC: see Copyright.txt
 // Using pipes for inter-task I/O
 import java.util.concurrent.*;
@@ -54,10 +54,11 @@ public class PipedIO {
     TimeUnit.SECONDS.sleep(4);
     exec.shutdownNow();
   }
-} /* Output:
+}
+/* Output:
 Read: A, Read: B, Read: C, Read: D, Read: E, Read: F, Read:
 G, Read: H, Read: I, Read: J, Read: K, Read: L, Read: M,
 java.lang.InterruptedException: sleep interrupted Sender
 sleep interrupted
 java.io.InterruptedIOException Receiver read exception
-*///:~
+*/

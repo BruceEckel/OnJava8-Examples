@@ -1,4 +1,4 @@
-//: enums/RoShamBo.java
+// enums/RoShamBo.java
 // ©2015 MindView LLC: see Copyright.txt
 // Common tools for RoShamBo examples.
 package enums;
@@ -16,4 +16,4 @@ public class RoShamBo {
       match(
         Enums.random(rsbClass),Enums.random(rsbClass));
   }
-} ///:~
+}

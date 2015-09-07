@@ -1,4 +1,4 @@
-//: concurrency/waxomatic/WaxOMatic.java
+// concurrency/waxomatic/WaxOMatic.java
 // ©2015 MindView LLC: see Copyright.txt
 // Basic task cooperation.
 package concurrency.waxomatic;
@@ -74,7 +74,8 @@ public class WaxOMatic {
     TimeUnit.SECONDS.sleep(5); // Run for a while...
     exec.shutdownNow(); // Interrupt all tasks
   }
-} /* Output:
+}
+/* Output:
 Wax On! Wax Off! Wax On! Wax Off! Wax On! Wax Off! Wax On!
 Wax Off! Wax On! Wax Off! Wax On! Wax Off! Wax On! Wax Off!
 Wax On! Wax Off! Wax On! Wax Off! Wax On! Wax Off! Wax On!
@@ -82,4 +83,4 @@ Wax Off! Wax On! Wax Off! Wax On! Exiting via interrupt
 Ending Wax On task
 Exiting via interrupt
 Ending Wax Off task
-*///:~
+*/

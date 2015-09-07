@@ -1,4 +1,4 @@
-//: ui/MonitoredLongRunningCallable.java
+// ui/MonitoredLongRunningCallable.java
 // ©2015 MindView LLC: see Copyright.txt
 // Displaying task progress with ProgressMonitors.
 import javax.swing.*;
@@ -75,4 +75,4 @@ public class MonitoredLongRunningCallable extends JFrame {
   public static void main(String[] args) {
     run(new MonitoredLongRunningCallable(), 200, 500);
   }
-} ///:~
+}

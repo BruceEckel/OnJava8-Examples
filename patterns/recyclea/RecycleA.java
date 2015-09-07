@@ -1,4 +1,4 @@
-//: patterns/recyclea/RecycleA.java
+// patterns/recyclea/RecycleA.java
 // ©2015 MindView LLC: see Copyright.txt
 // Recycling with RTTI.
 package patterns.recyclea;
@@ -92,7 +92,8 @@ public class RecycleA {
     Trash.sumValue(glassBin);
     Trash.sumValue(bin);
   }
-} /* Output: (First and last 10 Lines)
+}
+/* Output: (First and last 10 Lines)
 weight of patterns.recyclea.Aluminum = 97.49879461494744
 weight of patterns.recyclea.Aluminum = 99.60561944523387
 weight of patterns.recyclea.Aluminum = 93.10883063826067
@@ -114,4 +115,4 @@ weight of patterns.recyclea.Glass = 50.356208994386385
 weight of patterns.recyclea.Paper = 89.7955125865738
 weight of patterns.recyclea.Paper = 32.73979803583131
 Total value = 1101.1015429445522
-*///:~
+*/

@@ -1,4 +1,4 @@
-//: containersindepth/MapPerformance.java
+// containersindepth/MapPerformance.java
 // ©2015 MindView LLC: see Copyright.txt
 // Demonstrates performance differences in Maps.
 // {Args: 100 5000} Small to keep build testing short
@@ -56,23 +56,24 @@ public class MapPerformance {
     Tester.run(new WeakHashMap<>(), tests);
     Tester.run(new Hashtable<>(), tests);
   }
-} /* Output:
+}
+/* Output:
 ---------- TreeMap ----------
- size     put     get iterate
+size     put     get iterate
   100     137      99      24
 ---------- HashMap ----------
- size     put     get iterate
+size     put     get iterate
   100      47      19      29
 ------- LinkedHashMap -------
- size     put     get iterate
+size     put     get iterate
   100      59      13      11
 ------ IdentityHashMap ------
- size     put     get iterate
+size     put     get iterate
   100      74      71      23
 -------- WeakHashMap --------
- size     put     get iterate
+size     put     get iterate
   100      43      16      15
 --------- Hashtable ---------
- size     put     get iterate
+size     put     get iterate
   100      32      27      17
-*///:~
+*/

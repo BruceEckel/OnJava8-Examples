@@ -1,4 +1,4 @@
-//: interfaces/Adventure.java
+// interfaces/Adventure.java
 // ©2015 MindView LLC: see Copyright.txt
 // Multiple interfaces.
 
@@ -36,4 +36,5 @@ public class Adventure {
     v(h); // Treat it as a CanFly
     w(h); // Treat it as an ActionCharacter
   }
-} /* Output: (None) *///:~
+}
+/* Output: (None) */

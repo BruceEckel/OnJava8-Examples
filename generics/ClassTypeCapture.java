@@ -1,4 +1,4 @@
-//: generics/ClassTypeCapture.java
+// generics/ClassTypeCapture.java
 // ©2015 MindView LLC: see Copyright.txt
 
 class Building {}
@@ -22,9 +22,10 @@ public class ClassTypeCapture<T> {
     System.out.println(ctt2.f(new Building()));
     System.out.println(ctt2.f(new House()));
   }
-} /* Output:
+}
+/* Output:
 true
 true
 false
 true
-*///:~
+*/

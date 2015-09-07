@@ -1,4 +1,4 @@
-//: ui/MessageBoxes.java
+// ui/MessageBoxes.java
 // ©2015 MindView LLC: see Copyright.txt
 // Demonstrates JOptionPane.
 import javax.swing.*;
@@ -65,4 +65,4 @@ public class MessageBoxes extends JFrame {
   public static void main(String[] args) {
     run(new MessageBoxes(), 200, 200);
   }
-} ///:~
+}

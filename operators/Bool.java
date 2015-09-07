@@ -1,4 +1,4 @@
-//: operators/Bool.java
+// operators/Bool.java
 // ©2015 MindView LLC: see Copyright.txt
 // Relational and logical operators.
 import java.util.*;
@@ -26,7 +26,8 @@ public class Bool {
     print("(i < 10) || (j < 10) is "
        + ((i < 10) || (j < 10)) );
   }
-} /* Output:
+}
+/* Output:
 i = 58
 j = 55
 i > j is true
@@ -37,4 +38,4 @@ i == j is false
 i != j is true
 (i < 10) && (j < 10) is false
 (i < 10) || (j < 10) is false
-*///:~
+*/

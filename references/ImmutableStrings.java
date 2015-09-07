@@ -1,4 +1,4 @@
-//: references/ImmutableStrings.java
+// references/ImmutableStrings.java
 // ©2015 MindView LLC: see Copyright.txt
 // Demonstrating StringBuffer.
 
@@ -16,7 +16,8 @@ public class ImmutableStrings {
     sb.append(Integer.toString(47));
     System.out.println(sb);
   }
-} /* Output:
+}
+/* Output:
 abcfoodef47
 abcfoodef47
-*///:~
+*/

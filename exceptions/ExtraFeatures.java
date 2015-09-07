@@ -1,4 +1,4 @@
-//: exceptions/ExtraFeatures.java
+// exceptions/ExtraFeatures.java
 // ©2015 MindView LLC: see Copyright.txt
 // Further embellishment of exception classes.
 import static com.mindviewinc.util.Print.*;
@@ -49,7 +49,8 @@ public class ExtraFeatures {
       System.out.println("e.val() = " + e.val());
     }
   }
-} /* Output:
+}
+/* Output:
 Throwing MyException2 from f()
 MyException2: Detail Message: 0 null
         at ExtraFeatures.f(ExtraFeatures.java:23)
@@ -63,4 +64,4 @@ MyException2: Detail Message: 47 Originated in h()
         at ExtraFeatures.h(ExtraFeatures.java:31)
         at ExtraFeatures.main(ExtraFeatures.java:45)
 e.val() = 47
-*///:~
+*/

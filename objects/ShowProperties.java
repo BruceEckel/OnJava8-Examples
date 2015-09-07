@@ -1,4 +1,4 @@
-//: objects/ShowProperties.java
+// objects/ShowProperties.java
 // ©2015 MindView LLC: see Copyright.txt
 
 public class ShowProperties {
@@ -8,7 +8,8 @@ public class ShowProperties {
     System.out.println(
       System.getProperty("java.library.path"));
   }
-} /* Output: (First 20 Lines)
+}
+/* Output: (First 20 Lines)
 -- listing properties --
 java.runtime.name=Java(TM) SE Runtime Environment
 sun.boot.library.path=C:\Program Files
@@ -32,4 +33,4 @@ java.endorsed.dirs=C:\Program Files (x86)\Java\jre1.8.0_...
 os.arch=x86
 java.io.tmpdir=C:\Users\Bruce\AppData\Local\Temp\
                   ...
-*///:~
+*/

@@ -1,4 +1,4 @@
-//: patterns/trash/ParseTrash.java
+// patterns/trash/ParseTrash.java
 // ©2015 MindView LLC: see Copyright.txt
 // Open a file and parse its contents into
 // Trash objects, placing each into an ArrayList.
@@ -37,4 +37,4 @@ public class ParseTrash {
   fillBin(String filename, ArrayList<T> bin) {
     fillBin(filename, new FillableList<>(bin));
   }
-} ///:~
+}

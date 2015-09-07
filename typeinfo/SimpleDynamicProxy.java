@@ -1,4 +1,4 @@
-//: typeinfo/SimpleDynamicProxy.java
+// typeinfo/SimpleDynamicProxy.java
 // ©2015 MindView LLC: see Copyright.txt
 import java.lang.reflect.*;
 
@@ -35,7 +35,8 @@ class SimpleDynamicProxy {
       new DynamicProxyHandler(real));
     consumer(proxy);
   }
-} /* Output:
+}
+/* Output:
 doSomething
 somethingElse bonobo
 **** proxy: class $Proxy0, method: public abstract void
@@ -46,4 +47,4 @@ Interface.somethingElse(java.lang.String), args:
 [Ljava.lang.Object;@1c7c054
   bonobo
 somethingElse bonobo
-*///:~
+*/

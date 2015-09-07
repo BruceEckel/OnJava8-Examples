@@ -1,4 +1,4 @@
-//: network/ChatterClient.java
+// network/ChatterClient.java
 // ©2015 MindView LLC: see Copyright.txt
 // {ValidateByHand}
 // Tests the ChatterServer by starting multiple
@@ -61,4 +61,4 @@ public class ChatterClient extends Thread {
     for(int i = 0; i <= 10; i++)
       new ChatterClient(i).start();
   }
-} ///:~
+}

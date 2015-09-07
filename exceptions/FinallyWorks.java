@@ -1,4 +1,4 @@
-//: exceptions/FinallyWorks.java
+// exceptions/FinallyWorks.java
 // ©2015 MindView LLC: see Copyright.txt
 // The finally clause is always executed.
 
@@ -21,9 +21,10 @@ public class FinallyWorks {
       }
     }
   }
-} /* Output:
+}
+/* Output:
 ThreeException
 In finally clause
 No exception
 In finally clause
-*///:~
+*/

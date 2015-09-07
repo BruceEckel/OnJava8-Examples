@@ -1,4 +1,4 @@
-//: exceptions/NeverCaught.java
+// exceptions/NeverCaught.java
 // ©2015 MindView LLC: see Copyright.txt
 // Ignoring RuntimeExceptions.
 // {ThrowsException}
@@ -13,7 +13,8 @@ public class NeverCaught {
   public static void main(String[] args) {
     g();
   }
-} /* Output:
+}
+/* Output:
 ___[ Error Output ]___
 Exception in thread "main" java.lang.RuntimeException: From
 f()
@@ -21,4 +22,4 @@ f()
         at NeverCaught.g(NeverCaught.java:10)
         at NeverCaught.main(NeverCaught.java:13)
 ___[ Exception is Expected ]___
-*///:~
+*/

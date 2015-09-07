@@ -1,4 +1,4 @@
-//: operators/Exponents.java
+// operators/Exponents.java
 // ©2015 MindView LLC: see Copyright.txt
 // "e" means "10 to the power."
 
@@ -12,7 +12,8 @@ public class Exponents {
     double expDouble2 = 47e47; // Automatically double
     System.out.println(expDouble);
   }
-} /* Output:
+}
+/* Output:
 1.39E-43
 4.7E48
-*///:~
+*/

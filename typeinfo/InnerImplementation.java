@@ -1,4 +1,4 @@
-//: typeinfo/InnerImplementation.java
+// typeinfo/InnerImplementation.java
 // ©2015 MindView LLC: see Copyright.txt
 // Private inner classes can't hide from reflection.
 import typeinfo.interfacea.*;
@@ -26,11 +26,12 @@ public class InnerImplementation {
     HiddenImplementation.callHiddenMethod(a, "v");
     HiddenImplementation.callHiddenMethod(a, "w");
   }
-} /* Output:
+}
+/* Output:
 public C.f()
 InnerA$C
 public C.g()
 package C.u()
 protected C.v()
 private C.w()
-*///:~
+*/

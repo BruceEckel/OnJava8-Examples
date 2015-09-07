@@ -1,4 +1,4 @@
-//: enums/EnumSets.java
+// enums/EnumSets.java
 // ©2015 MindView LLC: see Copyright.txt
 // Operations on EnumSets
 package enums;
@@ -22,7 +22,8 @@ public class EnumSets {
     points = EnumSet.complementOf(points);
     print(points);
   }
-} /* Output:
+}
+/* Output:
 [BATHROOM]
 [STAIR1, STAIR2, BATHROOM, KITCHEN]
 [LOBBY, OFFICE1, OFFICE2, OFFICE3, OFFICE4, BATHROOM,
@@ -30,4 +31,4 @@ UTILITY]
 [LOBBY, BATHROOM, UTILITY]
 [STAIR1, STAIR2, OFFICE1, OFFICE2, OFFICE3, OFFICE4,
 KITCHEN]
-*///:~
+*/

@@ -1,4 +1,4 @@
-//: innerclasses/Parcel10.java
+// innerclasses/Parcel10.java
 // ©2015 MindView LLC: see Copyright.txt
 // Using "instance initialization" to perform
 // construction on an anonymous inner class.
@@ -23,6 +23,7 @@ public class Parcel10 {
     Parcel10 p = new Parcel10();
     Destination d = p.destination("Tasmania", 101.395F);
   }
-} /* Output:
+}
+/* Output:
 Over budget!
-*///:~
+*/

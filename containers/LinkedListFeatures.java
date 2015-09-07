@@ -1,4 +1,4 @@
-//: containers/LinkedListFeatures.java
+// containers/LinkedListFeatures.java
 // ©2015 MindView LLC: see Copyright.txt
 import typeinfo.pets.*;
 import java.util.*;
@@ -30,7 +30,8 @@ public class LinkedListFeatures {
     print("After addLast(): " + pets);
     print("pets.removeLast(): " + pets.removeLast());
   }
-} /* Output:
+}
+/* Output:
 [Rat, Manx, Cymric, Mutt, Pug]
 pets.getFirst(): Rat
 pets.element(): Rat
@@ -44,4 +45,4 @@ After offer(): [Rat, Mutt, Pug, Cymric]
 After add(): [Rat, Mutt, Pug, Cymric, Pug]
 After addLast(): [Rat, Mutt, Pug, Cymric, Pug, Hamster]
 pets.removeLast(): Hamster
-*///:~
+*/

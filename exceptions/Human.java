@@ -1,4 +1,4 @@
-//: exceptions/Human.java
+// exceptions/Human.java
 // ©2015 MindView LLC: see Copyright.txt
 // Catching exception hierarchies.
 
@@ -22,7 +22,8 @@ public class Human {
       System.out.println("Caught Annoyance");
     }
   }
-} /* Output:
+}
+/* Output:
 Caught Sneeze
 Caught Annoyance
-*///:~
+*/

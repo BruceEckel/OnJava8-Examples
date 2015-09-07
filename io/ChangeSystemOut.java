@@ -1,4 +1,4 @@
-//: io/ChangeSystemOut.java
+// io/ChangeSystemOut.java
 // ©2015 MindView LLC: see Copyright.txt
 // Turn System.out into a PrintWriter.
 import java.io.*;
@@ -8,6 +8,7 @@ public class ChangeSystemOut {
     PrintWriter out = new PrintWriter(System.out, true);
     out.println("Hello, world");
   }
-} /* Output:
+}
+/* Output:
 Hello, world
-*///:~
+*/

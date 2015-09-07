@@ -1,4 +1,4 @@
-//: generics/CreatorGeneric.java
+// generics/CreatorGeneric.java
 // ©2015 MindView LLC: see Copyright.txt
 
 abstract class GenericWithCreate<T> {
@@ -22,6 +22,7 @@ public class CreatorGeneric {
     Creator c = new Creator();
     c.f();
   }
-} /* Output:
+}
+/* Output:
 X
-*///:~
+*/

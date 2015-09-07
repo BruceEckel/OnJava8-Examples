@@ -1,4 +1,4 @@
-//: interfaces/interfaceprocessor/FilterProcessor.java
+// interfaces/interfaceprocessor/FilterProcessor.java
 // ©2015 MindView LLC: see Copyright.txt
 package interfaces.interfaceprocessor;
 import interfaces.filters.*;
@@ -24,11 +24,12 @@ public class FilterProcessor {
     Apply.process(
       new FilterAdapter(new BandPass(3.0, 4.0)), w);
   }
-} /* Output:
+}
+/* Output:
 Using Processor LowPass
 Waveform 0
 Using Processor HighPass
 Waveform 0
 Using Processor BandPass
 Waveform 0
-*///:~
+*/

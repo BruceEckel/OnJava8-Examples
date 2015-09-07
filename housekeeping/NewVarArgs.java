@@ -1,4 +1,4 @@
-//: housekeeping/NewVarArgs.java
+// housekeeping/NewVarArgs.java
 // ©2015 MindView LLC: see Copyright.txt
 // Using array syntax to create variable argument lists.
 
@@ -18,10 +18,11 @@ public class NewVarArgs {
     printArray((Object[])new Integer[]{ 1, 2, 3, 4 });
     printArray(); // Empty list is OK
   }
-} /* Output:
+}
+/* Output:
 47 3.14 11.11
 47 3.14 11.11
 one two three
 A@19e0bfd A@139a55 A@1db9742
 1 2 3 4
-*///:~
+*/

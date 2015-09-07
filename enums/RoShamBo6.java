@@ -1,4 +1,4 @@
-//: enums/RoShamBo6.java
+// enums/RoShamBo6.java
 // ©2015 MindView LLC: see Copyright.txt
 // Enums using "tables" instead of multiple dispatch.
 package enums;
@@ -18,7 +18,8 @@ enum RoShamBo6 implements Competitor<RoShamBo6> {
   public static void main(String[] args) {
     RoShamBo.play(RoShamBo6.class, 20);
   }
-} /* Output:
+}
+/* Output:
 ROCK vs. ROCK: DRAW
 SCISSORS vs. ROCK: LOSE
 SCISSORS vs. ROCK: LOSE
@@ -39,4 +40,4 @@ SCISSORS vs. PAPER: WIN
 SCISSORS vs. PAPER: WIN
 SCISSORS vs. PAPER: WIN
 SCISSORS vs. PAPER: WIN
-*///:~
+*/

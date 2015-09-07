@@ -1,4 +1,4 @@
-//: enums/menu/Meal.java
+// enums/menu/Meal.java
 // ©2015 MindView LLC: see Copyright.txt
 package enums.menu;
 
@@ -12,7 +12,8 @@ public class Meal {
       System.out.println("---");
     }
   }
-} /* Output:
+}
+/* Output:
 SPRING_ROLLS
 VINDALOO
 FRUIT
@@ -38,4 +39,4 @@ BURRITO
 TIRAMISU
 ESPRESSO
 ---
-*///:~
+*/

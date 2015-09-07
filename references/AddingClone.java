@@ -1,4 +1,4 @@
-//: references/AddingClone.java
+// references/AddingClone.java
 // ©2015 MindView LLC: see Copyright.txt
 // You must go through a few gyrations
 // to add cloning to your own class.
@@ -57,9 +57,10 @@ public class AddingClone {
     // See if it changed v's elements:
     System.out.println("v: " + v);
   }
-} /* Output:
+}
+/* Output:
 x = 10, x2 = 11
 v: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 v2: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 v: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-*///:~
+*/

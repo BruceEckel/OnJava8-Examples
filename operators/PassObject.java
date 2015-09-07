@@ -1,4 +1,4 @@
-//: operators/PassObject.java
+// operators/PassObject.java
 // ©2015 MindView LLC: see Copyright.txt
 // Passing objects to methods might not be
 // what you're used to.
@@ -19,7 +19,8 @@ public class PassObject {
     f(x);
     print("2: x.c: " + x.c);
   }
-} /* Output:
+}
+/* Output:
 1: x.c: a
 2: x.c: z
-*///:~
+*/

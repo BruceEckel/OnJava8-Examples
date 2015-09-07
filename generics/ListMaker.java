@@ -1,4 +1,4 @@
-//: generics/ListMaker.java
+// generics/ListMaker.java
 // ©2015 MindView LLC: see Copyright.txt
 import java.util.*;
 
@@ -8,4 +8,5 @@ public class ListMaker<T> {
     ListMaker<String> stringMaker= new ListMaker<>();
     List<String> stringList = stringMaker.create();
   }
-} /* Output: (None) *///:~
+}
+/* Output: (None) */

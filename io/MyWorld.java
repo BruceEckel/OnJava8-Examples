@@ -1,4 +1,4 @@
-//: io/MyWorld.java
+// io/MyWorld.java
 // ©2015 MindView LLC: see Copyright.txt
 import java.io.*;
 import java.util.*;
@@ -52,7 +52,8 @@ public class MyWorld {
     print("animals2: " + animals2);
     print("animals3: " + animals3);
   }
-} /* Output:
+}
+/* Output:
 animals: [Bosco the dog[Animal@19e0bfd], House@139a55
 , Ralph the hamster[Animal@1db9742], House@139a55
 , Molly the cat[Animal@106d69c], House@139a55
@@ -69,4 +70,4 @@ animals3: [Bosco the dog[Animal@a3a380], House@1453f44
 , Ralph the hamster[Animal@ad8086], House@1453f44
 , Molly the cat[Animal@be858], House@1453f44
 ]
-*///:~
+*/

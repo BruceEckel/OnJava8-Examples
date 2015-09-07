@@ -1,4 +1,4 @@
-//: ui/HelloLabel.java
+// ui/HelloLabel.java
 // ©2015 MindView LLC: see Copyright.txt
 import javax.swing.*;
 import java.util.concurrent.*;
@@ -14,4 +14,4 @@ public class HelloLabel {
     TimeUnit.SECONDS.sleep(1);
     label.setText("Hey! This is Different!");
   }
-} ///:~
+}

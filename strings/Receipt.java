@@ -1,4 +1,4 @@
-//: strings/Receipt.java
+// strings/Receipt.java
 // ©2015 MindView LLC: see Copyright.txt
 import java.util.*;
 
@@ -27,7 +27,8 @@ public class Receipt {
     receipt.print("Three Bears Porridge", 1, 14.29);
     receipt.printTotal();
   }
-} /* Output:
+}
+/* Output:
 Item              Qty      Price
 ----              ---      -----
 Jack's Magic Be     4       4.25
@@ -36,4 +37,4 @@ Three Bears Por     1      14.29
 Tax                         2.80
                            -----
 Total                      49.39
-*///:~
+*/

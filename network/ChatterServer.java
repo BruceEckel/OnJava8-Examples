@@ -1,4 +1,4 @@
-//: network/ChatterServer.java
+// network/ChatterServer.java
 // ©2015 MindView LLC: see Copyright.txt
 // {ValidateByHand}
 // A server that echoes datagrams
@@ -47,4 +47,4 @@ public class ChatterServer {
     new TimedAbort(5); // Terminate after 5 seconds
     new ChatterServer();
   }
-} ///:~
+}

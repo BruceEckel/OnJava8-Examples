@@ -1,4 +1,4 @@
-//: typeinfo/WildcardClassReferences.java
+// typeinfo/WildcardClassReferences.java
 // ©2015 MindView LLC: see Copyright.txt
 
 public class WildcardClassReferences {
@@ -6,4 +6,5 @@ public class WildcardClassReferences {
     Class<?> intClass = int.class;
     intClass = double.class;
   }
-} /* Output: (None) *///:~
+}
+/* Output: (None) */

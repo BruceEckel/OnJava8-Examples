@@ -1,4 +1,4 @@
-//: concurrency/CaptureUncaughtException.java
+// concurrency/CaptureUncaughtException.java
 // ©2015 MindView LLC: see Copyright.txt
 // {TimeOutDuringTesting}
 import java.util.concurrent.*;
@@ -42,11 +42,12 @@ public class CaptureUncaughtException {
       new HandlerThreadFactory());
     exec.execute(new ExceptionThread2());
   }
-} /* Output:
+}
+/* Output:
 HandlerThreadFactory@de6ced creating new Thread
 created Thread[Thread-0,5,main]
 eh = MyUncaughtExceptionHandler@1fb8ee3
 run() by Thread[Thread-0,5,main]
 eh = MyUncaughtExceptionHandler@1fb8ee3
 caught java.lang.RuntimeException
-*///:~
+*/

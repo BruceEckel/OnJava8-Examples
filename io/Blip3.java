@@ -1,4 +1,4 @@
-//: io/Blip3.java
+// io/Blip3.java
 // ©2015 MindView LLC: see Copyright.txt
 // Reconstructing an externalizable object.
 import java.io.*;
@@ -52,7 +52,8 @@ public class Blip3 implements Externalizable {
     b3 = (Blip3)in.readObject();
     print(b3);
   }
-} /* Output:
+}
+/* Output:
 Constructing objects:
 Blip3(String x, int a)
 A String 47
@@ -62,4 +63,4 @@ Recovering b3:
 Blip3 Constructor
 Blip3.readExternal
 A String 47
-*///:~
+*/

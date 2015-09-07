@@ -1,4 +1,4 @@
-//: ui/Menus.java
+// ui/Menus.java
 // ©2015 MindView LLC: see Copyright.txt
 // Submenus, check box menu items, swapping menus,
 // mnemonics (shortcuts) and action commands.
@@ -158,4 +158,4 @@ public class Menus extends JFrame {
   public static void main(String[] args) {
     run(new Menus(), 300, 200);
   }
-} ///:~
+}

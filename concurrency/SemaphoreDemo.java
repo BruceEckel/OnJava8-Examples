@@ -1,4 +1,4 @@
-//: concurrency/SemaphoreDemo.java
+// concurrency/SemaphoreDemo.java
 // ©2015 MindView LLC: see Copyright.txt
 // Testing the Pool class
 import java.util.concurrent.*;
@@ -65,7 +65,8 @@ public class SemaphoreDemo {
       pool.checkIn(f); // Second checkIn ignored
     exec.shutdown();
   }
-} /* Output: (First and last 10 Lines)
+}
+/* Output: (First and last 10 Lines)
 CheckoutTask 4 checked out Fat id: 2
 CheckoutTask 22 checked out Fat id: 24
 CheckoutTask 14 checked out Fat id: 23
@@ -92,4 +93,4 @@ Fat id: 17, Fat id: 16, Fat id: 15, Fat id: 14, Fat id: 13,
 Fat id: 11, Fat id: 12, Fat id: 9, Fat id: 10, Fat id: 8,
 Fat id: 7, Fat id: 6, Fat id: 5, Fat id: 1, Fat id: 3, Fat
 id: 0, Fat id: 4]
-*///:~
+*/

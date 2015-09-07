@@ -1,4 +1,4 @@
-//: com/mindviewinc/util/New.java
+// com/mindviewinc/util/New.java
 // ©2015 MindView LLC: see Copyright.txt
 // Utilities to simplify generic container creation
 // by using type argument inference.
@@ -6,7 +6,7 @@ package com.mindviewinc.util;
 import java.util.*;
 
 public class New {
-  public static <K,V> Map<K,V> map() {
+  public static <K, V> Map<K, V> map() {
     return new HashMap<>();
   }
   public static <T> List<T> list() {
@@ -29,4 +29,5 @@ public class New {
     Set<String> ss = New.set();
     Queue<String> qs = New.queue();
   }
-} /* Output: (None) *///:~
+}
+/* Output: (None) */

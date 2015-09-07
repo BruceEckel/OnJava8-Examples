@@ -1,4 +1,4 @@
-//: generics/WatercolorSets.java
+// generics/WatercolorSets.java
 // ©2015 MindView LLC: see Copyright.txt
 import generics.watercolors.*;
 import java.util.*;
@@ -24,7 +24,8 @@ public class WatercolorSets {
     print("complement(set1, set2): " +
       complement(set1, set2));
   }
-} /* Output:
+}
+/* Output:
 set1: [BRILLIANT_RED, CRIMSON, MAGENTA, ROSE_MADDER,
 VIOLET, CERULEAN_BLUE_HUE, PHTHALO_BLUE, ULTRAMARINE,
 COBALT_BLUE_HUE, PERMANENT_GREEN, VIRIDIAN_HUE]
@@ -46,4 +47,4 @@ RAW_UMBER, BURNT_SIENNA, BURNT_UMBER]
 complement(set1, set2): [VIOLET, YELLOW_OCHRE, RAW_UMBER,
 BURNT_UMBER, ROSE_MADDER, MAGENTA, SAP_GREEN, BURNT_SIENNA,
 BRILLIANT_RED, CRIMSON]
-*///:~
+*/

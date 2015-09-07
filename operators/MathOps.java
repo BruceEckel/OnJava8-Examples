@@ -1,4 +1,4 @@
-//: operators/MathOps.java
+// operators/MathOps.java
 // ©2015 MindView LLC: see Copyright.txt
 // Demonstrates the mathematical operators.
 import java.util.*;
@@ -51,7 +51,8 @@ public class MathOps {
     u /= v;
     print("u /= v : " + u);
   }
-} /* Output:
+}
+/* Output:
 j : 59
 k : 56
 j + k : 115
@@ -70,4 +71,4 @@ u += v : 10.471473
 u -= v : 9.940527
 u *= v : 5.2778773
 u /= v : 9.940527
-*///:~
+*/

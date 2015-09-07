@@ -1,4 +1,4 @@
-//: com/mindviewinc/util/Sleep.java
+// com/mindviewinc/util/Sleep.java
 // ©2015 MindView LLC: see Copyright.txt
 // Sleep for n seconds.
 package com.mindviewinc.util;
@@ -12,4 +12,4 @@ public class Sleep {
       throw new RuntimeException(e);
     }
   }
-} ///:~
+}

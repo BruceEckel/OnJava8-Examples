@@ -1,4 +1,4 @@
-//: ui/SineWave.java
+// ui/SineWave.java
 // ©2015 MindView LLC: see Copyright.txt
 // Drawing with Swing, using a JSlider.
 import javax.swing.*;
@@ -55,4 +55,4 @@ public class SineWave extends JFrame {
   public static void main(String[] args) {
     run(new SineWave(), 700, 400);
   }
-} ///:~
+}

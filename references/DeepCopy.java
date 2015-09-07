@@ -1,4 +1,4 @@
-//: references/DeepCopy.java
+// references/DeepCopy.java
 // ©2015 MindView LLC: see Copyright.txt
 // Cloning a composed object.
 // (Install libraries from www.junit.org)
@@ -122,4 +122,5 @@ public class DeepCopy {
     org.junit.runner.JUnitCore.runClasses(
       DeepCopy.class);
   }
-} /* Output: (None) *///:~
+}
+/* Output: (None) */

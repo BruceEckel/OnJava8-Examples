@@ -1,4 +1,4 @@
-//: references/Stringer.java
+// references/Stringer.java
 // ©2015 MindView LLC: see Copyright.txt
 
 public class Stringer {
@@ -12,8 +12,9 @@ public class Stringer {
     System.out.println(qq); // HOWDY
     System.out.println(q); // howdy
   }
-} /* Output:
+}
+/* Output:
 howdy
 HOWDY
 howdy
-*///:~
+*/

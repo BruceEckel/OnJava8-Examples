@@ -1,4 +1,4 @@
-//: ui/LongRunningTask.java
+// ui/LongRunningTask.java
 // ©2015 MindView LLC: see Copyright.txt
 // A badly designed program.
 import javax.swing.*;
@@ -31,4 +31,4 @@ public class LongRunningTask extends JFrame {
   public static void main(String[] args) {
     run(new LongRunningTask(), 200, 150);
   }
-} ///:~
+}

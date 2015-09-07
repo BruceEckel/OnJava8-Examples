@@ -1,4 +1,4 @@
-//: ui/SimpleMenus.java
+// ui/SimpleMenus.java
 // ©2015 MindView LLC: see Copyright.txt
 import javax.swing.*;
 import java.awt.*;
@@ -35,4 +35,4 @@ public class SimpleMenus extends JFrame {
   public static void main(String[] args) {
     run(new SimpleMenus(), 200, 150);
   }
-} ///:~
+}

@@ -1,4 +1,4 @@
-//: logging/LoggingLevels.java
+// logging/LoggingLevels.java
 // ©2015 MindView LLC: see Copyright.txt
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -31,7 +31,8 @@ public class LoggingLevels {
     System.out.println("com level: SEVERE");
     logMessages();
   }
-} /* Output:
+}
+/* Output:
 com level: SEVERE
 individual loggers set to FINEST
 com level: SEVERE
@@ -52,4 +53,4 @@ Jun 15, 2015 3:47:52 PM LoggingLevels logMessages
 SEVERE: test : severe
 Jun 15, 2015 3:47:52 PM LoggingLevels logMessages
 INFO: random : info
-*///:~
+*/

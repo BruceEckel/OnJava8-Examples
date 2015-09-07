@@ -1,4 +1,4 @@
-//: patterns/doubledispatch/DDAluminum.java
+// patterns/doubledispatch/DDAluminum.java
 // ©2015 MindView LLC: see Copyright.txt
 // Aluminum for double dispatching.
 package patterns.doubledispatch;
@@ -16,4 +16,4 @@ public class DDAluminum extends Aluminum
     }
     return false;
   }
-} ///:~
+}

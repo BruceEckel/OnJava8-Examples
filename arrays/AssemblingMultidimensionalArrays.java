@@ -1,4 +1,4 @@
-//: arrays/AssemblingMultidimensionalArrays.java
+// arrays/AssemblingMultidimensionalArrays.java
 // ©2015 MindView LLC: see Copyright.txt
 // Creating multidimensional arrays.
 import java.util.*;
@@ -14,6 +14,7 @@ public class AssemblingMultidimensionalArrays {
     }
     System.out.println(Arrays.deepToString(a));
   }
-} /* Output:
+}
+/* Output:
 [[0, 0, 0], [0, 1, 2], [0, 2, 4]]
-*///:~
+*/

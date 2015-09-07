@@ -1,4 +1,4 @@
-//: innerclasses/MultiImplementation.java
+// innerclasses/MultiImplementation.java
 // ©2015 MindView LLC: see Copyright.txt
 // With concrete or abstract classes, inner
 // classes are the only way to produce the effect
@@ -20,4 +20,5 @@ public class MultiImplementation {
     takesD(z);
     takesE(z.makeE());
   }
-} /* Output: (None) *///:~
+}
+/* Output: (None) */
