@@ -1,11 +1,11 @@
 // patterns/ShapeFactory2.java
-// ©2015 MindView LLC: see Copyright.txt
 // Polymorphic factory methods.
 import java.util.*;
 import java.util.function.*;
-import static com.mindviewinc.util.Print.*;
+import java.util.stream.*;
 
-class BadShapeCreation extends Exception {
+
+class BadShapeCreation extends RuntimeException {
   BadShapeCreation(String msg) {
     super(msg);
   }
@@ -37,8 +37,12 @@ abstract class ShapeFactory {
 
 class Circle implements Shape {
   private Circle() {}
-  public void draw() { print("Circle.draw"); }
-  public void erase() { print("Circle.erase"); }
+  public void draw() {
+    System.out.println("Circle.draw");
+  }
+  public void erase() {
+    System.out.println("Circle.erase");
+  }
   static {
     ShapeFactory.factories.put("Circle", Circle::new);
   }
@@ -46,8 +50,12 @@ class Circle implements Shape {
 
 class Square implements Shape {
   private Square() {}
-  public void draw() { print("Square.draw"); }
-  public void erase() { print("Square.erase"); }
+  public void draw() {
+    System.out.println("Square.draw");
+  }
+  public void erase() {
+    System.out.println("Square.erase");
+  }
   static {
     ShapeFactory.factories.put("Square", Square::new);
   }
@@ -55,17 +63,10 @@ class Square implements Shape {
 
 public class ShapeFactory2 {
   public static void main(String args[]) {
-    String shlist[] = { "Circle", "Square",
-      "Square", "Circle", "Circle", "Square" };
-    ArrayList<Shape> shapes = new ArrayList<>();
-    try {
-      for(String shlist1 : shlist) {
-        shapes.add(
-          ShapeFactory.createShape(shlist1));
-      }
-    } catch(BadShapeCreation e) {
-      throw new RuntimeException(e);
-    }
+    List<Shape> shapes = Stream.of("Circle", "Square",
+      "Square", "Circle", "Circle", "Square")
+      .map(ShapeFactory::createShape)
+      .collect(Collectors.toList());
     shapes.forEach(Shape::draw);
     shapes.forEach(Shape::erase);
   }

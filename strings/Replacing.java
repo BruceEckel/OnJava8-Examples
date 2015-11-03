@@ -1,12 +1,10 @@
 // strings/Replacing.java
-// ©2015 MindView LLC: see Copyright.txt
-import static com.mindviewinc.util.Print.*;
 
 public class Replacing {
   static String s = Splitting.knights;
   public static void main(String[] args) {
-    print(s.replaceFirst("f\\w+", "located"));
-    print(s.replaceAll("shrubbery|tree|herring","banana"));
+    System.out.println(s.replaceFirst("f\\w+", "located"));
+    System.out.println(s.replaceAll("shrubbery|tree|herring","banana"));
   }
 }
 /* Output:

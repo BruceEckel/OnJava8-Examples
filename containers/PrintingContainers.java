@@ -1,8 +1,6 @@
 // containers/PrintingContainers.java
-// ©2015 MindView LLC: see Copyright.txt
 // Containers print themselves automatically.
 import java.util.*;
-import static com.mindviewinc.util.Print.*;
 
 public class PrintingContainers {
   static Collection fill(Collection<String> collection) {
@@ -20,14 +18,14 @@ public class PrintingContainers {
     return map;
   }
   public static void main(String[] args) {
-    print(fill(new ArrayList<>()));
-    print(fill(new LinkedList<>()));
-    print(fill(new HashSet<>()));
-    print(fill(new TreeSet<>()));
-    print(fill(new LinkedHashSet<>()));
-    print(fill(new HashMap<>()));
-    print(fill(new TreeMap<>()));
-    print(fill(new LinkedHashMap<>()));
+    System.out.println(fill(new ArrayList<>()));
+    System.out.println(fill(new LinkedList<>()));
+    System.out.println(fill(new HashSet<>()));
+    System.out.println(fill(new TreeSet<>()));
+    System.out.println(fill(new LinkedHashSet<>()));
+    System.out.println(fill(new HashMap<>()));
+    System.out.println(fill(new TreeMap<>()));
+    System.out.println(fill(new LinkedHashMap<>()));
   }
 }
 /* Output:

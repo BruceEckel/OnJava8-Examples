@@ -1,5 +1,4 @@
 // containers/ListIteration.java
-// ©2015 MindView LLC: see Copyright.txt
 import typeinfo.pets.*;
 import java.util.*;
 

@@ -1,14 +1,12 @@
 // housekeeping/Mugs.java
-// ©2015 MindView LLC: see Copyright.txt
 // Java "Instance Initialization."
-import static com.mindviewinc.util.Print.*;
 
 class Mug {
   Mug(int marker) {
-    print("Mug(" + marker + ")");
+    System.out.println("Mug(" + marker + ")");
   }
   void f(int marker) {
-    print("f(" + marker + ")");
+    System.out.println("f(" + marker + ")");
   }
 }
 
@@ -18,20 +16,20 @@ public class Mugs {
   {
     mug1 = new Mug(1);
     mug2 = new Mug(2);
-    print("mug1 & mug2 initialized");
+    System.out.println("mug1 & mug2 initialized");
   }
   Mugs() {
-    print("Mugs()");
+    System.out.println("Mugs()");
   }
   Mugs(int i) {
-    print("Mugs(int)");
+    System.out.println("Mugs(int)");
   }
   public static void main(String[] args) {
-    print("Inside main()");
+    System.out.println("Inside main()");
     new Mugs();
-    print("new Mugs() completed");
+    System.out.println("new Mugs() completed");
     new Mugs(1);
-    print("new Mugs(1) completed");
+    System.out.println("new Mugs(1) completed");
   }
 }
 /* Output:

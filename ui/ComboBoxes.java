@@ -1,5 +1,4 @@
 // ui/ComboBoxes.java
-// ©2015 MindView LLC: see Copyright.txt
 // Using drop-down lists.
 import javax.swing.*;
 import java.awt.*;

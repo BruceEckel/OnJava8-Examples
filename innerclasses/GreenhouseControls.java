@@ -1,5 +1,4 @@
 // innerclasses/GreenhouseControls.java
-// ©2015 MindView LLC: see Copyright.txt
 // This produces a specific application of the
 // control system, all in a single class. Inner
 // classes allow you to encapsulate different

@@ -1,31 +1,30 @@
 // patterns/strategy/StrategyPattern.java
-// ©2015 MindView LLC: see Copyright.txt
 package patterns.strategy;
 import java.util.function.*;
-import static com.mindviewinc.util.PrintArray.*;
+import java.util.*;
 
 // The common strategy base type:
 class FindMinima {
-  Function<double[], double[]> algorithm;
+  Function<List<Double>, List<Double>> algorithm;
 }
 
 // The various strategies:
 class LeastSquares extends FindMinima {
   LeastSquares() {
     // Line is a sequence of points (Dummy data):
-    algorithm = (line) -> new double[] { 1.1, 2.2 };
+    algorithm = (line) -> Arrays.asList(1.1, 2.2);
   }
 }
 
 class Perturbation extends FindMinima {
   Perturbation() {
-    algorithm = (line) -> new double[] { 3.3, 4.4 };
+    algorithm = (line) -> Arrays.asList(3.3, 4.4);
   }
 }
 
 class Bisection extends FindMinima {
   Bisection() {
-    algorithm = (line) -> new double[] { 5.5, 6.6 };
+    algorithm = (line) -> Arrays.asList(5.5, 6.6);
   }
 }
 
@@ -35,7 +34,7 @@ class MinimaSolver {
   public MinimaSolver(FindMinima strat) {
     strategy = strat;
   }
-  double[] minima(double[] line) {
+  List<Double> minima(List<Double> line) {
     return strategy.algorithm.apply(line);
   }
   void changeAlgorithm(FindMinima newAlgorithm) {
@@ -47,15 +46,15 @@ public class StrategyPattern {
   public static void main(String args[]) {
     MinimaSolver solver =
       new MinimaSolver(new LeastSquares());
-    double[] line = {
+    List<Double> line = Arrays.asList(
       1.0, 2.0, 1.0, 2.0, -1.0,
-      3.0, 4.0, 5.0, 4.0 };
-    printArray(solver.minima(line));
+      3.0, 4.0, 5.0, 4.0 );
+    System.out.println(solver.minima(line));
     solver.changeAlgorithm(new Bisection());
-    printArray(solver.minima(line));
+    System.out.println(solver.minima(line));
   }
 }
 /* Output:
-1.1, 2.2
-5.5, 6.6
+[1.1, 2.2]
+[5.5, 6.6]
 */

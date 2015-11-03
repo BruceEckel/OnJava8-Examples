@@ -1,10 +1,8 @@
 // concurrency/waxomatic2/WaxOMatic2.java
-// ©2015 MindView LLC: see Copyright.txt
 // Using Lock and Condition objects.
 package concurrency.waxomatic2;
 import java.util.concurrent.*;
 import java.util.concurrent.locks.*;
-import static com.mindviewinc.util.Print.*;
 
 class Car {
   private Lock lock = new ReentrantLock();
@@ -55,15 +53,15 @@ class WaxOn implements Runnable {
   public void run() {
     try {
       while(!Thread.interrupted()) {
-        printnb("Wax On! ");
+        System.out.print("Wax On! ");
         TimeUnit.MILLISECONDS.sleep(200);
         car.waxed();
         car.waitForBuffing();
       }
     } catch(InterruptedException e) {
-      print("Exiting via interrupt");
+      System.out.println("Exiting via interrupt");
     }
-    print("Ending Wax On task");
+    System.out.println("Ending Wax On task");
   }
 }
 
@@ -75,14 +73,14 @@ class WaxOff implements Runnable {
     try {
       while(!Thread.interrupted()) {
         car.waitForWaxing();
-        printnb("Wax Off! ");
+        System.out.print("Wax Off! ");
         TimeUnit.MILLISECONDS.sleep(200);
         car.buffed();
       }
     } catch(InterruptedException e) {
-      print("Exiting via interrupt");
+      System.out.println("Exiting via interrupt");
     }
-    print("Ending Wax Off task");
+    System.out.println("Ending Wax Off task");
   }
 }
 

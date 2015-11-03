@@ -1,5 +1,4 @@
 // com/mindviewinc/util/TimedAbort.java
-// ©2015 MindView LLC: see Copyright.txt
 // Terminate a program after n seconds.
 package com.mindviewinc.util;
 import java.util.*;

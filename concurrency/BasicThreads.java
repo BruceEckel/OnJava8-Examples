@@ -1,5 +1,4 @@
 // concurrency/BasicThreads.java
-// ©2015 MindView LLC: see Copyright.txt
 // The most basic use of the Thread class.
 
 public class BasicThreads {

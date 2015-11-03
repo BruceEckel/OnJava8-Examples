@@ -1,5 +1,4 @@
 // concurrency/MapComparisons.java
-// ©2015 MindView LLC: see Copyright.txt
 // {Args: 1 10 10} (Fast verification check during build)
 // Rough comparison of thread-safe Map performance.
 import java.util.concurrent.*;
@@ -46,8 +45,8 @@ class SynchronizedHashMapTest extends MapTest {
     return Collections.synchronizedMap(
       new HashMap<>(
         MapData.map(
-          new CountingGenerator.Integer(),
-          new CountingGenerator.Integer(),
+          new CountingSupplier.Integer(),
+          new CountingSupplier.Integer(),
           containerSize)));
   }
   SynchronizedHashMapTest(int nReaders, int nWriters) {
@@ -59,8 +58,8 @@ class ConcurrentHashMapTest extends MapTest {
   Map<Integer,Integer> containerInitializer() {
     return new ConcurrentHashMap<>(
       MapData.map(
-        new CountingGenerator.Integer(),
-        new CountingGenerator.Integer(), containerSize));
+        new CountingSupplier.Integer(),
+        new CountingSupplier.Integer(), containerSize));
   }
   ConcurrentHashMapTest(int nReaders, int nWriters) {
     super("ConcurrentHashMap", nReaders, nWriters);

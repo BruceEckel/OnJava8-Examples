@@ -1,7 +1,5 @@
 // reuse/Detergent.java
-// ©2015 MindView LLC: see Copyright.txt
 // Inheritance syntax & properties.
-import static com.mindviewinc.util.Print.*;
 
 class Cleanser {
   private String s = "Cleanser";
@@ -14,7 +12,7 @@ class Cleanser {
   public static void main(String[] args) {
     Cleanser x = new Cleanser();
     x.dilute(); x.apply(); x.scrub();
-    print(x);
+    System.out.println(x);
   }
 }
 
@@ -34,8 +32,8 @@ public class Detergent extends Cleanser {
     x.apply();
     x.scrub();
     x.foam();
-    print(x);
-    print("Testing base class:");
+    System.out.println(x);
+    System.out.println("Testing base class:");
     Cleanser.main(args);
   }
 }

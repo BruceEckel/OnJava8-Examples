@@ -1,5 +1,4 @@
 // concurrency/LiftOff.java
-// ©2015 MindView LLC: see Copyright.txt
 // Demonstration of the Runnable interface.
 
 public class LiftOff implements Runnable {

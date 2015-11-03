@@ -1,5 +1,4 @@
 // generics/CaptureConversion.java
-// ©2015 MindView LLC: see Copyright.txt
 
 public class CaptureConversion {
   static <T> void f1(Holder<T> holder) {

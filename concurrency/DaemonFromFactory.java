@@ -1,9 +1,7 @@
 // concurrency/DaemonFromFactory.java
-// ©2015 MindView LLC: see Copyright.txt
 // Using a Thread Factory to create daemons.
 import java.util.concurrent.*;
 import com.mindviewinc.util.*;
-import static com.mindviewinc.util.Print.*;
 
 public class DaemonFromFactory implements Runnable {
   @Override
@@ -11,10 +9,10 @@ public class DaemonFromFactory implements Runnable {
     try {
       while(true) {
         TimeUnit.MILLISECONDS.sleep(100);
-        print(Thread.currentThread() + " " + this);
+        System.out.println(Thread.currentThread() + " " + this);
       }
     } catch(InterruptedException e) {
-      print("Interrupted");
+      System.out.println("Interrupted");
     }
   }
   public static void main(String[] args) throws Exception {
@@ -22,20 +20,20 @@ public class DaemonFromFactory implements Runnable {
       new DaemonThreadFactory());
     for(int i = 0; i < 10; i++)
       exec.execute(new DaemonFromFactory());
-    print("All daemons started");
+    System.out.println("All daemons started");
     TimeUnit.MILLISECONDS.sleep(500); // Run for a while
   }
 }
 /* Output: (First 10 Lines)
 All daemons started
-Thread[Thread-7,5,main] DaemonFromFactory@e6b01c
-Thread[Thread-5,5,main] DaemonFromFactory@58daee
-Thread[Thread-8,5,main] DaemonFromFactory@196b6d3
-Thread[Thread-4,5,main] DaemonFromFactory@122e705
-Thread[Thread-9,5,main] DaemonFromFactory@15db0c6
-Thread[Thread-1,5,main] DaemonFromFactory@103bc45
-Thread[Thread-0,5,main] DaemonFromFactory@1e19df
-Thread[Thread-3,5,main] DaemonFromFactory@963672
-Thread[Thread-6,5,main] DaemonFromFactory@2f2043
+Thread[Thread-2,5,main] DaemonFromFactory@1bb3d5e
+Thread[Thread-8,5,main] DaemonFromFactory@12aef8a
+Thread[Thread-9,5,main] DaemonFromFactory@b5ecf4
+Thread[Thread-0,5,main] DaemonFromFactory@3e3d06
+Thread[Thread-1,5,main] DaemonFromFactory@425a41
+Thread[Thread-5,5,main] DaemonFromFactory@4f61c0
+Thread[Thread-4,5,main] DaemonFromFactory@53f1ba
+Thread[Thread-6,5,main] DaemonFromFactory@baf372
+Thread[Thread-3,5,main] DaemonFromFactory@1437b8f
                   ...
 */

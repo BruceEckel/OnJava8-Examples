@@ -1,5 +1,4 @@
 // generics/Templates.cpp
-// ©2015 MindView LLC: see Copyright.txt
 #include <iostream>
 using namespace std;
 
@@ -20,5 +19,3 @@ int main() {
   Manipulator<HasF> manipulator(hf);
   manipulator.manipulate();
 }
-/* Output:
-HasF::f()

@@ -1,5 +1,4 @@
 # staticchecking/PetSpeak.py
-# ©2015 MindView LLC: see Copyright.txt
 # Speaking pets in Python
 
 class Pet:
@@ -7,11 +6,11 @@ class Pet:
 
 class Cat(Pet):
     def speak(self):
-       print("meow!")
+       System.out.println("meow!")
 
 class Dog(Pet):
     def speak(self):
-       print("woof!")
+       System.out.println("woof!")
 
 def command(pet):
     pet.speak()
@@ -19,4 +18,3 @@ def command(pet):
 pets = [ Cat(), Dog() ]
 for pet in pets:
     command(pet)
-#>

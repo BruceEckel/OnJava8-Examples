@@ -1,5 +1,4 @@
 // containersindepth/TestParam.java
-// ©2015 MindView LLC: see Copyright.txt
 // A "data transfer object."
 
 public class TestParam {

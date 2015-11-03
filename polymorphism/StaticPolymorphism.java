@@ -1,5 +1,4 @@
 // polymorphism/StaticPolymorphism.java
-// ©2015 MindView LLC: see Copyright.txt
 // Static methods are not polymorphic.
 
 class StaticSuper {

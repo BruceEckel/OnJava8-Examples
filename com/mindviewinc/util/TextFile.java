@@ -1,5 +1,4 @@
 // com/mindviewinc/util/TextFile.java
-// ©2015 MindView LLC: see Copyright.txt
 // Static functions for reading and writing text files as
 // a single string, and treating a file as an ArrayList.
 package com.mindviewinc.util;

@@ -1,5 +1,4 @@
 // network/ChatterClient.java
-// ©2015 MindView LLC: see Copyright.txt
 // {ValidateByHand}
 // Tests the ChatterServer by starting multiple
 // clients, each of which sends datagrams.

@@ -1,19 +1,17 @@
 // exceptions/ExceptionMethods.java
-// ©2015 MindView LLC: see Copyright.txt
 // Demonstrating the Exception Methods.
-import static com.mindviewinc.util.Print.*;
 
 public class ExceptionMethods {
   public static void main(String[] args) {
     try {
       throw new Exception("My Exception");
     } catch(Exception e) {
-      print("Caught Exception");
-      print("getMessage():" + e.getMessage());
-      print("getLocalizedMessage():" +
+      System.out.println("Caught Exception");
+      System.out.println("getMessage():" + e.getMessage());
+      System.out.println("getLocalizedMessage():" +
         e.getLocalizedMessage());
-      print("toString():" + e);
-      print("printStackTrace():");
+      System.out.println("toString():" + e);
+      System.out.println("printStackTrace():");
       e.printStackTrace(System.out);
     }
   }

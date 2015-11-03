@@ -1,5 +1,4 @@
 // enums/RoShamBo3.java
-// ©2015 MindView LLC: see Copyright.txt
 // Using constant-specific methods.
 package enums;
 import static enums.Outcome.*;

@@ -19,7 +19,6 @@
     <jrun cls="ContainerComparison" />
     <jrun cls="CopyingArrays" />
     <jrun cls="FillingArrays" />
-    <jrun cls="GeneratorsTest" />
     <jrun cls="IceCream" />
     <jrun cls="MultidimensionalObjectArrays" />
     <jrun cls="MultidimensionalPrimitiveArray" />
@@ -27,9 +26,10 @@
     <jrun cls="ParameterizedArrayType" />
     <jrun cls="PrimitiveConversionDemonstration" />
     <jrun cls="RaggedArray" />
-    <jrun cls="RandomGeneratorsTest" />
+    <jrun cls="RandomSuppliersTest" />
     <jrun cls="Reverse" />
     <jrun cls="StringSorting" />
+    <jrun cls="SuppliersTest" />
     <jrun cls="TestArrayGeneration" />
     <jrun cls="TestGenerated" />
     <jrun cls="ThreeDWithNew" />

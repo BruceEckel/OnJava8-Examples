@@ -1,5 +1,4 @@
 // containers/ApplesAndOrangesWithGenerics.java
-// ©2015 MindView LLC: see Copyright.txt
 import java.util.*;
 
 public class ApplesAndOrangesWithGenerics {
@@ -12,7 +11,7 @@ public class ApplesAndOrangesWithGenerics {
     for(Apple apple : apples) {
       System.out.println(apple.id());
     }
-    // Using forEach:
+    // Using for-each:
     for(Apple c : apples)
       System.out.println(c.id());
   }

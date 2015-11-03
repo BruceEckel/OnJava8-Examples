@@ -1,5 +1,4 @@
 // com/mindviewinc/util/SwingConsole.java
-// ©2015 MindView LLC: see Copyright.txt
 // Tool for running Swing demos from the
 // console, both applets and JFrames.
 package com.mindviewinc.util;

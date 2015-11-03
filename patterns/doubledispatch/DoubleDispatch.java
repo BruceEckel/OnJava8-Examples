@@ -1,5 +1,4 @@
 // patterns/doubledispatch/DoubleDispatch.java
-// ©2015 MindView LLC: see Copyright.txt
 // Using multiple dispatching to handle more
 // than one unknown type during a method call.
 package patterns.doubledispatch;
@@ -8,61 +7,61 @@ import java.util.*;
 
 class AluminumBin extends TypedBin {
   @Override
-  public boolean add(DDAluminum a) {
+  public boolean add(Aluminum a) {
     return addIt(a);
   }
 }
 
 class PaperBin extends TypedBin {
   @Override
-  public boolean add(DDPaper a) {
+  public boolean add(Paper a) {
     return addIt(a);
   }
 }
 
 class GlassBin extends TypedBin {
   @Override
-  public boolean add(DDGlass a) {
+  public boolean add(Glass a) {
     return addIt(a);
   }
 }
 
 class CardboardBin extends TypedBin {
   @Override
-  public boolean add(DDCardboard a) {
+  public boolean add(Cardboard a) {
     return addIt(a);
   }
 }
 
 class TrashBinSet {
-  private TypedBin[] binSet = {
+  private List<TypedBin> binSet = Arrays.asList(
     new AluminumBin(),
     new PaperBin(),
     new GlassBin(),
     new CardboardBin()
-  };
-  public void sortIntoBins(ArrayList bin) {
-    for(Object aBin : bin) {
+  );
+  @SuppressWarnings("unchecked")
+  public void sortIntoBins(List bin) {
+    bin.forEach( aBin -> {
       TypedBinMember t = (TypedBinMember)aBin;
       if(!t.addToBin(binSet))
         System.err.println("Couldn't add " + t);
-    }
+    });
   }
-  public TypedBin[] binSet() { return binSet; }
+  public List<TypedBin> binSet() { return binSet; }
 }
 
 public class DoubleDispatch {
   public static void main(String[] args) {
-    ArrayList<Trash> bin = new ArrayList<>();
+    List<Trash> bin = new ArrayList<>();
     TrashBinSet bins = new TrashBinSet();
     // ParseTrash still works, without changes:
-    ParseTrash.fillBin("doubledispatch", "DDTrash.dat", bin);
+    ParseTrash.fillBin("doubledispatch", bin);
     // Sort from the master bin into the
     // individually-typed bins:
     bins.sortIntoBins(bin);
     // Perform sumValue for each bin...
-    for(TypedBin tb1 : bins.binSet())
-      Trash.sumValue(tb1.v);
+    bins.binSet().forEach(tb -> Trash.sumValue(tb.v));
     // ... and for the master bin
     Trash.sumValue(bin);
   }

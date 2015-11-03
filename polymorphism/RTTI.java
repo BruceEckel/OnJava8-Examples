@@ -1,5 +1,4 @@
 // polymorphism/RTTI.java
-// ©2015 MindView LLC: see Copyright.txt
 // Downcasting & Runtime type information (RTTI).
 // {ThrowsException}
 

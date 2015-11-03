@@ -1,5 +1,4 @@
 // generics/Unconstrained.java
-// ©2015 MindView LLC: see Copyright.txt
 
 class Other {}
 class BasicOther extends BasicHolder<Other> {}

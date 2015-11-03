@@ -1,5 +1,4 @@
 // generics/NotSelfBounded.java
-// ©2015 MindView LLC: see Copyright.txt
 
 public class NotSelfBounded<T> {
   T element;

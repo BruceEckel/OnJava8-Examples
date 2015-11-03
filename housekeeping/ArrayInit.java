@@ -1,5 +1,4 @@
 // housekeeping/ArrayInit.java
-// ©2015 MindView LLC: see Copyright.txt
 // Array initialization.
 import java.util.*;
 

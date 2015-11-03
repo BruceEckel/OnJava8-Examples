@@ -1,5 +1,4 @@
 // interfaces/RandVals.java
-// ©2015 MindView LLC: see Copyright.txt
 // Initializing interface fields with
 // non-constant initializers.
 import java.util.*;

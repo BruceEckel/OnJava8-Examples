@@ -1,38 +1,36 @@
 // polymorphism/Sandwich.java
-// ©2015 MindView LLC: see Copyright.txt
 // Order of constructor calls.
 package polymorphism;
-import static com.mindviewinc.util.Print.*;
 
 class Meal {
-  Meal() { print("Meal()"); }
+  Meal() { System.out.println("Meal()"); }
 }
 
 class Bread {
-  Bread() { print("Bread()"); }
+  Bread() { System.out.println("Bread()"); }
 }
 
 class Cheese {
-  Cheese() { print("Cheese()"); }
+  Cheese() { System.out.println("Cheese()"); }
 }
 
 class Lettuce {
-  Lettuce() { print("Lettuce()"); }
+  Lettuce() { System.out.println("Lettuce()"); }
 }
 
 class Lunch extends Meal {
-  Lunch() { print("Lunch()"); }
+  Lunch() { System.out.println("Lunch()"); }
 }
 
 class PortableLunch extends Lunch {
-  PortableLunch() { print("PortableLunch()");}
+  PortableLunch() { System.out.println("PortableLunch()");}
 }
 
 public class Sandwich extends PortableLunch {
   private Bread b = new Bread();
   private Cheese c = new Cheese();
   private Lettuce l = new Lettuce();
-  public Sandwich() { print("Sandwich()"); }
+  public Sandwich() { System.out.println("Sandwich()"); }
   public static void main(String[] args) {
     new Sandwich();
   }

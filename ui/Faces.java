@@ -1,5 +1,4 @@
 // ui/Faces.java
-// ©2015 MindView LLC: see Copyright.txt
 // Icon behavior in JButtons.
 import javax.swing.*;
 import java.awt.*;

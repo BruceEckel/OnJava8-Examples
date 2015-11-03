@@ -1,12 +1,10 @@
 // com/mindviewinc/atunit/AtUnit.java
-// ©2015 MindView LLC: see Copyright.txt
 // An annotation-based unit-test framework.
 package com.mindviewinc.atunit;
 import java.lang.reflect.*;
 import java.io.*;
 import java.util.*;
 import com.mindviewinc.util.*;
-import static com.mindviewinc.util.Print.*;
 
 public class AtUnit implements ProcessFiles.Strategy {
   static Class<?> testClass;
@@ -18,13 +16,13 @@ public class AtUnit implements ProcessFiles.Strategy {
       .setDefaultAssertionStatus(true); // Enable asserts
     new ProcessFiles(new AtUnit(), "class").start(args);
     if(failures == 0)
-      print("OK (" + testsRun + " tests)");
+      System.out.println("OK (" + testsRun + " tests)");
     else {
-      print("(" + testsRun + " tests)");
-      print("\n>>> " + failures + " FAILURE" +
+      System.out.println("(" + testsRun + " tests)");
+      System.out.println("\n>>> " + failures + " FAILURE" +
         (failures > 1 ? "S" : "") + " <<<");
       for(String failed : failedTests)
-        print("  " + failed);
+        System.out.println("  " + failed);
     }
   }
   @Override
@@ -53,17 +51,17 @@ public class AtUnit implements ProcessFiles.Strategy {
         try {
           if(!Modifier.isPublic(testClass
              .getDeclaredConstructor().getModifiers())) {
-            print("Error: " + testClass +
-              " default constructor must be public");
+            System.out.println("Error: " + testClass +
+              " no-arg constructor must be public");
             System.exit(1);
           }
         } catch(NoSuchMethodException e) {
-          // Synthesized default constructor; OK
+          // Synthesized no-arg constructor; OK
         }
-      print(testClass.getName());
+      System.out.println(testClass.getName());
     }
     for(Method m : testMethods) {
-      printnb("  . " + m.getName() + " ");
+      System.out.print("  . " + m.getName() + " ");
       try {
         Object testObject = createTestObject(creator);
         boolean success = false;
@@ -76,9 +74,9 @@ public class AtUnit implements ProcessFiles.Strategy {
           }
         } catch(InvocationTargetException e) {
           // Actual exception is inside e:
-          print(e.getCause());
+          System.out.println(e.getCause());
         }
-        print(success ? "" : "(failed)");
+        System.out.println(success ? "" : "(failed)");
         testsRun++;
         if(!success) {
           failures++;
@@ -146,7 +144,7 @@ public class AtUnit implements ProcessFiles.Strategy {
         throw new RuntimeException("Couldn't run " +
           "@TestObject (creator) method.");
       }
-    } else { // Use the default constructor:
+    } else { // Use the no-arg constructor:
       try {
         return testClass.newInstance();
       } catch(InstantiationException |

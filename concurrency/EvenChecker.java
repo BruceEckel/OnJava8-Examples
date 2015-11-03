@@ -1,11 +1,10 @@
 // concurrency/EvenChecker.java
-// ©2015 MindView LLC: see Copyright.txt
 import java.util.concurrent.*;
 
 public class EvenChecker implements Runnable {
-  private IntGenerator generator;
+  private IntSupplier generator;
   private final int id;
-  public EvenChecker(IntGenerator g, int ident) {
+  public EvenChecker(IntSupplier g, int ident) {
     generator = g;
     id = ident;
   }
@@ -19,8 +18,8 @@ public class EvenChecker implements Runnable {
       }
     }
   }
-  // Test any type of IntGenerator:
-  public static void test(IntGenerator gp, int count) {
+  // Test any type of IntSupplier:
+  public static void test(IntSupplier gp, int count) {
     System.out.println("Press Control-C to exit");
     ExecutorService exec = Executors.newCachedThreadPool();
     for(int i = 0; i < count; i++)
@@ -28,7 +27,7 @@ public class EvenChecker implements Runnable {
     exec.shutdown();
   }
   // Default value for count:
-  public static void test(IntGenerator gp) {
+  public static void test(IntSupplier gp) {
     test(gp, 10);
   }
 }

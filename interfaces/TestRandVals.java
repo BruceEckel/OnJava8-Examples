@@ -1,13 +1,11 @@
 // interfaces/TestRandVals.java
-// ©2015 MindView LLC: see Copyright.txt
-import static com.mindviewinc.util.Print.*;
 
 public class TestRandVals {
   public static void main(String[] args) {
-    print(RandVals.RANDOM_INT);
-    print(RandVals.RANDOM_LONG);
-    print(RandVals.RANDOM_FLOAT);
-    print(RandVals.RANDOM_DOUBLE);
+    System.out.println(RandVals.RANDOM_INT);
+    System.out.println(RandVals.RANDOM_LONG);
+    System.out.println(RandVals.RANDOM_FLOAT);
+    System.out.println(RandVals.RANDOM_DOUBLE);
   }
 }
 /* Output:

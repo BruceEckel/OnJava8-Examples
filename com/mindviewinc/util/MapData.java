@@ -1,34 +1,34 @@
 // com/mindviewinc/util/MapData.java
-// ©2015 MindView LLC: see Copyright.txt
 // A Map filled with data using a generator object.
 package com.mindviewinc.util;
 import java.util.*;
+import java.util.function.*;
 
 public class MapData<K, V> extends LinkedHashMap<K, V> {
-  // A single Pair Generator:
-  public MapData(Generator<Pair<K, V>> gen, int quantity) {
+  // A single Pair Supplier:
+  public MapData(Supplier<Pair<K, V>> gen, int quantity) {
     for(int i = 0; i < quantity; i++) {
-      Pair<K, V> p = gen.next();
+      Pair<K, V> p = gen.get();
       put(p.key, p.value);
     }
   }
-  // Two separate Generators:
-  public MapData(Generator<K> genK, Generator<V> genV,
+  // Two separate Suppliers:
+  public MapData(Supplier<K> genK, Supplier<V> genV,
       int quantity) {
     for(int i = 0; i < quantity; i++) {
-      put(genK.next(), genV.next());
+      put(genK.get(), genV.get());
     }
   }
-  // A key Generator and a single value:
-  public MapData(Generator<K> genK, V value, int quantity){
+  // A key Supplier and a single value:
+  public MapData(Supplier<K> genK, V value, int quantity){
     for(int i = 0; i < quantity; i++) {
-      put(genK.next(), value);
+      put(genK.get(), value);
     }
   }
-  // An Iterable and a value Generator:
-  public MapData(Iterable<K> genK, Generator<V> genV) {
+  // An Iterable and a value Supplier:
+  public MapData(Iterable<K> genK, Supplier<V> genV) {
     for(K key : genK) {
-      put(key, genV.next());
+      put(key, genV.get());
     }
   }
   // An Iterable and a single value:
@@ -39,19 +39,19 @@ public class MapData<K, V> extends LinkedHashMap<K, V> {
   }
   // Generic convenience methods:
   public static <K, V> MapData<K, V>
-  map(Generator<Pair<K, V>> gen, int quantity) {
+  map(Supplier<Pair<K, V>> gen, int quantity) {
     return new MapData<>(gen, quantity);
   }
   public static <K, V> MapData<K, V>
-  map(Generator<K> genK, Generator<V> genV, int quantity) {
+  map(Supplier<K> genK, Supplier<V> genV, int quantity) {
     return new MapData<>(genK, genV, quantity);
   }
   public static <K, V> MapData<K, V>
-  map(Generator<K> genK, V value, int quantity) {
+  map(Supplier<K> genK, V value, int quantity) {
     return new MapData<>(genK, value, quantity);
   }
   public static <K, V> MapData<K, V>
-  map(Iterable<K> genK, Generator<V> genV) {
+  map(Iterable<K> genK, Supplier<V> genV) {
     return new MapData<>(genK, genV);
   }
   public static <K, V> MapData<K, V>

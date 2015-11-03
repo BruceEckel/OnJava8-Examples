@@ -1,12 +1,12 @@
 // generics/PrimitiveGenericTest.java
-// ©2015 MindView LLC: see Copyright.txt
 import com.mindviewinc.util.*;
+import java.util.function.*;
 
 // Fill an array using a generator:
 class FArray {
-  public static <T> T[] fill(T[] a, Generator<T> gen) {
+  public static <T> T[] fill(T[] a, Supplier<T> gen) {
     for(int i = 0; i < a.length; i++)
-      a[i] = gen.next();
+      a[i] = gen.get();
     return a;
   }
 }
@@ -14,16 +14,16 @@ class FArray {
 public class PrimitiveGenericTest {
   public static void main(String[] args) {
     String[] strings = FArray.fill(
-      new String[7], new RandomGenerator.String(10));
+      new String[7], new RandomSupplier.String(10));
     for(String s : strings)
       System.out.println(s);
     Integer[] integers = FArray.fill(
-      new Integer[7], new RandomGenerator.Integer());
+      new Integer[7], new RandomSupplier.Integer());
     for(int i: integers)
       System.out.println(i);
     // Autoboxing won't save you here. This won't compile:
     // int[] b =
-    //   FArray.fill(new int[7], new RandIntGenerator());
+    //   FArray.fill(new int[7], new RandIntSupplier());
   }
 }
 /* Output:

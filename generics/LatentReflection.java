@@ -1,13 +1,11 @@
 // generics/LatentReflection.java
-// ©2015 MindView LLC: see Copyright.txt
 // Using Reflection to produce latent typing.
 import java.lang.reflect.*;
-import static com.mindviewinc.util.Print.*;
 
 // Does not implement Performs:
 class Mime {
   public void walkAgainstTheWind() {}
-  public void sit() { print("Pretending to sit"); }
+  public void sit() { System.out.println("Pretending to sit"); }
   public void pushInvisibleWalls() {}
   @Override
   public String toString() { return "Mime"; }
@@ -15,8 +13,8 @@ class Mime {
 
 // Does not implement Performs:
 class SmartDog {
-  public void speak() { print("Woof!"); }
-  public void sit() { print("Sitting"); }
+  public void speak() { System.out.println("Woof!"); }
+  public void sit() { System.out.println("Sitting"); }
   public void reproduce() {}
 }
 
@@ -28,13 +26,13 @@ class CommunicateReflectively {
         Method speak = spkr.getMethod("speak");
         speak.invoke(speaker);
       } catch(NoSuchMethodException e) {
-        print(speaker + " cannot speak");
+        System.out.println(speaker + " cannot speak");
       }
       try {
         Method sit = spkr.getMethod("sit");
         sit.invoke(speaker);
       } catch(NoSuchMethodException e) {
-        print(speaker + " cannot sit");
+        System.out.println(speaker + " cannot sit");
       }
     } catch(SecurityException |
             IllegalAccessException |

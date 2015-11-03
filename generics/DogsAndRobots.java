@@ -1,20 +1,18 @@
 // generics/DogsAndRobots.java
-// ©2015 MindView LLC: see Copyright.txt
 // No latent typing in Java
 import typeinfo.pets.*;
-import static com.mindviewinc.util.Print.*;
 
 class PerformingDog extends Dog implements Performs {
   @Override
-  public void speak() { print("Woof!"); }
+  public void speak() { System.out.println("Woof!"); }
   @Override
-  public void sit() { print("Sitting"); }
+  public void sit() { System.out.println("Sitting"); }
   public void reproduce() {}
 }
 
 class Robot implements Performs {
-  public void speak() { print("Click!"); }
-  public void sit() { print("Clank!"); }
+  public void speak() { System.out.println("Click!"); }
+  public void sit() { System.out.println("Clank!"); }
   public void oilChange() {}
 }
 

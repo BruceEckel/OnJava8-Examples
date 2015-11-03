@@ -1,5 +1,4 @@
 // generics/CheckedList.java
-// ©2015 MindView LLC: see Copyright.txt
 // Using Collection.checkedList().
 import typeinfo.pets.*;
 import java.util.*;

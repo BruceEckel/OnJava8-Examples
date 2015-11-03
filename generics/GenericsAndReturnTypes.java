@@ -1,5 +1,4 @@
 // generics/GenericsAndReturnTypes.java
-// ©2015 MindView LLC: see Copyright.txt
 
 interface GenericGetter<T extends GenericGetter<T>> {
   T get();

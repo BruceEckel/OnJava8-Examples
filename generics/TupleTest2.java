@@ -1,5 +1,4 @@
 // generics/TupleTest2.java
-// ©2015 MindView LLC: see Copyright.txt
 import com.mindviewinc.util.*;
 import static com.mindviewinc.util.Tuple.*;
 

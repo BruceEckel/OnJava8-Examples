@@ -1,5 +1,4 @@
 // polymorphism/music/Music.java
-// ©2015 MindView LLC: see Copyright.txt
 // Inheritance & upcasting.
 package polymorphism.music;
 

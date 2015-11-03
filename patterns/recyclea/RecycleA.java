@@ -1,27 +1,28 @@
 // patterns/recyclea/RecycleA.java
-// ©2015 MindView LLC: see Copyright.txt
 // Recycling with RTTI.
 package patterns.recyclea;
 import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
 
 abstract class Trash {
-  private double weight;
+  double weight;
   Trash(double wt) { weight = wt; }
   abstract double value();
-  double weight() { return weight; }
   // Sums the value of Trash in a bin:
+  private static double val;
   static void sumValue(List<? extends Trash> bin) {
-    double val = 0.0f;
-    for(Trash t : bin) {
+    val = 0.0f;
+    bin.forEach( t -> {
       // Polymorphism in action:
-      val += t.weight() * t.value();
+      val += t.weight * t.value();
       System.out.println(
         "weight of " +
         // Using RTTI to get type
         // information about the class:
-        t.getClass().getName() +
-        " = " + t.weight());
-    }
+        t.getClass().getSimpleName() +
+        " = " + t.weight);
+    });
     System.out.println("Total value = " + val);
   }
 }
@@ -56,29 +57,30 @@ class Glass extends Trash {
   }
 }
 
+class TrashFactory {
+  static List<Function<Double, Trash>> ttypes =
+    Arrays.asList(
+      Aluminum::new, Paper::new, Glass::new);
+  final static int sz = ttypes.size();
+  private static Random rand = new Random(47);
+  public static Trash newTrash() {
+    return ttypes
+      .get(rand.nextInt(sz))
+      .apply(rand.nextDouble());
+  }
+}
+
 public class RecycleA {
   public static void main(String[] args) {
-    List<Trash> bin = new ArrayList<>();
-    // Fill up the Trash bin:
-    for(int i = 0; i < 30; i++)
-      switch((int)(Math.random() * 3)) {
-        case 0 :
-          bin.add(new
-            Aluminum(Math.random() * 100));
-          break;
-        case 1 :
-          bin.add(new
-            Paper(Math.random() * 100));
-          break;
-        case 2 :
-          bin.add(new
-            Glass(Math.random() * 100));
-      }
+    List<Trash> bin =
+      Stream.generate(TrashFactory::newTrash)
+        .limit(25)
+        .collect(Collectors.toList());
     List<Glass> glassBin = new ArrayList<>();
     List<Paper> paperBin = new ArrayList<>();
     List<Aluminum> alBin = new ArrayList<>();
     // Sort the Trash:
-    for(Trash t : bin) {
+    bin.forEach( t -> {
       // RTTI to discover Trash type:
       if(t instanceof Aluminum)
         alBin.add((Aluminum)t);
@@ -86,33 +88,35 @@ public class RecycleA {
         paperBin.add((Paper)t);
       if(t instanceof Glass)
         glassBin.add((Glass)t);
-    }
+    });
     Trash.sumValue(alBin);
     Trash.sumValue(paperBin);
     Trash.sumValue(glassBin);
     Trash.sumValue(bin);
   }
 }
-/* Output: (First and last 10 Lines)
-weight of patterns.recyclea.Aluminum = 97.49879461494744
-weight of patterns.recyclea.Aluminum = 99.60561944523387
-weight of patterns.recyclea.Aluminum = 93.10883063826067
-weight of patterns.recyclea.Aluminum = 21.376144761865177
-weight of patterns.recyclea.Aluminum = 79.57301730061971
-weight of patterns.recyclea.Aluminum = 18.397954995447552
-weight of patterns.recyclea.Aluminum = 81.2801150163881
-weight of patterns.recyclea.Aluminum = 55.39736045734065
-weight of patterns.recyclea.Aluminum = 6.284334985288654
-Total value = 922.7120038880252
+/* Output: (First and last 11 Lines)
+weight of patterns.recyclea.Aluminum = 0.11435456649761422
+weight of patterns.recyclea.Aluminum = 0.5295954256745989
+weight of patterns.recyclea.Aluminum = 0.44032876173820623
+weight of patterns.recyclea.Aluminum = 0.483968447804611
+weight of patterns.recyclea.Aluminum = 0.2724064060083268
+weight of patterns.recyclea.Aluminum = 0.7661553155473436
+weight of patterns.recyclea.Aluminum = 0.32266202529378485
+weight of patterns.recyclea.Aluminum = 0.29010681217024337
+weight of patterns.recyclea.Aluminum = 0.04867885164993724
+weight of patterns.recyclea.Aluminum = 0.6398064631177899
+Total value = 6.526465168373229
 ________...________...________...________...________
-weight of patterns.recyclea.Paper = 59.58008361440512
-weight of patterns.recyclea.Paper = 23.177907462321667
-weight of patterns.recyclea.Aluminum = 81.2801150163881
-weight of patterns.recyclea.Aluminum = 55.39736045734065
-weight of patterns.recyclea.Aluminum = 6.284334985288654
-weight of patterns.recyclea.Paper = 34.39090015475562
-weight of patterns.recyclea.Glass = 50.356208994386385
-weight of patterns.recyclea.Paper = 89.7955125865738
-weight of patterns.recyclea.Paper = 32.73979803583131
-Total value = 1101.1015429445522
+weight of patterns.recyclea.Paper = 0.7024254510631527
+weight of patterns.recyclea.Paper = 0.7775491010186331
+weight of patterns.recyclea.Paper = 0.5929413550962656
+weight of patterns.recyclea.Paper = 0.8991222558891441
+weight of patterns.recyclea.Aluminum = 0.32266202529378485
+weight of patterns.recyclea.Aluminum = 0.29010681217024337
+weight of patterns.recyclea.Glass = 0.42812712031823896
+weight of patterns.recyclea.Paper = 0.8242175461669214
+weight of patterns.recyclea.Aluminum = 0.04867885164993724
+weight of patterns.recyclea.Aluminum = 0.6398064631177899
+Total value = 7.489772197549787
 */

@@ -1,10 +1,7 @@
 // patterns/trashvisitor/TrashVisitor.java
-// ©2015 MindView LLC: see Copyright.txt
-// The "visitor" pattern.
 package patterns.trashvisitor;
 import patterns.trash.*;
 import java.util.*;
-import static com.mindviewinc.util.Print.*;
 
 // Specific group of algorithms packaged
 // in each implementation of Visitor:
@@ -13,32 +10,36 @@ class PriceVisitor implements Visitor {
   private double pSum; // Paper
   private double gSum; // Glass
   private double cSum; // Cardboard
+  public static void show(String s) {
+    System.out.println(s);
+  }
   @Override
-  public void visit(VAluminum al) {
+  public void visit(Aluminum al) {
     double v = al.weight() * al.value();
-    print("value of Aluminum= " + v);
+    show("value of Aluminum= " + v);
     alSum += v;
   }
   @Override
-  public void visit(VPaper p) {
+  public void visit(Paper p) {
     double v = p.weight() * p.value();
-    print("value of Paper= " + v);
+    show("value of Paper= " + v);
     pSum += v;
   }
   @Override
-  public void visit(VGlass g) {
+  public void visit(Glass g) {
     double v = g.weight() * g.value();
-    print("value of Glass= " + v);
+    show("value of Glass= " + v);
     gSum += v;
   }
   @Override
-  public void visit(VCardboard c) {
+  public void visit(Cardboard c) {
     double v = c.weight() * c.value();
-    print("value of Cardboard = " + v);
+    show("value of Cardboard = " + v);
     cSum += v;
   }
-  void total() {
-    print(
+  @Override
+  public void total() {
+    show(
       "Total Aluminum: $" + alSum + "\n" +
       "Total Paper: $" + pSum + "\n" +
       "Total Glass: $" + gSum + "\n" +
@@ -51,57 +52,57 @@ class WeightVisitor implements Visitor {
   private double pSum; // Paper
   private double gSum; // Glass
   private double cSum; // Cardboard
+  public static void show(String s) {
+    System.out.println(s);
+  }
   @Override
-  public void visit(VAluminum al) {
+  public void visit(Aluminum al) {
     alSum += al.weight();
-    print("Aluminum weight = " + al.weight());
+    show("Aluminum weight = " + al.weight());
   }
   @Override
-  public void visit(VPaper p) {
+  public void visit(Paper p) {
     pSum += p.weight();
-    print("Paper weight = " + p.weight());
+    show("Paper weight = " + p.weight());
   }
   @Override
-  public void visit(VGlass g) {
+  public void visit(Glass g) {
     gSum += g.weight();
-    print("Glass weight = " + g.weight());
+    show("Glass weight = " + g.weight());
   }
   @Override
-  public void visit(VCardboard c) {
+  public void visit(Cardboard c) {
     cSum += c.weight();
-    print("Cardboard weight = " + c.weight());
+    show("Cardboard weight = " + c.weight());
   }
-  void total() {
-    print("Total weight Aluminum:" + alSum);
-    print("Total weight Paper:" + pSum);
-    print("Total weight Glass:" + gSum);
-    print("Total weight Cardboard:" + cSum);
+  @Override
+  public void total() {
+    show("Total weight Aluminum:" + alSum);
+    show("Total weight Paper:" + pSum);
+    show("Total weight Glass:" + gSum);
+    show("Total weight Cardboard:" + cSum);
   }
 }
 
 public class TrashVisitor {
   public static void main(String[] args) {
-    ArrayList<Trash> bin = new ArrayList<>();
+    List<Trash> bin = new ArrayList<>();
     // ParseTrash still works, without changes:
-    ParseTrash.fillBin("trashvisitor", "VTrash.dat", bin);
-    // You could even iterate through
-    // a list of visitors!
-    PriceVisitor pv = new PriceVisitor();
-    WeightVisitor wv = new WeightVisitor();
-    for(Trash aBin : bin) {
-      Visitable v = (Visitable) aBin;
-      v.accept(pv);
-      v.accept(wv);
-    }
-    pv.total();
-    wv.total();
+    ParseTrash.fillBin("trashvisitor", bin);
+    List<Visitor> visitors = Arrays.asList(
+      new PriceVisitor(), new WeightVisitor());
+    bin.forEach( t -> {
+      Visitable v = (Visitable) t;
+      visitors.forEach(visitor -> v.accept(visitor));
+    });
+    visitors.forEach(Visitor::total);
   }
 }
 /* Output: (First and last 10 Lines)
-Loading patterns.trashvisitor.VGlass
-Loading patterns.trashvisitor.VPaper
-Loading patterns.trashvisitor.VAluminum
-Loading patterns.trashvisitor.VCardboard
+Loading patterns.trashvisitor.Glass
+Loading patterns.trashvisitor.Paper
+Loading patterns.trashvisitor.Aluminum
+Loading patterns.trashvisitor.Cardboard
 value of Glass= 12.420000225305557
 Glass weight = 54.0
 value of Paper= 2.2000000327825546

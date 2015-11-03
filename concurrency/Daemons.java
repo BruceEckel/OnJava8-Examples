@@ -1,8 +1,6 @@
 // concurrency/Daemons.java
-// ©2015 MindView LLC: see Copyright.txt
 // Daemon threads spawn other daemon threads.
 import java.util.concurrent.*;
-import static com.mindviewinc.util.Print.*;
 
 class Daemon implements Runnable {
   private Thread[] t = new Thread[10];
@@ -11,10 +9,10 @@ class Daemon implements Runnable {
     for(int i = 0; i < t.length; i++) {
       t[i] = new Thread(new DaemonSpawn());
       t[i].start();
-      printnb("DaemonSpawn " + i + " started, ");
+      System.out.print("DaemonSpawn " + i + " started, ");
     }
     for(int i = 0; i < t.length; i++)
-      printnb("t[" + i + "].isDaemon() = " +
+      System.out.print("t[" + i + "].isDaemon() = " +
         t[i].isDaemon() + ", ");
     while(true)
       Thread.yield();
@@ -34,7 +32,7 @@ public class Daemons {
     Thread d = new Thread(new Daemon());
     d.setDaemon(true);
     d.start();
-    printnb("d.isDaemon() = " + d.isDaemon() + ", ");
+    System.out.print("d.isDaemon() = " + d.isDaemon() + ", ");
     // Allow the daemon threads to
     // finish their startup processes:
     TimeUnit.SECONDS.sleep(1);

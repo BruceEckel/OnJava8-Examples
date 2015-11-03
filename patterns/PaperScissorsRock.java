@@ -1,7 +1,8 @@
 // patterns/PaperScissorsRock.java
-// ©2015 MindView LLC: see Copyright.txt
 // Demonstration of multiple dispatching.
 import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
 
 enum Outcome { WIN, LOSE, DRAW }
 
@@ -75,57 +76,64 @@ class Rock implements Item {
   public String toString() { return "Rock"; }
 }
 
+class ItemPair {
+  Item first;
+  Item second;
+  ItemPair(Item f, Item s) {
+    first = f;
+    second = s;
+  }
+}
+
 class ItemFactory {
+  static List<Supplier<Item>> items =
+    Arrays.asList(
+      Scissors::new, Paper::new, Rock::new);
+  final static int sz = items.size();
+  private static Random rand = new Random(47);
   public static Item newItem() {
-    switch((int)(Math.random() * 3)) {
-      default:
-      case 0:
-        return new Scissors();
-      case 1:
-        return new Paper();
-      case 2:
-        return new Rock();
-    }
+    return items.get(rand.nextInt(sz)).get();
+  }
+  public static ItemPair newPair() {
+    return new ItemPair(newItem(), newItem());
   }
 }
 
 class Compete {
-  public static Outcome match(Item a, Item b) {
-    System.out.print(a + " <--> " + b + " : ");
-    return a.compete(b);
+  public static Outcome match(ItemPair p) {
+    System.out.print(
+      p.first + " <--> " + p.second + " : ");
+    return p.first.compete(p.second);
   }
 }
 
 public class PaperScissorsRock {
   public static void main(String args[]) {
-    ArrayList<Item> items = new ArrayList<>();
-    for(int i = 0; i < 40; i++)
-      items.add(ItemFactory.newItem());
-    for(int i = 0; i < items.size()/2; i++)
-      System.out.println(
-        Compete.match(
-          items.get(i), items.get(i*2)));
+    Stream.generate(ItemFactory::newPair)
+      .limit(20)
+      .map(Compete::match)
+      .forEach(System.out::println);
   }
 }
 /* Output:
-Paper <--> Paper : DRAW
-Paper <--> Rock : WIN
-Rock <--> Scissors : WIN
-Paper <--> Scissors : LOSE
-Scissors <--> Rock : LOSE
-Paper <--> Rock : WIN
-Scissors <--> Scissors : DRAW
-Paper <--> Paper : DRAW
-Rock <--> Scissors : WIN
-Rock <--> Scissors : WIN
-Rock <--> Scissors : WIN
-Rock <--> Scissors : WIN
-Scissors <--> Paper : WIN
 Rock <--> Rock : DRAW
-Paper <--> Paper : DRAW
-Scissors <--> Scissors : DRAW
-Scissors <--> Rock : LOSE
-Rock <--> Paper : LOSE
-Scissors <--> Paper : WIN
 Paper <--> Rock : WIN
+Paper <--> Rock : WIN
+Paper <--> Rock : WIN
+Scissors <--> Paper : WIN
+Scissors <--> Scissors : DRAW
+Scissors <--> Paper : WIN
+Rock <--> Paper : LOSE
+Paper <--> Paper : DRAW
+Rock <--> Paper : LOSE
+Paper <--> Scissors : LOSE
+Paper <--> Scissors : LOSE
+Rock <--> Scissors : WIN
+Rock <--> Paper : LOSE
+Paper <--> Rock : WIN
+Scissors <--> Paper : WIN
+Paper <--> Scissors : LOSE
+Paper <--> Scissors : LOSE
+Paper <--> Scissors : LOSE
+Paper <--> Scissors : LOSE
 */

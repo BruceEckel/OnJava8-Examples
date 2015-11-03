@@ -1,9 +1,7 @@
 // generics/Apply.java
-// ©2015 MindView LLC: see Copyright.txt
 // {main: ApplyTest}
 import java.lang.reflect.*;
 import java.util.*;
-import static com.mindviewinc.util.Print.*;
 
 public class Apply {
   public static <T, S extends Iterable<? extends T>>
@@ -21,9 +19,9 @@ public class Apply {
 }
 
 class Shape {
-  public void rotate() { print(this + " rotate"); }
+  public void rotate() { System.out.println(this + " rotate"); }
   public void resize(int newSize) {
-    print(this + " resize " + newSize);
+    System.out.println(this + " resize " + newSize);
   }
 }
 
@@ -33,7 +31,7 @@ class FilledList<T> extends ArrayList<T> {
   public FilledList(Class<? extends T> type, int size) {
     try {
       for(int i = 0; i < size; i++)
-        // Assumes default constructor:
+        // Assumes no-arg constructor:
         add(type.newInstance());
     } catch(InstantiationException |
             IllegalAccessException e) {

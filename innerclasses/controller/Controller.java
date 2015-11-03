@@ -1,5 +1,4 @@
 // innerclasses/controller/Controller.java
-// ©2015 MindView LLC: see Copyright.txt
 // The reusable framework for control systems.
 package innerclasses.controller;
 import java.util.*;

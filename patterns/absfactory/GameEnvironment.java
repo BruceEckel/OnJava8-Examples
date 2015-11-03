@@ -1,7 +1,7 @@
 // patterns/absfactory/GameEnvironment.java
-// ©2015 MindView LLC: see Copyright.txt
 // An example of the Abstract Factory pattern.
 package patterns.absfactory;
+import java.util.function.*;
 
 interface Obstacle {
   void action();
@@ -42,43 +42,35 @@ class NastyWeapon implements Obstacle {
 }
 
 // The Abstract Factory:
-interface GameElementFactory {
-  Player makePlayer();
-  Obstacle makeObstacle();
+class GameElementFactory {
+  Supplier<Player> player;
+  Supplier<Obstacle> obstacle;
 }
 
 // Concrete factories:
 class KittiesAndPuzzles
-implements GameElementFactory {
-  @Override
-  public Player makePlayer() {
-    return new Kitty();
-  }
-  @Override
-  public Obstacle makeObstacle() {
-    return new Puzzle();
+extends GameElementFactory {
+  KittiesAndPuzzles() {
+    player = Kitty::new;
+    obstacle = Puzzle::new;
   }
 }
 
 class KillAndDismember
-implements GameElementFactory {
-  @Override
-  public Player makePlayer() {
-    return new KungFuGuy();
-  }
-  @Override
-  public Obstacle makeObstacle() {
-    return new NastyWeapon();
+extends GameElementFactory {
+  KillAndDismember() {
+    player = KungFuGuy::new;
+    obstacle = NastyWeapon::new;
   }
 }
 
 public class GameEnvironment {
   private Player p;
   private Obstacle ob;
-  public GameEnvironment(
-    GameElementFactory factory) {
-    p = factory.makePlayer();
-    ob = factory.makeObstacle();
+  public
+  GameEnvironment(GameElementFactory factory) {
+    p = factory.player.get();
+    ob = factory.obstacle.get();
   }
   public void play() {
     p.interactWith(ob);

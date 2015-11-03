@@ -1,5 +1,4 @@
 // concurrency/ResponsiveUI.java
-// ©2015 MindView LLC: see Copyright.txt
 // User interface responsiveness.
 // {TimeOutDuringTesting}
 

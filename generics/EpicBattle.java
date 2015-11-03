@@ -1,5 +1,4 @@
 // generics/EpicBattle.java
-// ©2015 MindView LLC: see Copyright.txt
 // Demonstrating bounds in Java generics.
 import java.util.*;
 

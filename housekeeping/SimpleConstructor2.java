@@ -1,10 +1,9 @@
 // housekeeping/SimpleConstructor2.java
-// ©2015 MindView LLC: see Copyright.txt
 // Constructors can have arguments.
 
 class Rock2 {
   Rock2(int i) {
-    System.out.print("Rock " + i + " ");
+    System.out.println("Rock " + i + " ");
   }
 }
 

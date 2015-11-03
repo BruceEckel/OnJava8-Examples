@@ -1,8 +1,6 @@
 // concurrency/Restaurant.java
-// ©2015 MindView LLC: see Copyright.txt
 // The producer-consumer approach to task cooperation.
 import java.util.concurrent.*;
-import static com.mindviewinc.util.Print.*;
 
 class Meal {
   private final int orderNum;
@@ -22,14 +20,14 @@ class WaitPerson implements Runnable {
           while(restaurant.meal == null)
             wait(); // ... for the chef to produce a meal
         }
-        print("Waitperson got " + restaurant.meal);
+        System.out.println("Waitperson got " + restaurant.meal);
         synchronized(restaurant.chef) {
           restaurant.meal = null;
           restaurant.chef.notifyAll(); // Ready for another
         }
       }
     } catch(InterruptedException e) {
-      print("WaitPerson interrupted");
+      System.out.println("WaitPerson interrupted");
     }
   }
 }
@@ -47,10 +45,10 @@ class Chef implements Runnable {
             wait(); // ... for the meal to be taken
         }
         if(++count == 10) {
-          print("Out of food, closing");
+          System.out.println("Out of food, closing");
           restaurant.exec.shutdownNow();
         }
-        printnb("Order up! ");
+        System.out.print("Order up! ");
         synchronized(restaurant.waitPerson) {
           restaurant.meal = new Meal(count);
           restaurant.waitPerson.notifyAll();
@@ -58,7 +56,7 @@ class Chef implements Runnable {
         TimeUnit.MILLISECONDS.sleep(100);
       }
     } catch(InterruptedException e) {
-      print("Chef interrupted");
+      System.out.println("Chef interrupted");
     }
   }
 }

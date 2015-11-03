@@ -1,5 +1,4 @@
 // enums/menu/TypeOfFood.java
-// ©2015 MindView LLC: see Copyright.txt
 package enums.menu;
 import static enums.menu.Food.*;
 

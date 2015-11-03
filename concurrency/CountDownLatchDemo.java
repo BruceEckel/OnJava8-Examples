@@ -1,8 +1,6 @@
 // concurrency/CountDownLatchDemo.java
-// ©2015 MindView LLC: see Copyright.txt
 import java.util.concurrent.*;
 import java.util.*;
-import static com.mindviewinc.util.Print.*;
 
 // Performs some portion of a task:
 class TaskPortion implements Runnable {
@@ -24,7 +22,7 @@ class TaskPortion implements Runnable {
   }
   public void doWork() throws InterruptedException {
     TimeUnit.MILLISECONDS.sleep(rand.nextInt(2000));
-    print(this + "completed");
+    System.out.println(this + "completed");
   }
   @Override
   public String toString() {
@@ -44,9 +42,9 @@ class WaitingTask implements Runnable {
   public void run() {
     try {
       latch.await();
-      print("Latch barrier passed for " + this);
+      System.out.println("Latch barrier passed for " + this);
     } catch(InterruptedException ex) {
-      print(this + " interrupted");
+      System.out.println(this + " interrupted");
     }
   }
   @Override
@@ -65,7 +63,7 @@ public class CountDownLatchDemo {
       exec.execute(new WaitingTask(latch));
     for(int i = 0; i < SIZE; i++)
       exec.execute(new TaskPortion(latch));
-    print("Launched all tasks");
+    System.out.println("Launched all tasks");
     exec.shutdown(); // Quit when all tasks complete
   }
 }

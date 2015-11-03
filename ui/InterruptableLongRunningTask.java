@@ -1,5 +1,4 @@
 // ui/InterruptableLongRunningTask.java
-// ©2015 MindView LLC: see Copyright.txt
 // Long-running tasks in threads.
 import javax.swing.*;
 import java.awt.*;

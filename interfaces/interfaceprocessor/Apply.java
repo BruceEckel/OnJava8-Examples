@@ -1,11 +1,9 @@
 // interfaces/interfaceprocessor/Apply.java
-// ©2015 MindView LLC: see Copyright.txt
 package interfaces.interfaceprocessor;
-import static com.mindviewinc.util.Print.*;
 
 public class Apply {
   public static void process(Processor p, Object s) {
-    print("Using Processor " + p.name());
-    print(p.process(s));
+    System.out.println("Using Processor " + p.name());
+    System.out.println(p.process(s));
   }
 }

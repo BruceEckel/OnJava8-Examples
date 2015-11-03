@@ -1,25 +1,23 @@
 // reuse/Chess.java
-// ©2015 MindView LLC: see Copyright.txt
 // Inheritance, constructors and arguments.
-import static com.mindviewinc.util.Print.*;
 
 class Game {
   Game(int i) {
-    print("Game constructor");
+    System.out.println("Game constructor");
   }
 }
 
 class BoardGame extends Game {
   BoardGame(int i) {
     super(i);
-    print("BoardGame constructor");
+    System.out.println("BoardGame constructor");
   }
 }
 
 public class Chess extends BoardGame {
   Chess() {
     super(11);
-    print("Chess constructor");
+    System.out.println("Chess constructor");
   }
   public static void main(String[] args) {
     Chess x = new Chess();

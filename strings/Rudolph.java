@@ -1,5 +1,4 @@
 // strings/Rudolph.java
-// ©2015 MindView LLC: see Copyright.txt
 
 public class Rudolph {
   public static void main(String[] args) {

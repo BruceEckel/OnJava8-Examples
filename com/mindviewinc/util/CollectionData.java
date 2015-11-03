@@ -1,17 +1,17 @@
 // com/mindviewinc/util/CollectionData.java
-// ©2015 MindView LLC: see Copyright.txt
 // A Collection filled with data using a generator object.
 package com.mindviewinc.util;
 import java.util.*;
+import java.util.function.*;
 
 public class CollectionData<T> extends ArrayList<T> {
-  public CollectionData(Generator<T> gen, int quantity) {
+  public CollectionData(Supplier<T> gen, int quantity) {
     for(int i = 0; i < quantity; i++)
-      add(gen.next());
+      add(gen.get());
   }
   // A generic convenience method:
   public static <T> CollectionData<T>
-  list(Generator<T> gen, int quantity) {
+  list(Supplier<T> gen, int quantity) {
     return new CollectionData<>(gen, quantity);
   }
 }

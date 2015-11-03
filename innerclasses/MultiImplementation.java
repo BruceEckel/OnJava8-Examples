@@ -1,5 +1,4 @@
 // innerclasses/MultiImplementation.java
-// ©2015 MindView LLC: see Copyright.txt
 // With concrete or abstract classes, inner
 // classes are the only way to produce the effect
 // of "multiple implementation inheritance."

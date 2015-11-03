@@ -1,9 +1,8 @@
 // arrays/CompType.java
-// ©2015 MindView LLC: see Copyright.txt
 // Implementing Comparable in a class.
 import java.util.*;
+import java.util.function.*;
 import com.mindviewinc.util.*;
-import static com.mindviewinc.util.Print.*;
 
 public class CompType implements Comparable<CompType> {
   int i;
@@ -25,18 +24,18 @@ public class CompType implements Comparable<CompType> {
     return (i < rv.i ? -1 : (i == rv.i ? 0 : 1));
   }
   private static Random r = new Random(47);
-  public static Generator<CompType> generator() {
+  public static Supplier<CompType> generator() {
     return () ->
       new CompType(r.nextInt(100), r.nextInt(100));
   }
   public static void main(String[] args) {
     CompType[] a =
       Generated.array(new CompType[12], generator());
-    print("before sorting:");
-    print(Arrays.toString(a));
+    System.out.println("before sorting:");
+    System.out.println(Arrays.toString(a));
     Arrays.sort(a);
-    print("after sorting:");
-    print(Arrays.toString(a));
+    System.out.println("after sorting:");
+    System.out.println(Arrays.toString(a));
   }
 }
 /* Output:

@@ -1,9 +1,7 @@
 // interfaces/music4/Music4.java
-// ©2015 MindView LLC: see Copyright.txt
 // Abstract classes and methods.
 package interfaces.music4;
 import polymorphism.music.Note;
-import static com.mindviewinc.util.Print.*;
 
 abstract class Instrument {
   private int i; // Storage allocated for each
@@ -15,7 +13,7 @@ abstract class Instrument {
 class Wind extends Instrument {
   @Override
   public void play(Note n) {
-    print("Wind.play() " + n);
+    System.out.println("Wind.play() " + n);
   }
   @Override
   public String what() { return "Wind"; }
@@ -26,7 +24,7 @@ class Wind extends Instrument {
 class Percussion extends Instrument {
   @Override
   public void play(Note n) {
-    print("Percussion.play() " + n);
+    System.out.println("Percussion.play() " + n);
   }
   @Override
   public String what() { return "Percussion"; }
@@ -37,7 +35,7 @@ class Percussion extends Instrument {
 class Stringed extends Instrument {
   @Override
   public void play(Note n) {
-    print("Stringed.play() " + n);
+    System.out.println("Stringed.play() " + n);
   }
   @Override
   public String what() { return "Stringed"; }
@@ -48,16 +46,16 @@ class Stringed extends Instrument {
 class Brass extends Wind {
   @Override
   public void play(Note n) {
-    print("Brass.play() " + n);
+    System.out.println("Brass.play() " + n);
   }
   @Override
-  public void adjust() { print("Brass.adjust()"); }
+  public void adjust() { System.out.println("Brass.adjust()"); }
 }
 
 class Woodwind extends Wind {
   @Override
   public void play(Note n) {
-    print("Woodwind.play() " + n);
+    System.out.println("Woodwind.play() " + n);
   }
   @Override
   public String what() { return "Woodwind"; }

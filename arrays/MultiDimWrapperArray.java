@@ -1,5 +1,4 @@
 // arrays/MultiDimWrapperArray.java
-// ©2015 MindView LLC: see Copyright.txt
 // Multidimensional arrays of "wrapper" objects.
 import java.util.*;
 

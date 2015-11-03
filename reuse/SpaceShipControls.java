@@ -1,5 +1,4 @@
 // reuse/SpaceShipControls.java
-// ©2015 MindView LLC: see Copyright.txt
 
 public class SpaceShipControls {
   void up(int velocity) {}

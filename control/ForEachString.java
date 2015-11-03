@@ -1,10 +1,9 @@
 // control/ForEachString.java
-// ©2015 MindView LLC: see Copyright.txt
 
 public class ForEachString {
   public static void main(String[] args) {
     for(char c : "An African Swallow".toCharArray())
-      System.out.print(c + " ");
+      System.out.println(c + " ");
   }
 }
 /* Output:

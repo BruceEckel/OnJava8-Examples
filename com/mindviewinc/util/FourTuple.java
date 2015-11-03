@@ -1,5 +1,4 @@
 // com/mindviewinc/util/FourTuple.java
-// ©2015 MindView LLC: see Copyright.txt
 package com.mindviewinc.util;
 
 public class FourTuple<A, B, C, D>

@@ -1,5 +1,4 @@
 // annotations/simplest/Simple.java
-// ©2015 MindView LLC: see Copyright.txt
 // A bare-bones annotation.
 package annotations.simplest;
 import java.lang.annotation.Retention;

@@ -1,5 +1,4 @@
 // interfaces/AdaptedRandomDoubles.java
-// ©2015 MindView LLC: see Copyright.txt
 // Creating an adapter with inheritance.
 import java.nio.*;
 import java.util.*;

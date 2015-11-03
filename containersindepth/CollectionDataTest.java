@@ -1,15 +1,15 @@
 // containersindepth/CollectionDataTest.java
-// ©2015 MindView LLC: see Copyright.txt
 import java.util.*;
+import java.util.function.*;
 import com.mindviewinc.util.*;
 
-class Government implements Generator<String> {
+class Government implements Supplier<String> {
   String[] foundation = ("strange women lying in ponds " +
     "distributing swords is no basis for a system of " +
     "government").split(" ");
   private int index;
   @Override
-  public String next() { return foundation[index++]; }
+  public String get() { return foundation[index++]; }
 }
 
 public class CollectionDataTest {

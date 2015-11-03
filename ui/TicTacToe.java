@@ -1,5 +1,4 @@
 // ui/TicTacToe.java
-// ©2015 MindView LLC: see Copyright.txt
 // Dialog boxes and creating your own components.
 import javax.swing.*;
 import java.awt.*;

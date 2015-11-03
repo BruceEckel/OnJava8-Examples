@@ -1,5 +1,4 @@
 // reuse/FinalArguments.java
-// ©2015 MindView LLC: see Copyright.txt
 // Using "final" with method arguments.
 
 class Gizmo {

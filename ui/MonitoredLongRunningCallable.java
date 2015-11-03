@@ -1,5 +1,4 @@
 // ui/MonitoredLongRunningCallable.java
-// ©2015 MindView LLC: see Copyright.txt
 // Displaying task progress with ProgressMonitors.
 import javax.swing.*;
 import java.awt.*;

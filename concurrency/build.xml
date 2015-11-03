@@ -8,7 +8,7 @@
 
   <target name="run" description="Compile and run" depends="build">
     <jrun cls="ActiveObjectDemo" />
-    <jrun cls="AtomicEvenGenerator" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
+    <jrun cls="AtomicEvenSupplier" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
     <jrun cls="AtomicIntegerTest" />
     <jrun cls="AtomicityTest" />
     <jrun cls="AttemptLocking" />
@@ -26,7 +26,7 @@
     <jrun cls="DaemonsDoRunFinally" />
     <jrun cls="DeadlockingDiningPhilosophers" arguments="0 5 timeout" />
     <jrun cls="DelayQueueDemo" />
-    <jrun cls="EvenGenerator" />
+    <jrun cls="EvenSupplier" />
     <jrun cls="ExchangerDemo" />
     <jrun cls="concurrency.ExplicitCriticalSection" dirpath="../concurrency" failOnError='false' msg='* Exception was Expected *' />
     <jrun cls="FastSimulation" />
@@ -43,7 +43,7 @@
     <jrun cls="MapComparisons" arguments="1 10 10" />
     <jrun cls="MoreBasicThreads" />
     <jrun cls="MultiLock" />
-    <jrun cls="MutexEvenGenerator" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
+    <jrun cls="MutexEvenSupplier" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
     <jrun cls="NIOInterruption" />
     <jrun cls="NotifyVsNotifyAll" />
     <jrun cls="OrnamentalGarden" />
@@ -63,7 +63,7 @@
     <jrun cls="SingleThreadExecutor" />
     <jrun cls="SleepingTask" />
     <jrun cls="SynchronizationComparisons" />
-    <jrun cls="SynchronizedEvenGenerator" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
+    <jrun cls="SynchronizedEvenSupplier" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
     <jrun cls="SyncObject" />
     <jrun cls="TestBlockingQueues" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
     <jrun cls="ThreadLocalVariableHolder" />

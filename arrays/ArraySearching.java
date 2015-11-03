@@ -1,23 +1,22 @@
 // arrays/ArraySearching.java
-// ©2015 MindView LLC: see Copyright.txt
 // Using Arrays.binarySearch().
 import java.util.*;
+import java.util.function.*;
 import com.mindviewinc.util.*;
-import static com.mindviewinc.util.Print.*;
 
 public class ArraySearching {
   public static void main(String[] args) {
-    Generator<Integer> gen =
-      new RandomGenerator.Integer(1000);
+    Supplier<Integer> gen =
+      new RandomSupplier.Integer(1000);
     int[] a = ConvertTo.primitive(
       Generated.array(new Integer[25], gen));
     Arrays.sort(a);
-    print("Sorted array: " + Arrays.toString(a));
+    System.out.println("Sorted array: " + Arrays.toString(a));
     while(true) {
-      int r = gen.next();
+      int r = gen.get();
       int location = Arrays.binarySearch(a, r);
       if(location >= 0) {
-        print("Location of " + r + " is " + location +
+        System.out.println("Location of " + r + " is " + location +
           ", a[" + location + "] = " + a[location]);
         break; // Out of while loop
       }

@@ -1,37 +1,35 @@
 // enums/CarWash.java
-// ©2015 MindView LLC: see Copyright.txt
 import java.util.*;
-import static com.mindviewinc.util.Print.*;
 
 public class CarWash {
   public enum Cycle {
     UNDERBODY {
       @Override
-      void action() { print("Spraying the underbody"); }
+      void action() { System.out.println("Spraying the underbody"); }
     },
     WHEELWASH {
       @Override
-      void action() { print("Washing the wheels"); }
+      void action() { System.out.println("Washing the wheels"); }
     },
     PREWASH {
       @Override
-      void action() { print("Loosening the dirt"); }
+      void action() { System.out.println("Loosening the dirt"); }
     },
     BASIC {
       @Override
-      void action() { print("The basic wash"); }
+      void action() { System.out.println("The basic wash"); }
     },
     HOTWAX {
       @Override
-      void action() { print("Applying hot wax"); }
+      void action() { System.out.println("Applying hot wax"); }
     },
     RINSE {
       @Override
-      void action() { print("Rinsing"); }
+      void action() { System.out.println("Rinsing"); }
     },
     BLOWDRY {
       @Override
-      void action() { print("Blowing dry"); }
+      void action() { System.out.println("Blowing dry"); }
     };
     abstract void action();
   }
@@ -46,14 +44,14 @@ public class CarWash {
   public String toString() { return cycles.toString(); }
   public static void main(String[] args) {
     CarWash wash = new CarWash();
-    print(wash);
+    System.out.println(wash);
     wash.washCar();
     // Order of addition is unimportant:
     wash.add(Cycle.BLOWDRY);
     wash.add(Cycle.BLOWDRY); // Duplicates ignored
     wash.add(Cycle.RINSE);
     wash.add(Cycle.HOTWAX);
-    print(wash);
+    System.out.println(wash);
     wash.washCar();
   }
 }

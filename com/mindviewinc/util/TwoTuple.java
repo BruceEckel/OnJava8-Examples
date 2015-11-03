@@ -1,5 +1,4 @@
 // com/mindviewinc/util/TwoTuple.java
-// ©2015 MindView LLC: see Copyright.txt
 package com.mindviewinc.util;
 
 public class TwoTuple<A, B> {

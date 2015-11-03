@@ -1,7 +1,5 @@
 // housekeeping/InitialValues.java
-// ©2015 MindView LLC: see Copyright.txt
 // Shows default initial values.
-import static com.mindviewinc.util.Print.*;
 
 public class InitialValues {
   boolean t;
@@ -14,16 +12,16 @@ public class InitialValues {
   double d;
   InitialValues reference;
   void printInitialValues() {
-    print("Data type      Initial value");
-    print("boolean        " + t);
-    print("char           [" + c + "]");
-    print("byte           " + b);
-    print("short          " + s);
-    print("int            " + i);
-    print("long           " + l);
-    print("float          " + f);
-    print("double         " + d);
-    print("reference      " + reference);
+    System.out.println("Data type      Initial value");
+    System.out.println("boolean        " + t);
+    System.out.println("char           [" + c + "]");
+    System.out.println("byte           " + b);
+    System.out.println("short          " + s);
+    System.out.println("int            " + i);
+    System.out.println("long           " + l);
+    System.out.println("float          " + f);
+    System.out.println("double         " + d);
+    System.out.println("reference      " + reference);
   }
   public static void main(String[] args) {
     InitialValues iv = new InitialValues();

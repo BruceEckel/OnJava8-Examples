@@ -1,30 +1,28 @@
 // containersindepth/SortedMapDemo.java
-// ©2015 MindView LLC: see Copyright.txt
 // What you can do with a TreeMap.
 import java.util.*;
 import com.mindviewinc.util.*;
-import static com.mindviewinc.util.Print.*;
 
 public class SortedMapDemo {
   public static void main(String[] args) {
     TreeMap<Integer,String> sortedMap =
       new TreeMap<>(new CountingMapData(10));
-    print(sortedMap);
+    System.out.println(sortedMap);
     Integer low = sortedMap.firstKey();
     Integer high = sortedMap.lastKey();
-    print(low);
-    print(high);
+    System.out.println(low);
+    System.out.println(high);
     Iterator<Integer> it = sortedMap.keySet().iterator();
     for(int i = 0; i <= 6; i++) {
       if(i == 3) low = it.next();
       if(i == 6) high = it.next();
       else it.next();
     }
-    print(low);
-    print(high);
-    print(sortedMap.subMap(low, high));
-    print(sortedMap.headMap(high));
-    print(sortedMap.tailMap(low));
+    System.out.println(low);
+    System.out.println(high);
+    System.out.println(sortedMap.subMap(low, high));
+    System.out.println(sortedMap.headMap(high));
+    System.out.println(sortedMap.tailMap(low));
   }
 }
 /* Output:

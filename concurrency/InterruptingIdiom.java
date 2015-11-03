@@ -1,18 +1,16 @@
 // concurrency/InterruptingIdiom.java
-// ©2015 MindView LLC: see Copyright.txt
 // General idiom for interrupting a task.
 // {Args: 1100}
 import java.util.concurrent.*;
-import static com.mindviewinc.util.Print.*;
 
 class NeedsCleanup {
   private final int id;
   public NeedsCleanup(int ident) {
     id = ident;
-    print("NeedsCleanup " + id);
+    System.out.println("NeedsCleanup " + id);
   }
   public void cleanup() {
-    print("Cleaning up " + id);
+    System.out.println("Cleaning up " + id);
   }
 }
 
@@ -27,17 +25,17 @@ class Blocked3 implements Runnable {
         // Start try-finally immediately after definition
         // of n1, to guarantee proper cleanup of n1:
         try {
-          print("Sleeping");
+          System.out.println("Sleeping");
           TimeUnit.SECONDS.sleep(1);
           // point2
           NeedsCleanup n2 = new NeedsCleanup(2);
           // Guarantee proper cleanup of n2:
           try {
-            print("Calculating");
+            System.out.println("Calculating");
             // A time-consuming, non-blocking operation:
             for(int i = 1; i < 2500000; i++)
               d += (Math.PI + Math.E) / d;
-            print("Finished time-consuming operation");
+            System.out.println("Finished time-consuming operation");
           } finally {
             n2.cleanup();
           }
@@ -45,9 +43,9 @@ class Blocked3 implements Runnable {
           n1.cleanup();
         }
       }
-      print("Exiting via while() test");
+      System.out.println("Exiting via while() test");
     } catch(InterruptedException e) {
-      print("Exiting via InterruptedException");
+      System.out.println("Exiting via InterruptedException");
     }
   }
 }
@@ -55,7 +53,7 @@ class Blocked3 implements Runnable {
 public class InterruptingIdiom {
   public static void main(String[] args) throws Exception {
     if(args.length != 1) {
-      print("usage: java InterruptingIdiom delay-in-mS");
+      System.out.println("usage: java InterruptingIdiom delay-in-mS");
       System.exit(1);
     }
     Thread t = new Thread(new Blocked3());

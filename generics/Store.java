@@ -1,8 +1,7 @@
 // generics/Store.java
-// ©2015 MindView LLC: see Copyright.txt
 // Building up a complex model using generic containers.
 import java.util.*;
-import com.mindviewinc.util.*;
+import java.util.function.*;
 
 class Product {
   private final int id;
@@ -21,11 +20,11 @@ class Product {
   public void priceChange(double change) {
     price += change;
   }
-  public static Generator<Product> generator =
-    new Generator<Product>() {
+  public static Supplier<Product> generator =
+    new Supplier<Product>() {
       private Random rand = new Random(47);
       @Override
-      public Product next() {
+      public Product get() {
         return new Product(rand.nextInt(1000), "Test",
           Math.round(rand.nextDouble() * 1000.0) + 0.99);
       }
@@ -34,7 +33,7 @@ class Product {
 
 class Shelf extends ArrayList<Product> {
   public Shelf(int nProducts) {
-    Generators.fill(this, Product.generator, nProducts);
+    Suppliers.fill(this, Product.generator, nProducts);
   }
 }
 

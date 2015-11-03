@@ -1,5 +1,4 @@
 // exceptions/Human.java
-// ©2015 MindView LLC: see Copyright.txt
 // Catching exception hierarchies.
 
 class Annoyance extends Exception {}

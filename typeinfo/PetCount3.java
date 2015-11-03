@@ -1,10 +1,8 @@
 // typeinfo/PetCount3.java
-// ©2015 MindView LLC: see Copyright.txt
 // Using isInstance()
 import typeinfo.pets.*;
 import java.util.*;
 import com.mindviewinc.util.*;
-import static com.mindviewinc.util.Print.*;
 
 public class PetCount3 {
   static class PetCounter
@@ -37,11 +35,11 @@ public class PetCount3 {
   public static void main(String[] args) {
     PetCounter petCount = new PetCounter();
     for(Pet pet : Pets.createArray(20)) {
-      printnb(pet.getClass().getSimpleName() + " ");
+      System.out.print(pet.getClass().getSimpleName() + " ");
       petCount.count(pet);
     }
-    print();
-    print(petCount);
+    System.out.println();
+    System.out.println(petCount);
   }
 }
 /* Output:

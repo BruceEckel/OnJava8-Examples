@@ -1,5 +1,4 @@
 // generics/GenericArray.java
-// ©2015 MindView LLC: see Copyright.txt
 
 public class GenericArray<T> {
   private T[] array;

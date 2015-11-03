@@ -1,20 +1,18 @@
 // concurrency/SyncObject.java
-// ©2015 MindView LLC: see Copyright.txt
 // Synchronizing on another object.
-import static com.mindviewinc.util.Print.*;
 
 class DualSynch {
   private Object syncObject = new Object();
   public synchronized void f() {
     for(int i = 0; i < 5; i++) {
-      print("f()");
+      System.out.println("f()");
       Thread.yield();
     }
   }
   public void g() {
     synchronized(syncObject) {
       for(int i = 0; i < 5; i++) {
-        print("g()");
+        System.out.println("g()");
         Thread.yield();
       }
     }

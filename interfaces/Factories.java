@@ -1,6 +1,4 @@
 // interfaces/Factories.java
-// ©2015 MindView LLC: see Copyright.txt
-import static com.mindviewinc.util.Print.*;
 
 interface Service {
   void method1();
@@ -13,8 +11,8 @@ interface ServiceFactory {
 
 class Implementation1 implements Service {
   Implementation1() {} // Package access
-  public void method1() {print("Implementation1 method1");}
-  public void method2() {print("Implementation1 method2");}
+  public void method1() { System.out.println("Implementation1 method1"); }
+  public void method2() { System.out.println("Implementation1 method2"); }
 }
 
 class Implementation1Factory implements ServiceFactory {
@@ -26,8 +24,8 @@ class Implementation1Factory implements ServiceFactory {
 
 class Implementation2 implements Service {
   Implementation2() {} // Package access
-  public void method1() {print("Implementation2 method1");}
-  public void method2() {print("Implementation2 method2");}
+  public void method1() { System.out.println("Implementation2 method1"); }
+  public void method2() { System.out.println("Implementation2 method2"); }
 }
 
 class Implementation2Factory implements ServiceFactory {

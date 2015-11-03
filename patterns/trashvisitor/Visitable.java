@@ -1,5 +1,4 @@
 // patterns/trashvisitor/Visitable.java
-// ©2015 MindView LLC: see Copyright.txt
 // An interface to add visitor functionality to
 // the Trash hierarchy without modifying the
 // base class.

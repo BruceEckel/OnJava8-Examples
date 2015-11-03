@@ -1,5 +1,4 @@
 // containers/ModifyingArraysAsList.java
-// ©2015 MindView LLC: see Copyright.txt
 import java.util.*;
 
 public class ModifyingArraysAsList {

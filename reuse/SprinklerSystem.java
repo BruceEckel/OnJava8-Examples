@@ -1,5 +1,4 @@
 // reuse/SprinklerSystem.java
-// ©2015 MindView LLC: see Copyright.txt
 // Composition for code reuse.
 
 class WaterSource {

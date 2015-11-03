@@ -1,8 +1,6 @@
 // exceptions/DynamicFields.java
-// ©2015 MindView LLC: see Copyright.txt
 // A Class that dynamically adds fields to itself.
 // Demonstrates exception chaining.
-import static com.mindviewinc.util.Print.*;
 class DynamicFieldsException extends Exception {}
 
 public class DynamicFields {
@@ -82,16 +80,16 @@ public class DynamicFields {
   }
   public static void main(String[] args) {
     DynamicFields df = new DynamicFields(3);
-    print(df);
+    System.out.println(df);
     try {
       df.setField("d", "A value for d");
       df.setField("number", 47);
       df.setField("number2", 48);
-      print(df);
+      System.out.println(df);
       df.setField("d", "A new value for d");
       df.setField("number3", 11);
-      print("df: " + df);
-      print("df.getField(\"d\") : " + df.getField("d"));
+      System.out.println("df: " + df);
+      System.out.println("df.getField(\"d\") : " + df.getField("d"));
       Object field = df.setField("d", null); // Exception
     } catch(NoSuchFieldException |
             DynamicFieldsException e) {

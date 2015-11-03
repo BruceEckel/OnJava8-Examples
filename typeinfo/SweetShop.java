@@ -1,33 +1,31 @@
 // typeinfo/SweetShop.java
-// ©2015 MindView LLC: see Copyright.txt
 // Examination of the way the class loader works.
-import static com.mindviewinc.util.Print.*;
 
 class Candy {
-  static { print("Loading Candy"); }
+  static { System.out.println("Loading Candy"); }
 }
 
 class Gum {
-  static { print("Loading Gum"); }
+  static { System.out.println("Loading Gum"); }
 }
 
 class Cookie {
-  static { print("Loading Cookie"); }
+  static { System.out.println("Loading Cookie"); }
 }
 
 public class SweetShop {
   public static void main(String[] args) {
-    print("inside main");
+    System.out.println("inside main");
     new Candy();
-    print("After creating Candy");
+    System.out.println("After creating Candy");
     try {
       Class.forName("Gum");
     } catch(ClassNotFoundException e) {
-      print("Couldn't find Gum");
+      System.out.println("Couldn't find Gum");
     }
-    print("After Class.forName(\"Gum\")");
+    System.out.println("After Class.forName(\"Gum\")");
     new Cookie();
-    print("After creating Cookie");
+    System.out.println("After creating Cookie");
   }
 }
 /* Output:

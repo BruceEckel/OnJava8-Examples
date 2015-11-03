@@ -1,5 +1,4 @@
 // ui/Button1.java
-// ©2015 MindView LLC: see Copyright.txt
 // Putting buttons on a Swing application.
 import javax.swing.*;
 import java.awt.*;

@@ -1,5 +1,4 @@
 // generics/SelfBoundingMethods.java
-// ©2015 MindView LLC: see Copyright.txt
 
 public class SelfBoundingMethods {
   static <T extends SelfBounded<T>> T f(T arg) {

@@ -1,7 +1,5 @@
 // patterns/StateDemo.java
-// ©2015 MindView LLC: see Copyright.txt
 // Simple demonstration of the State pattern.
-import static com.mindviewinc.util.Print.*;
 
 interface StateBase {
   void f();
@@ -31,15 +29,15 @@ class State implements StateBase {
 class Implementation1 implements StateBase {
   @Override
   public void f() {
-    print("Implementation1.f()");
+    System.out.println("Implementation1.f()");
   }
   @Override
   public void g() {
-    print("Implementation1.g()");
+    System.out.println("Implementation1.g()");
   }
   @Override
   public void h() {
-    print("Implementation1.h()");
+    System.out.println("Implementation1.h()");
   }
   @Override
   public void changeImp(StateBase newImp) {}
@@ -48,15 +46,15 @@ class Implementation1 implements StateBase {
 class Implementation2 implements StateBase {
   @Override
   public void f() {
-    print("Implementation2.f()");
+    System.out.println("Implementation2.f()");
   }
   @Override
   public void g() {
-    print("Implementation2.g()");
+    System.out.println("Implementation2.g()");
   }
   @Override
   public void h() {
-    print("Implementation2.h()");
+    System.out.println("Implementation2.h()");
   }
   @Override
   public void changeImp(StateBase newImp) {}

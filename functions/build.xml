@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+
+<project default="run">
+  <property name="chapter" value="functions"/>
+  <property name="excludedfiles" value=""/>
+  <import file="../Ant-Common.xml"/>
+  <import file="../Ant-Clean.xml"/>
+
+  <target name="run" description="Compile and run" depends="build">
+    <jrun cls="CtorReference" />
+    <jrun cls="Factories" />
+    <jrun cls="Games" />
+    <jrun cls="LambdaExpressions" />
+    <jrun cls="MethodReferences" />
+    <jrun cls="RunnableMethodReference" />
+    <jrun cls="UnboundMethodReference" />
+    <jrun cls="functions.arr.ArgReturnReferences" dirpath="../functions/arr" />
+  </target>
+
+</project>

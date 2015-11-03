@@ -1,5 +1,4 @@
 // ui/ShowAddListeners.java
-// ©2015 MindView LLC: see Copyright.txt
 // Display the "addXXXListener" methods of any Swing class.
 import javax.swing.*;
 import java.awt.*;
@@ -52,7 +51,7 @@ public class ShowAddListeners extends JFrame {
     // Initial data and test:
     name.setText("JTextArea");
     nameListener.actionPerformed(
-      new ActionEvent("", 0 ,""));
+      new ActionEvent("", 0, ""));
   }
   public static void main(String[] args) {
     run(new ShowAddListeners(), 500, 400);

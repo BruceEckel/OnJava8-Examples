@@ -1,5 +1,4 @@
 // reuse/BlankFinal.java
-// ©2015 MindView LLC: see Copyright.txt
 // "Blank" final fields.
 
 class Poppet {

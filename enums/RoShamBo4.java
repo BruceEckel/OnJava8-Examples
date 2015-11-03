@@ -1,5 +1,4 @@
 // enums/RoShamBo4.java
-// ©2015 MindView LLC: see Copyright.txt
 package enums;
 
 public enum RoShamBo4 implements Competitor<RoShamBo4> {

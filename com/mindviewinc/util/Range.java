@@ -1,5 +1,4 @@
 // com/mindviewinc/util/Range.java
-// ©2015 MindView LLC: see Copyright.txt
 // Array creation methods that can be used without
 // qualifiers, using static imports:
 package com.mindviewinc.util;

@@ -1,5 +1,4 @@
 // strings/DatabaseException.java
-// ©2015 MindView LLC: see Copyright.txt
 
 public class DatabaseException extends Exception {
   public DatabaseException(int transactionID, int queryID,

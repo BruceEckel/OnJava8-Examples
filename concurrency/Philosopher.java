@@ -1,9 +1,7 @@
 // concurrency/Philosopher.java
-// ©2015 MindView LLC: see Copyright.txt
 // A dining philosopher
 import java.util.concurrent.*;
 import java.util.*;
-import static com.mindviewinc.util.Print.*;
 
 public class Philosopher implements Runnable {
   private Chopstick left;
@@ -27,20 +25,20 @@ public class Philosopher implements Runnable {
   public void run() {
     try {
       while(!Thread.interrupted()) {
-        print(this + " " + "thinking");
+        System.out.println(this + " " + "thinking");
         pause();
         // Philosopher becomes hungry
-        print(this + " " + "grabbing right");
+        System.out.println(this + " " + "grabbing right");
         right.take();
-        print(this + " " + "grabbing left");
+        System.out.println(this + " " + "grabbing left");
         left.take();
-        print(this + " " + "eating");
+        System.out.println(this + " " + "eating");
         pause();
         right.drop();
         left.drop();
       }
     } catch(InterruptedException e) {
-      print(this + " " + "exiting via interrupt");
+      System.out.println(this + " " + "exiting via interrupt");
     }
   }
   @Override

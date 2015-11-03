@@ -1,5 +1,4 @@
 // com/mindviewinc/util/Directory.java
-// ©2015 MindView LLC: see Copyright.txt
 // Produce a sequence of File objects that match a
 // regular expression in either a local directory,
 // or by walking a directory tree.
@@ -81,8 +80,8 @@ public final class Directory {
 /* Output: (First 20 Lines)
 dirs: []
 files: [
-  .\BasicGenerator.class
-  .\BasicGenerator.java
+  .\BasicSupplier.class
+  .\BasicSupplier.java
   .\BinaryFile.class
   .\BinaryFile.java
   .\CollectionData.class
@@ -93,10 +92,10 @@ files: [
   .\ContainerMethodDifferences.java
   .\ConvertTo.class
   .\ConvertTo.java
-  .\CountingGenerator$Boolean.class
-  .\CountingGenerator$Byte.class
-  .\CountingGenerator$Character.class
-  .\CountingGenerator$Double.class
-  .\CountingGenerator$Float.class
+  .\CountingSupplier$Boolean.class
+  .\CountingSupplier$Byte.class
+  .\CountingSupplier$Character.class
+  .\CountingSupplier$Double.class
+  .\CountingSupplier$Float.class
                   ...
 */

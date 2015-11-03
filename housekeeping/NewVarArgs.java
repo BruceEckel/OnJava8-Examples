@@ -1,5 +1,4 @@
 // housekeeping/NewVarArgs.java
-// ©2015 MindView LLC: see Copyright.txt
 // Using array syntax to create variable argument lists.
 
 public class NewVarArgs {

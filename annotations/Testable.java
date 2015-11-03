@@ -1,5 +1,4 @@
 // annotations/Testable.java
-// ©2015 MindView LLC: see Copyright.txt
 package annotations;
 import com.mindviewinc.atunit.*;
 

@@ -1,5 +1,4 @@
 // ui/LookAndFeel.java
-// ©2015 MindView LLC: see Copyright.txt
 // Selecting different looks & feels.
 // {Args: motif}
 import javax.swing.*;

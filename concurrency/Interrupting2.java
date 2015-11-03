@@ -1,9 +1,7 @@
 // concurrency/Interrupting2.java
-// ©2015 MindView LLC: see Copyright.txt
 // Interrupting a task blocked with a ReentrantLock.
 import java.util.concurrent.*;
 import java.util.concurrent.locks.*;
-import static com.mindviewinc.util.Print.*;
 
 class BlockedMutex {
   private Lock lock = new ReentrantLock();
@@ -16,9 +14,9 @@ class BlockedMutex {
     try {
       // This will never be available to a second task
       lock.lockInterruptibly(); // Special call
-      print("lock acquired in f()");
+      System.out.println("lock acquired in f()");
     } catch(InterruptedException e) {
-      print("Interrupted from lock acquisition in f()");
+      System.out.println("Interrupted from lock acquisition in f()");
     }
   }
 }
@@ -27,9 +25,9 @@ class Blocked2 implements Runnable {
   BlockedMutex blocked = new BlockedMutex();
   @Override
   public void run() {
-    print("Waiting for f() in BlockedMutex");
+    System.out.println("Waiting for f() in BlockedMutex");
     blocked.f();
-    print("Broken out of blocked call");
+    System.out.println("Broken out of blocked call");
   }
 }
 

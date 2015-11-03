@@ -1,14 +1,12 @@
 // housekeeping/ExplicitStatic.java
-// ©2015 MindView LLC: see Copyright.txt
 // Explicit static initialization with the "static" clause.
-import static com.mindviewinc.util.Print.*;
 
 class Cup {
   Cup(int marker) {
-    print("Cup(" + marker + ")");
+    System.out.println("Cup(" + marker + ")");
   }
   void f(int marker) {
-    print("f(" + marker + ")");
+    System.out.println("f(" + marker + ")");
   }
 }
 
@@ -20,13 +18,13 @@ class Cups {
     cup2 = new Cup(2);
   }
   Cups() {
-    print("Cups()");
+    System.out.println("Cups()");
   }
 }
 
 public class ExplicitStatic {
   public static void main(String[] args) {
-    print("Inside main()");
+    System.out.println("Inside main()");
     Cups.cup1.f(99);  // (1)
   }
   // static Cups cups1 = new Cups();  // (2)

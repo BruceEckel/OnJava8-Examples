@@ -1,18 +1,16 @@
 // typeinfo/PetCount4.java
-// ©2015 MindView LLC: see Copyright.txt
 import typeinfo.pets.*;
 import com.mindviewinc.util.*;
-import static com.mindviewinc.util.Print.*;
 
 public class PetCount4 {
   public static void main(String[] args) {
     TypeCounter counter = new TypeCounter(Pet.class);
     for(Pet pet : Pets.createArray(20)) {
-      printnb(pet.getClass().getSimpleName() + " ");
+      System.out.print(pet.getClass().getSimpleName() + " ");
       counter.count(pet);
     }
-    print();
-    print(counter);
+    System.out.println();
+    System.out.println(counter);
   }
 }
 /* Output:

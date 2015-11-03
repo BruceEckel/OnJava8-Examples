@@ -1,5 +1,4 @@
 // innerclasses/Parcel6.java
-// ©2015 MindView LLC: see Copyright.txt
 // Nesting a class within a scope.
 
 public class Parcel6 {

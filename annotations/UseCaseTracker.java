@@ -1,5 +1,4 @@
 // annotations/UseCaseTracker.java
-// ©2015 MindView LLC: see Copyright.txt
 import java.lang.reflect.*;
 import java.util.*;
 
@@ -19,6 +18,7 @@ public class UseCaseTracker {
     }
   }
   public static void main(String[] args) {
+    // <* Can't use Arrays.asList() for some reason *>
     List<Integer> useCases = new ArrayList<>();
     Collections.addAll(useCases, 47, 48, 49, 50);
     trackUseCases(useCases, PasswordUtils.class);

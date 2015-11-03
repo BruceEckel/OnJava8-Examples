@@ -1,9 +1,7 @@
 // concurrency/TestBlockingQueues.java
-// ©2015 MindView LLC: see Copyright.txt
 // {TimeOutDuringTesting}
 import java.util.concurrent.*;
 import java.io.*;
-import static com.mindviewinc.util.Print.*;
 
 class LiftOffRunner implements Runnable {
   private BlockingQueue<LiftOff> rockets;
@@ -14,7 +12,7 @@ class LiftOffRunner implements Runnable {
     try {
       rockets.put(lo);
     } catch(InterruptedException e) {
-      print("Interrupted during put()");
+      System.out.println("Interrupted during put()");
     }
   }
   @Override
@@ -25,9 +23,9 @@ class LiftOffRunner implements Runnable {
         rocket.run(); // Use this thread
       }
     } catch(InterruptedException e) {
-      print("Waking from take()");
+      System.out.println("Waking from take()");
     }
-    print("Exiting LiftOffRunner");
+    System.out.println("Exiting LiftOffRunner");
   }
 }
 
@@ -43,12 +41,12 @@ public class TestBlockingQueues {
     }
   }
   static void getkey(String message) {
-    print(message);
+    System.out.println(message);
     getkey();
   }
   static void
   test(String msg, BlockingQueue<LiftOff> queue) {
-    print(msg);
+    System.out.println(msg);
     LiftOffRunner runner = new LiftOffRunner(queue);
     Thread t = new Thread(runner);
     t.start();
@@ -56,7 +54,7 @@ public class TestBlockingQueues {
       runner.add(new LiftOff(5));
     getkey("Press 'Enter' (" + msg + ")");
     t.interrupt();
-    print("Finished " + msg + " test");
+    System.out.println("Finished " + msg + " test");
   }
   public static void main(String[] args) {
     test("LinkedBlockingQueue", // Unlimited size

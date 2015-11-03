@@ -1,5 +1,4 @@
 // generics/Holder.java
-// ©2015 MindView LLC: see Copyright.txt
 
 public class Holder<T> {
   private T value;

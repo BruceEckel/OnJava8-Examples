@@ -1,5 +1,4 @@
 // references/CopyConstructor.java
-// ©2015 MindView LLC: see Copyright.txt
 // A constructor to copy an object of the same
 // type, as an attempt to create a local copy.
 import java.lang.reflect.*;
@@ -11,7 +10,7 @@ class FruitQualities {
   private int ripeness;
   private int smell;
   // etc.
-  // Default constructor:
+  // No-arg constructor:
   public FruitQualities() {
     // Do something meaningful...
   }
@@ -30,7 +29,7 @@ class FruitQualities {
 
 class Seed {
   // Members...
-  public Seed() { /* Default constructor */ }
+  public Seed() { /* No-arg constructor */ }
   public Seed(Seed s) { /* Copy constructor */ }
 }
 
@@ -79,7 +78,7 @@ class Tomato extends Fruit {
 
 class ZebraQualities extends FruitQualities {
   private int stripedness;
-  // Default constructor:
+  // No-arg constructor:
   public ZebraQualities() {
     super();
     // do something meaningful...

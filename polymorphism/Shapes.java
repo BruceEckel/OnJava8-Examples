@@ -1,5 +1,4 @@
 // polymorphism/Shapes.java
-// ©2015 MindView LLC: see Copyright.txt
 // Polymorphism in Java.
 import polymorphism.shape.*;
 
@@ -10,7 +9,7 @@ public class Shapes {
     Shape[] s = new Shape[9];
     // Fill up the array with shapes:
     for(int i = 0; i < s.length; i++)
-      s[i] = gen.next();
+      s[i] = gen.get();
     // Make polymorphic method calls:
     for(Shape shp : s)
       shp.draw();

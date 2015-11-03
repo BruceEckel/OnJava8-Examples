@@ -1,5 +1,4 @@
 // generics/Wildcards.java
-// ©2015 MindView LLC: see Copyright.txt
 // Exploring the meaning of wildcards.
 
 public class Wildcards {

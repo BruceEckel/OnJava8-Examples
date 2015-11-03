@@ -1,16 +1,14 @@
 // containersindepth/Bits.java
-// ©2015 MindView LLC: see Copyright.txt
 // Demonstration of BitSet.
 import java.util.*;
-import static com.mindviewinc.util.Print.*;
 
 public class Bits {
   public static void printBitSet(BitSet b) {
-    print("bits: " + b);
+    System.out.println("bits: " + b);
     StringBuilder bbits = new StringBuilder();
     for(int j = 0; j < b.size() ; j++)
       bbits.append(b.get(j) ? "1" : "0");
-    print("bit pattern: " + bbits);
+    System.out.println("bit pattern: " + bbits);
   }
   public static void main(String[] args) {
     Random rand = new Random(47);
@@ -22,7 +20,7 @@ public class Bits {
         bb.set(i);
       else
         bb.clear(i);
-    print("byte value: " + bt);
+    System.out.println("byte value: " + bt);
     printBitSet(bb);
 
     short st = (short)rand.nextInt();
@@ -32,7 +30,7 @@ public class Bits {
         bs.set(i);
       else
         bs.clear(i);
-    print("short value: " + st);
+    System.out.println("short value: " + st);
     printBitSet(bs);
 
     int it = rand.nextInt();
@@ -42,20 +40,20 @@ public class Bits {
         bi.set(i);
       else
         bi.clear(i);
-    print("int value: " + it);
+    System.out.println("int value: " + it);
     printBitSet(bi);
 
     // Test bitsets >= 64 bits:
     BitSet b127 = new BitSet();
     b127.set(127);
-    print("set bit 127: " + b127);
+    System.out.println("set bit 127: " + b127);
     BitSet b255 = new BitSet(65);
     b255.set(255);
-    print("set bit 255: " + b255);
+    System.out.println("set bit 255: " + b255);
     BitSet b1023 = new BitSet(512);
     b1023.set(1023);
     b1023.set(1024);
-    print("set bit 1023: " + b1023);
+    System.out.println("set bit 1023: " + b1023);
   }
 }
 /* Output:

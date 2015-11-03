@@ -1,5 +1,4 @@
 // ui/Dialogs.java
-// ©2015 MindView LLC: see Copyright.txt
 // Creating and using Dialog Boxes.
 import javax.swing.*;
 import java.awt.*;

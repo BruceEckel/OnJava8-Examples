@@ -1,5 +1,4 @@
 // logging/PrintableLogRecord.java
-// ©2015 MindView LLC: see Copyright.txt
 // Override LogRecord toString()
 import java.util.logging.*;
 

@@ -1,5 +1,4 @@
 // enums/Burrito.java
-// ©2015 MindView LLC: see Copyright.txt
 package enums;
 import static enums.Spiciness.*;
 

@@ -1,5 +1,4 @@
 // exceptions/LoggingExceptions.java
-// ©2015 MindView LLC: see Copyright.txt
 // An exception that reports through a Logger.
 import java.util.logging.*;
 import java.io.*;

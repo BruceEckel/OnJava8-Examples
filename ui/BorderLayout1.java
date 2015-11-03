@@ -1,5 +1,4 @@
 // ui/BorderLayout1.java
-// ©2015 MindView LLC: see Copyright.txt
 // Demonstrates BorderLayout.
 import javax.swing.*;
 import java.awt.*;

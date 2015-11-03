@@ -1,5 +1,4 @@
 // patterns/visualobserver/BoxObserver.java
-// ©2015 MindView LLC: see Copyright.txt
 // Demonstration of Observer pattern using
 // Java's built-in observer classes.
 // {TimeOut:4000} During testing
@@ -8,6 +7,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.*;
+import com.mindviewinc.util.MouseClick;
 
 // You must inherit a new type of Observable:
 class BoxObservable extends Observable {
@@ -61,7 +61,8 @@ class OCBox extends JPanel implements Observer {
     this.y = y;
     notifier.addObserver(this);
     this.notifier = notifier;
-    addMouseListener(new ML());
+    addMouseListener((MouseClick)
+      e -> notifier.notifyObservers(OCBox.this));
   }
   @Override
   public void paintComponent(Graphics g) {
@@ -69,12 +70,6 @@ class OCBox extends JPanel implements Observer {
     g.setColor(cColor);
     Dimension s = getSize();
     g.fillRect(0, 0, s.width, s.height);
-  }
-  class ML extends MouseAdapter {
-    @Override
-    public void mousePressed(MouseEvent e) {
-      notifier.notifyObservers(OCBox.this);
-    }
   }
   @Override
   public void update(Observable o, Object arg) {

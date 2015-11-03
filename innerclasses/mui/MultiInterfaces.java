@@ -1,5 +1,4 @@
 // innerclasses/mui/MultiInterfaces.java
-// ©2015 MindView LLC: see Copyright.txt
 // Two ways that a class can implement multiple interfaces.
 package innerclasses.mui;
 

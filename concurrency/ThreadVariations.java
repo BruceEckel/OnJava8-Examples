@@ -1,8 +1,6 @@
 // concurrency/ThreadVariations.java
-// ©2015 MindView LLC: see Copyright.txt
 // Creating threads with inner classes.
 import java.util.concurrent.*;
-import static com.mindviewinc.util.Print.*;
 
 // Using a named inner class:
 class InnerThread1 {
@@ -17,12 +15,12 @@ class InnerThread1 {
     public void run() {
       try {
         while(true) {
-          print(this);
+          System.out.println(this);
           if(--countDown == 0) return;
           sleep(10);
         }
       } catch(InterruptedException e) {
-        print("interrupted");
+        System.out.println("interrupted");
       }
     }
     @Override
@@ -45,12 +43,12 @@ class InnerThread2 {
       public void run() {
         try {
           while(true) {
-            print(this);
+            System.out.println(this);
             if(--countDown == 0) return;
             sleep(10);
           }
         } catch(InterruptedException e) {
-          print("sleep() interrupted");
+          System.out.println("sleep() interrupted");
         }
       }
       @Override
@@ -76,12 +74,12 @@ class InnerRunnable1 {
     public void run() {
       try {
         while(true) {
-          print(this);
+          System.out.println(this);
           if(--countDown == 0) return;
           TimeUnit.MILLISECONDS.sleep(10);
         }
       } catch(InterruptedException e) {
-        print("sleep() interrupted");
+        System.out.println("sleep() interrupted");
       }
     }
     @Override
@@ -104,12 +102,12 @@ class InnerRunnable2 {
       public void run() {
         try {
           while(true) {
-            print(this);
+            System.out.println(this);
             if(--countDown == 0) return;
             TimeUnit.MILLISECONDS.sleep(10);
           }
         } catch(InterruptedException e) {
-          print("sleep() interrupted");
+          System.out.println("sleep() interrupted");
         }
       }
       @Override
@@ -135,12 +133,12 @@ class ThreadMethod {
         public void run() {
           try {
             while(true) {
-              print(this);
+              System.out.println(this);
               if(--countDown == 0) return;
               sleep(10);
             }
           } catch(InterruptedException e) {
-            print("sleep() interrupted");
+            System.out.println("sleep() interrupted");
           }
         }
         @Override

@@ -1,5 +1,4 @@
 // generics/PlainGenericInheritance.java
-// ©2015 MindView LLC: see Copyright.txt
 
 class GenericSetter<T> { // Not self-bounded
   void set(T arg){

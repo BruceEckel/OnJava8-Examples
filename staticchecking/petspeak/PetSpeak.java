@@ -1,5 +1,4 @@
 // staticchecking/petspeak/PetSpeak.java
-// ©2015 MindView LLC: see Copyright.txt
 // Speaking pets in Java
 package staticchecking.petspeak;
 

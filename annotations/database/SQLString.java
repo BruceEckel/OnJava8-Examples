@@ -1,5 +1,4 @@
 // annotations/database/SQLString.java
-// ©2015 MindView LLC: see Copyright.txt
 package annotations.database;
 import java.lang.annotation.*;
 

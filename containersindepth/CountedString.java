@@ -1,8 +1,6 @@
 // containersindepth/CountedString.java
-// ©2015 MindView LLC: see Copyright.txt
 // Creating a good hashCode().
 import java.util.*;
-import static com.mindviewinc.util.Print.*;
 
 public class CountedString {
   private static List<String> created =
@@ -47,10 +45,10 @@ public class CountedString {
       cs[i] = new CountedString("hi");
       map.put(cs[i], i); // Autobox int to Integer
     }
-    print(map);
+    System.out.println(map);
     for(CountedString cstring : cs) {
-      print("Looking up " + cstring);
-      print(map.get(cstring));
+      System.out.println("Looking up " + cstring);
+      System.out.println(map.get(cstring));
     }
   }
 }

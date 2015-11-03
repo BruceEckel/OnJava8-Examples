@@ -1,6 +1,5 @@
 // containers/IterableClass.java
-// ©2015 MindView LLC: see Copyright.txt
-// Anything Iterable works with forEach.
+// Anything Iterable works with for-each.
 import java.util.*;
 
 public class IterableClass implements Iterable<String> {

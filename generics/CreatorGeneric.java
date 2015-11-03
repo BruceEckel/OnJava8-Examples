@@ -1,5 +1,4 @@
 // generics/CreatorGeneric.java
-// ©2015 MindView LLC: see Copyright.txt
 
 abstract class GenericWithCreate<T> {
   final T element;

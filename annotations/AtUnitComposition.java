@@ -1,5 +1,4 @@
 // annotations/AtUnitComposition.java
-// ©2015 MindView LLC: see Copyright.txt
 // Creating non-embedded tests.
 package annotations;
 import com.mindviewinc.atunit.*;

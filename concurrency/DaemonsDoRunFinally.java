@@ -1,19 +1,17 @@
 // concurrency/DaemonsDoRunFinally.java
-// ©2015 MindView LLC: see Copyright.txt
 // Daemon threads now run the finally clause
 import java.util.concurrent.*;
-import static com.mindviewinc.util.Print.*;
 
 class ADaemon implements Runnable {
   @Override
   public void run() {
     try {
-      print("Starting ADaemon");
+      System.out.println("Starting ADaemon");
       TimeUnit.SECONDS.sleep(1);
     } catch(InterruptedException e) {
-      print("Exiting via InterruptedException");
+      System.out.println("Exiting via InterruptedException");
     } finally {
-      print("ADaemon finally clause");
+      System.out.println("ADaemon finally clause");
     }
   }
 }

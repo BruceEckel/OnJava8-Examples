@@ -1,19 +1,17 @@
 // reuse/Beetle.java
-// ©2015 MindView LLC: see Copyright.txt
 // The full process of initialization.
-import static com.mindviewinc.util.Print.*;
 
 class Insect {
   private int i = 9;
   protected int j;
   Insect() {
-    print("i = " + i + ", j = " + j);
+    System.out.println("i = " + i + ", j = " + j);
     j = 39;
   }
   private static int x1 =
     printInit("static Insect.x1 initialized");
   static int printInit(String s) {
-    print(s);
+    System.out.println(s);
     return 47;
   }
 }
@@ -21,13 +19,13 @@ class Insect {
 public class Beetle extends Insect {
   private int k = printInit("Beetle.k initialized");
   public Beetle() {
-    print("k = " + k);
-    print("j = " + j);
+    System.out.println("k = " + k);
+    System.out.println("j = " + j);
   }
   private static int x2 =
     printInit("static Beetle.x2 initialized");
   public static void main(String[] args) {
-    print("Beetle constructor");
+    System.out.println("Beetle constructor");
     Beetle b = new Beetle();
   }
 }

@@ -1,8 +1,6 @@
 // interfaces/classprocessor/Apply.java
-// ©2015 MindView LLC: see Copyright.txt
 package interfaces.classprocessor;
 import java.util.*;
-import static com.mindviewinc.util.Print.*;
 
 class Processor {
   public String name() {
@@ -35,8 +33,8 @@ class Splitter extends Processor {
 
 public class Apply {
   public static void process(Processor p, Object s) {
-    print("Using Processor " + p.name());
-    print(p.process(s));
+    System.out.println("Using Processor " + p.name());
+    System.out.println(p.process(s));
   }
   public static String s =
     "Disagreement with beliefs is by definition incorrect";

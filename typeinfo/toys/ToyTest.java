@@ -1,15 +1,13 @@
 // typeinfo/toys/ToyTest.java
-// ©2015 MindView LLC: see Copyright.txt
 // Testing class Class.
 package typeinfo.toys;
-import static com.mindviewinc.util.Print.*;
 
 interface HasBatteries {}
 interface Waterproof {}
 interface Shoots {}
 
 class Toy {
-  // Comment out the following default constructor
+  // Comment out the following no-arg constructor
   // to see NoSuchMethodError from (*1*)
   Toy() {}
   Toy(int i) {}
@@ -22,17 +20,17 @@ implements HasBatteries, Waterproof, Shoots {
 
 public class ToyTest {
   static void printInfo(Class cc) {
-    print("Class name: " + cc.getName() +
+    System.out.println("Class name: " + cc.getName() +
       " is interface? [" + cc.isInterface() + "]");
-    print("Simple name: " + cc.getSimpleName());
-    print("Canonical name : " + cc.getCanonicalName());
+    System.out.println("Simple name: " + cc.getSimpleName());
+    System.out.println("Canonical name : " + cc.getCanonicalName());
   }
   public static void main(String[] args) {
     Class c = null;
     try {
       c = Class.forName("typeinfo.toys.FancyToy");
     } catch(ClassNotFoundException e) {
-      print("Can't find FancyToy");
+      System.out.println("Can't find FancyToy");
       System.exit(1);
     }
     printInfo(c);
@@ -41,13 +39,13 @@ public class ToyTest {
     Class up = c.getSuperclass();
     Object obj = null;
     try {
-      // Requires default constructor:
+      // Requires no-arg constructor:
       obj = up.newInstance();
     } catch(InstantiationException e) {
-      print("Cannot instantiate");
+      System.out.println("Cannot instantiate");
       System.exit(1);
     } catch(IllegalAccessException e) {
-      print("Cannot access");
+      System.out.println("Cannot access");
       System.exit(1);
     }
     printInfo(obj.getClass());

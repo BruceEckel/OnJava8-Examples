@@ -1,5 +1,4 @@
 // exceptions/NeverCaught.java
-// ©2015 MindView LLC: see Copyright.txt
 // Ignoring RuntimeExceptions.
 // {ThrowsException}
 

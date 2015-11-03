@@ -1,5 +1,4 @@
 // patterns/adapt/Adapter.java
-// ©2015 MindView LLC: see Copyright.txt
 // Variations on the Adapter pattern.
 package patterns.adapt;
 

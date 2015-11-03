@@ -1,6 +1,6 @@
 // patterns/TemplateMethod.java
-// ©2015 MindView LLC: see Copyright.txt
 // Simple demonstration of Template Method.
+import java.util.stream.*;
 
 abstract class ApplicationFramework {
   public ApplicationFramework() {
@@ -10,10 +10,8 @@ abstract class ApplicationFramework {
   abstract void customize2();
   // "private" means automatically "final":
   private void templateMethod() {
-    for(int i = 0; i < 5; i++) {
-      customize1();
-      customize2();
-    }
+    IntStream.range(0, 5).forEach(
+      n -> { customize1(); customize2(); });
   }
 }
 

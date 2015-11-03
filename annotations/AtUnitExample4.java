@@ -1,10 +1,8 @@
 // annotations/AtUnitExample4.java
-// ©2015 MindView LLC: see Copyright.txt
 package annotations;
 import java.util.*;
 import com.mindviewinc.atunit.*;
 import com.mindviewinc.util.*;
-import static com.mindviewinc.util.Print.*;
 
 public class AtUnitExample4 {
   static String theory = "All brontosauruses " +
@@ -15,6 +13,7 @@ public class AtUnitExample4 {
   public AtUnitExample4(String word) { this.word = word; }
   public String getWord() { return word; }
   public String scrambleWord() {
+    // <* Improve this: *>
     List<Character> chars = new ArrayList<>();
     for(Character c : word.toCharArray())
       chars.add(c);
@@ -35,22 +34,22 @@ public class AtUnitExample4 {
       return null;
   }
   @Test boolean words() {
-    print("'" + getWord() + "'");
+    System.out.println("'" + getWord() + "'");
     return getWord().equals("are");
   }
   @Test boolean scramble1() {
     // Change to a specific seed to get verifiable results:
     rand = new Random(47);
-    print("'" + getWord() + "'");
+    System.out.println("'" + getWord() + "'");
     String scrambled = scrambleWord();
-    print(scrambled);
+    System.out.println(scrambled);
     return scrambled.equals("lAl");
   }
   @Test boolean scramble2() {
     rand = new Random(74);
-    print("'" + getWord() + "'");
+    System.out.println("'" + getWord() + "'");
     String scrambled = scrambleWord();
-    print(scrambled);
+    System.out.println(scrambled);
     return scrambled.equals("tsaeborornussu");
   }
   public static void main(String[] args) throws Exception {

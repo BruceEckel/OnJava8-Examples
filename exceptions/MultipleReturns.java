@@ -1,21 +1,19 @@
 // exceptions/MultipleReturns.java
-// ©2015 MindView LLC: see Copyright.txt
-import static com.mindviewinc.util.Print.*;
 
 public class MultipleReturns {
   public static void f(int i) {
-    print("Initialization that requires cleanup");
+    System.out.println("Initialization that requires cleanup");
     try {
-      print("Point 1");
+      System.out.println("Point 1");
       if(i == 1) return;
-      print("Point 2");
+      System.out.println("Point 2");
       if(i == 2) return;
-      print("Point 3");
+      System.out.println("Point 3");
       if(i == 3) return;
-      print("End");
+      System.out.println("End");
       return;
     } finally {
-      print("Performing cleanup");
+      System.out.println("Performing cleanup");
     }
   }
   public static void main(String[] args) {

@@ -1,5 +1,4 @@
 // com/mindviewinc/util/OSExecute.java
-// ©2015 MindView LLC: see Copyright.txt
 // Run an operating system command
 // and send the output to the console.
 package com.mindviewinc.util;

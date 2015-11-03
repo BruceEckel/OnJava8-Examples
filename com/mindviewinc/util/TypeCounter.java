@@ -1,5 +1,4 @@
 // com/mindviewinc/util/TypeCounter.java
-// ©2015 MindView LLC: see Copyright.txt
 // Counts instances of a type family.
 package com.mindviewinc.util;
 import java.util.*;

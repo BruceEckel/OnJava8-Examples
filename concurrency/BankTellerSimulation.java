@@ -1,5 +1,4 @@
 // concurrency/BankTellerSimulation.java
-// ©2015 MindView LLC: see Copyright.txt
 // Using queues and multithreading.
 // {Args: 5}
 import java.util.concurrent.*;
@@ -32,10 +31,10 @@ class CustomerLine extends ArrayBlockingQueue<Customer> {
 }
 
 // Randomly add customers to a queue:
-class CustomerGenerator implements Runnable {
+class CustomerSupplier implements Runnable {
   private CustomerLine customers;
   private static Random rand = new Random(47);
-  public CustomerGenerator(CustomerLine cq) {
+  public CustomerSupplier(CustomerLine cq) {
     customers = cq;
   }
   @Override
@@ -46,9 +45,9 @@ class CustomerGenerator implements Runnable {
         customers.put(new Customer(rand.nextInt(1000)));
       }
     } catch(InterruptedException e) {
-      System.out.println("CustomerGenerator interrupted");
+      System.out.println("CustomerSupplier interrupted");
     }
-    System.out.println("CustomerGenerator terminating");
+    System.out.println("CustomerSupplier terminating");
   }
 }
 
@@ -177,7 +176,7 @@ public class BankTellerSimulation {
     // If line is too long, customers will leave:
     CustomerLine customers =
       new CustomerLine(MAX_LINE_SIZE);
-    exec.execute(new CustomerGenerator(customers));
+    exec.execute(new CustomerSupplier(customers));
     // Manager will add and remove tellers as necessary:
     exec.execute(new TellerManager(
       exec, customers, ADJUSTMENT_PERIOD));
@@ -196,13 +195,13 @@ public class BankTellerSimulation {
 [575][342][804][826][896] { T1 T0 }
 [896][984][810][141][12][689][992][976][368] { T2 T0 T1 }
 TellerManager interrupted
-CustomerGenerator interrupted
+CustomerSupplier interrupted
 Teller 0 interrupted
 Teller 2 interrupted
 Teller 1 interrupted
 Teller 2 terminating
 Teller 0 terminating
-CustomerGenerator terminating
+CustomerSupplier terminating
 TellerManager terminating
 Teller 1 terminating
 */

@@ -1,8 +1,6 @@
 // operators/MathOps.java
-// ©2015 MindView LLC: see Copyright.txt
 // Demonstrates the mathematical operators.
 import java.util.*;
-import static com.mindviewinc.util.Print.*;
 
 public class MathOps {
   public static void main(String[] args) {
@@ -11,45 +9,45 @@ public class MathOps {
     int i, j, k;
     // Choose value from 1 to 100:
     j = rand.nextInt(100) + 1;
-    print("j : " + j);
+    System.out.println("j : " + j);
     k = rand.nextInt(100) + 1;
-    print("k : " + k);
+    System.out.println("k : " + k);
     i = j + k;
-    print("j + k : " + i);
+    System.out.println("j + k : " + i);
     i = j - k;
-    print("j - k : " + i);
+    System.out.println("j - k : " + i);
     i = k / j;
-    print("k / j : " + i);
+    System.out.println("k / j : " + i);
     i = k * j;
-    print("k * j : " + i);
+    System.out.println("k * j : " + i);
     i = k % j;
-    print("k % j : " + i);
+    System.out.println("k % j : " + i);
     j %= k;
-    print("j %= k : " + j);
+    System.out.println("j %= k : " + j);
     // Floating-point number tests:
     float u, v, w; // Applies to doubles, too
     v = rand.nextFloat();
-    print("v : " + v);
+    System.out.println("v : " + v);
     w = rand.nextFloat();
-    print("w : " + w);
+    System.out.println("w : " + w);
     u = v + w;
-    print("v + w : " + u);
+    System.out.println("v + w : " + u);
     u = v - w;
-    print("v - w : " + u);
+    System.out.println("v - w : " + u);
     u = v * w;
-    print("v * w : " + u);
+    System.out.println("v * w : " + u);
     u = v / w;
-    print("v / w : " + u);
+    System.out.println("v / w : " + u);
     // The following also works for char,
     // byte, short, int, long, and double:
     u += v;
-    print("u += v : " + u);
+    System.out.println("u += v : " + u);
     u -= v;
-    print("u -= v : " + u);
+    System.out.println("u -= v : " + u);
     u *= v;
-    print("u *= v : " + u);
+    System.out.println("u *= v : " + u);
     u /= v;
-    print("u /= v : " + u);
+    System.out.println("u /= v : " + u);
   }
 }
 /* Output:

@@ -1,5 +1,4 @@
 // concurrency/DeadlockingDiningPhilosophers.java
-// ©2015 MindView LLC: see Copyright.txt
 // Demonstrates how deadlock can be hidden in a program.
 // {Args: 0 5 timeout}
 import java.util.concurrent.*;

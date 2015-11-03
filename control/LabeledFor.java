@@ -1,7 +1,5 @@
 // control/LabeledFor.java
-// ©2015 MindView LLC: see Copyright.txt
 // For loops with "labeled break" and "labeled continue."
-import static com.mindviewinc.util.Print.*;
 
 public class LabeledFor {
   public static void main(String[] args) {
@@ -10,30 +8,30 @@ public class LabeledFor {
     for(; true ;) { // infinite loop
       inner: // Can't have statements here
       for(; i < 10; i++) {
-        print("i = " + i);
+        System.out.println("i = " + i);
         if(i == 2) {
-          print("continue");
+          System.out.println("continue");
           continue;
         }
         if(i == 3) {
-          print("break");
+          System.out.println("break");
           i++; // Otherwise i never
                // gets incremented.
           break;
         }
         if(i == 7) {
-          print("continue outer");
+          System.out.println("continue outer");
           i++; // Otherwise i never
                // gets incremented.
           continue outer;
         }
         if(i == 8) {
-          print("break outer");
+          System.out.println("break outer");
           break outer;
         }
         for(int k = 0; k < 5; k++) {
           if(k == 3) {
-            print("continue inner");
+            System.out.println("continue inner");
             continue inner;
           }
         }

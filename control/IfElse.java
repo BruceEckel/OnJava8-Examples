@@ -1,6 +1,4 @@
 // control/IfElse.java
-// ©2015 MindView LLC: see Copyright.txt
-import static com.mindviewinc.util.Print.*;
 
 public class IfElse {
   static int result = 0;
@@ -14,11 +12,11 @@ public class IfElse {
   }
   public static void main(String[] args) {
     test(10, 5);
-    print(result);
+    System.out.println(result);
     test(5, 10);
-    print(result);
+    System.out.println(result);
     test(5, 5);
-    print(result);
+    System.out.println(result);
   }
 }
 /* Output:

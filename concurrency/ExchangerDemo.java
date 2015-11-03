@@ -1,15 +1,15 @@
 // concurrency/ExchangerDemo.java
-// ©2015 MindView LLC: see Copyright.txt
 import java.util.concurrent.*;
-import com.mindviewinc.util.*;
 import java.util.*;
+import java.util.function.*;
+import com.mindviewinc.util.*;
 
 class ExchangerProducer<T> implements Runnable {
-  private Generator<T> generator;
+  private Supplier<T> generator;
   private Exchanger<List<T>> exchanger;
   private List<T> holder;
   ExchangerProducer(Exchanger<List<T>> exchg,
-  Generator<T> gen, List<T> holder) {
+  Supplier<T> gen, List<T> holder) {
     exchanger = exchg;
     generator = gen;
     this.holder = holder;
@@ -19,7 +19,7 @@ class ExchangerProducer<T> implements Runnable {
     try {
       while(!Thread.interrupted()) {
         for(int i = 0; i < ExchangerDemo.size; i++)
-          holder.add(generator.next());
+          holder.add(generator.get());
         // Exchange full for empty:
         holder = exchanger.exchange(holder);
       }
@@ -68,7 +68,7 @@ public class ExchangerDemo {
       producerList = new CopyOnWriteArrayList<>(),
       consumerList = new CopyOnWriteArrayList<>();
     exec.execute(new ExchangerProducer<>(xc,
-      BasicGenerator.create(Fat.class), producerList));
+      BasicSupplier.create(Fat.class), producerList));
     exec.execute(
       new ExchangerConsumer<>(xc,consumerList));
     TimeUnit.SECONDS.sleep(delay);

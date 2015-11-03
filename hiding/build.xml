@@ -15,7 +15,6 @@
     <jrun cls="IceCream" />
     <jrun cls="ImportedMyClass" />
     <jrun cls="LibTest" />
-    <jrun cls="PrintTest" />
     <jrun cls="QualifiedMyClass" />
     <jrun cls="SingleImport" />
   </target>

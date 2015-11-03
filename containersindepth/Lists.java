@@ -1,9 +1,7 @@
 // containersindepth/Lists.java
-// ©2015 MindView LLC: see Copyright.txt
 // Things you can do with Lists.
 import java.util.*;
 import com.mindviewinc.util.*;
-import static com.mindviewinc.util.Print.*;
 
 public class Lists {
   private static boolean b;
@@ -63,47 +61,47 @@ public class Lists {
     it.set("47");
   }
   public static void testVisual(List<String> a) {
-    print(a);
+    System.out.println(a);
     List<String> b = Countries.names(25);
-    print("b = " + b);
+    System.out.println("b = " + b);
     a.addAll(b);
     a.addAll(b);
-    print(a);
+    System.out.println(a);
     // Insert, remove, and replace elements
     // using a ListIterator:
     ListIterator<String> x = a.listIterator(a.size()/2);
     x.add("one");
-    print(a);
-    print(x.next());
+    System.out.println(a);
+    System.out.println(x.next());
     x.remove();
-    print(x.next());
+    System.out.println(x.next());
     x.set("47");
-    print(a);
+    System.out.println(a);
     // Traverse the list backwards:
     x = a.listIterator(a.size());
     while(x.hasPrevious())
-      printnb(x.previous() + " ");
-    print();
-    print("testVisual finished");
+      System.out.print(x.previous() + " ");
+    System.out.println();
+    System.out.println("testVisual finished");
   }
   // There are some things that only LinkedLists can do:
   public static void testLinkedList() {
     LinkedList<String> ll = new LinkedList<>();
     ll.addAll(Countries.names(25));
-    print(ll);
+    System.out.println(ll);
     // Treat it like a stack, pushing:
     ll.addFirst("one");
     ll.addFirst("two");
-    print(ll);
+    System.out.println(ll);
     // Like "peeking" at the top of a stack:
-    print(ll.getFirst());
+    System.out.println(ll.getFirst());
     // Like popping a stack:
-    print(ll.removeFirst());
-    print(ll.removeFirst());
+    System.out.println(ll.removeFirst());
+    System.out.println(ll.removeFirst());
     // Treat it like a queue, pulling elements
     // off the tail end:
-    print(ll.removeLast());
-    print(ll);
+    System.out.println(ll.removeLast());
+    System.out.println(ll);
   }
   public static void main(String[] args) {
     // Make and fill a new list each time:

@@ -1,5 +1,4 @@
 // containersindepth/FillingLists.java
-// ©2015 MindView LLC: see Copyright.txt
 // The Collections.fill() & Collections.nCopies() methods.
 import java.util.*;
 

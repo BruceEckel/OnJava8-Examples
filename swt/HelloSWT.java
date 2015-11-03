@@ -1,5 +1,4 @@
 // swt/HelloSWT.java
-// ©2015 MindView LLC: see Copyright.txt
 // {Requires: org.eclipse.swt.widgets.Display; You must
 // install the SWT library from http://www.eclipse.org }
 import org.eclipse.swt.widgets.*;

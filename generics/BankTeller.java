@@ -1,8 +1,7 @@
 // generics/BankTeller.java
-// ©2015 MindView LLC: see Copyright.txt
 // A very simple bank teller simulation.
 import java.util.*;
-import com.mindviewinc.util.*;
+import java.util.function.*;
 
 class Customer {
   private static long counter = 1;
@@ -10,8 +9,8 @@ class Customer {
   private Customer() {}
   @Override
   public String toString() { return "Customer " + id; }
-  // A method to produce Generator objects:
-  public static Generator<Customer> generator() {
+  // A method to produce Supplier objects:
+  public static Supplier<Customer> generator() {
     return Customer::new; // Constructor reference
   }
 }
@@ -22,8 +21,8 @@ class Teller {
   private Teller() {}
   @Override
   public String toString() { return "Teller " + id; }
-  // A single Generator object:
-  public static Generator<Teller> generator = Teller::new;
+  // A single Supplier object:
+  public static Supplier<Teller> generator = Teller::new;
 }
 
 public class BankTeller {
@@ -33,9 +32,9 @@ public class BankTeller {
   public static void main(String[] args) {
     Random rand = new Random(47);
     Queue<Customer> line = new LinkedList<>();
-    Generators.fill(line, Customer.generator(), 15);
+    Suppliers.fill(line, Customer.generator(), 15);
     List<Teller> tellers = new ArrayList<>();
-    Generators.fill(tellers, Teller.generator, 4);
+    Suppliers.fill(tellers, Teller.generator, 4);
     for(Customer c : line)
       serve(tellers.get(rand.nextInt(tellers.size())), c);
   }

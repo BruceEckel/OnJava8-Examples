@@ -1,6 +1,4 @@
 // housekeeping/ArraysOfPrimitives.java
-// ©2015 MindView LLC: see Copyright.txt
-import static com.mindviewinc.util.Print.*;
 
 public class ArraysOfPrimitives {
   public static void main(String[] args) {
@@ -10,7 +8,7 @@ public class ArraysOfPrimitives {
     for(int i = 0; i < a2.length; i++)
       a2[i] += 1;
     for(int i = 0; i < a1.length; i++)
-      print("a1[" + i + "] = " + a1[i]);
+      System.out.println("a1[" + i + "] = " + a1[i]);
   }
 }
 /* Output:

@@ -1,9 +1,7 @@
 // concurrency/ToastOMatic.java
-// ©2015 MindView LLC: see Copyright.txt
 // A toaster that uses queues.
 import java.util.concurrent.*;
 import java.util.*;
-import static com.mindviewinc.util.Print.*;
 
 class Toast {
   public enum Status { DRY, BUTTERED, JAMMED }
@@ -35,14 +33,14 @@ class Toaster implements Runnable {
           100 + rand.nextInt(500));
         // Make toast
         Toast t = new Toast(count++);
-        print(t);
+        System.out.println(t);
         // Insert into queue
         toastQueue.put(t);
       }
     } catch(InterruptedException e) {
-      print("Toaster interrupted");
+      System.out.println("Toaster interrupted");
     }
-    print("Toaster off");
+    System.out.println("Toaster off");
   }
 }
 
@@ -60,13 +58,13 @@ class Butterer implements Runnable {
         // Blocks until next piece of toast is available:
         Toast t = dryQueue.take();
         t.butter();
-        print(t);
+        System.out.println(t);
         butteredQueue.put(t);
       }
     } catch(InterruptedException e) {
-      print("Butterer interrupted");
+      System.out.println("Butterer interrupted");
     }
-    print("Butterer off");
+    System.out.println("Butterer off");
   }
 }
 
@@ -84,13 +82,13 @@ class Jammer implements Runnable {
         // Blocks until next piece of toast is available:
         Toast t = butteredQueue.take();
         t.jam();
-        print(t);
+        System.out.println(t);
         finishedQueue.put(t);
       }
     } catch(InterruptedException e) {
-      print("Jammer interrupted");
+      System.out.println("Jammer interrupted");
     }
-    print("Jammer off");
+    System.out.println("Jammer off");
   }
 }
 
@@ -111,15 +109,15 @@ class Eater implements Runnable {
         // and that all pieces are getting jammed:
         if(t.getId() != counter++ ||
            t.getStatus() != Toast.Status.JAMMED) {
-          print(">>>> Error: " + t);
+          System.out.println(">>>> Error: " + t);
           System.exit(1);
         } else
-          print("Chomp! " + t);
+          System.out.println("Chomp! " + t);
       }
     } catch(InterruptedException e) {
-      print("Eater interrupted");
+      System.out.println("Eater interrupted");
     }
-    print("Eater off");
+    System.out.println("Eater off");
   }
 }
 

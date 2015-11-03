@@ -1,6 +1,4 @@
 // typeinfo/SimpleProxyDemo.java
-// ©2015 MindView LLC: see Copyright.txt
-import static com.mindviewinc.util.Print.*;
 
 interface Interface {
   void doSomething();
@@ -9,10 +7,10 @@ interface Interface {
 
 class RealObject implements Interface {
   @Override
-  public void doSomething() { print("doSomething"); }
+  public void doSomething() { System.out.println("doSomething"); }
   @Override
   public void somethingElse(String arg) {
-    print("somethingElse " + arg);
+    System.out.println("somethingElse " + arg);
   }
 }
 
@@ -23,12 +21,12 @@ class SimpleProxy implements Interface {
   }
   @Override
   public void doSomething() {
-    print("SimpleProxy doSomething");
+    System.out.println("SimpleProxy doSomething");
     proxied.doSomething();
   }
   @Override
   public void somethingElse(String arg) {
-    print("SimpleProxy somethingElse " + arg);
+    System.out.println("SimpleProxy somethingElse " + arg);
     proxied.somethingElse(arg);
   }
 }

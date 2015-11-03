@@ -1,6 +1,4 @@
 // operators/TernaryIfElse.java
-// ©2015 MindView LLC: see Copyright.txt
-import static com.mindviewinc.util.Print.*;
 
 public class TernaryIfElse {
   static int ternary(int i) {
@@ -13,10 +11,10 @@ public class TernaryIfElse {
       return i * 10;
   }
   public static void main(String[] args) {
-    print(ternary(9));
-    print(ternary(10));
-    print(standardIfElse(9));
-    print(standardIfElse(10));
+    System.out.println(ternary(9));
+    System.out.println(ternary(10));
+    System.out.println(standardIfElse(9));
+    System.out.println(standardIfElse(10));
   }
 }
 /* Output:

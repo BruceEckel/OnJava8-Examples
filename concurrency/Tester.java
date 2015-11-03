@@ -1,5 +1,4 @@
 // concurrency/Tester.java
-// ©2015 MindView LLC: see Copyright.txt
 // Framework to test performance of concurrency containers.
 import java.util.concurrent.*;
 import com.mindviewinc.util.*;
@@ -27,7 +26,7 @@ public abstract class Tester<C> {
     this.nReaders = nReaders;
     this.nWriters = nWriters;
     writeData = Generated.array(Integer.class,
-      new RandomGenerator.Integer(), containerSize);
+      new RandomSupplier.Integer(), containerSize);
     for(int i = 0; i < testReps; i++) {
       runTest();
       readTime = 0;

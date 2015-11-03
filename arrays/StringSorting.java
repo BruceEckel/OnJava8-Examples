@@ -1,21 +1,19 @@
 // arrays/StringSorting.java
-// ©2015 MindView LLC: see Copyright.txt
 // Sorting an array of Strings.
 import java.util.*;
 import com.mindviewinc.util.*;
-import static com.mindviewinc.util.Print.*;
 
 public class StringSorting {
   public static void main(String[] args) {
     String[] sa = Generated.array(new String[20],
-      new RandomGenerator.String(5));
-    print("Before sort: " + Arrays.toString(sa));
+      new RandomSupplier.String(5));
+    System.out.println("Before sort: " + Arrays.toString(sa));
     Arrays.sort(sa);
-    print("After sort: " + Arrays.toString(sa));
+    System.out.println("After sort: " + Arrays.toString(sa));
     Arrays.sort(sa, Collections.reverseOrder());
-    print("Reverse sort: " + Arrays.toString(sa));
+    System.out.println("Reverse sort: " + Arrays.toString(sa));
     Arrays.sort(sa, String.CASE_INSENSITIVE_ORDER);
-    print("Case-insensitive sort: " + Arrays.toString(sa));
+    System.out.println("Case-insensitive sort: " + Arrays.toString(sa));
   }
 }
 /* Output:

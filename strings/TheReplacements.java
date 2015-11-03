@@ -1,8 +1,6 @@
 // strings/TheReplacements.java
-// ©2015 MindView LLC: see Copyright.txt
 import java.util.regex.*;
 import com.mindviewinc.util.*;
-import static com.mindviewinc.util.Print.*;
 
 /*! Here's a block of text to use as input to
     the regular expression matcher. Note that we
@@ -24,7 +22,7 @@ public class TheReplacements {
     // Replace one or more spaces at the beginning of each
     // line with no spaces. Must enable MULTILINE mode:
     s = s.replaceAll("(?m)^ +", "");
-    print(s);
+    System.out.println(s);
     s = s.replaceFirst("[aeiou]", "(VOWEL1)");
     StringBuffer sbuf = new StringBuffer();
     Pattern p = Pattern.compile("[aeiou]");
@@ -35,7 +33,7 @@ public class TheReplacements {
       m.appendReplacement(sbuf, m.group().toUpperCase());
     // Put in the remainder of the text:
     m.appendTail(sbuf);
-    print(sbuf);
+    System.out.println(sbuf);
   }
 }
 /* Output:

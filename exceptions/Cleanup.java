@@ -1,5 +1,4 @@
 // exceptions/Cleanup.java
-// ©2015 MindView LLC: see Copyright.txt
 // Guaranteeing proper cleanup of a resource.
 
 public class Cleanup {

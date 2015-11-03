@@ -1,18 +1,16 @@
 // operators/AutoInc.java
-// ©2015 MindView LLC: see Copyright.txt
 // Demonstrates the ++ and -- operators.
-import static com.mindviewinc.util.Print.*;
 
 public class AutoInc {
   public static void main(String[] args) {
     int i = 1;
-    print("i : " + i);
-    print("++i : " + ++i); // Pre-increment
-    print("i++ : " + i++); // Post-increment
-    print("i : " + i);
-    print("--i : " + --i); // Pre-decrement
-    print("i-- : " + i--); // Post-decrement
-    print("i : " + i);
+    System.out.println("i : " + i);
+    System.out.println("++i : " + ++i); // Pre-increment
+    System.out.println("i++ : " + i++); // Post-increment
+    System.out.println("i : " + i);
+    System.out.println("--i : " + --i); // Pre-decrement
+    System.out.println("i-- : " + i--); // Post-decrement
+    System.out.println("i : " + i);
   }
 }
 /* Output:

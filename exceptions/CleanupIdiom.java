@@ -1,5 +1,4 @@
 // exceptions/CleanupIdiom.java
-// ©2015 MindView LLC: see Copyright.txt
 // Each disposable object must be followed by a try-finally
 
 class NeedsCleanup { // Construction can't fail

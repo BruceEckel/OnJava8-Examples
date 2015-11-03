@@ -1,5 +1,4 @@
 // reuse/SpaceShip.java
-// ©2015 MindView LLC: see Copyright.txt
 
 public class SpaceShip extends SpaceShipControls {
   private String name;

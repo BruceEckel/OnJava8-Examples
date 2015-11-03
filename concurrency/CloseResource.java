@@ -1,12 +1,10 @@
 // concurrency/CloseResource.java
-// ©2015 MindView LLC: see Copyright.txt
 // Interrupting a blocked task by
 // closing the underlying resource.
 // {TimeOutDuringTesting}
 import java.net.*;
 import java.util.concurrent.*;
 import java.io.*;
-import static com.mindviewinc.util.Print.*;
 
 public class CloseResource {
   public static void main(String[] args) throws Exception {
@@ -17,14 +15,14 @@ public class CloseResource {
       exec.execute(new IOBlocked(socketInput));
       exec.execute(new IOBlocked(System.in));
       TimeUnit.MILLISECONDS.sleep(100);
-      print("Shutting down all threads");
+      System.out.println("Shutting down all threads");
       exec.shutdownNow();
       TimeUnit.SECONDS.sleep(1);
-      print("Closing " + socketInput.getClass().getName());
+      System.out.println("Closing " + socketInput.getClass().getName());
       socketInput.close(); // Releases blocked thread
     }
     TimeUnit.SECONDS.sleep(1);
-    print("Closing " + System.in.getClass().getName());
+    System.out.println("Closing " + System.in.getClass().getName());
     System.in.close(); // Releases blocked thread
   }
 }

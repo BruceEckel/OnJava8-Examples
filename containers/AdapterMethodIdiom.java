@@ -1,13 +1,12 @@
 // containers/AdapterMethodIdiom.java
-// ©2015 MindView LLC: see Copyright.txt
-// The "Adapter Method" idiom uses `forEach`
+// The "Adapter Method" idiom uses for-each
 // with additional kinds of Iterables.
 import java.util.*;
 
 class ReversibleArrayList<T> extends ArrayList<T> {
   public ReversibleArrayList(Collection<T> c) { super(c); }
   public Iterable<T> reversed() {
-    return () -> new Iterator<T>() {
+    return () -> new Iterator<T>() {  // <* Describe *>
       int current = size() - 1;
       @Override
       public boolean hasNext() { return current > -1; }

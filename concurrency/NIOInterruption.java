@@ -1,12 +1,10 @@
 // concurrency/NIOInterruption.java
-// ©2015 MindView LLC: see Copyright.txt
 // Interrupting a blocked NIO channel.
 import java.net.*;
 import java.nio.*;
 import java.nio.channels.*;
 import java.util.concurrent.*;
 import java.io.*;
-import static com.mindviewinc.util.Print.*;
 
 class NIOBlocked implements Runnable {
   private final SocketChannel sc;
@@ -14,16 +12,16 @@ class NIOBlocked implements Runnable {
   @Override
   public void run() {
     try {
-      print("Waiting for read() in " + this);
+      System.out.println("Waiting for read() in " + this);
       sc.read(ByteBuffer.allocate(1));
     } catch(ClosedByInterruptException e) {
-      print("ClosedByInterruptException");
+      System.out.println("ClosedByInterruptException");
     } catch(AsynchronousCloseException e) {
-      print("AsynchronousCloseException");
+      System.out.println("AsynchronousCloseException");
     } catch(IOException e) {
       throw new RuntimeException(e);
     }
-    print("Exiting NIOBlocked.run() " + this);
+    System.out.println("Exiting NIOBlocked.run() " + this);
   }
 }
 

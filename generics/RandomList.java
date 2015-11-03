@@ -1,21 +1,22 @@
 // generics/RandomList.java
-// ©2015 MindView LLC: see Copyright.txt
 import java.util.*;
+import java.util.stream.*;
 
 public class RandomList<T> {
-  private ArrayList<T> storage = new ArrayList<>();
+  private ArrayList<T> items = new ArrayList<>();
   private Random rand = new Random(47);
-  public void add(T item) { storage.add(item); }
+  public void add(T item) { items.add(item); }
   public T select() {
-    return storage.get(rand.nextInt(storage.size()));
+    return items.get(rand.nextInt(items.size()));
   }
   public static void main(String[] args) {
     RandomList<String> rs = new RandomList<>();
-    for(String s: ("The quick brown fox jumped over " +
-        "the lazy brown dog").split(" "))
-      rs.add(s);
-    for(int i = 0; i < 11; i++)
-      System.out.print(rs.select() + " ");
+    Arrays.stream(
+      ("The quick brown fox jumped over " +
+      "the lazy brown dog").split(" "))
+      .forEach(rs::add);
+    IntStream.range(0, 11).forEach(i ->
+      System.out.print(rs.select() + " "));
   }
 }
 /* Output:

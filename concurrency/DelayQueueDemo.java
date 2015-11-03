@@ -1,9 +1,7 @@
 // concurrency/DelayQueueDemo.java
-// ©2015 MindView LLC: see Copyright.txt
 import java.util.concurrent.*;
 import java.util.*;
 import static java.util.concurrent.TimeUnit.*;
-import static com.mindviewinc.util.Print.*;
 
 class DelayedTask implements Runnable, Delayed {
   private static int counter = 0;
@@ -31,7 +29,7 @@ class DelayedTask implements Runnable, Delayed {
     return 0;
   }
   @Override
-  public void run() { printnb(this + " "); }
+  public void run() { System.out.print(this + " "); }
   @Override
   public String toString() {
     return String.format("[%1$-4d]", delta) +
@@ -49,10 +47,10 @@ class DelayedTask implements Runnable, Delayed {
     @Override
     public void run() {
       for(DelayedTask pt : sequence) {
-        printnb(pt.summary() + " ");
+        System.out.print(pt.summary() + " ");
       }
-      print();
-      print(this + " Calling shutdownNow()");
+      System.out.println();
+      System.out.println(this + " Calling shutdownNow()");
       exec.shutdownNow();
     }
   }
@@ -71,7 +69,7 @@ class DelayedTaskConsumer implements Runnable {
     } catch(InterruptedException e) {
       // Acceptable way to exit
     }
-    print("Finished DelayedTaskConsumer");
+    System.out.println("Finished DelayedTaskConsumer");
   }
 }
 

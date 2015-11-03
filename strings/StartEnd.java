@@ -1,7 +1,5 @@
 // strings/StartEnd.java
-// ©2015 MindView LLC: see Copyright.txt
 import java.util.regex.*;
-import static com.mindviewinc.util.Print.*;
 
 public class StartEnd {
   public static String input =
@@ -16,10 +14,10 @@ public class StartEnd {
     Display(String regex) { this.regex = regex; }
     void display(String message) {
       if(!regexPrinted) {
-        print(regex);
+        System.out.println(regex);
         regexPrinted = true;
       }
-      print(message);
+      System.out.println(message);
     }
   }
   static void examine(String s, String regex) {
@@ -38,7 +36,7 @@ public class StartEnd {
   }
   public static void main(String[] args) {
     for(String in : input.split("\n")) {
-      print("input : " + in);
+      System.out.println("input : " + in);
       for(String regex : new String[]{"\\w*ere\\w*",
         "\\w*ever", "T\\w+", "Never.*?!"})
         examine(in, regex);

@@ -1,5 +1,4 @@
 // concurrency/SerialNumberChecker.java
-// ©2015 MindView LLC: see Copyright.txt
 // Operations that might seem safe are not,
 // when threads are present.
 // {Args: 4}
@@ -14,7 +13,7 @@ class CircularSet {
     array = new int[size];
     len = size;
     // Initialize to a value not produced
-    // by the SerialNumberGenerator:
+    // by the SerialNumberSupplier:
     for(int i = 0; i < size; i++)
       array[i] = -1;
   }
@@ -41,7 +40,7 @@ public class SerialNumberChecker {
     public void run() {
       while(true) {
         int serial =
-          SerialNumberGenerator.nextSerialNumber();
+          SerialNumberSupplier.nextSerialNumber();
         if(serials.contains(serial)) {
           System.out.println("Duplicate: " + serial);
           System.exit(0);

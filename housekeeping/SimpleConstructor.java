@@ -1,10 +1,9 @@
 // housekeeping/SimpleConstructor.java
-// ©2015 MindView LLC: see Copyright.txt
 // Demonstration of a simple constructor.
 
 class Rock {
   Rock() { // This is the constructor
-    System.out.print("Rock ");
+    System.out.println("Rock ");
   }
 }
 

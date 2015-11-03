@@ -1,5 +1,4 @@
 // references/Immutable2.java
-// ©2015 MindView LLC: see Copyright.txt
 // A companion class to modify immutable objects
 
 class Mutable {

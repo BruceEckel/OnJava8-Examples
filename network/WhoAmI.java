@@ -1,5 +1,4 @@
 // network/WhoAmI.java
-// ©2015 MindView LLC: see Copyright.txt
 // Finds out your machine name and network address
 // when you're connected to the Internet.
 import java.net.*;

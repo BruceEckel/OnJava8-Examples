@@ -1,5 +1,4 @@
 // generics/CRGWithBasicHolder.java
-// ©2015 MindView LLC: see Copyright.txt
 
 class Subtype extends BasicHolder<Subtype> {}
 

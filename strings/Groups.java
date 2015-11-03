@@ -1,7 +1,5 @@
 // strings/Groups.java
-// ©2015 MindView LLC: see Copyright.txt
 import java.util.regex.*;
-import static com.mindviewinc.util.Print.*;
 
 public class Groups {
   static public final String POEM =
@@ -19,8 +17,8 @@ public class Groups {
         .matcher(POEM);
     while(m.find()) {
       for(int j = 0; j <= m.groupCount(); j++)
-        printnb("[" + m.group(j) + "]");
-      print();
+        System.out.print("[" + m.group(j) + "]");
+      System.out.println();
     }
   }
 }

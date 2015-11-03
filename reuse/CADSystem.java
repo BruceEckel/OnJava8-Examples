@@ -1,22 +1,20 @@
 // reuse/CADSystem.java
-// ©2015 MindView LLC: see Copyright.txt
 // Ensuring proper cleanup.
 package reuse;
-import static com.mindviewinc.util.Print.*;
 
 class Shape {
-  Shape(int i) { print("Shape constructor"); }
-  void dispose() { print("Shape dispose"); }
+  Shape(int i) { System.out.println("Shape constructor"); }
+  void dispose() { System.out.println("Shape dispose"); }
 }
 
 class Circle extends Shape {
   Circle(int i) {
     super(i);
-    print("Drawing Circle");
+    System.out.println("Drawing Circle");
   }
   @Override
   void dispose() {
-    print("Erasing Circle");
+    System.out.println("Erasing Circle");
     super.dispose();
   }
 }
@@ -24,11 +22,11 @@ class Circle extends Shape {
 class Triangle extends Shape {
   Triangle(int i) {
     super(i);
-    print("Drawing Triangle");
+    System.out.println("Drawing Triangle");
   }
   @Override
   void dispose() {
-    print("Erasing Triangle");
+    System.out.println("Erasing Triangle");
     super.dispose();
   }
 }
@@ -39,11 +37,11 @@ class Line extends Shape {
     super(start);
     this.start = start;
     this.end = end;
-    print("Drawing Line: " + start + ", " + end);
+    System.out.println("Drawing Line: " + start + ", " + end);
   }
   @Override
   void dispose() {
-    print("Erasing Line: " + start + ", " + end);
+    System.out.println("Erasing Line: " + start + ", " + end);
     super.dispose();
   }
 }
@@ -58,11 +56,11 @@ public class CADSystem extends Shape {
       lines[j] = new Line(j, j*j);
     c = new Circle(1);
     t = new Triangle(1);
-    print("Combined constructor");
+    System.out.println("Combined constructor");
   }
   @Override
   public void dispose() {
-    print("CADSystem.dispose()");
+    System.out.println("CADSystem.dispose()");
     // The order of cleanup is the reverse
     // of the order of initialization:
     t.dispose();

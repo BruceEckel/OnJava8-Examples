@@ -1,5 +1,4 @@
 // operators/Precedence.java
-// ©2015 MindView LLC: see Copyright.txt
 
 public class Precedence {
   public static void main(String[] args) {

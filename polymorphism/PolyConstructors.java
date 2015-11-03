@@ -1,15 +1,13 @@
 // polymorphism/PolyConstructors.java
-// ©2015 MindView LLC: see Copyright.txt
 // Constructors and polymorphism
 // don't produce what you might expect.
-import static com.mindviewinc.util.Print.*;
 
 class Glyph {
-  void draw() { print("Glyph.draw()"); }
+  void draw() { System.out.println("Glyph.draw()"); }
   Glyph() {
-    print("Glyph() before draw()");
+    System.out.println("Glyph() before draw()");
     draw();
-    print("Glyph() after draw()");
+    System.out.println("Glyph() after draw()");
   }
 }
 
@@ -17,11 +15,11 @@ class RoundGlyph extends Glyph {
   private int radius = 1;
   RoundGlyph(int r) {
     radius = r;
-    print("RoundGlyph.RoundGlyph(), radius = " + radius);
+    System.out.println("RoundGlyph.RoundGlyph(), radius = " + radius);
   }
   @Override
   void draw() {
-    print("RoundGlyph.draw(), radius = " + radius);
+    System.out.println("RoundGlyph.draw(), radius = " + radius);
   }
 }
 

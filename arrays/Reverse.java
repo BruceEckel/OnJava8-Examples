@@ -1,19 +1,17 @@
 // arrays/Reverse.java
-// ©2015 MindView LLC: see Copyright.txt
 // The Collections.reverseOrder() Comparator
 import java.util.*;
 import com.mindviewinc.util.*;
-import static com.mindviewinc.util.Print.*;
 
 public class Reverse {
   public static void main(String[] args) {
     CompType[] a = Generated.array(
       new CompType[12], CompType.generator());
-    print("before sorting:");
-    print(Arrays.toString(a));
+    System.out.println("before sorting:");
+    System.out.println(Arrays.toString(a));
     Arrays.sort(a, Collections.reverseOrder());
-    print("after sorting:");
-    print(Arrays.toString(a));
+    System.out.println("after sorting:");
+    System.out.println(Arrays.toString(a));
   }
 }
 /* Output:

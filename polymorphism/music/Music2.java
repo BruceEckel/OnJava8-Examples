@@ -1,20 +1,18 @@
 // polymorphism/music/Music2.java
-// ©2015 MindView LLC: see Copyright.txt
 // Overloading instead of upcasting.
 package polymorphism.music;
-import static com.mindviewinc.util.Print.*;
 
 class Stringed extends Instrument {
   @Override
   public void play(Note n) {
-    print("Stringed.play() " + n);
+    System.out.println("Stringed.play() " + n);
   }
 }
 
 class Brass extends Instrument {
   @Override
   public void play(Note n) {
-    print("Brass.play() " + n);
+    System.out.println("Brass.play() " + n);
   }
 }
 

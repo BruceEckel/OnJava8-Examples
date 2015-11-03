@@ -1,5 +1,4 @@
 // concurrency/ThreadLocalVariableHolder.java
-// ©2015 MindView LLC: see Copyright.txt
 // Automatically giving each thread its own storage.
 import java.util.concurrent.*;
 import java.util.*;

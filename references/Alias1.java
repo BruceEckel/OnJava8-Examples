@@ -1,5 +1,4 @@
 // references/Alias1.java
-// ©2015 MindView LLC: see Copyright.txt
 // Aliasing two references to one object.
 
 public class Alias1 {

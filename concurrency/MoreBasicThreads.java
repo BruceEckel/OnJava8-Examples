@@ -1,5 +1,4 @@
 // concurrency/MoreBasicThreads.java
-// ©2015 MindView LLC: see Copyright.txt
 // Adding more threads.
 
 public class MoreBasicThreads {

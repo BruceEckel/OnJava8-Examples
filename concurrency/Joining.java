@@ -1,7 +1,5 @@
 // concurrency/Joining.java
-// ©2015 MindView LLC: see Copyright.txt
 // Understanding join().
-import static com.mindviewinc.util.Print.*;
 
 class Sleeper extends Thread {
   private int duration;
@@ -15,11 +13,11 @@ class Sleeper extends Thread {
     try {
       sleep(duration);
     } catch(InterruptedException e) {
-      print(getName() + " was interrupted. " +
+      System.out.println(getName() + " was interrupted. " +
         "isInterrupted(): " + isInterrupted());
       return;
     }
-    print(getName() + " has awakened");
+    System.out.println(getName() + " has awakened");
   }
 }
 
@@ -35,9 +33,9 @@ class Joiner extends Thread {
    try {
       sleeper.join();
     } catch(InterruptedException e) {
-      print("Interrupted");
+      System.out.println("Interrupted");
     }
-    print(getName() + " join completed");
+    System.out.println(getName() + " join completed");
   }
 }
 

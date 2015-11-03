@@ -1,5 +1,4 @@
 // com/mindviewinc/util/Sleep.java
-// ©2015 MindView LLC: see Copyright.txt
 // Sleep for n seconds.
 package com.mindviewinc.util;
 import java.util.concurrent.*;

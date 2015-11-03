@@ -1,5 +1,4 @@
 // generics/decorator/Decoration.java
-// ©2015 MindView LLC: see Copyright.txt
 package generics.decorator;
 import java.util.*;
 

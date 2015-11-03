@@ -1,9 +1,7 @@
 // concurrency/HorseRace.java
-// ©2015 MindView LLC: see Copyright.txt
 // Using CyclicBarriers.
 import java.util.concurrent.*;
 import java.util.*;
-import static com.mindviewinc.util.Print.*;
 
 class Horse implements Runnable {
   private static int counter = 0;
@@ -51,19 +49,19 @@ public class HorseRace {
       StringBuilder s = new StringBuilder();
       for(int i = 0; i < FINISH_LINE; i++)
         s.append("="); // The fence on the racetrack
-      print(s);
+      System.out.println(s);
       for(Horse horse : horses)
-        print(horse.tracks());
+        System.out.println(horse.tracks());
       for(Horse horse : horses)
         if(horse.getStrides() >= FINISH_LINE) {
-          print(horse + "won!");
+          System.out.println(horse + "won!");
           exec.shutdownNow();
           return;
         }
       try {
         TimeUnit.MILLISECONDS.sleep(pause);
       } catch(InterruptedException e) {
-        print("barrier-action sleep interrupted");
+        System.out.println("barrier-action sleep interrupted");
       }
     });
     for(int i = 0; i < nHorses; i++) {

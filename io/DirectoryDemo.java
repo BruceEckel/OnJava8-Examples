@@ -1,9 +1,7 @@
 // io/DirectoryDemo.java
-// ©2015 MindView LLC: see Copyright.txt
 // Sample use of Directory utilities.
 import java.io.*;
 import com.mindviewinc.util.*;
-import static com.mindviewinc.util.Print.*;
 
 public class DirectoryDemo {
   public static void main(String[] args) {
@@ -11,15 +9,15 @@ public class DirectoryDemo {
     PPrint.pprint(Directory.walk(".").dirs);
     // All files beginning with 'T'
     for(File file : Directory.local(".", "T.*"))
-      print(file);
-    print("----------------------");
+      System.out.println(file);
+    System.out.println("----------------------");
     // All Java files beginning with 'T':
     for(File file : Directory.walk(".", "T.*\\.java"))
-      print(file);
-    print("======================");
+      System.out.println(file);
+    System.out.println("======================");
     // Class files containing "Z" or "z":
     for(File file : Directory.walk(".",".*[Zz].*\\.class"))
-      print(file);
+      System.out.println(file);
   }
 }
 /* Output:

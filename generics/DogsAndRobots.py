@@ -1,19 +1,18 @@
 # generics/DogsAndRobots.py
-# ©2015 MindView LLC: see Copyright.txt
 
 class Dog:
     def speak(self):
-        print("Arf!")
+        System.out.println("Arf!")
     def sit(self):
-        print("Sitting")
+        System.out.println("Sitting")
     def reproduce(self):
         pass
 
 class Robot:
     def speak(self):
-        print("Click!")
+        System.out.println("Click!")
     def sit(self):
-        print("Clank!")
+        System.out.println("Clank!")
     def oilChange(self):
         pass
 
@@ -25,4 +24,3 @@ a = Dog()
 b = Robot()
 perform(a)
 perform(b)
-#>

@@ -1,5 +1,4 @@
 // containersindepth/SetPerformance.java
-// ©2015 MindView LLC: see Copyright.txt
 // Demonstrates performance differences in Sets.
 // {Args: 100 5000} Small to keep build testing short
 import java.util.*;

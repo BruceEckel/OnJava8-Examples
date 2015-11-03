@@ -1,25 +1,25 @@
 // containersindepth/QueueBehavior.java
-// ©2015 MindView LLC: see Copyright.txt
 // Compares the behavior of some of the queues
 import java.util.concurrent.*;
 import java.util.*;
+import java.util.function.*;
 import com.mindviewinc.util.*;
 
 public class QueueBehavior {
   private static int count = 10;
-  static <T> void test(Queue<T> queue, Generator<T> gen) {
+  static <T> void test(Queue<T> queue, Supplier<T> gen) {
     for(int i = 0; i < count; i++)
-      queue.offer(gen.next());
+      queue.offer(gen.get());
     while(queue.peek() != null)
       System.out.print(queue.remove() + " ");
     System.out.println();
   }
-  static class Gen implements Generator<String> {
+  static class Gen implements Supplier<String> {
     String[] s = ("one two three four five six seven " +
       "eight nine ten").split(" ");
     int i;
     @Override
-    public String next() { return s[i++]; }
+    public String get() { return s[i++]; }
   }
   public static void main(String[] args) {
     test(new LinkedList<>(), new Gen());

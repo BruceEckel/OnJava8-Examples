@@ -1,5 +1,4 @@
 // generics/ErasureAndInheritance.java
-// ©2015 MindView LLC: see Copyright.txt
 
 class GenericBase<T> {
   private T element;

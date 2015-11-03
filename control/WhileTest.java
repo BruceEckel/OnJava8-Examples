@@ -1,11 +1,10 @@
 // control/WhileTest.java
-// ©2015 MindView LLC: see Copyright.txt
 // Demonstrates the while loop.
 
 public class WhileTest {
   static boolean condition() {
     boolean result = Math.random() < 0.99;
-    System.out.print(result + ", ");
+    System.out.println(result + ", ");
     return result;
   }
   public static void main(String[] args) {

@@ -1,12 +1,10 @@
 // containers/MapOfList.java
-// ©2015 MindView LLC: see Copyright.txt
 package containers;
 import typeinfo.pets.*;
 import java.util.*;
-import static com.mindviewinc.util.Print.*;
 
 public class MapOfList {
-  public static Map<Person, List<? extends Pet>>
+  public static Map<Person, List< ? extends Pet>>
     petPeople = new HashMap<>();
   static {
     petPeople.put(new Person("Dawn"),
@@ -25,12 +23,12 @@ public class MapOfList {
       Arrays.asList(new Rat("Freckly")));
   }
   public static void main(String[] args) {
-    print("People: " + petPeople.keySet());
-    print("Pets: " + petPeople.values());
+    System.out.println("People: " + petPeople.keySet());
+    System.out.println("Pets: " + petPeople.values());
     for(Person person : petPeople.keySet()) {
-      print(person + " has:");
+      System.out.println(person + " has:");
       for(Pet pet : petPeople.get(person))
-        print("    " + pet);
+        System.out.println("    " + pet);
     }
   }
 }

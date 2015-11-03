@@ -1,8 +1,6 @@
 // concurrency/PriorityBlockingQueueDemo.java
-// ©2015 MindView LLC: see Copyright.txt
 import java.util.concurrent.*;
 import java.util.*;
-import static com.mindviewinc.util.Print.*;
 
 class PrioritizedTask implements
 Runnable, Comparable<PrioritizedTask>  {
@@ -28,7 +26,7 @@ Runnable, Comparable<PrioritizedTask>  {
     } catch(InterruptedException e) {
       // Acceptable way to exit
     }
-    print(this);
+    System.out.println(this);
   }
   @Override
   public String toString() {
@@ -48,12 +46,12 @@ Runnable, Comparable<PrioritizedTask>  {
     public void run() {
       int count = 0;
       for(PrioritizedTask pt : sequence) {
-        printnb(pt.summary());
+        System.out.print(pt.summary());
         if(++count % 5 == 0)
-          print();
+          System.out.println();
       }
-      print();
-      print(this + " Calling shutdownNow()");
+      System.out.println();
+      System.out.println(this + " Calling shutdownNow()");
       exec.shutdownNow();
     }
   }
@@ -90,7 +88,7 @@ class PrioritizedTaskProducer implements Runnable {
     } catch(InterruptedException e) {
       // Acceptable way to exit
     }
-    print("Finished PrioritizedTaskProducer");
+    System.out.println("Finished PrioritizedTaskProducer");
   }
 }
 
@@ -109,7 +107,7 @@ class PrioritizedTaskConsumer implements Runnable {
     } catch(InterruptedException e) {
       // Acceptable way to exit
     }
-    print("Finished PrioritizedTaskConsumer");
+    System.out.println("Finished PrioritizedTaskConsumer");
   }
 }
 

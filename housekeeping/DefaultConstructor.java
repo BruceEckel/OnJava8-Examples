@@ -1,5 +1,4 @@
 // housekeeping/DefaultConstructor.java
-// ©2015 MindView LLC: see Copyright.txt
 
 class Bird {}
 

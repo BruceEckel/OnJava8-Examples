@@ -1,12 +1,11 @@
 // patterns/dynatrash/DynaTrash.java
-// ©2015 MindView LLC: see Copyright.txt
-// Using a Map of Lists and RTTI
-// to automatically sort trash into
-// vectors. This solution, despite the
-// use of RTTI, is extensible.
+// Using a Map of Lists and RTTI to automatically
+// sort trash into Lists. This solution, despite
+// the use of RTTI, is extensible.
 package patterns.dynatrash;
 import patterns.trash.*;
 import java.util.*;
+import java.util.stream.*;
 
 // Generic TypeMap works in any situation:
 class TypeMap<T> {
@@ -21,16 +20,13 @@ class TypeMap<T> {
       t.put(type,v);
     }
   }
-  public List<T> get(Class type) {
-    return t.get(type);
-  }
-  public Iterator<Class> keys() {
-    return t.keySet().iterator();
+  public Stream<List<T>> values() {
+    return t.values().stream();
   }
 }
 
-// Adapter class to allow
-// callbacks from ParseTrash.fillBin():
+// Adapter class for callbacks
+// from ParseTrash.fillBin():
 class TypeMapAdapter implements Fillable {
   TypeMap<Trash> map;
   public TypeMapAdapter(TypeMap<Trash> tm) {
@@ -44,11 +40,9 @@ public class DynaTrash {
   @SuppressWarnings("unchecked")
   public static void main(String[] args) {
     TypeMap<Trash> bin = new TypeMap<>();
-    ParseTrash.fillBin("recycleap", "Trash.dat",
-      new TypeMapAdapter(bin));
-    Iterator<Class> keys = bin.keys();
-    while(keys.hasNext())
-      Trash.sumValue(bin.get(keys.next()));
+    ParseTrash.fillBin(
+      "trash", new TypeMapAdapter(bin));
+    bin.values().forEach(Trash::sumValue);
   }
 }
 /* Output: (First and last 10 Lines)

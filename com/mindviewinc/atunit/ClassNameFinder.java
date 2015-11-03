@@ -1,10 +1,8 @@
 // com/mindviewinc/atunit/ClassNameFinder.java
-// ©2015 MindView LLC: see Copyright.txt
 package com.mindviewinc.atunit;
 import java.io.*;
 import java.util.*;
 import com.mindviewinc.util.*;
-import static com.mindviewinc.util.Print.*;
 
 public class ClassNameFinder {
   public static String thisClass(byte[] classBytes) {
@@ -67,11 +65,11 @@ public class ClassNameFinder {
   public static void main(String[] args) throws Exception {
     if(args.length > 0) {
       for(String arg : args)
-        print(thisClass(BinaryFile.read(new File(arg))));
+        System.out.println(thisClass(BinaryFile.read(new File(arg))));
     } else
-      // Walk the entire tree:
+      // Walk the entire tree: <* Use NIO2 here *>
       for(File klass : Directory.walk(".", ".*\\.class"))
-        print(thisClass(BinaryFile.read(klass)));
+        System.out.println(thisClass(BinaryFile.read(klass)));
   }
 }
 /* Output:

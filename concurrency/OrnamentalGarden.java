@@ -1,8 +1,6 @@
 // concurrency/OrnamentalGarden.java
-// ©2015 MindView LLC: see Copyright.txt
 import java.util.concurrent.*;
 import java.util.*;
-import static com.mindviewinc.util.Print.*;
 
 class Count {
   private int count = 0;
@@ -39,14 +37,14 @@ class Entrance implements Runnable {
       synchronized(this) {
         ++number;
       }
-      print(this + " Total: " + count.increment());
+      System.out.println(this + " Total: " + count.increment());
       try {
         TimeUnit.MILLISECONDS.sleep(100);
       } catch(InterruptedException e) {
-        print("sleep interrupted");
+        System.out.println("sleep interrupted");
       }
     }
-    print("Stopping " + this);
+    System.out.println("Stopping " + this);
   }
   public synchronized int getValue() { return number; }
   @Override
@@ -74,9 +72,9 @@ public class OrnamentalGarden {
     Entrance.cancel();
     exec.shutdown();
     if(!exec.awaitTermination(250, TimeUnit.MILLISECONDS))
-      print("Some tasks were not terminated!");
-    print("Total: " + Entrance.getTotalCount());
-    print("Sum of Entrances: " + Entrance.sumEntrances());
+      System.out.println("Some tasks were not terminated!");
+    System.out.println("Total: " + Entrance.getTotalCount());
+    System.out.println("Sum of Entrances: " + Entrance.sumEntrances());
   }
 }
 /* Output: (First and last 10 Lines)

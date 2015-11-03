@@ -1,5 +1,4 @@
 // annotations/StackL.java
-// ©2015 MindView LLC: see Copyright.txt
 // A stack built on a linkedList.
 package annotations;
 import java.util.*;

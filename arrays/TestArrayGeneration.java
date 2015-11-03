@@ -1,38 +1,36 @@
 // arrays/TestArrayGeneration.java
-// ©2015 MindView LLC: see Copyright.txt
 // Test the tools that use generators to fill arrays.
 import java.util.*;
 import com.mindviewinc.util.*;
-import static com.mindviewinc.util.Print.*;
 
 public class TestArrayGeneration {
   public static void main(String[] args) {
     int size = 6;
     boolean[] a1 = ConvertTo.primitive(Generated.array(
-      Boolean.class, new RandomGenerator.Boolean(), size));
-    print("a1 = " + Arrays.toString(a1));
+      Boolean.class, new RandomSupplier.Boolean(), size));
+    System.out.println("a1 = " + Arrays.toString(a1));
     byte[] a2 = ConvertTo.primitive(Generated.array(
-      Byte.class, new RandomGenerator.Byte(), size));
-    print("a2 = " + Arrays.toString(a2));
+      Byte.class, new RandomSupplier.Byte(), size));
+    System.out.println("a2 = " + Arrays.toString(a2));
     char[] a3 = ConvertTo.primitive(Generated.array(
       Character.class,
-      new RandomGenerator.Character(), size));
-    print("a3 = " + Arrays.toString(a3));
+      new RandomSupplier.Character(), size));
+    System.out.println("a3 = " + Arrays.toString(a3));
     short[] a4 = ConvertTo.primitive(Generated.array(
-      Short.class, new RandomGenerator.Short(), size));
-    print("a4 = " + Arrays.toString(a4));
+      Short.class, new RandomSupplier.Short(), size));
+    System.out.println("a4 = " + Arrays.toString(a4));
     int[] a5 = ConvertTo.primitive(Generated.array(
-      Integer.class, new RandomGenerator.Integer(), size));
-    print("a5 = " + Arrays.toString(a5));
+      Integer.class, new RandomSupplier.Integer(), size));
+    System.out.println("a5 = " + Arrays.toString(a5));
     long[] a6 = ConvertTo.primitive(Generated.array(
-      Long.class, new RandomGenerator.Long(), size));
-    print("a6 = " + Arrays.toString(a6));
+      Long.class, new RandomSupplier.Long(), size));
+    System.out.println("a6 = " + Arrays.toString(a6));
     float[] a7 = ConvertTo.primitive(Generated.array(
-      Float.class, new RandomGenerator.Float(), size));
-    print("a7 = " + Arrays.toString(a7));
+      Float.class, new RandomSupplier.Float(), size));
+    System.out.println("a7 = " + Arrays.toString(a7));
     double[] a8 = ConvertTo.primitive(Generated.array(
-      Double.class, new RandomGenerator.Double(), size));
-    print("a8 = " + Arrays.toString(a8));
+      Double.class, new RandomSupplier.Double(), size));
+    System.out.println("a8 = " + Arrays.toString(a8));
   }
 }
 /* Output:

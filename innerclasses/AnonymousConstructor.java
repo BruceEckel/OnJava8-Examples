@@ -1,11 +1,9 @@
 // innerclasses/AnonymousConstructor.java
-// ©2015 MindView LLC: see Copyright.txt
 // Creating a constructor for an anonymous inner class.
-import static com.mindviewinc.util.Print.*;
 
 abstract class Base {
   public Base(int i) {
-    print("Base constructor, i = " + i);
+    System.out.println("Base constructor, i = " + i);
   }
   public abstract void f();
 }
@@ -13,10 +11,10 @@ abstract class Base {
 public class AnonymousConstructor {
   public static Base getBase(int i) {
     return new Base(i) {
-      { print("Inside instance initializer"); }
+      { System.out.println("Inside instance initializer"); }
       @Override
       public void f() {
-        print("In anonymous f()");
+        System.out.println("In anonymous f()");
       }
     };
   }

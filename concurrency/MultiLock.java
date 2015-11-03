@@ -1,18 +1,16 @@
 // concurrency/MultiLock.java
-// ©2015 MindView LLC: see Copyright.txt
 // One thread can reacquire the same lock.
-import static com.mindviewinc.util.Print.*;
 
 public class MultiLock {
   public synchronized void f1(int count) {
     if(count-- > 0) {
-      print("f1() calling f2() with count " + count);
+      System.out.println("f1() calling f2() with count " + count);
       f2(count);
     }
   }
   public synchronized void f2(int count) {
     if(count-- > 0) {
-      print("f2() calling f1() with count " + count);
+      System.out.println("f2() calling f1() with count " + count);
       f1(count);
     }
   }

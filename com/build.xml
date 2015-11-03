@@ -15,7 +15,6 @@
     <jrun cls="com.mindviewinc.util.Countries" dirpath="../com/mindviewinc/util" />
     <jrun cls="com.mindviewinc.util.Directory" dirpath="../com/mindviewinc/util" />
     <jrun cls="com.mindviewinc.util.Hex" dirpath="../com/mindviewinc/util" />
-    <jrun cls="com.mindviewinc.util.New" dirpath="../com/mindviewinc/util" />
     <jrun cls="com.mindviewinc.util.TextFile" dirpath="../com/mindviewinc/util" />
   </target>
 

@@ -1,5 +1,4 @@
 // exceptions/FullConstructors.java
-// ©2015 MindView LLC: see Copyright.txt
 
 class MyException extends Exception {
   public MyException() {}

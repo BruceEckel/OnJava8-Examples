@@ -1,6 +1,4 @@
 // patterns/trash/Glass.java
-// ©2015 MindView LLC: see Copyright.txt
-// The Glass class with prototyping.
 package patterns.trash;
 
 public class Glass extends Trash {

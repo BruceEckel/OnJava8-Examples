@@ -1,5 +1,4 @@
 // ui/Progress.java
-// ©2015 MindView LLC: see Copyright.txt
 // Using sliders, progress bars and progress monitors.
 import javax.swing.*;
 import javax.swing.border.*;

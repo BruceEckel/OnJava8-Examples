@@ -1,5 +1,4 @@
 // io/MakeDirectories.java
-// ©2015 MindView LLC: see Copyright.txt
 // Demonstrates using the File class to
 // create directories and manipulate files.
 // {Args: MakeDirectoriesTest}
@@ -71,14 +70,14 @@ public class MakeDirectories {
 }
 /* Output:
 created MakeDirectoriesTest
-Absolute path: C:\Users\Bruce\Dropbox\___OnJava\ExtractedEx
-amples\io\MakeDirectoriesTest
-Can read: true
-Can write: true
-getName: MakeDirectoriesTest
-getParent: null
-getPath: MakeDirectoriesTest
-length: 0
-lastModified: 1434408471084
+Absolute path: C:\Users\Bruce\Documents\GitHub\OnJava\Extra
+ctedExamples\io\MakeDirectoriesTest
+ Can read: true
+ Can write: true
+ getName: MakeDirectoriesTest
+ getParent: null
+ getPath: MakeDirectoriesTest
+ length: 0
+ lastModified: 1442352598194
 It's a directory
 */

@@ -1,5 +1,4 @@
 // generics/InstantiateGenericType.cpp
-// ©2015 MindView LLC: see Copyright.txt
 // C++, not Java!
 
 template<class T> class Foo {

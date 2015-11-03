@@ -1,5 +1,4 @@
 // containersindepth/ListPerformance.java
-// ©2015 MindView LLC: see Copyright.txt
 // Demonstrates performance differences in Lists.
 // {Args: 100 500} Small to keep build testing short
 import java.util.*;
@@ -165,7 +164,7 @@ public class ListPerformance {
         @Override protected
         List<Integer> initialize(int size) {
           Integer[] ia = Generated.array(Integer.class,
-            new CountingGenerator.Integer(), size);
+            new CountingSupplier.Integer(), size);
           return Arrays.asList(ia);
         }
       };

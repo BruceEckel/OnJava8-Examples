@@ -1,11 +1,9 @@
 // generics/Fill2.java
-// ©2015 MindView LLC: see Copyright.txt
 // Using adapters to simulate latent typing.
 // {main: Fill2Test}
 import generics.coffee.*;
 import java.util.*;
-import com.mindviewinc.util.*;
-import static com.mindviewinc.util.Print.*;
+import java.util.function.*;
 
 interface Addable<T> { void add(T t); }
 
@@ -21,11 +19,11 @@ public class Fill2 {
         throw new RuntimeException(e);
       }
   }
-  // Generator version:
+  // Supplier version:
   public static <T> void fill(Addable<T> addable,
-  Generator<T> generator, int size) {
+    Supplier<T> generator, int size) {
     for(int i = 0; i < size; i++)
-      addable.add(generator.next());
+      addable.add(generator.get());
   }
 }
 
@@ -67,15 +65,15 @@ class Fill2Test {
     Fill2.fill(Adapter.collectionAdapter(carrier),
       Latte.class, 2);
     for(Coffee c: carrier)
-      print(c);
-    print("----------------------");
+      System.out.println(c);
+    System.out.println("----------------------");
     // Use an adapted class:
     AddableSimpleQueue<Coffee> coffeeQueue =
       new AddableSimpleQueue<>();
     Fill2.fill(coffeeQueue, Mocha.class, 4);
     Fill2.fill(coffeeQueue, Latte.class, 1);
     for(Coffee c: coffeeQueue)
-      print(c);
+      System.out.println(c);
   }
 }
 /* Output:

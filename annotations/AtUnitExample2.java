@@ -1,5 +1,4 @@
 // annotations/AtUnitExample2.java
-// ©2015 MindView LLC: see Copyright.txt
 // Assertions and exceptions can be used in @Tests.
 package annotations;
 import java.io.*;

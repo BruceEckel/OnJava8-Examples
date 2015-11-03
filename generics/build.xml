@@ -12,7 +12,7 @@
     <jrun cls="ArrayOfGeneric" />
     <jrun cls="BankTeller" />
     <jrun cls="BasicBounds" />
-    <jrun cls="BasicGeneratorDemo" />
+    <jrun cls="BasicSupplierDemo" />
     <jrun cls="CaptureConversion" />
     <jrun cls="CheckedList" />
     <jrun cls="ClassTypeCapture" />
@@ -26,14 +26,12 @@
     <jrun cls="EpicBattle" />
     <jrun cls="ErasedTypeEquivalence" />
     <jrun cls="ErasureAndInheritance" />
-    <jrun cls="ExplicitTypeSpecification" />
     <jrun cls="FactoryConstraint" />
     <jrun cls="Fibonacci" />
     <jrun cls="FillTest" />
     <jrun cls="Fill2Test" />
     <jrun cls="FilledListMaker" />
     <jrun cls="Functional" />
-    <jrun cls="Generators" />
     <jrun cls="GenericArray" />
     <jrun cls="GenericArray2" />
     <jrun cls="GenericArrayWithTypeToken" />
@@ -45,18 +43,16 @@
     <jrun cls="GenericVarargs" />
     <jrun cls="GenericWriting" />
     <jrun cls="Holder" />
-    <jrun cls="Holder2" />
-    <jrun cls="Holder3" />
     <jrun cls="InheritBounds" />
     <jrun cls="InstantiateGenericType" />
     <jrun cls="IterableFibonacci" />
     <jrun cls="LatentReflection" />
-    <jrun cls="LimitsOfInference" />
     <jrun cls="LinkedStack" />
     <jrun cls="ListMaker" />
     <jrun cls="ListOfInt" />
     <jrun cls="LostInformation" />
     <jrun cls="Mixins" />
+    <jrun cls="ObjectHolder" />
     <jrun cls="OrdinaryArguments" />
     <jrun cls="PlainGenericInheritance" />
     <jrun cls="PrimitiveGenericTest" />
@@ -65,8 +61,8 @@
     <jrun cls="SelfBoundingMethods" />
     <jrun cls="SimpleDogsAndRobots" />
     <jrun cls="SimpleHolder" />
-    <jrun cls="SimplerPets" />
     <jrun cls="Store" />
+    <jrun cls="Suppliers" />
     <jrun cls="ThrowGenericException" />
     <jrun cls="TupleList" />
     <jrun cls="TupleTest" />
@@ -76,7 +72,7 @@
     <jrun cls="Unconstrained" />
     <jrun cls="WatercolorSets" />
     <jrun cls="Wildcards" />
-    <jrun cls="generics.coffee.CoffeeGenerator" dirpath="../generics/coffee" />
+    <jrun cls="generics.coffee.CoffeeSupplier" dirpath="../generics/coffee" />
     <jrun cls="generics.decorator.Decoration" dirpath="../generics/decorator" />
   </target>
 

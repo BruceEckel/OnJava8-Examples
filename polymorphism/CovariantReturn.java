@@ -1,5 +1,4 @@
 // polymorphism/CovariantReturn.java
-// ©2015 MindView LLC: see Copyright.txt
 
 class Grain {
   @Override

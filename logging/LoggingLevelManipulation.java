@@ -1,11 +1,10 @@
 // logging/LoggingLevelManipulation.java
-// ©2015 MindView LLC: see Copyright.txt
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class LoggingLevelManipulation {
   private static Logger
-  lgr = Logger.getLogger("net"),
+  lgr = Logger.getLogger("com"),
   lgr2 = Logger.getLogger("com.mindviewinc"),
   util= Logger.getLogger("com.mindviewinc.util"),
   test= Logger.getLogger("com.mindviewinc.test"),

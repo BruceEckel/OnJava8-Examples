@@ -1,5 +1,4 @@
 // generics/Mixins.cpp
-// ©2015 MindView LLC: see Copyright.txt
 #include <string>
 #include <ctime>
 #include <iostream>
@@ -39,7 +38,3 @@ int main() {
   cout << mixin2.get() << " " << mixin2.getStamp() <<
     " " << mixin2.getSerialNumber() << endl;
 }
-/* Output:
-test string 1 1129840250 1
-test string 2 1129840250 2
-*/

@@ -1,5 +1,4 @@
 // concurrency/SimpleMicroBenchmark.java
-// ©2015 MindView LLC: see Copyright.txt
 // The dangers of microbenchmarking.
 import java.util.concurrent.locks.*;
 

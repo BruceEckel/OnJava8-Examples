@@ -1,7 +1,5 @@
 // interfaces/Games.java
-// ©2015 MindView LLC: see Copyright.txt
 // A Game framework using Factory Methods.
-import static com.mindviewinc.util.Print.*;
 
 interface Game { boolean move(); }
 interface GameFactory { Game getGame(); }
@@ -11,7 +9,7 @@ class Checkers implements Game {
   private static final int MOVES = 3;
   @Override
   public boolean move() {
-    print("Checkers move " + moves);
+    System.out.println("Checkers move " + moves);
     return ++moves != MOVES;
   }
 }
@@ -26,7 +24,7 @@ class Chess implements Game {
   private static final int MOVES = 4;
   @Override
   public boolean move() {
-    print("Chess move " + moves);
+    System.out.println("Chess move " + moves);
     return ++moves != MOVES;
   }
 }

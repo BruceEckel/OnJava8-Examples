@@ -1,5 +1,4 @@
 // generics/ListOfGenerics.java
-// ©2015 MindView LLC: see Copyright.txt
 import java.util.*;
 
 public class ListOfGenerics<T> {

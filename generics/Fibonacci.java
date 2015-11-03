@@ -1,12 +1,11 @@
 // generics/Fibonacci.java
-// ©2015 MindView LLC: see Copyright.txt
 // Generate a Fibonacci sequence.
-import com.mindviewinc.util.*;
+import java.util.function.*;
 
-public class Fibonacci implements Generator<Integer> {
+public class Fibonacci implements Supplier<Integer> {
   private int count = 0;
   @Override
-  public Integer next() { return fib(count++); }
+  public Integer get() { return fib(count++); }
   private int fib(int n) {
     if(n < 2) return 1;
     return fib(n-2) + fib(n-1);
@@ -14,7 +13,7 @@ public class Fibonacci implements Generator<Integer> {
   public static void main(String[] args) {
     Fibonacci gen = new Fibonacci();
     for(int i = 0; i < 18; i++)
-      System.out.print(gen.next() + " ");
+      System.out.print(gen.get() + " ");
   }
 }
 /* Output:

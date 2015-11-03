@@ -1,5 +1,4 @@
 // ui/List.java
-// ©2015 MindView LLC: see Copyright.txt
 import javax.swing.*;
 import javax.swing.border.*;
 import javax.swing.event.*;

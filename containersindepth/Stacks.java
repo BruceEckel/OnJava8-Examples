@@ -1,8 +1,6 @@
 // containersindepth/Stacks.java
-// ©2015 MindView LLC: see Copyright.txt
 // Demonstration of Stack Class.
 import java.util.*;
-import static com.mindviewinc.util.Print.*;
 
 enum Month { JANUARY, FEBRUARY, MARCH, APRIL, MAY, JUNE,
   JULY, AUGUST, SEPTEMBER, OCTOBER, NOVEMBER }
@@ -12,21 +10,21 @@ public class Stacks {
     Stack<String> stack = new Stack<>();
     for(Month m : Month.values())
       stack.push(m.toString());
-    print("stack = " + stack);
+    System.out.println("stack = " + stack);
     // Treating a stack as a Vector:
     stack.addElement("The last line");
-    print("element 5 = " + stack.elementAt(5));
-    print("popping elements:");
+    System.out.println("element 5 = " + stack.elementAt(5));
+    System.out.println("popping elements:");
     while(!stack.empty())
-      printnb(stack.pop() + " ");
+      System.out.print(stack.pop() + " ");
 
     // Using a LinkedList as a Stack:
     LinkedList<String> lstack = new LinkedList<>();
     for(Month m : Month.values())
       lstack.addFirst(m.toString());
-    print("lstack = " + lstack);
+    System.out.println("lstack = " + lstack);
     while(!lstack.isEmpty())
-      printnb(lstack.removeFirst() + " ");
+      System.out.print(lstack.removeFirst() + " ");
 
     // Using the Stack class from
     // the Containers Chapter:
@@ -34,9 +32,9 @@ public class Stacks {
       new com.mindviewinc.util.Stack<>();
     for(Month m : Month.values())
       stack2.push(m.toString());
-    print("stack2 = " + stack2);
+    System.out.println("stack2 = " + stack2);
     while(!stack2.empty())
-      printnb(stack2.pop() + " ");
+      System.out.print(stack2.pop() + " ");
 
   }
 }

@@ -1,9 +1,7 @@
 // concurrency/ReaderWriterList.java
-// ©2015 MindView LLC: see Copyright.txt
 import java.util.concurrent.*;
 import java.util.concurrent.locks.*;
 import java.util.*;
-import static com.mindviewinc.util.Print.*;
 
 public class ReaderWriterList<T> {
   private ArrayList<T> lockedList;
@@ -30,7 +28,7 @@ public class ReaderWriterList<T> {
       // Show that multiple readers
       // can acquire the read lock:
       if(lock.getReadLockCount() > 1)
-        print(lock.getReadLockCount());
+        System.out.println(lock.getReadLockCount());
       return lockedList.get(index);
     } finally {
       rlock.unlock();
@@ -58,7 +56,7 @@ class ReaderWriterListTest {
       } catch(InterruptedException e) {
         // Acceptable way to exit
       }
-      print("Writer finished, shutting down");
+      System.out.println("Writer finished, shutting down");
       exec.shutdownNow();
     }
   }

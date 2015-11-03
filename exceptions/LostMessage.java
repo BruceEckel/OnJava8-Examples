@@ -1,5 +1,4 @@
 // exceptions/LostMessage.java
-// ©2015 MindView LLC: see Copyright.txt
 // How an exception can be lost.
 
 class VeryImportantException extends Exception {

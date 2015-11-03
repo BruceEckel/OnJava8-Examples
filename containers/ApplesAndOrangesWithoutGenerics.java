@@ -1,5 +1,4 @@
 // containers/ApplesAndOrangesWithoutGenerics.java
-// ©2015 MindView LLC: see Copyright.txt
 // Simple container use (suppressing compiler warnings)
 // {ThrowsException}
 import java.util.*;

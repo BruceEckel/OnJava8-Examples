@@ -1,5 +1,4 @@
 // staticchecking/latent/Latent.java
-// ©2015 MindView LLC: see Copyright.txt
 package staticchecking.latent;
 import java.lang.reflect.*;
 

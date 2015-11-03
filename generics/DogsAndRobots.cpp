@@ -1,5 +1,4 @@
 // generics/DogsAndRobots.cpp
-// ©2015 MindView LLC: see Copyright.txt
 
 class Dog {
 public:

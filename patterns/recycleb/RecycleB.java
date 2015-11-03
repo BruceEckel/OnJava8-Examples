@@ -1,58 +1,29 @@
 // patterns/recycleb/RecycleB.java
-// ©2015 MindView LLC: see Copyright.txt
-// Adding more objects to the recycling problem.
 package patterns.recycleb;
 import patterns.trash.*;
 import java.util.*;
 
-// A List that admits only the right type:
-class Tbin<T extends Trash> extends ArrayList<T> {
-  Class<T> binType;
-  Tbin(Class<T> type) {
-    binType = type;
-  }
-  @SuppressWarnings("unchecked")
-  boolean grab(Trash t) {
-    // Comparing class types:
-    if(t.getClass().equals(binType)) {
-      add((T)t); // Downcast to this TBin's type
-      return true; // Object grabbed
-    }
-    return false; // Object not grabbed
-  }
-}
-
-class TbinList<T extends Trash>
-extends ArrayList<Tbin<? extends T>> { // (1)
-  boolean sort(T t) {
-    for(Tbin<? extends T> ts : this)
-      if(ts.grab(t))
-        return true;
-    return false; // bin not found for t
-  }
-  void sortBin(Tbin<T> bin) { // (2)
-    for(T aBin : bin)
-      if(!sort(aBin))
-        System.err.println("Bin not found");
-  }
-}
-
 public class RecycleB {
-  static Tbin<Trash> bin = new Tbin<>(Trash.class);
   public static void main(String[] args) {
+    List<Trash> bin = new ArrayList<>();
     // Fill up the Trash bin:
-    ParseTrash.fillBin("recycleap", "Trash.dat", bin);
-
-    TbinList<Trash> trashBins = new TbinList<>();
-    trashBins.add(new Tbin<>(Aluminum.class));
-    trashBins.add(new Tbin<>(Paper.class));
-    trashBins.add(new Tbin<>(Glass.class));
-    // add one line here: (3)
-    trashBins.add(new Tbin<>(Cardboard.class));
-
-    trashBins.sortBin(bin); // (4)
-
-    trashBins.forEach(Trash::sumValue);
+    ParseTrash.fillBin("trash", bin);
+    List<Glass> glassBin = new ArrayList<>();
+    List<Paper> paperBin = new ArrayList<>();
+    List<Aluminum> alBin = new ArrayList<>();
+    // Sort the Trash:
+    bin.forEach( t -> {
+      // RTTI to discover Trash type:
+      if(t instanceof Aluminum)
+        alBin.add((Aluminum)t);
+      if(t instanceof Paper)
+        paperBin.add((Paper)t);
+      if(t instanceof Glass)
+        glassBin.add((Glass)t);
+    });
+    Trash.sumValue(alBin);
+    Trash.sumValue(paperBin);
+    Trash.sumValue(glassBin);
     Trash.sumValue(bin);
   }
 }

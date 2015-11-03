@@ -1,5 +1,4 @@
 // generics/Fill.java
-// ©2015 MindView LLC: see Copyright.txt
 // Generalizing the FilledList idea
 // {main: FillTest}
 import java.util.*;
@@ -12,7 +11,7 @@ public class Fill {
   public static <T> void fill(Collection<T> collection,
   Class<? extends T> classToken, int size) {
     for(int i = 0; i < size; i++)
-      // Assumes default constructor:
+      // Assumes no-arg constructor:
       try {
         collection.add(classToken.newInstance());
       } catch(InstantiationException |

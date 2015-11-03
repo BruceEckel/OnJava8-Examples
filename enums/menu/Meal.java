@@ -1,5 +1,4 @@
 // enums/menu/Meal.java
-// ©2015 MindView LLC: see Copyright.txt
 package enums.menu;
 
 public class Meal {

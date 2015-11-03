@@ -1,5 +1,4 @@
 // reuse/SpaceShipDelegation.java
-// ©2015 MindView LLC: see Copyright.txt
 
 public class SpaceShipDelegation {
   private String name;

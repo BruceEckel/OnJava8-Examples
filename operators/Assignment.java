@@ -1,7 +1,5 @@
 // operators/Assignment.java
-// ©2015 MindView LLC: see Copyright.txt
 // Assignment with objects is a bit tricky.
-import static com.mindviewinc.util.Print.*;
 
 class Tank {
   int level;
@@ -13,13 +11,13 @@ public class Assignment {
     Tank t2 = new Tank();
     t1.level = 9;
     t2.level = 47;
-    print("1: t1.level: " + t1.level +
+    System.out.println("1: t1.level: " + t1.level +
           ", t2.level: " + t2.level);
     t1 = t2;
-    print("2: t1.level: " + t1.level +
+    System.out.println("2: t1.level: " + t1.level +
           ", t2.level: " + t2.level);
     t1.level = 27;
-    print("3: t1.level: " + t1.level +
+    System.out.println("3: t1.level: " + t1.level +
           ", t2.level: " + t2.level);
   }
 }

@@ -1,5 +1,4 @@
 // com/mindviewinc/util/CountingIntegerList.java
-// ©2015 MindView LLC: see Copyright.txt
 // List of any length, containing sample data.
 package com.mindviewinc.util;
 import java.util.*;

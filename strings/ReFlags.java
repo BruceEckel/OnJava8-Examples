@@ -1,5 +1,4 @@
 // strings/ReFlags.java
-// ©2015 MindView LLC: see Copyright.txt
 import java.util.regex.*;
 
 public class ReFlags {

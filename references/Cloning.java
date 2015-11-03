@@ -1,5 +1,4 @@
 // references/Cloning.java
-// ©2015 MindView LLC: see Copyright.txt
 // The clone() operation works for only a few
 // items in the standard Java library.
 import java.util.*;

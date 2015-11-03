@@ -1,5 +1,4 @@
 // ui/LongRunningTask.java
-// ©2015 MindView LLC: see Copyright.txt
 // A badly designed program.
 import javax.swing.*;
 import java.awt.*;

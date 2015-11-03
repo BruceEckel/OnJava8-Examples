@@ -1,20 +1,18 @@
 // enums/NotClasses.java
-// ©2015 MindView LLC: see Copyright.txt
 // {Exec: javap -c LikeClasses}
-import static com.mindviewinc.util.Print.*;
 
 enum LikeClasses {
   WINKEN {
     @Override
-    void behavior() { print("Behavior1"); }
+    void behavior() { System.out.println("Behavior1"); }
   },
   BLINKEN {
     @Override
-    void behavior() { print("Behavior2"); }
+    void behavior() { System.out.println("Behavior2"); }
   },
   NOD {
     @Override
-    void behavior() { print("Behavior3"); }
+    void behavior() { System.out.println("Behavior3"); }
   };
   abstract void behavior();
 }

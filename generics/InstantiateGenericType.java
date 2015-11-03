@@ -1,6 +1,4 @@
 // generics/InstantiateGenericType.java
-// ©2015 MindView LLC: see Copyright.txt
-import static com.mindviewinc.util.Print.*;
 
 class ClassAsFactory<T> {
   T x;
@@ -20,12 +18,12 @@ public class InstantiateGenericType {
   public static void main(String[] args) {
     ClassAsFactory<Employee> fe =
       new ClassAsFactory<>(Employee.class);
-    print("ClassAsFactory<Employee> succeeded");
+    System.out.println("ClassAsFactory<Employee> succeeded");
     try {
       ClassAsFactory<Integer> fi =
         new ClassAsFactory<>(Integer.class);
     } catch(Exception e) {
-      print("ClassAsFactory<Integer> failed");
+      System.out.println("ClassAsFactory<Integer> failed");
     }
   }
 }

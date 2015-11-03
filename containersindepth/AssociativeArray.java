@@ -1,7 +1,5 @@
 // containersindepth/AssociativeArray.java
-// ©2015 MindView LLC: see Copyright.txt
 // Associates keys with values.
-import static com.mindviewinc.util.Print.*;
 
 public class AssociativeArray<K, V> {
   private Object[][] pairs;
@@ -45,10 +43,10 @@ public class AssociativeArray<K, V> {
     try {
       map.put("extra", "object"); // Past the end
     } catch(ArrayIndexOutOfBoundsException e) {
-      print("Too many objects!");
+      System.out.println("Too many objects!");
     }
-    print(map);
-    print(map.get("ocean"));
+    System.out.println(map);
+    System.out.println(map.get("ocean"));
   }
 }
 /* Output:

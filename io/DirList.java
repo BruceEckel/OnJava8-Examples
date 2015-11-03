@@ -1,5 +1,4 @@
 // io/DirList.java
-// ©2015 MindView LLC: see Copyright.txt
 // Display a directory listing using regular expressions.
 // {Args: "D.*\.java"}
 import java.util.regex.*;

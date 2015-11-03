@@ -1,8 +1,6 @@
 // polymorphism/Transmogrify.java
-// ©2015 MindView LLC: see Copyright.txt
 // Dynamically changing the behavior of an object
 // via composition (the "State" design pattern).
-import static com.mindviewinc.util.Print.*;
 
 class Actor {
   public void act() {}
@@ -10,12 +8,12 @@ class Actor {
 
 class HappyActor extends Actor {
   @Override
-  public void act() { print("HappyActor"); }
+  public void act() { System.out.println("HappyActor"); }
 }
 
 class SadActor extends Actor {
   @Override
-  public void act() { print("SadActor"); }
+  public void act() { System.out.println("SadActor"); }
 }
 
 class Stage {

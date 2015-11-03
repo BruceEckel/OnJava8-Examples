@@ -1,7 +1,5 @@
 // enums/OzWitch.java
-// ©2015 MindView LLC: see Copyright.txt
 // The witches in the land of Oz.
-import static com.mindviewinc.util.Print.*;
 
 public enum OzWitch {
   // Instances must be defined first, before methods:
@@ -18,7 +16,7 @@ public enum OzWitch {
   public String getDescription() { return description; }
   public static void main(String[] args) {
     for(OzWitch witch : OzWitch.values())
-      print(witch + ": " + witch.getDescription());
+      System.out.println(witch + ": " + witch.getDescription());
   }
 }
 /* Output:

@@ -7,50 +7,11 @@
   <import file="../Ant-Clean.xml"/>
 
   <target name="run" description="Compile and run" depends="build">
-    <jrun cls="AStoreCADState" />
-    <jrun cls="AvailableCharSets" />
-    <jrun cls="BasicFileOutput" />
-    <jrun cls="Blip3" />
-    <jrun cls="Blips" />
-    <jrun cls="BufferedInputFile" />
-    <jrun cls="BufferToText" />
-    <jrun cls="ChangeSystemOut" />
-    <jrun cls="ChannelCopy" arguments="ChannelCopy.java test.txt" />
     <jrun cls="DirectoryDemo" />
     <jrun cls="DirList" arguments='"D.*\.java"' />
     <jrun cls="DirList2" arguments='"D.*\.java"' />
     <jrun cls="DirList3" arguments='"D.*\.java"' />
-    <jrun cls="Echo" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
-    <jrun cls="Endians" />
-    <jrun cls="FileLocking" />
-    <jrun cls="FileOutputShortcut" />
-    <jrun cls="FormattedMemoryInput" />
-    <jrun cls="FreezeAlien" />
-    <jrun cls="GetChannel" />
-    <jrun cls="GetData" />
-    <jrun cls="GZIPcompress" arguments="GZIPcompress.java" />
-    <jrun cls="IntBufferDemo" />
-    <jrun cls="LargeMappedFiles" />
-    <jrun cls="LockingMappedFiles" />
-    <jrun cls="Logon" />
     <jrun cls="MakeDirectories" arguments="MakeDirectoriesTest" />
-    <jrun cls="MappedIO" />
-    <jrun cls="MemoryInput" />
-    <jrun cls="MyWorld" />
-    <jrun cls="OSExecuteDemo" />
-    <jrun cls="PreferencesDemo" />
-    <jrun cls="RecoverCADState" />
-    <jrun cls="Redirecting" />
-    <jrun cls="SerialCtl" />
-    <jrun cls="StoringAndRecoveringData" />
-    <jrun cls="TestEOF" />
-    <jrun cls="TransferTo" arguments="TransferTo.java TransferTo.txt" />
-    <jrun cls="UsingBuffers" />
-    <jrun cls="UsingRandomAccessFile" />
-    <jrun cls="ViewBuffers" />
-    <jrun cls="Worm" />
-    <jrun cls="ZipCompress" arguments="ZipCompress.java" />
-    <jrun cls="io.xfiles.ThawAlien" dirpath="../io/xfiles" />
   </target>
 
 </project>

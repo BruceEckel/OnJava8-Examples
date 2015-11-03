@@ -1,12 +1,10 @@
 // concurrency/SynchronizationComparisons.java
-// ©2015 MindView LLC: see Copyright.txt
 // Comparing the performance of explicit Locks
 // and Atomics versus the synchronized keyword.
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.*;
 import java.util.concurrent.locks.*;
 import java.util.*;
-import static com.mindviewinc.util.Print.*;
 
 abstract class Accumulator {
   public static long cycles = 50000L;
@@ -69,10 +67,10 @@ abstract class Accumulator {
       throw new RuntimeException(e);
     }
     duration = System.nanoTime() - start;
-    printf("%-13s: %13d\n", id, duration);
+    System.out.printf("%-13s: %13d\n", id, duration);
   }
   public void report(Accumulator acc2) {
-    printf("%-22s: %.2f\n", this.id + "/" + acc2.id,
+    System.out.printf("%-22s: %.2f\n", this.id + "/" + acc2.id,
       (double)this.duration/(double)acc2.duration);
   }
 }
@@ -133,7 +131,7 @@ class AtomicTest extends Accumulator {
   public synchronized long read() { return value.get(); }
   @Override
   public void report(Accumulator acc2) {
-    printf("%-22s: %.2f\n", "synch/(Atomic-synch)",
+    System.out.printf("%-22s: %.2f\n", "synch/(Atomic-synch)",
       (double)acc2.duration/
         ((double)this.duration - (double)acc2.duration));
   }
@@ -144,8 +142,8 @@ public class SynchronizationComparisons {
   static LockTest lock = new LockTest();
   static AtomicTest atomic = new AtomicTest();
   static void test() {
-    print("============================");
-    printf("%-12s : %13d\n", "Cycles", Accumulator.cycles);
+    System.out.println("============================");
+    System.out.printf("%-12s : %13d\n", "Cycles", Accumulator.cycles);
     synch.timedTest();
     lock.timedTest();
     atomic.timedTest();
@@ -157,7 +155,7 @@ public class SynchronizationComparisons {
     if(args.length > 0) // Optionally change iterations
       iterations = new Integer(args[0]);
     // The first time fills the thread pool:
-    print("Warmup");
+    System.out.println("Warmup");
     synch.timedTest();
     // Now the initial test doesn't include the cost
     // of starting the threads for the first time.

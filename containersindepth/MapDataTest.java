@@ -1,16 +1,15 @@
 // containersindepth/MapDataTest.java
-// ©2015 MindView LLC: see Copyright.txt
 import java.util.*;
+import java.util.function.*;
 import com.mindviewinc.util.*;
-import static com.mindviewinc.util.Print.*;
 
-class Letters implements Generator<Pair<Integer,String>>,
+class Letters implements Supplier<Pair<Integer,String>>,
   Iterable<Integer> {
   private int size = 9;
   private int number = 1;
   private char letter = 'A';
   @Override
-  public Pair<Integer,String> next() {
+  public Pair<Integer,String> get() {
     return new Pair<>(number++, "" + letter++);
   }
   @Override
@@ -30,19 +29,19 @@ class Letters implements Generator<Pair<Integer,String>>,
 
 public class MapDataTest {
   public static void main(String[] args) {
-    // Pair Generator:
-    print(MapData.map(new Letters(), 11));
+    // Pair Supplier:
+    System.out.println(MapData.map(new Letters(), 11));
     // Two separate generators:
-    print(MapData.map(new CountingGenerator.Character(),
-      new RandomGenerator.String(3), 8));
-    // A key Generator and a single value:
-    print(MapData.map(new CountingGenerator.Character(),
+    System.out.println(MapData.map(new CountingSupplier.Character(),
+      new RandomSupplier.String(3), 8));
+    // A key Supplier and a single value:
+    System.out.println(MapData.map(new CountingSupplier.Character(),
       "Value", 6));
-    // An Iterable and a value Generator:
-    print(MapData.map(new Letters(),
-      new RandomGenerator.String(3)));
+    // An Iterable and a value Supplier:
+    System.out.println(MapData.map(new Letters(),
+      new RandomSupplier.String(3)));
     // An Iterable and a single value:
-    print(MapData.map(new Letters(), "Pop"));
+    System.out.println(MapData.map(new Letters(), "Pop"));
   }
 }
 /* Output:

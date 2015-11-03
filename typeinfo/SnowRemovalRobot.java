@@ -1,5 +1,4 @@
 // typeinfo/SnowRemovalRobot.java
-// ©2015 MindView LLC: see Copyright.txt
 import java.util.*;
 
 public class SnowRemovalRobot implements Robot {

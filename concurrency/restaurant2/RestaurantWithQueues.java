@@ -1,11 +1,9 @@
 // concurrency/restaurant2/RestaurantWithQueues.java
-// ©2015 MindView LLC: see Copyright.txt
 // {Args: 5}
 package concurrency.restaurant2;
 import enums.menu.*;
 import java.util.concurrent.*;
 import java.util.*;
-import static com.mindviewinc.util.Print.*;
 
 // This is given to the waiter, who gives it to the chef:
 class Order { // (A data-transfer object)
@@ -65,14 +63,14 @@ class Customer implements Runnable {
       try {
         waitPerson.placeOrder(this, food);
         // Blocks until course is delivered:
-        print(this + "eating " + placeSetting.take());
+        System.out.println(this + "eating " + placeSetting.take());
       } catch(InterruptedException e) {
-        print(this + "waiting for " +
+        System.out.println(this + "waiting for " +
           course + " interrupted");
         break;
       }
     }
-    print(this + "finished meal, leaving");
+    System.out.println(this + "finished meal, leaving");
   }
   @Override
   public String toString() {
@@ -93,7 +91,7 @@ class WaitPerson implements Runnable {
       // a LinkedBlockingQueue with no size limit:
       restaurant.orders.put(new Order(cust, this, food));
     } catch(InterruptedException e) {
-      print(this + " placeOrder interrupted");
+      System.out.println(this + " placeOrder interrupted");
     }
   }
   @Override
@@ -102,15 +100,15 @@ class WaitPerson implements Runnable {
       while(!Thread.interrupted()) {
         // Blocks until a course is ready
         Plate plate = filledOrders.take();
-        print(this + "received " + plate +
+        System.out.println(this + "received " + plate +
           " delivering to " +
           plate.getOrder().getCustomer());
         plate.getOrder().getCustomer().deliver(plate);
       }
     } catch(InterruptedException e) {
-      print(this + " interrupted");
+      System.out.println(this + " interrupted");
     }
-    print(this + " off duty");
+    System.out.println(this + " off duty");
   }
   @Override
   public String toString() {
@@ -137,9 +135,9 @@ class Chef implements Runnable {
         order.getWaitPerson().filledOrders.put(plate);
       }
     } catch(InterruptedException e) {
-      print(this + " interrupted");
+      System.out.println(this + " interrupted");
     }
-    print(this + " off duty");
+    System.out.println(this + " off duty");
   }
   @Override
   public String toString() { return "Chef " + id + " "; }
@@ -179,9 +177,9 @@ class Restaurant implements Runnable {
         TimeUnit.MILLISECONDS.sleep(100);
       }
     } catch(InterruptedException e) {
-      print("Restaurant interrupted");
+      System.out.println("Restaurant interrupted");
     }
-    print("Restaurant closing");
+    System.out.println("Restaurant closing");
   }
 }
 
@@ -193,7 +191,7 @@ public class RestaurantWithQueues {
     if(args.length > 0) // Optional argument
       TimeUnit.SECONDS.sleep(new Integer(args[0]));
     else {
-      print("Press 'Enter' to quit");
+      System.out.println("Press 'Enter' to quit");
       System.in.read();
     }
     exec.shutdownNow();

@@ -1,5 +1,4 @@
 // concurrency/NaiveExceptionHandling.java
-// ©2015 MindView LLC: see Copyright.txt
 // {ValidateByHand}
 // {ThrowsException}
 import java.util.concurrent.*;

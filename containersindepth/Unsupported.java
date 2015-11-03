@@ -1,5 +1,4 @@
 // containersindepth/Unsupported.java
-// ©2015 MindView LLC: see Copyright.txt
 // Unsupported operations in Java containers.
 import java.util.*;
 

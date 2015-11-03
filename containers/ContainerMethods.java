@@ -1,5 +1,4 @@
 // containers/ContainerMethods.java
-// ©2015 MindView LLC: see Copyright.txt
 import com.mindviewinc.util.*;
 
 public class ContainerMethods {
@@ -9,7 +8,7 @@ public class ContainerMethods {
 }
 /* Output:
 Collection: [add, addAll, clear, contains, containsAll,
-equals, forEach, hashCode, isEmpty, iterator,
+equals, for-each, hashCode, isEmpty, iterator,
 parallelStream, remove, removeAll, removeIf, retainAll,
 size, spliterator, stream, toArray]
 Interfaces in Collection: [Iterable]
@@ -43,7 +42,7 @@ Interfaces in Queue: [Collection]
 PriorityQueue extends Queue, adds: [comparator]
 Interfaces in PriorityQueue: [Serializable]
 Map: [clear, compute, computeIfAbsent, computeIfPresent,
-containsKey, containsValue, entrySet, equals, forEach, get,
+containsKey, containsValue, entrySet, equals, for-each, get,
 getOrDefault, hashCode, isEmpty, keySet, merge, put,
 putAll, putIfAbsent, remove, replace, replaceAll, size,
 values]

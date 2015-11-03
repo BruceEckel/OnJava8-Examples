@@ -1,7 +1,5 @@
 // containersindepth/DequeTest.java
-// ©2015 MindView LLC: see Copyright.txt
 import com.mindviewinc.util.*;
-import static com.mindviewinc.util.Print.*;
 
 public class DequeTest {
   static void fillTest(Deque<Integer> deque) {
@@ -13,13 +11,13 @@ public class DequeTest {
   public static void main(String[] args) {
     Deque<Integer> di = new Deque<>();
     fillTest(di);
-    print(di);
+    System.out.println(di);
     while(di.size() != 0)
-      printnb(di.removeFirst() + " ");
-    print();
+      System.out.print(di.removeFirst() + " ");
+    System.out.println();
     fillTest(di);
     while(di.size() != 0)
-      printnb(di.removeLast() + " ");
+      System.out.print(di.removeLast() + " ");
   }
 }
 /* Output:

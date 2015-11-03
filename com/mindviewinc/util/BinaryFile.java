@@ -1,5 +1,4 @@
 // com/mindviewinc/util/BinaryFile.java
-// ©2015 MindView LLC: see Copyright.txt
 // Utility for reading files in binary form.
 package com.mindviewinc.util;
 import java.io.*;

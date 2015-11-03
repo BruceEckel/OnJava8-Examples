@@ -1,34 +1,32 @@
 // containers/LinkedListFeatures.java
-// ©2015 MindView LLC: see Copyright.txt
 import typeinfo.pets.*;
 import java.util.*;
-import static com.mindviewinc.util.Print.*;
 
 public class LinkedListFeatures {
   public static void main(String[] args) {
     LinkedList<Pet> pets =
       new LinkedList<>(Pets.arrayList(5));
-    print(pets);
+    System.out.println(pets);
     // Identical:
-    print("pets.getFirst(): " + pets.getFirst());
-    print("pets.element(): " + pets.element());
+    System.out.println("pets.getFirst(): " + pets.getFirst());
+    System.out.println("pets.element(): " + pets.element());
     // Only differs in empty-list behavior:
-    print("pets.peek(): " + pets.peek());
+    System.out.println("pets.peek(): " + pets.peek());
     // Identical; remove and return the first element:
-    print("pets.remove(): " + pets.remove());
-    print("pets.removeFirst(): " + pets.removeFirst());
+    System.out.println("pets.remove(): " + pets.remove());
+    System.out.println("pets.removeFirst(): " + pets.removeFirst());
     // Only differs in empty-list behavior:
-    print("pets.poll(): " + pets.poll());
-    print(pets);
+    System.out.println("pets.poll(): " + pets.poll());
+    System.out.println(pets);
     pets.addFirst(new Rat());
-    print("After addFirst(): " + pets);
+    System.out.println("After addFirst(): " + pets);
     pets.offer(Pets.randomPet());
-    print("After offer(): " + pets);
+    System.out.println("After offer(): " + pets);
     pets.add(Pets.randomPet());
-    print("After add(): " + pets);
+    System.out.println("After add(): " + pets);
     pets.addLast(new Hamster());
-    print("After addLast(): " + pets);
-    print("pets.removeLast(): " + pets.removeLast());
+    System.out.println("After addLast(): " + pets);
+    System.out.println("pets.removeLast(): " + pets.removeLast());
   }
 }
 /* Output:

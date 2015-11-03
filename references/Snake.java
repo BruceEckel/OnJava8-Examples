@@ -1,5 +1,4 @@
 // references/Snake.java
-// ©2015 MindView LLC: see Copyright.txt
 // Tests cloning to see if destination
 // of references are also cloned.
 

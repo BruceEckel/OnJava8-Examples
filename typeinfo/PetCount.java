@@ -1,9 +1,7 @@
 // typeinfo/PetCount.java
-// ©2015 MindView LLC: see Copyright.txt
 // Using instanceof.
 import typeinfo.pets.*;
 import java.util.*;
-import static com.mindviewinc.util.Print.*;
 
 public class PetCount {
   static class PetCounter extends HashMap<String,Integer> {
@@ -20,7 +18,7 @@ public class PetCount {
     PetCounter counter= new PetCounter();
     for(Pet pet : creator.createArray(20)) {
       // List each individual pet:
-      printnb(pet.getClass().getSimpleName() + " ");
+      System.out.print(pet.getClass().getSimpleName() + " ");
       if(pet instanceof Pet)
         counter.count("Pet");
       if(pet instanceof Dog)
@@ -47,8 +45,8 @@ public class PetCount {
         counter.count("Hamster");
     }
     // Show the counts:
-    print();
-    print(counter);
+    System.out.println();
+    System.out.println(counter);
   }
   public static void main(String[] args) {
     countPets(new ForNameCreator());

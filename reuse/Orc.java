@@ -1,7 +1,5 @@
 // reuse/Orc.java
-// ©2015 MindView LLC: see Copyright.txt
 // The protected keyword.
-import static com.mindviewinc.util.Print.*;
 
 class Villain {
   private String name;
@@ -29,9 +27,9 @@ public class Orc extends Villain {
   }
   public static void main(String[] args) {
     Orc orc = new Orc("Limburger", 12);
-    print(orc);
+    System.out.println(orc);
     orc.change("Bob", 19);
-    print(orc);
+    System.out.println(orc);
   }
 }
 /* Output:

@@ -1,12 +1,10 @@
 // reuse/Bath.java
-// ©2015 MindView LLC: see Copyright.txt
 // Constructor initialization with composition.
-import static com.mindviewinc.util.Print.*;
 
 class Soap {
   private String s;
   Soap() {
-    print("Soap()");
+    System.out.println("Soap()");
     s = "Constructed";
   }
   @Override
@@ -22,7 +20,7 @@ public class Bath {
   private int i;
   private float toy;
   public Bath() {
-    print("Inside Bath()");
+    System.out.println("Inside Bath()");
     s3 = "Joy";
     toy = 3.14f;
     castille = new Soap();
@@ -44,7 +42,7 @@ public class Bath {
   }
   public static void main(String[] args) {
     Bath b = new Bath();
-    print(b);
+    System.out.println(b);
   }
 }
 /* Output:

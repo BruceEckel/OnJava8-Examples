@@ -5,7 +5,7 @@
 
   <description>
     Ant build.xml for the source code for chapter ${chapter}
-    Bruce Eckel on Java
+    Bruce Eckel On Java
     Code available at https://github.com/BruceEckel/OnJava-Examples
     See installation instructions in README.md
     See copyright notice in CopyRight.txt

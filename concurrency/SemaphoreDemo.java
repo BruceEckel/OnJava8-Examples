@@ -1,9 +1,7 @@
 // concurrency/SemaphoreDemo.java
-// ©2015 MindView LLC: see Copyright.txt
 // Testing the Pool class
 import java.util.concurrent.*;
 import java.util.*;
-import static com.mindviewinc.util.Print.*;
 
 // A task to check a resource out of a pool:
 class CheckoutTask<T> implements Runnable {
@@ -17,9 +15,9 @@ class CheckoutTask<T> implements Runnable {
   public void run() {
     try {
       T item = pool.checkOut();
-      print(this + "checked out " + item);
+      System.out.println(this + "checked out " + item);
       TimeUnit.SECONDS.sleep(1);
-      print(this +"checking in " + item);
+      System.out.println(this +"checking in " + item);
       pool.checkIn(item);
     } catch(InterruptedException e) {
       // Acceptable way to terminate
@@ -39,11 +37,11 @@ public class SemaphoreDemo {
     ExecutorService exec = Executors.newCachedThreadPool();
     for(int i = 0; i < SIZE; i++)
       exec.execute(new CheckoutTask<>(pool));
-    print("All CheckoutTasks created");
+    System.out.println("All CheckoutTasks created");
     List<Fat> list = new ArrayList<>();
     for(int i = 0; i < SIZE; i++) {
       Fat f = pool.checkOut();
-      printnb(i + ": main() thread checked out ");
+      System.out.print(i + ": main() thread checked out ");
       f.operation();
       list.add(f);
     }
@@ -53,12 +51,12 @@ public class SemaphoreDemo {
         // so call is blocked:
         pool.checkOut();
       } catch(InterruptedException e) {
-        print("checkOut() Interrupted");
+        System.out.println("checkOut() Interrupted");
       }
     });
     TimeUnit.SECONDS.sleep(2);
     blocked.cancel(true); // Break out of blocked call
-    print("Checking in objects in " + list);
+    System.out.println("Checking in objects in " + list);
     for(Fat f : list)
       pool.checkIn(f);
     for(Fat f : list)

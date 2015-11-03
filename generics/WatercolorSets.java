@@ -1,8 +1,6 @@
 // generics/WatercolorSets.java
-// ©2015 MindView LLC: see Copyright.txt
 import generics.watercolors.*;
 import java.util.*;
-import static com.mindviewinc.util.Print.*;
 import static com.mindviewinc.util.Sets.*;
 import static generics.watercolors.Watercolors.*;
 
@@ -12,16 +10,16 @@ public class WatercolorSets {
       EnumSet.range(BRILLIANT_RED, VIRIDIAN_HUE);
     Set<Watercolors> set2 =
       EnumSet.range(CERULEAN_BLUE_HUE, BURNT_UMBER);
-    print("set1: " + set1);
-    print("set2: " + set2);
-    print("union(set1, set2): " + union(set1, set2));
+    System.out.println("set1: " + set1);
+    System.out.println("set2: " + set2);
+    System.out.println("union(set1, set2): " + union(set1, set2));
     Set<Watercolors> subset = intersection(set1, set2);
-    print("intersection(set1, set2): " + subset);
-    print("difference(set1, subset): " +
+    System.out.println("intersection(set1, set2): " + subset);
+    System.out.println("difference(set1, subset): " +
       difference(set1, subset));
-    print("difference(set2, subset): " +
+    System.out.println("difference(set2, subset): " +
       difference(set2, subset));
-    print("complement(set1, set2): " +
+    System.out.println("complement(set1, set2): " +
       complement(set1, set2));
   }
 }

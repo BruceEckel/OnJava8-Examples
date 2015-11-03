@@ -1,5 +1,4 @@
 // innerclasses/Parcel10.java
-// ©2015 MindView LLC: see Copyright.txt
 // Using "instance initialization" to perform
 // construction on an anonymous inner class.
 

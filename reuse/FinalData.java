@@ -1,8 +1,6 @@
 // reuse/FinalData.java
-// ©2015 MindView LLC: see Copyright.txt
 // The effect of final on fields.
 import java.util.*;
-import static com.mindviewinc.util.Print.*;
 
 class Value {
   int i; // Package access
@@ -40,11 +38,11 @@ public class FinalData {
     //! fd1.v2 = new Value(0); // Error: Can't
     //! fd1.VAL_3 = new Value(1); // change reference
     //! fd1.a = new int[3];
-    print(fd1);
-    print("Creating new FinalData");
+    System.out.println(fd1);
+    System.out.println("Creating new FinalData");
     FinalData fd2 = new FinalData("fd2");
-    print(fd1);
-    print(fd2);
+    System.out.println(fd1);
+    System.out.println(fd2);
   }
 }
 /* Output:

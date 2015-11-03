@@ -1,6 +1,4 @@
 // control/IfElse2.java
-// ©2015 MindView LLC: see Copyright.txt
-import static com.mindviewinc.util.Print.*;
 
 public class IfElse2 {
   static int test(int testval, int target) {
@@ -12,9 +10,9 @@ public class IfElse2 {
       return 0; // Match
   }
   public static void main(String[] args) {
-    print(test(10, 5));
-    print(test(5, 10));
-    print(test(5, 5));
+    System.out.println(test(10, 5));
+    System.out.println(test(5, 10));
+    System.out.println(test(5, 5));
   }
 }
 /* Output:

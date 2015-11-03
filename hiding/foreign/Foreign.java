@@ -1,5 +1,4 @@
 // hiding/foreign/Foreign.java
-// ©2015 MindView LLC: see Copyright.txt
 // {CompileTimeError} (Won't compile)
 package hiding.foreign;
 import hiding.local.*;

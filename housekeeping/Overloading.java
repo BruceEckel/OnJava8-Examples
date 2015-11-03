@@ -1,25 +1,23 @@
 // housekeeping/Overloading.java
-// ©2015 MindView LLC: see Copyright.txt
 // Demonstration of both constructor
 // and ordinary method overloading.
-import static com.mindviewinc.util.Print.*;
 
 class Tree {
   int height;
   Tree() {
-    print("Planting a seedling");
+    System.out.println("Planting a seedling");
     height = 0;
   }
   Tree(int initialHeight) {
     height = initialHeight;
-    print("Creating new Tree that is " +
+    System.out.println("Creating new Tree that is " +
       height + " feet tall");
   }
   void info() {
-    print("Tree is " + height + " feet tall");
+    System.out.println("Tree is " + height + " feet tall");
   }
   void info(String s) {
-    print(s + ": Tree is " + height + " feet tall");
+    System.out.println(s + ": Tree is " + height + " feet tall");
   }
 }
 

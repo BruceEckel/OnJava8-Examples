@@ -1,5 +1,4 @@
 // generics/RestrictedComparablePets.java
-// ©2015 MindView LLC: see Copyright.txt
 
 class Hamster extends ComparablePet
 implements Comparable<ComparablePet> {

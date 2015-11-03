@@ -1,5 +1,4 @@
 // innerclasses/Parcel7b.java
-// ©2015 MindView LLC: see Copyright.txt
 // Expanded version of Parcel7.java
 
 public class Parcel7b {

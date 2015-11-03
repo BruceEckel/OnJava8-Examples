@@ -1,31 +1,29 @@
 // reuse/FinalOverridingIllusion.java
-// ©2015 MindView LLC: see Copyright.txt
 // It only looks like you can override
 // a private or private final method.
-import static com.mindviewinc.util.Print.*;
 
 class WithFinals {
   // Identical to "private" alone:
-  private final void f() { print("WithFinals.f()"); }
+  private final void f() { System.out.println("WithFinals.f()"); }
   // Also automatically "final":
-  private void g() { print("WithFinals.g()"); }
+  private void g() { System.out.println("WithFinals.g()"); }
 }
 
 class OverridingPrivate extends WithFinals {
   private final void f() {
-    print("OverridingPrivate.f()");
+    System.out.println("OverridingPrivate.f()");
   }
   private void g() {
-    print("OverridingPrivate.g()");
+    System.out.println("OverridingPrivate.g()");
   }
 }
 
 class OverridingPrivate2 extends OverridingPrivate {
   public final void f() {
-    print("OverridingPrivate2.f()");
+    System.out.println("OverridingPrivate2.f()");
   }
   public void g() {
-    print("OverridingPrivate2.g()");
+    System.out.println("OverridingPrivate2.g()");
   }
 }
 

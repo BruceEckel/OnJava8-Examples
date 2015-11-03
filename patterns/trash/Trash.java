@@ -1,5 +1,4 @@
 // patterns/trash/Trash.java
-// ©2015 MindView LLC: see Copyright.txt
 // Base class for Trash recycling examples.
 package patterns.trash;
 import java.util.*;
@@ -12,36 +11,54 @@ public abstract class Trash {
   public abstract double value();
   public double weight() { return weight; }
   // Sums the value of Trash in a bin:
+  static double val;
   public static <T extends Trash>
   void sumValue(List<? extends T> bin) {
-    Iterator<? extends T> e = bin.iterator();
-    double val = 0.0f;
-    while(e.hasNext()) {
-      T t = e.next();
+    val = 0.0f;
+    bin.forEach( t -> {
       val += t.weight() * t.value();
       System.out.println("weight of " +
-        // Using RTTI to get type
-        // information about the class:
+        // RTTI gets type information
+        // about the class:
         t.getClass().getName() +
         " = " + t.weight());
-    }
+    });
     System.out.println("Total value = " + val);
   }
-  // Remainder of class provides support for
-  // prototyping:
-  public static class PrototypeNotFoundException
-      extends Exception {}
+  @Override
+  public String toString() {
+    // Print correct subclass name:
+    return getClass().getName() +
+      " w:" + weight() + " v:" +
+      String.format("%.2f", value());
+  }
+  // Remainder of class supports dynamic creation:
   public static class CannotCreateTrashException
-      extends Exception {}
+      extends RuntimeException {
+    public CannotCreateTrashException(Exception why) {
+      super(why);
+    }
+  }
+  public static class TrashClassNotFoundException
+      extends RuntimeException {
+    public TrashClassNotFoundException(Exception why) {
+      super(why);
+    }
+  }
+  public static class Info {
+    public String id;
+    public double data;
+    public Info(String name, double data) {
+      id = name;
+      this.data = data;
+    }
+  }
   private static List<Class> trashTypes =
     new ArrayList<>();
   @SuppressWarnings("unchecked")
-  public static <T extends Trash> T factory(Info info)
-      throws PrototypeNotFoundException,
-      CannotCreateTrashException {
+  public static <T extends Trash> T factory(Info info) {
     for(Class trashType : trashTypes) {
-      // Somehow determine the new type
-      // to create, and create one:
+      // Determine the type and create one:
       if(trashType.getName().contains(info.id)) {
         try {
           // Get the dynamic constructor method
@@ -51,36 +68,21 @@ public abstract class Trash {
           // Call the constructor to create a
           // new object:
           return (T)ctor.newInstance(info.data);
-        } catch(NoSuchMethodException |
-                SecurityException |
-                InstantiationException |
-                IllegalAccessException |
-                IllegalArgumentException |
-                InvocationTargetException ex) {
-          ex.printStackTrace();
-          throw new CannotCreateTrashException();
+        } catch(Exception e) {
+          throw new CannotCreateTrashException(e);
         }
       }
     }
-    // Class was not in the list. Try to load it,
-    // but it must be in your class path!
+    // The necessary Class was not in the list. Try to
+    // load it, but it must be in your class path!
     try {
       System.out.println("Loading " + info.id);
       trashTypes.add(Class.forName(info.id));
     } catch(Exception e) {
-      e.printStackTrace();
-      throw new PrototypeNotFoundException();
+      throw new TrashClassNotFoundException(e);
     }
     // Loaded successfully. Recursive call
     // should work this time:
     return factory(info);
-  }
-  public static class Info {
-    public String id;
-    public double data;
-    public Info(String name, double data) {
-      id = name;
-      this.data = data;
-    }
   }
 }

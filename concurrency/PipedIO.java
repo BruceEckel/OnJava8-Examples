@@ -1,10 +1,8 @@
 // concurrency/PipedIO.java
-// ©2015 MindView LLC: see Copyright.txt
 // Using pipes for inter-task I/O
 import java.util.concurrent.*;
 import java.io.*;
 import java.util.*;
-import static com.mindviewinc.util.Print.*;
 
 class Sender implements Runnable {
   private Random rand = new Random(47);
@@ -19,9 +17,9 @@ class Sender implements Runnable {
           TimeUnit.MILLISECONDS.sleep(rand.nextInt(500));
         }
     } catch(IOException e) {
-      print(e + " Sender write exception");
+      System.out.println(e + " Sender write exception");
     } catch(InterruptedException e) {
-      print(e + " Sender sleep interrupted");
+      System.out.println(e + " Sender sleep interrupted");
     }
   }
 }
@@ -36,10 +34,10 @@ class Receiver implements Runnable {
     try {
       while(true) {
         // Blocks until characters are there:
-        printnb("Read: " + (char)in.read() + ", ");
+        System.out.print("Read: " + (char)in.read() + ", ");
       }
     } catch(IOException e) {
-      print(e + " Receiver read exception");
+      System.out.println(e + " Receiver read exception");
     }
   }
 }

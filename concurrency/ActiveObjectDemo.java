@@ -1,11 +1,9 @@
 // concurrency/ActiveObjectDemo.java
-// ©2015 MindView LLC: see Copyright.txt
 // Can only pass constants, immutables, "disconnected
 // objects," or other active objects as arguments
 // to asynch methods.
 import java.util.concurrent.*;
 import java.util.*;
-import static com.mindviewinc.util.Print.*;
 
 public class ActiveObjectDemo {
   private ExecutorService ex =
@@ -18,13 +16,13 @@ public class ActiveObjectDemo {
       TimeUnit.MILLISECONDS.sleep(
         100 + rand.nextInt(factor));
     } catch(InterruptedException e) {
-      print("sleep() interrupted");
+      System.out.println("sleep() interrupted");
     }
   }
   public Future<Integer>
   calculateInt(final int x, final int y) {
     return ex.submit(() -> {
-      print("starting " + x + " + " + y);
+      System.out.println("starting " + x + " + " + y);
       pause(500);
       return x + y;
     });
@@ -32,7 +30,7 @@ public class ActiveObjectDemo {
   public Future<Float>
   calculateFloat(final float x, final float y) {
     return ex.submit(() -> {
-      print("starting " + x + " + " + y);
+      System.out.println("starting " + x + " + " + y);
       pause(2000);
       return x + y;
     });
@@ -47,12 +45,12 @@ public class ActiveObjectDemo {
       results.add(d1.calculateFloat(f, f));
     for(int i = 0; i < 5; i++)
       results.add(d1.calculateInt(i, i));
-    print("All asynch calls made");
+    System.out.println("All asynch calls made");
     while(results.size() > 0) {
       for(Future<?> f : results)
         if(f.isDone()) {
           try {
-            print(f.get());
+            System.out.println(f.get());
           } catch(InterruptedException |
                   ExecutionException e) {
             throw new RuntimeException(e);

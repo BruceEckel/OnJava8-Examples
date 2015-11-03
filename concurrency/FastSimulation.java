@@ -1,9 +1,7 @@
 // concurrency/FastSimulation.java
-// ©2015 MindView LLC: see Copyright.txt
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.*;
 import java.util.*;
-import static com.mindviewinc.util.Print.*;
 
 public class FastSimulation {
   static final int N_ELEMENTS = 100000;
@@ -33,7 +31,7 @@ public class FastSimulation {
             // Policy here to deal with failure. Here, we
             // just report it and ignore it; our model
             // will eventually deal with it.
-            print("Old value changed from " + oldvalue);
+            System.out.println("Old value changed from " + oldvalue);
           }
         }
       }

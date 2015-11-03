@@ -1,5 +1,4 @@
 // concurrency/GreenhouseScheduler.java
-// ©2015 MindView LLC: see Copyright.txt
 // Rewriting innerclasses/GreenhouseController.java
 // to use a ScheduledThreadPoolExecutor.
 // {Args: 5000}

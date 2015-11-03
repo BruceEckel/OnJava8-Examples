@@ -1,9 +1,7 @@
 // concurrency/CarBuilder.java
-// ©2015 MindView LLC: see Copyright.txt
 // A complex example of tasks working together.
 import java.util.concurrent.*;
 import java.util.*;
-import static com.mindviewinc.util.Print.*;
 
 class Car {
   private final int id;
@@ -38,14 +36,14 @@ class ChassisBuilder implements Runnable {
         TimeUnit.MILLISECONDS.sleep(500);
         // Make chassis:
         Car c = new Car(counter++);
-        print("ChassisBuilder created " + c);
+        System.out.println("ChassisBuilder created " + c);
         // Insert into queue
         carQueue.put(c);
       }
     } catch(InterruptedException e) {
-      print("Interrupted: ChassisBuilder");
+      System.out.println("Interrupted: ChassisBuilder");
     }
-    print("ChassisBuilder off");
+    System.out.println("ChassisBuilder off");
   }
 }
 
@@ -76,12 +74,12 @@ class Assembler implements Runnable {
         finishingQueue.put(car);
       }
     } catch(InterruptedException e) {
-      print("Exiting Assembler via interrupt");
+      System.out.println("Exiting Assembler via interrupt");
     } catch(BrokenBarrierException e) {
       // This one we want to know about
       throw new RuntimeException(e);
     }
-    print("Assembler off");
+    System.out.println("Assembler off");
   }
 }
 
@@ -92,12 +90,12 @@ class Reporter implements Runnable {
   public void run() {
     try {
       while(!Thread.interrupted()) {
-        print(carQueue.take());
+        System.out.println(carQueue.take());
       }
     } catch(InterruptedException e) {
-      print("Exiting Reporter via interrupt");
+      System.out.println("Exiting Reporter via interrupt");
     }
-    print("Reporter off");
+    System.out.println("Reporter off");
   }
 }
 
@@ -126,12 +124,12 @@ abstract class Robot implements Runnable {
         powerDown();
       }
     } catch(InterruptedException e) {
-      print("Exiting " + this + " via interrupt");
+      System.out.println("Exiting " + this + " via interrupt");
     } catch(BrokenBarrierException e) {
       // This one we want to know about
       throw new RuntimeException(e);
     }
-    print(this + " off");
+    System.out.println(this + " off");
   }
   private synchronized void
   powerDown() throws InterruptedException {
@@ -148,7 +146,7 @@ abstract class Robot implements Runnable {
 class EngineRobot extends Robot {
   public EngineRobot(RobotPool pool) { super(pool); }
   protected void performService() {
-    print(this + " installing engine");
+    System.out.println(this + " installing engine");
     assembler.car().addEngine();
   }
 }
@@ -156,7 +154,7 @@ class EngineRobot extends Robot {
 class DriveTrainRobot extends Robot {
   public DriveTrainRobot(RobotPool pool) { super(pool); }
   protected void performService() {
-    print(this + " installing DriveTrain");
+    System.out.println(this + " installing DriveTrain");
     assembler.car().addDriveTrain();
   }
 }
@@ -164,7 +162,7 @@ class DriveTrainRobot extends Robot {
 class WheelRobot extends Robot {
   public WheelRobot(RobotPool pool) { super(pool); }
   protected void performService() {
-    print(this + " installing Wheels");
+    System.out.println(this + " installing Wheels");
     assembler.car().addWheels();
   }
 }

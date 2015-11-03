@@ -1,9 +1,7 @@
 // concurrency/Interrupting.java
-// ©2015 MindView LLC: see Copyright.txt
 // Interrupting a blocked thread.
 import java.util.concurrent.*;
 import java.io.*;
-import static com.mindviewinc.util.Print.*;
 
 class SleepBlocked implements Runnable {
   @Override
@@ -11,9 +9,9 @@ class SleepBlocked implements Runnable {
     try {
       TimeUnit.SECONDS.sleep(100);
     } catch(InterruptedException e) {
-      print("InterruptedException");
+      System.out.println("InterruptedException");
     }
-    print("Exiting SleepBlocked.run()");
+    System.out.println("Exiting SleepBlocked.run()");
   }
 }
 
@@ -23,16 +21,16 @@ class IOBlocked implements Runnable {
   @Override
   public void run() {
     try {
-      print("Waiting for read():");
+      System.out.println("Waiting for read():");
       in.read();
     } catch(IOException e) {
       if(Thread.currentThread().isInterrupted()) {
-        print("Interrupted from blocked I/O");
+        System.out.println("Interrupted from blocked I/O");
       } else {
         throw new RuntimeException(e);
       }
     }
-    print("Exiting IOBlocked.run()");
+    System.out.println("Exiting IOBlocked.run()");
   }
 }
 
@@ -51,9 +49,9 @@ class SynchronizedBlocked implements Runnable {
   }
   @Override
   public void run() {
-    print("Trying to call f()");
+    System.out.println("Trying to call f()");
     f();
-    print("Exiting SynchronizedBlocked.run()");
+    System.out.println("Exiting SynchronizedBlocked.run()");
   }
 }
 
@@ -63,16 +61,16 @@ public class Interrupting {
   static void test(Runnable r) throws InterruptedException{
     Future<?> f = exec.submit(r);
     TimeUnit.MILLISECONDS.sleep(100);
-    print("Interrupting " + r.getClass().getName());
+    System.out.println("Interrupting " + r.getClass().getName());
     f.cancel(true); // Interrupts if running
-    print("Interrupt sent to " + r.getClass().getName());
+    System.out.println("Interrupt sent to " + r.getClass().getName());
   }
   public static void main(String[] args) throws Exception {
     test(new SleepBlocked());
     test(new IOBlocked(System.in));
     test(new SynchronizedBlocked());
     TimeUnit.SECONDS.sleep(3);
-    print("Aborting with System.exit(0)");
+    System.out.println("Aborting with System.exit(0)");
     System.exit(0); // ... since last 2 interrupts failed
   }
 }

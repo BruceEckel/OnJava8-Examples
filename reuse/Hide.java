@@ -1,16 +1,14 @@
 // reuse/Hide.java
-// ©2015 MindView LLC: see Copyright.txt
 // Overloading a base-class method name in a derived
 // class does not hide the base-class versions.
-import static com.mindviewinc.util.Print.*;
 
 class Homer {
   char doh(char c) {
-    print("doh(char)");
+    System.out.println("doh(char)");
     return 'd';
   }
   float doh(float f) {
-    print("doh(float)");
+    System.out.println("doh(float)");
     return 1.0f;
   }
 }
@@ -19,7 +17,7 @@ class Milhouse {}
 
 class Bart extends Homer {
   void doh(Milhouse m) {
-    print("doh(Milhouse)");
+    System.out.println("doh(Milhouse)");
   }
 }
 

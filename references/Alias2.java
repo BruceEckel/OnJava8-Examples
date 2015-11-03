@@ -1,5 +1,4 @@
 // references/Alias2.java
-// ©2015 MindView LLC: see Copyright.txt
 // Method calls implicitly alias their arguments.
 
 public class Alias2 {

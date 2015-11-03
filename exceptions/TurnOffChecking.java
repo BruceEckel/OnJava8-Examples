@@ -1,8 +1,6 @@
 // exceptions/TurnOffChecking.java
-// ©2015 MindView LLC: see Copyright.txt
 // "Turning off" Checked exceptions.
 import java.io.*;
-import static com.mindviewinc.util.Print.*;
 
 class WrapCheckedException {
   void throwRuntimeException(int type) {
@@ -36,16 +34,16 @@ public class TurnOffChecking {
         else
           throw new SomeOtherException();
       } catch(SomeOtherException e) {
-          print("SomeOtherException: " + e);
+          System.out.println("SomeOtherException: " + e);
       } catch(RuntimeException re) {
         try {
           throw re.getCause();
         } catch(FileNotFoundException e) {
-          print("FileNotFoundException: " + e);
+          System.out.println("FileNotFoundException: " + e);
         } catch(IOException e) {
-          print("IOException: " + e);
+          System.out.println("IOException: " + e);
         } catch(Throwable e) {
-          print("Throwable: " + e);
+          System.out.println("Throwable: " + e);
         }
       }
   }

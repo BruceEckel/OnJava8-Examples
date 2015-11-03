@@ -1,5 +1,4 @@
 // exceptions/WithFinally.java
-// ©2015 MindView LLC: see Copyright.txt
 // Finally Guarantees cleanup.
 
 public class WithFinally {

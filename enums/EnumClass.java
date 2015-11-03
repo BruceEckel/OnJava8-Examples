@@ -1,25 +1,23 @@
 // enums/EnumClass.java
-// ©2015 MindView LLC: see Copyright.txt
 // Capabilities of the Enum class
-import static com.mindviewinc.util.Print.*;
 
 enum Shrubbery { GROUND, CRAWLING, HANGING }
 
 public class EnumClass {
   public static void main(String[] args) {
     for(Shrubbery s : Shrubbery.values()) {
-      print(s + " ordinal: " + s.ordinal());
-      printnb(s.compareTo(Shrubbery.CRAWLING) + " ");
-      printnb(s.equals(Shrubbery.CRAWLING) + " ");
-      print(s == Shrubbery.CRAWLING);
-      print(s.getDeclaringClass());
-      print(s.name());
-      print("----------------------");
+      System.out.println(s + " ordinal: " + s.ordinal());
+      System.out.print(s.compareTo(Shrubbery.CRAWLING) + " ");
+      System.out.print(s.equals(Shrubbery.CRAWLING) + " ");
+      System.out.println(s == Shrubbery.CRAWLING);
+      System.out.println(s.getDeclaringClass());
+      System.out.println(s.name());
+      System.out.println("----------------------");
     }
     // Produce an enum value from a string name:
     for(String s : "HANGING CRAWLING GROUND".split(" ")) {
       Shrubbery shrub = Enum.valueOf(Shrubbery.class, s);
-      print(shrub);
+      System.out.println(shrub);
     }
   }
 }

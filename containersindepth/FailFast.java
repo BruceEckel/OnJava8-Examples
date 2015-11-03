@@ -1,5 +1,4 @@
 // containersindepth/FailFast.java
-// ©2015 MindView LLC: see Copyright.txt
 // Demonstrates the "fail-fast" behavior.
 import java.util.*;
 

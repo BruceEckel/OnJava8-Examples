@@ -1,11 +1,10 @@
 // patterns/factory/ShapeFactory1.java
-// ©2015 MindView LLC: see Copyright.txt
 // A simple static factory method.
 package patterns.factory;
 import java.util.*;
-import static com.mindviewinc.util.Print.*;
+import java.util.stream.*;
 
-class BadShapeCreation extends Exception {
+class BadShapeCreation extends RuntimeException {
   BadShapeCreation(String msg) {
     super(msg);
   }
@@ -28,31 +27,35 @@ abstract class Shape {
 class Circle extends Shape {
   Circle() {} // Friendly constructor
   @Override
-  public void draw() { print("Circle.draw"); }
+  public void draw() {
+    System.out.println("Circle.draw");
+  }
   @Override
-  public void erase() { print("Circle.erase"); }
+  public void erase() {
+    System.out.println("Circle.erase");
+  }
 }
 
 class Square extends Shape {
   Square() {} // Friendly constructor
   @Override
-  public void draw() { print("Square.draw"); }
+  public void draw() {
+    System.out.println("Square.draw");
+  }
   @Override
-  public void erase() { print("Square.erase"); }
+  public void erase() {
+    System.out.println("Square.erase");
+  }
 }
 
 public class ShapeFactory1 {
   public static void main(String args[]) {
-    String shlist[] = { "Circle", "Square",
-      "Square", "Circle", "Circle", "Square" };
-    List<Shape> shapes = new ArrayList<>();
-    try {
-      for(String shlist1 : shlist) {
-        shapes.add(Shape.factory(shlist1));
-      }
-    } catch(BadShapeCreation e) {
-      throw new RuntimeException(e);
-    }
+    List<Shape> shapes = Stream.of(
+      "Circle", "Square",
+      "Square", "Circle",
+      "Circle", "Square")
+      .map(Shape::factory)
+      .collect(Collectors.toList());
     shapes.forEach(Shape::draw);
     shapes.forEach(Shape::erase);
   }

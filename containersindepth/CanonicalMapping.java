@@ -1,5 +1,4 @@
 // containersindepth/CanonicalMapping.java
-// ©2015 MindView LLC: see Copyright.txt
 // Demonstrates WeakHashMap.
 import java.util.*;
 

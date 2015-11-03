@@ -1,7 +1,5 @@
 // exceptions/ExtraFeatures.java
-// ©2015 MindView LLC: see Copyright.txt
 // Further embellishment of exception classes.
-import static com.mindviewinc.util.Print.*;
 
 class MyException2 extends Exception {
   private int x;
@@ -20,15 +18,15 @@ class MyException2 extends Exception {
 
 public class ExtraFeatures {
   public static void f() throws MyException2 {
-    print("Throwing MyException2 from f()");
+    System.out.println("Throwing MyException2 from f()");
     throw new MyException2();
   }
   public static void g() throws MyException2 {
-    print("Throwing MyException2 from g()");
+    System.out.println("Throwing MyException2 from g()");
     throw new MyException2("Originated in g()");
   }
   public static void h() throws MyException2 {
-    print("Throwing MyException2 from h()");
+    System.out.println("Throwing MyException2 from h()");
     throw new MyException2("Originated in h()", 47);
   }
   public static void main(String[] args) {

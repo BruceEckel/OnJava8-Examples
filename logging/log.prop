@@ -3,10 +3,10 @@
 # Global Params
 # Handlers installed for the root logger
 handlers= java.util.logging.ConsoleHandler java.util.logging.FileHandler
-# Level for root logger—is used by any logger
+# Level for root logger--is used by any logger
 # that does not have its level set
 .level= FINEST
-# Initialization class—the public default constructor
+# Initialization class--the public no-arg constructor
 # of this class is called by the Logging framework
 config = ConfigureLogging
 

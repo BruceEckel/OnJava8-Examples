@@ -1,5 +1,4 @@
 // concurrency/Pool.java
-// ©2015 MindView LLC: see Copyright.txt
 // Using a Semaphore inside a Pool, to restrict
 // the number of tasks that can use a resource.
 import java.util.concurrent.*;
@@ -17,7 +16,7 @@ public class Pool<T> {
     // Load pool with objects that can be checked out:
     for(int i = 0; i < size; ++i)
       try {
-        // Assumes a default constructor:
+        // Assumes a no-arg constructor:
         items.add(classObject.newInstance());
       } catch(InstantiationException |
               IllegalAccessException e) {

@@ -1,9 +1,7 @@
 // generics/Functional.java
-// ©2015 MindView LLC: see Copyright.txt
 import java.math.*;
 import java.util.concurrent.atomic.*;
 import java.util.*;
-import static com.mindviewinc.util.Print.*;
 
 // Different types of function objects:
 interface Combiner<T> { T combine(T x, T y); }
@@ -127,17 +125,17 @@ public class Functional {
     // Generics, varargs & boxing working together:
     List<Integer> li = Arrays.asList(1, 2, 3, 4, 5, 6, 7);
     Integer result = reduce(li, new IntegerAdder());
-    print(result);
+    System.out.println(result);
 
     result = reduce(li, new IntegerSubtracter());
-    print(result);
+    System.out.println(result);
 
-    print(filter(li, new GreaterThan<>(4)));
+    System.out.println(filter(li, new GreaterThan<>(4)));
 
-    print(forEach(li,
+    System.out.println(forEach(li,
       new MultiplyingIntegerCollector()).result());
 
-    print(forEach(filter(li, new GreaterThan<>(4)),
+    System.out.println(forEach(filter(li, new GreaterThan<>(4)),
       new MultiplyingIntegerCollector()).result());
 
     MathContext mc = new MathContext(7);
@@ -145,9 +143,9 @@ public class Functional {
       new BigDecimal(1.1, mc), new BigDecimal(2.2, mc),
       new BigDecimal(3.3, mc), new BigDecimal(4.4, mc));
     BigDecimal rbd = reduce(lbd, new BigDecimalAdder());
-    print(rbd);
+    System.out.println(rbd);
 
-    print(filter(lbd,
+    System.out.println(filter(lbd,
       new GreaterThan<>(new BigDecimal(3))));
 
     // Use the prime-generation facility of BigInteger:
@@ -157,20 +155,20 @@ public class Functional {
       lbi.add(bi);
       bi = bi.nextProbablePrime();
     }
-    print(lbi);
+    System.out.println(lbi);
 
     BigInteger rbi = reduce(lbi, new BigIntegerAdder());
-    print(rbi);
+    System.out.println(rbi);
     // The sum of this list of primes is also prime:
-    print(rbi.isProbablePrime(5));
+    System.out.println(rbi.isProbablePrime(5));
 
     List<AtomicLong> lal = Arrays.asList(
       new AtomicLong(11), new AtomicLong(47),
       new AtomicLong(74), new AtomicLong(133));
     AtomicLong ral = reduce(lal, new AtomicLongAdder());
-    print(ral);
+    System.out.println(ral);
 
-    print(transform(lbd, new BigDecimalUlp()));
+    System.out.println(transform(lbd, new BigDecimalUlp()));
   }
 }
 /* Output:

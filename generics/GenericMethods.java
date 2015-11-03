@@ -1,5 +1,4 @@
 // generics/GenericMethods.java
-// ©2015 MindView LLC: see Copyright.txt
 
 public class GenericMethods {
   public <T> void f(T x) {

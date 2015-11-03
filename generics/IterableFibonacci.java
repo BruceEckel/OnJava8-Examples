@@ -1,5 +1,4 @@
 // generics/IterableFibonacci.java
-// ©2015 MindView LLC: see Copyright.txt
 // Adapt the Fibonacci class to make it Iterable.
 import java.util.*;
 
@@ -15,7 +14,7 @@ extends Fibonacci implements Iterable<Integer> {
       @Override
       public Integer next() {
         n--;
-        return IterableFibonacci.this.next();
+        return IterableFibonacci.this.get();
       }
       @Override
       public void remove() { // Not implemented

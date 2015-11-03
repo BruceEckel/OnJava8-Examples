@@ -1,5 +1,4 @@
 // interfaces/InterfaceCollision.java
-// ©2015 MindView LLC: see Copyright.txt
 package interfaces;
 
 interface I1 { void f(); }

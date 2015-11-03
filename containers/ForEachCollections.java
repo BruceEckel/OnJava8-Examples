@@ -1,6 +1,5 @@
 // containers/ForEachCollections.java
-// ©2015 MindView LLC: see Copyright.txt
-// All collections work with forEach.
+// All collections work with for-each.
 import java.util.*;
 
 public class ForEachCollections {

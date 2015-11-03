@@ -1,11 +1,10 @@
 // logging/ConfigureLogging.java
-// ©2015 MindView LLC: see Copyright.txt
 // {JVMArgs: -Djava.util.logging.config.file=log.prop}
 import java.util.logging.*;
 
 public class ConfigureLogging {
   static Logger
-  lgr = Logger.getLogger("net"),
+  lgr = Logger.getLogger("com"),
   lgr2 = Logger.getLogger("com.mindviewinc"),
   util= Logger.getLogger("com.mindviewinc.util"),
   test= Logger.getLogger("com.mindviewinc.test"),

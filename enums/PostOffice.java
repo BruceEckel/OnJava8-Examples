@@ -1,9 +1,7 @@
 // enums/PostOffice.java
-// ©2015 MindView LLC: see Copyright.txt
 // Modeling a post office.
 import java.util.*;
 import com.mindviewinc.util.*;
-import static com.mindviewinc.util.Print.*;
 
 class Mail {
   // The NO's lower the probability of random selection:
@@ -66,7 +64,7 @@ public class PostOffice {
       boolean handle(Mail m) {
         switch(m.generalDelivery) {
           case YES:
-            print("Using general delivery for " + m);
+            System.out.println("Using general delivery for " + m);
             return true;
           default: return false;
         }
@@ -81,7 +79,7 @@ public class PostOffice {
             switch(m.address) {
               case INCORRECT: return false;
               default:
-                print("Delivering "+ m + " automatically");
+                System.out.println("Delivering "+ m + " automatically");
                 return true;
             }
         }
@@ -96,7 +94,7 @@ public class PostOffice {
             switch(m.address) {
               case INCORRECT: return false;
               default:
-                print("Delivering " + m + " normally");
+                System.out.println("Delivering " + m + " normally");
                 return true;
             }
         }
@@ -108,7 +106,7 @@ public class PostOffice {
         switch(m.returnAddress) {
           case MISSING: return false;
           default:
-            print("Returning " + m + " to sender");
+            System.out.println("Returning " + m + " to sender");
             return true;
         }
       }
@@ -119,13 +117,13 @@ public class PostOffice {
     for(MailHandler handler : MailHandler.values())
       if(handler.handle(m))
         return;
-    print(m + " is a dead letter");
+    System.out.println(m + " is a dead letter");
   }
   public static void main(String[] args) {
     for(Mail mail : Mail.generator(10)) {
-      print(mail.details());
+      System.out.println(mail.details());
       handle(mail);
-      print("*****");
+      System.out.println("*****");
     }
   }
 }

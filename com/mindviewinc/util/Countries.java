@@ -1,9 +1,7 @@
 // com/mindviewinc/util/Countries.java
-// ©2015 MindView LLC: see Copyright.txt
 // "Flyweight" Maps and Lists of sample data.
 package com.mindviewinc.util;
 import java.util.*;
-import static com.mindviewinc.util.Print.*;
 
 public class Countries {
   public static final String[][] DATA = {
@@ -226,18 +224,18 @@ public class Countries {
     return new ArrayList<>(select(size).keySet());
   }
   public static void main(String[] args) {
-    print(capitals(10));
-    print(names(10));
-    print(new HashMap<>(capitals(3)));
-    print(new LinkedHashMap<>(capitals(3)));
-    print(new TreeMap<>(capitals(3)));
-    print(new Hashtable<>(capitals(3)));
-    print(new HashSet<>(names(6)));
-    print(new LinkedHashSet<>(names(6)));
-    print(new TreeSet<>(names(6)));
-    print(new ArrayList<>(names(6)));
-    print(new LinkedList<>(names(6)));
-    print(capitals().get("BRAZIL"));
+    System.out.println(capitals(10));
+    System.out.println(names(10));
+    System.out.println(new HashMap<>(capitals(3)));
+    System.out.println(new LinkedHashMap<>(capitals(3)));
+    System.out.println(new TreeMap<>(capitals(3)));
+    System.out.println(new Hashtable<>(capitals(3)));
+    System.out.println(new HashSet<>(names(6)));
+    System.out.println(new LinkedHashSet<>(names(6)));
+    System.out.println(new TreeSet<>(names(6)));
+    System.out.println(new ArrayList<>(names(6)));
+    System.out.println(new LinkedList<>(names(6)));
+    System.out.println(capitals().get("BRAZIL"));
   }
 }
 /* Output:

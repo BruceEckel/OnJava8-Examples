@@ -1,8 +1,6 @@
 // concurrency/SimpleDaemons.java
-// ©2015 MindView LLC: see Copyright.txt
 // Daemon threads don't prevent the program from ending.
 import java.util.concurrent.*;
-import static com.mindviewinc.util.Print.*;
 
 public class SimpleDaemons implements Runnable {
   @Override
@@ -10,10 +8,10 @@ public class SimpleDaemons implements Runnable {
     try {
       while(true) {
         TimeUnit.MILLISECONDS.sleep(100);
-        print(Thread.currentThread() + " " + this);
+        System.out.println(Thread.currentThread() + " " + this);
       }
     } catch(InterruptedException e) {
-      print("sleep() interrupted");
+      System.out.println("sleep() interrupted");
     }
   }
   public static void main(String[] args) throws Exception {
@@ -22,7 +20,7 @@ public class SimpleDaemons implements Runnable {
       daemon.setDaemon(true); // Must call before start()
       daemon.start();
     }
-    print("All daemons started");
+    System.out.println("All daemons started");
     TimeUnit.MILLISECONDS.sleep(175);
   }
 }

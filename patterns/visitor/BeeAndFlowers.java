@@ -1,8 +1,9 @@
 // patterns/visitor/BeeAndFlowers.java
-// ©2015 MindView LLC: see Copyright.txt
 // Demonstration of "visitor" pattern.
 package patterns.visitor;
 import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
 
 interface Visitor {
   void visit(Gladiolus g);
@@ -66,53 +67,51 @@ class Bee implements Visitor {
 }
 
 class FlowerFactory {
+  static List<Supplier<Flower>> flowers =
+    Arrays.asList(Gladiolus::new,
+      Renuculus::new, Chrysanthemum::new);
+  final static int sz = flowers.size();
+  private static Random rand = new Random(47);
   public static Flower newFlower() {
-    switch((int)(Math.random() * 3)) {
-      default:
-      case 0: return new Gladiolus();
-      case 1: return new Renuculus();
-      case 2: return new Chrysanthemum();
-    }
+    return flowers.get(rand.nextInt(sz)).get();
   }
 }
 
 public class BeeAndFlowers {
   public static void main(String args[]) {
-    List<Flower> flowers = new ArrayList<>();
-    for(int i = 0; i < 10; i++)
-      flowers.add(FlowerFactory.newFlower());
+    List<Flower> flowers =
+      Stream.generate(FlowerFactory::newFlower)
+        .limit(10)
+        .collect(Collectors.toList());
     StringVal sval = new StringVal();
-    Iterator<Flower> it = flowers.iterator();
-    while(it.hasNext()) {
-      it.next().accept(sval);
+    flowers.forEach(f -> {
+      f.accept(sval);
       System.out.println(sval);
-    }
+    });
     // Perform "Bee" operation on all Flowers:
     Bee bee = new Bee();
-    it = flowers.iterator();
-    while(it.hasNext())
-      it.next().accept(bee);
+    flowers.forEach(f -> f.accept(bee));
   }
 }
 /* Output:
-Gladiolus
 Chrysanthemum
 Chrysanthemum
 Renuculus
 Chrysanthemum
+Renuculus
+Chrysanthemum
+Renuculus
+Chrysanthemum
 Gladiolus
 Renuculus
-Renuculus
-Gladiolus
-Renuculus
-Bee and Gladiolus
 Bee and Chrysanthemum
 Bee and Chrysanthemum
 Bee and Renuculus
 Bee and Chrysanthemum
-Bee and Gladiolus
 Bee and Renuculus
+Bee and Chrysanthemum
 Bee and Renuculus
+Bee and Chrysanthemum
 Bee and Gladiolus
 Bee and Renuculus
 */

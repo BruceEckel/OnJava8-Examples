@@ -1,15 +1,14 @@
 // strings/ThreatAnalyzer.java
-// ©2015 MindView LLC: see Copyright.txt
 import java.util.regex.*;
 import java.util.*;
 
 public class ThreatAnalyzer {
   static String threatData =
-    "58.27.82.161@02/10/2005\n" +
-    "204.45.234.40@02/11/2005\n" +
-    "58.27.82.161@02/11/2005\n" +
-    "58.27.82.161@02/12/2005\n" +
-    "58.27.82.161@02/12/2005\n" +
+    "58.27.82.161@08/10/2015\n" +
+    "204.45.234.40@08/11/2015\n" +
+    "58.27.82.161@08/11/2015\n" +
+    "58.27.82.161@08/12/2015\n" +
+    "58.27.82.161@08/12/2015\n" +
     "[Next log section with different data format]";
   public static void main(String[] args) {
     Scanner scanner = new Scanner(threatData);
@@ -25,9 +24,9 @@ public class ThreatAnalyzer {
   }
 }
 /* Output:
-Threat on 02/10/2005 from 58.27.82.161
-Threat on 02/11/2005 from 204.45.234.40
-Threat on 02/11/2005 from 58.27.82.161
-Threat on 02/12/2005 from 58.27.82.161
-Threat on 02/12/2005 from 58.27.82.161
+Threat on 08/10/2015 from 58.27.82.161
+Threat on 08/11/2015 from 204.45.234.40
+Threat on 08/11/2015 from 58.27.82.161
+Threat on 08/12/2015 from 58.27.82.161
+Threat on 08/12/2015 from 58.27.82.161
 */

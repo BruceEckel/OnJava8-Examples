@@ -1,9 +1,8 @@
 // enums/VendingMachine.java
-// ©2015 MindView LLC: see Copyright.txt
 // {Args: VendingMachineInput.txt}
 import java.util.*;
+import java.util.function.*;
 import com.mindviewinc.util.*;
-import static com.mindviewinc.util.Print.*;
 
 enum Category {
   MONEY(Input.NICKEL, Input.DIME,
@@ -56,7 +55,8 @@ public class VendingMachine {
           case ITEM_SELECTION:
             selection = input;
             if(amount < selection.amount())
-              print("Insufficient money for " + selection);
+              System.out.println(
+                "Insufficient money for " + selection);
             else state = DISPENSING;
             break;
           case QUIT_TRANSACTION:
@@ -71,7 +71,7 @@ public class VendingMachine {
     DISPENSING(StateDuration.TRANSIENT) {
       @Override
       void next() {
-        print("here is your " + selection);
+        System.out.println("here is your " + selection);
         amount -= selection.amount();
         state = GIVING_CHANGE;
       }
@@ -80,14 +80,14 @@ public class VendingMachine {
       @Override
       void next() {
         if(amount > 0) {
-          print("Your change: " + amount);
+          System.out.println("Your change: " + amount);
           amount = 0;
         }
         state = RESTING;
       }
     },
     TERMINAL {@Override
-void output() { print("Halted"); } };
+    void output() { System.out.println("Halted"); } };
     private boolean isTransient = false;
     State() {}
     State(StateDuration trans) { isTransient = true; }
@@ -99,39 +99,39 @@ void output() { print("Halted"); } };
       throw new RuntimeException("Only call next() for " +
         "StateDuration.TRANSIENT states");
     }
-    void output() { print(amount); }
+    void output() { System.out.println(amount); }
   }
-  static void run(Generator<Input> gen) {
+  static void run(Supplier<Input> gen) {
     while(state != State.TERMINAL) {
-      state.next(gen.next());
+      state.next(gen.get());
       while(state.isTransient)
         state.next();
       state.output();
     }
   }
   public static void main(String[] args) {
-    Generator<Input> gen = new RandomInputGenerator();
+    Supplier<Input> gen = new RandomInputSupplier();
     if(args.length == 1)
-      gen = new FileInputGenerator(args[0]);
+      gen = new FileInputSupplier(args[0]);
     run(gen);
   }
 }
 
 // For a basic sanity check:
-class RandomInputGenerator implements Generator<Input> {
+class RandomInputSupplier implements Supplier<Input> {
   @Override
-  public Input next() { return Input.randomSelection(); }
+  public Input get() { return Input.randomSelection(); }
 }
 
 // Create Inputs from a file of ';'-separated strings:
-class FileInputGenerator implements Generator<Input> {
+class FileInputSupplier implements Supplier<Input> {
   private Iterator<String> input;
-  public FileInputGenerator(String fileName) {
+  public FileInputSupplier(String fileName) {
     // Skip the comment line in the input file:
     input = new TextFile(fileName, ";").listIterator(1);
   }
   @Override
-  public Input next() {
+  public Input get() {
     if(!input.hasNext())
       return null;
     return Enum.valueOf(Input.class, input.next().trim());

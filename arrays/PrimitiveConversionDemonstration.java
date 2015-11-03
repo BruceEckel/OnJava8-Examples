@@ -1,17 +1,16 @@
 // arrays/PrimitiveConversionDemonstration.java
-// ©2015 MindView LLC: see Copyright.txt
 import java.util.*;
 import com.mindviewinc.util.*;
 
 public class PrimitiveConversionDemonstration {
   public static void main(String[] args) {
     Integer[] a = Generated.array(Integer.class,
-        new CountingGenerator.Integer(), 15);
+        new CountingSupplier.Integer(), 15);
     int[] b = ConvertTo.primitive(a);
     System.out.println(Arrays.toString(b));
     boolean[] c = ConvertTo.primitive(
       Generated.array(Boolean.class,
-        new CountingGenerator.Boolean(), 7));
+        new CountingSupplier.Boolean(), 7));
     System.out.println(Arrays.toString(c));
   }
 }

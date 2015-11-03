@@ -1,5 +1,4 @@
 // annotations/HashSetTest.java
-// ©2015 MindView LLC: see Copyright.txt
 package annotations;
 import java.util.*;
 import com.mindviewinc.atunit.*;

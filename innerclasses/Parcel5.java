@@ -1,5 +1,4 @@
 // innerclasses/Parcel5.java
-// ©2015 MindView LLC: see Copyright.txt
 // Nesting a class within a method.
 
 public class Parcel5 {

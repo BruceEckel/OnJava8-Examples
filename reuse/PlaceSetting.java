@@ -1,52 +1,50 @@
 // reuse/PlaceSetting.java
-// ©2015 MindView LLC: see Copyright.txt
 // Combining composition & inheritance.
-import static com.mindviewinc.util.Print.*;
 
 class Plate {
   Plate(int i) {
-    print("Plate constructor");
+    System.out.println("Plate constructor");
   }
 }
 
 class DinnerPlate extends Plate {
   DinnerPlate(int i) {
     super(i);
-    print("DinnerPlate constructor");
+    System.out.println("DinnerPlate constructor");
   }
 }
 
 class Utensil {
   Utensil(int i) {
-    print("Utensil constructor");
+    System.out.println("Utensil constructor");
   }
 }
 
 class Spoon extends Utensil {
   Spoon(int i) {
     super(i);
-    print("Spoon constructor");
+    System.out.println("Spoon constructor");
   }
 }
 
 class Fork extends Utensil {
   Fork(int i) {
     super(i);
-    print("Fork constructor");
+    System.out.println("Fork constructor");
   }
 }
 
 class Knife extends Utensil {
   Knife(int i) {
     super(i);
-    print("Knife constructor");
+    System.out.println("Knife constructor");
   }
 }
 
 // A cultural way of doing something:
 class Custom {
   Custom(int i) {
-    print("Custom constructor");
+    System.out.println("Custom constructor");
   }
 }
 
@@ -61,7 +59,7 @@ public class PlaceSetting extends Custom {
     frk = new Fork(i + 3);
     kn = new Knife(i + 4);
     pl = new DinnerPlate(i + 5);
-    print("PlaceSetting constructor");
+    System.out.println("PlaceSetting constructor");
   }
   public static void main(String[] args) {
     PlaceSetting x = new PlaceSetting(9);

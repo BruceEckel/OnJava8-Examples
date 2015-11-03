@@ -1,19 +1,17 @@
 // polymorphism/ReferenceCounting.java
-// ©2015 MindView LLC: see Copyright.txt
 // Cleaning up shared member objects.
-import static com.mindviewinc.util.Print.*;
 
 class Shared {
   private int refcount = 0;
   private static long counter = 0;
   private final long id = counter++;
   public Shared() {
-    print("Creating " + this);
+    System.out.println("Creating " + this);
   }
   public void addRef() { refcount++; }
   protected void dispose() {
     if(--refcount == 0)
-      print("Disposing " + this);
+      System.out.println("Disposing " + this);
   }
   @Override
   public String toString() { return "Shared " + id; }
@@ -24,12 +22,12 @@ class Composing {
   private static long counter = 0;
   private final long id = counter++;
   public Composing(Shared shared) {
-    print("Creating " + this);
+    System.out.println("Creating " + this);
     this.shared = shared;
     this.shared.addRef();
   }
   protected void dispose() {
-    print("disposing " + this);
+    System.out.println("disposing " + this);
     shared.dispose();
   }
   @Override

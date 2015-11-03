@@ -1,8 +1,6 @@
 // operators/BitManipulation.java
-// ©2015 MindView LLC: see Copyright.txt
 // Using the bitwise operators.
 import java.util.*;
-import static com.mindviewinc.util.Print.*;
 
 public class BitManipulation {
   public static void main(String[] args) {
@@ -50,11 +48,11 @@ public class BitManipulation {
     printBinaryLong("(~l) >>> 5", (~l) >>> 5);
   }
   static void printBinaryInt(String s, int i) {
-    print(s + ", int: " + i + ", binary:\n   " +
+    System.out.println(s + ", int: " + i + ", binary:\n   " +
       Integer.toBinaryString(i));
   }
   static void printBinaryLong(String s, long l) {
-    print(s + ", long: " + l + ", binary:\n    " +
+    System.out.println(s + ", long: " + l + ", binary:\n    " +
       Long.toBinaryString(l));
   }
 }

@@ -1,31 +1,29 @@
 // control/LabeledWhile.java
-// ©2015 MindView LLC: see Copyright.txt
 // While loops with "labeled break" and "labeled continue."
-import static com.mindviewinc.util.Print.*;
 
 public class LabeledWhile {
   public static void main(String[] args) {
     int i = 0;
     outer:
     while(true) {
-      print("Outer while loop");
+      System.out.println("Outer while loop");
       while(true) {
         i++;
-        print("i = " + i);
+        System.out.println("i = " + i);
         if(i == 1) {
-          print("continue");
+          System.out.println("continue");
           continue;
         }
         if(i == 3) {
-          print("continue outer");
+          System.out.println("continue outer");
           continue outer;
         }
         if(i == 5) {
-          print("break");
+          System.out.println("break");
           break;
         }
         if(i == 7) {
-          print("break outer");
+          System.out.println("break outer");
           break outer;
         }
       }

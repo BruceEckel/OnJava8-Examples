@@ -1,5 +1,4 @@
 // annotations/UseCase.java
-// ©2015 MindView LLC: see Copyright.txt
 import java.lang.annotation.*;
 
 @Target(ElementType.METHOD)

@@ -1,19 +1,17 @@
 // exceptions/AlwaysFinally.java
-// ©2015 MindView LLC: see Copyright.txt
 // Finally is always executed.
-import static com.mindviewinc.util.Print.*;
 
 class FourException extends Exception {}
 
 public class AlwaysFinally {
   public static void main(String[] args) {
-    print("Entering first try block");
+    System.out.println("Entering first try block");
     try {
-      print("Entering second try block");
+      System.out.println("Entering second try block");
       try {
         throw new FourException();
       } finally {
-        print("finally in 2nd try block");
+        System.out.println("finally in 2nd try block");
       }
     } catch(FourException e) {
       System.out.println(

@@ -1,22 +1,21 @@
 # staticchecking/NoBasePetSpeak.py
-# ©2015 MindView LLC: see Copyright.txt
 # Speaking pets without base classes:
 
 class Cat:
     def speak(self):
-       print("meow!")
+       System.out.println("meow!")
 
 class Dog:
     def speak(self):
-       print("woof!")
+       System.out.println("woof!")
 
 class Bob:
     def bow(self):
-       print("thank you, thank you!")
+       System.out.println("thank you, thank you!")
     def speak(self):
-       print("Welcome to the neighborhood!")
+       System.out.println("Welcome to the neighborhood!")
     def drive(self):
-       print("beep, beep!")
+       System.out.println("beep, beep!")
 
 def command(pet):
     pet.speak()
@@ -25,4 +24,3 @@ pets = [ Cat(), Dog(), Bob() ]
 
 for pet in pets:
     command(pet)
-#>

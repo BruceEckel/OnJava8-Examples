@@ -1,8 +1,6 @@
 // typeinfo/SelectingMethods.java
-// ©2015 MindView LLC: see Copyright.txt
 // Looking for particular methods in a dynamic proxy.
 import java.lang.reflect.*;
-import static com.mindviewinc.util.Print.*;
 
 class MethodSelector implements InvocationHandler {
   private Object proxied;
@@ -14,7 +12,7 @@ class MethodSelector implements InvocationHandler {
   invoke(Object proxy, Method method, Object[] args)
   throws Throwable {
     if(method.getName().equals("interesting"))
-      print("Proxy detected the interesting method");
+      System.out.println("Proxy detected the interesting method");
     return method.invoke(proxied, args);
   }
 }
@@ -28,15 +26,15 @@ interface SomeMethods {
 
 class Implementation implements SomeMethods {
   @Override
-  public void boring1() { print("boring1"); }
+  public void boring1() { System.out.println("boring1"); }
   @Override
-  public void boring2() { print("boring2"); }
+  public void boring2() { System.out.println("boring2"); }
   @Override
   public void interesting(String arg) {
-    print("interesting " + arg);
+    System.out.println("interesting " + arg);
   }
   @Override
-  public void boring3() { print("boring3"); }
+  public void boring3() { System.out.println("boring3"); }
 }
 
 class SelectingMethods {

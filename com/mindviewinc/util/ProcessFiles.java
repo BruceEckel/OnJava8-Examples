@@ -1,5 +1,4 @@
 // com/mindviewinc/util/ProcessFiles.java
-// ©2015 MindView LLC: see Copyright.txt
 // {ValidateByHand}
 package com.mindviewinc.util;
 import java.io.*;

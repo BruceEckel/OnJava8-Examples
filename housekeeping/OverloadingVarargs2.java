@@ -1,5 +1,4 @@
 // housekeeping/OverloadingVarargs2.java
-// ©2015 MindView LLC: see Copyright.txt
 // {CompileTimeError} (Won't compile)
 
 public class OverloadingVarargs2 {
