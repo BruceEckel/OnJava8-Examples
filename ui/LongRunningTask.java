@@ -3,7 +3,7 @@
 import javax.swing.*;
 import java.awt.*;
 import java.util.concurrent.*;
-import static com.mindviewinc.util.SwingConsole.*;
+import static onjava.SwingConsole.*;
 
 public class LongRunningTask extends JFrame {
   private JButton

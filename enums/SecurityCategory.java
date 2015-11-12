@@ -1,6 +1,6 @@
 // enums/SecurityCategory.java
 // More succinct subcategorization of enums.
-import com.mindviewinc.util.*;
+import onjava.*;
 
 enum SecurityCategory {
   STOCK(Security.Stock.class), BOND(Security.Bond.class);

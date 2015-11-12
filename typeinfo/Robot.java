@@ -1,5 +1,5 @@
 // typeinfo/Robot.java
-import com.mindviewinc.util.*;
+import onjava.*;
 import java.util.*;
 
 public interface Robot {

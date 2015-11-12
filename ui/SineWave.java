@@ -3,7 +3,7 @@
 import javax.swing.*;
 import javax.swing.event.*;
 import java.awt.*;
-import static com.mindviewinc.util.SwingConsole.*;
+import static onjava.SwingConsole.*;
 
 class SineDraw extends JPanel {
   private static final int SCALEFACTOR = 200;

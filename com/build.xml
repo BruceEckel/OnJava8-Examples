@@ -9,13 +9,6 @@
   <target name="run" description="Compile and run" depends="build">
     <jrun cls="com.mindviewinc.atunit.AtUnit" dirpath="../com/mindviewinc/atunit" />
     <jrun cls="com.mindviewinc.atunit.ClassNameFinder" dirpath="../com/mindviewinc/atunit" />
-    <jrun cls="com.mindviewinc.util.ContainerMethodDifferences" dirpath="../com/mindviewinc/util" />
-    <jrun cls="com.mindviewinc.util.CountingIntegerList" dirpath="../com/mindviewinc/util" />
-    <jrun cls="com.mindviewinc.util.CountingMapData" dirpath="../com/mindviewinc/util" />
-    <jrun cls="com.mindviewinc.util.Countries" dirpath="../com/mindviewinc/util" />
-    <jrun cls="com.mindviewinc.util.Directory" dirpath="../com/mindviewinc/util" />
-    <jrun cls="com.mindviewinc.util.Hex" dirpath="../com/mindviewinc/util" />
-    <jrun cls="com.mindviewinc.util.TextFile" dirpath="../com/mindviewinc/util" />
   </target>
 
 </project>

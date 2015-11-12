@@ -17,7 +17,6 @@
     <jrun cls="EqualsMethod2" />
     <jrun cls="Equivalence" />
     <jrun cls="Exponents" />
-    <jrun cls="HelloDate" />
     <jrun cls="Literals" />
     <jrun cls="MathOps" />
     <jrun cls="Overflow" />

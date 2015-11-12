@@ -2,7 +2,7 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-import static com.mindviewinc.util.SwingConsole.*;
+import static onjava.SwingConsole.*;
 
 public class SimpleMenus extends JFrame {
   private JTextField t = new JTextField(15);

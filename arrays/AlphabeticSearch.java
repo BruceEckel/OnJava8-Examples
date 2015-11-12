@@ -1,7 +1,7 @@
 // arrays/AlphabeticSearch.java
 // Searching with a Comparator.
 import java.util.*;
-import com.mindviewinc.util.*;
+import onjava.*;
 
 public class AlphabeticSearch {
   public static void main(String[] args) {

@@ -1,7 +1,7 @@
 // containersindepth/CollectionMethods.java
 // Things you can do with all Collections.
 import java.util.*;
-import com.mindviewinc.util.*;
+import onjava.*;
 
 public class CollectionMethods {
   public static void main(String[] args) {

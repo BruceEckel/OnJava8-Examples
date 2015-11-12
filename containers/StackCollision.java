@@ -2,8 +2,7 @@
 
 public class StackCollision {
   public static void main(String[] args) {
-    com.mindviewinc.util.Stack<String> stack =
-      new com.mindviewinc.util.Stack<>();
+    onjava.Stack<String> stack = new onjava.Stack<>();
     for(String s : "My dog has fleas".split(" "))
       stack.push(s);
     while(!stack.empty())

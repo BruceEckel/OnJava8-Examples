@@ -4,7 +4,7 @@
 // clients, each of which sends datagrams.
 import java.net.*;
 import java.io.*;
-import com.mindviewinc.util.*;
+import onjava.*;
 
 public class ChatterClient extends Thread {
   // Can listen & send on the same socket:

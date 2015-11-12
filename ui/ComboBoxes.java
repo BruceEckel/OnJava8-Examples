@@ -2,7 +2,7 @@
 // Using drop-down lists.
 import javax.swing.*;
 import java.awt.*;
-import static com.mindviewinc.util.SwingConsole.*;
+import static onjava.SwingConsole.*;
 
 public class ComboBoxes extends JFrame {
   private String[] description = {

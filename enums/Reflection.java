@@ -2,7 +2,7 @@
 // Analyzing enums using reflection.
 import java.lang.reflect.*;
 import java.util.*;
-import com.mindviewinc.util.*;
+import onjava.*;
 
 enum Explore { HERE, THERE }
 

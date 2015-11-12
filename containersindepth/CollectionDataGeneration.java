@@ -1,7 +1,7 @@
 // containersindepth/CollectionDataGeneration.java
 // Using the Suppliers defined in the Arrays chapter.
 import java.util.*;
-import com.mindviewinc.util.*;
+import onjava.*;
 
 public class CollectionDataGeneration {
   public static void main(String[] args) {

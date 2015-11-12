@@ -3,7 +3,7 @@
 import javax.swing.*;
 import javax.swing.border.*;
 import java.awt.*;
-import static com.mindviewinc.util.SwingConsole.*;
+import static onjava.SwingConsole.*;
 
 public class Progress extends JFrame {
   private JProgressBar pb = new JProgressBar();

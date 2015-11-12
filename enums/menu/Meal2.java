@@ -1,6 +1,6 @@
 // enums/menu/Meal2.java
 package enums.menu;
-import com.mindviewinc.util.*;
+import onjava.*;
 
 public enum Meal2 {
   APPETIZER(Food.Appetizer.class),

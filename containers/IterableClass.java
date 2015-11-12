@@ -1,5 +1,5 @@
 // containers/IterableClass.java
-// Anything Iterable works with for-each.
+// Anything Iterable works with for-in.
 import java.util.*;
 
 public class IterableClass implements Iterable<String> {

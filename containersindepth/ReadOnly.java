@@ -1,7 +1,7 @@
 // containersindepth/ReadOnly.java
 // Using the Collections.unmodifiable methods.
 import java.util.*;
-import com.mindviewinc.util.*;
+import onjava.*;
 
 public class ReadOnly {
   static Collection<String> data =

@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+
+<project default="run">
+  <property name="chapter" value="files"/>
+  <property name="excludedfiles" value=""/>
+  <import file="../Ant-Common.xml"/>
+  <import file="../Ant-Clean.xml"/>
+
+  <target name="run" description="Compile and run" depends="build">
+    <jrun cls="DirectoryDemo" />
+    <jrun cls="DirList" arguments='"D.*\.java"' />
+    <jrun cls="DirList2" arguments='"D.*\.java"' />
+    <jrun cls="DirList3" arguments='"D.*\.java"' />
+    <jrun cls="MakeDirectories" arguments="MakeDirectoriesTest" />
+  </target>
+
+</project>

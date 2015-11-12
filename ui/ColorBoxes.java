@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.concurrent.*;
 import java.util.*;
-import static com.mindviewinc.util.SwingConsole.*;
+import static onjava.SwingConsole.*;
 
 class CBox extends JPanel implements Runnable {
   private int pause;

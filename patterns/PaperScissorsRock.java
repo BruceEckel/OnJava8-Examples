@@ -3,6 +3,8 @@
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
+import onjava.*;
+import static onjava.Tuple.*;
 
 enum Outcome { WIN, LOSE, DRAW }
 
@@ -76,15 +78,6 @@ class Rock implements Item {
   public String toString() { return "Rock"; }
 }
 
-class ItemPair {
-  Item first;
-  Item second;
-  ItemPair(Item f, Item s) {
-    first = f;
-    second = s;
-  }
-}
-
 class ItemFactory {
   static List<Supplier<Item>> items =
     Arrays.asList(
@@ -94,16 +87,15 @@ class ItemFactory {
   public static Item newItem() {
     return items.get(rand.nextInt(sz)).get();
   }
-  public static ItemPair newPair() {
-    return new ItemPair(newItem(), newItem());
+  public static Tuple2<Item,Item> newPair() {
+    return tuple(newItem(), newItem());
   }
 }
 
 class Compete {
-  public static Outcome match(ItemPair p) {
-    System.out.print(
-      p.first + " <--> " + p.second + " : ");
-    return p.first.compete(p.second);
+  public static Outcome match(Tuple2<Item,Item> p) {
+    System.out.print(p._1 + " -> " + p._2 + " : ");
+    return p._1.compete(p._2);
   }
 }
 

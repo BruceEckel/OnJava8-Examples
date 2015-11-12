@@ -17,7 +17,7 @@
     <jrun cls="ContainerMethods" />
     <jrun cls="CrossContainerIteration" />
     <jrun cls="EnvironmentVariables" />
-    <jrun cls="ForEachCollections" />
+    <jrun cls="ForInCollections" />
     <jrun cls="GenericsAndUpcasting" />
     <jrun cls="InterfaceVsIterator" />
     <jrun cls="IterableClass" />

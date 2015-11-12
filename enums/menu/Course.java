@@ -1,6 +1,6 @@
 // enums/menu/Course.java
 package enums.menu;
-import com.mindviewinc.util.*;
+import onjava.*;
 
 public enum Course {
   APPETIZER(Food.Appetizer.class),

@@ -1,5 +1,5 @@
 // enums/RandomTest.java
-import com.mindviewinc.util.*;
+import onjava.*;
 
 enum Activity { SITTING, LYING, STANDING, HOPPING,
   RUNNING, DODGING, JUMPING, FALLING, FLYING }

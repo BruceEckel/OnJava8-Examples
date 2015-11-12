@@ -1,7 +1,7 @@
 // containersindepth/SimpleHashMap.java
 // A demonstration hashed Map.
 import java.util.*;
-import com.mindviewinc.util.*;
+import onjava.*;
 
 public class SimpleHashMap<K, V> extends AbstractMap<K, V> {
   // Choose a prime number for the hash table

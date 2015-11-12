@@ -6,7 +6,7 @@ public class ConfigureLogging {
   static Logger
   lgr = Logger.getLogger("com"),
   lgr2 = Logger.getLogger("com.mindviewinc"),
-  util= Logger.getLogger("com.mindviewinc.util"),
+  util= Logger.getLogger("onjava"),
   test= Logger.getLogger("com.mindviewinc.test"),
   rand = Logger.getLogger("random");
   public ConfigureLogging() {
@@ -42,7 +42,7 @@ public class ConfigureLogging {
 /* Output:
 Logger Name : net Level: SEVERE
 Logger Name : com.mindviewinc Level: FINEST
-Logger Name : com.mindviewinc.util Level: INFO
+Logger Name : onjava Level: INFO
 Logger Name : com.mindviewinc.test Level: FINER
 Logger Name : random Level: SEVERE
 ___[ Error Output ]___

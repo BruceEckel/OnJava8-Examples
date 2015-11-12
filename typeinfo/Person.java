@@ -1,6 +1,6 @@
 // typeinfo/Person.java
 // A class with a Null Object.
-import com.mindviewinc.util.*;
+import onjava.*;
 
 class Person {
   public final String first;

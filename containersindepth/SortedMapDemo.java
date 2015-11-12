@@ -1,7 +1,7 @@
 // containersindepth/SortedMapDemo.java
 // What you can do with a TreeMap.
 import java.util.*;
-import com.mindviewinc.util.*;
+import onjava.*;
 
 public class SortedMapDemo {
   public static void main(String[] args) {

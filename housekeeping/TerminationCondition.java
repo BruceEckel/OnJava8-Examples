@@ -1,7 +1,7 @@
 // housekeeping/TerminationCondition.java
 // Using finalize() to detect an object that
 // hasn't been properly cleaned up.
-import com.mindviewinc.util.*;
+import onjava.*;
 
 class Book {
   boolean checkedOut = false;

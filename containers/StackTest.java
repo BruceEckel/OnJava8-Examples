@@ -1,5 +1,5 @@
 // containers/StackTest.java
-import com.mindviewinc.util.*;
+import onjava.*;
 
 public class StackTest {
   public static void main(String[] args) {

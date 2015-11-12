@@ -2,7 +2,7 @@
 package annotations;
 import java.io.*;
 import com.mindviewinc.atunit.*;
-import com.mindviewinc.util.*;
+import onjava.*;
 
 public class AtUnitExample5 {
   private String text;

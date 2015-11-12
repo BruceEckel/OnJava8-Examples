@@ -5,7 +5,7 @@ import java.awt.*;
 import java.awt.event.*;
 import java.lang.reflect.*;
 import java.util.regex.*;
-import static com.mindviewinc.util.SwingConsole.*;
+import static onjava.SwingConsole.*;
 
 public class ShowAddListeners extends JFrame {
   private JTextField name = new JTextField(25);

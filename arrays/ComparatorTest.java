@@ -1,7 +1,7 @@
 // arrays/ComparatorTest.java
 // Implementing a Comparator for a class.
 import java.util.*;
-import com.mindviewinc.util.*;
+import onjava.*;
 
 class CompTypeComparator implements Comparator<CompType> {
   public int compare(CompType o1, CompType o2) {

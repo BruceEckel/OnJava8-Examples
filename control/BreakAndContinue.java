@@ -1,6 +1,6 @@
 // control/BreakAndContinue.java
 // Demonstrates break and continue keywords.
-import static com.mindviewinc.util.Range.*;
+import static onjava.Range.*;
 
 public class BreakAndContinue {
   public static void main(String[] args) {
@@ -10,7 +10,7 @@ public class BreakAndContinue {
       System.out.println(i + " ");
     }
     System.out.println();
-    // Using forEach:
+    // Using for-in:
     for(int i : range(100)) {
       if(i == 74) break; // Out of for loop
       if(i % 9 != 0) continue; // Next iteration

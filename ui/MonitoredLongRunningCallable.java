@@ -3,8 +3,8 @@
 import javax.swing.*;
 import java.awt.*;
 import java.util.concurrent.*;
-import com.mindviewinc.util.*;
-import static com.mindviewinc.util.SwingConsole.*;
+import onjava.*;
+import static onjava.SwingConsole.*;
 
 class MonitoredCallable implements Callable<String> {
   private static int counter = 0;

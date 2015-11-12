@@ -2,7 +2,7 @@
 // Using isInstance()
 import typeinfo.pets.*;
 import java.util.*;
-import com.mindviewinc.util.*;
+import onjava.*;
 
 public class PetCount3 {
   static class PetCounter

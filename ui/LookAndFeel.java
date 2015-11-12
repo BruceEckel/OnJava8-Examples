@@ -4,7 +4,7 @@
 import javax.swing.*;
 import java.awt.*;
 import java.util.*;
-import static com.mindviewinc.util.SwingConsole.*;
+import static onjava.SwingConsole.*;
 
 public class LookAndFeel extends JFrame {
   private String[] choices =

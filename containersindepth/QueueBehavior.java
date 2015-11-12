@@ -3,7 +3,7 @@
 import java.util.concurrent.*;
 import java.util.*;
 import java.util.function.*;
-import com.mindviewinc.util.*;
+import onjava.*;
 
 public class QueueBehavior {
   private static int count = 10;

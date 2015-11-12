@@ -4,7 +4,7 @@
 // {ValidateByHand}
 import java.net.*;
 import java.io.*;
-import com.mindviewinc.util.*;
+import onjava.*;
 
 class SimpleClientThread extends Thread {
   private Socket socket;

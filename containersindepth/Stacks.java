@@ -28,8 +28,8 @@ public class Stacks {
 
     // Using the Stack class from
     // the Containers Chapter:
-    com.mindviewinc.util.Stack<String> stack2 =
-      new com.mindviewinc.util.Stack<>();
+    onjava.Stack<String> stack2 =
+      new onjava.Stack<>();
     for(Month m : Month.values())
       stack2.push(m.toString());
     System.out.println("stack2 = " + stack2);

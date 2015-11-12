@@ -3,7 +3,7 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-import static com.mindviewinc.util.SwingConsole.*;
+import static onjava.SwingConsole.*;
 
 public class Popup extends JFrame {
   private JPopupMenu popup = new JPopupMenu();

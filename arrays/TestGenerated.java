@@ -1,6 +1,6 @@
 // arrays/TestGenerated.java
 import java.util.*;
-import com.mindviewinc.util.*;
+import onjava.*;
 
 public class TestGenerated {
   public static void main(String[] args) {

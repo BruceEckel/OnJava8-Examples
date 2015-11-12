@@ -1,5 +1,5 @@
 // containers/AdapterMethodIdiom.java
-// The "Adapter Method" idiom uses for-each
+// The "Adapter Method" idiom uses for-in
 // with additional kinds of Iterables.
 import java.util.*;
 

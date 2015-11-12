@@ -3,7 +3,7 @@
 import javax.swing.*;
 import java.awt.*;
 import java.util.concurrent.*;
-import static com.mindviewinc.util.SwingConsole.*;
+import static onjava.SwingConsole.*;
 
 class Task implements Runnable {
   private static int counter = 0;

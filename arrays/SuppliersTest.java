@@ -1,6 +1,6 @@
 // arrays/SuppliersTest.java
 import java.util.function.*;
-import com.mindviewinc.util.*;
+import onjava.*;
 
 public class SuppliersTest {
   public static int size = 10;

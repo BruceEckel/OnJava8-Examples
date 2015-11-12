@@ -1,7 +1,7 @@
 // enums/PostOffice.java
 // Modeling a post office.
 import java.util.*;
-import com.mindviewinc.util.*;
+import onjava.*;
 
 class Mail {
   // The NO's lower the probability of random selection:

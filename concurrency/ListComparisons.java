@@ -3,7 +3,7 @@
 // Rough comparison of thread-safe List performance.
 import java.util.concurrent.*;
 import java.util.*;
-import com.mindviewinc.util.*;
+import onjava.*;
 
 abstract class ListTest extends Tester<List<Integer>> {
   ListTest(String testId, int nReaders, int nWriters) {

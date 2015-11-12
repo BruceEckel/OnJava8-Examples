@@ -2,7 +2,7 @@
 // Creating and using Dialog Boxes.
 import javax.swing.*;
 import java.awt.*;
-import static com.mindviewinc.util.SwingConsole.*;
+import static onjava.SwingConsole.*;
 
 class MyDialog extends JDialog {
   public MyDialog(JFrame parent) {

@@ -2,7 +2,7 @@
 // Using Arrays.binarySearch().
 import java.util.*;
 import java.util.function.*;
-import com.mindviewinc.util.*;
+import onjava.*;
 
 public class ArraySearching {
   public static void main(String[] args) {

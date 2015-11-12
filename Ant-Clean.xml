@@ -31,8 +31,7 @@
         <exclude name="**/*.cpp" />
         <exclude name="**/VendingMachineInput.txt" />
         <exclude name="**/Trash.dat" />
-        <exclude name="**/DDTrash.dat" />
-        <exclude name="**/VTrash.dat" />
+        <exclude name="**/Cheese.dat" />
         <exclude name="**/log.prop"/>
         <exclude name="**/runall.ps1" />
       </fileset>

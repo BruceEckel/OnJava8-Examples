@@ -3,8 +3,8 @@
 import javax.swing.*;
 import java.awt.*;
 import java.util.function.*;
-import com.mindviewinc.util.*;
-import static com.mindviewinc.util.SwingConsole.*;
+import onjava.*;
+import static onjava.SwingConsole.*;
 
 public class TextPane extends JFrame {
   private JButton b = new JButton("Add Text");

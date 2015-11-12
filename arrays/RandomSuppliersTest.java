@@ -1,5 +1,5 @@
 // arrays/RandomSuppliersTest.java
-import com.mindviewinc.util.*;
+import onjava.*;
 
 public class RandomSuppliersTest {
   public static void main(String[] args) {

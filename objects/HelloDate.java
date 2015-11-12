@@ -2,14 +2,14 @@
 import java.util.*;
 
 /** The first On Java example program.
- * Displays a string and today's date.
+ * Displays a String and today's date.
  * @author Bruce Eckel
  * @author www.MindviewInc.com
  * @version 5.0
  */
 public class HelloDate {
   /** Entry point to class & application.
-   * @param args array of string arguments
+   * @param args array of String arguments
    * @throws exceptions No exceptions thrown
    */
   public static void main(String[] args) {

@@ -1,7 +1,7 @@
 // containersindepth/MapDataTest.java
 import java.util.*;
 import java.util.function.*;
-import com.mindviewinc.util.*;
+import onjava.*;
 
 class Letters implements Supplier<Pair<Integer,String>>,
   Iterable<Integer> {

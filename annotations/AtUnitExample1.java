@@ -1,7 +1,7 @@
 // annotations/AtUnitExample1.java
 package annotations;
 import com.mindviewinc.atunit.*;
-import com.mindviewinc.util.*;
+import onjava.*;
 
 public class AtUnitExample1 {
   public String methodOne() {

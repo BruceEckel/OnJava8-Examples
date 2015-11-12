@@ -1,5 +1,5 @@
 // generics/PrimitiveGenericTest.java
-import com.mindviewinc.util.*;
+import onjava.*;
 import java.util.function.*;
 
 // Fill an array using a generator:

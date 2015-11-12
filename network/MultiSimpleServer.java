@@ -4,7 +4,7 @@
 // {ValidateByHand}
 import java.io.*;
 import java.net.*;
-import com.mindviewinc.util.*;
+import onjava.*;
 
 class ServeOneSimple extends Thread {
   private Socket socket;

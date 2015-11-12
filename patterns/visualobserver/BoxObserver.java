@@ -7,7 +7,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.*;
-import com.mindviewinc.util.MouseClick;
+import onjava.MouseClick;
 
 // You must inherit a new type of Observable:
 class BoxObservable extends Observable {

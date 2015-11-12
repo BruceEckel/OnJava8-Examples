@@ -9,9 +9,9 @@
   <target name="run" description="Compile and run" depends="build">
     <jrun cls="BreakAndContinue" />
     <jrun cls="CommaOperator" />
-    <jrun cls="ForEachFloat" />
-    <jrun cls="ForEachInt" />
-    <jrun cls="ForEachString" />
+    <jrun cls="ForInFloat" />
+    <jrun cls="ForInInt" />
+    <jrun cls="ForInString" />
     <jrun cls="IfElse" />
     <jrun cls="IfElse2" />
     <jrun cls="LabeledFor" />

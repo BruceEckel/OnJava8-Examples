@@ -31,7 +31,7 @@ public class Functional {
   // object can act as a collecting parameter, so it is
   // returned at the end.
   public static <T> Collector<T>
-  forEach(Iterable<T> seq, Collector<T> func) {
+  forIn(Iterable<T> seq, Collector<T> func) {
     for(T t : seq)
       func.function(t);
     return func;
@@ -132,10 +132,10 @@ public class Functional {
 
     System.out.println(filter(li, new GreaterThan<>(4)));
 
-    System.out.println(forEach(li,
+    System.out.println(forIn(li,
       new MultiplyingIntegerCollector()).result());
 
-    System.out.println(forEach(filter(li, new GreaterThan<>(4)),
+    System.out.println(forIn(filter(li, new GreaterThan<>(4)),
       new MultiplyingIntegerCollector()).result());
 
     MathContext mc = new MathContext(7);

@@ -1,7 +1,7 @@
 // generics/WatercolorSets.java
 import generics.watercolors.*;
 import java.util.*;
-import static com.mindviewinc.util.Sets.*;
+import static onjava.Sets.*;
 import static generics.watercolors.Watercolors.*;
 
 public class WatercolorSets {

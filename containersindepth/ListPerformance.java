@@ -2,7 +2,7 @@
 // Demonstrates performance differences in Lists.
 // {Args: 100 500} Small to keep build testing short
 import java.util.*;
-import com.mindviewinc.util.*;
+import onjava.*;
 
 public class ListPerformance {
   static Random rand = new Random();

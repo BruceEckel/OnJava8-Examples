@@ -1,7 +1,7 @@
 // arrays/StringSorting.java
 // Sorting an array of Strings.
 import java.util.*;
-import com.mindviewinc.util.*;
+import onjava.*;
 
 public class StringSorting {
   public static void main(String[] args) {

@@ -2,7 +2,7 @@
 // Creating non-embedded tests.
 package annotations;
 import com.mindviewinc.atunit.*;
-import com.mindviewinc.util.*;
+import onjava.*;
 
 public class AtUnitExternalTest extends AtUnitExample1 {
   @Test boolean _methodOne() {

@@ -1,21 +1,21 @@
 // generics/DynamicProxyMixin.java
 import java.lang.reflect.*;
 import java.util.*;
-import com.mindviewinc.util.*;
-import static com.mindviewinc.util.Tuple.*;
+import onjava.*;
+import static onjava.Tuple.*;
 
 class MixinProxy implements InvocationHandler {
   Map<String,Object> delegatesByMethod;
   @SuppressWarnings("unchecked")
-  public MixinProxy(TwoTuple<Object,Class<?>>... pairs) {
+  public MixinProxy(Tuple2<Object,Class<?>>... pairs) {
     delegatesByMethod = new HashMap<>();
-    for(TwoTuple<Object,Class<?>> pair : pairs) {
-      for(Method method : pair.second.getMethods()) {
+    for(Tuple2<Object,Class<?>> pair : pairs) {
+      for(Method method : pair._2.getMethods()) {
         String methodName = method.getName();
         // The first interface in the map
         // implements the method.
         if(!delegatesByMethod.containsKey(methodName))
-          delegatesByMethod.put(methodName, pair.first);
+          delegatesByMethod.put(methodName, pair._1);
       }
     }
   }
@@ -27,13 +27,13 @@ class MixinProxy implements InvocationHandler {
     return method.invoke(delegate, args);
   }
   @SuppressWarnings("unchecked")
-  public static Object newInstance(TwoTuple... pairs) {
+  public static Object newInstance(Tuple2... pairs) {
     Class[] interfaces = new Class[pairs.length];
     for(int i = 0; i < pairs.length; i++) {
-      interfaces[i] = (Class)pairs[i].second;
+      interfaces[i] = (Class)pairs[i]._2;
     }
     ClassLoader cl =
-      pairs[0].first.getClass().getClassLoader();
+      pairs[0]._1.getClass().getClassLoader();
     return Proxy.newProxyInstance(
       cl, interfaces, new MixinProxy(pairs));
   }

@@ -4,7 +4,7 @@ import swt.util.*;
 import org.eclipse.swt.*;
 import org.eclipse.swt.widgets.*;
 import java.util.*;
-import com.mindviewinc.util.*;
+import onjava.*;
 
 public class Menus implements SWTApplication {
   private static Shell shell;

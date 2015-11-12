@@ -1,6 +1,6 @@
 // standardio/OSExecuteDemo.java
 // Demonstrates standard I/O redirection.
-import com.mindviewinc.util.*;
+import onjava.*;
 
 public class OSExecuteDemo {
   public static void main(String[] args) {

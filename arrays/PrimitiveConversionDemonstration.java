@@ -1,6 +1,6 @@
 // arrays/PrimitiveConversionDemonstration.java
 import java.util.*;
-import com.mindviewinc.util.*;
+import onjava.*;
 
 public class PrimitiveConversionDemonstration {
   public static void main(String[] args) {

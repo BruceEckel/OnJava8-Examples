@@ -2,7 +2,7 @@
 // Using JCheckBoxes.
 import javax.swing.*;
 import java.awt.*;
-import static com.mindviewinc.util.SwingConsole.*;
+import static onjava.SwingConsole.*;
 
 public class CheckBoxes extends JFrame {
   private JTextArea t = new JTextArea(6, 15);

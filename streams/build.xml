@@ -1,0 +1,56 @@
+<?xml version="1.0" ?>
+
+<project default="run">
+  <property name="chapter" value="streams"/>
+  <property name="excludedfiles" value=""/>
+  <import file="../Ant-Common.xml"/>
+  <import file="../Ant-Clean.xml"/>
+
+  <target name="run" description="Compile and run" depends="build">
+    <jrun cls="AnImplementation" />
+    <jrun cls="ArrayStreams" />
+    <jrun cls="Bubbles" />
+    <jrun cls="CollectionToStream" />
+    <jrun cls="CreatingOptionals" />
+    <jrun cls="Duplicator" />
+    <jrun cls="Fibonacci" />
+    <jrun cls="FileToWordsBuilder" />
+    <jrun cls="FileToWordsRegexp" />
+    <jrun cls="FileToWordsTest" />
+    <jrun cls="FlatMap" />
+    <jrun cls="ForEach" />
+    <jrun cls="FunctionMap" />
+    <jrun cls="FunctionMap2" />
+    <jrun cls="FunctionMap3" />
+    <jrun cls="Generator" />
+    <jrun cls="ImperativeRandoms" />
+    <jrun cls="Implementation2" />
+    <jrun cls="Jim" />
+    <jrun cls="LastElement" />
+    <jrun cls="Looping" />
+    <jrun cls="Machine" />
+    <jrun cls="Machine2" />
+    <jrun cls="MapCollector" />
+    <jrun cls="MultipleInheritance" />
+    <jrun cls="NumericStreamInfo" />
+    <jrun cls="OptionalBasics" />
+    <jrun cls="OptionalFilter" />
+    <jrun cls="OptionalFlatMap" />
+    <jrun cls="OptionalMap" />
+    <jrun cls="Optionals" />
+    <jrun cls="OptionalsFromEmptyStreams" />
+    <jrun cls="Peeking" />
+    <jrun cls="Prime" />
+    <jrun cls="RandomGenerators" />
+    <jrun cls="Randoms" />
+    <jrun cls="RandomWords" />
+    <jrun cls="Ranges" />
+    <jrun cls="SelectElement" />
+    <jrun cls="SortedComparator" />
+    <jrun cls="StreamOf" />
+    <jrun cls="StreamOfOptionals" />
+    <jrun cls="StreamOfRandoms" />
+    <jrun cls="StreamOfStreams" />
+  </target>
+
+</project>

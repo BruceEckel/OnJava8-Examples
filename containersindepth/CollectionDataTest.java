@@ -1,7 +1,7 @@
 // containersindepth/CollectionDataTest.java
 import java.util.*;
 import java.util.function.*;
-import com.mindviewinc.util.*;
+import onjava.*;
 
 class Government implements Supplier<String> {
   String[] foundation = ("strange women lying in ponds " +

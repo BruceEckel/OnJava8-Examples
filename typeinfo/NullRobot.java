@@ -2,7 +2,7 @@
 // Using a dynamic proxy to create a Null Object.
 import java.lang.reflect.*;
 import java.util.*;
-import com.mindviewinc.util.*;
+import onjava.*;
 
 class NullRobotProxyHandler implements InvocationHandler {
   private String nullName;

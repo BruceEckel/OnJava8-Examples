@@ -27,6 +27,6 @@ java.util.logging.ConsoleHandler.formatter = java.util.logging.SimpleFormatter
 # Set Logger Levels #
 net.level=SEVERE
 com.mindviewinc.level = FINEST
-com.mindviewinc.util.level = INFO
+onjava.level = INFO
 com.mindviewinc.test.level = FINER
 random.level= SEVERE

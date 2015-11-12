@@ -2,7 +2,7 @@
 package annotations;
 import java.util.*;
 import com.mindviewinc.atunit.*;
-import com.mindviewinc.util.*;
+import onjava.*;
 
 public class AtUnitExample4 {
   static String theory = "All brontosauruses " +

@@ -2,7 +2,7 @@
 // A very simple version of the "grep" program.
 // {Args: JGrep.java 'void|int|String'}
 import java.util.regex.*;
-import com.mindviewinc.util.*;
+import onjava.*;
 
 public class JGrep {
   public static void main(String[] args) throws Exception {

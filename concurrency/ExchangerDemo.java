@@ -2,7 +2,7 @@
 import java.util.concurrent.*;
 import java.util.*;
 import java.util.function.*;
-import com.mindviewinc.util.*;
+import onjava.*;
 
 class ExchangerProducer<T> implements Runnable {
   private Supplier<T> generator;

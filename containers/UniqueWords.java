@@ -1,6 +1,6 @@
 // containers/UniqueWords.java
 import java.util.*;
-import com.mindviewinc.util.*;
+import onjava.*;
 
 public class UniqueWords {
   public static void main(String[] args) {

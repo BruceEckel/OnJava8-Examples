@@ -2,7 +2,7 @@
 // Applying @Unit to generics.
 package annotations;
 import com.mindviewinc.atunit.*;
-import com.mindviewinc.util.*;
+import onjava.*;
 
 public class StackLStringTest extends StackL<String> {
   @Test void _push() {

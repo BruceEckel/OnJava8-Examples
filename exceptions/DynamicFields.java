@@ -89,7 +89,8 @@ public class DynamicFields {
       df.setField("d", "A new value for d");
       df.setField("number3", 11);
       System.out.println("df: " + df);
-      System.out.println("df.getField(\"d\") : " + df.getField("d"));
+      System.out.println("df.getField(\"d\") : "
+        + df.getField("d"));
       Object field = df.setField("d", null); // Exception
     } catch(NoSuchFieldException |
             DynamicFieldsException e) {

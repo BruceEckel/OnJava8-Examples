@@ -1,7 +1,7 @@
 // concurrency/DaemonFromFactory.java
 // Using a Thread Factory to create daemons.
 import java.util.concurrent.*;
-import com.mindviewinc.util.*;
+import onjava.*;
 
 public class DaemonFromFactory implements Runnable {
   @Override

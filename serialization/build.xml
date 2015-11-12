@@ -7,12 +7,14 @@
   <import file="../Ant-Clean.xml"/>
 
   <target name="run" description="Compile and run" depends="build">
+    <jrun cls="APerson" />
     <jrun cls="AStoreCADState" />
     <jrun cls="Blip3" />
     <jrun cls="Blips" />
     <jrun cls="FreezeAlien" />
     <jrun cls="Logon" />
     <jrun cls="MyWorld" />
+    <jrun cls="People" />
     <jrun cls="RecoverCADState" />
     <jrun cls="SerialCtl" />
     <jrun cls="Worm" />

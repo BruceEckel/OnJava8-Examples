@@ -3,7 +3,7 @@
 // Rough comparison of thread-safe Map performance.
 import java.util.concurrent.*;
 import java.util.*;
-import com.mindviewinc.util.*;
+import onjava.*;
 
 abstract class MapTest
 extends Tester<Map<Integer,Integer>> {

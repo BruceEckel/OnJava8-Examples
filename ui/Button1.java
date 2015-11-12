@@ -2,7 +2,7 @@
 // Putting buttons on a Swing application.
 import javax.swing.*;
 import java.awt.*;
-import static com.mindviewinc.util.SwingConsole.*;
+import static onjava.SwingConsole.*;
 
 public class Button1 extends JFrame {
   private JButton

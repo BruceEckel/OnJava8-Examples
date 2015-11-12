@@ -6,7 +6,7 @@ public class LoggingLevels {
   private static Logger
   lgr = Logger.getLogger("com"),
   lgr2 = Logger.getLogger("com.mindviewinc"),
-  util= Logger.getLogger("com.mindviewinc.util"),
+  util= Logger.getLogger("onjava"),
   test= Logger.getLogger("com.mindviewinc.test"),
   rand = Logger.getLogger("random");
   private static void logMessages() {

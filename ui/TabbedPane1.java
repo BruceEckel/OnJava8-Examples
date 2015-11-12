@@ -2,7 +2,7 @@
 // Demonstrates the Tabbed Pane.
 import javax.swing.*;
 import java.awt.*;
-import static com.mindviewinc.util.SwingConsole.*;
+import static onjava.SwingConsole.*;
 
 public class TabbedPane1 extends JFrame {
   private String[] flavors = {

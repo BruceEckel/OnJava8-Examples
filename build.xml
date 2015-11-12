@@ -30,28 +30,35 @@
       polymorphism/build.xml
       interfaces/build.xml
       innerclasses/build.xml
+      functions/build.xml
       containers/build.xml
+      streams/build.xml
       exceptions/build.xml
       strings/build.xml
       typeinfo/build.xml
       generics/build.xml
       arrays/build.xml
       containersindepth/build.xml
-      io/build.xml
-      xml/build.xml
+      files/build.xml
       enums/build.xml
       annotations/build.xml
       concurrency/build.xml
       ui/build.xml
       swt/build.xml
       patterns/build.xml
-      references/build.xml
-      assertions/build.xml
       unittesting/build.xml
-      debugging/build.xml
-      logging/build.xml
+      assertions/build.xml
+      references/build.xml
+      iostreams/build.xml
+      standardio/build.xml
+      newio/build.xml
+      compression/build.xml
+      serialization/build.xml
+      preferences/build.xml
       network/build.xml
       remote/build.xml
+      logging/build.xml
+      debugging/build.xml
       staticchecking/build.xml
       "/>
 

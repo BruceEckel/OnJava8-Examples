@@ -1,5 +1,5 @@
 // generics/BasicSupplierDemo.java
-import com.mindviewinc.util.*;
+import onjava.*;
 import java.util.function.*;
 
 public class BasicSupplierDemo {

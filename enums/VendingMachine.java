@@ -2,7 +2,7 @@
 // {Args: VendingMachineInput.txt}
 import java.util.*;
 import java.util.function.*;
-import com.mindviewinc.util.*;
+import onjava.*;
 
 enum Category {
   MONEY(Input.NICKEL, Input.DIME,

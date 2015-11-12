@@ -1,7 +1,7 @@
 // containers/UniqueWordsAlphabetic.java
 // Producing an alphabetic listing.
 import java.util.*;
-import com.mindviewinc.util.*;
+import onjava.*;
 
 public class UniqueWordsAlphabetic {
   public static void main(String[] args) {

@@ -2,7 +2,7 @@
 // Demonstrates GridLayout.
 import javax.swing.*;
 import java.awt.*;
-import static com.mindviewinc.util.SwingConsole.*;
+import static onjava.SwingConsole.*;
 
 public class GridLayout1 extends JFrame {
   public GridLayout1() {

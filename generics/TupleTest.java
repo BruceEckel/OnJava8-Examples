@@ -1,33 +1,33 @@
 // generics/TupleTest.java
-import com.mindviewinc.util.*;
+import onjava.*;
 
 class Amphibian {}
 class Vehicle {}
 
 public class TupleTest {
-  static TwoTuple<String, Integer> f() {
+  static Tuple2<String, Integer> f() {
     // Autoboxing converts the int to Integer:
-    return new TwoTuple<>("hi", 47);
+    return new Tuple2<>("hi", 47);
   }
-  static ThreeTuple<Amphibian, String, Integer> g() {
-    return new ThreeTuple<>(new Amphibian(), "hi", 47);
+  static Tuple3<Amphibian, String, Integer> g() {
+    return new Tuple3<>(new Amphibian(), "hi", 47);
   }
   static
-  FourTuple<Vehicle, Amphibian, String, Integer> h() {
+  Tuple4<Vehicle, Amphibian, String, Integer> h() {
     return
-      new FourTuple<>(
+      new Tuple4<>(
         new Vehicle(), new Amphibian(), "hi", 47);
   }
   static
-  FiveTuple<Vehicle, Amphibian, String, Integer, Double> k(){
+  Tuple5<Vehicle, Amphibian, String, Integer, Double> k(){
     return new
-      FiveTuple<>(
+      Tuple5<>(
         new Vehicle(), new Amphibian(), "hi", 47, 11.1);
   }
   public static void main(String[] args) {
-    TwoTuple<String, Integer> ttsi = f();
+    Tuple2<String, Integer> ttsi = f();
     System.out.println(ttsi);
-    // ttsi.first = "there"; // Compile error: final
+    // ttsi._1 = "there"; // Compile error: final
     System.out.println(g());
     System.out.println(h());
     System.out.println(k());

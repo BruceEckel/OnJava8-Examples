@@ -5,7 +5,7 @@ import javax.swing.*;
 import javax.swing.border.*;
 import java.awt.*;
 import java.lang.reflect.*;
-import static com.mindviewinc.util.SwingConsole.*;
+import static onjava.SwingConsole.*;
 
 public class ButtonGroups extends JFrame {
   private static String[] ids = {

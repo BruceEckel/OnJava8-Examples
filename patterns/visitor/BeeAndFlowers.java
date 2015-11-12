@@ -31,7 +31,7 @@ class Chrysanthemum implements Flower {
   public void accept(Visitor v) { v.visit(this);}
 }
 
-// Add the ability to produce a string:
+// Add the ability to produce a String:
 class StringVal implements Visitor {
   String s;
   @Override

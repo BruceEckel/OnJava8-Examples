@@ -1,5 +1,5 @@
 // containersindepth/DequeTest.java
-import com.mindviewinc.util.*;
+import onjava.*;
 
 public class DequeTest {
   static void fillTest(Deque<Integer> deque) {

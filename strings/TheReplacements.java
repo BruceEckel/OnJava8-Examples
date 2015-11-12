@@ -1,6 +1,6 @@
 // strings/TheReplacements.java
 import java.util.regex.*;
-import com.mindviewinc.util.*;
+import onjava.*;
 
 /*! Here's a block of text to use as input to
     the regular expression matcher. Note that we

@@ -1,7 +1,7 @@
 // containersindepth/Lists.java
 // Things you can do with Lists.
 import java.util.*;
-import com.mindviewinc.util.*;
+import onjava.*;
 
 public class Lists {
   private static boolean b;

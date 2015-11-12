@@ -2,7 +2,7 @@
 // Things you can do with Maps.
 import java.util.concurrent.*;
 import java.util.*;
-import com.mindviewinc.util.*;
+import onjava.*;
 
 public class Maps {
   public static void printKeys(Map<Integer,String> map) {

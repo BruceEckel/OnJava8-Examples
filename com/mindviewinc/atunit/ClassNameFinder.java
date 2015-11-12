@@ -2,7 +2,7 @@
 package com.mindviewinc.atunit;
 import java.io.*;
 import java.util.*;
-import com.mindviewinc.util.*;
+import onjava.*;
 
 public class ClassNameFinder {
   public static String thisClass(byte[] classBytes) {

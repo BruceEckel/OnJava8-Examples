@@ -2,7 +2,7 @@
 // Implementing Comparable in a class.
 import java.util.*;
 import java.util.function.*;
-import com.mindviewinc.util.*;
+import onjava.*;
 
 public class CompType implements Comparable<CompType> {
   int i;

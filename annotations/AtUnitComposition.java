@@ -2,7 +2,7 @@
 // Creating non-embedded tests.
 package annotations;
 import com.mindviewinc.atunit.*;
-import com.mindviewinc.util.*;
+import onjava.*;
 
 public class AtUnitComposition {
   AtUnitExample1 testObject = new AtUnitExample1();

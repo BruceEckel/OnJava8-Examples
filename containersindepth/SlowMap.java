@@ -1,7 +1,7 @@
 // containersindepth/SlowMap.java
 // A Map implemented with ArrayLists.
 import java.util.*;
-import com.mindviewinc.util.*;
+import onjava.*;
 
 public class SlowMap<K, V> extends AbstractMap<K, V> {
   private List<K> keys = new ArrayList<>();

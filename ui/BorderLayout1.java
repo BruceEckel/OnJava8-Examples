@@ -2,7 +2,7 @@
 // Demonstrates BorderLayout.
 import javax.swing.*;
 import java.awt.*;
-import static com.mindviewinc.util.SwingConsole.*;
+import static onjava.SwingConsole.*;
 
 public class BorderLayout1 extends JFrame {
   public BorderLayout1() {

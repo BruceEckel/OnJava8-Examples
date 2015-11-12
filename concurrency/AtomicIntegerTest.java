@@ -2,7 +2,7 @@
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.*;
 import java.util.*;
-import com.mindviewinc.util.*;
+import onjava.*;
 
 public class AtomicIntegerTest implements Runnable {
   private AtomicInteger i = new AtomicInteger(0);

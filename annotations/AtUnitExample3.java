@@ -1,7 +1,7 @@
 // annotations/AtUnitExample3.java
 package annotations;
 import com.mindviewinc.atunit.*;
-import com.mindviewinc.util.*;
+import onjava.*;
 
 public class AtUnitExample3 {
   private int n;

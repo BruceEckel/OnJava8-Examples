@@ -1,7 +1,7 @@
 // enums/RoShamBo.java
 // Common tools for RoShamBo examples.
 package enums;
-import com.mindviewinc.util.*;
+import onjava.*;
 
 public class RoShamBo {
   public static <T extends Competitor<T>>

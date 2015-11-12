@@ -4,7 +4,7 @@ package com.mindviewinc.atunit;
 import java.lang.reflect.*;
 import java.io.*;
 import java.util.*;
-import com.mindviewinc.util.*;
+import onjava.*;
 
 public class AtUnit implements ProcessFiles.Strategy {
   static Class<?> testClass;

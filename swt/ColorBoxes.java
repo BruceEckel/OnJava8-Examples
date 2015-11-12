@@ -8,7 +8,7 @@ import org.eclipse.swt.graphics.*;
 import org.eclipse.swt.layout.*;
 import java.util.concurrent.*;
 import java.util.*;
-import com.mindviewinc.util.*;
+import onjava.*;
 
 class CBox extends Canvas implements Runnable {
   class CBoxPaintListener implements PaintListener {

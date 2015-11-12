@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+
+<project default="run">
+  <property name="chapter" value="onjava"/>
+  <property name="excludedfiles" value=""/>
+  <import file="../Ant-Common.xml"/>
+  <import file="../Ant-Clean.xml"/>
+
+  <target name="run" description="Compile and run" depends="build">
+    <jrun cls="onjava.ContainerMethodDifferences" dirpath="../onjava" />
+    <jrun cls="onjava.CountingIntegerList" dirpath="../onjava" />
+    <jrun cls="onjava.CountingMapData" dirpath="../onjava" />
+    <jrun cls="onjava.Countries" dirpath="../onjava" />
+    <jrun cls="onjava.Directory" dirpath="../onjava" />
+    <jrun cls="onjava.Hex" dirpath="../onjava" />
+    <jrun cls="onjava.TextFile" dirpath="../onjava" />
+  </target>
+
+</project>

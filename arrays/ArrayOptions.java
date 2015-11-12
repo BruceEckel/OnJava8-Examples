@@ -7,6 +7,7 @@ public class ArrayOptions {
     // Arrays of objects:
     BerylliumSphere[] a; // Local uninitialized variable
     BerylliumSphere[] b = new BerylliumSphere[5];
+
     // The references inside the array are
     // automatically initialized to null:
     System.out.println("b: " + Arrays.toString(b));
@@ -14,14 +15,17 @@ public class ArrayOptions {
     for(int i = 0; i < c.length; i++)
       if(c[i] == null) // Can test for null reference
         c[i] = new BerylliumSphere();
+
     // Aggregate initialization:
     BerylliumSphere[] d = { new BerylliumSphere(),
       new BerylliumSphere(), new BerylliumSphere()
     };
+
     // Dynamic aggregate initialization:
     a = new BerylliumSphere[]{
       new BerylliumSphere(), new BerylliumSphere(),
     };
+
     // (Trailing comma is optional in both cases)
     System.out.println("a.length = " + a.length);
     System.out.println("b.length = " + b.length);
@@ -33,6 +37,7 @@ public class ArrayOptions {
     // Arrays of primitives:
     int[] e; // Null reference
     int[] f = new int[5];
+
     // The primitives inside the array are
     // automatically initialized to zero:
     System.out.println("f: " + Arrays.toString(f));
@@ -40,6 +45,7 @@ public class ArrayOptions {
     for(int i = 0; i < g.length; i++)
       g[i] = i*i;
     int[] h = { 11, 47, 93 };
+
     // Compile error: variable e not initialized:
     //!print("e.length = " + e.length);
     System.out.println("f.length = " + f.length);
