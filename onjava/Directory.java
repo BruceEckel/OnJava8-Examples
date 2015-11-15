@@ -1,5 +1,7 @@
 // onjava/Directory.java
 // ©2016 MindView LLC: see Copyright.txt
+// We make no guarantees that this code is fit for any purpose.
+// Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // Produce a sequence of File objects that match a
 // regular expression in either a local directory,
 // or by walking a directory tree.

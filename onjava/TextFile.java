@@ -1,5 +1,7 @@
 // onjava/TextFile.java
 // ©2016 MindView LLC: see Copyright.txt
+// We make no guarantees that this code is fit for any purpose.
+// Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // Static functions for reading and writing text files as
 // a single String, and treating a file as an ArrayList.
 package onjava;

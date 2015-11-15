@@ -1,5 +1,7 @@
 // concurrency/ExplicitCriticalSection.java
 // ©2016 MindView LLC: see Copyright.txt
+// We make no guarantees that this code is fit for any purpose.
+// Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // {ThrowsException} on a multiprocessor machine
 // Using explicit Lock objects to create
 // critical sections.

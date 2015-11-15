@@ -1,5 +1,7 @@
 // onjava/Stack.java
 // ©2016 MindView LLC: see Copyright.txt
+// We make no guarantees that this code is fit for any purpose.
+// Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // Making a stack from a LinkedList.
 package onjava;
 import java.util.LinkedList;

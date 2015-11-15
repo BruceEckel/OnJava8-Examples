@@ -1,5 +1,7 @@
 // concurrency/MapComparisons.java
 // ©2016 MindView LLC: see Copyright.txt
+// We make no guarantees that this code is fit for any purpose.
+// Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // {Args: 1 10 10} (Fast verification check during build)
 // Rough comparison of thread-safe Map performance.
 import java.util.concurrent.*;
