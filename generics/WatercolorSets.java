@@ -1,4 +1,5 @@
 // generics/WatercolorSets.java
+// ©2016 MindView LLC: see Copyright.txt
 import generics.watercolors.*;
 import java.util.*;
 import static onjava.Sets.*;

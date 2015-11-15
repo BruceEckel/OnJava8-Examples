@@ -1,4 +1,5 @@
 // ui/HelloLabel.java
+// ©2016 MindView LLC: see Copyright.txt
 import javax.swing.*;
 import java.util.concurrent.*;
 

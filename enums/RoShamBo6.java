@@ -1,4 +1,5 @@
 // enums/RoShamBo6.java
+// ©2016 MindView LLC: see Copyright.txt
 // Enums using "tables" instead of multiple dispatch.
 package enums;
 import static enums.Outcome.*;

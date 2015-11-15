@@ -1,4 +1,5 @@
 // operators/Assignment.java
+// ©2016 MindView LLC: see Copyright.txt
 // Assignment with objects is a bit tricky.
 
 class Tank {

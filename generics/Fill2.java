@@ -1,4 +1,5 @@
 // generics/Fill2.java
+// ©2016 MindView LLC: see Copyright.txt
 // Using adapters to simulate latent typing.
 // {main: Fill2Test}
 import generics.coffee.*;

@@ -1,4 +1,5 @@
 // patterns/trashvisitor/Visitor.java
+// ©2016 MindView LLC: see Copyright.txt
 // The base interface for visitors.
 package patterns.trashvisitor;
 

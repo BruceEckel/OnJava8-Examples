@@ -1,4 +1,5 @@
 // enums/EnumSets.java
+// ©2016 MindView LLC: see Copyright.txt
 // Operations on EnumSets
 package enums;
 import java.util.*;

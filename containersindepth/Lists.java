@@ -1,4 +1,5 @@
 // containersindepth/Lists.java
+// ©2016 MindView LLC: see Copyright.txt
 // Things you can do with Lists.
 import java.util.*;
 import onjava.*;

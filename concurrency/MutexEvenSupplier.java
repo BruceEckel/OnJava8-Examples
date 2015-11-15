@@ -1,4 +1,5 @@
 // concurrency/MutexEvenSupplier.java
+// ©2016 MindView LLC: see Copyright.txt
 // Preventing thread collisions with mutexes.
 // {TimeOutDuringTesting}
 import java.util.concurrent.locks.*;

@@ -1,4 +1,5 @@
 // reuse/Chess.java
+// ©2016 MindView LLC: see Copyright.txt
 // Inheritance, constructors and arguments.
 
 class Game {

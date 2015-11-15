@@ -1,4 +1,5 @@
 // network/ChatterServer.java
+// ©2016 MindView LLC: see Copyright.txt
 // {ValidateByHand}
 // A server that echoes datagrams
 import java.net.*;

@@ -1,4 +1,5 @@
 // containersindepth/SpringDetector.java
+// ©2016 MindView LLC: see Copyright.txt
 // What will the weather be?
 import java.lang.reflect.*;
 import java.util.*;

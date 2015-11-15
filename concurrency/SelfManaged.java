@@ -1,4 +1,5 @@
 // concurrency/SelfManaged.java
+// ©2016 MindView LLC: see Copyright.txt
 // A Runnable containing its own driver Thread.
 
 public class SelfManaged implements Runnable {

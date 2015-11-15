@@ -1,4 +1,5 @@
 // containersindepth/ListSortSearch.java
+// ©2016 MindView LLC: see Copyright.txt
 // Sorting and searching Lists with Collections utilities.
 import java.util.*;
 

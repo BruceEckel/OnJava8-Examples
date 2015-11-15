@@ -1,4 +1,5 @@
 // typeinfo/PetCount3.java
+// ©2016 MindView LLC: see Copyright.txt
 // Using isInstance()
 import typeinfo.pets.*;
 import java.util.*;

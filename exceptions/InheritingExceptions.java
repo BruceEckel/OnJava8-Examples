@@ -1,4 +1,5 @@
 // exceptions/InheritingExceptions.java
+// ©2016 MindView LLC: see Copyright.txt
 // Creating your own exceptions.
 
 class SimpleException extends Exception {}

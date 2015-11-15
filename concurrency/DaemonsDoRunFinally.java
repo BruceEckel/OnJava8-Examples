@@ -1,4 +1,5 @@
 // concurrency/DaemonsDoRunFinally.java
+// ©2016 MindView LLC: see Copyright.txt
 // Daemon threads now run the finally clause
 import java.util.concurrent.*;
 

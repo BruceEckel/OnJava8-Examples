@@ -1,4 +1,5 @@
 // containersindepth/Tester.java
+// ©2016 MindView LLC: see Copyright.txt
 // Applies Test objects to lists of different containers.
 import java.util.*;
 

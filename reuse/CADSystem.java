@@ -1,4 +1,5 @@
 // reuse/CADSystem.java
+// ©2016 MindView LLC: see Copyright.txt
 // Ensuring proper cleanup.
 package reuse;
 

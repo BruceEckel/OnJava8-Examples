@@ -1,4 +1,5 @@
 // patterns/Facade.java
+// ©2016 MindView LLC: see Copyright.txt
 
 class A { public A(int x) {} }
 class B { public B(long x) {} }

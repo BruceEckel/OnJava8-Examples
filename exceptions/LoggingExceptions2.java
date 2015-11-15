@@ -1,4 +1,5 @@
 // exceptions/LoggingExceptions2.java
+// ©2016 MindView LLC: see Copyright.txt
 // Logging caught exceptions.
 import java.util.logging.*;
 import java.io.*;

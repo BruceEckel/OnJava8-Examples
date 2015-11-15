@@ -1,4 +1,5 @@
 // operators/Overflow.java
+// ©2016 MindView LLC: see Copyright.txt
 // Surprise! Java lets you overflow.
 
 public class Overflow {

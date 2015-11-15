@@ -1,4 +1,5 @@
 // containersindepth/ReadOnly.java
+// ©2016 MindView LLC: see Copyright.txt
 // Using the Collections.unmodifiable methods.
 import java.util.*;
 import onjava.*;

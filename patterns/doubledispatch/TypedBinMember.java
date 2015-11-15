@@ -1,4 +1,5 @@
 // patterns/doubledispatch/TypedBinMember.java
+// ©2016 MindView LLC: see Copyright.txt
 // An interface for adding the double dispatching
 // method to the trash hierarchy without
 // modifying the original hierarchy.

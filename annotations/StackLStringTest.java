@@ -1,4 +1,5 @@
 // annotations/StackLStringTest.java
+// ©2016 MindView LLC: see Copyright.txt
 // Applying @Unit to generics.
 package annotations;
 import com.mindviewinc.atunit.*;

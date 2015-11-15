@@ -1,4 +1,5 @@
 // onjava/ContainerMethodDifferences.java
+// ©2016 MindView LLC: see Copyright.txt
 package onjava;
 import java.lang.reflect.*;
 import java.util.*;

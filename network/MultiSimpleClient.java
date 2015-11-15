@@ -1,4 +1,5 @@
 // network/MultiSimpleClient.java
+// ©2016 MindView LLC: see Copyright.txt
 // Client that tests the MultiSimpleServer
 // by starting up multiple clients.
 // {ValidateByHand}

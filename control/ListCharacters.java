@@ -1,4 +1,5 @@
 // control/ListCharacters.java
+// ©2016 MindView LLC: see Copyright.txt
 // Demonstrates "for" loop by listing
 // all the lowercase ASCII letters.
 

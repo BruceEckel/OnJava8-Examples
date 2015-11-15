@@ -1,4 +1,5 @@
 // patterns/trashvisitor/Aluminum.java
+// ©2016 MindView LLC: see Copyright.txt
 // Aluminum for the visitor pattern.
 package patterns.trashvisitor;
 import patterns.trash.*;

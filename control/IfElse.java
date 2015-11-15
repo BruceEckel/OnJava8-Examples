@@ -1,4 +1,5 @@
 // control/IfElse.java
+// ©2016 MindView LLC: see Copyright.txt
 
 public class IfElse {
   static int result = 0;

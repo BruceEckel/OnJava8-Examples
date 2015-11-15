@@ -1,4 +1,5 @@
 // generics/Functional.java
+// ©2016 MindView LLC: see Copyright.txt
 import java.math.*;
 import java.util.concurrent.atomic.*;
 import java.util.*;

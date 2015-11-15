@@ -1,4 +1,5 @@
 // typeinfo/PetCount4.java
+// ©2016 MindView LLC: see Copyright.txt
 import typeinfo.pets.*;
 import onjava.*;
 

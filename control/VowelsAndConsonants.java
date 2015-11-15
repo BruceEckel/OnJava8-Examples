@@ -1,4 +1,5 @@
 // control/VowelsAndConsonants.java
+// ©2016 MindView LLC: see Copyright.txt
 // Demonstrates the switch statement.
 import java.util.*;
 

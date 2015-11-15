@@ -1,4 +1,5 @@
 // patterns/trash/FillableList.java
+// ©2016 MindView LLC: see Copyright.txt
 // Adapter that makes a List Fillable.
 package patterns.trash;
 import java.util.*;

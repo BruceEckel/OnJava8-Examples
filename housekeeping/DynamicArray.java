@@ -1,4 +1,5 @@
 // housekeeping/DynamicArray.java
+// ©2016 MindView LLC: see Copyright.txt
 // Array initialization.
 
 public class DynamicArray {

@@ -1,4 +1,5 @@
 // interfaces/TestRandVals.java
+// ©2016 MindView LLC: see Copyright.txt
 
 public class TestRandVals {
   public static void main(String[] args) {

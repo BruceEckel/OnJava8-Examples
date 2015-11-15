@@ -1,4 +1,5 @@
 // housekeeping/StaticInitialization.java
+// ©2016 MindView LLC: see Copyright.txt
 // Specifying initial values in a class definition.
 
 class Bowl {

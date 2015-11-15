@@ -1,4 +1,5 @@
 // onjava/ProcessFiles.java
+// ©2016 MindView LLC: see Copyright.txt
 // {ValidateByHand}
 package onjava;
 import java.io.*;

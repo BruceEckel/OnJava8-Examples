@@ -1,4 +1,5 @@
 // patterns/chain/ChainOfResponsibility.java
+// ©2016 MindView LLC: see Copyright.txt
 // Using the Functional interface.
 package patterns.chain;
 import java.util.*;

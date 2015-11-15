@@ -1,4 +1,5 @@
 // onjava/Stack.java
+// ©2016 MindView LLC: see Copyright.txt
 // Making a stack from a LinkedList.
 package onjava;
 import java.util.LinkedList;

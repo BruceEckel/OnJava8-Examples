@@ -1,4 +1,5 @@
 // innerclasses/TestBed.java
+// ©2016 MindView LLC: see Copyright.txt
 // Putting test code in a nested class.
 // {main: TestBed$Tester}
 

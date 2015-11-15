@@ -1,4 +1,5 @@
 // reuse/FinalData.java
+// ©2016 MindView LLC: see Copyright.txt
 // The effect of final on fields.
 import java.util.*;
 

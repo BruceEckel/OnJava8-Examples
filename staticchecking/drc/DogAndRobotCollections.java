@@ -1,4 +1,5 @@
 // staticchecking/drc/DogAndRobotCollections.java
+// ©2016 MindView LLC: see Copyright.txt
 package staticchecking.drc;
 import java.util.*;
 

@@ -1,4 +1,5 @@
 // hiding/ImportedMyClass.java
+// ©2016 MindView LLC: see Copyright.txt
 import hiding.mypackage.*;
 
 public class ImportedMyClass {

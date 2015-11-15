@@ -1,4 +1,5 @@
 // generics/TupleTest.java
+// ©2016 MindView LLC: see Copyright.txt
 import onjava.*;
 
 class Amphibian {}

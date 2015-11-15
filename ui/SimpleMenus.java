@@ -1,4 +1,5 @@
 // ui/SimpleMenus.java
+// ©2016 MindView LLC: see Copyright.txt
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;

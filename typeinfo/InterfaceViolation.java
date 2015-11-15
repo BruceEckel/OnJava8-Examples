@@ -1,4 +1,5 @@
 // typeinfo/InterfaceViolation.java
+// ©2016 MindView LLC: see Copyright.txt
 // Sneaking around an interface.
 import typeinfo.interfacea.*;
 

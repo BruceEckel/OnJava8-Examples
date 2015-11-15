@@ -1,4 +1,5 @@
 // enums/VendingMachine.java
+// ©2016 MindView LLC: see Copyright.txt
 // {Args: VendingMachineInput.txt}
 import java.util.*;
 import java.util.function.*;

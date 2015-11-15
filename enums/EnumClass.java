@@ -1,4 +1,5 @@
 // enums/EnumClass.java
+// ©2016 MindView LLC: see Copyright.txt
 // Capabilities of the Enum class
 
 enum Shrubbery { GROUND, CRAWLING, HANGING }

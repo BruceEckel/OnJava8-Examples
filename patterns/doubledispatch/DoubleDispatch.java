@@ -1,4 +1,5 @@
 // patterns/doubledispatch/DoubleDispatch.java
+// ©2016 MindView LLC: see Copyright.txt
 // Using multiple dispatching to handle more
 // than one unknown type during a method call.
 package patterns.doubledispatch;

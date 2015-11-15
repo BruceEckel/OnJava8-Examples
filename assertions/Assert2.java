@@ -1,4 +1,5 @@
 // assertions/Assert2.java
+// ©2016 MindView LLC: see Copyright.txt
 // Assert with an informative message
 // {JVMArgs: -ea}
 // {ThrowsException}

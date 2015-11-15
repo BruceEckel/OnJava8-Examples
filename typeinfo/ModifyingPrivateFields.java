@@ -1,4 +1,5 @@
 // typeinfo/ModifyingPrivateFields.java
+// ©2016 MindView LLC: see Copyright.txt
 import java.lang.reflect.*;
 
 class WithPrivateFinalField {

@@ -1,4 +1,5 @@
 // strings/TestRegularExpression.java
+// ©2016 MindView LLC: see Copyright.txt
 // Easily try out regular expressions.
 // {Args: abcabcabcdefabc "abc+" "(abc)+" "(abc){2,}" }
 import java.util.regex.*;

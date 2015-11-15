@@ -1,4 +1,5 @@
 // exceptions/AlwaysFinally.java
+// ©2016 MindView LLC: see Copyright.txt
 // Finally is always executed.
 
 class FourException extends Exception {}

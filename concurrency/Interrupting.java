@@ -1,4 +1,5 @@
 // concurrency/Interrupting.java
+// ©2016 MindView LLC: see Copyright.txt
 // Interrupting a blocked thread.
 import java.util.concurrent.*;
 import java.io.*;

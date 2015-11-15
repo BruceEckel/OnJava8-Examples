@@ -1,4 +1,5 @@
 // generics/NonCovariantGenerics.java
+// ©2016 MindView LLC: see Copyright.txt
 // {CompileTimeError} (Won't compile)
 import java.util.*;
 

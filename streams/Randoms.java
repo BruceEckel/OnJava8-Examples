@@ -1,4 +1,5 @@
 // streams/Randoms.java
+// ©2016 MindView LLC: see Copyright.txt
 import java.util.*;
 
 public class Randoms {

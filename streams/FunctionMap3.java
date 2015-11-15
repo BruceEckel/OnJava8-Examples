@@ -1,4 +1,5 @@
 // streams/FunctionMap3.java
+// ©2016 MindView LLC: see Copyright.txt
 // Producing numeric output streams
 import java.util.*;
 import java.util.stream.*;
@@ -7,23 +8,19 @@ class FunctionMap3 {
   public static void main(String[] args) {
     Stream.of("5", "7", "9")
       .mapToInt(Integer::parseInt)
-      .forEach(System.out::println);
+      .forEach(n -> System.out.format("%d ", n));
+    System.out.println();
     Stream.of("17", "19", "23")
       .mapToLong(Long::parseLong)
-      .forEach(System.out::println);
+      .forEach(n -> System.out.format("%d ", n));
+    System.out.println();
     Stream.of("17", "1.9", ".23")
       .mapToDouble(Double::parseDouble)
-      .forEach(System.out::println);
+      .forEach(n -> System.out.format("%f ", n));
   }
 }
 /* Output:
-5
-7
-9
-17
-19
-23
-17.0
-1.9
-0.23
+5 7 9
+17 19 23
+17.000000 1.900000 0.230000
 */

@@ -1,4 +1,5 @@
-// functions/RunnableMethodReference.java
+// functional/RunnableMethodReference.java
+// ©2016 MindView LLC: see Copyright.txt
 // Demonstrates method references
 
 class External {

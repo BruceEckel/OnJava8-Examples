@@ -1,4 +1,5 @@
 // newio/MappedIO.java
+// ©2016 MindView LLC: see Copyright.txt
 import java.nio.*;
 import java.nio.channels.*;
 import java.io.*;

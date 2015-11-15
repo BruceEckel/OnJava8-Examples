@@ -1,4 +1,5 @@
 // patterns/ShapeFactory2.java
+// ©2016 MindView LLC: see Copyright.txt
 // Polymorphic factory methods.
 import java.util.*;
 import java.util.function.*;

@@ -1,4 +1,5 @@
 // typeinfo/SelectingMethods.java
+// ©2016 MindView LLC: see Copyright.txt
 // Looking for particular methods in a dynamic proxy.
 import java.lang.reflect.*;
 

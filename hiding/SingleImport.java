@@ -1,4 +1,5 @@
 // hiding/SingleImport.java
+// ©2016 MindView LLC: see Copyright.txt
 import java.util.ArrayList;
 
 public class SingleImport {

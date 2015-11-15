@@ -1,4 +1,5 @@
 // innerclasses/Parcel1.java
+// ©2016 MindView LLC: see Copyright.txt
 // Creating inner classes.
 
 public class Parcel1 {

@@ -1,4 +1,5 @@
 // concurrency/Joining.java
+// ©2016 MindView LLC: see Copyright.txt
 // Understanding join().
 
 class Sleeper extends Thread {

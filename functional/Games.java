@@ -1,4 +1,5 @@
-// functions/Games.java
+// functional/Games.java
+// ©2016 MindView LLC: see Copyright.txt
 // Using anonymous inner classes with the Game framework.
 
 interface Game { boolean move(); }

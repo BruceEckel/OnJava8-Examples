@@ -1,4 +1,5 @@
 // innerclasses/BigEgg2.java
+// ©2016 MindView LLC: see Copyright.txt
 // Proper inheritance of an inner class.
 
 class Egg2 {

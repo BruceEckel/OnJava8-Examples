@@ -1,4 +1,5 @@
 // containersindepth/Utilities.java
+// ©2016 MindView LLC: see Copyright.txt
 // Simple demonstrations of the Collections utilities.
 import java.util.*;
 

@@ -1,4 +1,5 @@
 // generics/OrdinaryArguments.java
+// ©2016 MindView LLC: see Copyright.txt
 
 class OrdinarySetter {
   void set(Base base) {

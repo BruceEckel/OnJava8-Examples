@@ -1,4 +1,5 @@
 // exceptions/ExtraFeatures.java
+// ©2016 MindView LLC: see Copyright.txt
 // Further embellishment of exception classes.
 
 class MyException2 extends Exception {

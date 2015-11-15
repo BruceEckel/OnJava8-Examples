@@ -1,4 +1,5 @@
 // hiding/Lunch.java
+// ©2016 MindView LLC: see Copyright.txt
 // Demonstrates class access specifiers. Make a class
 // effectively private with private constructors:
 

@@ -1,4 +1,5 @@
 // staticchecking/DogsAndRobots.cpp
+// ©2016 MindView LLC: see Copyright.txt
 #include <iostream>
 using namespace std;
 

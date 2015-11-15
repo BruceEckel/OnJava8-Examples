@@ -1,4 +1,5 @@
 // ui/MessageBoxes.java
+// ©2016 MindView LLC: see Copyright.txt
 // Demonstrates JOptionPane.
 import javax.swing.*;
 import java.awt.*;

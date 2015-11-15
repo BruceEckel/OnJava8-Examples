@@ -1,4 +1,5 @@
 // typeinfo/SweetShop.java
+// ©2016 MindView LLC: see Copyright.txt
 // Examination of the way the class loader works.
 
 class Candy {

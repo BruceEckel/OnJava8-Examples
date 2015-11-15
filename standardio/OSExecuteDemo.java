@@ -1,4 +1,5 @@
 // standardio/OSExecuteDemo.java
+// ©2016 MindView LLC: see Copyright.txt
 // Demonstrates standard I/O redirection.
 import onjava.*;
 

@@ -1,4 +1,5 @@
 // containersindepth/SimpleHashMap.java
+// ©2016 MindView LLC: see Copyright.txt
 // A demonstration hashed Map.
 import java.util.*;
 import onjava.*;

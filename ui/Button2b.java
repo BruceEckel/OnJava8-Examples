@@ -1,4 +1,5 @@
 // ui/Button2b.java
+// ©2016 MindView LLC: see Copyright.txt
 // Using anonymous inner classes.
 import javax.swing.*;
 import java.awt.*;

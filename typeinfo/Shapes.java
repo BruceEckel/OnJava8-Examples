@@ -1,4 +1,5 @@
 // typeinfo/Shapes.java
+// ©2016 MindView LLC: see Copyright.txt
 import java.util.*;
 
 abstract class Shape {

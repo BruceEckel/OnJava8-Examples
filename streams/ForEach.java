@@ -1,41 +1,26 @@
 // streams/ForEach.java
+// ©2016 MindView LLC: see Copyright.txt
 import java.util.*;
 import java.util.stream.*;
 import static streams.RandInts.*;
 
 public class ForEach {
-  final static int sz = 5;
+  final static int sz = 14;
   public static void main(String[] args) {
     rands().limit(sz)
-      .forEach(System.out::println);
-
-    System.out.println(" -----");
+      .forEach(n -> System.out.format("%d ", n));
+    System.out.println();
     rands().limit(sz)
       .parallel()
-      .forEach(System.out::println);
-
-    System.out.println(" -----");
+      .forEach(n -> System.out.format("%d ", n));
+    System.out.println();
     rands().limit(sz)
       .parallel()
-      .forEachOrdered(System.out::println);
+      .forEachOrdered(n -> System.out.format("%d ", n));
   }
 }
 /* Output:
-258
-555
-693
-861
-961
- -----
-861
-961
-258
-693
-555
- -----
-258
-555
-693
-861
-961
+258 555 693 861 961 429 868 200 522 207 288 128 551 589
+551 589 200 868 555 522 961 258 861 128 693 207 288 429
+258 555 693 861 961 429 868 200 522 207 288 128 551 589
 */

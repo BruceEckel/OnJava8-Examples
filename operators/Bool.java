@@ -1,4 +1,5 @@
 // operators/Bool.java
+// ©2016 MindView LLC: see Copyright.txt
 // Relational and logical operators.
 import java.util.*;
 

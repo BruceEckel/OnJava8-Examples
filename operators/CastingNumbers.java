@@ -1,4 +1,5 @@
 // operators/CastingNumbers.java
+// ©2016 MindView LLC: see Copyright.txt
 // What happens when you cast a float
 // or double to an integral value?
 

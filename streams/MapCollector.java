@@ -1,4 +1,5 @@
 // streams/MapCollector.java
+// ©2016 MindView LLC: see Copyright.txt
 import java.util.*;
 import java.util.stream.*;
 
@@ -20,8 +21,7 @@ class Pair {
 class RandomPair {
   Random rand = new Random(47);
   // An infinite iterator of random capital letters:
-  Iterator<Character> capChars = rand.ints(48,122)
-    .filter(i -> i > 65 && i < 90)
+  Iterator<Character> capChars = rand.ints(65,91)
     .mapToObj(i -> (char)i)
     .iterator();
   public Stream<Pair> stream() {
@@ -41,5 +41,5 @@ public class MapCollector {
   }
 }
 /* Output:
-{416=E, 322=O, 309=F, 293=G, 328=W, 858=S, 668=R, 622=L}
+{688=W, 309=C, 293=B, 761=N, 858=N, 668=G, 622=F, 751=N}
 */

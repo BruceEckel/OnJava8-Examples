@@ -1,4 +1,5 @@
 // control/ForInString.java
+// ©2016 MindView LLC: see Copyright.txt
 
 public class ForInString {
   public static void main(String[] args) {

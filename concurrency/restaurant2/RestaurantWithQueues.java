@@ -1,4 +1,5 @@
 // concurrency/restaurant2/RestaurantWithQueues.java
+// ©2016 MindView LLC: see Copyright.txt
 // {Args: 5}
 package concurrency.restaurant2;
 import enums.menu.*;

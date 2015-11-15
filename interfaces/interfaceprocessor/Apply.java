@@ -1,4 +1,5 @@
 // interfaces/interfaceprocessor/Apply.java
+// ©2016 MindView LLC: see Copyright.txt
 package interfaces.interfaceprocessor;
 
 public class Apply {

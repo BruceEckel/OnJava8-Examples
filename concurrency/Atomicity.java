@@ -1,4 +1,5 @@
 // concurrency/Atomicity.java
+// ©2016 MindView LLC: see Copyright.txt
 // {Exec: javap -c Atomicity}
 
 public class Atomicity {

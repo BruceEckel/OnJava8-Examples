@@ -1,4 +1,5 @@
 // arrays/FillingArrays.java
+// ©2016 MindView LLC: see Copyright.txt
 // Using Arrays.fill()
 import java.util.*;
 

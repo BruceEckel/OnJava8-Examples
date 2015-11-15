@@ -1,4 +1,5 @@
 // assertions/Assert1.java
+// ©2016 MindView LLC: see Copyright.txt
 // Non-informative style of assert
 // {JVMArgs: -ea} // Must run with -ea
 // {ThrowsException}

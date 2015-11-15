@@ -1,4 +1,5 @@
 // housekeeping/EnumOrder.java
+// ©2016 MindView LLC: see Copyright.txt
 
 public class EnumOrder {
   public static void main(String[] args) {

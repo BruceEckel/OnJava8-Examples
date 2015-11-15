@@ -1,4 +1,5 @@
 // operators/TernaryIfElse.java
+// ©2016 MindView LLC: see Copyright.txt
 
 public class TernaryIfElse {
   static int ternary(int i) {

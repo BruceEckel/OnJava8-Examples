@@ -1,4 +1,5 @@
 // containersindepth/AssociativeArray.java
+// ©2016 MindView LLC: see Copyright.txt
 // Associates keys with values.
 
 public class AssociativeArray<K, V> {

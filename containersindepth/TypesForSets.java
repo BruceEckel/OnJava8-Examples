@@ -1,4 +1,5 @@
 // containersindepth/TypesForSets.java
+// ©2016 MindView LLC: see Copyright.txt
 // Methods necessary to put your own type in a Set.
 import java.lang.reflect.InvocationTargetException;
 import java.util.*;

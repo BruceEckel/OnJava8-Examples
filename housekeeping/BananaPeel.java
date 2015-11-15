@@ -1,4 +1,5 @@
 // housekeeping/BananaPeel.java
+// ©2016 MindView LLC: see Copyright.txt
 
 class Banana { void peel(int i) { /* ... */ } }
 

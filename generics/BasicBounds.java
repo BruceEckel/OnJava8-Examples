@@ -1,4 +1,5 @@
 // generics/BasicBounds.java
+// ©2016 MindView LLC: see Copyright.txt
 
 interface HasColor { java.awt.Color getColor(); }
 

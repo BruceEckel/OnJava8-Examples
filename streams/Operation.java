@@ -1,4 +1,5 @@
 // streams/Operation.java
+// ©2016 MindView LLC: see Copyright.txt
 import java.util.*;
 
 @FunctionalInterface

@@ -1,4 +1,5 @@
 // ui/HelloSwing.java
+// ©2016 MindView LLC: see Copyright.txt
 import javax.swing.*;
 
 public class HelloSwing {

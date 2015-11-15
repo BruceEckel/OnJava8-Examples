@@ -1,4 +1,5 @@
 // references/DeepCopy.java
+// ©2016 MindView LLC: see Copyright.txt
 // Cloning a composed object.
 // (Install libraries from www.junit.org)
 import org.junit.Test;

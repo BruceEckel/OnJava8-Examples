@@ -1,4 +1,5 @@
 // staticchecking/dogsandrobots.go
+// ©2016 MindView LLC: see Copyright.txt
 package main
 import "fmt"
 

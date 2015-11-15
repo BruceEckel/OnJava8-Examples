@@ -1,4 +1,5 @@
 // patterns/SingletonPattern.java
+// ©2016 MindView LLC: see Copyright.txt
 // Since this isn't inherited from a Cloneable
 // base class and cloneability isn't added,
 // making it final prevents cloneability from

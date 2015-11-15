@@ -1,4 +1,5 @@
 // innerclasses/Parcel2.java
+// ©2016 MindView LLC: see Copyright.txt
 // Returning a reference to an inner class.
 
 public class Parcel2 {

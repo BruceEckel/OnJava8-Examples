@@ -1,4 +1,5 @@
 // concurrency/CloseResource.java
+// ©2016 MindView LLC: see Copyright.txt
 // Interrupting a blocked task by
 // closing the underlying resource.
 // {TimeOutDuringTesting}

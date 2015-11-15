@@ -1,4 +1,5 @@
 // remote/DisplayPerfectTime.java
+// ©2016 MindView LLC: see Copyright.txt
 // Uses remote object PerfectTime
 // {ValidateByHand}
 import java.rmi.registry.*;

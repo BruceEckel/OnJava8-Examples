@@ -1,4 +1,5 @@
 // containersindepth/Stacks.java
+// ©2016 MindView LLC: see Copyright.txt
 // Demonstration of Stack Class.
 import java.util.*;
 

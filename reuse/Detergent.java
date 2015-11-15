@@ -1,4 +1,5 @@
 // reuse/Detergent.java
+// ©2016 MindView LLC: see Copyright.txt
 // Inheritance syntax & properties.
 
 class Cleanser {

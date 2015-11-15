@@ -1,4 +1,5 @@
 // concurrency/EvenSupplier.java
+// ©2016 MindView LLC: see Copyright.txt
 // When threads collide.
 
 public class EvenSupplier extends IntSupplier {

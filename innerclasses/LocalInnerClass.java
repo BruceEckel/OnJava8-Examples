@@ -1,4 +1,5 @@
 // innerclasses/LocalInnerClass.java
+// ©2016 MindView LLC: see Copyright.txt
 // Holds a sequence of Objects.
 
 interface Counter {

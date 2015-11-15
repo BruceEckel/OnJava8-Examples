@@ -1,4 +1,5 @@
 // strings/Immutable.java
+// ©2016 MindView LLC: see Copyright.txt
 
 public class Immutable {
   public static String upcase(String s) {

@@ -1,4 +1,5 @@
 // polymorphism/Frog.java
+// ©2016 MindView LLC: see Copyright.txt
 // Cleanup and inheritance.
 package polymorphism;
 

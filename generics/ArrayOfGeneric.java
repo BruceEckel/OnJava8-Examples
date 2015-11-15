@@ -1,4 +1,5 @@
 // generics/ArrayOfGeneric.java
+// ©2016 MindView LLC: see Copyright.txt
 
 public class ArrayOfGeneric {
   static final int SIZE = 100;

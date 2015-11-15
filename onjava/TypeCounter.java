@@ -1,4 +1,5 @@
 // onjava/TypeCounter.java
+// ©2016 MindView LLC: see Copyright.txt
 // Counts instances of a type family.
 package onjava;
 import java.util.*;

@@ -1,4 +1,5 @@
 // onjava/MapData.java
+// ©2016 MindView LLC: see Copyright.txt
 // A Map filled with data using a generator object.
 package onjava;
 import java.util.*;

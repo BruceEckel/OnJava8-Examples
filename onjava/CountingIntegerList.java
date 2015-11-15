@@ -1,4 +1,5 @@
 // onjava/CountingIntegerList.java
+// ©2016 MindView LLC: see Copyright.txt
 // List of any length, containing sample data.
 package onjava;
 import java.util.*;

@@ -1,4 +1,5 @@
 // onjava/MouseClick.java
+// ©2016 MindView LLC: see Copyright.txt
 // Helper interface to allow lambda expressions
 package onjava;
 import java.awt.event.*;

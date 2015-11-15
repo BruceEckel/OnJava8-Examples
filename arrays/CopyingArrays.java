@@ -1,4 +1,5 @@
 // arrays/CopyingArrays.java
+// ©2016 MindView LLC: see Copyright.txt
 // Using System.arraycopy()
 import java.util.*;
 

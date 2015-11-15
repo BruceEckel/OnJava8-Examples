@@ -1,4 +1,5 @@
 // concurrency/IntSupplier.java
+// ©2016 MindView LLC: see Copyright.txt
 
 public abstract class IntSupplier {
   private volatile boolean canceled = false;

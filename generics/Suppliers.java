@@ -1,4 +1,5 @@
 // generics/Suppliers.java
+// ©2016 MindView LLC: see Copyright.txt
 // A utility to use with Suppliers.
 import generics.coffee.*;
 import java.util.*;

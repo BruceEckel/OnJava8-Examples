@@ -1,4 +1,5 @@
 // patterns/doubledispatch/Glass.java
+// ©2016 MindView LLC: see Copyright.txt
 // Glass for double dispatching.
 package patterns.doubledispatch;
 import patterns.trash.*;

@@ -1,4 +1,5 @@
 // exceptions/TurnOffChecking.java
+// ©2016 MindView LLC: see Copyright.txt
 // "Turning off" Checked exceptions.
 import java.io.*;
 

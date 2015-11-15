@@ -1,4 +1,5 @@
 // newio/GetChannel.java
+// ©2016 MindView LLC: see Copyright.txt
 // Getting channels from streams
 import java.nio.*;
 import java.nio.channels.*;

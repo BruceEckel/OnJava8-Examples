@@ -1,4 +1,5 @@
 // generics/LinkedStack.java
+// ©2016 MindView LLC: see Copyright.txt
 // A stack implemented with an internal linked structure.
 
 public class LinkedStack<T> {

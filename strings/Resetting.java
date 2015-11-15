@@ -1,4 +1,5 @@
 // strings/Resetting.java
+// ©2016 MindView LLC: see Copyright.txt
 import java.util.regex.*;
 
 public class Resetting {

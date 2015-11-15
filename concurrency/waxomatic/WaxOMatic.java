@@ -1,4 +1,5 @@
 // concurrency/waxomatic/WaxOMatic.java
+// ©2016 MindView LLC: see Copyright.txt
 // Basic task cooperation.
 package concurrency.waxomatic;
 import java.util.concurrent.*;

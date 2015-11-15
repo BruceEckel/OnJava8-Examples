@@ -1,4 +1,5 @@
 // ui/RadioButtons.java
+// ©2016 MindView LLC: see Copyright.txt
 // Using JRadioButtons.
 import javax.swing.*;
 import java.awt.*;

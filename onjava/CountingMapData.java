@@ -1,4 +1,5 @@
 // onjava/CountingMapData.java
+// ©2016 MindView LLC: see Copyright.txt
 // Unlimited-length Map containing sample data.
 package onjava;
 import java.util.*;

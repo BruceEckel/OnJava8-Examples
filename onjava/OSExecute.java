@@ -1,4 +1,5 @@
 // onjava/OSExecute.java
+// ©2016 MindView LLC: see Copyright.txt
 // Run an operating system command
 // and send the output to the console.
 package onjava;

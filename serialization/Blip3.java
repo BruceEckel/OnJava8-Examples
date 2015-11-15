@@ -1,4 +1,5 @@
 // serialization/Blip3.java
+// ©2016 MindView LLC: see Copyright.txt
 // Reconstructing an externalizable object.
 import java.io.*;
 

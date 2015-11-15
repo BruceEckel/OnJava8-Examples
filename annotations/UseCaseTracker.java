@@ -1,4 +1,5 @@
 // annotations/UseCaseTracker.java
+// ©2016 MindView LLC: see Copyright.txt
 import java.lang.reflect.*;
 import java.util.*;
 

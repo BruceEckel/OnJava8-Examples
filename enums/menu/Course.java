@@ -1,4 +1,5 @@
 // enums/menu/Course.java
+// ©2016 MindView LLC: see Copyright.txt
 package enums.menu;
 import onjava.*;
 

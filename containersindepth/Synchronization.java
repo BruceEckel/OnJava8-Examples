@@ -1,4 +1,5 @@
 // containersindepth/Synchronization.java
+// ©2016 MindView LLC: see Copyright.txt
 // Using the Collections.synchronized methods.
 import java.util.*;
 

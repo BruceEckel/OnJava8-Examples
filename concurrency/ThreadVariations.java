@@ -1,4 +1,5 @@
 // concurrency/ThreadVariations.java
+// ©2016 MindView LLC: see Copyright.txt
 // Creating threads with inner classes.
 import java.util.concurrent.*;
 

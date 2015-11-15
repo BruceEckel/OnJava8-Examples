@@ -1,4 +1,5 @@
 // onjava/Countries.java
+// ©2016 MindView LLC: see Copyright.txt
 // "Flyweight" Maps and Lists of sample data.
 package onjava;
 import java.util.*;

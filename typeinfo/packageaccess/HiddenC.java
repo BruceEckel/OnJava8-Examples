@@ -1,4 +1,5 @@
 // typeinfo/packageaccess/HiddenC.java
+// ©2016 MindView LLC: see Copyright.txt
 package typeinfo.packageaccess;
 import typeinfo.interfacea.*;
 

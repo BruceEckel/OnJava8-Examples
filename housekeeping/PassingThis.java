@@ -1,4 +1,5 @@
 // housekeeping/PassingThis.java
+// ©2016 MindView LLC: see Copyright.txt
 
 class Person {
   public void eat(Apple apple) {

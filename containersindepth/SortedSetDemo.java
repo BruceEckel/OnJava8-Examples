@@ -1,4 +1,5 @@
 // containersindepth/SortedSetDemo.java
+// ©2016 MindView LLC: see Copyright.txt
 // What you can do with a TreeSet.
 import java.util.*;
 

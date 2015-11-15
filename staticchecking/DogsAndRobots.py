@@ -1,4 +1,5 @@
 # staticchecking/DogsAndRobots.py
+# ©2016 MindView LLC: see Copyright.txt
 
 def speak(anything):
     anything.talk()

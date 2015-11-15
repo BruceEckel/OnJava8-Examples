@@ -1,4 +1,5 @@
 // onjava/Range.java
+// ©2016 MindView LLC: see Copyright.txt
 // Array creation methods that can be used without
 // qualifiers, using static imports:
 package onjava;

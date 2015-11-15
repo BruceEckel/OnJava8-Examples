@@ -1,4 +1,5 @@
 // streams/FunctionMap2.java
+// ©2016 MindView LLC: see Copyright.txt
 // Different input and output types
 import java.util.*;
 import java.util.stream.*;

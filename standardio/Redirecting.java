@@ -1,4 +1,5 @@
 // standardio/Redirecting.java
+// ©2016 MindView LLC: see Copyright.txt
 // Demonstrates standard I/O redirection.
 import java.io.*;
 

@@ -1,4 +1,5 @@
 // enums/NonEnum.java
+// ©2016 MindView LLC: see Copyright.txt
 
 public class NonEnum {
   public static void main(String[] args) {

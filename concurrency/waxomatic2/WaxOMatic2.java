@@ -1,4 +1,5 @@
 // concurrency/waxomatic2/WaxOMatic2.java
+// ©2016 MindView LLC: see Copyright.txt
 // Using Lock and Condition objects.
 package concurrency.waxomatic2;
 import java.util.concurrent.*;

@@ -1,4 +1,5 @@
 // containersindepth/DequeTest.java
+// ©2016 MindView LLC: see Copyright.txt
 import onjava.*;
 
 public class DequeTest {

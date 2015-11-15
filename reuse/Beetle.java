@@ -1,4 +1,5 @@
 // reuse/Beetle.java
+// ©2016 MindView LLC: see Copyright.txt
 // The full process of initialization.
 
 class Insect {

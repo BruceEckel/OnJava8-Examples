@@ -1,4 +1,5 @@
 // patterns/recyclea/RecycleA.java
+// ©2016 MindView LLC: see Copyright.txt
 // Recycling with RTTI.
 package patterns.recyclea;
 import java.util.*;

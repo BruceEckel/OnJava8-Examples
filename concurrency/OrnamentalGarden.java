@@ -1,4 +1,5 @@
 // concurrency/OrnamentalGarden.java
+// ©2016 MindView LLC: see Copyright.txt
 import java.util.concurrent.*;
 import java.util.*;
 

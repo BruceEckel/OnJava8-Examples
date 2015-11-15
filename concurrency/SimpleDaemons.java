@@ -1,4 +1,5 @@
 // concurrency/SimpleDaemons.java
+// ©2016 MindView LLC: see Copyright.txt
 // Daemon threads don't prevent the program from ending.
 import java.util.concurrent.*;
 

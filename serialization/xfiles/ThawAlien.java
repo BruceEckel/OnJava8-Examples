@@ -1,4 +1,5 @@
 // serialization/xfiles/ThawAlien.java
+// ©2016 MindView LLC: see Copyright.txt
 // Recover a serialized file
 package serialization.xfiles;
 import java.io.*;

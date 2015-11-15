@@ -1,4 +1,5 @@
 // reuse/FinalOverridingIllusion.java
+// ©2016 MindView LLC: see Copyright.txt
 // It only looks like you can override
 // a private or private final method.
 

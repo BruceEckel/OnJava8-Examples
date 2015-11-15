@@ -1,4 +1,5 @@
 // streams/Looping.java
+// ©2016 MindView LLC: see Copyright.txt
 import static onjava.Repeat.*;
 
 public class Looping {

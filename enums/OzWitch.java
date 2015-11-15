@@ -1,4 +1,5 @@
 // enums/OzWitch.java
+// ©2016 MindView LLC: see Copyright.txt
 // The witches in the land of Oz.
 
 public enum OzWitch {

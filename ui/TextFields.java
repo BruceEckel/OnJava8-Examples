@@ -1,4 +1,5 @@
 // ui/TextFields.java
+// ©2016 MindView LLC: see Copyright.txt
 // Text fields and Java events.
 import javax.swing.*;
 import javax.swing.event.*;

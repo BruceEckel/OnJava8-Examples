@@ -1,4 +1,5 @@
 // swt/ShellsAreMainWindows.java
+// ©2016 MindView LLC: see Copyright.txt
 import org.eclipse.swt.widgets.*;
 
 public class ShellsAreMainWindows {

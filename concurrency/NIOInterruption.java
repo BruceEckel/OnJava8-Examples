@@ -1,4 +1,5 @@
 // concurrency/NIOInterruption.java
+// ©2016 MindView LLC: see Copyright.txt
 // Interrupting a blocked NIO channel.
 import java.net.*;
 import java.nio.*;

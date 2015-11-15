@@ -1,4 +1,5 @@
 // concurrency/MainThread.java
+// ©2016 MindView LLC: see Copyright.txt
 
 public class MainThread {
   public static void main(String[] args) {

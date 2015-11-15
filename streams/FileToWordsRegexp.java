@@ -1,4 +1,5 @@
 // streams/FileToWordsRegexp.java
+// ©2016 MindView LLC: see Copyright.txt
 import java.io.*;
 import java.nio.file.*;
 import java.util.stream.*;

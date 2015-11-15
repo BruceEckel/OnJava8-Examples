@@ -1,4 +1,5 @@
 // containers/PrintingContainers.java
+// ©2016 MindView LLC: see Copyright.txt
 // Containers print themselves automatically.
 import java.util.*;
 

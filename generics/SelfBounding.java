@@ -1,4 +1,5 @@
 // generics/SelfBounding.java
+// ©2016 MindView LLC: see Copyright.txt
 
 class SelfBounded<T extends SelfBounded<T>> {
   T element;

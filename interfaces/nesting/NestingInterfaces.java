@@ -1,4 +1,5 @@
 // interfaces/nesting/NestingInterfaces.java
+// ©2016 MindView LLC: see Copyright.txt
 package interfaces.nesting;
 
 class A {

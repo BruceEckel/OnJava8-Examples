@@ -1,4 +1,5 @@
 // hiding/dessert/Cookie.java
+// ©2016 MindView LLC: see Copyright.txt
 // Creates a library.
 package hiding.dessert;
 

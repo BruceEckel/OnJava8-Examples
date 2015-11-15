@@ -1,4 +1,5 @@
 // patterns/doubledispatch/Paper.java
+// ©2016 MindView LLC: see Copyright.txt
 // Paper for double dispatching.
 package patterns.doubledispatch;
 import patterns.trash.*;

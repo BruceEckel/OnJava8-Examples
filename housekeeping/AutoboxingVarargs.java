@@ -1,4 +1,5 @@
 // housekeeping/AutoboxingVarargs.java
+// ©2016 MindView LLC: see Copyright.txt
 
 public class AutoboxingVarargs {
   public static void f(Integer... args) {

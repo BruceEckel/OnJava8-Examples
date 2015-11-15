@@ -1,4 +1,5 @@
 // enums/NotClasses.java
+// ©2016 MindView LLC: see Copyright.txt
 // {Exec: javap -c LikeClasses}
 
 enum LikeClasses {

@@ -1,4 +1,5 @@
 // containers/AdapterMethodIdiom.java
+// ©2016 MindView LLC: see Copyright.txt
 // The "Adapter Method" idiom uses for-in
 // with additional kinds of Iterables.
 import java.util.*;

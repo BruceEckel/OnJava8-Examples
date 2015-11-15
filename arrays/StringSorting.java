@@ -1,4 +1,5 @@
 // arrays/StringSorting.java
+// ©2016 MindView LLC: see Copyright.txt
 // Sorting an array of Strings.
 import java.util.*;
 import onjava.*;

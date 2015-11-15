@@ -1,4 +1,5 @@
 // enums/EnumMaps.java
+// ©2016 MindView LLC: see Copyright.txt
 // Basics of EnumMaps.
 package enums;
 import java.util.*;

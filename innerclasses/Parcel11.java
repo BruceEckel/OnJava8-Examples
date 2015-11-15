@@ -1,4 +1,5 @@
 // innerclasses/Parcel11.java
+// ©2016 MindView LLC: see Copyright.txt
 // Nested classes (static inner classes).
 
 public class Parcel11 {

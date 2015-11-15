@@ -1,4 +1,5 @@
 // operators/EqualsMethod2.java
+// ©2016 MindView LLC: see Copyright.txt
 // Default equals() does not compare contents.
 
 class Value {

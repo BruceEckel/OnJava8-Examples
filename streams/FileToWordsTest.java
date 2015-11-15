@@ -1,4 +1,5 @@
 // streams/FileToWordsTest.java
+// ©2016 MindView LLC: see Copyright.txt
 import java.util.stream.*;
 
 public class FileToWordsTest {

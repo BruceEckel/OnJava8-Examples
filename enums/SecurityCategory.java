@@ -1,4 +1,5 @@
 // enums/SecurityCategory.java
+// ©2016 MindView LLC: see Copyright.txt
 // More succinct subcategorization of enums.
 import onjava.*;
 

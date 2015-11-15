@@ -1,4 +1,5 @@
 // typeinfo/GenericClassReferences.java
+// ©2016 MindView LLC: see Copyright.txt
 
 public class GenericClassReferences {
   public static void main(String[] args) {

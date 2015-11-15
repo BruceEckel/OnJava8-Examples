@@ -1,4 +1,5 @@
 // housekeeping/Demotion.java
+// ©2016 MindView LLC: see Copyright.txt
 // Demotion of primitives and overloading.
 
 public class Demotion {

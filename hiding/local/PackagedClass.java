@@ -1,4 +1,5 @@
 // hiding/local/PackagedClass.java
+// ©2016 MindView LLC: see Copyright.txt
 package hiding.local;
 
 class PackagedClass {

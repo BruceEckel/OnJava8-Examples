@@ -1,4 +1,5 @@
 // reuse/Car.java
+// ©2016 MindView LLC: see Copyright.txt
 // Composition with public objects.
 
 class Engine {

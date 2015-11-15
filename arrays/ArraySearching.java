@@ -1,4 +1,5 @@
 // arrays/ArraySearching.java
+// ©2016 MindView LLC: see Copyright.txt
 // Using Arrays.binarySearch().
 import java.util.*;
 import java.util.function.*;

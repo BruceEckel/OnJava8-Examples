@@ -1,4 +1,5 @@
 // annotations/database/Uniqueness.java
+// ©2016 MindView LLC: see Copyright.txt
 // Sample of nested annotations
 package annotations.database;
 

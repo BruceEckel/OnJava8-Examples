@@ -1,4 +1,5 @@
 // polymorphism/FieldAccess.java
+// ©2016 MindView LLC: see Copyright.txt
 // Direct field access is determined at compile time.
 
 class Super {

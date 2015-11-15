@@ -1,4 +1,5 @@
 // newio/LockingMappedFiles.java
+// ©2016 MindView LLC: see Copyright.txt
 // Locking portions of a mapped file.
 import java.nio.*;
 import java.nio.channels.*;

@@ -1,4 +1,5 @@
 // operators/Casting.java
+// ©2016 MindView LLC: see Copyright.txt
 
 public class Casting {
   public static void main(String[] args) {

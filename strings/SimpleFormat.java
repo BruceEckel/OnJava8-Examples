@@ -1,4 +1,5 @@
 // strings/SimpleFormat.java
+// ©2016 MindView LLC: see Copyright.txt
 
 public class SimpleFormat {
   public static void main(String[] args) {

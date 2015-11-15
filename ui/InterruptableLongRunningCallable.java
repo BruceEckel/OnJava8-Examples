@@ -1,4 +1,5 @@
 // ui/InterruptableLongRunningCallable.java
+// ©2016 MindView LLC: see Copyright.txt
 // Using Callables for long-running tasks.
 import javax.swing.*;
 import java.awt.*;

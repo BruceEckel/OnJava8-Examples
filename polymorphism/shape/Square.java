@@ -1,4 +1,5 @@
 // polymorphism/shape/Square.java
+// ©2016 MindView LLC: see Copyright.txt
 package polymorphism.shape;
 
 public class Square extends Shape {

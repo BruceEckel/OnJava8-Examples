@@ -1,4 +1,5 @@
 // onjava/PPrint.java
+// ©2016 MindView LLC: see Copyright.txt
 // Pretty-printer for collections
 package onjava;
 import java.util.*;

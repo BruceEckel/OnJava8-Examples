@@ -1,4 +1,5 @@
 // generics/GenericCast.java
+// ©2016 MindView LLC: see Copyright.txt
 
 class FixedSizeStack<T> {
   private int index = 0;

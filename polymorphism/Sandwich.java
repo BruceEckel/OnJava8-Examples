@@ -1,4 +1,5 @@
 // polymorphism/Sandwich.java
+// ©2016 MindView LLC: see Copyright.txt
 // Order of constructor calls.
 package polymorphism;
 

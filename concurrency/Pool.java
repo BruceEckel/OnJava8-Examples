@@ -1,4 +1,5 @@
 // concurrency/Pool.java
+// ©2016 MindView LLC: see Copyright.txt
 // Using a Semaphore inside a Pool, to restrict
 // the number of tasks that can use a resource.
 import java.util.concurrent.*;

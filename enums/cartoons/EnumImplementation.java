@@ -1,4 +1,5 @@
 // enums/cartoons/EnumImplementation.java
+// ©2016 MindView LLC: see Copyright.txt
 // An enum can implement an interface
 package enums.cartoons;
 import java.util.*;

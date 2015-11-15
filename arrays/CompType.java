@@ -1,4 +1,5 @@
 // arrays/CompType.java
+// ©2016 MindView LLC: see Copyright.txt
 // Implementing Comparable in a class.
 import java.util.*;
 import java.util.function.*;

@@ -1,4 +1,5 @@
 // containersindepth/MapEntry.java
+// ©2016 MindView LLC: see Copyright.txt
 // A simple Map.Entry for sample Map implementations.
 import java.util.*;
 

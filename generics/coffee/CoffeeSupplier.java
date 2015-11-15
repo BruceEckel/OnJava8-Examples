@@ -1,4 +1,5 @@
 // generics/coffee/CoffeeSupplier.java
+// ©2016 MindView LLC: see Copyright.txt
 // Generate different types of Coffee:
 package generics.coffee;
 import java.util.*;

@@ -1,4 +1,5 @@
 // containersindepth/SpringDetector2.java
+// ©2016 MindView LLC: see Copyright.txt
 // A working key.
 
 public class SpringDetector2 {

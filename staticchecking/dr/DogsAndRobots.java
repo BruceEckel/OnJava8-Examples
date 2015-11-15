@@ -1,4 +1,5 @@
 // staticchecking/dr/DogsAndRobots.java
+// ©2016 MindView LLC: see Copyright.txt
 package staticchecking.dr;
 
 interface Speaks { void talk(); }

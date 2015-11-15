@@ -1,4 +1,5 @@
 // concurrency/Restaurant.java
+// ©2016 MindView LLC: see Copyright.txt
 // The producer-consumer approach to task cooperation.
 import java.util.concurrent.*;
 

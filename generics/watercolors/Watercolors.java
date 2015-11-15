@@ -1,4 +1,5 @@
 // generics/watercolors/Watercolors.java
+// ©2016 MindView LLC: see Copyright.txt
 package generics.watercolors;
 
 public enum Watercolors {

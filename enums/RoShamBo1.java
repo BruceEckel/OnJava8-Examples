@@ -1,4 +1,5 @@
 // enums/RoShamBo1.java
+// ©2016 MindView LLC: see Copyright.txt
 // Demonstration of multiple dispatching.
 package enums;
 import java.util.*;

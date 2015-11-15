@@ -1,4 +1,5 @@
 // ui/CheckBoxes.java
+// ©2016 MindView LLC: see Copyright.txt
 // Using JCheckBoxes.
 import javax.swing.*;
 import java.awt.*;

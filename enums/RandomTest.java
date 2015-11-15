@@ -1,4 +1,5 @@
 // enums/RandomTest.java
+// ©2016 MindView LLC: see Copyright.txt
 import onjava.*;
 
 enum Activity { SITTING, LYING, STANDING, HOPPING,

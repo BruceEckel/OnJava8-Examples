@@ -1,4 +1,5 @@
 // com/mindviewinc/atunit/ClassNameFinder.java
+// ©2016 MindView LLC: see Copyright.txt
 package com.mindviewinc.atunit;
 import java.io.*;
 import java.util.*;

@@ -1,4 +1,5 @@
 // enums/PostOffice.java
+// ©2016 MindView LLC: see Copyright.txt
 // Modeling a post office.
 import java.util.*;
 import onjava.*;

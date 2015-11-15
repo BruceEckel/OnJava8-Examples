@@ -1,4 +1,5 @@
 // polymorphism/ReferenceCounting.java
+// ©2016 MindView LLC: see Copyright.txt
 // Cleaning up shared member objects.
 
 class Shared {

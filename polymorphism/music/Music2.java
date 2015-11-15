@@ -1,4 +1,5 @@
 // polymorphism/music/Music2.java
+// ©2016 MindView LLC: see Copyright.txt
 // Overloading instead of upcasting.
 package polymorphism.music;
 

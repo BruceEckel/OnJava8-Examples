@@ -1,4 +1,5 @@
 // concurrency/HorseRace.java
+// ©2016 MindView LLC: see Copyright.txt
 // Using CyclicBarriers.
 import java.util.concurrent.*;
 import java.util.*;

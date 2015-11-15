@@ -1,4 +1,5 @@
 // concurrency/SimplePriorities.java
+// ©2016 MindView LLC: see Copyright.txt
 // Shows thread priorities.
 import java.util.concurrent.*;
 

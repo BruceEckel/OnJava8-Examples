@@ -1,4 +1,5 @@
 // reuse/Orc.java
+// ©2016 MindView LLC: see Copyright.txt
 // The protected keyword.
 
 class Villain {

@@ -1,4 +1,5 @@
 // housekeeping/ArraysOfPrimitives.java
+// ©2016 MindView LLC: see Copyright.txt
 
 public class ArraysOfPrimitives {
   public static void main(String[] args) {

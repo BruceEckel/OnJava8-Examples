@@ -1,4 +1,5 @@
 // patterns/trash/ParseTrash.java
+// ©2016 MindView LLC: see Copyright.txt
 // Open a file and parse its contents into
 // Trash objects, placing each into a List.
 package patterns.trash;

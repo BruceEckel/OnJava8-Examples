@@ -30,7 +30,7 @@
       polymorphism/build.xml
       interfaces/build.xml
       innerclasses/build.xml
-      functions/build.xml
+      functional/build.xml
       containers/build.xml
       streams/build.xml
       exceptions/build.xml

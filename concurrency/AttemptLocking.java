@@ -1,4 +1,5 @@
 // concurrency/AttemptLocking.java
+// ©2016 MindView LLC: see Copyright.txt
 // Locks in the concurrent library allow you
 // to give up on trying to acquire a lock.
 import java.util.concurrent.*;

@@ -1,4 +1,5 @@
 // containersindepth/SortedMapDemo.java
+// ©2016 MindView LLC: see Copyright.txt
 // What you can do with a TreeMap.
 import java.util.*;
 import onjava.*;

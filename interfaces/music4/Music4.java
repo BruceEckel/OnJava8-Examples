@@ -1,4 +1,5 @@
 // interfaces/music4/Music4.java
+// ©2016 MindView LLC: see Copyright.txt
 // Abstract classes and methods.
 package interfaces.music4;
 import polymorphism.music.Note;

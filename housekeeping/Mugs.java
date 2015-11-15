@@ -1,4 +1,5 @@
 // housekeeping/Mugs.java
+// ©2016 MindView LLC: see Copyright.txt
 // Java "Instance Initialization."
 
 class Mug {

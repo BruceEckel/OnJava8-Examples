@@ -1,4 +1,5 @@
 // concurrency/MultiLock.java
+// ©2016 MindView LLC: see Copyright.txt
 // One thread can reacquire the same lock.
 
 public class MultiLock {

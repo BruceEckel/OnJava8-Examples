@@ -1,4 +1,5 @@
 // swt/TabbedPane.java
+// ©2016 MindView LLC: see Copyright.txt
 // Placing SWT components in tabbed panes.
 import swt.util.*;
 import org.eclipse.swt.*;

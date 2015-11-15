@@ -1,4 +1,5 @@
 // patterns/ProxyDemo.java
+// ©2016 MindView LLC: see Copyright.txt
 // Simple demonstration of the Proxy pattern.
 
 interface ProxyBase {

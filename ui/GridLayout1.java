@@ -1,4 +1,5 @@
 // ui/GridLayout1.java
+// ©2016 MindView LLC: see Copyright.txt
 // Demonstrates GridLayout.
 import javax.swing.*;
 import java.awt.*;

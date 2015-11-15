@@ -1,4 +1,5 @@
 // containers/LinkedListFeatures.java
+// ©2016 MindView LLC: see Copyright.txt
 import typeinfo.pets.*;
 import java.util.*;
 

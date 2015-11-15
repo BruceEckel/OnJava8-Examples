@@ -1,4 +1,5 @@
 // exceptions/DynamicFields.java
+// ©2016 MindView LLC: see Copyright.txt
 // A Class that dynamically adds fields to itself.
 // Demonstrates exception chaining.
 class DynamicFieldsException extends Exception {}

@@ -1,4 +1,5 @@
 // standardio/ChangeSystemOut.java
+// ©2016 MindView LLC: see Copyright.txt
 // Turn System.out into a PrintWriter.
 import java.io.*;
 

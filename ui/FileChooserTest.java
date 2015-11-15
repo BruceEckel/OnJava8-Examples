@@ -1,4 +1,5 @@
 // ui/FileChooserTest.java
+// ©2016 MindView LLC: see Copyright.txt
 // Demonstration of File dialog boxes.
 import javax.swing.*;
 import java.awt.*;

@@ -1,4 +1,5 @@
 // generics/CountedObject.java
+// ©2016 MindView LLC: see Copyright.txt
 
 public class CountedObject {
   private static long counter = 0;

@@ -1,4 +1,5 @@
 // annotations/database/Constraints.java
+// ©2016 MindView LLC: see Copyright.txt
 package annotations.database;
 import java.lang.annotation.*;
 

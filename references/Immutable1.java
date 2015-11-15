@@ -1,4 +1,5 @@
 // references/Immutable1.java
+// ©2016 MindView LLC: see Copyright.txt
 // Immutable objects are immune to aliasing.
 
 public class Immutable1 {

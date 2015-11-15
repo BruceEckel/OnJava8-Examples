@@ -1,4 +1,5 @@
 // operators/ShortCircuit.java
+// ©2016 MindView LLC: see Copyright.txt
 // Demonstrates short-circuiting behavior
 // with logical operators.
 

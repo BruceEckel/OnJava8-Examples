@@ -1,4 +1,5 @@
 // concurrency/ListComparisons.java
+// ©2016 MindView LLC: see Copyright.txt
 // {Args: 1 10 10} (Fast verification check during build)
 // Rough comparison of thread-safe List performance.
 import java.util.concurrent.*;

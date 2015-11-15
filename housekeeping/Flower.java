@@ -1,4 +1,5 @@
 // housekeeping/Flower.java
+// ©2016 MindView LLC: see Copyright.txt
 // Calling constructors with "this"
 
 public class Flower {

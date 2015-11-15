@@ -1,4 +1,5 @@
 // enums/TrafficLight.java
+// ©2016 MindView LLC: see Copyright.txt
 // Enums in switch statements.
 
 // Define an enum type:

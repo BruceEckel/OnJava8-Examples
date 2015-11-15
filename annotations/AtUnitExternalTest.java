@@ -1,4 +1,5 @@
 // annotations/AtUnitExternalTest.java
+// ©2016 MindView LLC: see Copyright.txt
 // Creating non-embedded tests.
 package annotations;
 import com.mindviewinc.atunit.*;

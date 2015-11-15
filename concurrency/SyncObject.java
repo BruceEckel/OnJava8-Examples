@@ -1,4 +1,5 @@
 // concurrency/SyncObject.java
+// ©2016 MindView LLC: see Copyright.txt
 // Synchronizing on another object.
 
 class DualSynch {

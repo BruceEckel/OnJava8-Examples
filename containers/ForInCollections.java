@@ -1,4 +1,5 @@
 // containers/ForInCollections.java
+// ©2016 MindView LLC: see Copyright.txt
 // All collections work with for-in.
 import java.util.*;
 

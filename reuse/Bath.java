@@ -1,4 +1,5 @@
 // reuse/Bath.java
+// ©2016 MindView LLC: see Copyright.txt
 // Constructor initialization with composition.
 
 class Soap {

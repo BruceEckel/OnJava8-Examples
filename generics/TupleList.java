@@ -1,4 +1,5 @@
 // generics/TupleList.java
+// ©2016 MindView LLC: see Copyright.txt
 // Combining generic types to make complex generic types.
 import java.util.*;
 import onjava.*;

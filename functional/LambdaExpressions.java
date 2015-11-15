@@ -1,4 +1,5 @@
-// functions/LambdaExpressions.java
+// functional/LambdaExpressions.java
+// ©2016 MindView LLC: see Copyright.txt
 
 interface Description {
   String brief();

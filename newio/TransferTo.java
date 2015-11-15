@@ -1,4 +1,5 @@
 // newio/TransferTo.java
+// ©2016 MindView LLC: see Copyright.txt
 // Using transferTo() between channels
 // {Args: TransferTo.java TransferTo.txt}
 import java.nio.channels.*;

@@ -1,4 +1,5 @@
 // exceptions/StormyInning.java
+// ©2016 MindView LLC: see Copyright.txt
 // Overridden methods can throw only the exceptions
 // specified in their base-class versions, or exceptions
 // derived from the base-class exceptions.

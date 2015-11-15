@@ -1,4 +1,5 @@
 // housekeeping/InitialValues.java
+// ©2016 MindView LLC: see Copyright.txt
 // Shows default initial values.
 
 public class InitialValues {

@@ -1,4 +1,5 @@
 // concurrency/FixedDiningPhilosophers.java
+// ©2016 MindView LLC: see Copyright.txt
 // Dining philosophers without deadlock.
 // {Args: 5 5 timeout}
 import java.util.concurrent.*;

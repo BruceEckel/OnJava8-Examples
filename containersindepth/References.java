@@ -1,4 +1,5 @@
 // containersindepth/References.java
+// ©2016 MindView LLC: see Copyright.txt
 // Demonstrates Reference objects
 import java.lang.ref.*;
 import java.util.*;

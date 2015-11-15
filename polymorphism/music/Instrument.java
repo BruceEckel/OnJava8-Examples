@@ -1,4 +1,5 @@
 // polymorphism/music/Instrument.java
+// ©2016 MindView LLC: see Copyright.txt
 package polymorphism.music;
 
 class Instrument {

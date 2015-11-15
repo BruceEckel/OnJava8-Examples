@@ -1,4 +1,5 @@
 // containersindepth/Test.java
+// ©2016 MindView LLC: see Copyright.txt
 // Framework for performing timed tests of containers.
 
 public abstract class Test<C> {

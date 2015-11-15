@@ -1,4 +1,5 @@
 // generics/PrimitiveGenericTest.java
+// ©2016 MindView LLC: see Copyright.txt
 import onjava.*;
 import java.util.function.*;
 

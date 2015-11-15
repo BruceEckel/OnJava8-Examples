@@ -1,4 +1,5 @@
 // containers/UniqueWordsAlphabetic.java
+// ©2016 MindView LLC: see Copyright.txt
 // Producing an alphabetic listing.
 import java.util.*;
 import onjava.*;

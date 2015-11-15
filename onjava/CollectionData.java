@@ -1,4 +1,5 @@
 // onjava/CollectionData.java
+// ©2016 MindView LLC: see Copyright.txt
 // A Collection filled with data using a generator object.
 package onjava;
 import java.util.*;

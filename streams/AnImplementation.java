@@ -1,4 +1,5 @@
 // streams/AnImplementation.java
+// ©2016 MindView LLC: see Copyright.txt
 
 public class AnImplementation implements AnInterface {
   public void firstMethod() {

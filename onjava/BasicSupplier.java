@@ -1,4 +1,5 @@
 // onjava/BasicSupplier.java
+// ©2016 MindView LLC: see Copyright.txt
 // Automatically create a Supplier, given a class
 // with a default (no-arg) constructor.
 package onjava;

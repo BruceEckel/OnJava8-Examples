@@ -1,4 +1,5 @@
 // serialization/FreezeAlien.java
+// ©2016 MindView LLC: see Copyright.txt
 // Create a serialized output file.
 import java.io.*;
 

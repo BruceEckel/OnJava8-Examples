@@ -1,4 +1,5 @@
 // typeinfo/pets/LiteralPetCreator.java
+// ©2016 MindView LLC: see Copyright.txt
 // Using class literals.
 package typeinfo.pets;
 import java.util.*;

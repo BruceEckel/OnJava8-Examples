@@ -1,4 +1,5 @@
 // housekeeping/PrimitiveOverloading.java
+// ©2016 MindView LLC: see Copyright.txt
 // Promotion of primitives and overloading.
 
 public class PrimitiveOverloading {

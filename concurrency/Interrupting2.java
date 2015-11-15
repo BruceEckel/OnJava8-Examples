@@ -1,4 +1,5 @@
 // concurrency/Interrupting2.java
+// ©2016 MindView LLC: see Copyright.txt
 // Interrupting a task blocked with a ReentrantLock.
 import java.util.concurrent.*;
 import java.util.concurrent.locks.*;

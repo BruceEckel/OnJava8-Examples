@@ -1,4 +1,5 @@
 // control/IfElse2.java
+// ©2016 MindView LLC: see Copyright.txt
 
 public class IfElse2 {
   static int test(int testval, int target) {

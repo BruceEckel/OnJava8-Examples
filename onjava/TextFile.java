@@ -1,4 +1,5 @@
 // onjava/TextFile.java
+// ©2016 MindView LLC: see Copyright.txt
 // Static functions for reading and writing text files as
 // a single String, and treating a file as an ArrayList.
 package onjava;

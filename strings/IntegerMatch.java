@@ -1,4 +1,5 @@
 // strings/IntegerMatch.java
+// ©2016 MindView LLC: see Copyright.txt
 
 public class IntegerMatch {
   public static void main(String[] args) {

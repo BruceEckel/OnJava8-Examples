@@ -1,4 +1,5 @@
 // exceptions/Switch.java
+// ©2016 MindView LLC: see Copyright.txt
 
 public class Switch {
   private boolean state = false;

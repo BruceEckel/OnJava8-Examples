@@ -1,4 +1,5 @@
 // onjava/TimedAbort.java
+// ©2016 MindView LLC: see Copyright.txt
 // Terminate a program after n seconds.
 package onjava;
 import java.util.*;

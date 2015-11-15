@@ -1,4 +1,5 @@
 // references/Compete.java
+// ©2016 MindView LLC: see Copyright.txt
 import java.io.*;
 
 class Thing1 implements Serializable {}

@@ -1,4 +1,5 @@
 // interfaces/interfaceprocessor/StringProcessor.java
+// ©2016 MindView LLC: see Copyright.txt
 package interfaces.interfaceprocessor;
 import java.util.*;
 

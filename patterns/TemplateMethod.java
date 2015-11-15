@@ -1,4 +1,5 @@
 // patterns/TemplateMethod.java
+// ©2016 MindView LLC: see Copyright.txt
 // Simple demonstration of Template Method.
 import java.util.stream.*;
 

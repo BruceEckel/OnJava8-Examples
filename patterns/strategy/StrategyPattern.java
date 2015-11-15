@@ -1,4 +1,5 @@
 // patterns/strategy/StrategyPattern.java
+// ©2016 MindView LLC: see Copyright.txt
 package patterns.strategy;
 import java.util.function.*;
 import java.util.*;

@@ -1,4 +1,5 @@
 // streams/Implementation2.java
+// ©2016 MindView LLC: see Copyright.txt
 
 public class Implementation2
 implements InterfaceWithDefault {

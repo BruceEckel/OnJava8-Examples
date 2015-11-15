@@ -1,4 +1,5 @@
 // patterns/trashvisitor/Cardboard.java
+// ©2016 MindView LLC: see Copyright.txt
 // Cardboard for the visitor pattern.
 package patterns.trashvisitor;
 import patterns.trash.*;

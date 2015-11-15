@@ -1,4 +1,5 @@
 // onjava/BinaryFile.java
+// ©2016 MindView LLC: see Copyright.txt
 // Utility for reading files in binary form.
 package onjava;
 import java.io.*;

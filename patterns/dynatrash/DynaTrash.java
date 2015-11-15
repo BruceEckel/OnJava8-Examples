@@ -1,4 +1,5 @@
 // patterns/dynatrash/DynaTrash.java
+// ©2016 MindView LLC: see Copyright.txt
 // Using a Map of Lists and RTTI to automatically
 // sort trash into Lists. This solution, despite
 // the use of RTTI, is extensible.

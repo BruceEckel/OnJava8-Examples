@@ -1,4 +1,5 @@
 // hiding/Dinner.java
+// ©2016 MindView LLC: see Copyright.txt
 // Uses the library.
 import hiding.dessert.*;
 

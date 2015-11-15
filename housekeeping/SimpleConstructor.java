@@ -1,4 +1,5 @@
 // housekeeping/SimpleConstructor.java
+// ©2016 MindView LLC: see Copyright.txt
 // Demonstration of a simple constructor.
 
 class Rock {

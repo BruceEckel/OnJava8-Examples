@@ -1,4 +1,5 @@
 // operators/AutoInc.java
+// ©2016 MindView LLC: see Copyright.txt
 // Demonstrates the ++ and -- operators.
 
 public class AutoInc {

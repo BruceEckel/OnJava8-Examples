@@ -1,4 +1,5 @@
 // patterns/recycleb/RecycleB.java
+// ©2016 MindView LLC: see Copyright.txt
 package patterns.recycleb;
 import patterns.trash.*;
 import java.util.*;

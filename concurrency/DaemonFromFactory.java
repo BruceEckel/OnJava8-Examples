@@ -1,4 +1,5 @@
 // concurrency/DaemonFromFactory.java
+// ©2016 MindView LLC: see Copyright.txt
 // Using a Thread Factory to create daemons.
 import java.util.concurrent.*;
 import onjava.*;

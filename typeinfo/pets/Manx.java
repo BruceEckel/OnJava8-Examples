@@ -1,4 +1,5 @@
 // typeinfo/pets/Manx.java
+// ©2016 MindView LLC: see Copyright.txt
 package typeinfo.pets;
 
 public class Manx extends Cat {

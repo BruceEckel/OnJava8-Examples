@@ -1,4 +1,5 @@
 // generics/TupleTest2.java
+// ©2016 MindView LLC: see Copyright.txt
 import onjava.*;
 import static onjava.Tuple.*;
 

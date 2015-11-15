@@ -1,4 +1,5 @@
 // innerclasses/TestParcel.java
+// ©2016 MindView LLC: see Copyright.txt
 
 class Parcel4 {
   private class PContents implements Contents {

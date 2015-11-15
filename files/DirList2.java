@@ -1,4 +1,5 @@
 // files/DirList2.java
+// ©2016 MindView LLC: see Copyright.txt
 // Uses anonymous inner classes.
 // {Args: "D.*\.java"}
 import java.util.regex.*;

@@ -1,4 +1,5 @@
-// functions/Factories.java
+// functional/Factories.java
+// ©2016 MindView LLC: see Copyright.txt
 
 interface Service {
   void method1();

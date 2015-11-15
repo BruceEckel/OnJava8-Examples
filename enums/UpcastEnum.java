@@ -1,4 +1,5 @@
 // enums/UpcastEnum.java
+// ©2016 MindView LLC: see Copyright.txt
 // No values() method if you upcast an enum
 
 enum Search { HITHER, YON }

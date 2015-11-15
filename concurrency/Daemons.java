@@ -1,4 +1,5 @@
 // concurrency/Daemons.java
+// ©2016 MindView LLC: see Copyright.txt
 // Daemon threads spawn other daemon threads.
 import java.util.concurrent.*;
 

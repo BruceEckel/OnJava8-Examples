@@ -1,4 +1,5 @@
 // ui/Popup.java
+// ©2016 MindView LLC: see Copyright.txt
 // Creating popup menus with Swing.
 import javax.swing.*;
 import java.awt.*;

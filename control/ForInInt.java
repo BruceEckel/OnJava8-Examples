@@ -1,4 +1,5 @@
 // control/ForInInt.java
+// ©2016 MindView LLC: see Copyright.txt
 import static onjava.Range.*;
 
 public class ForInInt {

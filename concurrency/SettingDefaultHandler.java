@@ -1,4 +1,5 @@
 // concurrency/SettingDefaultHandler.java
+// ©2016 MindView LLC: see Copyright.txt
 // {TimeOutDuringTesting}
 import java.util.concurrent.*;
 

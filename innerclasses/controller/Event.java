@@ -1,4 +1,5 @@
 // innerclasses/controller/Event.java
+// ©2016 MindView LLC: see Copyright.txt
 // The common methods for any control event.
 package innerclasses.controller;
 

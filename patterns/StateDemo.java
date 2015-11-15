@@ -1,4 +1,5 @@
 // patterns/StateDemo.java
+// ©2016 MindView LLC: see Copyright.txt
 // Simple demonstration of the State pattern.
 
 interface StateBase {

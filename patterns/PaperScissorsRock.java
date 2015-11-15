@@ -1,4 +1,5 @@
 // patterns/PaperScissorsRock.java
+// ©2016 MindView LLC: see Copyright.txt
 // Demonstration of multiple dispatching.
 import java.util.*;
 import java.util.function.*;

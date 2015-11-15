@@ -1,4 +1,5 @@
 // generics/ClassTypeCapture.java
+// ©2016 MindView LLC: see Copyright.txt
 
 class Building {}
 class House extends Building {}

@@ -1,4 +1,5 @@
 // enums/RoShamBo2.java
+// ©2016 MindView LLC: see Copyright.txt
 // Switching one enum on another.
 package enums;
 import static enums.Outcome.*;

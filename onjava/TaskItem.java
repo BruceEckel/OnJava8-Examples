@@ -1,4 +1,5 @@
 // onjava/TaskItem.java
+// ©2016 MindView LLC: see Copyright.txt
 // A Future and the Callable that produced it.
 package onjava;
 import java.util.concurrent.*;

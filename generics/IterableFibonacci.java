@@ -1,4 +1,5 @@
 // generics/IterableFibonacci.java
+// ©2016 MindView LLC: see Copyright.txt
 // Adapt the Fibonacci class to make it Iterable.
 import java.util.*;
 

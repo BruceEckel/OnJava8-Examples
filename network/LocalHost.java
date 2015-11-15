@@ -1,4 +1,5 @@
 // network/LocalHost.java
+// ©2016 MindView LLC: see Copyright.txt
 // The local loopback IP address
 import java.net.*;
 

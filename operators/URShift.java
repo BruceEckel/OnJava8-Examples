@@ -1,4 +1,5 @@
 // operators/URShift.java
+// ©2016 MindView LLC: see Copyright.txt
 // Test of unsigned right shift.
 
 public class URShift {

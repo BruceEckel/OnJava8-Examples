@@ -1,4 +1,5 @@
 // swt/util/SWTConsole.java
+// ©2016 MindView LLC: see Copyright.txt
 package swt.util;
 import org.eclipse.swt.widgets.*;
 

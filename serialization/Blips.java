@@ -1,4 +1,5 @@
 // serialization/Blips.java
+// ©2016 MindView LLC: see Copyright.txt
 // Simple use of Externalizable & a pitfall.
 import java.io.*;
 

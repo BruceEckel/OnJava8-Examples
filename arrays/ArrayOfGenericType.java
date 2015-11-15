@@ -1,4 +1,5 @@
 // arrays/ArrayOfGenericType.java
+// ©2016 MindView LLC: see Copyright.txt
 // Arrays of generic types won't compile.
 
 public class ArrayOfGenericType<T> {

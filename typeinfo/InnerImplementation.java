@@ -1,4 +1,5 @@
 // typeinfo/InnerImplementation.java
+// ©2016 MindView LLC: see Copyright.txt
 // Private inner classes can't hide from reflection.
 import typeinfo.interfacea.*;
 

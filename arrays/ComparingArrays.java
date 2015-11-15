@@ -1,4 +1,5 @@
 // arrays/ComparingArrays.java
+// ©2016 MindView LLC: see Copyright.txt
 // Using Arrays.equals()
 import java.util.*;
 

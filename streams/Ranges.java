@@ -1,4 +1,5 @@
 // streams/Ranges.java
+// ©2016 MindView LLC: see Copyright.txt
 import static java.util.stream.IntStream.*;
 
 public class Ranges {

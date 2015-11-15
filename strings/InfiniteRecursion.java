@@ -1,4 +1,5 @@
 // strings/InfiniteRecursion.java
+// ©2016 MindView LLC: see Copyright.txt
 // Accidental recursion.
 // {ThrowsException}
 // {ValidateByHand}

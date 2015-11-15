@@ -1,4 +1,5 @@
 // onjava/Deque.java
+// ©2016 MindView LLC: see Copyright.txt
 // Creating a Deque from a LinkedList.
 package onjava;
 import java.util.*;

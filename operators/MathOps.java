@@ -1,4 +1,5 @@
 // operators/MathOps.java
+// ©2016 MindView LLC: see Copyright.txt
 // Demonstrates the mathematical operators.
 import java.util.*;
 

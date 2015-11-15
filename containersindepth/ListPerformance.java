@@ -1,4 +1,5 @@
 // containersindepth/ListPerformance.java
+// ©2016 MindView LLC: see Copyright.txt
 // Demonstrates performance differences in Lists.
 // {Args: 100 500} Small to keep build testing short
 import java.util.*;

@@ -1,4 +1,5 @@
 // generics/UseList.java
+// ©2016 MindView LLC: see Copyright.txt
 // {CompileTimeError} (Will not compile)
 
 public class UseList<W,T> {

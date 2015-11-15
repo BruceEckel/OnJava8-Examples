@@ -1,4 +1,5 @@
 // concurrency/SimpleThread.java
+// ©2016 MindView LLC: see Copyright.txt
 // Inheriting directly from the Thread class.
 
 public class SimpleThread extends Thread {

@@ -1,4 +1,5 @@
 // housekeeping/ExplicitStatic.java
+// ©2016 MindView LLC: see Copyright.txt
 // Explicit static initialization with the "static" clause.
 
 class Cup {

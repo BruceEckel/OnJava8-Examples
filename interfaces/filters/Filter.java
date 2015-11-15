@@ -1,4 +1,5 @@
 // interfaces/filters/Filter.java
+// ©2016 MindView LLC: see Copyright.txt
 package interfaces.filters;
 
 public class Filter {

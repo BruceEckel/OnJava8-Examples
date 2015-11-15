@@ -1,4 +1,5 @@
 // reuse/Wind.java
+// ©2016 MindView LLC: see Copyright.txt
 // Inheritance & upcasting.
 
 class Instrument {

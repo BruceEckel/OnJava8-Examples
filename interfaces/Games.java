@@ -1,4 +1,5 @@
 // interfaces/Games.java
+// ©2016 MindView LLC: see Copyright.txt
 // A Game framework using Factory Methods.
 
 interface Game { boolean move(); }

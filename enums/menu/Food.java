@@ -1,4 +1,5 @@
 // enums/menu/Food.java
+// ©2016 MindView LLC: see Copyright.txt
 // Subcategorization of enums within interfaces.
 package enums.menu;
 

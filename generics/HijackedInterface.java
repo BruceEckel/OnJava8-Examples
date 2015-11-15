@@ -1,4 +1,5 @@
 // generics/HijackedInterface.java
+// ©2016 MindView LLC: see Copyright.txt
 // {CompileTimeError} (Won't compile)
 
 class Cat extends ComparablePet implements Comparable<Cat>{

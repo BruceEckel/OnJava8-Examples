@@ -1,4 +1,5 @@
 // newio/BufferToText.java
+// ©2016 MindView LLC: see Copyright.txt
 // Converting text to and from ByteBuffers
 import java.nio.*;
 import java.nio.channels.*;

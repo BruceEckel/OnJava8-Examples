@@ -1,4 +1,5 @@
 // innerclasses/GreenhouseController.java
+// ©2016 MindView LLC: see Copyright.txt
 // Configure and execute the greenhouse system.
 // {Args: 5000}
 import innerclasses.controller.*;

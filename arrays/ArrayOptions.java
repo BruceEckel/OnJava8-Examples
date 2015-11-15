@@ -1,4 +1,5 @@
 // arrays/ArrayOptions.java
+// ©2016 MindView LLC: see Copyright.txt
 // Initialization & re-assignment of arrays.
 import java.util.*;
 

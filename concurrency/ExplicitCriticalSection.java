@@ -1,4 +1,5 @@
 // concurrency/ExplicitCriticalSection.java
+// ©2016 MindView LLC: see Copyright.txt
 // {ThrowsException} on a multiprocessor machine
 // Using explicit Lock objects to create
 // critical sections.

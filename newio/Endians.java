@@ -1,4 +1,5 @@
 // newio/Endians.java
+// ©2016 MindView LLC: see Copyright.txt
 // Endian differences and data storage.
 import java.nio.*;
 import java.util.*;

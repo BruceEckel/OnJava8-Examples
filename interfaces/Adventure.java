@@ -1,4 +1,5 @@
 // interfaces/Adventure.java
+// ©2016 MindView LLC: see Copyright.txt
 // Multiple interfaces.
 
 interface CanFight {

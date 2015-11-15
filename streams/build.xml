@@ -25,12 +25,14 @@
     <jrun cls="Generator" />
     <jrun cls="ImperativeRandoms" />
     <jrun cls="Implementation2" />
+    <jrun cls="Informational" />
     <jrun cls="Jim" />
     <jrun cls="LastElement" />
     <jrun cls="Looping" />
     <jrun cls="Machine" />
     <jrun cls="Machine2" />
     <jrun cls="MapCollector" />
+    <jrun cls="Matching" />
     <jrun cls="MultipleInheritance" />
     <jrun cls="NumericStreamInfo" />
     <jrun cls="OptionalBasics" />
@@ -47,6 +49,7 @@
     <jrun cls="Ranges" />
     <jrun cls="SelectElement" />
     <jrun cls="SortedComparator" />
+    <jrun cls="SpecialCollector" />
     <jrun cls="StreamOf" />
     <jrun cls="StreamOfOptionals" />
     <jrun cls="StreamOfRandoms" />

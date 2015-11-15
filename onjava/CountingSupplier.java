@@ -1,4 +1,5 @@
 // onjava/CountingSupplier.java
+// ©2016 MindView LLC: see Copyright.txt
 // Simple generator implementations.
 package onjava;
 import java.util.function.*;

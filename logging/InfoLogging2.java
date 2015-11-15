@@ -1,4 +1,5 @@
 // logging/InfoLogging2.java
+// ©2016 MindView LLC: see Copyright.txt
 // Guaranteeing proper class and method names
 import java.util.logging.*;
 

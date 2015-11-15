@@ -1,4 +1,5 @@
 // containersindepth/Bits.java
+// ©2016 MindView LLC: see Copyright.txt
 // Demonstration of BitSet.
 import java.util.*;
 

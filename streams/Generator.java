@@ -1,4 +1,5 @@
 // streams/Generator.java
+// ©2016 MindView LLC: see Copyright.txt
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;

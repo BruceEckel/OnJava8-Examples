@@ -1,4 +1,5 @@
 // concurrency/CarBuilder.java
+// ©2016 MindView LLC: see Copyright.txt
 // A complex example of tasks working together.
 import java.util.concurrent.*;
 import java.util.*;

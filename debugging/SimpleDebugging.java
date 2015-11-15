@@ -1,4 +1,5 @@
 // debugging/SimpleDebugging.java
+// ©2016 MindView LLC: see Copyright.txt
 // {ThrowsException}
 public class SimpleDebugging {
   private static void foo1() {

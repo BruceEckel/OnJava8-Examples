@@ -1,4 +1,5 @@
 // iostreams/UsingRandomAccessFile.java
+// ©2016 MindView LLC: see Copyright.txt
 import java.io.*;
 
 public class UsingRandomAccessFile {

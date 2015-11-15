@@ -1,4 +1,5 @@
 // reuse/PlaceSetting.java
+// ©2016 MindView LLC: see Copyright.txt
 // Combining composition & inheritance.
 
 class Plate {

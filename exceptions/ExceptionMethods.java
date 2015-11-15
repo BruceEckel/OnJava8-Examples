@@ -1,4 +1,5 @@
 // exceptions/ExceptionMethods.java
+// ©2016 MindView LLC: see Copyright.txt
 // Demonstrating the Exception Methods.
 
 public class ExceptionMethods {

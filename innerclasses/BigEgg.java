@@ -1,4 +1,5 @@
 // innerclasses/BigEgg.java
+// ©2016 MindView LLC: see Copyright.txt
 // An inner class cannot be overriden like a method.
 
 class Egg {

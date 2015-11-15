@@ -1,4 +1,5 @@
 // references/ImmutableInteger.java
+// ©2016 MindView LLC: see Copyright.txt
 // The Integer class cannot be changed.
 import java.util.*;
 

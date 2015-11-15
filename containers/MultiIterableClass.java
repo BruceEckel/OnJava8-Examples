@@ -1,4 +1,5 @@
 // containers/MultiIterableClass.java
+// ©2016 MindView LLC: see Copyright.txt
 // Adding several Adapter Methods.
 import java.util.*;
 

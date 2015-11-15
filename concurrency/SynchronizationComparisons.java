@@ -1,4 +1,5 @@
 // concurrency/SynchronizationComparisons.java
+// ©2016 MindView LLC: see Copyright.txt
 // Comparing the performance of explicit Locks
 // and Atomics versus the synchronized keyword.
 import java.util.concurrent.*;

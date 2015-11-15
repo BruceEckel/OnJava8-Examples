@@ -1,4 +1,5 @@
 // annotations/database/TableCreator.java
+// ©2016 MindView LLC: see Copyright.txt
 // Reflection-based annotation processor.
 // {Args: annotations.database.Member}
 package annotations.database;

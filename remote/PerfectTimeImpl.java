@@ -1,4 +1,5 @@
 // remote/PerfectTimeImpl.java
+// ©2016 MindView LLC: see Copyright.txt
 // The implementation of the PerfectTime
 // remote object.
 import java.rmi.RemoteException;

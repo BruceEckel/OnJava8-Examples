@@ -1,4 +1,5 @@
 // streams/RandInts.java
+// ©2016 MindView LLC: see Copyright.txt
 package streams;
 import java.util.*;
 import java.util.stream.*;

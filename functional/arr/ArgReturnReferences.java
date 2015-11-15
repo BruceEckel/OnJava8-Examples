@@ -1,6 +1,7 @@
-// functions/arr/ArgReturnReferences.java
+// functional/arr/ArgReturnReferences.java
+// ©2016 MindView LLC: see Copyright.txt
 // Demonstrates method references
-package functions.arr;
+package functional.arr;
 import java.util.function.*;
 
 class Y {

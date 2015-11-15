@@ -1,4 +1,5 @@
 // newio/GetData.java
+// ©2016 MindView LLC: see Copyright.txt
 // Getting different representations from a ByteBuffer
 import java.nio.*;
 

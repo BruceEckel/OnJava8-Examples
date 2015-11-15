@@ -1,4 +1,5 @@
 // generics/Store.java
+// ©2016 MindView LLC: see Copyright.txt
 // Building up a complex model using generic containers.
 import java.util.*;
 import java.util.function.*;

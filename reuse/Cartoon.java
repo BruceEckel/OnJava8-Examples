@@ -1,4 +1,5 @@
 // reuse/Cartoon.java
+// ©2016 MindView LLC: see Copyright.txt
 // Constructor calls during inheritance.
 
 class Art {

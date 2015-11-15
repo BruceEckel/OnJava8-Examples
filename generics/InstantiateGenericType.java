@@ -1,4 +1,5 @@
 // generics/InstantiateGenericType.java
+// ©2016 MindView LLC: see Copyright.txt
 
 class ClassAsFactory<T> {
   T x;

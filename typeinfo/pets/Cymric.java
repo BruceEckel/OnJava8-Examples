@@ -1,4 +1,5 @@
 // typeinfo/pets/Cymric.java
+// ©2016 MindView LLC: see Copyright.txt
 package typeinfo.pets;
 
 public class Cymric extends Manx {

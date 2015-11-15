@@ -1,4 +1,5 @@
 // typeinfo/PetCount2.java
+// ©2016 MindView LLC: see Copyright.txt
 import typeinfo.pets.*;
 
 public class PetCount2 {

@@ -1,4 +1,5 @@
 // generics/SimpleQueue.java
+// ©2016 MindView LLC: see Copyright.txt
 // A different kind of container that is Iterable
 import java.util.*;
 

@@ -1,4 +1,5 @@
 // containersindepth/Prediction.java
+// ©2016 MindView LLC: see Copyright.txt
 // Predicting the weather with groundhogs.
 import java.util.*;
 

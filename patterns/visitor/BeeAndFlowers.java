@@ -1,4 +1,5 @@
 // patterns/visitor/BeeAndFlowers.java
+// ©2016 MindView LLC: see Copyright.txt
 // Demonstration of "visitor" pattern.
 package patterns.visitor;
 import java.util.*;

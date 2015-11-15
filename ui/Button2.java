@@ -1,4 +1,5 @@
 // ui/Button2.java
+// ©2016 MindView LLC: see Copyright.txt
 // Responding to button presses.
 import javax.swing.*;
 import java.awt.*;

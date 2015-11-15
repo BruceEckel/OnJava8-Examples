@@ -1,4 +1,5 @@
 // enums/RoShamBo.java
+// ©2016 MindView LLC: see Copyright.txt
 // Common tools for RoShamBo examples.
 package enums;
 import onjava.*;

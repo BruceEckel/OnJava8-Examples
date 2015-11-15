@@ -1,4 +1,5 @@
 // strings/JGrep.java
+// ©2016 MindView LLC: see Copyright.txt
 // A very simple version of the "grep" program.
 // {Args: JGrep.java 'void|int|String'}
 import java.util.regex.*;

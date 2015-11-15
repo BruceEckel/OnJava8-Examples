@@ -1,4 +1,5 @@
 # generics/DogsAndRobots.py
+# ©2016 MindView LLC: see Copyright.txt
 
 class Dog:
     def speak(self):

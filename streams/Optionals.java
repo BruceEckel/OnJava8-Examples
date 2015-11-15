@@ -1,9 +1,10 @@
 // streams/Optionals.java
+// ©2016 MindView LLC: see Copyright.txt
 import java.util.*;
 import java.util.stream.*;
 import java.util.function.*;
 
-class Optionals {
+public class Optionals {
   static void basics(Optional<String> optString) {
     if(optString.isPresent())
       System.out.println(optString.get());
@@ -11,7 +12,7 @@ class Optionals {
       System.out.println("Nothing inside!");
   }
   static void if_present(Optional<String> optString) {
-    optString.ifPresent(str -> System.out.println(str));
+    optString.ifPresent(System.out::println);
   }
   static void or_else(Optional<String> optString) {
     System.out.println(optString.orElse("Nada"));

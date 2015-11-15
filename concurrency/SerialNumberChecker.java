@@ -1,4 +1,5 @@
 // concurrency/SerialNumberChecker.java
+// ©2016 MindView LLC: see Copyright.txt
 // Operations that might seem safe are not,
 // when threads are present.
 // {Args: 4}

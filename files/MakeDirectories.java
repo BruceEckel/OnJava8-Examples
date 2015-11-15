@@ -1,4 +1,5 @@
 // files/MakeDirectories.java
+// ©2016 MindView LLC: see Copyright.txt
 // Demonstrates using the File class to
 // create directories and manipulate files.
 // {Args: MakeDirectoriesTest}

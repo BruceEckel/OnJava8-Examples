@@ -1,4 +1,5 @@
 // hiding/ChocolateChip.java
+// ©2016 MindView LLC: see Copyright.txt
 // Can't use package-access member from another package.
 import hiding.dessert.*;
 

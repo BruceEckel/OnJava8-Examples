@@ -1,4 +1,5 @@
 // typeinfo/RegisteredFactories.java
+// ©2016 MindView LLC: see Copyright.txt
 // Registering Class Factories in the base class.
 import typeinfo.factory.*;
 import java.util.*;

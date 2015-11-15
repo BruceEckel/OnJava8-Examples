@@ -1,4 +1,5 @@
 // typeinfo/SimpleDynamicProxy.java
+// ©2016 MindView LLC: see Copyright.txt
 import java.lang.reflect.*;
 
 class DynamicProxyHandler implements InvocationHandler {

@@ -1,4 +1,5 @@
 // patterns/trashvisitor/Paper.java
+// ©2016 MindView LLC: see Copyright.txt
 // Paper for the visitor pattern.
 package patterns.trashvisitor;
 import patterns.trash.*;

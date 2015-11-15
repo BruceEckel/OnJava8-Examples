@@ -1,4 +1,5 @@
 // streams/Peeking.java
+// ©2016 MindView LLC: see Copyright.txt
 
 class Peeking  {
   public static void main(String[] args) throws Exception {

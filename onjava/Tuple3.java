@@ -1,4 +1,5 @@
 // onjava/Tuple3.java
+// ©2016 MindView LLC: see Copyright.txt
 package onjava;
 
 public class Tuple3<A,B,C> extends Tuple2<A, B> {

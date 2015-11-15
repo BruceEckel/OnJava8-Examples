@@ -1,4 +1,5 @@
 // housekeeping/OrderOfInitialization.java
+// ©2016 MindView LLC: see Copyright.txt
 // Demonstrates initialization order.
 
 // When the constructor is called to create a

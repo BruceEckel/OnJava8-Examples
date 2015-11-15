@@ -1,4 +1,5 @@
 // typeinfo/SimpleProxyDemo.java
+// ©2016 MindView LLC: see Copyright.txt
 
 interface Interface {
   void doSomething();

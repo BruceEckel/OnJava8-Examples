@@ -1,4 +1,5 @@
 // control/LabeledFor.java
+// ©2016 MindView LLC: see Copyright.txt
 // For loops with "labeled break" and "labeled continue."
 
 public class LabeledFor {

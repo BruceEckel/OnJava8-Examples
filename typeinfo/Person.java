@@ -1,4 +1,5 @@
 // typeinfo/Person.java
+// ©2016 MindView LLC: see Copyright.txt
 // A class with a Null Object.
 import onjava.*;
 

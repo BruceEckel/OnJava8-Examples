@@ -1,4 +1,5 @@
 // polymorphism/PolyConstructors.java
+// ©2016 MindView LLC: see Copyright.txt
 // Constructors and polymorphism
 // don't produce what you might expect.
 

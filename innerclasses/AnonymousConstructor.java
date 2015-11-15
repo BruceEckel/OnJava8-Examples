@@ -1,4 +1,5 @@
 // innerclasses/AnonymousConstructor.java
+// ©2016 MindView LLC: see Copyright.txt
 // Creating a constructor for an anonymous inner class.
 
 abstract class Base {

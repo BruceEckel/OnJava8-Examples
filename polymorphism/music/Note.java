@@ -1,4 +1,5 @@
 // polymorphism/music/Note.java
+// ©2016 MindView LLC: see Copyright.txt
 // Notes to play on musical instruments.
 package polymorphism.music;
 

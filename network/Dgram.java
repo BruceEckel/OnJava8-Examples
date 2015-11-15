@@ -1,4 +1,5 @@
 // network/Dgram.java
+// ©2016 MindView LLC: see Copyright.txt
 // A utility class to convert back and forth
 // Between Strings and DataGramPackets.
 import java.net.*;

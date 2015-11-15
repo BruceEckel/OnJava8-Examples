@@ -1,4 +1,5 @@
 // references/MutableInteger.java
+// ©2016 MindView LLC: see Copyright.txt
 // A changeable wrapper class.
 import java.util.*;
 

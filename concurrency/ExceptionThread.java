@@ -1,4 +1,5 @@
 // concurrency/ExceptionThread.java
+// ©2016 MindView LLC: see Copyright.txt
 // {ValidateByHand}
 // {ThrowsException}
 import java.util.concurrent.*;

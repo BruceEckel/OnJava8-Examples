@@ -1,4 +1,5 @@
 // containersindepth/Enumerations.java
+// ©2016 MindView LLC: see Copyright.txt
 // Java 1.0/1.1 Vector and Enumeration.
 import java.util.*;
 import onjava.*;

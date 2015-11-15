@@ -1,4 +1,5 @@
 // polymorphism/shape/RandomShapeGenerator.java
+// ©2016 MindView LLC: see Copyright.txt
 // A "factory" that randomly creates shapes.
 package polymorphism.shape;
 import java.util.*;

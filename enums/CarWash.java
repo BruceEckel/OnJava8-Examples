@@ -1,4 +1,5 @@
 // enums/CarWash.java
+// ©2016 MindView LLC: see Copyright.txt
 import java.util.*;
 
 public class CarWash {

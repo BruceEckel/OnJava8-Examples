@@ -1,4 +1,5 @@
 // patterns/state/StateMachineDemo.java
+// ©2016 MindView LLC: see Copyright.txt
 // Demonstrates StateMachine pattern
 // and Template method.
 package patterns.state;

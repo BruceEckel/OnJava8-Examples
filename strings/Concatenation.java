@@ -1,4 +1,5 @@
 // strings/Concatenation.java
+// ©2016 MindView LLC: see Copyright.txt
 
 public class Concatenation {
   public static void main(String[] args) {

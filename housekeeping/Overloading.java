@@ -1,4 +1,5 @@
 // housekeeping/Overloading.java
+// ©2016 MindView LLC: see Copyright.txt
 // Demonstration of both constructor
 // and ordinary method overloading.
 

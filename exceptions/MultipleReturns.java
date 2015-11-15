@@ -1,4 +1,5 @@
 // exceptions/MultipleReturns.java
+// ©2016 MindView LLC: see Copyright.txt
 
 public class MultipleReturns {
   public static void f(int i) {

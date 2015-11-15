@@ -1,4 +1,5 @@
 // onjava/Hex.java
+// ©2016 MindView LLC: see Copyright.txt
 package onjava;
 import java.io.*;
 import java.nio.file.*;

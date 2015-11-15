@@ -1,4 +1,5 @@
 // onjava/SwingConsole.java
+// ©2016 MindView LLC: see Copyright.txt
 // Tool for running Swing demos from the
 // console, both applets and JFrames.
 package onjava;

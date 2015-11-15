@@ -1,4 +1,5 @@
 // containers/MapOfList.java
+// ©2016 MindView LLC: see Copyright.txt
 package containers;
 import typeinfo.pets.*;
 import java.util.*;

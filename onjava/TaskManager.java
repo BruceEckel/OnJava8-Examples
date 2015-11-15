@@ -1,4 +1,5 @@
 // onjava/TaskManager.java
+// ©2016 MindView LLC: see Copyright.txt
 // Managing and executing a queue of tasks.
 package onjava;
 import java.util.concurrent.*;

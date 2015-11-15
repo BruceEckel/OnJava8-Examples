@@ -1,4 +1,5 @@
 // exceptions/InputFile.java
+// ©2016 MindView LLC: see Copyright.txt
 // Paying attention to exceptions in constructors.
 import java.io.*;
 

@@ -1,4 +1,5 @@
 // generics/GenericHolder.java
+// ©2016 MindView LLC: see Copyright.txt
 
 public class GenericHolder<T> {
   private T obj;

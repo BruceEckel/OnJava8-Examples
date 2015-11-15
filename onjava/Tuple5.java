@@ -1,4 +1,5 @@
 // onjava/Tuple5.java
+// ©2016 MindView LLC: see Copyright.txt
 package onjava;
 
 public class Tuple5<A, B, C, D, E>

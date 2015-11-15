@@ -1,4 +1,5 @@
 // newio/AvailableCharSets.java
+// ©2016 MindView LLC: see Copyright.txt
 // Displays Charsets and aliases
 import java.nio.charset.*;
 import java.util.*;

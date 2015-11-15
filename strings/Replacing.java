@@ -1,4 +1,5 @@
 // strings/Replacing.java
+// ©2016 MindView LLC: see Copyright.txt
 
 public class Replacing {
   static String s = Splitting.knights;

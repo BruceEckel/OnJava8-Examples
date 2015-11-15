@@ -1,4 +1,5 @@
 // ui/ButtonGroups.java
+// ©2016 MindView LLC: see Copyright.txt
 // Uses reflection to create groups
 // of different types of AbstractButton.
 import javax.swing.*;

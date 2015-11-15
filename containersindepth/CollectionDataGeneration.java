@@ -1,4 +1,5 @@
 // containersindepth/CollectionDataGeneration.java
+// ©2016 MindView LLC: see Copyright.txt
 // Using the Suppliers defined in the Arrays chapter.
 import java.util.*;
 import onjava.*;

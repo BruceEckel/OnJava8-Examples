@@ -1,4 +1,5 @@
-// functions/CtorReference.java
+// functional/CtorReference.java
+// ©2016 MindView LLC: see Copyright.txt
 // Demonstrates java.util.function
 import java.util.function.*;
 

@@ -1,4 +1,5 @@
 // compression/GZIPcompress.java
+// ©2016 MindView LLC: see Copyright.txt
 // {Args: GZIPcompress.java}
 import java.util.zip.*;
 import java.io.*;

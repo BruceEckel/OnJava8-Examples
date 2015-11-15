@@ -1,4 +1,5 @@
 // assertions/LoaderAssertions.java
+// ©2016 MindView LLC: see Copyright.txt
 // Using the class loader to enable assertions
 // {ThrowsException}
 

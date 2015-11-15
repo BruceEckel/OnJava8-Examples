@@ -1,4 +1,5 @@
 // housekeeping/OverloadingVarargs3.java
+// ©2016 MindView LLC: see Copyright.txt
 
 public class OverloadingVarargs3 {
   static void f(float i, Character... args) {
