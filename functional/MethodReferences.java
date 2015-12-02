@@ -4,34 +4,50 @@
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 import java.util.*;
 
+interface Callable { // (1)
+  void call(String s);
+}
+
+class Describe {
+  void show(String msg) { // (2)
+    System.out.println(msg);
+  }
+}
+
 public class MethodReferences {
+  static void hello(String name) { // (3)
+    System.out.println("Hello, " + name);
+  }
   static class Description {
-    String describe;
-    public Description(String desc) {
-      describe = desc;
+    String about;
+    public Description(String desc) { about = desc; }
+    void help(String msg) { // (4)
+      System.out.println(about + " " + msg);
     }
-    public void show() { System.out.println(describe); }
+  }
+  static class Helper {
+    static void assist(String msg) { // (5)
+      System.out.println(msg);
+    }
   }
   public static void main(String[] args) {
-    List<String> keys = Arrays.asList(
-      "Every", "Good", "Boy", "Deserves", "Fudge");
-    keys.forEach(System.out::println); // (1)
+    Describe d = new Describe();
+    Callable c = d::show; // (6)
+    c.call("call()"); // (7)
 
-    List<Description> descriptions = new ArrayList<>();
-    for(String k : keys)
-      descriptions.add(new Description(k));
-    descriptions.forEach(Description::show); // (2)
+    c = MethodReferences::hello; // (8)
+    c.call("Bob");
+
+    c = new Description("valuable")::help; // (9)
+    c.call("information");
+
+    c = Helper::assist; // (10)
+    c.call("Help!");
   }
 }
 /* Output:
-Every
-Good
-Boy
-Deserves
-Fudge
-Every
-Good
-Boy
-Deserves
-Fudge
+call()
+Hello, Bob
+valuable information
+Help!
 */

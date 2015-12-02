@@ -5,37 +5,33 @@
 package interfaces.interfaceprocessor;
 import java.util.*;
 
-public abstract class StringProcessor implements Processor{
+interface StringProcessor extends Processor {
   @Override
-  public String name() {
-    return getClass().getSimpleName();
-  }
-  @Override
-  public abstract String process(Object input);
-  public static String s =
-    "If she weighs the same as a duck, she's made of wood";
-  public static void main(String[] args) {
-    Apply.process(new Upcase(), s);
-    Apply.process(new Downcase(), s);
-    Apply.process(new Splitter(), s);
+  String process(Object input);  // (1)
+  String s = // (2)
+  "If she weighs the same as a duck, she's made of wood";
+  static void main(String[] args) { // (3)
+    Applicator.apply(new Upcase(), s);
+    Applicator.apply(new Downcase(), s);
+    Applicator.apply(new Splitter(), s);
   }
 }
 
-class Upcase extends StringProcessor {
+class Upcase implements StringProcessor {
   @Override
   public String process(Object input) { // Covariant return
     return ((String)input).toUpperCase();
   }
 }
 
-class Downcase extends StringProcessor {
+class Downcase implements StringProcessor {
   @Override
   public String process(Object input) {
     return ((String)input).toLowerCase();
   }
 }
 
-class Splitter extends StringProcessor {
+class Splitter implements StringProcessor {
   @Override
   public String process(Object input) {
     return Arrays.toString(((String)input).split(" "));

@@ -5,6 +5,8 @@
 package interfaces.interfaceprocessor;
 
 public interface Processor {
-  String name();
+  default String name() {
+    return getClass().getSimpleName();
+  }
   Object process(Object input);
 }

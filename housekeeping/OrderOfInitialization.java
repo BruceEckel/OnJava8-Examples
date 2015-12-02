@@ -7,7 +7,9 @@
 // When the constructor is called to create a
 // Window object, you'll see a message:
 class Window {
-  Window(int marker) { System.out.println("Window(" + marker + ")"); }
+  Window(int marker) {
+    System.out.println("Window(" + marker + ")");
+  }
 }
 
 class House {

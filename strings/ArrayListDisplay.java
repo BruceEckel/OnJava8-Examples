@@ -2,14 +2,16 @@
 // ©2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-import generics.coffee.*;
 import java.util.*;
+import java.util.stream.*;
+import generics.coffee.*;
 
 public class ArrayListDisplay {
   public static void main(String[] args) {
-    ArrayList<Coffee> coffees = new ArrayList<>();
-    for(Coffee c : new CoffeeSupplier(10))
-      coffees.add(c);
+    List<Coffee> coffees =
+      Stream.generate(new CoffeeSupplier())
+        .limit(10)
+        .collect(Collectors.toList());
     System.out.println(coffees);
   }
 }

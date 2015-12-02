@@ -11,15 +11,15 @@ class OptionalFlatMap {
   static Stream<String> testStream() {
     return Arrays.stream(elements);
   }
-  static void
-  test(String descr, Function<String, Optional<String>> func) {
+  static void test(String descr,
+    Function<String, Optional<String>> func) {
     System.out.println(" ---( " + descr + " )---");
     for(int i = 0; i <= elements.length; i++) {
       System.out.println(
         testStream()
-        .skip(i)
-        .findFirst()
-        .flatMap(func));
+          .skip(i)
+          .findFirst()
+          .flatMap(func));
     }
   }
   public static void main(String[] args) {
@@ -36,8 +36,10 @@ class OptionalFlatMap {
 
     test("Replace", s -> Optional.of(s.replace("2", "9")));
 
-    test("Take last digit", s -> Optional.of(s.length() > 0 ?
-      s.charAt(s.length() - 1) + "" : s));
+    test("Take last digit",
+      s -> Optional.of(s.length() > 0 ?
+        s.charAt(s.length() - 1) + ""
+        : s));
   }
 }
 /* Output:

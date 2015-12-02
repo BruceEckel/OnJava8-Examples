@@ -34,6 +34,11 @@
           timeout="@{timeOut}"
           output="${antoutput}" append="true">
             <arg line="@{arguments}"/>
+            <redirector
+              output="@{cls}.out"
+              error="@{cls}.err"
+              createemptyfiles="false"
+              append="false" />
         </java>
         <echo file="${antoutput}" append="true">[${chapter}] Finished: java @{cls} @{arguments}&#13;</echo>
         <echo file="${antoutput}" append="true">@{msg}&#13;</echo>
@@ -102,6 +107,12 @@
       <compilerarg value="-Xmaxerrs"/>
       <compilerarg value="10"/>
     </javac>
+    <javac includeantruntime="false"
+     classpath="${java.class.path};${basedir};${basedir}/.."
+     srcdir="${basedir}/../polymorphism/music/">
+      <compilerarg value="-Xmaxerrs"/>
+      <compilerarg value="10"/>
+    </javac>
   </target>
 
   <target
@@ -141,6 +152,15 @@
     </javac>
     <echo message="Build '${chapter}' succeeded&#13;"/>
     <echo file="${antoutput}" append="true" message="Build '${chapter}' succeeded&#13;"/>
+  </target>
+
+  <target
+   depends="base"
+   description="Verify output; requires Python 3.5"
+   name="verify">
+    <exec dir="${basedir}" executable="python" failonerror="true">
+      <arg line="../verify_output.py" />
+    </exec>
   </target>
 
 </project>

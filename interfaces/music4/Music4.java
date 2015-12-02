@@ -21,7 +21,9 @@ class Wind extends Instrument {
   @Override
   public String what() { return "Wind"; }
   @Override
-  public void adjust() {}
+  public void adjust() {
+    System.out.println("Adjusting Wind");
+  }
 }
 
 class Percussion extends Instrument {
@@ -32,7 +34,9 @@ class Percussion extends Instrument {
   @Override
   public String what() { return "Percussion"; }
   @Override
-  public void adjust() {}
+  public void adjust() {
+    System.out.println("Adjusting Percussion");
+  }
 }
 
 class Stringed extends Instrument {
@@ -43,7 +47,9 @@ class Stringed extends Instrument {
   @Override
   public String what() { return "Stringed"; }
   @Override
-  public void adjust() {}
+  public void adjust() {
+    System.out.println("Adjusting Stringed");
+  }
 }
 
 class Brass extends Wind {
@@ -52,7 +58,9 @@ class Brass extends Wind {
     System.out.println("Brass.play() " + n);
   }
   @Override
-  public void adjust() { System.out.println("Brass.adjust()"); }
+  public void adjust() {
+    System.out.println("Adjusting Brass");
+  }
 }
 
 class Woodwind extends Wind {

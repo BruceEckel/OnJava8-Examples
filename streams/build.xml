@@ -7,7 +7,6 @@
   <import file="../Ant-Clean.xml"/>
 
   <target name="run" description="Compile and run" depends="build">
-    <jrun cls="AnImplementation" />
     <jrun cls="ArrayStreams" />
     <jrun cls="Bubbles" />
     <jrun cls="CollectionToStream" />
@@ -24,16 +23,12 @@
     <jrun cls="FunctionMap3" />
     <jrun cls="Generator" />
     <jrun cls="ImperativeRandoms" />
-    <jrun cls="Implementation2" />
     <jrun cls="Informational" />
-    <jrun cls="Jim" />
     <jrun cls="LastElement" />
     <jrun cls="Looping" />
-    <jrun cls="Machine" />
     <jrun cls="Machine2" />
     <jrun cls="MapCollector" />
     <jrun cls="Matching" />
-    <jrun cls="MultipleInheritance" />
     <jrun cls="NumericStreamInfo" />
     <jrun cls="OptionalBasics" />
     <jrun cls="OptionalFilter" />
@@ -47,6 +42,7 @@
     <jrun cls="Randoms" />
     <jrun cls="RandomWords" />
     <jrun cls="Ranges" />
+    <jrun cls="Reduce" />
     <jrun cls="SelectElement" />
     <jrun cls="SortedComparator" />
     <jrun cls="SpecialCollector" />

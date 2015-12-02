@@ -6,8 +6,8 @@
 import java.nio.*;
 import java.util.*;
 
-public class AdaptedRandomDoubles extends RandomDoubles
-implements Readable {
+public class AdaptedRandomDoubles
+implements RandomDoubles, Readable {
   private int count;
   public AdaptedRandomDoubles(int count) {
     this.count = count;

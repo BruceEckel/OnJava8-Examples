@@ -2,35 +2,35 @@
 // ©2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-// Demonstrates java.util.function
-import java.util.function.*;
+
+class Dog {
+  String name;
+  int age = -1; // For "unknown"
+  Dog() { name = "stray"; }
+  Dog(String nm) { name = nm; }
+  Dog(String nm, int yrs) { name = nm; age = yrs; }
+}
+
+interface MakeNoArgs {
+  Dog make();
+}
+
+interface Make1Arg {
+  Dog make(String nm);
+}
+
+interface Make2Args {
+  Dog make(String nm, int age);
+}
 
 public class CtorReference {
-  public CtorReference() {
-    System.out.println("Inside CtorReference()");
-  }
-  public CtorReference(int i) {
-    System.out.println("Inside CtorReference(i)");
-  }
-  public CtorReference(int i, double d) {
-    System.out.println("Inside CtorReference(i, d)");
-  }
   public static void main(String[] args) {
-    Supplier<CtorReference> cr0 =
-      CtorReference::new;
-    CtorReference r0 = cr0.get();
+    MakeNoArgs mna = Dog::new; // (1)
+    Make1Arg m1a = Dog::new;   // (2)
+    Make2Args m2a = Dog::new;  // (3)
 
-    Function<Integer, CtorReference> cr1 =
-      CtorReference::new;
-    CtorReference r1 = cr1.apply(1);
-
-    BiFunction<Integer, Double, CtorReference> cr2 =
-      CtorReference::new;
-    CtorReference r2 = cr2.apply(1, 2.0);
+    Dog dn = mna.make();
+    Dog d1 = m1a.make("Comet");
+    Dog d2 = m2a.make("Ralph", 4);
   }
 }
-/* Output:
-Inside CtorReference()
-Inside CtorReference(i)
-Inside CtorReference(i, d)
-*/

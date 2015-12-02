@@ -11,11 +11,13 @@ enum Explore { HERE, THERE }
 
 public class Reflection {
   public static Set<String> analyze(Class<?> enumClass) {
-    System.out.println("----- Analyzing " + enumClass + " -----");
+    System.out.println(
+      "----- Analyzing " + enumClass + " -----");
     System.out.println("Interfaces:");
     for(Type t : enumClass.getGenericInterfaces())
       System.out.println(t);
-    System.out.println("Base: " + enumClass.getSuperclass());
+    System.out.println(
+      "Base: " + enumClass.getSuperclass());
     System.out.println("Methods: ");
     Set<String> methods = new TreeSet<>();
     for(Method m : enumClass.getMethods())

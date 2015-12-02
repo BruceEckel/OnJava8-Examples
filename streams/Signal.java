@@ -14,18 +14,16 @@ public class Signal {
   public String toString() {
     return "Signal(" + msg + ")";
   }
-  static class Generator implements Supplier<Signal> {
-    Random rand = new Random(47);
-    public Signal get() {
-      switch(rand.nextInt(4)) {
-        case 1: return new Signal("dot");
-        case 2: return new Signal("dash");
-        default: return null;
-      }
+  static Random rand = new Random(47);
+  public static Signal morse() {
+    switch(rand.nextInt(4)) {
+      case 1: return new Signal("dot");
+      case 2: return new Signal("dash");
+      default: return null;
     }
   }
   public static Stream<Optional<Signal>> stream() {
-    return Stream.generate(new Generator())
+    return Stream.generate(Signal::morse)
       .map(signal -> Optional.ofNullable(signal));
   }
 }

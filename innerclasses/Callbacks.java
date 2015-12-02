@@ -20,7 +20,9 @@ class Callee1 implements Incrementable {
 }
 
 class MyIncrement {
-  public void increment() { System.out.println("Other operation"); }
+  public void increment() {
+    System.out.println("Other operation");
+  }
   static void f(MyIncrement mi) { mi.increment(); }
 }
 

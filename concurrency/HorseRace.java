@@ -64,7 +64,8 @@ public class HorseRace {
       try {
         TimeUnit.MILLISECONDS.sleep(pause);
       } catch(InterruptedException e) {
-        System.out.println("barrier-action sleep interrupted");
+        System.out.println(
+          "barrier-action sleep interrupted");
       }
     });
     for(int i = 0; i < nHorses; i++) {

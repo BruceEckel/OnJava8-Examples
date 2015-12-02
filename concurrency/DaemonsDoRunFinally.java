@@ -12,7 +12,8 @@ class ADaemon implements Runnable {
       System.out.println("Starting ADaemon");
       TimeUnit.SECONDS.sleep(1);
     } catch(InterruptedException e) {
-      System.out.println("Exiting via InterruptedException");
+      System.out.println(
+        "Exiting via InterruptedException");
     } finally {
       System.out.println("ADaemon finally clause");
     }

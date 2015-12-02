@@ -11,12 +11,8 @@ public class Bubble {
   public String toString() {
     return "Bubble(" + i + ")";
   }
-  private static
-  class BubbleFactory implements Supplier<Bubble> {
-    private static int count = 0;
-    @Override
-    public Bubble get() { return new Bubble(count++); }
+  private static int count = 0;
+  public static Bubble bubbler() {
+    return new Bubble(count++);
   }
-  public static final
-  BubbleFactory factory = new BubbleFactory();
 }

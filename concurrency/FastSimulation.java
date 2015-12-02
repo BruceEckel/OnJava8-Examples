@@ -34,7 +34,8 @@ public class FastSimulation {
             // Policy here to deal with failure. Here, we
             // just report it and ignore it; our model
             // will eventually deal with it.
-            System.out.println("Old value changed from " + oldvalue);
+            System.out.println(
+              "Old value changed from " + oldvalue);
           }
         }
       }

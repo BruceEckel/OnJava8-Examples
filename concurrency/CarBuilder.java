@@ -127,7 +127,8 @@ abstract class Robot implements Runnable {
         powerDown();
       }
     } catch(InterruptedException e) {
-      System.out.println("Exiting " + this + " via interrupt");
+      System.out.println(
+        "Exiting " + this + " via interrupt");
     } catch(BrokenBarrierException e) {
       // This one we want to know about
       throw new RuntimeException(e);

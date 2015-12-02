@@ -20,8 +20,10 @@ public class CollectionMethods {
     // Find max and min elements; this means
     // different things depending on the way
     // the Comparable interface is implemented:
-    System.out.println("Collections.max(c) = " + Collections.max(c));
-    System.out.println("Collections.min(c) = " + Collections.min(c));
+    System.out.println(
+      "Collections.max(c) = " + Collections.max(c));
+    System.out.println(
+      "Collections.min(c) = " + Collections.min(c));
     // Add a Collection to another Collection
     Collection<String> c2 = new ArrayList<>();
     c2.addAll(Countries.names(6));
@@ -39,9 +41,11 @@ public class CollectionMethods {
     System.out.println(c);
     // Is an element in this Collection?
     String val = Countries.DATA[3][0];
-    System.out.println("c.contains(" + val  + ") = " + c.contains(val));
+    System.out.println(
+      "c.contains(" + val  + ") = " + c.contains(val));
     // Is a Collection in this Collection?
-    System.out.println("c.containsAll(c2) = " + c.containsAll(c2));
+    System.out.println(
+      "c.containsAll(c2) = " + c.containsAll(c2));
     Collection<String> c3 =
       ((List<String>)c).subList(3, 5);
     // Keep all the elements that are in both

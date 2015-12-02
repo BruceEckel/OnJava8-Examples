@@ -47,11 +47,11 @@ public class AtUnitExample5 {
 }
 /* Output:
 annotations.AtUnitExample5
-  . test3
-Running cleanup
   . test1
 Running cleanup
   . test2
+Running cleanup
+  . test3
 Running cleanup
 OK (3 tests)
 */

@@ -76,21 +76,21 @@ public class Functional {
   static class
   BigDecimalAdder implements Combiner<BigDecimal> {
     @Override
-    public BigDecimal combine(BigDecimal x, BigDecimal y) {
+    public BigDecimal combine(BigDecimal x, BigDecimal y){
       return x.add(y);
     }
   }
   static class
   BigIntegerAdder implements Combiner<BigInteger> {
     @Override
-    public BigInteger combine(BigInteger x, BigInteger y) {
+    public BigInteger combine(BigInteger x, BigInteger y){
       return x.add(y);
     }
   }
   static class
   AtomicLongAdder implements Combiner<AtomicLong> {
     @Override
-    public AtomicLong combine(AtomicLong x, AtomicLong y) {
+    public AtomicLong combine(AtomicLong x, AtomicLong y){
       // Not clear whether this is meaningful:
       return new AtomicLong(x.addAndGet(y.get()));
     }
@@ -138,7 +138,8 @@ public class Functional {
     System.out.println(forIn(li,
       new MultiplyingIntegerCollector()).result());
 
-    System.out.println(forIn(filter(li, new GreaterThan<>(4)),
+    System.out.println(
+      forIn(filter(li, new GreaterThan<>(4)),
       new MultiplyingIntegerCollector()).result());
 
     MathContext mc = new MathContext(7);

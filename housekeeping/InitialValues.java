@@ -29,7 +29,7 @@ public class InitialValues {
   public static void main(String[] args) {
     InitialValues iv = new InitialValues();
     iv.printInitialValues();
-    /* You could also say:
+    /* You can also say:
     new InitialValues().printInitialValues();
     */
   }

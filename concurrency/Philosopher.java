@@ -41,7 +41,8 @@ public class Philosopher implements Runnable {
         left.drop();
       }
     } catch(InterruptedException e) {
-      System.out.println(this + " " + "exiting via interrupt");
+      System.out.println(
+        this + " " + "exiting via interrupt");
     }
   }
   @Override

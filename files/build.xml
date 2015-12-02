@@ -7,11 +7,16 @@
   <import file="../Ant-Clean.xml"/>
 
   <target name="run" description="Compile and run" depends="build">
+    <jrun cls="AddAndSubtractPaths" />
     <jrun cls="DirectoryDemo" />
     <jrun cls="DirList" arguments='"D.*\.java"' />
     <jrun cls="DirList2" arguments='"D.*\.java"' />
     <jrun cls="DirList3" arguments='"D.*\.java"' />
+    <jrun cls="File_System" />
     <jrun cls="MakeDirectories" arguments="MakeDirectoriesTest" />
+    <jrun cls="PartsOfPaths" />
+    <jrun cls="PathAnalysis" />
+    <jrun cls="PathInfo" />
   </target>
 
 </project>

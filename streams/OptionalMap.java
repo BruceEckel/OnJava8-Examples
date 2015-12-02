@@ -17,9 +17,9 @@ class OptionalMap {
     for(int i = 0; i <= elements.length; i++) {
       System.out.println(
         testStream()
-        .skip(i)
-        .findFirst() // Produces an Optional
-        .map(func));
+          .skip(i)
+          .findFirst() // Produces an Optional
+          .map(func));
     }
   }
   public static void main(String[] args) {

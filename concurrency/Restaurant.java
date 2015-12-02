@@ -23,7 +23,8 @@ class WaitPerson implements Runnable {
           while(restaurant.meal == null)
             wait(); // ... for the chef to produce a meal
         }
-        System.out.println("Waitperson got " + restaurant.meal);
+        System.out.println(
+          "Waitperson got " + restaurant.meal);
         synchronized(restaurant.chef) {
           restaurant.meal = null;
           restaurant.chef.notifyAll(); // Ready for another

@@ -40,7 +40,8 @@ class Entrance implements Runnable {
       synchronized(this) {
         ++number;
       }
-      System.out.println(this + " Total: " + count.increment());
+      System.out.println(
+        this + " Total: " + count.increment());
       try {
         TimeUnit.MILLISECONDS.sleep(100);
       } catch(InterruptedException e) {
@@ -76,8 +77,10 @@ public class OrnamentalGarden {
     exec.shutdown();
     if(!exec.awaitTermination(250, TimeUnit.MILLISECONDS))
       System.out.println("Some tasks were not terminated!");
-    System.out.println("Total: " + Entrance.getTotalCount());
-    System.out.println("Sum of Entrances: " + Entrance.sumEntrances());
+    System.out.println(
+      "Total: " + Entrance.getTotalCount());
+    System.out.println(
+      "Sum of Entrances: " + Entrance.sumEntrances());
   }
 }
 /* Output: (First and last 10 Lines)

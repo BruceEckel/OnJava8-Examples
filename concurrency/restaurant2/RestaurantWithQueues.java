@@ -66,7 +66,8 @@ class Customer implements Runnable {
       try {
         waitPerson.placeOrder(this, food);
         // Blocks until course is delivered:
-        System.out.println(this + "eating " + placeSetting.take());
+        System.out.println(
+          this + "eating " + placeSetting.take());
       } catch(InterruptedException e) {
         System.out.println(this + "waiting for " +
           course + " interrupted");

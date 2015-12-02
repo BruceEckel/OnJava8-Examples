@@ -8,31 +8,45 @@ public class CarWash {
   public enum Cycle {
     UNDERBODY {
       @Override
-      void action() { System.out.println("Spraying the underbody"); }
+      void action() {
+        System.out.println("Spraying the underbody");
+      }
     },
     WHEELWASH {
       @Override
-      void action() { System.out.println("Washing the wheels"); }
+      void action() {
+        System.out.println("Washing the wheels");
+      }
     },
     PREWASH {
       @Override
-      void action() { System.out.println("Loosening the dirt"); }
+      void action() {
+        System.out.println("Loosening the dirt");
+      }
     },
     BASIC {
       @Override
-      void action() { System.out.println("The basic wash"); }
+      void action() {
+        System.out.println("The basic wash");
+      }
     },
     HOTWAX {
       @Override
-      void action() { System.out.println("Applying hot wax"); }
+      void action() {
+        System.out.println("Applying hot wax");
+      }
     },
     RINSE {
       @Override
-      void action() { System.out.println("Rinsing"); }
+      void action() {
+        System.out.println("Rinsing");
+      }
     },
     BLOWDRY {
       @Override
-      void action() { System.out.println("Blowing dry"); }
+      void action() {
+        System.out.println("Blowing dry");
+      }
     };
     abstract void action();
   }

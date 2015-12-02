@@ -67,7 +67,8 @@ public class PostOffice {
       boolean handle(Mail m) {
         switch(m.generalDelivery) {
           case YES:
-            System.out.println("Using general delivery for " + m);
+            System.out.println(
+              "Using general delivery for " + m);
             return true;
           default: return false;
         }
@@ -82,7 +83,8 @@ public class PostOffice {
             switch(m.address) {
               case INCORRECT: return false;
               default:
-                System.out.println("Delivering "+ m + " automatically");
+                System.out.println(
+                  "Delivering "+ m + " automatically");
                 return true;
             }
         }
@@ -97,7 +99,8 @@ public class PostOffice {
             switch(m.address) {
               case INCORRECT: return false;
               default:
-                System.out.println("Delivering " + m + " normally");
+                System.out.println(
+                  "Delivering " + m + " normally");
                 return true;
             }
         }
@@ -109,7 +112,8 @@ public class PostOffice {
         switch(m.returnAddress) {
           case MISSING: return false;
           default:
-            System.out.println("Returning " + m + " to sender");
+            System.out.println(
+              "Returning " + m + " to sender");
             return true;
         }
       }

@@ -68,11 +68,13 @@ public class ClassNameFinder {
   public static void main(String[] args) throws Exception {
     if(args.length > 0) {
       for(String arg : args)
-        System.out.println(thisClass(BinaryFile.read(new File(arg))));
+        System.out.println(
+          thisClass(BinaryFile.read(new File(arg))));
     } else
       // Walk the entire tree: <* Use NIO2 here *>
       for(File klass : Directory.walk(".", ".*\\.class"))
-        System.out.println(thisClass(BinaryFile.read(klass)));
+        System.out.println(
+          thisClass(BinaryFile.read(klass)));
   }
 }
 /* Output:

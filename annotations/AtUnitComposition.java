@@ -18,12 +18,14 @@ public class AtUnitComposition {
   }
   public static void main(String[] args) throws Exception {
     OSExecute.command(
-     "java com.mindviewinc.atunit.AtUnit AtUnitComposition");
+     "java com.mindviewinc.atunit.AtUnit " +
+     " AtUnitComposition");
   }
 }
 /* Output:
 annotations.AtUnitComposition
   . _methodOne
   . _methodTwo This is methodTwo
+
 OK (2 tests)
 */

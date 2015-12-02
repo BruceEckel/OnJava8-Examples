@@ -5,7 +5,8 @@
 
 public class MultipleReturns {
   public static void f(int i) {
-    System.out.println("Initialization that requires cleanup");
+    System.out.println(
+      "Initialization that requires cleanup");
     try {
       System.out.println("Point 1");
       if(i == 1) return;

@@ -35,7 +35,8 @@ public class Daemons {
     Thread d = new Thread(new Daemon());
     d.setDaemon(true);
     d.start();
-    System.out.print("d.isDaemon() = " + d.isDaemon() + ", ");
+    System.out.print(
+      "d.isDaemon() = " + d.isDaemon() + ", ");
     // Allow the daemon threads to
     // finish their startup processes:
     TimeUnit.SECONDS.sleep(1);

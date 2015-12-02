@@ -3,30 +3,29 @@
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // Method reference without an object.
-import java.util.*;
-import java.util.function.*;
 
 class X {
-  String f() { return "X.f()"; }
+  String f() { return "X::f()"; }
+}
+
+interface MakeString {
+  String make();
+}
+
+interface TransformX {
+  String transform(X x);
 }
 
 public class UnboundMethodReference {
   public static void main(String[] args) {
-    Function<String, Integer> len = String::length;
-    System.out.println(len.apply("UnboundMethodReference"));
-
-    List<String> words =
-      Arrays.asList("Rain", "Spain", "Plain");
-    words.forEach(System.out::println);
-
-    Function<X, String> xfr = X::f;
-    System.out.println(xfr.apply(new X()));
+    // MakeString ms = X::f; // (1)
+    TransformX sp = X::f;
+    X x = new X();
+    System.out.println(sp.transform(x)); // (2)
+    System.out.println(x.f()); // Same effect
   }
 }
 /* Output:
-22
-Rain
-Spain
-Plain
-X.f()
+X::f()
+X::f()
 */

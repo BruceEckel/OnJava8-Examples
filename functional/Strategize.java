@@ -4,44 +4,55 @@
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 
 interface Strategy {
-  String variant(String arg);
-}
-
-class Loud implements Strategy {
-  public String variant(String arg) {
-    return arg.toUpperCase() + "!";
-  }
+  String approach(String msg);
 }
 
 class Soft implements Strategy {
-  public String variant(String arg) {
-    return arg.toLowerCase() + "?";
+  public String approach(String msg) {
+    return msg.toLowerCase() + "?";
+  }
+}
+
+class Unrelated {
+  static String twice(String msg) {
+    return msg + " " + msg;
   }
 }
 
 public class Strategize {
-  private Strategy strategy;
-  public Strategize(Strategy strat) { strategy = strat; }
-  public void communicate(String msg) {
-    System.out.println(strategy.variant(msg));
+  Strategy strategy;
+  String msg;
+  Strategize(String msg) {
+    strategy = new Soft(); // (1)
+    this.msg = msg;
+  }
+  void communicate() {
+    System.out.println(strategy.approach(msg));
+  }
+  void changeStrategy(Strategy strategy) {
+    this.strategy = strategy;
   }
   public static void main(String[] args) {
-    String msg = "Hello there";
-    Strategize[] approaches = {
-      new Strategize(new Loud()),
-      new Strategize(new Soft()),
-      new Strategize(new Strategy() {
-        public String variant(String arg) {
-          return arg.substring(0, 5);
+    Strategy[] strategies = {
+      new Strategy() { // (2)
+        public String approach(String msg) {
+          return msg.toUpperCase() + "!";
         }
-      })
+      },
+      msg -> msg.substring(0, 5), // (3)
+      Unrelated::twice // (4)
     };
-    for(Strategize approach : approaches)
-      approach.communicate(msg);
+    Strategize s = new Strategize("Hello there");
+    s.communicate();
+    for(Strategy newStrategy : strategies) {
+      s.changeStrategy(newStrategy); // (5)
+      s.communicate(); // (6)
+    }
   }
 }
 /* Output:
-HELLO THERE!
 hello there?
+HELLO THERE!
 Hello
+Hello there Hello there
 */

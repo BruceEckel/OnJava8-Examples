@@ -48,3 +48,43 @@ public class ParseTrash {
     t.forEach(System.out::println);
   }
 }
+/* Output:
+Loading patterns.trash.Glass
+Loading patterns.trash.Paper
+Loading patterns.trash.Aluminum
+Loading patterns.trash.Cardboard
+patterns.trash.Glass w:54.0 v:0.23
+patterns.trash.Paper w:22.0 v:0.10
+patterns.trash.Paper w:11.0 v:0.10
+patterns.trash.Glass w:17.0 v:0.23
+patterns.trash.Aluminum w:89.0 v:1.67
+patterns.trash.Paper w:88.0 v:0.10
+patterns.trash.Aluminum w:76.0 v:1.67
+patterns.trash.Cardboard w:96.0 v:0.23
+patterns.trash.Aluminum w:25.0 v:1.67
+patterns.trash.Aluminum w:34.0 v:1.67
+patterns.trash.Glass w:11.0 v:0.23
+patterns.trash.Glass w:68.0 v:0.23
+patterns.trash.Glass w:43.0 v:0.23
+patterns.trash.Aluminum w:27.0 v:1.67
+patterns.trash.Cardboard w:44.0 v:0.23
+patterns.trash.Aluminum w:18.0 v:1.67
+patterns.trash.Paper w:91.0 v:0.10
+patterns.trash.Glass w:63.0 v:0.23
+patterns.trash.Glass w:50.0 v:0.23
+patterns.trash.Glass w:80.0 v:0.23
+patterns.trash.Aluminum w:81.0 v:1.67
+patterns.trash.Cardboard w:12.0 v:0.23
+patterns.trash.Glass w:12.0 v:0.23
+patterns.trash.Glass w:54.0 v:0.23
+patterns.trash.Aluminum w:36.0 v:1.67
+patterns.trash.Aluminum w:93.0 v:1.67
+patterns.trash.Glass w:93.0 v:0.23
+patterns.trash.Paper w:80.0 v:0.10
+patterns.trash.Glass w:36.0 v:0.23
+patterns.trash.Glass w:12.0 v:0.23
+patterns.trash.Glass w:60.0 v:0.23
+patterns.trash.Paper w:66.0 v:0.10
+patterns.trash.Aluminum w:36.0 v:1.67
+patterns.trash.Cardboard w:22.0 v:0.23
+*/

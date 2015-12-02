@@ -13,7 +13,7 @@ public class SleepingTask extends LiftOff {
         System.out.print(status());
         // Old-style:
         // Thread.sleep(100);
-        // Java 5/6-style:
+        // Modern style:
         TimeUnit.MILLISECONDS.sleep(100);
       }
     } catch(InterruptedException e) {

@@ -12,29 +12,37 @@ interface ServiceFactory {
   Service getService();
 }
 
-class Implementation1 implements Service {
-  Implementation1() {} // Package access
-  public void method1() { System.out.println("Implementation1 method1"); }
-  public void method2() { System.out.println("Implementation1 method2"); }
-}
-
-class Implementation1Factory implements ServiceFactory {
-  @Override
-  public Service getService() {
-    return new Implementation1();
+class Service1 implements Service {
+  Service1() {} // Package access
+  public void method1() {
+    System.out.println("Service1 method1");
+  }
+  public void method2() {
+    System.out.println("Service1 method2");
   }
 }
 
-class Implementation2 implements Service {
-  Implementation2() {} // Package access
-  public void method1() { System.out.println("Implementation2 method1"); }
-  public void method2() { System.out.println("Implementation2 method2"); }
-}
-
-class Implementation2Factory implements ServiceFactory {
+class Service1Factory implements ServiceFactory {
   @Override
   public Service getService() {
-    return new Implementation2();
+    return new Service1();
+  }
+}
+
+class Service2 implements Service {
+  Service2() {} // Package access
+  public void method1() {
+    System.out.println("Service2 method1");
+  }
+  public void method2() {
+    System.out.println("Service2 method2");
+  }
+}
+
+class Service2Factory implements ServiceFactory {
+  @Override
+  public Service getService() {
+    return new Service2();
   }
 }
 
@@ -45,14 +53,14 @@ public class Factories {
     s.method2();
   }
   public static void main(String[] args) {
-    serviceConsumer(new Implementation1Factory());
-    // Implementations are completely interchangeable:
-    serviceConsumer(new Implementation2Factory());
+    serviceConsumer(new Service1Factory());
+    // Services are completely interchangeable:
+    serviceConsumer(new Service2Factory());
   }
 }
 /* Output:
-Implementation1 method1
-Implementation1 method2
-Implementation2 method1
-Implementation2 method2
+Service1 method1
+Service1 method2
+Service2 method1
+Service2 method2
 */

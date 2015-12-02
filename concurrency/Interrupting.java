@@ -64,9 +64,11 @@ public class Interrupting {
   static void test(Runnable r) throws InterruptedException{
     Future<?> f = exec.submit(r);
     TimeUnit.MILLISECONDS.sleep(100);
-    System.out.println("Interrupting " + r.getClass().getName());
+    System.out.println(
+      "Interrupting " + r.getClass().getName());
     f.cancel(true); // Interrupts if running
-    System.out.println("Interrupt sent to " + r.getClass().getName());
+    System.out.println(
+      "Interrupt sent to " + r.getClass().getName());
   }
   public static void main(String[] args) throws Exception {
     test(new SleepBlocked());

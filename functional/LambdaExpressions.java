@@ -16,35 +16,33 @@ interface Multi {
 }
 
 public class LambdaExpressions {
-  Description desc = new Description() {
-    @Override
-    public String brief() {
-      return "Short info";
-    }
+
+  static Body bod = h -> h + " No Parens!"; // (1)
+
+  static Body bod2 = (h) -> h + " More details"; // (2)
+
+  static Description desc = () -> "Short info"; // (3)
+
+  static Multi mult = (h, n) -> h + n; // (4)
+
+  static Description moreLines = () -> { // (5)
+    System.out.println("moreLines()");
+    return "from moreLines()";
   };
-  Description desc2 = () -> "Short info";
-
-  Body bod = (h) -> h + " More details";
-  Body bod2 = h -> h + " No Parens!";
-
-  Multi mult = (h, n) -> h + n;
-  // Parens are required with multiple args:
-  // Multi mult2 = h, n -> h + n; // Nope
 
   public static void main(String[] args) {
-    LambdaExpressions le =
-      new LambdaExpressions();
-    System.out.println(le.desc.brief());
-    System.out.println(le.desc2.brief());
-    System.out.println(le.bod.detailed("Hi!"));
-    System.out.println(le.bod2.detailed("Oh!"));
-    System.out.println(le.mult.twoArg("Pi! ", 3.14159));
+    System.out.println(bod.detailed("Oh!"));
+    System.out.println(bod2.detailed("Hi!"));
+    System.out.println(desc.brief());
+    System.out.println(mult.twoArg("Pi! ", 3.14159));
+    System.out.println(moreLines.brief());
   }
 }
 /* Output:
-Short info
-Short info
-Hi! More details
 Oh! No Parens!
+Hi! More details
+Short info
 Pi! 3.14159
+moreLines()
+from moreLines()
 */

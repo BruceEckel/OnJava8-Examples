@@ -35,10 +35,12 @@ public class MapDataTest {
     // Pair Supplier:
     System.out.println(MapData.map(new Letters(), 11));
     // Two separate generators:
-    System.out.println(MapData.map(new CountingSupplier.Character(),
+    System.out.println(
+      MapData.map(new CountingSupplier.Character(),
       new RandomSupplier.String(3), 8));
     // A key Supplier and a single value:
-    System.out.println(MapData.map(new CountingSupplier.Character(),
+    System.out.println(
+      MapData.map(new CountingSupplier.Character(),
       "Value", 6));
     // An Iterable and a value Supplier:
     System.out.println(MapData.map(new Letters(),

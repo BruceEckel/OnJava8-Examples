@@ -21,11 +21,13 @@ public class CloseResource {
       System.out.println("Shutting down all threads");
       exec.shutdownNow();
       TimeUnit.SECONDS.sleep(1);
-      System.out.println("Closing " + socketInput.getClass().getName());
+      System.out.println(
+        "Closing " + socketInput.getClass().getName());
       socketInput.close(); // Releases blocked thread
     }
     TimeUnit.SECONDS.sleep(1);
-    System.out.println("Closing " + System.in.getClass().getName());
+    System.out.println(
+      "Closing " + System.in.getClass().getName());
     System.in.close(); // Releases blocked thread
   }
 }

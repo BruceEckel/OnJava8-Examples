@@ -28,13 +28,14 @@ public class StackLStringTest extends StackL<String> {
   }
   public static void main(String[] args) throws Exception {
     OSExecute.command(
-      "java com.mindviewinc.atunit.AtUnit StackLStringTest");
+      "java com.mindviewinc.atunit.AtUnit " +
+      "StackLStringTest");
   }
 }
 /* Output:
 annotations.StackLStringTest
-  . _push
   . _top
+  . _push
   . _pop
 OK (3 tests)
 */

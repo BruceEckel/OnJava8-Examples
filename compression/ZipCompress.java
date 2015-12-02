@@ -33,7 +33,8 @@ public class ZipCompress {
       }
     }
     // Checksum valid only after the file is closed!
-    System.out.println("Checksum: " + csum.getChecksum().getValue());
+    System.out.println(
+      "Checksum: " + csum.getChecksum().getValue());
     // Now extract the files:
     System.out.println("Reading file");
     FileInputStream fi = new FileInputStream("test.zip");
@@ -50,7 +51,8 @@ public class ZipCompress {
           System.out.write(x);
       }
       if(args.length == 1)
-        System.out.println("Checksum: "+csumi.getChecksum().getValue());
+        System.out.println(
+          "Checksum: "+csumi.getChecksum().getValue());
     }
     // Alternative way to open and read Zip files:
     ZipFile zf = new ZipFile("test.zip");

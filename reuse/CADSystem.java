@@ -40,11 +40,13 @@ class Line extends Shape {
     super(start);
     this.start = start;
     this.end = end;
-    System.out.println("Drawing Line: " + start + ", " + end);
+    System.out.println(
+      "Drawing Line: " + start + ", " + end);
   }
   @Override
   void dispose() {
-    System.out.println("Erasing Line: " + start + ", " + end);
+    System.out.println(
+      "Erasing Line: " + start + ", " + end);
     super.dispose();
   }
 }

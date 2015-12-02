@@ -31,7 +31,8 @@ public class Logon implements Serializable {
     // Now get them back:
     ObjectInputStream in = new ObjectInputStream(
       new FileInputStream("Logon.out"));
-    System.out.println("Recovering object at " + new Date());
+    System.out.println(
+      "Recovering object at " + new Date());
     a = (Logon)in.readObject();
     System.out.println("logon a = " + a);
   }

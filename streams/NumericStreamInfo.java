@@ -2,7 +2,6 @@
 // ©2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-import java.util.*;
 import java.util.stream.*;
 import static streams.RandInts.*;
 
@@ -20,5 +19,6 @@ public class NumericStreamInfo {
 998
 8
 50794
-IntSummaryStatistics{count=100, sum=50794, min=8, average=507.940000, max=998}
+IntSummaryStatistics{count=100, sum=50794, min=8,
+average=507.940000, max=998}
 */

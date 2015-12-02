@@ -13,7 +13,7 @@ public class Redirecting {
       new FileInputStream("Redirecting.java"));
     try(PrintStream out = new PrintStream(
           new BufferedOutputStream(
-            new FileOutputStream("test.out")))) {
+            new FileOutputStream("Redirecting.txt")))) {
       System.setIn(in);
       System.setOut(out);
       System.setErr(out);

@@ -45,7 +45,8 @@ class WaitingTask implements Runnable {
   public void run() {
     try {
       latch.await();
-      System.out.println("Latch barrier passed for " + this);
+      System.out.println(
+        "Latch barrier passed for " + this);
     } catch(InterruptedException ex) {
       System.out.println(this + " interrupted");
     }

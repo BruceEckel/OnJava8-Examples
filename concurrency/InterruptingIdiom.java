@@ -38,7 +38,8 @@ class Blocked3 implements Runnable {
             // A time-consuming, non-blocking operation:
             for(int i = 1; i < 2500000; i++)
               d += (Math.PI + Math.E) / d;
-            System.out.println("Finished time-consuming operation");
+            System.out.println(
+              "Finished time-consuming operation");
           } finally {
             n2.cleanup();
           }
@@ -48,7 +49,8 @@ class Blocked3 implements Runnable {
       }
       System.out.println("Exiting via while() test");
     } catch(InterruptedException e) {
-      System.out.println("Exiting via InterruptedException");
+      System.out.println(
+        "Exiting via InterruptedException");
     }
   }
 }
@@ -56,7 +58,8 @@ class Blocked3 implements Runnable {
 public class InterruptingIdiom {
   public static void main(String[] args) throws Exception {
     if(args.length != 1) {
-      System.out.println("usage: java InterruptingIdiom delay-in-mS");
+      System.out.println(
+        "usage: java InterruptingIdiom delay-in-mS");
       System.exit(1);
     }
     Thread t = new Thread(new Blocked3());

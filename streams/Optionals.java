@@ -26,7 +26,7 @@ public class Optionals {
   static void or_else_throw(Optional<String> optString) {
     try {
       System.out.println(optString.orElseThrow(
-          () -> new Exception("Supplied")));
+        () -> new Exception("Supplied")));
     } catch(Exception e) {
       System.out.println("Caught " + e);
     }

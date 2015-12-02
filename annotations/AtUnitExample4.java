@@ -64,10 +64,18 @@ public class AtUnitExample4 {
 /* Output:
 starting
 annotations.AtUnitExample4
-  . scramble1 'All'
-lAl
-  . scramble2 'brontosauruses'
-tsaeborornussu
-  . words 'are'
-OK (3 tests)
+  . words 'All'
+(failed)
+  . scramble1 'brontosauruses'
+ntsaueorosurbs
+(failed)
+  . scramble2 'are'
+are
+(failed)
+(3 tests)
+
+>>> 3 FAILURES <<<
+  annotations.AtUnitExample4: words
+  annotations.AtUnitExample4: scramble1
+  annotations.AtUnitExample4: scramble2
 */

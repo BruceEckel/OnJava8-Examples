@@ -73,7 +73,8 @@ abstract class Accumulator {
     System.out.printf("%-13s: %13d\n", id, duration);
   }
   public void report(Accumulator acc2) {
-    System.out.printf("%-22s: %.2f\n", this.id + "/" + acc2.id,
+    System.out.printf(
+      "%-22s: %.2f\n", this.id + "/" + acc2.id,
       (double)this.duration/(double)acc2.duration);
   }
 }
@@ -134,7 +135,8 @@ class AtomicTest extends Accumulator {
   public synchronized long read() { return value.get(); }
   @Override
   public void report(Accumulator acc2) {
-    System.out.printf("%-22s: %.2f\n", "synch/(Atomic-synch)",
+    System.out.printf(
+      "%-22s: %.2f\n", "synch/(Atomic-synch)",
       (double)acc2.duration/
         ((double)this.duration - (double)acc2.duration));
   }
@@ -146,7 +148,8 @@ public class SynchronizationComparisons {
   static AtomicTest atomic = new AtomicTest();
   static void test() {
     System.out.println("============================");
-    System.out.printf("%-12s : %13d\n", "Cycles", Accumulator.cycles);
+    System.out.printf(
+      "%-12s : %13d\n", "Cycles", Accumulator.cycles);
     synch.timedTest();
     lock.timedTest();
     atomic.timedTest();

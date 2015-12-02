@@ -21,7 +21,8 @@ public class PetCount {
     PetCounter counter= new PetCounter();
     for(Pet pet : creator.createArray(20)) {
       // List each individual pet:
-      System.out.print(pet.getClass().getSimpleName() + " ");
+      System.out.print(
+        pet.getClass().getSimpleName() + " ");
       if(pet instanceof Pet)
         counter.count("Pet");
       if(pet instanceof Dog)

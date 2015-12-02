@@ -14,12 +14,14 @@ public class ArraySearching {
     int[] a = ConvertTo.primitive(
       Generated.array(new Integer[25], gen));
     Arrays.sort(a);
-    System.out.println("Sorted array: " + Arrays.toString(a));
+    System.out.println(
+      "Sorted array: " + Arrays.toString(a));
     while(true) {
       int r = gen.get();
       int location = Arrays.binarySearch(a, r);
       if(location >= 0) {
-        System.out.println("Location of " + r + " is " + location +
+        System.out.println(
+          "Location of " + r + " is " + location +
           ", a[" + location + "] = " + a[location]);
         break; // Out of while loop
       }

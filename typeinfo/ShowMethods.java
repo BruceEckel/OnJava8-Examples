@@ -31,7 +31,8 @@ public class ShowMethods {
           System.out.println(
             p.matcher(method.toString()).replaceAll(""));
         for(Constructor ctor : ctors)
-          System.out.println(p.matcher(ctor.toString()).replaceAll(""));
+          System.out.println(
+            p.matcher(ctor.toString()).replaceAll(""));
         lines = methods.length + ctors.length;
       } else {
         for(Method method : methods)

@@ -15,9 +15,11 @@ public class Utilities {
         Collections.singletonList("Four")));
     System.out.println("max: " + Collections.max(list));
     System.out.println("min: " + Collections.min(list));
-    System.out.println("max w/ comparator: " + Collections.max(list,
+    System.out.println(
+      "max w/ comparator: " + Collections.max(list,
       String.CASE_INSENSITIVE_ORDER));
-    System.out.println("min w/ comparator: " + Collections.min(list,
+    System.out.println(
+      "min w/ comparator: " + Collections.min(list,
       String.CASE_INSENSITIVE_ORDER));
     List<String> sublist =
       Arrays.asList("Four five six".split(" "));

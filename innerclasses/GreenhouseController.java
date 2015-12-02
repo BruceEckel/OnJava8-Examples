@@ -9,7 +9,7 @@ import innerclasses.controller.*;
 public class GreenhouseController {
   public static void main(String[] args) {
     GreenhouseControls gc = new GreenhouseControls();
-    // Instead of hard-wiring, you could parse
+    // Instead of hard-wiring, you can parse
     // configuration information from a text file here:
     gc.addEvent(gc.new Bell(900));
     Event[] eventList = {

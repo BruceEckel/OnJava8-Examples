@@ -2,6 +2,8 @@
 // ©2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
+import java.util.stream.*;
+
 public enum SpaceShip {
   SCOUT, CARGO, TRANSPORT, CRUISER, BATTLESHIP, MOTHERSHIP;
   @Override
@@ -11,9 +13,7 @@ public enum SpaceShip {
     return id.charAt(0) + lower;
   }
   public static void main(String[] args) {
-    for(SpaceShip s : values()) {
-      System.out.println(s);
-    }
+    Stream.of(values()).forEach(System.out::println);
   }
 }
 /* Output:

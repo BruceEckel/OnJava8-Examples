@@ -19,7 +19,8 @@ class BlockedMutex {
       lock.lockInterruptibly(); // Special call
       System.out.println("lock acquired in f()");
     } catch(InterruptedException e) {
-      System.out.println("Interrupted from lock acquisition in f()");
+      System.out.println(
+        "Interrupted from lock acquisition in f()");
     }
   }
 }

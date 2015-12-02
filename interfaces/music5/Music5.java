@@ -2,49 +2,33 @@
 // ©2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-// Interfaces.
 package interfaces.music5;
 import polymorphism.music.Note;
 
 interface Instrument {
   // Compile-time constant:
   int VALUE = 5; // static & final
-  // Cannot have method definitions:
-  void play(Note n); // Automatically public
-  void adjust();
+  default void play(Note n) {  // Automatically public
+    System.out.println(this + ".play() " + n);
+  }
+  default void adjust() {
+    System.out.println("Adjusting " + this);
+  }
 }
 
 class Wind implements Instrument {
   @Override
-  public void play(Note n) {
-    System.out.println(this + ".play() " + n);
-  }
-  @Override
   public String toString() { return "Wind"; }
-  @Override
-  public void adjust() { System.out.println(this + ".adjust()"); }
 }
 
 class Percussion implements Instrument {
   @Override
-  public void play(Note n) {
-    System.out.println(this + ".play() " + n);
-  }
-  @Override
   public String toString() { return "Percussion"; }
-  @Override
-  public void adjust() { System.out.println(this + ".adjust()"); }
 }
 
 class Stringed implements Instrument {
   @Override
-  public void play(Note n) {
-    System.out.println(this + ".play() " + n);
-  }
-  @Override
   public String toString() { return "Stringed"; }
-  @Override
-  public void adjust() { System.out.println(this + ".adjust()"); }
 }
 
 class Brass extends Wind {

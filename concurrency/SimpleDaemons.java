@@ -11,7 +11,8 @@ public class SimpleDaemons implements Runnable {
     try {
       while(true) {
         TimeUnit.MILLISECONDS.sleep(100);
-        System.out.println(Thread.currentThread() + " " + this);
+        System.out.println(
+          Thread.currentThread() + " " + this);
       }
     } catch(InterruptedException e) {
       System.out.println("sleep() interrupted");

@@ -38,7 +38,8 @@ public class PetCount3 {
   public static void main(String[] args) {
     PetCounter petCount = new PetCounter();
     for(Pet pet : Pets.createArray(20)) {
-      System.out.print(pet.getClass().getSimpleName() + " ");
+      System.out.print(
+        pet.getClass().getSimpleName() + " ");
       petCount.count(pet);
     }
     System.out.println();
