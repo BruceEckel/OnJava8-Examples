@@ -1,9 +1,10 @@
-// com/mindviewinc/atunit/ClassNameFinder.java
+// onjava/atunit/ClassNameFinder.java
 // ©2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-package com.mindviewinc.atunit;
+package onjava.atunit;
 import java.io.*;
+import java.nio.file.*;
 import java.util.*;
 import onjava.*;
 
@@ -21,7 +22,7 @@ public class ClassNameFinder {
       int[] constant_pool = new int[constant_pool_count];
       for(int i = 1; i < constant_pool_count; i++) {
         int tag = data.read();
-        int tableSize;
+        // int tableSize;
         switch(tag) {
           case 1: // UTF
             int length = data.readShort();
@@ -49,16 +50,26 @@ public class ClassNameFinder {
           case 10: // METHOD_REF
           case 11: // INTERFACE_METHOD_REF
           case 12: // NAME_AND_TYPE
+          case 18: // Invoke Dynamic
             data.readInt(); // discard 4 bytes;
+            break;
+          case 15: // Method Handle
+            data.readByte();
+            data.readShort();
+            break;
+          case 16: // Method Type
+            data.readShort();
             break;
           default:
             throw new RuntimeException("Bad tag " + tag);
         }
       }
       short access_flags = data.readShort();
+      String access = (access_flags & 0x0001) == 0 ?
+        "nonpublic:" : "public:";
       int this_class = data.readShort();
       int super_class = data.readShort();
-      return classNameTable.get(
+      return access + classNameTable.get(
         offsetTable.get(this_class)).replace('/', '.');
     } catch(IOException | RuntimeException e) {
       throw new RuntimeException(e);
@@ -66,23 +77,33 @@ public class ClassNameFinder {
   }
   // Demonstration:
   public static void main(String[] args) throws Exception {
-    if(args.length > 0) {
-      for(String arg : args)
-        System.out.println(
-          thisClass(BinaryFile.read(new File(arg))));
-    } else
-      // Walk the entire tree: <* Use NIO2 here *>
-      for(File klass : Directory.walk(".", ".*\\.class"))
-        System.out.println(
-          thisClass(BinaryFile.read(klass)));
+    PathMatcher matcher = FileSystems.getDefault()
+      .getPathMatcher("glob:**/*.class");
+    // Walk the entire tree:
+    Files.walk(Paths.get("."))
+      .filter(matcher::matches)
+      //.peek(System.out::println)
+      .map(p -> {
+          try {
+            return thisClass(Files.readAllBytes(p));
+          } catch(Exception e) {
+            throw new RuntimeException(e);
+          }
+        })
+      .filter(s -> s.startsWith("public:"))
+      // .filter(s -> s.indexOf('$') >= 0)
+      .map(s -> s.split(":")[1])
+      .filter(s -> !s.startsWith("enums."))
+      .filter(s -> s.contains("."))
+      .forEach(System.out::println);
   }
 }
 /* Output:
-com.mindviewinc.atunit.AtUnit$TestMethods
-com.mindviewinc.atunit.AtUnit
-com.mindviewinc.atunit.ClassNameFinder
-com.mindviewinc.atunit.Test
-com.mindviewinc.atunit.TestObjectCleanup
-com.mindviewinc.atunit.TestObjectCreate
-com.mindviewinc.atunit.TestProperty
+onjava.atunit.AtUnit$TestMethods
+onjava.atunit.AtUnit
+onjava.atunit.ClassNameFinder
+onjava.atunit.Test
+onjava.atunit.TestObjectCleanup
+onjava.atunit.TestObjectCreate
+onjava.atunit.TestProperty
 */

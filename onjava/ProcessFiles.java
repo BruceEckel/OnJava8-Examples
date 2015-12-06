@@ -5,6 +5,7 @@
 // {ValidateByHand}
 package onjava;
 import java.io.*;
+import java.nio.file.*;
 
 public class ProcessFiles {
   public interface Strategy {
@@ -39,9 +40,11 @@ public class ProcessFiles {
   }
   public void
   processDirectoryTree(File root) throws IOException {
-    for(File file : Directory.walk(
-        root.getAbsolutePath(), ".*\\." + ext))
-      strategy.process(file.getCanonicalFile());
+    PathMatcher matcher = FileSystems.getDefault()
+      .getPathMatcher("glob:**/*.{" + ext + "}");
+    Files.walk(root.toPath())
+      .filter(matcher::matches)
+      .forEach(p -> strategy.process(p.toFile()));
   }
   // Demonstration of how to use it:
   public static void main(String[] args) {

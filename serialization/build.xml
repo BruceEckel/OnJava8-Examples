@@ -12,7 +12,7 @@
     <jrun cls="Blip3" />
     <jrun cls="Blips" />
     <jrun cls="FreezeAlien" />
-    <jrun cls="Logon" />
+    <jrun cls="Logon" failOnError='false' />
     <jrun cls="MyWorld" />
     <jrun cls="People" />
     <jrun cls="RecoverCADState" />

@@ -4,7 +4,7 @@
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 package annotations;
 import java.util.*;
-import com.mindviewinc.atunit.*;
+import onjava.atunit.*;
 import onjava.*;
 
 public class HashSetTest {
@@ -23,7 +23,7 @@ public class HashSetTest {
   }
   public static void main(String[] args) throws Exception {
     OSExecute.command(
-      "java com.mindviewinc.atunit.AtUnit HashSetTest");
+      "java onjava.atunit.AtUnit HashSetTest.class");
   }
 }
 /* Output:

@@ -50,6 +50,7 @@
     <jrun cls="StreamOfOptionals" />
     <jrun cls="StreamOfRandoms" />
     <jrun cls="StreamOfStreams" />
+    <jrun cls="TreeSetOfWords" />
   </target>
 
 </project>

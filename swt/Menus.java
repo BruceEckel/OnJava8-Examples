@@ -7,7 +7,9 @@ import swt.util.*;
 import org.eclipse.swt.*;
 import org.eclipse.swt.widgets.*;
 import java.util.*;
-import onjava.*;
+import java.io.IOException;
+import java.nio.file.*;
+import java.util.stream.*;
 
 public class Menus implements SWTApplication {
   private static Shell shell;
@@ -16,11 +18,17 @@ public class Menus implements SWTApplication {
     shell = parent.getShell();
     Menu bar = new Menu(shell, SWT.BAR);
     shell.setMenuBar(bar);
-    Set<String> words = new TreeSet<>(
-      new TextFile("Menus.java", "\\W+"));
+    Set<String> words = null;
+    try {
+      words = Files.lines(Paths.get("Menus.java"))
+        .flatMap(s -> Arrays.stream(s.split("\\W+")))
+        .filter(s -> !s.matches("[0-9]+")) // No numbers
+        .map(String::trim)
+        .collect(Collectors.toCollection(TreeSet::new));
+    } catch(IOException e) {
+      throw new RuntimeException(e);
+    }
     Iterator<String> it = words.iterator();
-    while(it.next().matches("[0-9]+"))
-      ; // Move past the numbers.
     MenuItem[] mItem = new MenuItem[7];
     for(int i = 0; i < mItem.length; i++) {
       mItem[i] = new MenuItem(bar, SWT.CASCADE);

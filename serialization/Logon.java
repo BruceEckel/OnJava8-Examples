@@ -3,6 +3,7 @@
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // Demonstrates the "transient" keyword.
+// {IgnoreReturnValue}
 import java.util.concurrent.*;
 import java.io.*;
 import java.util.*;

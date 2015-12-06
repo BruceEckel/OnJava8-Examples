@@ -7,8 +7,6 @@
   <import file="../Ant-Clean.xml"/>
 
   <target name="run" description="Compile and run" depends="build">
-    <jrun cls="com.mindviewinc.atunit.AtUnit" dirpath="../com/mindviewinc/atunit" />
-    <jrun cls="com.mindviewinc.atunit.ClassNameFinder" dirpath="../com/mindviewinc/atunit" />
   </target>
 
 </project>

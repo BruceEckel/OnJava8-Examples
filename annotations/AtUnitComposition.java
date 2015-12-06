@@ -4,7 +4,7 @@
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // Creating non-embedded tests.
 package annotations;
-import com.mindviewinc.atunit.*;
+import onjava.atunit.*;
 import onjava.*;
 
 public class AtUnitComposition {
@@ -18,8 +18,7 @@ public class AtUnitComposition {
   }
   public static void main(String[] args) throws Exception {
     OSExecute.command(
-     "java com.mindviewinc.atunit.AtUnit " +
-     " AtUnitComposition");
+     "java onjava.atunit.AtUnit AtUnitComposition.class");
   }
 }
 /* Output:

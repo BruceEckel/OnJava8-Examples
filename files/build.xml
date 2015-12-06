@@ -8,15 +8,18 @@
 
   <target name="run" description="Compile and run" depends="build">
     <jrun cls="AddAndSubtractPaths" />
-    <jrun cls="DirectoryDemo" />
-    <jrun cls="DirList" arguments='"D.*\.java"' />
-    <jrun cls="DirList2" arguments='"D.*\.java"' />
-    <jrun cls="DirList3" arguments='"D.*\.java"' />
+    <jrun cls="Directories" />
     <jrun cls="File_System" />
-    <jrun cls="MakeDirectories" arguments="MakeDirectoriesTest" />
+    <jrun cls="Find" />
+    <jrun cls="ListOfLines" />
     <jrun cls="PartsOfPaths" />
     <jrun cls="PathAnalysis" />
     <jrun cls="PathInfo" />
+    <jrun cls="PathWatcher" />
+    <jrun cls="ReadLineStream" />
+    <jrun cls="StreamInAndOut" />
+    <jrun cls="TreeWatcher" />
+    <jrun cls="Writing" />
   </target>
 
 </project>

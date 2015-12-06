@@ -3,6 +3,7 @@
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 import java.nio.file.*;
+import java.io.IOException;
 
 public class AddAndSubtractPaths {
   static Path base = Paths.get("..", "..", "..")
@@ -14,6 +15,11 @@ public class AddAndSubtractPaths {
         base.relativize(result));
     else
       System.out.println("(" + id + ")  " + result);
+    try {
+      System.out.println("RealPath: " + result.toRealPath());
+    } catch (IOException e) {
+      System.out.println(e);
+    }
   }
   public static void main(String[] args) {
     System.out.println(System.getProperty("os.name"));
@@ -41,6 +47,7 @@ public class AddAndSubtractPaths {
     Path p5 = Paths.get("").toAbsolutePath();
     show(9, p5);
     show(10, p5.resolveSibling("strings"));
+    show(11, Paths.get("nonexistent"));
   }
 }
 /* Output:
@@ -48,13 +55,32 @@ Windows 10
 C:\Users\Bruce\Documents\Git
 (1)r on-
 java\ExtractedExamples\files\AddAndSubtractPaths.java
+RealPath: C:\Users\Bruce\Documents\Git\on-
+java\ExtractedExamples\files\AddAndSubtractPaths.java
 (2)r on-java\ExtractedExamples\strings\..\files
+RealPath: C:\Users\Bruce\Documents\Git\on-
+java\ExtractedExamples\files
 (3)r on-java\ExtractedExamples\files
+RealPath: C:\Users\Bruce\Documents\Git\on-
+java\ExtractedExamples\files
 (4)  ..\..
+RealPath: C:\Users\Bruce\Documents\Git\on-java
 (5)  ..\..
+RealPath: C:\Users\Bruce\Documents\Git\on-java
 (6)r on-java
+RealPath: C:\Users\Bruce\Documents\Git\on-java
 (7)r on-java\ExtractedExamples\files\.\..\..
+RealPath: C:\Users\Bruce\Documents\Git\on-java
 (8)r on-java
+RealPath: C:\Users\Bruce\Documents\Git\on-java
 (9)r on-java\ExtractedExamples\files
+RealPath: C:\Users\Bruce\Documents\Git\on-
+java\ExtractedExamples\files
 (10)r on-java\ExtractedExamples\strings
+RealPath: C:\Users\Bruce\Documents\Git\on-
+java\ExtractedExamples\strings
+(11)  nonexistent
+java.nio.file.NoSuchFileException:
+C:\Users\Bruce\Documents\Git\on-
+java\ExtractedExamples\files\nonexistent
 */

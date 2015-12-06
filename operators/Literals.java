@@ -27,16 +27,16 @@ public class Literals {
     long n2 = 200l; // long suffix (but can be confusing)
     long n3 = 200;
     // Java 7 Binary Literals:
-    byte blb =  (byte)0b00110101;
+    byte blb = (byte)0b00110101;
     System.out.println(
       "blb: " + Integer.toBinaryString(blb));
     short bls = (short)0B0010111110101111;
     System.out.println(
       "bls: " + Integer.toBinaryString(bls));
-    int bli =   0b00101111101011111010111110101111;
+    int bli = 0b00101111101011111010111110101111;
     System.out.println(
       "bli: " + Integer.toBinaryString(bli));
-    long bll =  0b00101111101011111010111110101111;
+    long bll = 0b00101111101011111010111110101111;
     System.out.println(
       "bll: " + Long.toBinaryString(bll));
     float f1 = 1;

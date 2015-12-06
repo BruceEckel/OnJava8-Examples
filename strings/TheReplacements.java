@@ -3,7 +3,8 @@
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 import java.util.regex.*;
-import onjava.*;
+import java.nio.file.*;
+import java.util.stream.*;
 
 /*! Here's a block of text to use as input to
     the regular expression matcher. Note that we
@@ -13,11 +14,12 @@ import onjava.*;
 
 public class TheReplacements {
   public static void main(String[] args) throws Exception {
-    String s = TextFile.read("TheReplacements.java");
+    String s = Files.lines(
+      Paths.get("TheReplacements.java"))
+      .collect(Collectors.joining("\n"));
     // Match the specially commented block of text above:
-    Matcher mInput =
-      Pattern.compile("/\\*!(.*)!\\*/", Pattern.DOTALL)
-        .matcher(s);
+    Matcher mInput = Pattern.compile(
+      "/\\*!(.*)!\\*/", Pattern.DOTALL).matcher(s);
     if(mInput.find())
       s = mInput.group(1); // Captured by parentheses
     // Replace two or more spaces with a single space:

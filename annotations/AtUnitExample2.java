@@ -5,7 +5,7 @@
 // Assertions and exceptions can be used in @Tests.
 package annotations;
 import java.io.*;
-import com.mindviewinc.atunit.*;
+import onjava.atunit.*;
 import onjava.*;
 
 public class AtUnitExample2 {
@@ -32,7 +32,7 @@ public class AtUnitExample2 {
   }
   public static void main(String[] args) throws Exception {
     OSExecute.command(
-      "java com.mindviewinc.atunit.AtUnit AtUnitExample2");
+      "java onjava.atunit.AtUnit AtUnitExample2.class");
   }
 }
 /* Output:

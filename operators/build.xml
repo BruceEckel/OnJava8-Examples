@@ -26,6 +26,7 @@
     <jrun cls="ShortCircuit" />
     <jrun cls="StringOperators" />
     <jrun cls="TernaryIfElse" />
+    <jrun cls="Underscores" />
     <jrun cls="URShift" />
   </target>
 

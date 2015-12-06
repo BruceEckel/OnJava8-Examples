@@ -1,12 +1,14 @@
-// com/mindviewinc/atunit/AtUnit.java
+// onjava/atunit/AtUnit.java
 // ©2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // An annotation-based unit-test framework.
-package com.mindviewinc.atunit;
+package onjava.atunit;
 import java.lang.reflect.*;
 import java.io.*;
 import java.util.*;
+import java.nio.file.*;
+import java.util.stream.*;
 import onjava.*;
 
 public class AtUnit implements ProcessFiles.Strategy {
@@ -32,7 +34,10 @@ public class AtUnit implements ProcessFiles.Strategy {
   public void process(File cFile) {
     try {
       String cName = ClassNameFinder.thisClass(
-        BinaryFile.read(cFile));
+        Files.readAllBytes(cFile.toPath()));
+      if(!cName.startsWith("public:"))
+        return;
+      cName = cName.split(":")[1];
       if(!cName.contains("."))
         return; // Ignore unpackaged classes
       testClass = Class.forName(cName);
@@ -95,7 +100,8 @@ public class AtUnit implements ProcessFiles.Strategy {
       }
     }
   }
-  static class TestMethods extends ArrayList<Method> {
+  public static
+  class TestMethods extends ArrayList<Method> {
     void addIfTestMethod(Method m) {
       if(m.getAnnotation(Test.class) == null)
         return;
@@ -158,6 +164,3 @@ public class AtUnit implements ProcessFiles.Strategy {
     }
   }
 }
-/* Output:
-OK (0 tests)
-*/

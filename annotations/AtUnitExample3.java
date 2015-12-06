@@ -3,7 +3,7 @@
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 package annotations;
-import com.mindviewinc.atunit.*;
+import onjava.atunit.*;
 import onjava.*;
 
 public class AtUnitExample3 {
@@ -27,7 +27,7 @@ public class AtUnitExample3 {
   @Test boolean m2() { return methodTwo() == 2; }
   public static void main(String[] args) throws Exception {
     OSExecute.command(
-      "java com.mindviewinc.atunit.AtUnit AtUnitExample3");
+      "java onjava.atunit.AtUnit AtUnitExample3.class");
   }
 }
 /* Output:

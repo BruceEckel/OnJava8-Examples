@@ -4,8 +4,10 @@
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // {Args: VendingMachineInput.txt}
 import java.util.*;
+import java.io.IOException;
 import java.util.function.*;
-import onjava.*;
+import java.nio.file.*;
+import java.util.stream.*;
 
 enum Category {
   MONEY(Input.NICKEL, Input.DIME,
@@ -130,8 +132,16 @@ class RandomInputSupplier implements Supplier<Input> {
 class FileInputSupplier implements Supplier<Input> {
   private Iterator<String> input;
   public FileInputSupplier(String fileName) {
-    // Skip the comment line in the input file:
-    input = new TextFile(fileName, ";").listIterator(1);
+    try {
+      input = Files.lines(Paths.get(fileName))
+        .skip(1) // Skip the comment line
+        .flatMap(s -> Arrays.stream(s.split(";")))
+        .map(String::trim)
+        .collect(Collectors.toList())
+        .iterator();
+    } catch(IOException e) {
+      throw new RuntimeException(e);
+    }
   }
   @Override
   public Input get() {
@@ -143,12 +153,12 @@ class FileInputSupplier implements Supplier<Input> {
 /* Output:
 25
 50
-Insufficient money for CHIPS
-50
-150
-250
+75
+here is your CHIPS
+0
+100
+200
 here is your TOOTHPASTE
-Your change: 50
 0
 25
 35
