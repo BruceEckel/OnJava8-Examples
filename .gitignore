@@ -70,3 +70,7 @@ io/X.file
 /exceptions/Results.txt
 /files/Cheese.txt
 /files/StreamInAndOut.txt
+
+/.gradle/
+/*.iml
+/.idea/
