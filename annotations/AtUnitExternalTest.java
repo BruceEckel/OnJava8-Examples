@@ -14,7 +14,7 @@ public class AtUnitExternalTest extends AtUnitExample1 {
   @Test boolean _methodTwo() { return methodTwo() == 2; }
   public static void main(String[] args) throws Exception{
     OSExecute.command(
-    "java onjava.atunit.AtUnit AtUnitExternalTest.class");
+    "java -cp .. onjava.atunit.AtUnit AtUnitExternalTest.class");
   }
 }
 /* Output:

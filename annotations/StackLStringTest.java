@@ -28,7 +28,7 @@ public class StackLStringTest extends StackL<String> {
   }
   public static void main(String[] args) throws Exception {
     OSExecute.command(
-      "java onjava.atunit.AtUnit StackLStringTest.class");
+      "java -cp .. onjava.atunit.AtUnit StackLStringTest.class");
   }
 }
 /* Output:

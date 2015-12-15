@@ -32,7 +32,7 @@ public class AtUnitExample2 {
   }
   public static void main(String[] args) throws Exception {
     OSExecute.command(
-      "java onjava.atunit.AtUnit AtUnitExample2.class");
+      "java -cp .. onjava.atunit.AtUnit AtUnitExample2.class");
   }
 }
 /* Output:
