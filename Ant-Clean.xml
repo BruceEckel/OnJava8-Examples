@@ -21,6 +21,8 @@
         <include name="**/test.gz" />
         <include name="**/test.zip" />
         <include name="**/X.file" />
+        <exclude name=".idea/"/>
+        <exclude name="*.iml"/>
         <exclude name="**/*.java"/>
         <exclude name="**/Copyright.txt" />
         <exclude name="**/Face*.gif"/>
