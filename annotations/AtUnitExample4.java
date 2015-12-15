@@ -58,7 +58,7 @@ public class AtUnitExample4 {
   public static void main(String[] args) throws Exception {
     System.out.println("starting");
     OSExecute.command(
-      "java onjava.atunit.AtUnit AtUnitExample4.class");
+      "java -cp .. onjava.atunit.AtUnit AtUnitExample4.class");
   }
 }
 /* Output:

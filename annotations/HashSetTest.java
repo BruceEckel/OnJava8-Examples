@@ -23,7 +23,7 @@ public class HashSetTest {
   }
   public static void main(String[] args) throws Exception {
     OSExecute.command(
-      "java onjava.atunit.AtUnit HashSetTest.class");
+      "java -cp .. onjava.atunit.AtUnit HashSetTest.class");
   }
 }
 /* Output:

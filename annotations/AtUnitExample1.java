@@ -24,7 +24,7 @@ public class AtUnitExample1 {
   @Test boolean anotherDisappointment() { return false; }
   public static void main(String[] args) throws Exception {
     OSExecute.command(
-      "java onjava.atunit.AtUnit AtUnitExample1.class");
+      "java -cp .. onjava.atunit.AtUnit AtUnitExample1.class");
   }
 }
 /* Output:
