@@ -37,6 +37,7 @@
     <jrun cls="GenericArrayWithTypeToken" />
     <jrun cls="GenericCast" />
     <jrun cls="GenericHolder" />
+    <jrun cls="GenericHolder2" />
     <jrun cls="GenericMethods" />
     <jrun cls="GenericReading" />
     <jrun cls="GenericsAndCovariance" />

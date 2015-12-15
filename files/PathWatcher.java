@@ -1,5 +1,5 @@
 // files/PathWatcher.java
-// ©2016 MindView LLC: see Copyright.txt
+// (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 import java.io.IOException;
@@ -46,10 +46,10 @@ public class PathWatcher {
   }
 }
 /* Output:
-deleting test\bar\baz\bingo\foo\File.txt
-deleting test\baz\bingo\foo\bar\File.txt
-deleting test\bingo\foo\bar\baz\File.txt
-deleting test\foo\bar\baz\bingo\File.txt
+deleting test\bag\foo\bar\baz\File.txt
+deleting test\bar\baz\bag\foo\File.txt
+deleting test\baz\bag\foo\bar\File.txt
+deleting test\foo\bar\baz\bag\File.txt
 deleting test\Hello.txt
 evt.context(): Hello.txt
 evt.count(): 1

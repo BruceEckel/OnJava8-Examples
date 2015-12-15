@@ -1,52 +1,31 @@
 // typeinfo/SnowRemovalRobot.java
-// ©2016 MindView LLC: see Copyright.txt
+// (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 import java.util.*;
 
 public class SnowRemovalRobot implements Robot {
   private String name;
-  public SnowRemovalRobot(String name) {this.name = name;}
+  public SnowRemovalRobot(String name) {
+    this.name = name;
+  }
   @Override
   public String name() { return name; }
   @Override
   public String model() { return "SnowBot Series 11"; }
-  public List<Operation> operations() {
-    return Arrays.asList(
-      new Operation() {
-        @Override
-        public String description() {
-          return name + " can shovel snow";
-        }
-        @Override
-        public void command() {
-          System.out.println(name + " shoveling snow");
-        }
-      },
-      new Operation() {
-        @Override
-        public String description() {
-          return name + " can chip ice";
-        }
-        @Override
-        public void command() {
-          System.out.println(name + " chipping ice");
-        }
-      },
-      new Operation() {
-        @Override
-        public String description() {
-          return name + " can clear the roof";
-        }
-        @Override
-        public void command() {
-          System.out.println(name + " clearing roof");
-        }
-      }
-    );
-  }
+  private List<Operation> ops = Arrays.asList(
+    new Operation(
+      () -> name + " can shovel snow",
+      () -> System.out.println(name + " shoveling snow")),
+    new Operation(
+      () -> name + " can chip ice",
+      () -> System.out.println(name + " chipping ice")),
+    new Operation(
+      () -> name + " can clear the roof",
+      () -> System.out.println(name + " clearing roof")));
+  public List<Operation> operations() { return ops; }
   public static void main(String[] args) {
-    Robot.Test.test(new SnowRemovalRobot("Slusher"));
+    Robot.test(new SnowRemovalRobot("Slusher"));
   }
 }
 /* Output:

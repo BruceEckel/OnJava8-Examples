@@ -1,5 +1,5 @@
 // enums/ConstantSpecificMethod.java
-// ©2016 MindView LLC: see Copyright.txt
+// (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 import java.util.*;
@@ -32,16 +32,14 @@ public enum ConstantSpecificMethod {
   }
 }
 /* Output:
-Sep 10, 2015
+Dec 13, 2015
 .;..;C:\Program Files (x86)\Java\xom-1.2.10.jar;C:\Program
 Files (x86)\Java\jdk1.8.0_45\lib\tools.jar;C:\Program Files
 (x86)\Java\jre1.8.0_45\lib\javaws.jar;C:\Program Files
 (x86)\Java\swt-4.4.2-win32-win32-x86\swt.jar;C:\Program
 Files (x86)\Java\javassist.jar;C:\Users\Bruce\Documents\Git
 Hub\OnJava\ExtractedExamples;C:\Program Files
-(x86)\Java\junit-4.12.jar;C:\Program Files (x86)\Java
-\hamcrest-core-1.3.jar;C:\Program Files (x86)\Java\auto-
-service-1.0-rc1.jar;C:\Program Files
-(x86)\Java\guava-18.0.jar;
-1.8.0_60
+(x86)\Java\junit-4.12.jar;C:\Program Files
+(x86)\Java\hamcrest-core-1.3.jar;
+1.8.0_66
 */

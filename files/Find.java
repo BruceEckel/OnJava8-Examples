@@ -1,5 +1,5 @@
 // files/Find.java
-// ©2016 MindView LLC: see Copyright.txt
+// (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 import java.nio.file.*;
@@ -35,24 +35,24 @@ public class Find {
   }
 }
 /* Output:
-test\bar\baz\bingo\foo\7502408684126514935.tmp
-test\bar\baz\bingo\foo\File.txt
-test\baz\bingo\foo\bar\5777895186852859683.tmp
-test\baz\bingo\foo\bar\File.txt
-test\bingo\foo\bar\baz\5734112745714386401.tmp
-test\bingo\foo\bar\baz\File.txt
+test\bag\foo\bar\baz\7875645296823748474.tmp
+test\bag\foo\bar\baz\File.txt
+test\bar\baz\bag\foo\8495339501512512468.tmp
+test\bar\baz\bag\foo\File.txt
+test\baz\bag\foo\bar\4657930969137717517.tmp
+test\baz\bag\foo\bar\File.txt
 test\dir.tmp
-test\foo\bar\baz\bingo\585102693362215677.tmp
-test\foo\bar\baz\bingo\File.txt
+test\foo\bar\baz\bag\5205870604020775563.tmp
+test\foo\bar\baz\bag\File.txt
 ***************
-7502408684126514935.tmp
-5777895186852859683.tmp
-5734112745714386401.tmp
+7875645296823748474.tmp
+8495339501512512468.tmp
+4657930969137717517.tmp
 dir.tmp
-585102693362215677.tmp
+5205870604020775563.tmp
 ***************
-7502408684126514935.tmp
-5777895186852859683.tmp
-5734112745714386401.tmp
-585102693362215677.tmp
+7875645296823748474.tmp
+8495339501512512468.tmp
+4657930969137717517.tmp
+5205870604020775563.tmp
 */

@@ -1,10 +1,11 @@
 // typeinfo/NullRobot.java
-// ©2016 MindView LLC: see Copyright.txt
+// (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-// Using a dynamic proxy to create a Null Object.
+// Using a dynamic proxy to create an Optional.
 import java.lang.reflect.*;
 import java.util.*;
+import java.util.stream.*;
 import onjava.*;
 
 class NullRobotProxyHandler implements InvocationHandler {
@@ -40,12 +41,10 @@ public class NullRobot {
       new NullRobotProxyHandler(type));
   }
   public static void main(String[] args) {
-    Robot[] bots = {
+    Stream.of(
       new SnowRemovalRobot("SnowBee"),
       newNullRobot(SnowRemovalRobot.class)
-    };
-    for(Robot bot : bots)
-      Robot.Test.test(bot);
+    ).forEach(Robot::test);
   }
 }
 /* Output:

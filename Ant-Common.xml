@@ -15,6 +15,12 @@
     To see options, type: ant -p
   </description>
 
+  <condition property="version1.8">
+    <equals arg1="1.8" arg2="${ant.java.version}"/>
+  </condition>
+
+
+  <!--===========================================================-->
   <macrodef name="jrun">
      <attribute name="cls" default="NOT SET"/>
      <attribute name="dirpath" default=""/>
@@ -46,6 +52,8 @@
      </sequential>
   </macrodef>
 
+
+  <!--===========================================================-->
   <macrodef name="jrunconsole">
      <attribute name="cls" default="NOT SET"/>
      <attribute name="dirpath" default=""/>
@@ -72,11 +80,10 @@
      </sequential>
   </macrodef>
 
-  <condition property="version1.8">
-    <equals arg1="1.8" arg2="${ant.java.version}"/>
-  </condition>
 
-  <target name="base">
+  <!--===========================================================-->
+  <target name="base"
+   description="Build all common dependencies">
     <javac includeantruntime="false"
      classpath="${java.class.path};${basedir};${basedir}/.."
      srcdir="${basedir}/../onjava/">
@@ -91,7 +98,19 @@
     </javac>
     <javac includeantruntime="false"
      classpath="${java.class.path};${basedir};${basedir}/.."
+     srcdir="${basedir}/../polymorphism/music/">
+      <compilerarg value="-Xmaxerrs"/>
+      <compilerarg value="10"/>
+    </javac>
+    <javac includeantruntime="false"
+     classpath="${java.class.path};${basedir};${basedir}/.."
      srcdir="${basedir}/../typeinfo/pets/">
+      <compilerarg value="-Xmaxerrs"/>
+      <compilerarg value="10"/>
+    </javac>
+    <javac includeantruntime="false"
+     classpath="${java.class.path};${basedir};${basedir}/.."
+     srcdir="${basedir}/../collections/">
       <compilerarg value="-Xmaxerrs"/>
       <compilerarg value="10"/>
     </javac>
@@ -107,18 +126,13 @@
       <compilerarg value="-Xmaxerrs"/>
       <compilerarg value="10"/>
     </javac>
-    <javac includeantruntime="false"
-     classpath="${java.class.path};${basedir};${basedir}/.."
-     srcdir="${basedir}/../polymorphism/music/">
-      <compilerarg value="-Xmaxerrs"/>
-      <compilerarg value="10"/>
-    </javac>
   </target>
 
-  <target
-   depends="base"
+
+  <!--===========================================================-->
+  <target name="build"
    description="Build all classes in this directory"
-   name="build">
+   depends="base">
     <fail message="Java 8 required" unless="version1.8"/>
     <echo message="Building '${chapter}'&#13;"/>
     <echo file="${antoutput}" append="true" message="Building '${chapter}'&#13;"/>
@@ -134,10 +148,11 @@
     <echo file="${antoutput}" append="true" message="Build '${chapter}' succeeded&#13;"/>
   </target>
 
-  <target
-   depends="base"
+
+  <!--===========================================================-->
+  <target name="buildw"
    description="Build all classes in this directory, enabling 'Unchecked' warnings"
-   name="buildw">
+   depends="base">
     <fail message="Java 8 required" unless="version1.8"/>
     <echo message="Building '${chapter}'&#13;"/>
     <echo file="${antoutput}" append="true" message="Building '${chapter}'&#13;"/>
@@ -154,10 +169,22 @@
     <echo file="${antoutput}" append="true" message="Build '${chapter}' succeeded&#13;"/>
   </target>
 
-  <target
-   depends="base"
+  <!--===========================================================-->
+  <target name="verifyclean"
+    description="delete ant verify output files" >
+    <delete>
+      <fileset dir="${basedir}" casesensitive="yes">
+        <include name="**/update_output.bat" />
+        <include name="**/validate_failures.txt" />
+        <include name="**/strategies.txt" />
+      </fileset>
+    </delete>
+    <echo message="verifyclean successful"/>
+  </target>
+
+  <target name="verify"
    description="Verify output; requires Python 3.5"
-   name="verify">
+   depends="verifyclean">
     <exec dir="${basedir}" executable="python" failonerror="true">
       <arg line="../verify_output.py" />
     </exec>

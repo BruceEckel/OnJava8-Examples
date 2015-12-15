@@ -1,107 +1,84 @@
 // typeinfo/RegisteredFactories.java
-// ©2016 MindView LLC: see Copyright.txt
+// (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-// Registering Class Factories in the base class.
-import typeinfo.factory.*;
+// Registering Factories in the base class.
 import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
 
-class Part {
+class Part implements Supplier<Part> {
   @Override
   public String toString() {
     return getClass().getSimpleName();
   }
-  static List<Factory<? extends Part>> partFactories =
-    new ArrayList<>();
-  static {
-    // Collections.addAll() gives an "unchecked generic
-    // array creation ... for varargs parameter" warning.
-    partFactories.add(new FuelFilter.Factory());
-    partFactories.add(new AirFilter.Factory());
-    partFactories.add(new CabinAirFilter.Factory());
-    partFactories.add(new OilFilter.Factory());
-    partFactories.add(new FanBelt.Factory());
-    partFactories.add(new PowerSteeringBelt.Factory());
-    partFactories.add(new GeneratorBelt.Factory());
-  }
+  static List<Supplier<? extends Part>> prototypes =
+    Arrays.asList(
+      new FuelFilter(),
+      new AirFilter(),
+      new CabinAirFilter(),
+      new OilFilter(),
+      new FanBelt(),
+      new PowerSteeringBelt(),
+      new GeneratorBelt()
+    );
   private static Random rand = new Random(47);
-  public static Part createRandom() {
-    int n = rand.nextInt(partFactories.size());
-    return partFactories.get(n).create();
+  public Part get() {
+    int n = rand.nextInt(prototypes.size());
+    return prototypes.get(n).get();
   }
 }
 
 class Filter extends Part {}
 
 class FuelFilter extends Filter {
-  // Create a Class Factory for each specific type:
-  public static class Factory
-  implements typeinfo.factory.Factory<FuelFilter> {
-    @Override
-    public FuelFilter create() { return new FuelFilter(); }
-  }
+  @Override
+  public FuelFilter get() { return new FuelFilter(); }
 }
 
 class AirFilter extends Filter {
-  public static class Factory
-  implements typeinfo.factory.Factory<AirFilter> {
-    @Override
-    public AirFilter create() { return new AirFilter(); }
-  }
+  @Override
+  public AirFilter get() { return new AirFilter(); }
 }
 
 class CabinAirFilter extends Filter {
-  public static class Factory
-  implements typeinfo.factory.Factory<CabinAirFilter> {
-    @Override
-    public CabinAirFilter create() {
-      return new CabinAirFilter();
-    }
+  @Override
+  public CabinAirFilter get() {
+    return new CabinAirFilter();
   }
 }
 
 class OilFilter extends Filter {
-  public static class Factory
-  implements typeinfo.factory.Factory<OilFilter> {
-    @Override
-    public OilFilter create() { return new OilFilter(); }
-  }
+  @Override
+  public OilFilter get() { return new OilFilter(); }
 }
 
 class Belt extends Part {}
 
 class FanBelt extends Belt {
-  public static class Factory
-  implements typeinfo.factory.Factory<FanBelt> {
-    @Override
-    public FanBelt create() { return new FanBelt(); }
-  }
+  @Override
+  public FanBelt get() { return new FanBelt(); }
 }
 
 class GeneratorBelt extends Belt {
-  public static class Factory
-  implements typeinfo.factory.Factory<GeneratorBelt> {
-    @Override
-    public GeneratorBelt create() {
-      return new GeneratorBelt();
-    }
+  @Override
+  public GeneratorBelt get() {
+    return new GeneratorBelt();
   }
 }
 
 class PowerSteeringBelt extends Belt {
-  public static class Factory
-  implements typeinfo.factory.Factory<PowerSteeringBelt> {
-    @Override
-    public PowerSteeringBelt create() {
-      return new PowerSteeringBelt();
-    }
+  @Override
+  public PowerSteeringBelt get() {
+    return new PowerSteeringBelt();
   }
 }
 
 public class RegisteredFactories {
   public static void main(String[] args) {
-    for(int i = 0; i < 10; i++)
-      System.out.println(Part.createRandom());
+    Stream.generate(new Part())
+      .limit(10)
+      .forEach(System.out::println);
   }
 }
 /* Output:

@@ -1,8 +1,8 @@
 // typeinfo/Shapes.java
-// ©2016 MindView LLC: see Copyright.txt
+// (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-import java.util.*;
+import java.util.stream.*;
 
 abstract class Shape {
   void draw() { System.out.println(this + ".draw()"); }
@@ -27,11 +27,8 @@ class Triangle extends Shape {
 
 public class Shapes {
   public static void main(String[] args) {
-    List<Shape> shapeList = Arrays.asList(
-      new Circle(), new Square(), new Triangle()
-    );
-    for(Shape shape : shapeList)
-      shape.draw();
+    Stream.of(new Circle(), new Square(), new Triangle())
+      .forEach(Shape::draw);
   }
 }
 /* Output:

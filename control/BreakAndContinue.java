@@ -1,5 +1,5 @@
 // control/BreakAndContinue.java
-// ©2016 MindView LLC: see Copyright.txt
+// (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // Demonstrates break and continue keywords.
@@ -10,14 +10,14 @@ public class BreakAndContinue {
     for(int i = 0; i < 100; i++) {
       if(i == 74) break; // Out of for loop
       if(i % 9 != 0) continue; // Next iteration
-      System.out.println(i + " ");
+      System.out.print(i + " ");
     }
     System.out.println();
     // Using for-in:
     for(int i : range(100)) {
       if(i == 74) break; // Out of for loop
       if(i % 9 != 0) continue; // Next iteration
-      System.out.println(i + " ");
+      System.out.print(i + " ");
     }
     System.out.println();
     int i = 0;
@@ -27,7 +27,7 @@ public class BreakAndContinue {
       int j = i * 27;
       if(j == 1269) break; // Out of loop
       if(i % 10 != 0) continue; // Top of loop
-      System.out.println(i + " ");
+      System.out.print(i + " ");
     }
   }
 }

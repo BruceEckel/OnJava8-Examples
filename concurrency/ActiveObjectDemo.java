@@ -1,5 +1,5 @@
 // concurrency/ActiveObjectDemo.java
-// ©2016 MindView LLC: see Copyright.txt
+// (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // Can only pass constants, immutables, "disconnected
@@ -71,16 +71,16 @@ All asynch calls made
 starting 0.2 + 0.2
 0.4
 starting 0.4 + 0.4
-starting 0.6 + 0.6
 0.8
-starting 0.8 + 0.8
+starting 0.6 + 0.6
 1.2
-starting 0 + 0
+starting 0.8 + 0.8
 1.6
+starting 0 + 0
 starting 1 + 1
 0
-starting 2 + 2
 2
+starting 2 + 2
 4
 starting 3 + 3
 6

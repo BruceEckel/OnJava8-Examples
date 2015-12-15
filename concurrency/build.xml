@@ -63,7 +63,6 @@
     <jrun cls="SingleThreadExecutor" />
     <jrun cls="SleepingTask" />
     <jrun cls="SynchronizationComparisons" />
-    <jrun cls="SynchronizedEvenSupplier" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
     <jrun cls="SyncObject" />
     <jrun cls="TestBlockingQueues" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
     <jrun cls="ThreadLocalVariableHolder" />

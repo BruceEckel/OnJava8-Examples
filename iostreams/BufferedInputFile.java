@@ -1,5 +1,5 @@
 // iostreams/BufferedInputFile.java
-// ©2016 MindView LLC: see Copyright.txt
+// (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 import java.io.*;
@@ -8,16 +8,15 @@ public class BufferedInputFile {
   // Throw exceptions to console:
   public static String
   read(String filename) throws IOException {
-    StringBuilder sb;
     // Reading input by lines:
     try(BufferedReader in = new BufferedReader(
         new FileReader(filename))) {
       String s;
-      sb = new StringBuilder();
+      StringBuilder sb = new StringBuilder();
       while((s = in.readLine())!= null)
         sb.append(s + "\n");
+      return sb.toString();
     }
-    return sb.toString();
   }
   public static void main(String[] args)
   throws IOException {

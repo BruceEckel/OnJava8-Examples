@@ -1,12 +1,12 @@
 // housekeeping/SimpleConstructor2.java
-// ©2016 MindView LLC: see Copyright.txt
+// (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // Constructors can have arguments.
 
 class Rock2 {
   Rock2(int i) {
-    System.out.println("Rock " + i + " ");
+    System.out.print("Rock " + i + " ");
   }
 }
 

@@ -1,5 +1,5 @@
 // streams/ForEach.java
-// ©2016 MindView LLC: see Copyright.txt
+// (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 import java.util.*;
@@ -23,6 +23,6 @@ public class ForEach {
 }
 /* Output:
 258 555 693 861 961 429 868 200 522 207 288 128 551 589
-551 589 200 868 555 522 961 258 861 128 693 207 288 429
+551 589 200 861 555 693 258 128 207 429 288 868 522 961
 258 555 693 861 961 429 868 200 522 207 288 128 551 589
 */

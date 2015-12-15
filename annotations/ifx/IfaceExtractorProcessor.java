@@ -1,5 +1,5 @@
 // annotations/ifx/IfaceExtractorProcessor.java
-// ©2016 MindView LLC: see Copyright.txt
+// (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // javac-based annotation processing.
@@ -50,30 +50,28 @@ extends AbstractProcessor {
   }
   private void
   writeInterfaceFile(String interfaceName) {
-   try {
-      try(Writer writer = processingEnv.getFiler()
-        .createSourceFile(interfaceName)
-        .openWriter()) {
-        String packageName = elementUtils
-          .getPackageOf(interfaceMethods
-                        .get(0)).toString();
-        writer.write(
-          "package " + packageName + ";\n");
-        writer.write("public interface " +
-          interfaceName + " {\n");
-        for(Element elem : interfaceMethods) {
-          ExecutableElement method =
-            (ExecutableElement)elem;
-          String signature = "  public ";
-          signature += method.getReturnType()+" ";
-          signature += method.getSimpleName();
-          signature += createArgList(
-            method.getParameters());
-          System.out.println(signature);
-          writer.write(signature + ";\n");
-        }
-        writer.write("}");
+    try(Writer writer = processingEnv.getFiler()
+      .createSourceFile(interfaceName)
+      .openWriter()) {
+      String packageName = elementUtils
+        .getPackageOf(interfaceMethods
+                      .get(0)).toString();
+      writer.write(
+        "package " + packageName + ";\n");
+      writer.write("public interface " +
+        interfaceName + " {\n");
+      for(Element elem : interfaceMethods) {
+        ExecutableElement method =
+          (ExecutableElement)elem;
+        String signature = "  public ";
+        signature += method.getReturnType()+" ";
+        signature += method.getSimpleName();
+        signature += createArgList(
+          method.getParameters());
+        System.out.println(signature);
+        writer.write(signature + ";\n");
       }
+      writer.write("}");
     } catch(Exception e) {
       throw new RuntimeException(e);
     }

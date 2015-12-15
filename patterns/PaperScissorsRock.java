@@ -1,5 +1,5 @@
 // patterns/PaperScissorsRock.java
-// ©2016 MindView LLC: see Copyright.txt
+// (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // Demonstration of multiple dispatching.
@@ -111,24 +111,24 @@ public class PaperScissorsRock {
   }
 }
 /* Output:
-Rock <--> Rock : DRAW
-Paper <--> Rock : WIN
-Paper <--> Rock : WIN
-Paper <--> Rock : WIN
-Scissors <--> Paper : WIN
-Scissors <--> Scissors : DRAW
-Scissors <--> Paper : WIN
-Rock <--> Paper : LOSE
-Paper <--> Paper : DRAW
-Rock <--> Paper : LOSE
-Paper <--> Scissors : LOSE
-Paper <--> Scissors : LOSE
-Rock <--> Scissors : WIN
-Rock <--> Paper : LOSE
-Paper <--> Rock : WIN
-Scissors <--> Paper : WIN
-Paper <--> Scissors : LOSE
-Paper <--> Scissors : LOSE
-Paper <--> Scissors : LOSE
-Paper <--> Scissors : LOSE
+Rock -> Rock : DRAW
+Paper -> Rock : WIN
+Paper -> Rock : WIN
+Paper -> Rock : WIN
+Scissors -> Paper : WIN
+Scissors -> Scissors : DRAW
+Scissors -> Paper : WIN
+Rock -> Paper : LOSE
+Paper -> Paper : DRAW
+Rock -> Paper : LOSE
+Paper -> Scissors : LOSE
+Paper -> Scissors : LOSE
+Rock -> Scissors : WIN
+Rock -> Paper : LOSE
+Paper -> Rock : WIN
+Scissors -> Paper : WIN
+Paper -> Scissors : LOSE
+Paper -> Scissors : LOSE
+Paper -> Scissors : LOSE
+Paper -> Scissors : LOSE
 */

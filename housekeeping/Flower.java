@@ -1,5 +1,5 @@
 // housekeeping/Flower.java
-// ©2016 MindView LLC: see Copyright.txt
+// (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // Calling constructors with "this"
@@ -41,6 +41,6 @@ public class Flower {
 /* Output:
 Constructor w/ int arg only, petalCount= 47
 String & int args
-no-arg constructor (no args)
+no-arg constructor
 petalCount = 47 s = hi
 */

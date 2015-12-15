@@ -1,5 +1,5 @@
 // compression/ZipCompress.java
-// ©2016 MindView LLC: see Copyright.txt
+// (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // Uses Zip compression to compress any
@@ -12,12 +12,12 @@ import java.util.*;
 public class ZipCompress {
   public static void main(String[] args)
   throws IOException {
-    FileOutputStream f = new FileOutputStream("test.zip");
-    CheckedOutputStream csum =
-      new CheckedOutputStream(f, new Adler32());
-     ZipOutputStream zos = new ZipOutputStream(csum);
-    try(BufferedOutputStream out =
-      new BufferedOutputStream(zos)) {
+    try(FileOutputStream f = new FileOutputStream("test.zip");
+        CheckedOutputStream csum =
+          new CheckedOutputStream(f, new Adler32());
+        ZipOutputStream zos = new ZipOutputStream(csum);
+        BufferedOutputStream out =
+          new BufferedOutputStream(zos)) {
       zos.setComment("A test of Java Zipping");
       // No corresponding getComment(), though.
       for(String arg : args) {
@@ -31,18 +31,18 @@ public class ZipCompress {
         }
         out.flush();
       }
+      // Checksum valid only after the file is closed!
+      System.out.println(
+        "Checksum: " + csum.getChecksum().getValue());
     }
-    // Checksum valid only after the file is closed!
-    System.out.println(
-      "Checksum: " + csum.getChecksum().getValue());
     // Now extract the files:
     System.out.println("Reading file");
-    FileInputStream fi = new FileInputStream("test.zip");
-    CheckedInputStream csumi =
-      new CheckedInputStream(fi, new Adler32());
-    ZipInputStream in2 = new ZipInputStream(csumi);
-    try(BufferedInputStream bis =
-        new BufferedInputStream(in2)) {
+    try(FileInputStream fi = new FileInputStream("test.zip");
+        CheckedInputStream csumi =
+          new CheckedInputStream(fi, new Adler32());
+        ZipInputStream in2 = new ZipInputStream(csumi);
+        BufferedInputStream bis =
+          new BufferedInputStream(in2)) {
       ZipEntry ze;
       while((ze = in2.getNextEntry()) != null) {
         System.out.println("Reading file " + ze);
@@ -55,14 +55,14 @@ public class ZipCompress {
           "Checksum: "+csumi.getChecksum().getValue());
     }
     // Alternative way to open and read Zip files:
-    ZipFile zf = new ZipFile("test.zip");
-    Enumeration e = zf.entries();
-    while(e.hasMoreElements()) {
-      ZipEntry ze2 = (ZipEntry)e.nextElement();
-      System.out.println("File: " + ze2);
-      // ... and extract the data as before
+    try(ZipFile zf = new ZipFile("test.zip")) {
+      Enumeration e = zf.entries();
+      while(e.hasMoreElements()) {
+        ZipEntry ze2 = (ZipEntry)e.nextElement();
+        System.out.println("File: " + ze2);
+        // ... and extract the data as before
+      }
     }
-    /* if(args.length == 1) */
   }
 }
 /* Output: (Execute to see) */

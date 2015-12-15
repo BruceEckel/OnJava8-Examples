@@ -1,5 +1,5 @@
 // exceptions/CleanupIdiom.java
-// ©2016 MindView LLC: see Copyright.txt
+// (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // Each disposable object must be followed by a try-finally
@@ -8,7 +8,8 @@ class NeedsCleanup { // Construction can't fail
   private static long counter = 1;
   private final long id = counter++;
   public void dispose() {
-    System.out.println("NeedsCleanup " + id + " disposed");
+    System.out.println(
+      "NeedsCleanup " + id + " disposed");
   }
 }
 
@@ -21,7 +22,7 @@ class NeedsCleanup2 extends NeedsCleanup {
 
 public class CleanupIdiom {
   public static void main(String[] args) {
-    // Section 1:
+    // (1):
     NeedsCleanup nc1 = new NeedsCleanup();
     try {
       // ...
@@ -29,7 +30,7 @@ public class CleanupIdiom {
       nc1.dispose();
     }
 
-    // Section 2:
+    // (2):
     // If construction cannot fail you can group objects:
     NeedsCleanup nc2 = new NeedsCleanup();
     NeedsCleanup nc3 = new NeedsCleanup();
@@ -40,7 +41,7 @@ public class CleanupIdiom {
       nc2.dispose();
     }
 
-    // Section 3:
+    // (3):
     // If construction can fail you must guard each one:
     try {
       NeedsCleanup2 nc4 = new NeedsCleanup2();

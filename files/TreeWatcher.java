@@ -1,5 +1,5 @@
 // files/TreeWatcher.java
-// ©2016 MindView LLC: see Copyright.txt
+// (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 import java.io.IOException;
@@ -41,8 +41,9 @@ public class TreeWatcher {
   }
 }
 /* Output:
-deleting test\bar\baz\bingo\foo\File.txt
+deleting test\bag\foo\bar\baz\File.txt
 evt.context(): File.txt
 evt.count(): 1
 evt.kind(): ENTRY_DELETE
+deleting test\bar\baz\bag\foo\File.txt
 */

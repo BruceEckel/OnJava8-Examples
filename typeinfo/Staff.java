@@ -1,5 +1,5 @@
 // typeinfo/Staff.java
-// ©2016 MindView LLC: see Copyright.txt
+// (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 import java.util.*;
@@ -16,14 +16,14 @@ public class Staff extends ArrayList<Position> {
   public boolean positionAvailable(String title) {
     for(Position position : this)
       if(position.getTitle().equals(title) &&
-         position.getPerson() == Person.NULL)
+         position.getPerson().empty)
         return true;
     return false;
   }
   public void fillPosition(String title, Person hire) {
     for(Position position : this)
       if(position.getTitle().equals(title) &&
-         position.getPerson() == Person.NULL) {
+         position.getPerson().empty) {
         position.setPerson(hire);
         return;
       }
@@ -48,13 +48,14 @@ public class Staff extends ArrayList<Position> {
   }
 }
 /* Output:
-[Position: President Person: Me Last The Top, Lonely At,
-Position: CTO NullPerson, Position: Marketing Manager
-NullPerson, Position: Product Manager NullPerson, Position:
-Project Lead Person: Janet Planner The Burbs, Position:
-Software Engineer Person: Bob Coder Bright Light City,
-Position: Software Engineer NullPerson, Position: Software
-Engineer NullPerson, Position: Software Engineer
-NullPerson, Position: Test Engineer NullPerson, Position:
-Technical Writer NullPerson]
+[Position: President, Employee: Me Last The Top, Lonely At,
+Position: CTO, Employee: <Empty>, Position: Marketing
+Manager, Employee: <Empty>, Position: Product Manager,
+Employee: <Empty>, Position: Project Lead, Employee: Janet
+Planner The Burbs, Position: Software Engineer, Employee:
+Bob Coder Bright Light City, Position: Software Engineer,
+Employee: <Empty>, Position: Software Engineer, Employee:
+<Empty>, Position: Software Engineer, Employee: <Empty>,
+Position: Test Engineer, Employee: <Empty>, Position:
+Technical Writer, Employee: <Empty>]
 */

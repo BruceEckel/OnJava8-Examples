@@ -1,5 +1,5 @@
 // serialization/Blips.java
-// ©2016 MindView LLC: see Copyright.txt
+// (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // Simple use of Externalizable & a pitfall.
@@ -50,10 +50,11 @@ public class Blips {
       o.writeObject(b2);
     }
     // Now get them back:
-    ObjectInputStream in = new ObjectInputStream(
-      new FileInputStream("Blips.serialized"));
     System.out.println("Recovering b1:");
-    b1 = (Blip1)in.readObject();
+    try(ObjectInputStream in = new ObjectInputStream(
+          new FileInputStream("Blips.serialized"))) {
+      b1 = (Blip1)in.readObject();
+    }
     // OOPS! Throws an exception:
 //! System.out.println("Recovering b2:");
 //! b2 = (Blip2)in.readObject();

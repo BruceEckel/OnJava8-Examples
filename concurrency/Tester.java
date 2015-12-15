@@ -1,18 +1,18 @@
 // concurrency/Tester.java
-// ©2016 MindView LLC: see Copyright.txt
+// (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-// Framework to test performance of concurrency containers.
+// Framework to test performance of concurrency collections.
 import java.util.concurrent.*;
 import onjava.*;
 
 public abstract class Tester<C> {
   static int testReps = 10;
   static int testCycles = 1000;
-  static int containerSize = 1000;
-  abstract C containerInitializer();
+  static int collectionSize = 1000;
+  abstract C collectionInitializer();
   abstract void startReadersAndWriters();
-  C testContainer;
+  C testCollection;
   String testId;
   int nReaders;
   int nWriters;
@@ -29,7 +29,7 @@ public abstract class Tester<C> {
     this.nReaders = nReaders;
     this.nWriters = nWriters;
     writeData = Generated.array(Integer.class,
-      new RandomSupplier.Integer(), containerSize);
+      new RandomSupplier.Integer(), collectionSize);
     for(int i = 0; i < testReps; i++) {
       runTest();
       readTime = 0;
@@ -38,7 +38,7 @@ public abstract class Tester<C> {
   }
   void runTest() {
     endLatch = new CountDownLatch(nReaders + nWriters);
-    testContainer = containerInitializer();
+    testCollection = collectionInitializer();
     startReadersAndWriters();
     try {
       endLatch.await();
@@ -71,7 +71,7 @@ public abstract class Tester<C> {
     if(args.length > 1)
       testCycles = new Integer(args[1]);
     if(args.length > 2)
-      containerSize = new Integer(args[2]);
+      collectionSize = new Integer(args[2]);
     System.out.printf("%-27s %14s %14s\n",
       "Type", "Read time", "Write time");
   }

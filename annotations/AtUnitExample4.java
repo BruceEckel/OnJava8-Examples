@@ -1,5 +1,5 @@
 // annotations/AtUnitExample4.java
-// ©2016 MindView LLC: see Copyright.txt
+// (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 package annotations;
@@ -66,16 +66,15 @@ starting
 annotations.AtUnitExample4
   . words 'All'
 (failed)
-  . scramble1 'brontosauruses'
-ntsaueorosurbs
-(failed)
-  . scramble2 'are'
-are
+  . scramble2 'brontosauruses'
+tsaeborornussu
+
+  . scramble1 'are'
+rae
 (failed)
 (3 tests)
 
->>> 3 FAILURES <<<
+>>> 2 FAILURES <<<
   annotations.AtUnitExample4: words
   annotations.AtUnitExample4: scramble1
-  annotations.AtUnitExample4: scramble2
 */

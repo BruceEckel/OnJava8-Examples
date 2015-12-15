@@ -1,18 +1,18 @@
 // iostreams/FileOutputShortcut.java
-// ©2016 MindView LLC: see Copyright.txt
+// (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 import java.io.*;
 
 public class FileOutputShortcut {
-  static String file = "FileOutputShortcut.out";
+  static String file = "FileOutputShortcut.dat";
   public static void main(String[] args)
   throws IOException {
-    BufferedReader in = new BufferedReader(
+    try(BufferedReader in = new BufferedReader(
       new StringReader(BufferedInputFile.read(
         "FileOutputShortcut.java")));
     // Here's the shortcut:
-    try(PrintWriter out = new PrintWriter(file)) {
+    PrintWriter out = new PrintWriter(file)) {
       int lineCount = 1;
       String s;
       while((s = in.readLine()) != null )

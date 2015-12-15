@@ -11,18 +11,20 @@
     <jrun cls="BoundedClassReferences" />
     <jrun cls="ClassCasts" />
     <jrun cls="ClassInitialization" />
+    <jrun cls="DynamicSupplier" />
     <jrun cls="typeinfo.FamilyVsExactType" dirpath="../typeinfo" />
-    <jrun cls="FilledList" />
     <jrun cls="GenericClassReferences" />
     <jrun cls="HiddenImplementation" />
     <jrun cls="InnerImplementation" />
     <jrun cls="InterfaceViolation" />
     <jrun cls="ModifyingPrivateFields" />
     <jrun cls="NullRobot" />
+    <jrun cls="Person" />
     <jrun cls="PetCount" />
     <jrun cls="PetCount2" />
     <jrun cls="PetCount3" />
     <jrun cls="PetCount4" />
+    <jrun cls="Position" />
     <jrun cls="RegisteredFactories" />
     <jrun cls="SelectingMethods" />
     <jrun cls="Shapes" />

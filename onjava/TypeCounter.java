@@ -1,12 +1,13 @@
 // onjava/TypeCounter.java
-// ©2016 MindView LLC: see Copyright.txt
+// (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // Counts instances of a type family.
 package onjava;
 import java.util.*;
 
-public class TypeCounter extends HashMap<Class<?>,Integer>{
+public class
+TypeCounter extends HashMap<Class<?>, Integer> {
   private Class<?> baseType;
   public TypeCounter(Class<?> baseType) {
     this.baseType = baseType;
@@ -14,9 +15,9 @@ public class TypeCounter extends HashMap<Class<?>,Integer>{
   public void count(Object obj) {
     Class<?> type = obj.getClass();
     if(!baseType.isAssignableFrom(type))
-      throw new RuntimeException(obj + " incorrect type: "
-        + type + ", should be type or subtype of "
-        + baseType);
+      throw new RuntimeException(
+        obj + " incorrect type: " + type +
+        ", should be type or subtype of " + baseType);
     countClass(type);
   }
   private void countClass(Class<?> type) {
@@ -30,13 +31,13 @@ public class TypeCounter extends HashMap<Class<?>,Integer>{
   @Override
   public String toString() {
     StringBuilder result = new StringBuilder("{");
-    for(Map.Entry<Class<?>,Integer> pair : entrySet()) {
+    for(Map.Entry<Class<?>, Integer> pair : entrySet()) {
       result.append(pair.getKey().getSimpleName());
       result.append("=");
       result.append(pair.getValue());
       result.append(", ");
     }
-    result.delete(result.length()-2, result.length());
+    result.delete(result.length() - 2, result.length());
     result.append("}");
     return result.toString();
   }

@@ -1,5 +1,5 @@
 // concurrency/ListComparisons.java
-// ©2016 MindView LLC: see Copyright.txt
+// (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // {Args: 1 10 10} (Fast verification check during build)
@@ -16,8 +16,8 @@ abstract class ListTest extends Tester<List<Integer>> {
     long result = 0;
     void test() {
       for(long i = 0; i < testCycles; i++)
-        for(int index = 0; index < containerSize; index++)
-          result += testContainer.get(index);
+        for(int index = 0; index < collectionSize; index++)
+          result += testCollection.get(index);
     }
     void putResults() {
       readResult += result;
@@ -27,8 +27,8 @@ abstract class ListTest extends Tester<List<Integer>> {
   class Writer extends TestTask {
     void test() {
       for(long i = 0; i < testCycles; i++)
-        for(int index = 0; index < containerSize; index++)
-          testContainer.set(index, writeData[index]);
+        for(int index = 0; index < collectionSize; index++)
+          testCollection.set(index, writeData[index]);
     }
     void putResults() {
       writeTime += duration;
@@ -43,10 +43,10 @@ abstract class ListTest extends Tester<List<Integer>> {
 }
 
 class SynchronizedArrayListTest extends ListTest {
-  List<Integer> containerInitializer() {
+  List<Integer> collectionInitializer() {
     return Collections.synchronizedList(
       new ArrayList<>(
-        new CountingIntegerList(containerSize)));
+        new CountingIntegerList(collectionSize)));
   }
   SynchronizedArrayListTest(int nReaders, int nWriters) {
     super("Synched ArrayList", nReaders, nWriters);
@@ -54,9 +54,9 @@ class SynchronizedArrayListTest extends ListTest {
 }
 
 class CopyOnWriteArrayListTest extends ListTest {
-  List<Integer> containerInitializer() {
+  List<Integer> collectionInitializer() {
     return new CopyOnWriteArrayList<>(
-      new CountingIntegerList(containerSize));
+      new CountingIntegerList(collectionSize));
   }
   CopyOnWriteArrayListTest(int nReaders, int nWriters) {
     super("CopyOnWriteArrayList", nReaders, nWriters);

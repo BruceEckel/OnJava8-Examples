@@ -2,14 +2,18 @@
 
 <project default="run">
   <property name="chapter" value="exceptions"/>
-  <property name="excludedfiles" value=""/>
+  <property name="excludedfiles" value="TryAnything.java"/>
   <import file="../Ant-Common.xml"/>
   <import file="../Ant-Clean.xml"/>
 
   <target name="run" description="Compile and run" depends="build">
     <jrun cls="AlwaysFinally" />
+    <jrun cls="AutoCloseableDetails" />
+    <jrun cls="BodyException" />
     <jrun cls="Cleanup" />
     <jrun cls="CleanupIdiom" />
+    <jrun cls="CloseExceptions" />
+    <jrun cls="ConstructorException" />
     <jrun cls="DynamicFields" />
     <jrun cls="ExceptionMethods" />
     <jrun cls="ExceptionSilencer" />
@@ -18,16 +22,20 @@
     <jrun cls="FullConstructors" />
     <jrun cls="Human" />
     <jrun cls="InheritingExceptions" />
+    <jrun cls="InputFile2" />
     <jrun cls="LoggingExceptions" />
     <jrun cls="LoggingExceptions2" />
     <jrun cls="LostMessage" />
     <jrun cls="MainException" />
+    <jrun cls="MessyExceptions" />
     <jrun cls="MultipleReturns" />
     <jrun cls="NeverCaught" failOnError='false' msg='* Exception was Expected *' />
     <jrun cls="OnOffSwitch" />
     <jrun cls="Rethrowing" />
     <jrun cls="RethrowNew" />
     <jrun cls="StormyInning" />
+    <jrun cls="StreamsAreAutoCloseable" />
+    <jrun cls="TryWithResources" />
     <jrun cls="TurnOffChecking" />
     <jrun cls="WhoCalled" />
     <jrun cls="WithFinally" />

@@ -1,33 +1,50 @@
 // typeinfo/Position.java
-// ©2016 MindView LLC: see Copyright.txt
+// (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
+import java.util.*;
+
+class EmptyTitleException extends RuntimeException {}
 
 class Position {
   private String title;
   private Person person;
   public Position(String jobTitle, Person employee) {
-    title = jobTitle;
-    person = employee;
-    if(person == null)
-      person = Person.NULL;
+    setTitle(jobTitle);
+    setPerson(employee);
   }
   public Position(String jobTitle) {
-    title = jobTitle;
-    person = Person.NULL;
+    this(jobTitle, null);
   }
   public String getTitle() { return title; }
   public void setTitle(String newTitle) {
-    title = newTitle;
+    // Throws EmptyTitleException if newTitle is null:
+    title = Optional.ofNullable(newTitle)
+      .orElseThrow(EmptyTitleException::new);
   }
   public Person getPerson() { return person; }
   public void setPerson(Person newPerson) {
-    person = newPerson;
-    if(person == null)
-      person = Person.NULL;
+    // Uses empty Person if newPerson is null:
+    person =
+      Optional.ofNullable(newPerson).orElse(new Person());
   }
   @Override
   public String toString() {
-    return "Position: " + title + " " + person;
+    return "Position: " + title + ", Employee: " + person;
+  }
+  public static void main(String[] args) {
+    System.out.println(new Position("CEO"));
+    System.out.println(new Position("Programmer",
+      new Person("Arthur", "Fonzarelli")));
+    try {
+      new Position(null);
+    } catch(Exception e) {
+      System.out.println("caught " + e);
+    }
   }
 }
+/* Output:
+Position: CEO, Employee: <Empty>
+Position: Programmer, Employee: Arthur Fonzarelli
+caught EmptyTitleException
+*/

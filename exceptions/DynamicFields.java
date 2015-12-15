@@ -1,9 +1,10 @@
 // exceptions/DynamicFields.java
-// ©2016 MindView LLC: see Copyright.txt
+// (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // A Class that dynamically adds fields to itself.
 // Demonstrates exception chaining.
+
 class DynamicFieldsException extends Exception {}
 
 public class DynamicFields {
@@ -105,17 +106,20 @@ public class DynamicFields {
 null: null
 null: null
 null: null
+
 d: A value for d
 number: 47
 number2: 48
+
 df: d: A new value for d
 number: 47
 number2: 48
 number3: 11
+
 df.getField("d") : A new value for d
 DynamicFieldsException
         at DynamicFields.setField(DynamicFields.java:64)
-        at DynamicFields.main(DynamicFields.java:94)
+        at DynamicFields.main(DynamicFields.java:95)
 Caused by: java.lang.NullPointerException
         at DynamicFields.setField(DynamicFields.java:66)
         ... 1 more

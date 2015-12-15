@@ -1,5 +1,5 @@
 // concurrency/MapComparisons.java
-// ©2016 MindView LLC: see Copyright.txt
+// (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // {Args: 1 10 10} (Fast verification check during build)
@@ -17,8 +17,8 @@ extends Tester<Map<Integer,Integer>> {
     long result = 0;
     void test() {
       for(long i = 0; i < testCycles; i++)
-        for(int index = 0; index < containerSize; index++)
-          result += testContainer.get(index);
+        for(int index = 0; index < collectionSize; index++)
+          result += testCollection.get(index);
     }
     void putResults() {
       readResult += result;
@@ -28,8 +28,8 @@ extends Tester<Map<Integer,Integer>> {
   class Writer extends TestTask {
     void test() {
       for(long i = 0; i < testCycles; i++)
-        for(int index = 0; index < containerSize; index++)
-          testContainer.put(index, writeData[index]);
+        for(int index = 0; index < collectionSize; index++)
+          testCollection.put(index, writeData[index]);
     }
     void putResults() {
       writeTime += duration;
@@ -44,13 +44,13 @@ extends Tester<Map<Integer,Integer>> {
 }
 
 class SynchronizedHashMapTest extends MapTest {
-  Map<Integer,Integer> containerInitializer() {
+  Map<Integer,Integer> collectionInitializer() {
     return Collections.synchronizedMap(
       new HashMap<>(
         MapData.map(
           new CountingSupplier.Integer(),
           new CountingSupplier.Integer(),
-          containerSize)));
+          collectionSize)));
   }
   SynchronizedHashMapTest(int nReaders, int nWriters) {
     super("Synched HashMap", nReaders, nWriters);
@@ -58,11 +58,11 @@ class SynchronizedHashMapTest extends MapTest {
 }
 
 class ConcurrentHashMapTest extends MapTest {
-  Map<Integer,Integer> containerInitializer() {
+  Map<Integer,Integer> collectionInitializer() {
     return new ConcurrentHashMap<>(
       MapData.map(
         new CountingSupplier.Integer(),
-        new CountingSupplier.Integer(), containerSize));
+        new CountingSupplier.Integer(), collectionSize));
   }
   ConcurrentHashMapTest(int nReaders, int nWriters) {
     super("ConcurrentHashMap", nReaders, nWriters);

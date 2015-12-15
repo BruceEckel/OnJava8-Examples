@@ -1,9 +1,10 @@
 // concurrency/MutexEvenSupplier.java
-// ©2016 MindView LLC: see Copyright.txt
+// (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // Preventing thread collisions with mutexes.
 // {TimeOutDuringTesting}
+// {IgnoreOutput} // No output validation
 import java.util.concurrent.locks.*;
 
 public class MutexEvenSupplier extends IntSupplier {
@@ -25,4 +26,3 @@ public class MutexEvenSupplier extends IntSupplier {
     EvenChecker.test(new MutexEvenSupplier());
   }
 }
-/* Output: (None) */

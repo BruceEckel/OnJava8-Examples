@@ -1,5 +1,5 @@
 // files/PathAnalysis.java
-// ©2016 MindView LLC: see Copyright.txt
+// (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 import java.nio.file.*;
@@ -47,9 +47,9 @@ RegularFile: true
 Writable: true
 notExists: false
 Hidden: false
-size: 1618
+size: 1617
 FileStore: (C:)
-LastModified: : 2015-12-02T16:49:49.113339Z
+LastModified: : 2015-12-13T21:24:32.029627Z
 Owner: GROOT\Bruce (User)
 ContentType: null
 SymbolicLink: false

@@ -1,5 +1,5 @@
 // exceptions/StormyInning.java
-// ©2016 MindView LLC: see Copyright.txt
+// (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // Overridden methods can throw only the exceptions
@@ -28,7 +28,8 @@ interface Storm {
   public void rainHard() throws RainedOut;
 }
 
-public class StormyInning extends Inning implements Storm {
+public
+class StormyInning extends Inning implements Storm {
   // OK to add new exceptions for constructors, but you
   // must deal with the base constructor exceptions:
   public StormyInning()
@@ -80,4 +81,3 @@ public class StormyInning extends Inning implements Storm {
     }
   }
 }
-/* Output: (None) */

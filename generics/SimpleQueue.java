@@ -1,8 +1,8 @@
 // generics/SimpleQueue.java
-// ©2016 MindView LLC: see Copyright.txt
+// (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-// A different kind of container that is Iterable
+// A different kind of collection that is Iterable
 import java.util.*;
 
 public class SimpleQueue<T> implements Iterable<T> {

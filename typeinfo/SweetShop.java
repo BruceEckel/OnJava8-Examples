@@ -1,19 +1,19 @@
 // typeinfo/SweetShop.java
-// ©2016 MindView LLC: see Copyright.txt
+// (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // Examination of the way the class loader works.
 
-class Candy {
-  static { System.out.println("Loading Candy"); }
+class Cookie {
+  static { System.out.println("Loading Cookie"); }
 }
 
 class Gum {
   static { System.out.println("Loading Gum"); }
 }
 
-class Cookie {
-  static { System.out.println("Loading Cookie"); }
+class Candy {
+  static { System.out.println("Loading Candy"); }
 }
 
 public class SweetShop {

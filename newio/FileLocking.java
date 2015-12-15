@@ -1,5 +1,5 @@
 // newio/FileLocking.java
-// ©2016 MindView LLC: see Copyright.txt
+// (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 import java.nio.channels.*;
@@ -9,8 +9,8 @@ import java.io.*;
 public class FileLocking {
   public static void main(String[] args) throws Exception {
     try(FileOutputStream fos =
-      new FileOutputStream("file.txt")) {
-      FileLock fl = fos.getChannel().tryLock();
+          new FileOutputStream("file.txt");
+        FileLock fl = fos.getChannel().tryLock();) {
       if(fl != null) {
         System.out.println("Locked File");
         TimeUnit.MILLISECONDS.sleep(100);

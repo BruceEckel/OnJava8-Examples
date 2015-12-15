@@ -1,5 +1,5 @@
 // compression/GZIPcompress.java
-// ©2016 MindView LLC: see Copyright.txt
+// (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // {Args: GZIPcompress.java}
@@ -16,25 +16,24 @@ public class GZIPcompress {
         "the file to test.gz");
       System.exit(1);
     }
-    BufferedOutputStream out;
     try(InputStream in = new BufferedInputStream(
-          new FileInputStream(args[0]))) {
-      out = new BufferedOutputStream(
-              new GZIPOutputStream(
-                new FileOutputStream("test.gz")));
+          new FileInputStream(args[0]));
+        BufferedOutputStream out = new BufferedOutputStream(
+          new GZIPOutputStream(
+            new FileOutputStream("test.gz")))) {
       System.out.println("Writing file");
       int c;
       while((c = in.read()) != -1)
       out.write(c);
     }
-    out.close();
     System.out.println("Reading file");
-    BufferedReader in2 = new BufferedReader(
-      new InputStreamReader(new GZIPInputStream(
-        new FileInputStream("test.gz"))));
-    String s;
-    while((s = in2.readLine()) != null)
-      System.out.println(s);
+    try(BufferedReader in2 = new BufferedReader(
+          new InputStreamReader(new GZIPInputStream(
+            new FileInputStream("test.gz"))))) {
+      String s;
+      while((s = in2.readLine()) != null)
+        System.out.println(s);
+    }
   }
 }
 /* Output: (Execute to see) */

@@ -1,5 +1,5 @@
 // concurrency/CaptureUncaughtException.java
-// ©2016 MindView LLC: see Copyright.txt
+// (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // {TimeOutDuringTesting}
@@ -46,10 +46,13 @@ public class CaptureUncaughtException {
   }
 }
 /* Output:
-HandlerThreadFactory@de6ced creating new Thread
+HandlerThreadFactory@10dea4e creating new Thread
 created Thread[Thread-0,5,main]
-eh = MyUncaughtExceptionHandler@1fb8ee3
+eh = MyUncaughtExceptionHandler@647e05
 run() by Thread[Thread-0,5,main]
-eh = MyUncaughtExceptionHandler@1fb8ee3
+eh = MyUncaughtExceptionHandler@647e05
+HandlerThreadFactory@10dea4e creating new Thread
+created Thread[Thread-1,5,main]
+eh = MyUncaughtExceptionHandler@c34ec2
 caught java.lang.RuntimeException
 */

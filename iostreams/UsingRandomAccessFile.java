@@ -1,5 +1,5 @@
 // iostreams/UsingRandomAccessFile.java
-// ©2016 MindView LLC: see Copyright.txt
+// (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 import java.io.*;
@@ -11,23 +11,27 @@ public class UsingRandomAccessFile {
       new RandomAccessFile(file, "r")) {
       for(int i = 0; i < 7; i++)
         System.out.println(
-                "Value " + i + ": " + rf.readDouble());
+          "Value " + i + ": " + rf.readDouble());
       System.out.println(rf.readUTF());
     }
   }
-  public static void main(String[] args)
-  throws IOException {
-    RandomAccessFile rf = new RandomAccessFile(file, "rw");
-    for(int i = 0; i < 7; i++)
-      rf.writeDouble(i*1.414);
-    rf.writeUTF("The end of the file");
-    rf.close();
-    display();
-    rf = new RandomAccessFile(file, "rw");
-    rf.seek(5*8);
-    rf.writeDouble(47.0001);
-    rf.close();
-    display();
+  public static
+  void main(String[] args) throws IOException {
+    try(RandomAccessFile rf =
+          new RandomAccessFile(file, "rw")) {
+      for(int i = 0; i < 7; i++)
+        rf.writeDouble(i*1.414);
+      rf.writeUTF("The end of the file");
+      rf.close();
+      display();
+    }
+    try(RandomAccessFile rf =
+          new RandomAccessFile(file, "rw")) {
+      rf.seek(5*8);
+      rf.writeDouble(47.0001);
+      rf.close();
+      display();
+    }
   }
 }
 /* Output:

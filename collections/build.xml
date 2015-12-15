@@ -1,0 +1,47 @@
+<?xml version="1.0" ?>
+
+<project default="run">
+  <property name="chapter" value="collections"/>
+  <property name="excludedfiles" value=""/>
+  <import file="../Ant-Common.xml"/>
+  <import file="../Ant-Clean.xml"/>
+
+  <target name="run" description="Compile and run" depends="build">
+    <jrun cls="AdapterMethodIdiom" />
+    <jrun cls="AddingGroups" />
+    <jrun cls="ApplesAndOrangesWithGenerics" />
+    <jrun cls="ApplesAndOrangesWithoutGenerics" failOnError='false' msg='* Exception was Expected *' />
+    <jrun cls="ArrayIsNotIterable" />
+    <jrun cls="AsListInference" />
+    <jrun cls="CollectionMethods" />
+    <jrun cls="CollectionSequence" />
+    <jrun cls="CrossCollectionIteration" />
+    <jrun cls="EnvironmentVariables" />
+    <jrun cls="ForInCollections" />
+    <jrun cls="GenericsAndUpcasting" />
+    <jrun cls="InterfaceVsIterator" />
+    <jrun cls="IterableClass" />
+    <jrun cls="LinkedListFeatures" />
+    <jrun cls="ListFeatures" />
+    <jrun cls="ListIteration" />
+    <jrun cls="collections.MapOfList" dirpath="../collections" />
+    <jrun cls="ModifyingArraysAsList" />
+    <jrun cls="MultiIterableClass" />
+    <jrun cls="NonCollectionSequence" />
+    <jrun cls="PetMap" />
+    <jrun cls="PrintingCollections" />
+    <jrun cls="PriorityQueueDemo" />
+    <jrun cls="QueueDemo" />
+    <jrun cls="SetOfInteger" />
+    <jrun cls="SetOperations" />
+    <jrun cls="SimpleCollection" />
+    <jrun cls="SimpleIteration" />
+    <jrun cls="SortedSetOfInteger" />
+    <jrun cls="StackCollision" />
+    <jrun cls="StackTest" />
+    <jrun cls="Statistics" />
+    <jrun cls="UniqueWords" />
+    <jrun cls="UniqueWordsAlphabetic" />
+  </target>
+
+</project>

@@ -7,7 +7,7 @@
   <import file="../Ant-Clean.xml"/>
 
   <target name="run" description="Compile and run" depends="build">
-    <jrun cls="onjava.ContainerMethodDifferences" dirpath="../onjava" />
+    <jrun cls="onjava.CollectionMethodDifferences" dirpath="../onjava" />
     <jrun cls="onjava.CountingIntegerList" dirpath="../onjava" />
     <jrun cls="onjava.CountingMapData" dirpath="../onjava" />
     <jrun cls="onjava.Countries" dirpath="../onjava" />

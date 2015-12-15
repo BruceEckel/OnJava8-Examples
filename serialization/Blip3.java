@@ -1,5 +1,5 @@
 // serialization/Blip3.java
-// ©2016 MindView LLC: see Copyright.txt
+// (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // Reconstructing an externalizable object.
@@ -47,10 +47,11 @@ public class Blip3 implements Externalizable {
       o.writeObject(b3);
     }
     // Now get it back:
-    ObjectInputStream in = new ObjectInputStream(
-      new FileInputStream("Blip3.serialized"));
     System.out.println("Recovering b3:");
-    b3 = (Blip3)in.readObject();
+    try(ObjectInputStream in = new ObjectInputStream(
+          new FileInputStream("Blip3.serialized"))) {
+      b3 = (Blip3)in.readObject();
+    }
     System.out.println(b3);
   }
 }

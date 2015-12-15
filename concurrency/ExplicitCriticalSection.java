@@ -1,5 +1,5 @@
 // concurrency/ExplicitCriticalSection.java
-// ©2016 MindView LLC: see Copyright.txt
+// (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // {ThrowsException} on a multiprocessor machine
@@ -52,36 +52,6 @@ public class ExplicitCriticalSection {
   }
 }
 /* Output:
-pm1: Pair: x: 10, y: 10 checkCounter = 68453
-pm2: Pair: x: 11, y: 11 checkCounter = 663407
-___[ Error Output ]___
-Exception in thread "pool-1-thread-3"
-concurrency.Pair$PairValuesNotEqualException: Pair values
-not equal: x: 1, y: 0
-        at
-concurrency.Pair.checkState(CriticalSection.java:36)
-        at
-concurrency.PairChecker.run(CriticalSection.java:110)
-        at
-java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown
-Source)
-        at
-java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown
-Source)
-        at java.lang.Thread.run(Unknown Source)
-Exception in thread "pool-1-thread-4"
-concurrency.Pair$PairValuesNotEqualException: Pair values
-not equal: x: 2, y: 1
-        at
-concurrency.Pair.checkState(CriticalSection.java:36)
-        at
-concurrency.PairChecker.run(CriticalSection.java:110)
-        at
-java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown
-Source)
-        at
-java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown
-Source)
-        at java.lang.Thread.run(Unknown Source)
-___[ Exception is Expected ]___
+pm1: Pair: x: 10, y: 10 checkCounter = 2115789
+pm2: Pair: x: 10, y: 10 checkCounter = 2124465
 */

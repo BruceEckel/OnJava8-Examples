@@ -1,5 +1,5 @@
 // concurrency/NIOInterruption.java
-// ©2016 MindView LLC: see Copyright.txt
+// (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // Interrupting a blocked NIO channel.
@@ -31,11 +31,11 @@ class NIOBlocked implements Runnable {
 public class NIOInterruption {
   public static void main(String[] args) throws Exception {
     ExecutorService exec = Executors.newCachedThreadPool();
-    ServerSocket server = new ServerSocket(8080);
     InetSocketAddress isa =
       new InetSocketAddress("localhost", 8080);
-    SocketChannel sc1 = SocketChannel.open(isa);
-    try(SocketChannel sc2 = SocketChannel.open(isa)) {
+    try(ServerSocket server = new ServerSocket(8080);
+        SocketChannel sc1 = SocketChannel.open(isa);
+        SocketChannel sc2 = SocketChannel.open(isa)) {
       Future<?> f = exec.submit(new NIOBlocked(sc1));
       exec.execute(new NIOBlocked(sc2));
       exec.shutdown();
@@ -48,10 +48,10 @@ public class NIOInterruption {
   }
 }
 /* Output:
-Waiting for read() in NIOBlocked@14da8ff
-Waiting for read() in NIOBlocked@b280d5
+Waiting for read() in NIOBlocked@122af49
+Waiting for read() in NIOBlocked@1feeb4a
 ClosedByInterruptException
-Exiting NIOBlocked.run() NIOBlocked@14da8ff
+Exiting NIOBlocked.run() NIOBlocked@122af49
 AsynchronousCloseException
-Exiting NIOBlocked.run() NIOBlocked@b280d5
+Exiting NIOBlocked.run() NIOBlocked@1feeb4a
 */

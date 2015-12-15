@@ -1,5 +1,5 @@
 // files/Directories.java
-// ©2016 MindView LLC: see Copyright.txt
+// (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 import java.util.*;
@@ -11,7 +11,7 @@ public class Directories {
   static String sep =
     FileSystems.getDefault().getSeparator();
   static List<String> parts =
-    Arrays.asList("foo", "bar", "baz", "bingo");
+    Arrays.asList("foo", "bar", "baz", "bag");
   static Path makeVariant() {
     Collections.rotate(parts, 1);
     return Paths.get("test", String.join(sep, parts));
@@ -34,8 +34,8 @@ public class Directories {
     }
     populateTestDir();
     Path tempdir =
-      Files.createTempDirectory(test, "dirprefix");
-    Files.createTempFile(tempdir, "tpre", ".non");
+      Files.createTempDirectory(test, "DIR_");
+    Files.createTempFile(tempdir, "pre", ".non");
     Files.newDirectoryStream(test)
       .forEach(System.out::println);
     System.out.println("*********");
@@ -55,40 +55,39 @@ public class Directories {
 }
 /* Output:
 Nope, that doesn't work.
+test\bag
 test\bar
 test\baz
-test\bingo
-test\dirprefix7027855145419397204
+test\DIR_8446534140186618410
 test\foo
 test\Hello.txt
 *********
 test
+test\bag
+test\bag\foo
+test\bag\foo\bar
+test\bag\foo\bar\baz
+test\bag\foo\bar\baz\7681439653764312519.tmp
+test\bag\foo\bar\baz\File.txt
 test\bar
 test\bar\baz
-test\bar\baz\bingo
-test\bar\baz\bingo\foo
-test\bar\baz\bingo\foo\1220228689745443997.tmp
-test\bar\baz\bingo\foo\File.txt
+test\bar\baz\bag
+test\bar\baz\bag\foo
+test\bar\baz\bag\foo\231438590599434409.tmp
+test\bar\baz\bag\foo\File.txt
 test\baz
-test\baz\bingo
-test\baz\bingo\foo
-test\baz\bingo\foo\bar
-test\baz\bingo\foo\bar\5075758669780325498.tmp
-test\baz\bingo\foo\bar\File.txt
-test\bingo
-test\bingo\foo
-test\bingo\foo\bar
-test\bingo\foo\bar\baz
-test\bingo\foo\bar\baz\8539170686730128217.tmp
-test\bingo\foo\bar\baz\File.txt
-test\dirprefix7027855145419397204
-test\dirprefix7027855145419397204\tpre8937492273233690134.n
-on
+test\baz\bag
+test\baz\bag\foo
+test\baz\bag\foo\bar
+test\baz\bag\foo\bar\2568963174268478267.tmp
+test\baz\bag\foo\bar\File.txt
+test\DIR_8446534140186618410
+test\DIR_8446534140186618410\pre4960544428685536384.non
 test\foo
 test\foo\bar
 test\foo\bar\baz
-test\foo\bar\baz\bingo
-test\foo\bar\baz\bingo\4151379795190009123.tmp
-test\foo\bar\baz\bingo\File.txt
+test\foo\bar\baz\bag
+test\foo\bar\baz\bag\8569628193069437000.tmp
+test\foo\bar\baz\bag\File.txt
 test\Hello.txt
 */

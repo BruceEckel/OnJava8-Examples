@@ -16,8 +16,8 @@
     <jrun cls="Groups" />
     <jrun cls="Immutable" />
     <jrun cls="IntegerMatch" />
-    <jrun cls="JGrep" arguments="JGrep.java 'void|int|String'" />
-    <jrun cls="Receipt" />
+    <jrun cls="JGrep" arguments="WhitherStringBuilder.java 'return|for|String'" />
+    <jrun cls="ReceiptBuilder" />
     <jrun cls="ReFlags" />
     <jrun cls="Replacing" />
     <jrun cls="ReplacingStringTokenizer" />

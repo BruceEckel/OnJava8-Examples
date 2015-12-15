@@ -1,5 +1,5 @@
 // typeinfo/PetCount.java
-// ©2016 MindView LLC: see Copyright.txt
+// (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // Using instanceof.
@@ -7,7 +7,7 @@ import typeinfo.pets.*;
 import java.util.*;
 
 public class PetCount {
-  static class PetCounter extends HashMap<String,Integer> {
+  static class Counter extends HashMap<String,Integer> {
     public void count(String type) {
       Integer quantity = get(type);
       if(quantity == null)
@@ -18,8 +18,8 @@ public class PetCount {
   }
   public static void
   countPets(PetCreator creator) {
-    PetCounter counter= new PetCounter();
-    for(Pet pet : creator.createArray(20)) {
+    Counter counter = new Counter();
+    for(Pet pet : Pets.array(20)) {
       // List each individual pet:
       System.out.print(
         pet.getClass().getSimpleName() + " ");

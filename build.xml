@@ -31,14 +31,14 @@
       interfaces/build.xml
       innerclasses/build.xml
       functional/build.xml
-      containers/build.xml
+      collections/build.xml
       streams/build.xml
       exceptions/build.xml
       strings/build.xml
       typeinfo/build.xml
       generics/build.xml
       arrays/build.xml
-      containersindepth/build.xml
+      collectionsindepth/build.xml
       files/build.xml
       enums/build.xml
       annotations/build.xml
@@ -62,10 +62,59 @@
       staticchecking/build.xml
       "/>
 
+  <filelist id="testablefiles" dir="."
+    description="All directories that produce auto-testable results"
+    files="objects/build.xml
+      operators/build.xml
+      control/build.xml
+      housekeeping/build.xml
+      hiding/build.xml
+      com/build.xml
+      reuse/build.xml
+      polymorphism/build.xml
+      interfaces/build.xml
+      innerclasses/build.xml
+      functional/build.xml
+      collections/build.xml
+      streams/build.xml
+      exceptions/build.xml
+      strings/build.xml
+      typeinfo/build.xml
+      generics/build.xml
+      arrays/build.xml
+      collectionsindepth/build.xml
+      files/build.xml
+      enums/build.xml
+      annotations/build.xml
+      concurrency/build.xml
+      patterns/build.xml
+      unittesting/build.xml
+      assertions/build.xml
+      references/build.xml
+      iostreams/build.xml
+      standardio/build.xml
+      newio/build.xml
+      compression/build.xml
+      serialization/build.xml
+      preferences/build.xml
+      logging/build.xml
+      debugging/build.xml
+      staticchecking/build.xml
+      "/>
+
   <target name="run" description="Compiles and runs all examples">
     <delete file="errors.txt"/>
     <subant>
       <filelist refid="buildfiles"/>
+    </subant>
+    <available file="errors.txt" property="errors"/>
+    <antcall target="finish"/>
+  </target>
+
+  <target name="testable" description="Compiles and runs all examples">
+    <delete file="errors.txt"/>
+    <subant>
+      <filelist refid="testablefiles"/>
     </subant>
     <available file="errors.txt" property="errors"/>
     <antcall target="finish"/>
@@ -85,8 +134,21 @@
     <echo message="Errors occurred.  See errors.txt for information."/>
   </target>
 
+  <target name="verifyclean"
+    description="delete ant verify output files" >
+    <delete>
+      <fileset dir="${basedir}" casesensitive="yes">
+        <include name="update_output.bat" />
+        <include name="validate_failures.txt" />
+        <include name="strategies.txt" />
+      </fileset>
+    </delete>
+    <echo message="verifyclean successful"/>
+  </target>
+
   <target name="verify"
-   description="Verify output; requires Python 3.5">
+   description="Verify output; requires Python 3.5"
+   depends="verifyclean">
     <exec dir="${basedir}" executable="python" failonerror="true">
       <arg line="verify_output.py" />
     </exec>

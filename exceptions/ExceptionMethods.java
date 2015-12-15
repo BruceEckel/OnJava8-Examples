@@ -1,5 +1,5 @@
 // exceptions/ExceptionMethods.java
-// ©2016 MindView LLC: see Copyright.txt
+// (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // Demonstrating the Exception Methods.
@@ -26,5 +26,5 @@ getLocalizedMessage():My Exception
 toString():java.lang.Exception: My Exception
 printStackTrace():
 java.lang.Exception: My Exception
-        at ExceptionMethods.main(ExceptionMethods.java:8)
+        at ExceptionMethods.main(ExceptionMethods.java:7)
 */

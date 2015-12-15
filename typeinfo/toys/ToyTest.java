@@ -1,5 +1,5 @@
 // typeinfo/toys/ToyTest.java
-// ©2016 MindView LLC: see Copyright.txt
+// (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // Testing class Class.
@@ -10,8 +10,8 @@ interface Waterproof {}
 interface Shoots {}
 
 class Toy {
-  // Comment out the following no-arg constructor
-  // to see NoSuchMethodError from (*1*)
+  // Comment out the following no-arg
+  // constructor to see NoSuchMethodError
   Toy() {}
   Toy(int i) {}
 }

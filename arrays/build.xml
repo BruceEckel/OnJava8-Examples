@@ -13,10 +13,10 @@
     <jrun cls="ArraySearching" />
     <jrun cls="AssemblingMultidimensionalArrays" />
     <jrun cls="AutoboxingArrays" />
+    <jrun cls="CollectionComparison" />
     <jrun cls="ComparatorTest" />
     <jrun cls="ComparingArrays" />
     <jrun cls="CompType" />
-    <jrun cls="ContainerComparison" />
     <jrun cls="CopyingArrays" />
     <jrun cls="FillingArrays" />
     <jrun cls="IceCream" />

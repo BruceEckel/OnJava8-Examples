@@ -1,5 +1,5 @@
 // serialization/AStoreCADState.java
-// ©2016 MindView LLC: see Copyright.txt
+// (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // Saving the state of a pretend CAD system.
@@ -87,7 +87,7 @@ public class AStoreCADState {
       ((Shape)shapes.get(i)).setColor(Shape.GREEN);
     // Save the state vector:
     ObjectOutputStream out = new ObjectOutputStream(
-      new FileOutputStream("CADState.out"));
+      new FileOutputStream("CADState.dat"));
     out.writeObject(shapeTypes);
     Line.serializeStaticState(out);
     out.writeObject(shapes);
