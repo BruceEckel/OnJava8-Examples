@@ -62,3 +62,11 @@ io/test.zip
 io/test.gz
 io/X.file
 *.pyc
+
+*.out
+*.err
+/files/bytes.dat
+/files/test/
+/exceptions/Results.txt
+/files/Cheese.txt
+/files/StreamInAndOut.txt
