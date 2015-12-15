@@ -64,7 +64,9 @@ io/X.file
 *.pyc
 
 *.out
-*.txt
 *.err
 /files/bytes.dat
 /files/test/
+/exceptions/Results.txt
+/files/Cheese.txt
+/files/StreamInAndOut.txt
