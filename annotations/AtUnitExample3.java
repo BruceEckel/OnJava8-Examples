@@ -26,8 +26,8 @@ public class AtUnitExample3 {
   }
   @Test boolean m2() { return methodTwo() == 2; }
   public static void main(String[] args) throws Exception {
-    OSExecute.command(
-      "java -cp .. onjava.atunit.AtUnit AtUnitExample3.class");
+    OSExecute.command("java -cp .. " +
+      "onjava.atunit.AtUnit AtUnitExample3.class");
   }
 }
 /* Output:

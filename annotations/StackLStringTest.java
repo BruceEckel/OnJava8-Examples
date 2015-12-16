@@ -27,8 +27,8 @@ public class StackLStringTest extends StackL<String> {
     assert top().equals("B");
   }
   public static void main(String[] args) throws Exception {
-    OSExecute.command(
-      "java -cp .. onjava.atunit.AtUnit StackLStringTest.class");
+    OSExecute.command("java -cp .. " +
+      "onjava.atunit.AtUnit StackLStringTest.class");
   }
 }
 /* Output:

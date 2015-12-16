@@ -111,7 +111,7 @@
     <antcall target="finish"/>
   </target>
 
-  <target name="testable" description="Compiles and runs all examples">
+  <target name="testable" description="Compiles and runs testable examples">
     <delete file="errors.txt"/>
     <subant>
       <filelist refid="testablefiles"/>
@@ -140,7 +140,9 @@
       <fileset dir="${basedir}" casesensitive="yes">
         <include name="update_output.bat" />
         <include name="validate_failures.txt" />
+        <include name="validate_successes.txt" />
         <include name="strategies.txt" />
+        <include name="edit_errors.bat" />
       </fileset>
     </delete>
     <echo message="verifyclean successful"/>

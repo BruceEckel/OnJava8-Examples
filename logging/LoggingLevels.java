@@ -2,6 +2,7 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
+// {ErrorOutputExpected}
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -39,20 +40,23 @@ com level: SEVERE
 individual loggers set to FINEST
 com level: SEVERE
 ___[ Error Output ]___
-Jun 15, 2015 3:47:52 PM LoggingLevels logMessages
-SEVERE: test : severe
-Jun 15, 2015 3:47:52 PM LoggingLevels logMessages
-INFO: random : info
-Jun 15, 2015 3:47:52 PM LoggingLevels logMessages
+Dec 15, 2015 9:58:43 PM LoggingLevels logMessages
 INFO: util : info
-Jun 15, 2015 3:47:52 PM LoggingLevels logMessages
+Dec 15, 2015 9:58:43 PM LoggingLevels logMessages
 SEVERE: test : severe
-Jun 15, 2015 3:47:52 PM LoggingLevels logMessages
+Dec 15, 2015 9:58:43 PM LoggingLevels logMessages
 INFO: random : info
-Jun 15, 2015 3:47:52 PM LoggingLevels logMessages
+Dec 15, 2015 9:58:43 PM LoggingLevels logMessages
 INFO: util : info
-Jun 15, 2015 3:47:52 PM LoggingLevels logMessages
+Dec 15, 2015 9:58:43 PM LoggingLevels logMessages
 SEVERE: test : severe
-Jun 15, 2015 3:47:52 PM LoggingLevels logMessages
+Dec 15, 2015 9:58:43 PM LoggingLevels logMessages
 INFO: random : info
+Dec 15, 2015 9:58:43 PM LoggingLevels logMessages
+INFO: util : info
+Dec 15, 2015 9:58:43 PM LoggingLevels logMessages
+SEVERE: test : severe
+Dec 15, 2015 9:58:43 PM LoggingLevels logMessages
+INFO: random : info
+___[ Error Output is Expected ]___
 */

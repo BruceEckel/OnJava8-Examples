@@ -3,6 +3,7 @@
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // How to write custom handler
+// {ErrorOutputExpected}
 import java.util.logging.*;
 import java.util.*;
 
@@ -39,8 +40,9 @@ public class CustomHandler {
 , INFO:, CustomHandler:, main:, <Logging Info>,
 ]
 ___[ Error Output ]___
-Jun 15, 2015 3:47:52 PM CustomHandler main
+Dec 15, 2015 9:58:42 PM CustomHandler main
 WARNING: Logging Warning
-Jun 15, 2015 3:47:52 PM CustomHandler main
+Dec 15, 2015 9:58:42 PM CustomHandler main
 INFO: Logging Info
+___[ Error Output is Expected ]___
 */

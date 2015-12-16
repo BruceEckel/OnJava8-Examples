@@ -41,8 +41,8 @@ public class AtUnitExample5 {
     return true;
   }
   public static void main(String[] args) throws Exception {
-    OSExecute.command(
-      "java -cp .. onjava.atunit.AtUnit AtUnitExample5.class");
+    OSExecute.command("java -cp .. " +
+      "onjava.atunit.AtUnit AtUnitExample5.class");
   }
 }
 /* Output:

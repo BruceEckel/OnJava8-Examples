@@ -183,36 +183,62 @@ class Duet:
     """
 
     def __init__(self, out_filename):
-        if not out_filename.suffix == ".out" or out_filename.suffix == ".err":
-            print("Error: argument to Duet() must end with '.out' or '.err'")
+
+        if not (out_filename.suffix == ".out" or
+                out_filename.suffix == ".err" or
+                out_filename.suffix == ".new"):
+            print("Error: argument to Duet() must end with '.out' or '.err' or '.new'")
             print("Argument was {}".format(out_filename))
             sys.exit()
+
         self.java_file = None # Full contents of Java code file
         self.java_slugline = None # First (marker) line of Java code file
 
         self.out_path = out_filename.with_suffix(".out")
         self.out = None
+        self.generated = ""
         if self.out_path.exists():
-            self.out = self.out_path.read_text()
+            self.out = self.out_path.read_text().strip()
             trace("{} file exists".format(self.out_path))
+            self.generated = self.fill_to_width(self.out)
 
+        self.error = False
         self.err_path = out_filename.with_suffix(".err")
-        self.errors = None
         if self.err_path.exists():
-            self.errors = self.err_path.read_text()
-            print("{} file exists".format(self.err_path))
+            self.error = True
+            self.generated += "\n___[ Error Output ]___\n"
+            self.generated += self.fill_to_width(self.err_path.read_text())
+            trace("{} file exists".format(self.err_path))
+
+        self.new = None
+        self.new_path = out_filename.with_suffix(".new")
+        if self.new_path.exists():
+            self.new = self.new_path.read_text().strip()
+            print("{} file exists".format(self.new_path))
 
         self.java_path = self.calculate_java_path()
+        # This also fills self.java_file and self.java_slugline:
         self.embedded = self.embedded_output()
+
         self.ignore = False
         if "{IgnoreOutput}" in self.java_file:
             self.ignore = True
             trace("Ignoring .out for {}".format(self.java_path))
             return
-        self.generated = self.out_path.read_text().strip()
-        self.generated = self.fill_to_width(self.generated)
+
+        if "{ThrowsException}" in self.java_file:
+            self.generated = self.generated.strip() + "\n___[ Exception is Expected ]___"
+            trace("Exception expected for {}".format(self.java_path))
+
+        if "{ErrorOutputExpected}" in self.java_file:
+            self.generated = self.generated.strip() + "\n___[ Error Output is Expected ]___"
+            trace("OK: 'Error Output' expected for {}".format(self.java_path))
+
         self.embedded_adjusted = self.adjust(self.embedded)
-        self.generated_adjusted = self.adjust(self.generated)
+        self.generated_un_adjusted = self.generated
+        self.generated_adjusted = None
+        if self.generated:
+            self.generated_adjusted = self.adjust(self.generated)
 
     def calculate_java_path(self):
 

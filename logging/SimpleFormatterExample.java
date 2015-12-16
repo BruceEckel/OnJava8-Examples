@@ -2,6 +2,7 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
+// {ErrorOutputExpected}
 import java.util.logging.*;
 
 public class SimpleFormatterExample {
@@ -34,4 +35,5 @@ INFO  :  SimpleFormatterExample -:- logMessages -:- Line
 One
 INFO  :  SimpleFormatterExample -:- logMessages -:- Line
 Two
+___[ Error Output is Expected ]___
 */

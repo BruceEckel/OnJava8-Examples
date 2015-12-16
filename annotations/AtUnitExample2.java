@@ -31,8 +31,8 @@ public class AtUnitExample2 {
     return methodOne().equals("This is methodOne");
   }
   public static void main(String[] args) throws Exception {
-    OSExecute.command(
-      "java -cp .. onjava.atunit.AtUnit AtUnitExample2.class");
+    OSExecute.command("java -cp .. " +
+      "onjava.atunit.AtUnit AtUnitExample2.class");
   }
 }
 /* Output:

@@ -2,6 +2,7 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
+// {ErrorOutputExpected}
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -61,143 +62,124 @@ public class LoggingLevelManipulation {
   }
 }
 /* Output:
--- printing levels -- net : null com.mindviewinc : null
-onjava : null com.mindviewinc.test : null
-random : null
--- printing levels -- net : SEVERE com.mindviewinc : null
-onjava : null com.mindviewinc.test : null
-random : null
+-- printing levels -- com : null com.mindviewinc : null
+onjava : null com.mindviewinc.test : null random : null
+ -- printing levels -- com : SEVERE com.mindviewinc : null
+onjava : null com.mindviewinc.test : null random : null
 net level: SEVERE
--- printing levels -- net : SEVERE com.mindviewinc : null
-onjava : FINEST com.mindviewinc.test : FINEST
-random : FINEST
+ -- printing levels -- com : SEVERE com.mindviewinc : null
+onjava : FINEST com.mindviewinc.test : FINEST random :
+FINEST
 individual loggers set to FINEST
--- printing levels -- net : FINEST com.mindviewinc : null
-onjava : FINEST com.mindviewinc.test : FINEST
-random : FINEST
+ -- printing levels -- com : FINEST com.mindviewinc : null
+onjava : FINEST com.mindviewinc.test : FINEST random :
+FINEST
 net level: FINEST
 ___[ Error Output ]___
-Jun 15, 2015 3:47:52 PM LoggingLevelManipulation
+Dec 15, 2015 9:58:43 PM LoggingLevelManipulation
 printLogMessages
-SEVERE: net Severe
-Jun 15, 2015 3:47:52 PM LoggingLevelManipulation
-printLogMessages
-INFO: com.mindviewinc Info
-Jun 15, 2015 3:47:52 PM LoggingLevelManipulation
-printLogMessages
-WARNING: com.mindviewinc Warning
-Jun 15, 2015 3:47:52 PM LoggingLevelManipulation
+SEVERE: com Severe
+Dec 15, 2015 9:58:43 PM LoggingLevelManipulation
 printLogMessages
 SEVERE: com.mindviewinc Severe
-Jun 15, 2015 3:47:52 PM LoggingLevelManipulation
+Dec 15, 2015 9:58:43 PM LoggingLevelManipulation
 printLogMessages
 INFO: onjava Info
-Jun 15, 2015 3:47:52 PM LoggingLevelManipulation
+Dec 15, 2015 9:58:43 PM LoggingLevelManipulation
 printLogMessages
 WARNING: onjava Warning
-Jun 15, 2015 3:47:52 PM LoggingLevelManipulation
+Dec 15, 2015 9:58:43 PM LoggingLevelManipulation
 printLogMessages
 SEVERE: onjava Severe
-Jun 15, 2015 3:47:52 PM LoggingLevelManipulation
-printLogMessages
-INFO: com.mindviewinc.test Info
-Jun 15, 2015 3:47:52 PM LoggingLevelManipulation
-printLogMessages
-WARNING: com.mindviewinc.test Warning
-Jun 15, 2015 3:47:52 PM LoggingLevelManipulation
+Dec 15, 2015 9:58:43 PM LoggingLevelManipulation
 printLogMessages
 SEVERE: com.mindviewinc.test Severe
-Jun 15, 2015 3:47:52 PM LoggingLevelManipulation
+Dec 15, 2015 9:58:43 PM LoggingLevelManipulation
 printLogMessages
 INFO: random Info
-Jun 15, 2015 3:47:52 PM LoggingLevelManipulation
+Dec 15, 2015 9:58:43 PM LoggingLevelManipulation
 printLogMessages
 WARNING: random Warning
-Jun 15, 2015 3:47:52 PM LoggingLevelManipulation
+Dec 15, 2015 9:58:43 PM LoggingLevelManipulation
 printLogMessages
 SEVERE: random Severe
-Jun 15, 2015 3:47:52 PM LoggingLevelManipulation
+Dec 15, 2015 9:58:43 PM LoggingLevelManipulation
 printLogMessages
-SEVERE: net Severe
-Jun 15, 2015 3:47:52 PM LoggingLevelManipulation
-printLogMessages
-INFO: com.mindviewinc Info
-Jun 15, 2015 3:47:52 PM LoggingLevelManipulation
-printLogMessages
-WARNING: com.mindviewinc Warning
-Jun 15, 2015 3:47:52 PM LoggingLevelManipulation
+SEVERE: com Severe
+Dec 15, 2015 9:58:43 PM LoggingLevelManipulation
 printLogMessages
 SEVERE: com.mindviewinc Severe
-Jun 15, 2015 3:47:52 PM LoggingLevelManipulation
+Dec 15, 2015 9:58:43 PM LoggingLevelManipulation
 printLogMessages
 INFO: onjava Info
-Jun 15, 2015 3:47:52 PM LoggingLevelManipulation
+Dec 15, 2015 9:58:43 PM LoggingLevelManipulation
 printLogMessages
 WARNING: onjava Warning
-Jun 15, 2015 3:47:52 PM LoggingLevelManipulation
+Dec 15, 2015 9:58:43 PM LoggingLevelManipulation
 printLogMessages
 SEVERE: onjava Severe
-Jun 15, 2015 3:47:52 PM LoggingLevelManipulation
+Dec 15, 2015 9:58:43 PM LoggingLevelManipulation
 printLogMessages
 INFO: com.mindviewinc.test Info
-Jun 15, 2015 3:47:52 PM LoggingLevelManipulation
+Dec 15, 2015 9:58:43 PM LoggingLevelManipulation
 printLogMessages
 WARNING: com.mindviewinc.test Warning
-Jun 15, 2015 3:47:52 PM LoggingLevelManipulation
+Dec 15, 2015 9:58:43 PM LoggingLevelManipulation
 printLogMessages
 SEVERE: com.mindviewinc.test Severe
-Jun 15, 2015 3:47:52 PM LoggingLevelManipulation
+Dec 15, 2015 9:58:43 PM LoggingLevelManipulation
 printLogMessages
 INFO: random Info
-Jun 15, 2015 3:47:52 PM LoggingLevelManipulation
+Dec 15, 2015 9:58:43 PM LoggingLevelManipulation
 printLogMessages
 WARNING: random Warning
-Jun 15, 2015 3:47:52 PM LoggingLevelManipulation
+Dec 15, 2015 9:58:43 PM LoggingLevelManipulation
 printLogMessages
 SEVERE: random Severe
-Jun 15, 2015 3:47:52 PM LoggingLevelManipulation
+Dec 15, 2015 9:58:43 PM LoggingLevelManipulation
 printLogMessages
-INFO: net Info
-Jun 15, 2015 3:47:52 PM LoggingLevelManipulation
+INFO: com Info
+Dec 15, 2015 9:58:43 PM LoggingLevelManipulation
 printLogMessages
-WARNING: net Warning
-Jun 15, 2015 3:47:52 PM LoggingLevelManipulation
+WARNING: com Warning
+Dec 15, 2015 9:58:43 PM LoggingLevelManipulation
 printLogMessages
-SEVERE: net Severe
-Jun 15, 2015 3:47:52 PM LoggingLevelManipulation
+SEVERE: com Severe
+Dec 15, 2015 9:58:43 PM LoggingLevelManipulation
 printLogMessages
 INFO: com.mindviewinc Info
-Jun 15, 2015 3:47:52 PM LoggingLevelManipulation
+Dec 15, 2015 9:58:43 PM LoggingLevelManipulation
 printLogMessages
 WARNING: com.mindviewinc Warning
-Jun 15, 2015 3:47:52 PM LoggingLevelManipulation
+Dec 15, 2015 9:58:43 PM LoggingLevelManipulation
 printLogMessages
 SEVERE: com.mindviewinc Severe
-Jun 15, 2015 3:47:52 PM LoggingLevelManipulation
+Dec 15, 2015 9:58:43 PM LoggingLevelManipulation
 printLogMessages
 INFO: onjava Info
-Jun 15, 2015 3:47:52 PM LoggingLevelManipulation
+Dec 15, 2015 9:58:43 PM LoggingLevelManipulation
 printLogMessages
 WARNING: onjava Warning
-Jun 15, 2015 3:47:52 PM LoggingLevelManipulation
+Dec 15, 2015 9:58:43 PM LoggingLevelManipulation
 printLogMessages
 SEVERE: onjava Severe
-Jun 15, 2015 3:47:52 PM LoggingLevelManipulation
+Dec 15, 2015 9:58:43 PM LoggingLevelManipulation
 printLogMessages
 INFO: com.mindviewinc.test Info
-Jun 15, 2015 3:47:52 PM LoggingLevelManipulation
+Dec 15, 2015 9:58:43 PM LoggingLevelManipulation
 printLogMessages
 WARNING: com.mindviewinc.test Warning
-Jun 15, 2015 3:47:52 PM LoggingLevelManipulation
+Dec 15, 2015 9:58:43 PM LoggingLevelManipulation
 printLogMessages
 SEVERE: com.mindviewinc.test Severe
-Jun 15, 2015 3:47:52 PM LoggingLevelManipulation
+Dec 15, 2015 9:58:43 PM LoggingLevelManipulation
 printLogMessages
 INFO: random Info
-Jun 15, 2015 3:47:52 PM LoggingLevelManipulation
+Dec 15, 2015 9:58:43 PM LoggingLevelManipulation
 printLogMessages
 WARNING: random Warning
-Jun 15, 2015 3:47:52 PM LoggingLevelManipulation
+Dec 15, 2015 9:58:43 PM LoggingLevelManipulation
 printLogMessages
 SEVERE: random Severe
+___[ Error Output is Expected ]___
 */

@@ -3,6 +3,7 @@
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // {JVMArgs: -Djava.util.logging.config.file=log.prop}
+// {ErrorOutputExpected}
 import java.util.logging.*;
 
 public class ConfigureLogging {
@@ -43,46 +44,41 @@ public class ConfigureLogging {
   }
 }
 /* Output:
-Logger Name : net Level: SEVERE
-Logger Name : com.mindviewinc Level: FINEST
-Logger Name : onjava Level: INFO
-Logger Name : com.mindviewinc.test Level: FINER
-Logger Name : random Level: SEVERE
+Logger Name : com Level: null
+ Logger Name : com.mindviewinc Level: null
+ Logger Name : onjava Level: null
+ Logger Name : com.mindviewinc.test Level: null
+ Logger Name : random Level: null
 ___[ Error Output ]___
-Jun 15, 2015 3:47:52 PM ConfigureLogging sendLogMessages
-SEVERE: Severe
-Jun 15, 2015 3:47:52 PM ConfigureLogging sendLogMessages
-FINEST: Finest
-Jun 15, 2015 3:47:52 PM ConfigureLogging sendLogMessages
-FINER: Finer
-Jun 15, 2015 3:47:52 PM ConfigureLogging sendLogMessages
-FINE: Fine
-Jun 15, 2015 3:47:52 PM ConfigureLogging sendLogMessages
-CONFIG: Config
-Jun 15, 2015 3:47:52 PM ConfigureLogging sendLogMessages
+Dec 15, 2015 9:58:42 PM ConfigureLogging sendLogMessages
 INFO: Info
-Jun 15, 2015 3:47:52 PM ConfigureLogging sendLogMessages
+Dec 15, 2015 9:58:42 PM ConfigureLogging sendLogMessages
 WARNING: Warning
-Jun 15, 2015 3:47:52 PM ConfigureLogging sendLogMessages
+Dec 15, 2015 9:58:42 PM ConfigureLogging sendLogMessages
 SEVERE: Severe
-Jun 15, 2015 3:47:52 PM ConfigureLogging sendLogMessages
+Dec 15, 2015 9:58:42 PM ConfigureLogging sendLogMessages
 INFO: Info
-Jun 15, 2015 3:47:52 PM ConfigureLogging sendLogMessages
+Dec 15, 2015 9:58:42 PM ConfigureLogging sendLogMessages
 WARNING: Warning
-Jun 15, 2015 3:47:52 PM ConfigureLogging sendLogMessages
+Dec 15, 2015 9:58:42 PM ConfigureLogging sendLogMessages
 SEVERE: Severe
-Jun 15, 2015 3:47:52 PM ConfigureLogging sendLogMessages
-FINER: Finer
-Jun 15, 2015 3:47:52 PM ConfigureLogging sendLogMessages
-FINE: Fine
-Jun 15, 2015 3:47:52 PM ConfigureLogging sendLogMessages
-CONFIG: Config
-Jun 15, 2015 3:47:52 PM ConfigureLogging sendLogMessages
+Dec 15, 2015 9:58:42 PM ConfigureLogging sendLogMessages
 INFO: Info
-Jun 15, 2015 3:47:52 PM ConfigureLogging sendLogMessages
+Dec 15, 2015 9:58:42 PM ConfigureLogging sendLogMessages
 WARNING: Warning
-Jun 15, 2015 3:47:52 PM ConfigureLogging sendLogMessages
+Dec 15, 2015 9:58:42 PM ConfigureLogging sendLogMessages
 SEVERE: Severe
-Jun 15, 2015 3:47:52 PM ConfigureLogging sendLogMessages
+Dec 15, 2015 9:58:42 PM ConfigureLogging sendLogMessages
+INFO: Info
+Dec 15, 2015 9:58:42 PM ConfigureLogging sendLogMessages
+WARNING: Warning
+Dec 15, 2015 9:58:42 PM ConfigureLogging sendLogMessages
 SEVERE: Severe
+Dec 15, 2015 9:58:42 PM ConfigureLogging sendLogMessages
+INFO: Info
+Dec 15, 2015 9:58:42 PM ConfigureLogging sendLogMessages
+WARNING: Warning
+Dec 15, 2015 9:58:42 PM ConfigureLogging sendLogMessages
+SEVERE: Severe
+___[ Error Output is Expected ]___
 */

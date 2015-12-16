@@ -17,8 +17,8 @@ public class AtUnitComposition {
     return testObject.methodTwo() == 2;
   }
   public static void main(String[] args) throws Exception {
-    OSExecute.command(
-     "java -cp .. onjava.atunit.AtUnit AtUnitComposition.class");
+    OSExecute.command("java -cp .. " +
+      "onjava.atunit.AtUnit AtUnitComposition.class");
   }
 }
 /* Output:

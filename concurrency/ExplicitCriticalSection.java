@@ -52,6 +52,32 @@ public class ExplicitCriticalSection {
   }
 }
 /* Output:
-pm1: Pair: x: 10, y: 10 checkCounter = 2115789
-pm2: Pair: x: 10, y: 10 checkCounter = 2124465
+pm1: Pair: x: 10, y: 10 checkCounter = 2193118
+pm2: Pair: x: 10, y: 10 checkCounter = 2184256
+___[ Error Output ]___
+Exception in thread "pool-1-thread-4" Exception in thread
+"pool-1-thread-3"
+concurrency.Pair$PairValuesNotEqualException: Pair values
+not equal: x: 2, y: 1
+        at
+concurrency.Pair.checkState(CriticalSection.java:36)
+        at
+concurrency.PairChecker.run(CriticalSection.java:110)
+        at java.util.concurrent.ThreadPoolExecutor.runWorke
+r(ThreadPoolExecutor.java:1142)
+        at java.util.concurrent.ThreadPoolExecutor$Worker.r
+un(ThreadPoolExecutor.java:617)
+        at java.lang.Thread.run(Thread.java:745)
+concurrency.Pair$PairValuesNotEqualException: Pair values
+not equal: x: 2, y: 1
+        at
+concurrency.Pair.checkState(CriticalSection.java:36)
+        at
+concurrency.PairChecker.run(CriticalSection.java:110)
+        at java.util.concurrent.ThreadPoolExecutor.runWorke
+r(ThreadPoolExecutor.java:1142)
+        at java.util.concurrent.ThreadPoolExecutor$Worker.r
+un(ThreadPoolExecutor.java:617)
+        at java.lang.Thread.run(Thread.java:745)
+___[ Exception is Expected ]___
 */

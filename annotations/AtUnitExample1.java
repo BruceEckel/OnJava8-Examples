@@ -23,8 +23,8 @@ public class AtUnitExample1 {
   @Test boolean failureTest() { return false; }
   @Test boolean anotherDisappointment() { return false; }
   public static void main(String[] args) throws Exception {
-    OSExecute.command(
-      "java -cp .. onjava.atunit.AtUnit AtUnitExample1.class");
+    OSExecute.command("java -cp .. " +
+      "onjava.atunit.AtUnit AtUnitExample1.class");
   }
 }
 /* Output:

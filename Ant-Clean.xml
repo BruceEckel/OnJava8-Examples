@@ -17,6 +17,7 @@
         <include name="**/*.err" />
         <include name="**/*.dat" />
         <include name="**/*.log" />
+        <include name="**/*.serialized" />
         <include name="**/failures" />
         <include name="**/test.gz" />
         <include name="**/test.zip" />

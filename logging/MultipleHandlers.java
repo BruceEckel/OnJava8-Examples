@@ -2,6 +2,7 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
+// {ErrorOutputExpected}
 import java.util.logging.*;
 
 public class MultipleHandlers {
@@ -19,8 +20,9 @@ public class MultipleHandlers {
 }
 /* Output:
 ___[ Error Output ]___
-Jun 15, 2015 3:47:52 PM MultipleHandlers main
+Dec 15, 2015 9:58:43 PM MultipleHandlers main
 WARNING: Output to multiple handlers
-Jun 15, 2015 3:47:52 PM MultipleHandlers main
+Dec 15, 2015 9:58:43 PM MultipleHandlers main
 WARNING: Output to multiple handlers
+___[ Error Output is Expected ]___
 */

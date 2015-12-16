@@ -2,6 +2,7 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
+// {ErrorOutputExpected}
 import java.util.logging.*;
 
 public class SimpleFilter {
@@ -33,12 +34,13 @@ public class SimpleFilter {
 }
 /* Output:
 ___[ Error Output ]___
-Jun 15, 2015 3:47:52 PM SimpleFilter sendLogMessages
+Dec 15, 2015 9:58:44 PM SimpleFilter sendLogMessages
 WARNING: A duck in the house!
-Jun 15, 2015 3:47:52 PM SimpleFilter sendLogMessages
+Dec 15, 2015 9:58:44 PM SimpleFilter sendLogMessages
 WARNING: A Wombat at large!
-Jun 15, 2015 3:47:52 PM SimpleFilter main
+Dec 15, 2015 9:58:44 PM SimpleFilter main
 INFO: After setting filter..
-Jun 15, 2015 3:47:52 PM SimpleFilter sendLogMessages
+Dec 15, 2015 9:58:44 PM SimpleFilter sendLogMessages
 WARNING: A duck in the house!
+___[ Error Output is Expected ]___
 */

@@ -22,8 +22,8 @@ public class HashSetTest {
     assert testObject.isEmpty();
   }
   public static void main(String[] args) throws Exception {
-    OSExecute.command(
-      "java -cp .. onjava.atunit.AtUnit HashSetTest.class");
+    OSExecute.command("java -cp .. " +
+      "onjava.atunit.AtUnit HashSetTest.class");
   }
 }
 /* Output:

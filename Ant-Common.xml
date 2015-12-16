@@ -176,7 +176,9 @@
       <fileset dir="${basedir}" casesensitive="yes">
         <include name="**/update_output.bat" />
         <include name="**/validate_failures.txt" />
+        <include name="**/validate_successes.txt" />
         <include name="**/strategies.txt" />
+        <include name="**/edit_errors.bat" />
       </fileset>
     </delete>
     <echo message="verifyclean successful"/>

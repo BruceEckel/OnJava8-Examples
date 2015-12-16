@@ -3,6 +3,7 @@
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // An exception that reports through a Logger.
+// {ErrorOutputExpected}
 import java.util.logging.*;
 import java.io.*;
 
@@ -32,14 +33,17 @@ public class LoggingExceptions {
 }
 /* Output:
 ___[ Error Output ]___
-Jun 15, 2015 3:47:40 PM LoggingException <init>
+Dec 15, 2015 10:34:24 PM LoggingException <init>
 SEVERE: LoggingException
         at
-LoggingExceptions.main(LoggingExceptions.java:19)
+LoggingExceptions.main(LoggingExceptions.java:20)
+
 Caught LoggingException
-Jun 15, 2015 3:47:40 PM LoggingException <init>
+Dec 15, 2015 10:34:24 PM LoggingException <init>
 SEVERE: LoggingException
         at
-LoggingExceptions.main(LoggingExceptions.java:24)
+LoggingExceptions.main(LoggingExceptions.java:25)
+
 Caught LoggingException
+___[ Error Output is Expected ]___
 */
