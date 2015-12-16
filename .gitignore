@@ -74,3 +74,6 @@ io/X.file
 /.gradle/
 /*.iml
 /.idea/
+
+/serialization/Blip3.serialized
+/serialization/Blips.serialized
