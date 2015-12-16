@@ -1,4 +1,4 @@
-<project>
+<project xmlns:if="ant:if" xmlns:unless="ant:unless">
 
   <property name="chapter" value="CHAPTER?"/>
   <property name="antoutput" value="../Ant-output.txt"/>
@@ -80,6 +80,27 @@
      </sequential>
   </macrodef>
 
+  <macrodef name="execscript">
+    <attribute name="name"/>
+    <sequential>
+        <condition property="isWindows">
+            <os family="windows"/>
+        </condition>
+
+        <sequential if:true="isWindows">
+            <echo message="@{name}.bat"/>
+            <exec executable="cmd" dir=".">
+                <arg line="/c @{name}.bat"/>
+            </exec>
+        </sequential>
+        <sequential unless:true="isWindows">
+            <echo message="@{name}.sh"/>
+            <exec executable="sh" dir=".">
+                <arg line="@{name}.sh"/>
+            </exec>
+        </sequential>
+    </sequential>
+  </macrodef>
 
   <!--===========================================================-->
   <target name="base"
