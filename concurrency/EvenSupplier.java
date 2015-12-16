@@ -3,6 +3,7 @@
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // When threads collide.
+// {TimeOutDuringTesting} (on single-core machines)
 
 public class EvenSupplier extends IntSupplier {
   private int currentEvenValue = 0;
@@ -18,9 +19,7 @@ public class EvenSupplier extends IntSupplier {
 }
 /* Output:
 Press Control-C to exit
-1649 not even!
-1657 not even!
-1655 not even!
-1653 not even!
-1651 not even!
+1305 not even!
+1307 not even!
+1303 not even!
 */
