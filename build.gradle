@@ -1,0 +1,61 @@
+repositories {
+    mavenLocal()
+    mavenCentral()
+    maven {
+        url 'http://maven-eclipse.github.io/maven'
+    }
+}
+
+// these java plugin settings don't really need to be specified since ant does the actual build, but it makes things nicer in an IDE that understands gradle projects
+apply plugin: 'java'
+
+sourceCompatibility = '1.8'
+targetCompatibility = '1.8'
+
+sourceSets {
+    main {
+        java {
+            srcDirs 'annotations', 'arrays', 'assertions', 'com', 'compression', 'concurrency', 'containers', 'containersindepth', 'control', 'debugging', 'enums', 'exceptions', 'files', 'functional', 'generics', 'hiding', 'housekeeping', 'innerclasses', 'interfaces', 'iostreams', 'logging', 'network', 'newio', 'objects', 'onjava', 'operators', 'patterns', 'polymorphism', 'preferences', 'references', 'remote', 'reuse', 'serialization', 'standardio', 'staticchecking', 'streams', 'strings', 'swt', 'typeinfo', 'ui', 'unittesting'
+        }
+    }
+}
+
+// fix for a xom / xalan transitive dependency issue: http://stackoverflow.com/a/23870656/77409
+configurations.all {
+    resolutionStrategy {
+        force 'xml-apis:xml-apis:1.0.b2'
+    }
+}
+
+
+dependencies {
+    compile 'org.eclipse.swt:org.eclipse.swt.win32.win32.x86:4.4.2'
+    compile 'org.eclipse.swt:org.eclipse.swt.win32.win32.x86_64:4.4.2'
+    compile 'org.eclipse.swt:org.eclipse.swt.gtk.linux.x86:4.4.2'
+    compile 'org.eclipse.swt:org.eclipse.swt.gtk.linux.x86_64:4.4.2'
+    compile 'org.eclipse.swt:org.eclipse.swt.cocoa.macosx.x86_64:4.4.2'
+    compile 'junit:junit:4.12'
+    compile 'com.io7m.xom:xom:1.2.10'
+}
+
+// this sets the classpath that ant uses to include the dependency jars
+ant.properties['java.class.path'] = sourceSets.main.compileClasspath.getAsPath()
+
+// import the ant build and override a few task names
+ant.importBuild('build.xml') { antTaskName ->
+    if (antTaskName == 'build') 'ant-build' // rename ant's build task to ant-build so it doesn't override the gradle task with that name
+    else if (antTaskName == 'clean') 'ant-clean' // rename ant's clean task to ant-clean so it doesn't override the gradle task with that name
+    else antTaskName
+}
+
+// this task is already defined by gradle so we need to tell it to call the ant clean task
+clean << {
+    tasks['ant-clean'].execute()
+}
+
+// this task is already defined by gradle so we need to tell it to call the ant build task
+build << {
+    tasks['ant-build'].execute()
+}
+
+defaultTasks 'run'
