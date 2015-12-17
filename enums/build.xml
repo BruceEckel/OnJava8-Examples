@@ -19,7 +19,7 @@
     <jrun cls="OzWitch" />
     <jrun cls="PostOffice" />
     <jrun cls="RandomTest" />
-    <jrun cls="Reflection" />
+    <!--<jrun cls="Reflection" />-->
     <jrun cls="enums.RoShamBo1" dirpath="../enums" />
     <jrun cls="enums.RoShamBo2" dirpath="../enums" />
     <jrun cls="enums.RoShamBo3" dirpath="../enums" />
