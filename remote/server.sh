@@ -1,3 +1,3 @@
 java PerfectTimeServer &
 sleep $1
-killall java
+pkill -f 'java PerfectTimeServer'
