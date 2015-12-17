@@ -1,4 +1,5 @@
 language: java
 jdk:
   - oraclejdk8
-install: ./gradlew run
+install: true
+script: ./gradlew run
