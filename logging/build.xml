@@ -17,7 +17,7 @@
     <jrun cls="LogToFile2" />
     <jrun cls="MultipleHandlers" />
     <jrun cls="MultipleHandlers2" />
-    <jrun cls="PrintableLogRecord" />
+<!--     <jrun cls="PrintableLogRecord" /> -->
     <jrun cls="SimpleFilter" />
     <jrun cls="SimpleFormatterExample" />
   </target>
