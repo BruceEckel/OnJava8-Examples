@@ -1,4 +1,4 @@
 build_script:
-  - gradlew.bat
+  - gradlew.bat --stacktrace
 
 test: off
