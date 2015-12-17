@@ -10,4 +10,9 @@
     <jrun cls="JUnitDemo" />
   </target>
 
+  <target name="runconsole" description="Compile and run" depends="build">
+    <jrunconsole cls="JUnitDemo" />
+  </target>
+
+
 </project>

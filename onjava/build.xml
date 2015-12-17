@@ -16,4 +16,15 @@
     <jrun cls="onjava.atunit.ClassNameFinder" dirpath="../onjava/atunit" />
   </target>
 
+  <target name="runconsole" description="Compile and run" depends="build">
+    <jrunconsole cls="onjava.CollectionMethodDifferences" dirpath="../onjava" />
+    <jrunconsole cls="onjava.CountingIntegerList" dirpath="../onjava" />
+    <jrunconsole cls="onjava.CountingMapData" dirpath="../onjava" />
+    <jrunconsole cls="onjava.Countries" dirpath="../onjava" />
+    <jrunconsole cls="onjava.Hex" dirpath="../onjava" />
+    <jrunconsole cls="onjava.atunit.AtUnit" dirpath="../onjava/atunit" />
+    <jrunconsole cls="onjava.atunit.ClassNameFinder" dirpath="../onjava/atunit" />
+  </target>
+
+
 </project>

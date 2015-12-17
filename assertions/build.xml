@@ -13,4 +13,12 @@
     <jrun cls="Queue" />
   </target>
 
+  <target name="runconsole" description="Compile and run" depends="build">
+    <jrunconsole cls="Assert1" failOnError='false' msg='* Exception was Expected *' />
+    <jrunconsole cls="Assert2" failOnError='false' msg='* Exception was Expected *' />
+    <jrunconsole cls="LoaderAssertions" failOnError='false' msg='* Exception was Expected *' />
+    <jrunconsole cls="Queue" />
+  </target>
+
+
 </project>

@@ -21,4 +21,20 @@
     <jrun cls="serialization.xfiles.ThawAlien" dirpath="../serialization/xfiles" />
   </target>
 
+  <target name="runconsole" description="Compile and run" depends="build">
+    <jrunconsole cls="APerson" />
+    <jrunconsole cls="AStoreCADState" />
+    <jrunconsole cls="Blip3" />
+    <jrunconsole cls="Blips" />
+    <jrunconsole cls="FreezeAlien" />
+    <jrunconsole cls="Logon" />
+    <jrunconsole cls="MyWorld" />
+    <jrunconsole cls="People" />
+    <jrunconsole cls="RecoverCADState" />
+    <jrunconsole cls="SerialCtl" />
+    <jrunconsole cls="Worm" />
+    <jrunconsole cls="serialization.xfiles.ThawAlien" dirpath="../serialization/xfiles" />
+  </target>
+
+
 </project>

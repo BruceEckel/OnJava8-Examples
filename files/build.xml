@@ -12,7 +12,7 @@
     <jrun cls="File_System" />
     <jrun cls="Find" />
     <jrun cls="ListOfLines" />
-    <!-- <jrun cls="PartsOfPaths" /> -->
+    <jrun cls="PartsOfPaths" />
     <jrun cls="PathAnalysis" />
     <jrun cls="PathInfo" />
     <jrun cls="PathWatcher" />
@@ -21,5 +21,22 @@
     <jrun cls="TreeWatcher" />
     <jrun cls="Writing" />
   </target>
+
+  <target name="runconsole" description="Compile and run" depends="build">
+    <jrunconsole cls="AddAndSubtractPaths" />
+    <jrunconsole cls="Directories" />
+    <jrunconsole cls="File_System" />
+    <jrunconsole cls="Find" />
+    <jrunconsole cls="ListOfLines" />
+    <jrunconsole cls="PartsOfPaths" />
+    <jrunconsole cls="PathAnalysis" />
+    <jrunconsole cls="PathInfo" />
+    <jrunconsole cls="PathWatcher" />
+    <jrunconsole cls="ReadLineStream" />
+    <jrunconsole cls="StreamInAndOut" />
+    <jrunconsole cls="TreeWatcher" />
+    <jrunconsole cls="Writing" />
+  </target>
+
 
 </project>

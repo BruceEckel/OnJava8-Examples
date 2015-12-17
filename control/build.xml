@@ -22,4 +22,21 @@
     <jrun cls="WhileTest" />
   </target>
 
+  <target name="runconsole" description="Compile and run" depends="build">
+    <jrunconsole cls="BreakAndContinue" />
+    <jrunconsole cls="CommaOperator" />
+    <jrunconsole cls="ForInFloat" />
+    <jrunconsole cls="ForInInt" />
+    <jrunconsole cls="ForInString" />
+    <jrunconsole cls="IfElse" />
+    <jrunconsole cls="IfElse2" />
+    <jrunconsole cls="LabeledFor" />
+    <jrunconsole cls="LabeledWhile" />
+    <jrunconsole cls="ListCharacters" />
+    <jrunconsole cls="StringSwitch" />
+    <jrunconsole cls="VowelsAndConsonants" />
+    <jrunconsole cls="WhileTest" />
+  </target>
+
+
 </project>

@@ -73,4 +73,72 @@
     <jrun cls="concurrency.waxomatic2.WaxOMatic2" dirpath="../concurrency/waxomatic2" />
   </target>
 
+  <target name="runconsole" description="Compile and run" depends="build">
+    <jrunconsole cls="ActiveObjectDemo" />
+    <jrunconsole cls="AtomicEvenSupplier" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
+    <jrunconsole cls="AtomicIntegerTest" />
+    <jrunconsole cls="AtomicityTest" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
+    <jrunconsole cls="AttemptLocking" />
+    <jrunconsole cls="BankTellerSimulation" arguments="5" />
+    <jrunconsole cls="BasicThreads" />
+    <jrunconsole cls="CachedThreadPool" />
+    <jrunconsole cls="CallableDemo" />
+    <jrunconsole cls="CaptureUncaughtException" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
+    <jrunconsole cls="CarBuilder" />
+    <jrunconsole cls="CloseResource" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
+    <jrunconsole cls="CountDownLatchDemo" />
+    <jrunconsole cls="concurrency.CriticalSection" dirpath="../concurrency" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
+    <jrunconsole cls="DaemonFromFactory" />
+    <jrunconsole cls="Daemons" />
+    <jrunconsole cls="DaemonsDoRunFinally" />
+    <jrunconsole cls="DeadlockingDiningPhilosophers" arguments="0 5 timeout" />
+    <jrunconsole cls="DelayQueueDemo" />
+    <jrunconsole cls="EvenSupplier" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
+    <jrunconsole cls="ExchangerDemo" />
+    <jrunconsole cls="concurrency.ExplicitCriticalSection" dirpath="../concurrency" failOnError='false' msg='* Exception was Expected *' />
+    <jrunconsole cls="FastSimulation" />
+    <jrunconsole cls="FixedDiningPhilosophers" arguments="5 5 timeout" />
+    <jrunconsole cls="FixedThreadPool" />
+    <jrunconsole cls="GreenhouseScheduler" arguments="5000" />
+    <jrunconsole cls="HorseRace" />
+    <jrunconsole cls="Interrupting" />
+    <jrunconsole cls="Interrupting2" />
+    <jrunconsole cls="InterruptingIdiom" arguments="1100" />
+    <jrunconsole cls="Joining" />
+    <jrunconsole cls="ListComparisons" arguments="1 10 10" />
+    <jrunconsole cls="MainThread" />
+    <jrunconsole cls="MapComparisons" arguments="1 10 10" />
+    <jrunconsole cls="MoreBasicThreads" />
+    <jrunconsole cls="MultiLock" />
+    <jrunconsole cls="MutexEvenSupplier" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
+    <jrunconsole cls="NIOInterruption" />
+    <jrunconsole cls="NotifyVsNotifyAll" />
+    <jrunconsole cls="OrnamentalGarden" />
+    <jrunconsole cls="PipedIO" />
+    <jrunconsole cls="PriorityBlockingQueueDemo" />
+    <jrunconsole cls="ReaderWriterList" />
+    <jrunconsole cls="ResponsiveUI" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
+    <jrunconsole cls="Restaurant" />
+    <jrunconsole cls="SelfManaged" />
+    <jrunconsole cls="SemaphoreDemo" />
+    <jrunconsole cls="SerialNumberChecker" arguments="4" />
+    <jrunconsole cls="SettingDefaultHandler" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
+    <jrunconsole cls="SimpleDaemons" />
+    <jrunconsole cls="SimpleMicroBenchmark" />
+    <jrunconsole cls="SimplePriorities" />
+    <jrunconsole cls="SimpleThread" />
+    <jrunconsole cls="SingleThreadExecutor" />
+    <jrunconsole cls="SleepingTask" />
+    <jrunconsole cls="SynchronizationComparisons" />
+    <jrunconsole cls="SyncObject" />
+    <jrunconsole cls="TestBlockingQueues" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
+    <jrunconsole cls="ThreadLocalVariableHolder" />
+    <jrunconsole cls="ThreadVariations" />
+    <jrunconsole cls="ToastOMatic" />
+    <jrunconsole cls="concurrency.restaurant2.RestaurantWithQueues" dirpath="../concurrency/restaurant2" arguments="5" />
+    <jrunconsole cls="concurrency.waxomatic.WaxOMatic" dirpath="../concurrency/waxomatic" />
+    <jrunconsole cls="concurrency.waxomatic2.WaxOMatic2" dirpath="../concurrency/waxomatic2" />
+  </target>
+
+
 </project>

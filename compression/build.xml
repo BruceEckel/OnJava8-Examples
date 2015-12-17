@@ -11,4 +11,10 @@
     <jrun cls="ZipCompress" arguments="ZipCompress.java" />
   </target>
 
+  <target name="runconsole" description="Compile and run" depends="build">
+    <jrunconsole cls="GZIPcompress" arguments="GZIPcompress.java" />
+    <jrunconsole cls="ZipCompress" arguments="ZipCompress.java" />
+  </target>
+
+
 </project>

@@ -5,10 +5,8 @@
 // Override LogRecord toString()
 import java.util.logging.*;
 
-public class
-PrintableLogRecord extends LogRecord {
-  public
-  PrintableLogRecord(Level level, String str) {
+public class PrintableLogRecord extends LogRecord {
+  public PrintableLogRecord(Level level, String str) {
     super(level, str);
   }
   @Override

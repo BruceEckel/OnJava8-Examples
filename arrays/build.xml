@@ -35,4 +35,34 @@
     <jrun cls="ThreeDWithNew" />
   </target>
 
+  <target name="runconsole" description="Compile and run" depends="build">
+    <jrunconsole cls="AlphabeticSearch" />
+    <jrunconsole cls="ArrayOfGenerics" />
+    <jrunconsole cls="ArrayOptions" />
+    <jrunconsole cls="ArraySearching" />
+    <jrunconsole cls="AssemblingMultidimensionalArrays" />
+    <jrunconsole cls="AutoboxingArrays" />
+    <jrunconsole cls="CollectionComparison" />
+    <jrunconsole cls="ComparatorTest" />
+    <jrunconsole cls="ComparingArrays" />
+    <jrunconsole cls="CompType" />
+    <jrunconsole cls="CopyingArrays" />
+    <jrunconsole cls="FillingArrays" />
+    <jrunconsole cls="IceCream" />
+    <jrunconsole cls="MultidimensionalObjectArrays" />
+    <jrunconsole cls="MultidimensionalPrimitiveArray" />
+    <jrunconsole cls="MultiDimWrapperArray" />
+    <jrunconsole cls="ParameterizedArrayType" />
+    <jrunconsole cls="PrimitiveConversionDemonstration" />
+    <jrunconsole cls="RaggedArray" />
+    <jrunconsole cls="RandomSuppliersTest" />
+    <jrunconsole cls="Reverse" />
+    <jrunconsole cls="StringSorting" />
+    <jrunconsole cls="SuppliersTest" />
+    <jrunconsole cls="TestArrayGeneration" />
+    <jrunconsole cls="TestGenerated" />
+    <jrunconsole cls="ThreeDWithNew" />
+  </target>
+
+
 </project>

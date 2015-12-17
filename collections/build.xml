@@ -44,4 +44,43 @@
     <jrun cls="UniqueWordsAlphabetic" />
   </target>
 
+  <target name="runconsole" description="Compile and run" depends="build">
+    <jrunconsole cls="AdapterMethodIdiom" />
+    <jrunconsole cls="AddingGroups" />
+    <jrunconsole cls="ApplesAndOrangesWithGenerics" />
+    <jrunconsole cls="ApplesAndOrangesWithoutGenerics" failOnError='false' msg='* Exception was Expected *' />
+    <jrunconsole cls="ArrayIsNotIterable" />
+    <jrunconsole cls="AsListInference" />
+    <jrunconsole cls="CollectionMethods" />
+    <jrunconsole cls="CollectionSequence" />
+    <jrunconsole cls="CrossCollectionIteration" />
+    <jrunconsole cls="EnvironmentVariables" />
+    <jrunconsole cls="ForInCollections" />
+    <jrunconsole cls="GenericsAndUpcasting" />
+    <jrunconsole cls="InterfaceVsIterator" />
+    <jrunconsole cls="IterableClass" />
+    <jrunconsole cls="LinkedListFeatures" />
+    <jrunconsole cls="ListFeatures" />
+    <jrunconsole cls="ListIteration" />
+    <jrunconsole cls="collections.MapOfList" dirpath="../collections" />
+    <jrunconsole cls="ModifyingArraysAsList" />
+    <jrunconsole cls="MultiIterableClass" />
+    <jrunconsole cls="NonCollectionSequence" />
+    <jrunconsole cls="PetMap" />
+    <jrunconsole cls="PrintingCollections" />
+    <jrunconsole cls="PriorityQueueDemo" />
+    <jrunconsole cls="QueueDemo" />
+    <jrunconsole cls="SetOfInteger" />
+    <jrunconsole cls="SetOperations" />
+    <jrunconsole cls="SimpleCollection" />
+    <jrunconsole cls="SimpleIteration" />
+    <jrunconsole cls="SortedSetOfInteger" />
+    <jrunconsole cls="StackCollision" />
+    <jrunconsole cls="StackTest" />
+    <jrunconsole cls="Statistics" />
+    <jrunconsole cls="UniqueWords" />
+    <jrunconsole cls="UniqueWordsAlphabetic" />
+  </target>
+
+
 </project>

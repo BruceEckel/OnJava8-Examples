@@ -53,4 +53,52 @@
     <jrun cls="TreeSetOfWords" />
   </target>
 
+  <target name="runconsole" description="Compile and run" depends="build">
+    <jrunconsole cls="ArrayStreams" />
+    <jrunconsole cls="Bubbles" />
+    <jrunconsole cls="CollectionToStream" />
+    <jrunconsole cls="CreatingOptionals" />
+    <jrunconsole cls="Duplicator" />
+    <jrunconsole cls="Fibonacci" />
+    <jrunconsole cls="FileToWordsBuilder" />
+    <jrunconsole cls="FileToWordsRegexp" />
+    <jrunconsole cls="FileToWordsTest" />
+    <jrunconsole cls="FlatMap" />
+    <jrunconsole cls="ForEach" />
+    <jrunconsole cls="FunctionMap" />
+    <jrunconsole cls="FunctionMap2" />
+    <jrunconsole cls="FunctionMap3" />
+    <jrunconsole cls="Generator" />
+    <jrunconsole cls="ImperativeRandoms" />
+    <jrunconsole cls="Informational" />
+    <jrunconsole cls="LastElement" />
+    <jrunconsole cls="Looping" />
+    <jrunconsole cls="Machine2" />
+    <jrunconsole cls="MapCollector" />
+    <jrunconsole cls="Matching" />
+    <jrunconsole cls="NumericStreamInfo" />
+    <jrunconsole cls="OptionalBasics" />
+    <jrunconsole cls="OptionalFilter" />
+    <jrunconsole cls="OptionalFlatMap" />
+    <jrunconsole cls="OptionalMap" />
+    <jrunconsole cls="Optionals" />
+    <jrunconsole cls="OptionalsFromEmptyStreams" />
+    <jrunconsole cls="Peeking" />
+    <jrunconsole cls="Prime" />
+    <jrunconsole cls="RandomGenerators" />
+    <jrunconsole cls="Randoms" />
+    <jrunconsole cls="RandomWords" />
+    <jrunconsole cls="Ranges" />
+    <jrunconsole cls="Reduce" />
+    <jrunconsole cls="SelectElement" />
+    <jrunconsole cls="SortedComparator" />
+    <jrunconsole cls="SpecialCollector" />
+    <jrunconsole cls="StreamOf" />
+    <jrunconsole cls="StreamOfOptionals" />
+    <jrunconsole cls="StreamOfRandoms" />
+    <jrunconsole cls="StreamOfStreams" />
+    <jrunconsole cls="TreeSetOfWords" />
+  </target>
+
+
 </project>

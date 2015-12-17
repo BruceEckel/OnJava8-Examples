@@ -19,7 +19,7 @@
     <jrun cls="OzWitch" />
     <jrun cls="PostOffice" />
     <jrun cls="RandomTest" />
-    <!--<jrun cls="Reflection" />-->
+    <jrun cls="Reflection" />
     <jrun cls="enums.RoShamBo1" dirpath="../enums" />
     <jrun cls="enums.RoShamBo2" dirpath="../enums" />
     <jrun cls="enums.RoShamBo3" dirpath="../enums" />
@@ -36,5 +36,37 @@
     <jrun cls="enums.menu.Meal2" dirpath="../enums/menu" />
     <jrun cls="enums.menu.TypeOfFood" dirpath="../enums/menu" />
   </target>
+
+  <target name="runconsole" description="Compile and run" depends="build">
+    <jrunconsole cls="BigEnumSet" />
+    <jrunconsole cls="enums.Burrito" dirpath="../enums" />
+    <jrunconsole cls="CarWash" />
+    <jrunconsole cls="ConstantSpecificMethod" />
+    <jrunconsole cls="EnumClass" />
+    <jrunconsole cls="enums.EnumMaps" dirpath="../enums" />
+    <jrunconsole cls="enums.EnumSets" dirpath="../enums" />
+    <jrunconsole cls="NonEnum" />
+    <jrunconsole cls="OverrideConstantSpecific" />
+    <jrunconsole cls="OzWitch" />
+    <jrunconsole cls="PostOffice" />
+    <jrunconsole cls="RandomTest" />
+    <jrunconsole cls="Reflection" />
+    <jrunconsole cls="enums.RoShamBo1" dirpath="../enums" />
+    <jrunconsole cls="enums.RoShamBo2" dirpath="../enums" />
+    <jrunconsole cls="enums.RoShamBo3" dirpath="../enums" />
+    <jrunconsole cls="enums.RoShamBo4" dirpath="../enums" />
+    <jrunconsole cls="enums.RoShamBo5" dirpath="../enums" />
+    <jrunconsole cls="enums.RoShamBo6" dirpath="../enums" />
+    <jrunconsole cls="SecurityCategory" />
+    <jrunconsole cls="SpaceShip" />
+    <jrunconsole cls="TrafficLight" />
+    <jrunconsole cls="UpcastEnum" />
+    <jrunconsole cls="VendingMachine" arguments="VendingMachineInput.txt" />
+    <jrunconsole cls="enums.cartoons.EnumImplementation" dirpath="../enums/cartoons" />
+    <jrunconsole cls="enums.menu.Meal" dirpath="../enums/menu" />
+    <jrunconsole cls="enums.menu.Meal2" dirpath="../enums/menu" />
+    <jrunconsole cls="enums.menu.TypeOfFood" dirpath="../enums/menu" />
+  </target>
+
 
 </project>

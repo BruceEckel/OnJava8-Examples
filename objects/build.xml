@@ -11,4 +11,10 @@
     <jrun cls="ShowProperties" />
   </target>
 
+  <target name="runconsole" description="Compile and run" depends="build">
+    <jrunconsole cls="HelloDate" />
+    <jrunconsole cls="ShowProperties" />
+  </target>
+
+
 </project>

@@ -36,4 +36,35 @@
     <jrun cls="UsingStringBuilder" />
   </target>
 
+  <target name="runconsole" description="Compile and run" depends="build">
+    <jrunconsole cls="ArrayListDisplay" />
+    <jrunconsole cls="BetterRead" />
+    <jrunconsole cls="Concatenation" />
+    <jrunconsole cls="Conversion" />
+    <jrunconsole cls="DatabaseException" />
+    <jrunconsole cls="Finding" />
+    <jrunconsole cls="Groups" />
+    <jrunconsole cls="Immutable" />
+    <jrunconsole cls="IntegerMatch" />
+    <jrunconsole cls="JGrep" arguments="WhitherStringBuilder.java 'return|for|String'" />
+    <jrunconsole cls="ReceiptBuilder" />
+    <jrunconsole cls="ReFlags" />
+    <jrunconsole cls="Replacing" />
+    <jrunconsole cls="ReplacingStringTokenizer" />
+    <jrunconsole cls="Resetting" />
+    <jrunconsole cls="Rudolph" />
+    <jrunconsole cls="ScannerDelimiter" />
+    <jrunconsole cls="SimpleFormat" />
+    <jrunconsole cls="SimpleRead" />
+    <jrunconsole cls="SplitDemo" />
+    <jrunconsole cls="Splitting" />
+    <jrunconsole cls="StartEnd" />
+    <jrunconsole cls="TestRegularExpression" arguments='abcabcabcdefabc "abc+" "(abc)+" "(abc){2,}" ' />
+    <jrunconsole cls="TheReplacements" />
+    <jrunconsole cls="ThreatAnalyzer" />
+    <jrunconsole cls="Turtle" />
+    <jrunconsole cls="UsingStringBuilder" />
+  </target>
+
+
 </project>

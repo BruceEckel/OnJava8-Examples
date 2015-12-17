@@ -34,4 +34,33 @@
     <jrun cls="patterns.visualobserver.BoxObserver" dirpath="../patterns/visualobserver" failOnError='false' timeOut='4000' />
   </target>
 
+  <target name="runconsole" description="Compile and run" depends="build">
+    <jrunconsole cls="CommandPattern" />
+    <jrunconsole cls="Facade" />
+    <jrunconsole cls="PaperScissorsRock" />
+    <jrunconsole cls="ProxyDemo" />
+    <jrunconsole cls="ShapeFactory2" />
+    <jrunconsole cls="SingletonPattern" />
+    <jrunconsole cls="StateDemo" />
+    <jrunconsole cls="TemplateMethod" />
+    <jrunconsole cls="patterns.absfactory.GameEnvironment" dirpath="../patterns/absfactory" />
+    <jrunconsole cls="patterns.adapt.Adapter" dirpath="../patterns/adapt" />
+    <jrunconsole cls="patterns.chain.ChainOfResponsibility" dirpath="../patterns/chain" />
+    <jrunconsole cls="patterns.doubledispatch.DoubleDispatch" dirpath="../patterns/doubledispatch" />
+    <jrunconsole cls="patterns.dynatrash.DynaTrash" dirpath="../patterns/dynatrash" />
+    <jrunconsole cls="patterns.factory.ShapeFactory1" dirpath="../patterns/factory" />
+    <jrunconsole cls="patterns.observer.ObservedFlower" dirpath="../patterns/observer" />
+    <jrunconsole cls="patterns.recyclea.RecycleA" dirpath="../patterns/recyclea" />
+    <jrunconsole cls="patterns.recycleb.RecycleB" dirpath="../patterns/recycleb" />
+    <jrunconsole cls="patterns.recyclec.RecycleC" dirpath="../patterns/recyclec" />
+    <jrunconsole cls="patterns.state.StateMachineDemo" dirpath="../patterns/state" />
+    <jrunconsole cls="patterns.strategy.StrategyPattern" dirpath="../patterns/strategy" />
+    <jrunconsole cls="patterns.strategy.StrategyPattern2" dirpath="../patterns/strategy" />
+    <jrunconsole cls="patterns.trash.ParseTrash" dirpath="../patterns/trash" />
+    <jrunconsole cls="patterns.trashvisitor.TrashVisitor" dirpath="../patterns/trashvisitor" />
+    <jrunconsole cls="patterns.visitor.BeeAndFlowers" dirpath="../patterns/visitor" />
+    <jrunconsole cls="patterns.visualobserver.BoxObserver" dirpath="../patterns/visualobserver" failOnError='false' timeOut='4000' />
+  </target>
+
+
 </project>

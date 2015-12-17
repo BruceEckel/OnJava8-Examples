@@ -23,4 +23,22 @@
     <jrun cls="ViewBuffers" />
   </target>
 
+  <target name="runconsole" description="Compile and run" depends="build">
+    <jrunconsole cls="AvailableCharSets" />
+    <jrunconsole cls="BufferToText" />
+    <jrunconsole cls="ChannelCopy" arguments="ChannelCopy.java test.txt" />
+    <jrunconsole cls="Endians" />
+    <jrunconsole cls="FileLocking" />
+    <jrunconsole cls="GetChannel" />
+    <jrunconsole cls="GetData" />
+    <jrunconsole cls="IntBufferDemo" />
+    <jrunconsole cls="LargeMappedFiles" />
+    <jrunconsole cls="LockingMappedFiles" />
+    <jrunconsole cls="MappedIO" />
+    <jrunconsole cls="TransferTo" arguments="TransferTo.java TransferTo.txt" />
+    <jrunconsole cls="UsingBuffers" />
+    <jrunconsole cls="ViewBuffers" />
+  </target>
+
+
 </project>
