@@ -12,7 +12,7 @@
     <jrun cls="File_System" />
     <jrun cls="Find" />
     <jrun cls="ListOfLines" />
-    <jrun cls="PartsOfPaths" />
+    <!-- <jrun cls="PartsOfPaths" /> -->
     <jrun cls="PathAnalysis" />
     <jrun cls="PathInfo" />
     <jrun cls="PathWatcher" />
