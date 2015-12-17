@@ -10,7 +10,7 @@
     <jrun cls="ActiveObjectDemo" />
     <jrun cls="AtomicEvenSupplier" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
     <jrun cls="AtomicIntegerTest" />
-    <jrun cls="AtomicityTest" />
+    <jrun cls="AtomicityTest" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
     <jrun cls="AttemptLocking" />
     <jrun cls="BankTellerSimulation" arguments="5" />
     <jrun cls="BasicThreads" />
