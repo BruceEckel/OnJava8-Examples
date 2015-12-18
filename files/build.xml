@@ -28,7 +28,6 @@
     <jrunconsole cls="File_System" />
     <jrunconsole cls="Find" />
     <jrunconsole cls="ListOfLines" />
-    <jrunconsole cls="PartsOfPaths" />
     <jrunconsole cls="PathAnalysis" />
     <jrunconsole cls="PathInfo" />
     <jrunconsole cls="PathWatcher" />
