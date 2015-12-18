@@ -50,7 +50,7 @@
     <jrunconsole cls="OzWitch" />
     <jrunconsole cls="PostOffice" />
     <jrunconsole cls="RandomTest" />
-    <jrunconsole cls="Reflection" />
+
     <jrunconsole cls="enums.RoShamBo1" dirpath="../enums" />
     <jrunconsole cls="enums.RoShamBo2" dirpath="../enums" />
     <jrunconsole cls="enums.RoShamBo3" dirpath="../enums" />
