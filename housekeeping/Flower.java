@@ -20,7 +20,7 @@ public class Flower {
   }
   Flower(String s, int petals) {
     this(petals);
-//!    this(s); // Can't call two!
+    //- this(s); // Can't call two!
     this.s = s; // Another use of "this"
     System.out.println("String & int args");
   }
@@ -29,7 +29,7 @@ public class Flower {
     System.out.println("no-arg constructor");
   }
   void printPetalCount() {
-//! this(11); // Not inside non-constructor!
+    //- this(11); // Not inside non-constructor!
     System.out.println(
       "petalCount = " + petalCount + " s = "+ s);
   }

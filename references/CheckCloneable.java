@@ -90,7 +90,7 @@ public class CheckCloneable {
     Ordinary x = new Ordinary();
     // This won't compile;
     // clone() is protected in Object:
-    //! x = (Ordinary)x.clone();
+    //- x = (Ordinary)x.clone();
     // Checks first to see if a class
     // implements Cloneable:
     for(Ordinary ord1 : ord) {

@@ -18,7 +18,7 @@ public class Parcel6 {
       String s = ts.getSlip();
     }
     // Can't use it here! Out of scope:
-    //! TrackingSlip ts = new TrackingSlip("x");
+    //- TrackingSlip ts = new TrackingSlip("x");
   }
   public void track() { internalTracking(true); }
   public static void main(String[] args) {

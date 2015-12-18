@@ -27,5 +27,5 @@ class C4 extends C implements I3 {
 }
 
 // Methods differ only by return type:
-//! class C5 extends C implements I1 {}
-//! interface I4 extends I1, I3 {}
+//- class C5 extends C implements I1 {}
+//- interface I4 extends I1, I3 {}

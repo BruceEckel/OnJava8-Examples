@@ -56,7 +56,7 @@ interface E {
   }
   void g();
   // Cannot be private within an interface:
-  //! private interface I {}
+  //- private interface I {}
 }
 
 public class NestingInterfaces {
@@ -70,9 +70,9 @@ public class NestingInterfaces {
   }
   // Cannot implement a private interface except
   // within that interface's defining class:
-  //! class DImp implements A.D {
-  //!  public void f() {}
-  //! }
+  //- class DImp implements A.D {
+  //-  public void f() {}
+  //- }
   class EImp implements E {
     @Override
     public void g() {}
@@ -92,11 +92,11 @@ public class NestingInterfaces {
   public static void main(String[] args) {
     A a = new A();
     // Can't access A.D:
-    //! A.D ad = a.getD();
+    //- A.D ad = a.getD();
     // Doesn't return anything but A.D:
-    //! A.DImp2 di2 = a.getD();
+    //- A.DImp2 di2 = a.getD();
     // Cannot access a member of the interface:
-    //! a.getD().f();
+    //- a.getD().f();
     // Only another A can do anything with getD():
     A a2 = new A();
     a2.receiveD(a.getD());

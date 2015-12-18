@@ -29,8 +29,8 @@ public class HorrorFlick {
     Hero h = new Hero();
     Scientist s = new Scientist();
     MadScientist m = new MadScientist();
-    //! p = (Person)p.clone(); // Compile error
-    //! h = (Hero)h.clone(); // Compile error
+    //- p = (Person)p.clone(); // Compile error
+    //- h = (Hero)h.clone(); // Compile error
     s = (Scientist)s.clone();
     m = (MadScientist)m.clone();
   }

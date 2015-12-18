@@ -56,8 +56,8 @@ public class Blips {
       b1 = (Blip1)in.readObject();
     }
     // OOPS! Throws an exception:
-//! System.out.println("Recovering b2:");
-//! b2 = (Blip2)in.readObject();
+    //- System.out.println("Recovering b2:");
+    //- b2 = (Blip2)in.readObject();
   }
 }
 /* Output:

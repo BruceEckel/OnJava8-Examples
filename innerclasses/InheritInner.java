@@ -9,7 +9,7 @@ class WithInner {
 }
 
 public class InheritInner extends WithInner.Inner {
-  //! InheritInner() {} // Won't compile
+  //- InheritInner() {} // Won't compile
   InheritInner(WithInner wi) {
     wi.super();
   }

@@ -13,7 +13,7 @@ final class Dinosaur {
   void f() {}
 }
 
-//! class Further extends Dinosaur {}
+//- class Further extends Dinosaur {}
 // error: Cannot extend final class 'Dinosaur'
 
 public class Jurassic {

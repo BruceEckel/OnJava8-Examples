@@ -13,11 +13,12 @@
     <jrun cls="ForInInt" />
     <jrun cls="ForInString" />
     <jrun cls="IfElse" />
-    <jrun cls="IfElse2" />
     <jrun cls="LabeledFor" />
     <jrun cls="LabeledWhile" />
     <jrun cls="ListCharacters" />
     <jrun cls="StringSwitch" />
+    <jrun cls="TestWithReturn" />
+    <jrun cls="TrueFalse" />
     <jrun cls="VowelsAndConsonants" />
     <jrun cls="WhileTest" />
   </target>
@@ -29,11 +30,12 @@
     <jrunconsole cls="ForInInt" />
     <jrunconsole cls="ForInString" />
     <jrunconsole cls="IfElse" />
-    <jrunconsole cls="IfElse2" />
     <jrunconsole cls="LabeledFor" />
     <jrunconsole cls="LabeledWhile" />
     <jrunconsole cls="ListCharacters" />
     <jrunconsole cls="StringSwitch" />
+    <jrunconsole cls="TestWithReturn" />
+    <jrunconsole cls="TrueFalse" />
     <jrunconsole cls="VowelsAndConsonants" />
     <jrunconsole cls="WhileTest" />
   </target>

@@ -8,7 +8,7 @@ public class IfElse {
   static void test(int testval, int target) {
     if(testval > target)
       result = +1;
-    else if(testval < target)
+    else if(testval < target) // (1)
       result = -1;
     else
       result = 0; // Match

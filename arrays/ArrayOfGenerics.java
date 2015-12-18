@@ -13,7 +13,7 @@ public class ArrayOfGenerics {
     ls = (List<String>[])la; // "Unchecked" warning
     ls[0] = new ArrayList<>();
     // Compile-time checking produces an error:
-    //! ls[1] = new ArrayList<Integer>();
+    //- ls[1] = new ArrayList<Integer>();
 
     // The problem: List<String> is a subtype of Object
     Object[] objects = ls; // So assignment is OK

@@ -10,7 +10,7 @@ class Gizmo {
 
 public class FinalArguments {
   void with(final Gizmo g) {
-    //! g = new Gizmo(); // Illegal -- g is final
+    //- g = new Gizmo(); // Illegal -- g is final
   }
   void without(Gizmo g) {
     g = new Gizmo(); // OK -- g not final
