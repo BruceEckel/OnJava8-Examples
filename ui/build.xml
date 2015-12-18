@@ -49,4 +49,48 @@
     <jrun cls="TrackEvent" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
   </target>
 
+  <target name="runconsole" description="Compile and run" depends="build">
+    <jrunconsole cls="BorderLayout1" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
+    <jrunconsole cls="Borders" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
+    <jrunconsole cls="Button1" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
+    <jrunconsole cls="Button2" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
+    <jrunconsole cls="Button2b" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
+    <jrunconsole cls="ButtonGroups" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
+    <jrunconsole cls="Buttons" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
+    <jrunconsole cls="CheckBoxes" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
+    <jrunconsole cls="ColorBoxes" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
+    <jrunconsole cls="ComboBoxes" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
+    <jrunconsole cls="Dialogs" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
+    <jrunconsole cls="Faces" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
+    <jrunconsole cls="FileChooserTest" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
+    <jrunconsole cls="FlowLayout1" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
+    <jrunconsole cls="GridLayout1" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
+    <jrunconsole cls="HelloLabel" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
+    <jrunconsole cls="HelloSwing" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
+    <jrunconsole cls="HTMLButton" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
+    <jrunconsole cls="InterruptableLongRunningCallable" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
+    <jrunconsole cls="InterruptableLongRunningTask" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
+    <jrunconsole cls="List" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
+    <jrunconsole cls="LongRunningTask" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
+    <jrunconsole cls="LookAndFeel" arguments="motif" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
+    <jrunconsole cls="Menus" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
+    <jrunconsole cls="MessageBoxes" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
+    <jrunconsole cls="MonitoredLongRunningCallable" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
+    <jrunconsole cls="Popup" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
+    <jrunconsole cls="Progress" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
+    <jrunconsole cls="RadioButtons" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
+    <jrunconsole cls="ShowAddListeners" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
+    <jrunconsole cls="SimpleMenus" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
+    <jrunconsole cls="SineWave" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
+    <jrunconsole cls="SubmitLabelManipulationTask" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
+    <jrunconsole cls="SubmitSwingProgram" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
+    <jrunconsole cls="TabbedPane1" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
+    <jrunconsole cls="TextArea" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
+    <jrunconsole cls="TextFields" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
+    <jrunconsole cls="TextPane" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
+    <jrunconsole cls="TicTacToe" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
+    <jrunconsole cls="TrackEvent" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
+  </target>
+
+
 </project>

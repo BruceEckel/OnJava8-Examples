@@ -22,4 +22,21 @@
     <jrun cls="SimpleFormatterExample" />
   </target>
 
+  <target name="runconsole" description="Compile and run" depends="build">
+    <jrunconsole cls="ConfigureLogging" />
+    <jrunconsole cls="CustomHandler" />
+    <jrunconsole cls="InfoLogging" />
+    <jrunconsole cls="InfoLogging2" />
+    <jrunconsole cls="LoggingLevelManipulation" />
+    <jrunconsole cls="LoggingLevels" />
+    <jrunconsole cls="LogToFile" />
+    <jrunconsole cls="LogToFile2" />
+    <jrunconsole cls="MultipleHandlers" />
+    <jrunconsole cls="MultipleHandlers2" />
+    <jrunconsole cls="PrintableLogRecord" />
+    <jrunconsole cls="SimpleFilter" />
+    <jrunconsole cls="SimpleFormatterExample" />
+  </target>
+
+
 </project>

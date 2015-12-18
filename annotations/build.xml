@@ -22,4 +22,21 @@
     <jrun cls="annotations.simplest.SimpleTest" dirpath="../annotations/simplest" />
   </target>
 
+  <target name="runconsole" description="Compile and run" depends="build">
+    <jrunconsole cls="annotations.AtUnitComposition" dirpath="../annotations" />
+    <jrunconsole cls="annotations.AtUnitExample1" dirpath="../annotations" />
+    <jrunconsole cls="annotations.AtUnitExample2" dirpath="../annotations" />
+    <jrunconsole cls="annotations.AtUnitExample3" dirpath="../annotations" />
+    <jrunconsole cls="annotations.AtUnitExample4" dirpath="../annotations" />
+    <jrunconsole cls="annotations.AtUnitExample5" dirpath="../annotations" />
+    <jrunconsole cls="annotations.AtUnitExternalTest" dirpath="../annotations" />
+    <jrunconsole cls="annotations.HashSetTest" dirpath="../annotations" />
+    <jrunconsole cls="annotations.StackLStringTest" dirpath="../annotations" />
+    <jrunconsole cls="UseCaseTracker" />
+    <jrunconsole cls="annotations.database.TableCreator" dirpath="../annotations/database" arguments="annotations.database.Member" />
+    <jrunconsole cls="annotations.ifx.Multiplier" dirpath="../annotations/ifx" />
+    <jrunconsole cls="annotations.simplest.SimpleTest" dirpath="../annotations/simplest" />
+  </target>
+
+
 </project>

@@ -111,6 +111,16 @@
     <antcall target="finish"/>
   </target>
 
+  <target name="runconsole" description="Continuous Integration version with output">
+    <delete file="errors.txt"/>
+    <subant>
+      <filelist refid="buildfiles"/>
+      <target name="runconsole" />
+    </subant>
+    <available file="errors.txt" property="errors"/>
+    <antcall target="finish"/>
+  </target>
+
   <target name="testable" description="Compiles and runs testable examples">
     <delete file="errors.txt"/>
     <subant>

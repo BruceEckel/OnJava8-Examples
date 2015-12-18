@@ -41,4 +41,40 @@
     <jrun cls="WithFinally" />
   </target>
 
+  <target name="runconsole" description="Compile and run" depends="build">
+    <jrunconsole cls="AlwaysFinally" />
+    <jrunconsole cls="AutoCloseableDetails" />
+    <jrunconsole cls="BodyException" />
+    <jrunconsole cls="Cleanup" />
+    <jrunconsole cls="CleanupIdiom" />
+    <jrunconsole cls="CloseExceptions" />
+    <jrunconsole cls="ConstructorException" />
+    <jrunconsole cls="DynamicFields" />
+    <jrunconsole cls="ExceptionMethods" />
+    <jrunconsole cls="ExceptionSilencer" />
+    <jrunconsole cls="ExtraFeatures" />
+    <jrunconsole cls="FinallyWorks" />
+    <jrunconsole cls="FullConstructors" />
+    <jrunconsole cls="Human" />
+    <jrunconsole cls="InheritingExceptions" />
+    <jrunconsole cls="InputFile2" />
+    <jrunconsole cls="LoggingExceptions" />
+    <jrunconsole cls="LoggingExceptions2" />
+    <jrunconsole cls="LostMessage" />
+    <jrunconsole cls="MainException" />
+    <jrunconsole cls="MessyExceptions" />
+    <jrunconsole cls="MultipleReturns" />
+    <jrunconsole cls="NeverCaught" failOnError='false' msg='* Exception was Expected *' />
+    <jrunconsole cls="OnOffSwitch" />
+    <jrunconsole cls="Rethrowing" />
+    <jrunconsole cls="RethrowNew" />
+    <jrunconsole cls="StormyInning" />
+    <jrunconsole cls="StreamsAreAutoCloseable" />
+    <jrunconsole cls="TryWithResources" />
+    <jrunconsole cls="TurnOffChecking" />
+    <jrunconsole cls="WhoCalled" />
+    <jrunconsole cls="WithFinally" />
+  </target>
+
+
 </project>

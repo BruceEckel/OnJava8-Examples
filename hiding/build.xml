@@ -19,4 +19,18 @@
     <jrun cls="SingleImport" />
   </target>
 
+  <target name="runconsole" description="Compile and run" depends="build">
+    <jrunconsole cls="Cake" />
+    <jrunconsole cls="ChocolateChip" />
+    <jrunconsole cls="ChocolateChip2" />
+    <jrunconsole cls="Dinner" />
+    <jrunconsole cls="FullQualification" />
+    <jrunconsole cls="IceCream" />
+    <jrunconsole cls="ImportedMyClass" />
+    <jrunconsole cls="LibTest" />
+    <jrunconsole cls="QualifiedMyClass" />
+    <jrunconsole cls="SingleImport" />
+  </target>
+
+
 </project>

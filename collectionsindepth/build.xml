@@ -46,4 +46,45 @@
     <jrun cls="Utilities" />
   </target>
 
+  <target name="runconsole" description="Compile and run" depends="build">
+    <jrunconsole cls="AssociativeArray" />
+    <jrunconsole cls="Bits" />
+    <jrunconsole cls="CanonicalMapping" />
+    <jrunconsole cls="CollectionDataGeneration" />
+    <jrunconsole cls="CollectionDataTest" />
+    <jrunconsole cls="CollectionMethods" />
+    <jrunconsole cls="CountedString" />
+    <jrunconsole cls="DequeTest" />
+    <jrunconsole cls="Enumerations" />
+    <jrunconsole cls="FailFast" />
+    <jrunconsole cls="FillingLists" />
+    <jrunconsole cls="IndividualTest" />
+    <jrunconsole cls="LinkedHashMapDemo" />
+    <jrunconsole cls="ListPerformance" arguments="100 500" />
+    <jrunconsole cls="Lists" />
+    <jrunconsole cls="ListSortSearch" />
+    <jrunconsole cls="MapDataTest" />
+    <jrunconsole cls="MapPerformance" arguments="100 5000" />
+    <jrunconsole cls="Maps" />
+    <jrunconsole cls="QueueBehavior" />
+    <jrunconsole cls="RandomBounds" arguments="lower" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
+    <jrunconsole cls="ReadOnly" />
+    <jrunconsole cls="References" />
+    <jrunconsole cls="SetPerformance" arguments="100 5000" />
+    <jrunconsole cls="SimpleHashMap" />
+    <jrunconsole cls="SlowMap" />
+    <jrunconsole cls="SortedMapDemo" />
+    <jrunconsole cls="SortedSetDemo" />
+    <jrunconsole cls="SpringDetector" />
+    <jrunconsole cls="SpringDetector2" />
+    <jrunconsole cls="Stacks" />
+    <jrunconsole cls="StringHashCode" />
+    <jrunconsole cls="Synchronization" />
+    <jrunconsole cls="ToDoList" />
+    <jrunconsole cls="TypesForSets" />
+    <jrunconsole cls="Unsupported" />
+    <jrunconsole cls="Utilities" />
+  </target>
+
+
 </project>

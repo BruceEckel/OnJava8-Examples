@@ -17,4 +17,16 @@
     <jrun cls="TabbedPane" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
   </target>
 
+  <target name="runconsole" description="Compile and run" depends="build">
+    <jrunconsole cls="ColorBoxes" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
+    <jrunconsole cls="DisplayEnvironment" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
+    <jrunconsole cls="DisplayProperties" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
+    <jrunconsole cls="HelloSWT" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
+    <jrunconsole cls="Menus" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
+    <jrunconsole cls="ShellsAreMainWindows" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
+    <jrunconsole cls="SineWave" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
+    <jrunconsole cls="TabbedPane" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
+  </target>
+
+
 </project>

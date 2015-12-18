@@ -23,4 +23,22 @@
     <jrun cls="polymorphism.music3.Music3" dirpath="../polymorphism/music3" />
   </target>
 
+  <target name="runconsole" description="Compile and run" depends="build">
+    <jrunconsole cls="CovariantReturn" />
+    <jrunconsole cls="FieldAccess" />
+    <jrunconsole cls="polymorphism.Frog" dirpath="../polymorphism" />
+    <jrunconsole cls="PolyConstructors" />
+    <jrunconsole cls="polymorphism.PrivateOverride" dirpath="../polymorphism" />
+    <jrunconsole cls="ReferenceCounting" />
+    <jrunconsole cls="RTTI" failOnError='false' msg='* Exception was Expected *' />
+    <jrunconsole cls="polymorphism.Sandwich" dirpath="../polymorphism" />
+    <jrunconsole cls="Shapes" />
+    <jrunconsole cls="StaticPolymorphism" />
+    <jrunconsole cls="Transmogrify" />
+    <jrunconsole cls="polymorphism.music.Music" dirpath="../polymorphism/music" />
+    <jrunconsole cls="polymorphism.music.Music2" dirpath="../polymorphism/music" />
+    <jrunconsole cls="polymorphism.music3.Music3" dirpath="../polymorphism/music3" />
+  </target>
+
+
 </project>

@@ -77,4 +77,76 @@
     <jrun cls="generics.decorator.Decoration" dirpath="../generics/decorator" />
   </target>
 
+  <target name="runconsole" description="Compile and run" depends="build">
+    <jrunconsole cls="ApplyTest" />
+    <jrunconsole cls="ArrayMaker" />
+    <jrunconsole cls="ArrayOfGeneric" />
+    <jrunconsole cls="BankTeller" />
+    <jrunconsole cls="BasicBounds" />
+    <jrunconsole cls="BasicSupplierDemo" />
+    <jrunconsole cls="CaptureConversion" />
+    <jrunconsole cls="CheckedList" />
+    <jrunconsole cls="ClassTypeCapture" />
+    <jrunconsole cls="CompilerIntelligence" />
+    <jrunconsole cls="CovariantArrays" />
+    <jrunconsole cls="CreatorGeneric" />
+    <jrunconsole cls="CRGWithBasicHolder" />
+    <jrunconsole cls="Diamond" />
+    <jrunconsole cls="DogsAndRobots" />
+    <jrunconsole cls="DynamicProxyMixin" />
+    <jrunconsole cls="EpicBattle" />
+    <jrunconsole cls="ErasedTypeEquivalence" />
+    <jrunconsole cls="ErasureAndInheritance" />
+    <jrunconsole cls="FactoryConstraint" />
+    <jrunconsole cls="Fibonacci" />
+    <jrunconsole cls="FillTest" />
+    <jrunconsole cls="Fill2Test" />
+    <jrunconsole cls="FilledListMaker" />
+    <jrunconsole cls="Functional" />
+    <jrunconsole cls="GenericArray" />
+    <jrunconsole cls="GenericArray2" />
+    <jrunconsole cls="GenericArrayWithTypeToken" />
+    <jrunconsole cls="GenericCast" />
+    <jrunconsole cls="GenericHolder" />
+    <jrunconsole cls="GenericHolder2" />
+    <jrunconsole cls="GenericMethods" />
+    <jrunconsole cls="GenericReading" />
+    <jrunconsole cls="GenericsAndCovariance" />
+    <jrunconsole cls="GenericVarargs" />
+    <jrunconsole cls="GenericWriting" />
+    <jrunconsole cls="Holder" />
+    <jrunconsole cls="InheritBounds" />
+    <jrunconsole cls="InstantiateGenericType" />
+    <jrunconsole cls="IterableFibonacci" />
+    <jrunconsole cls="LatentReflection" />
+    <jrunconsole cls="LinkedStack" />
+    <jrunconsole cls="ListMaker" />
+    <jrunconsole cls="ListOfInt" />
+    <jrunconsole cls="LostInformation" />
+    <jrunconsole cls="Mixins" />
+    <jrunconsole cls="ObjectHolder" />
+    <jrunconsole cls="OrdinaryArguments" />
+    <jrunconsole cls="PlainGenericInheritance" />
+    <jrunconsole cls="PrimitiveGenericTest" />
+    <jrunconsole cls="RandomList" />
+    <jrunconsole cls="SelfBounding" />
+    <jrunconsole cls="SelfBoundingMethods" />
+    <jrunconsole cls="SimpleDogsAndRobots" />
+    <jrunconsole cls="SimpleHolder" />
+    <jrunconsole cls="Store" />
+    <jrunconsole cls="Suppliers" />
+    <jrunconsole cls="ThrowGenericException" />
+    <jrunconsole cls="TupleList" />
+    <jrunconsole cls="TupleTest" />
+    <jrunconsole cls="TupleTest2" />
+    <jrunconsole cls="UnboundedWildcards1" />
+    <jrunconsole cls="UnboundedWildcards2" />
+    <jrunconsole cls="Unconstrained" />
+    <jrunconsole cls="WatercolorSets" />
+    <jrunconsole cls="Wildcards" />
+    <jrunconsole cls="generics.coffee.CoffeeSupplier" dirpath="../generics/coffee" />
+    <jrunconsole cls="generics.decorator.Decoration" dirpath="../generics/decorator" />
+  </target>
+
+
 </project>

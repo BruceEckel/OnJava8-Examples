@@ -30,4 +30,29 @@
     <jrun cls="URShift" />
   </target>
 
+  <target name="runconsole" description="Compile and run" depends="build">
+    <jrunconsole cls="Assignment" />
+    <jrunconsole cls="AutoInc" />
+    <jrunconsole cls="BitManipulation" />
+    <jrunconsole cls="Bool" />
+    <jrunconsole cls="Casting" />
+    <jrunconsole cls="CastingNumbers" />
+    <jrunconsole cls="EqualsMethod" />
+    <jrunconsole cls="EqualsMethod2" />
+    <jrunconsole cls="Equivalence" />
+    <jrunconsole cls="Exponents" />
+    <jrunconsole cls="Literals" />
+    <jrunconsole cls="MathOps" />
+    <jrunconsole cls="Overflow" />
+    <jrunconsole cls="PassObject" />
+    <jrunconsole cls="Precedence" />
+    <jrunconsole cls="RoundingNumbers" />
+    <jrunconsole cls="ShortCircuit" />
+    <jrunconsole cls="StringOperators" />
+    <jrunconsole cls="TernaryIfElse" />
+    <jrunconsole cls="Underscores" />
+    <jrunconsole cls="URShift" />
+  </target>
+
+
 </project>

@@ -35,4 +35,34 @@
     <jrun cls="UnboundMethodReference" />
   </target>
 
+  <target name="runconsole" description="Compile and run" depends="build">
+    <jrunconsole cls="BiConsumerPermutations" />
+    <jrunconsole cls="ClassFunctionals" />
+    <jrunconsole cls="Closure8" />
+    <jrunconsole cls="ConsumeFunction" />
+    <jrunconsole cls="CtorReference" />
+    <jrunconsole cls="CurriedIntAdd" />
+    <jrunconsole cls="Curry3Args" />
+    <jrunconsole cls="CurryingAndPartials" />
+    <jrunconsole cls="FunctionalAnnotation" />
+    <jrunconsole cls="FunctionComposition" />
+    <jrunconsole cls="FunctionVariants" />
+    <jrunconsole cls="FunctionWithWrapped" />
+    <jrunconsole cls="LambdaExpressions" />
+    <jrunconsole cls="MethodConversion" />
+    <jrunconsole cls="MethodReferences" />
+    <jrunconsole cls="MultiUnbound" />
+    <jrunconsole cls="PredicateComposition" />
+    <jrunconsole cls="ProduceFunction" />
+    <jrunconsole cls="RecursiveFactorial" />
+    <jrunconsole cls="RecursiveFibonacci" />
+    <jrunconsole cls="RunnableMethodReference" />
+    <jrunconsole cls="SharedStorage" />
+    <jrunconsole cls="Strategize" />
+    <jrunconsole cls="TransformFunction" />
+    <jrunconsole cls="TriFunctionTest" />
+    <jrunconsole cls="UnboundMethodReference" />
+  </target>
+
+
 </project>

@@ -13,4 +13,12 @@
     <jrun cls="staticchecking.petspeak.PetSpeak" dirpath="../staticchecking/petspeak" />
   </target>
 
+  <target name="runconsole" description="Compile and run" depends="build">
+    <jrunconsole cls="staticchecking.dr.DogsAndRobots" dirpath="../staticchecking/dr" />
+    <jrunconsole cls="staticchecking.drc.DogAndRobotCollections" dirpath="../staticchecking/drc" />
+    <jrunconsole cls="staticchecking.latent.Latent" dirpath="../staticchecking/latent" />
+    <jrunconsole cls="staticchecking.petspeak.PetSpeak" dirpath="../staticchecking/petspeak" />
+  </target>
+
+
 </project>

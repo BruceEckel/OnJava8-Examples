@@ -10,4 +10,9 @@
     <jrun cls="SimpleDebugging" failOnError='false' msg='* Exception was Expected *' />
   </target>
 
+  <target name="runconsole" description="Compile and run" depends="build">
+    <jrunconsole cls="SimpleDebugging" failOnError='false' msg='* Exception was Expected *' />
+  </target>
+
+
 </project>

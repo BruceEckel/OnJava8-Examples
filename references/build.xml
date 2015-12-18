@@ -27,4 +27,26 @@
     <jrun cls="Stringer" />
   </target>
 
+  <target name="runconsole" description="Compile and run" depends="build">
+    <jrunconsole cls="AddingClone" />
+    <jrunconsole cls="Alias1" />
+    <jrunconsole cls="Alias2" />
+    <jrunconsole cls="CheckCloneable" />
+    <jrunconsole cls="Cloning" />
+    <jrunconsole cls="Compete" />
+    <jrunconsole cls="CopyConstructor" />
+    <jrunconsole cls="DeepCopy" />
+    <jrunconsole cls="HorrorFlick" />
+    <jrunconsole cls="Immutable1" />
+    <jrunconsole cls="Immutable2" />
+    <jrunconsole cls="ImmutableInteger" />
+    <jrunconsole cls="ImmutableStrings" />
+    <jrunconsole cls="LocalCopy" />
+    <jrunconsole cls="MutableInteger" />
+    <jrunconsole cls="PassReferences" />
+    <jrunconsole cls="Snake" />
+    <jrunconsole cls="Stringer" />
+  </target>
+
+
 </project>

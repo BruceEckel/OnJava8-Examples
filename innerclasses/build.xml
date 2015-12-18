@@ -36,4 +36,35 @@
     <jrun cls="innerclasses.mui.MultiInterfaces" dirpath="../innerclasses/mui" />
   </target>
 
+  <target name="runconsole" description="Compile and run" depends="build">
+    <jrunconsole cls="AnonymousConstructor" />
+    <jrunconsole cls="BigEgg" />
+    <jrunconsole cls="BigEgg2" />
+    <jrunconsole cls="innerclasses.Callbacks" dirpath="../innerclasses" />
+    <jrunconsole cls="ClassInInterface$Test" />
+    <jrunconsole cls="DotNew" />
+    <jrunconsole cls="DotThis" />
+    <jrunconsole cls="GreenhouseController" arguments="5000" />
+    <jrunconsole cls="InheritInner" />
+    <jrunconsole cls="LocalInnerClass" />
+    <jrunconsole cls="innerclasses.MultiImplementation" dirpath="../innerclasses" />
+    <jrunconsole cls="MultiNestingAccess" />
+    <jrunconsole cls="Parcel1" />
+    <jrunconsole cls="Parcel10" />
+    <jrunconsole cls="Parcel11" />
+    <jrunconsole cls="Parcel2" />
+    <jrunconsole cls="Parcel3" />
+    <jrunconsole cls="Parcel5" />
+    <jrunconsole cls="Parcel6" />
+    <jrunconsole cls="Parcel7" />
+    <jrunconsole cls="Parcel7b" />
+    <jrunconsole cls="Parcel8" />
+    <jrunconsole cls="Parcel9" />
+    <jrunconsole cls="Sequence" />
+    <jrunconsole cls="TestBed$Tester" />
+    <jrunconsole cls="TestParcel" />
+    <jrunconsole cls="innerclasses.mui.MultiInterfaces" dirpath="../innerclasses/mui" />
+  </target>
+
+
 </project>
