@@ -18,7 +18,7 @@ public class GenericArray<T> {
   public static void main(String[] args) {
     GenericArray<Integer> gai = new GenericArray<>(10);
     // This causes a ClassCastException:
-    //! Integer[] ia = gai.rep();
+    //- Integer[] ia = gai.rep();
     // This is OK:
     Object[] oa = gai.rep();
   }

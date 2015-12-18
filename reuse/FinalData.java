@@ -33,14 +33,14 @@ public class FinalData {
   }
   public static void main(String[] args) {
     FinalData fd1 = new FinalData("fd1");
-    //! fd1.valueOne++; // Error: can't change value
+    //- fd1.valueOne++; // Error: can't change value
     fd1.v2.i++; // Object isn't constant!
     fd1.v1 = new Value(9); // OK -- not final
     for(int i = 0; i < fd1.a.length; i++)
       fd1.a[i]++; // Object isn't constant!
-    //! fd1.v2 = new Value(0); // Error: Can't
-    //! fd1.VAL_3 = new Value(1); // change reference
-    //! fd1.a = new int[3];
+    //- fd1.v2 = new Value(0); // Error: Can't
+    //- fd1.VAL_3 = new Value(1); // change reference
+    //- fd1.a = new int[3];
     System.out.println(fd1);
     System.out.println("Creating new FinalData");
     FinalData fd2 = new FinalData("fd2");

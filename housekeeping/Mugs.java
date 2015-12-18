@@ -2,7 +2,7 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-// Java "Instance Initialization."
+// Instance initialization.
 
 class Mug {
   Mug(int marker) {
@@ -16,7 +16,7 @@ class Mug {
 public class Mugs {
   Mug mug1;
   Mug mug2;
-  {
+  { // (1)
     mug1 = new Mug(1);
     mug2 = new Mug(2);
     System.out.println("mug1 & mug2 initialized");

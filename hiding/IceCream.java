@@ -13,7 +13,7 @@ class Sundae {
 
 public class IceCream {
   public static void main(String[] args) {
-    //! Sundae x = new Sundae();
+    //- Sundae x = new Sundae();
     Sundae x = Sundae.makeASundae();
   }
 }

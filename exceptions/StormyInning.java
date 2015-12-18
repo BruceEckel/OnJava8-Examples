@@ -37,10 +37,10 @@ class StormyInning extends Inning implements Storm {
   public StormyInning(String s)
     throws Foul, BaseballException {}
   // Regular methods must conform to base class:
-//! void walk() throws PopFoul {} //Compile error
+  //- void walk() throws PopFoul {} //Compile error
   // Interface CANNOT add exceptions to existing
   // methods from the base class:
-//! public void event() throws RainedOut {}
+  //- public void event() throws RainedOut {}
   // If the method doesn't already exist in the
   // base class, the exception is OK:
   @Override

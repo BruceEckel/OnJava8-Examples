@@ -49,8 +49,8 @@ public class ArrayOptions {
       g[i] = i*i;
     int[] h = { 11, 47, 93 };
 
-    // Compile error: variable e not initialized:
-    //!print("e.length = " + e.length);
+    //  Compile error: variable e not initialized:
+    //- print("e.length = " + e.length);
     System.out.println("f.length = " + f.length);
     System.out.println("g.length = " + g.length);
     System.out.println("h.length = " + h.length);

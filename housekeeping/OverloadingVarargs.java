@@ -25,7 +25,7 @@ public class OverloadingVarargs {
     f(2, 1);
     f(0);
     f(0L);
-    //! f(); // Won't compile -- ambiguous
+    //- f(); // Won't compile -- ambiguous
   }
 }
 /* Output:
