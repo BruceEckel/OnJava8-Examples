@@ -2,12 +2,16 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-// Ensuring proper cleanup.
+// Ensuring proper cleanup
 package reuse;
 
 class Shape {
-  Shape(int i) { System.out.println("Shape constructor"); }
-  void dispose() { System.out.println("Shape dispose"); }
+  Shape(int i) {
+    System.out.println("Shape constructor");
+  }
+  void dispose() {
+    System.out.println("Shape dispose");
+  }
 }
 
 class Circle extends Shape {

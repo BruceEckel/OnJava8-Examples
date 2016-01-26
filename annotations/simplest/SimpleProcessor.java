@@ -2,7 +2,7 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-// A bare-bones annotation processor.
+// A bare-bones annotation processor
 package annotations.simplest;
 import javax.annotation.processing.*;
 import javax.lang.model.SourceVersion;

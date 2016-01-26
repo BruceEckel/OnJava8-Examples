@@ -17,7 +17,8 @@ public class UseCaseTracker {
       }
     }
     for(int i : useCases) {
-      System.out.println("Warning: Missing use case-" + i);
+      System.out.println(
+        "Warning: Missing use case-" + i);
     }
   }
   public static void main(String[] args) {

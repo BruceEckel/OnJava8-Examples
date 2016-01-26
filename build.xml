@@ -42,7 +42,7 @@
       files/build.xml
       enums/build.xml
       annotations/build.xml
-      concurrency/build.xml
+      tasks/build.xml
       ui/build.xml
       swt/build.xml
       patterns/build.xml
@@ -86,7 +86,7 @@
       files/build.xml
       enums/build.xml
       annotations/build.xml
-      concurrency/build.xml
+      tasks/build.xml
       patterns/build.xml
       unittesting/build.xml
       assertions/build.xml

@@ -2,7 +2,7 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-// Removing the generic; code still works.
+// Removing the generic; code still works
 
 class CommunicateSimply {
   static void perform(Performs performer) {

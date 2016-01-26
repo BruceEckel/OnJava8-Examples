@@ -26,7 +26,7 @@ class FindMinima2 {
 }
 
 public class StrategyPattern2 {
-  public static void main(String args[]) {
+  public static void main(String[] args) {
     FindMinima2 solver = new FindMinima2();
     List<Double> line = Arrays.asList(
       1.0, 2.0, 1.0, 2.0, -1.0,

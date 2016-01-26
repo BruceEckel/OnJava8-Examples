@@ -11,7 +11,9 @@ public class MapOfList {
     petPeople = new HashMap<>();
   static {
     petPeople.put(new Person("Dawn"),
-      Arrays.asList(new Cymric("Molly"), new Mutt("Spot")));
+      Arrays.asList(
+        new Cymric("Molly"),
+        new Mutt("Spot")));
     petPeople.put(new Person("Kate"),
       Arrays.asList(new Cat("Shackleton"),
         new Cat("Elsie May"), new Dog("Margrett")));

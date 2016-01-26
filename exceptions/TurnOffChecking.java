@@ -2,7 +2,7 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-// "Turning off" Checked exceptions.
+// "Turning off" Checked exceptions
 import java.io.*;
 
 class WrapCheckedException {
@@ -42,7 +42,8 @@ public class TurnOffChecking {
         try {
           throw re.getCause();
         } catch(FileNotFoundException e) {
-          System.out.println("FileNotFoundException: " + e);
+          System.out.println(
+            "FileNotFoundException: " + e);
         } catch(IOException e) {
           System.out.println("IOException: " + e);
         } catch(Throwable e) {

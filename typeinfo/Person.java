@@ -2,7 +2,7 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-// Using Optional with regular classes.
+// Using Optional with regular classes
 import onjava.*;
 import java.util.*;
 
@@ -12,7 +12,8 @@ class Person {
   public final Optional<String> address;
   // etc.
   public final boolean empty;
-  public Person(String first, String last, String address){
+  public
+  Person(String first, String last, String address) {
     this.first = Optional.ofNullable(first);
     this.last = Optional.ofNullable(last);
     this.address = Optional.ofNullable(address);

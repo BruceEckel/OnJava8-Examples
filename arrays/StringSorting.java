@@ -2,25 +2,21 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-// Sorting an array of Strings.
+// Sorting an array of Strings
 import java.util.*;
 import onjava.*;
+import static onjava.ArrayShow.*;
 
 public class StringSorting {
   public static void main(String[] args) {
-    String[] sa = Generated.array(new String[20],
-      new RandomSupplier.String(5));
-    System.out.println(
-      "Before sort: " + Arrays.toString(sa));
+    String[] sa = new Rand.String().array(20);
+    show("Before sort", sa);
     Arrays.sort(sa);
-    System.out.println(
-      "After sort: " + Arrays.toString(sa));
+    show("After sort", sa);
     Arrays.sort(sa, Collections.reverseOrder());
-    System.out.println(
-      "Reverse sort: " + Arrays.toString(sa));
+    show("Reverse sort", sa);
     Arrays.sort(sa, String.CASE_INSENSITIVE_ORDER);
-    System.out.println(
-      "Case-insensitive sort: " + Arrays.toString(sa));
+    show("Case-insensitive sort", sa);
   }
 }
 /* Output:

@@ -2,7 +2,7 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-// Further embellishment of exception classes.
+// Further embellishment of exception classes
 
 class MyException2 extends Exception {
   private int x;
@@ -15,7 +15,8 @@ class MyException2 extends Exception {
   public int val() { return x; }
   @Override
   public String getMessage() {
-    return "Detail Message: "+ x + " "+ super.getMessage();
+    return "Detail Message: "+ x
+      + " "+ super.getMessage();
   }
 }
 

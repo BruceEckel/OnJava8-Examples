@@ -2,7 +2,7 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-// Applying @Unit to generics.
+// Applying @Unit to generics
 package annotations;
 import onjava.atunit.*;
 import onjava.*;
@@ -26,7 +26,8 @@ public class StackLStringTest extends StackL<String> {
     assert top().equals("B");
     assert top().equals("B");
   }
-  public static void main(String[] args) throws Exception {
+  public static void
+  main(String[] args) throws Exception {
     OSExecute.command("java -cp .. " +
       "onjava.atunit.AtUnit StackLStringTest.class");
   }

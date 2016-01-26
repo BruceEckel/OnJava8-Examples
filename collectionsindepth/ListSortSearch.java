@@ -2,7 +2,7 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-// Sorting and searching Lists with Collections utilities.
+// Sorting and searching Lists with Collections utilities
 import java.util.*;
 
 public class ListSortSearch {
@@ -28,7 +28,8 @@ public class ListSortSearch {
       "Location of " + key + " is " + index +
       ", list.get(" + index + ") = " + list.get(index));
     Collections.sort(list, String.CASE_INSENSITIVE_ORDER);
-    System.out.println("Case-insensitive sorted: " + list);
+    System.out.println(
+      "Case-insensitive sorted: " + list);
     key = list.get(7);
     index = Collections.binarySearch(list, key,
       String.CASE_INSENSITIVE_ORDER);

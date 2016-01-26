@@ -3,7 +3,7 @@
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // Controlling serialization by adding your own
-// writeObject() and readObject() methods.
+// writeObject() and readObject() methods
 import java.io.*;
 
 public class SerialCtl implements Serializable {
@@ -25,11 +25,13 @@ public class SerialCtl implements Serializable {
     stream.defaultReadObject();
     b = (String)stream.readObject();
   }
-  public static void main(String[] args)
-  throws IOException, ClassNotFoundException {
+  public static void
+  main(String[] args) throws IOException,
+  ClassNotFoundException {
     SerialCtl sc = new SerialCtl("Test1", "Test2");
     System.out.println("Before:\n" + sc);
-    ByteArrayOutputStream buf= new ByteArrayOutputStream();
+    ByteArrayOutputStream buf =
+      new ByteArrayOutputStream();
     ObjectOutputStream o = new ObjectOutputStream(buf);
     o.writeObject(sc);
     // Now get it back:

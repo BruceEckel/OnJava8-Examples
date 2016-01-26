@@ -2,7 +2,7 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-// A simple static factory method.
+// A simple static factory method
 package patterns.factory;
 import java.util.*;
 import java.util.stream.*;
@@ -52,7 +52,7 @@ class Square extends Shape {
 }
 
 public class ShapeFactory1 {
-  public static void main(String args[]) {
+  public static void main(String[] args) {
     List<Shape> shapes = Stream.of(
       "Circle", "Square",
       "Square", "Circle",

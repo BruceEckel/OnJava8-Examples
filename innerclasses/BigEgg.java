@@ -2,12 +2,14 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-// An inner class cannot be overriden like a method.
+// An inner class cannot be overriden like a method
 
 class Egg {
   private Yolk y;
   protected class Yolk {
-    public Yolk() { System.out.println("Egg.Yolk()"); }
+    public Yolk() {
+      System.out.println("Egg.Yolk()");
+    }
   }
   public Egg() {
     System.out.println("New Egg()");
@@ -17,7 +19,9 @@ class Egg {
 
 public class BigEgg extends Egg {
   public class Yolk {
-    public Yolk() { System.out.println("BigEgg.Yolk()"); }
+    public Yolk() {
+      System.out.println("BigEgg.Yolk()");
+    }
   }
   public static void main(String[] args) {
     new BigEgg();

@@ -23,7 +23,8 @@ public class Range {
     return result;
   }
   // Produce a sequence [start..end) incrementing by step
-  public static int[] range(int start, int end, int step) {
+  public static
+  int[] range(int start, int end, int step) {
     int sz = (end - start)/step;
     int[] result = new int[sz];
     for(int i = 0; i < sz; i++)

@@ -4,7 +4,8 @@
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 
 class Peeking  {
-  public static void main(String[] args) throws Exception {
+  public static void
+  main(String[] args) throws Exception {
     FileToWords.stream("Cheese.dat")
       .skip(21)
       .limit(4)

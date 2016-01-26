@@ -2,7 +2,7 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-// Reconstructing an externalizable object.
+// Reconstructing an externalizable object
 import java.io.*;
 
 public class Blip3 implements Externalizable {
@@ -36,8 +36,9 @@ public class Blip3 implements Externalizable {
     s = (String)in.readObject();
     i = in.readInt();
   }
-  public static void main(String[] args)
-  throws IOException, ClassNotFoundException {
+  public static void
+  main(String[] args) throws IOException,
+  ClassNotFoundException {
     System.out.println("Constructing objects:");
     Blip3 b3 = new Blip3("A String ", 47);
     System.out.println(b3);

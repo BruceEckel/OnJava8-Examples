@@ -3,7 +3,7 @@
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // You must go through a few gyrations
-// to add cloning to your own class.
+// to add cloning to your own class
 import java.util.*;
 
 class Int2 implements Cloneable {
@@ -15,14 +15,12 @@ class Int2 implements Cloneable {
     return Integer.toString(i);
   }
   @Override
-  public Object clone() {
-    Object o = null;
+  public Int2 clone() {
     try {
-      o = super.clone();
+      return (Int2)super.clone();
     } catch(CloneNotSupportedException e) {
-      System.err.println("Int2 can't clone");
+      throw new RuntimeException(e);
     }
-    return o;
   }
 }
 
@@ -36,7 +34,7 @@ public class AddingClone {
   @SuppressWarnings("unchecked")
   public static void main(String[] args) {
     Int2 x = new Int2(10);
-    Int2 x2 = (Int2)x.clone();
+    Int2 x2 = x.clone();
     x2.increment();
     System.out.println(
       "x = " + x + ", x2 = " + x2);
@@ -51,7 +49,7 @@ public class AddingClone {
       (ArrayList<Int2>)v.clone();
     // Now clone each element:
     for(int i = 0; i < v.size(); i++)
-      v2.set(i, (Int2)v2.get(i).clone());
+      v2.set(i, v2.get(i).clone());
     // Increment all v2's elements:
     for(Int2 i2 : v2)
       i2.increment();

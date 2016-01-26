@@ -2,7 +2,7 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-// Demonstration of "visitor" pattern.
+// Demonstration of "visitor" pattern
 package patterns.visitor;
 import java.util.*;
 import java.util.function.*;
@@ -74,14 +74,14 @@ class FlowerFactory {
     Arrays.asList(Gladiolus::new,
       Renuculus::new, Chrysanthemum::new);
   final static int sz = flowers.size();
-  private static Random rand = new Random(47);
+  private static SplittableRandom rand = new SplittableRandom(47);
   public static Flower newFlower() {
     return flowers.get(rand.nextInt(sz)).get();
   }
 }
 
 public class BeeAndFlowers {
-  public static void main(String args[]) {
+  public static void main(String[] args) {
     List<Flower> flowers =
       Stream.generate(FlowerFactory::newFlower)
         .limit(10)

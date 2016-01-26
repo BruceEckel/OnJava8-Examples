@@ -2,6 +2,7 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
+import java.util.stream.*;
 
 class FixedSizeStack<T> {
   private int index = 0;
@@ -19,12 +20,10 @@ public class GenericCast {
   public static void main(String[] args) {
     FixedSizeStack<String> strings =
       new FixedSizeStack<>(SIZE);
-    for(String s : "A B C D E F G H I J".split(" "))
-      strings.push(s);
-    for(int i = 0; i < SIZE; i++) {
-      String s = strings.pop();
-      System.out.print(s + " ");
-    }
+    Stream.of("A B C D E F G H I J".split(" "))
+      .forEach(s -> strings.push(s));
+    for(int i = 0; i < SIZE; i++)
+      System.out.print(strings.pop() + " ");
   }
 }
 /* Output:

@@ -16,7 +16,7 @@ public class ConstructorException {
   public static void main(String[] args) {
     try(First f = new First();
         SecondExcept s = new SecondExcept();
-        Second s2 = new Second();) {
+        Second s2 = new Second()) {
       System.out.println("In body");
     } catch(CE e) {
       System.out.println("Caught: " + e);

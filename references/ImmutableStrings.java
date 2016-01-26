@@ -2,7 +2,7 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-// Demonstrating StringBuffer.
+// Demonstrating StringBuilder
 
 public class ImmutableStrings {
   public static void main(String[] args) {
@@ -10,9 +10,9 @@ public class ImmutableStrings {
     String s = "abc" + foo + "def"
       + Integer.toString(47);
     System.out.println(s);
-    // The "equivalent" using StringBuffer:
-    StringBuffer sb =
-      new StringBuffer("abc"); // Creates String
+    // The "equivalent" using StringBuilder:
+    StringBuilder sb =
+      new StringBuilder("abc"); // Creates String
     sb.append(foo);
     sb.append("def"); // Creates String
     sb.append(Integer.toString(47));

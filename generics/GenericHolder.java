@@ -13,7 +13,7 @@ public class GenericHolder<T> {
       new GenericHolder<Automobile>();
     h3.set(new Automobile()); // type checked
     Automobile a = h3.get(); // No cast needed
-    // h3.set("Not an Automobile"); // Error
-    // h3.set(1); // Error
+    //- h3.set("Not an Automobile"); // Error
+    //- h3.set(1); // Error
   }
 }

@@ -5,21 +5,21 @@
 package onjava;
 import java.lang.reflect.*;
 import java.util.*;
+import java.util.stream.*;
 
 public class CollectionMethodDifferences {
   static Set<String> methodSet(Class<?> type) {
-    Set<String> result = new TreeSet<>();
-    for(Method m : type.getMethods())
-      result.add(m.getName());
-    return result;
+    return Arrays.stream(type.getMethods())
+      .map(Method::getName)
+      .collect(Collectors.toCollection(TreeSet::new));
   }
   static void interfaces(Class<?> type) {
     System.out.print("Interfaces in " +
       type.getSimpleName() + ": ");
-    List<String> result = new ArrayList<>();
-    for(Class<?> c : type.getInterfaces())
-      result.add(c.getSimpleName());
-    System.out.println(result);
+    System.out.println(
+      Arrays.stream(type.getInterfaces())
+        .map(Class::getSimpleName)
+        .collect(Collectors.toList()));
   }
   static Set<String> object = methodSet(Object.class);
   static { object.add("clone"); }

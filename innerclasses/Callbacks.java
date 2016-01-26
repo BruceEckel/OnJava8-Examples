@@ -40,7 +40,7 @@ class Callee2 extends MyIncrement {
     @Override
     public void increment() {
       // Specify outer-class method, otherwise
-      // you'd get an infinite recursion:
+      // you'll get an infinite recursion:
       Callee2.this.increment();
     }
   }
@@ -51,7 +51,9 @@ class Callee2 extends MyIncrement {
 
 class Caller {
   private Incrementable callbackReference;
-  Caller(Incrementable cbh) { callbackReference = cbh; }
+  Caller(Incrementable cbh) {
+    callbackReference = cbh;
+  }
   void go() { callbackReference.increment(); }
 }
 
@@ -61,7 +63,8 @@ public class Callbacks {
     Callee2 c2 = new Callee2();
     MyIncrement.f(c2);
     Caller caller1 = new Caller(c1);
-    Caller caller2 = new Caller(c2.getCallbackReference());
+    Caller caller2 =
+      new Caller(c2.getCallbackReference());
     caller1.go();
     caller1.go();
     caller2.go();

@@ -8,11 +8,11 @@ import onjava.*;
 import static onjava.Tuple.*;
 
 class MixinProxy implements InvocationHandler {
-  Map<String,Object> delegatesByMethod;
+  Map<String, Object> delegatesByMethod;
   @SuppressWarnings("unchecked")
-  public MixinProxy(Tuple2<Object,Class<?>>... pairs) {
+  public MixinProxy(Tuple2<Object, Class<?>>... pairs) {
     delegatesByMethod = new HashMap<>();
-    for(Tuple2<Object,Class<?>> pair : pairs) {
+    for(Tuple2<Object, Class<?>> pair : pairs) {
       for(Method method : pair._2.getMethods()) {
         String methodName = method.getName();
         // The first interface in the map
@@ -47,7 +47,8 @@ public class DynamicProxyMixin {
     Object mixin = MixinProxy.newInstance(
       tuple(new BasicImp(), Basic.class),
       tuple(new TimeStampedImp(), TimeStamped.class),
-      tuple(new SerialNumberedImp(),SerialNumbered.class));
+      tuple(new SerialNumberedImp(),
+          SerialNumbered.class));
     Basic b = (Basic)mixin;
     TimeStamped t = (TimeStamped)mixin;
     SerialNumbered s = (SerialNumbered)mixin;

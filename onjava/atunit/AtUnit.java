@@ -2,7 +2,7 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-// An annotation-based unit-test framework.
+// An annotation-based unit-test framework
 package onjava.atunit;
 import java.lang.reflect.*;
 import java.io.*;
@@ -16,7 +16,8 @@ public class AtUnit implements ProcessFiles.Strategy {
   static List<String> failedTests= new ArrayList<>();
   static long testsRun = 0;
   static long failures = 0;
-  public static void main(String[] args) throws Exception {
+  public static void
+  main(String[] args) throws Exception {
     ClassLoader.getSystemClassLoader()
       .setDefaultAssertionStatus(true); // Enable asserts
     new ProcessFiles(new AtUnit(), "class").start(args);
@@ -24,7 +25,8 @@ public class AtUnit implements ProcessFiles.Strategy {
       System.out.println("OK (" + testsRun + " tests)");
     else {
       System.out.println("(" + testsRun + " tests)");
-      System.out.println("\n>>> " + failures + " FAILURE" +
+      System.out.println(
+        "\n>>> " + failures + " FAILURE" +
         (failures > 1 ? "S" : "") + " <<<");
       for(String failed : failedTests)
         System.out.println("  " + failed);

@@ -10,7 +10,7 @@ interface StringProcessor extends Processor {
   String process(Object input);  // (1)
   String s = // (2)
   "If she weighs the same as a duck, she's made of wood";
-  static void main(String[] args) { // (3)
+  public static void main(String[] args) { // (3)
     Applicator.apply(new Upcase(), s);
     Applicator.apply(new Downcase(), s);
     Applicator.apply(new Splitter(), s);
@@ -18,8 +18,8 @@ interface StringProcessor extends Processor {
 }
 
 class Upcase implements StringProcessor {
-  @Override
-  public String process(Object input) { // Covariant return
+  @Override // Covariant return:
+  public String process(Object input) {
     return ((String)input).toUpperCase();
   }
 }

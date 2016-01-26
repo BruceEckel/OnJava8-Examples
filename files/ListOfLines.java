@@ -6,7 +6,8 @@ import java.util.*;
 import java.nio.file.*;
 
 public class ListOfLines {
-  public static void main(String[] args) throws Exception {
+  public static void
+  main(String[] args) throws Exception {
     List<String> lines = Files.readAllLines(
       Paths.get("../streams/Cheese.dat"));
     for(String line : lines) {

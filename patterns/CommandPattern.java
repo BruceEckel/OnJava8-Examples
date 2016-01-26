@@ -5,7 +5,7 @@
 import java.util.*;
 
 public class CommandPattern {
-  public static void main(String args[]) {
+  public static void main(String[] args) {
     List<Runnable> macro = Arrays.asList(
       () -> System.out.print("Hello "),
       () -> System.out.print("World! "),

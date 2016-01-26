@@ -2,13 +2,14 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-// Sneaking around package hiding.
+// Sneaking around package hiding
 import typeinfo.interfacea.*;
 import typeinfo.packageaccess.*;
 import java.lang.reflect.*;
 
 public class HiddenImplementation {
-  public static void main(String[] args) throws Exception {
+  public static void
+  main(String[] args) throws Exception {
     A a = HiddenC.makeA();
     a.f();
     System.out.println(a.getClass().getName());
@@ -24,7 +25,8 @@ public class HiddenImplementation {
     callHiddenMethod(a, "v");
     callHiddenMethod(a, "w");
   }
-  static void callHiddenMethod(Object a, String methodName)
+  static void
+  callHiddenMethod(Object a, String methodName)
   throws Exception {
     Method g = a.getClass().getDeclaredMethod(methodName);
     g.setAccessible(true);

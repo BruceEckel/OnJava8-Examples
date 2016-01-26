@@ -2,7 +2,7 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-// Simple demonstration of the State pattern.
+// Simple demonstration of the State pattern
 
 interface StateBase {
   void f();
@@ -69,7 +69,7 @@ public class StateDemo {
     b.g();
     b.h();
   }
-  public static void main(String args[]) {
+  public static void main(String[] args) {
     StateBase b =
       new State(new Implementation1());
     test(b);

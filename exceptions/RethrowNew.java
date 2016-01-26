@@ -2,7 +2,7 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-// Rethrow a different object from the one you caught.
+// Rethrow a different object from the one you caught
 
 class OneException extends Exception {
   public OneException(String s) { super(s); }

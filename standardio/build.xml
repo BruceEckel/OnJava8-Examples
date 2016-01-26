@@ -16,7 +16,7 @@
   <target name="runconsole" description="Compile and run" depends="build">
     <jrunconsole cls="ChangeSystemOut" />
     <jrunconsole cls="Echo" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
-
+    <jrunconsole cls="OSExecuteDemo" />
     <jrunconsole cls="Redirecting" />
   </target>
 

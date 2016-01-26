@@ -2,16 +2,19 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-// Demonstrating bounds in Java generics.
+// Bounds in Java generics
 import java.util.*;
 
 interface SuperPower {}
+
 interface XRayVision extends SuperPower {
   void seeThroughWalls();
 }
+
 interface SuperHearing extends SuperPower {
   void hearSubtleNoises();
 }
+
 interface SuperSmell extends SuperPower {
   void trackBySmell();
 }
@@ -42,8 +45,8 @@ class SuperHearSmell implements SuperHearing, SuperSmell {
   public void trackBySmell() {}
 }
 
-class DogBoy extends CanineHero<SuperHearSmell> {
-  DogBoy() { super(new SuperHearSmell()); }
+class DogPerson extends CanineHero<SuperHearSmell> {
+  DogPerson() { super(new SuperHearSmell()); }
 }
 
 public class EpicBattle {
@@ -58,12 +61,12 @@ public class EpicBattle {
     hero.getPower().trackBySmell();
   }
   public static void main(String[] args) {
-    DogBoy dogBoy = new DogBoy();
-    useSuperHearing(dogBoy);
-    superFind(dogBoy);
+    DogPerson dogPerson = new DogPerson();
+    useSuperHearing(dogPerson);
+    superFind(dogPerson);
     // You can do this:
-    List<? extends SuperHearing> audioBoys;
+    List<? extends SuperHearing> audioPeople;
     // But you can't do this:
-    // List<? extends SuperHearing & SuperSmell> dogBoys;
+    // List<? extends SuperHearing & SuperSmell> dogPs;
   }
 }

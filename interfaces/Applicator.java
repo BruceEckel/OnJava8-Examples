@@ -41,7 +41,7 @@ public class Applicator {
     System.out.println(p.process(s));
   }
   public static String s =
-    "Disagreement with beliefs is by definition incorrect";
+  "Disagreement with beliefs is by definition incorrect";
   public static void main(String[] args) {
     apply(new Upcase(), s);
     apply(new Downcase(), s);

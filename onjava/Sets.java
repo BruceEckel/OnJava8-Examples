@@ -25,7 +25,8 @@ public class Sets {
     return result;
   }
   // Reflexive--everything not in the intersection:
-  public static <T> Set<T> complement(Set<T> a, Set<T> b) {
+  public static
+  <T> Set<T> complement(Set<T> a, Set<T> b) {
     return difference(union(a, b), intersection(a, b));
   }
 }

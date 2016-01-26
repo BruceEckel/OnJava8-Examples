@@ -3,7 +3,7 @@
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // A constructor to copy an object of the same
-// type, as an attempt to create a local copy.
+// type, as an attempt to create a local copy
 import java.lang.reflect.*;
 
 class FruitQualities {
@@ -40,7 +40,7 @@ class Fruit {
   private FruitQualities fq;
   private int seeds;
   private Seed[] s;
-  public Fruit(FruitQualities q, int seedCount){
+  public Fruit(FruitQualities q, int seedCount) {
     fq = q;
     seeds = seedCount;
     s = new Seed[seeds];
@@ -59,9 +59,9 @@ class Fruit {
       s[i] = new Seed(f.s[i]);
     // Other copy-construction activities...
   }
-  // To allow derived constructors (or other
+  // This allows derived constructors (or other
   // methods) to put in different qualities:
-  protected void addQualities(FruitQualities q){
+  protected void addQualities(FruitQualities q) {
     fq = q;
   }
   protected FruitQualities getQualities() {
@@ -112,12 +112,12 @@ class GreenZebra extends Tomato {
 public class CopyConstructor {
   public static void ripen(Tomato t) {
     // Use the "copy constructor":
-    t = new Tomato(t);
+    t = new Tomato(t); // (1)
     System.out.println("In ripen, t is a " +
       t.getClass().getName());
   }
   public static void slice(Fruit f) {
-    f = new Fruit(f); // Hmmm... will this work?
+    f = new Fruit(f); // Hmmm... will this work? (2)
     System.out.println("In slice, f is a " +
       f.getClass().getName());
   }

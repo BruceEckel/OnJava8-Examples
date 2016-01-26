@@ -16,7 +16,8 @@ public class SubmitSwingProgram extends JFrame {
     setVisible(true);
   }
   static SubmitSwingProgram ssp;
-  public static void main(String[] args) throws Exception {
+  public static void
+  main(String[] args) throws Exception {
     SwingUtilities.invokeLater(() ->
       ssp = new SubmitSwingProgram());
     TimeUnit.SECONDS.sleep(1);

@@ -5,7 +5,8 @@
 import java.nio.*;
 
 public class UsingBuffers {
-  private static void symmetricScramble(CharBuffer buffer){
+  private static
+  void symmetricScramble(CharBuffer buffer) {
     while(buffer.hasRemaining()) {
       buffer.mark();
       char c1 = buffer.get();

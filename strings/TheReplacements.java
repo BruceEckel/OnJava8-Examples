@@ -13,7 +13,8 @@ import java.util.stream.*;
     extracted block. !*/
 
 public class TheReplacements {
-  public static void main(String[] args) throws Exception {
+  public static void
+  main(String[] args) throws Exception {
     String s = Files.lines(
       Paths.get("TheReplacements.java"))
       .collect(Collectors.joining("\n"));

@@ -26,23 +26,27 @@ public class APerson {
     person.appendChild(lastName);
     return person;
   }
-  // Constructor to restore a APerson from an XML Element:
+  // Constructor restores a APerson from an XML Element:
   public APerson(Element person) {
-    first= person.getFirstChildElement("first").getValue();
-    last = person.getFirstChildElement("last").getValue();
+    first =
+      person.getFirstChildElement("first").getValue();
+    last =
+      person.getFirstChildElement("last").getValue();
   }
   @Override
   public String toString() { return first + " " + last; }
   // Make it human-readable:
   public static void
   format(OutputStream os, Document doc) throws Exception {
-    Serializer serializer= new Serializer(os,"ISO-8859-1");
+    Serializer serializer =
+      new Serializer(os,"ISO-8859-1");
     serializer.setIndent(4);
     serializer.setMaxLength(60);
     serializer.write(doc);
     serializer.flush();
   }
-  public static void main(String[] args) throws Exception {
+  public static void
+  main(String[] args) throws Exception {
     List<APerson> people = Arrays.asList(
       new APerson("Dr. Bunsen", "Honeydew"),
       new APerson("Gonzo", "The Great"),
@@ -53,8 +57,8 @@ public class APerson {
       root.appendChild(p.getXML());
     Document doc = new Document(root);
     format(System.out, doc);
-    format(new BufferedOutputStream(new FileOutputStream(
-      "People.xml")), doc);
+    format(new BufferedOutputStream(
+      new FileOutputStream("People.xml")), doc);
   }
 }
 /* Output:

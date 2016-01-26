@@ -2,7 +2,7 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-// Variations on the Adapter pattern.
+// Variations on the Adapter pattern
 package patterns.adapt;
 
 class WhatIHave {
@@ -66,7 +66,7 @@ class WhatIHave3 extends WhatIHave {
 }
 
 public class Adapter {
-  public static void main(String args[]) {
+  public static void main(String[] args) {
     WhatIUse whatIUse = new WhatIUse();
     WhatIHave whatIHave = new WhatIHave();
     WhatIWant adapt= new ProxyAdapter(whatIHave);

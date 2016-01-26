@@ -27,3 +27,7 @@ int main() {
   speak(d);
   speak(r);
 }
+/* Output:
+Arf!
+Click!
+*/

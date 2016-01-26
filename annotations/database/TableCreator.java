@@ -2,7 +2,7 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-// Reflection-based annotation processor.
+// Reflection-based annotation processor
 // {Args: annotations.database.Member}
 package annotations.database;
 import java.lang.annotation.*;
@@ -10,7 +10,8 @@ import java.lang.reflect.*;
 import java.util.*;
 
 public class TableCreator {
-  public static void main(String[] args) throws Exception {
+  public static void
+  main(String[] args) throws Exception {
     if(args.length < 1) {
       System.out.println("arguments: annotated classes");
       System.exit(0);
@@ -30,7 +31,8 @@ public class TableCreator {
       List<String> columnDefs = new ArrayList<>();
       for(Field field : cl.getDeclaredFields()) {
         String columnName = null;
-        Annotation[] anns = field.getDeclaredAnnotations();
+        Annotation[] anns =
+          field.getDeclaredAnnotations();
         if(anns.length < 1)
           continue; // Not a db table column
         if(anns[0] instanceof SQLInteger) {
@@ -57,7 +59,8 @@ public class TableCreator {
         StringBuilder createCommand = new StringBuilder(
           "CREATE TABLE " + tableName + "(");
         for(String columnDef : columnDefs)
-          createCommand.append("\n    " + columnDef + ",");
+          createCommand.append(
+            "\n    " + columnDef + ",");
         // Remove trailing comma
         String tableCreate = createCommand.substring(
           0, createCommand.length() - 1) + ");";

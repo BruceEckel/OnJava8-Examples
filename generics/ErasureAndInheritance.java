@@ -15,7 +15,7 @@ class Derived2 extends GenericBase {} // No warning
 
 // class Derived3 extends GenericBase<?> {}
 // Strange error:
-//   unexpected type found : ?
+//   unexpected type
 //   required: class or interface without bounds
 
 public class ErasureAndInheritance {

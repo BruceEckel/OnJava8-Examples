@@ -2,7 +2,7 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-// Demonstration of File dialog boxes.
+// Demonstration of File dialog boxes
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -17,22 +17,7 @@ public class FileChooserTest extends JFrame {
     save = new JButton("Save");
   public FileChooserTest() {
     JPanel p = new JPanel();
-    open.addActionListener(new OpenL());
-    p.add(open);
-    save.addActionListener(new SaveL());
-    p.add(save);
-    add(p, BorderLayout.SOUTH);
-    dir.setEditable(false);
-    fileName.setEditable(false);
-    p = new JPanel();
-    p.setLayout(new GridLayout(2,1));
-    p.add(fileName);
-    p.add(dir);
-    add(p, BorderLayout.NORTH);
-  }
-  class OpenL implements ActionListener {
-    @Override
-    public void actionPerformed(ActionEvent e) {
+    open.addActionListener(event -> {
       JFileChooser c = new JFileChooser();
       // Demonstrate "Open" dialog:
       int rVal = c.showOpenDialog(FileChooserTest.this);
@@ -44,11 +29,9 @@ public class FileChooserTest extends JFrame {
         fileName.setText("You pressed cancel");
         dir.setText("");
       }
-    }
-  }
-  class SaveL implements ActionListener {
-    @Override
-    public void actionPerformed(ActionEvent e) {
+    });
+    p.add(open);
+    save.addActionListener(event -> {
       JFileChooser c = new JFileChooser();
       // Demonstrate "Save" dialog:
       int rVal = c.showSaveDialog(FileChooserTest.this);
@@ -60,7 +43,16 @@ public class FileChooserTest extends JFrame {
         fileName.setText("You pressed cancel");
         dir.setText("");
       }
-    }
+    });
+    p.add(save);
+    add(p, BorderLayout.SOUTH);
+    dir.setEditable(false);
+    fileName.setEditable(false);
+    p = new JPanel();
+    p.setLayout(new GridLayout(2,1));
+    p.add(fileName);
+    p.add(dir);
+    add(p, BorderLayout.NORTH);
   }
   public static void main(String[] args) {
     run(new FileChooserTest(), 250, 150);

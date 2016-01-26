@@ -3,45 +3,44 @@
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 import onjava.*;
+import java.util.*;
 import java.util.function.*;
 
 // Fill an array using a generator:
-class FArray {
-  public static <T> T[] fill(T[] a, Supplier<T> gen) {
+interface FillArray {
+  static <T> T[] fill(T[] a, Supplier<T> gen) {
     for(int i = 0; i < a.length; i++)
       a[i] = gen.get();
+    return a;
+  }
+  static int[] fill(int[] a, IntSupplier gen) {
+    for(int i = 0; i < a.length; i++)
+      a[i] = gen.getAsInt();
+    return a;
+  }
+  static long[] fill(long[] a, LongSupplier gen) {
+    for(int i = 0; i < a.length; i++)
+      a[i] = gen.getAsLong();
+    return a;
+  }
+  static double[] fill(double[] a, DoubleSupplier gen) {
+    for(int i = 0; i < a.length; i++)
+      a[i] = gen.getAsDouble();
     return a;
   }
 }
 
 public class PrimitiveGenericTest {
   public static void main(String[] args) {
-    String[] strings = FArray.fill(
-      new String[7], new RandomSupplier.String(10));
-    for(String s : strings)
-      System.out.println(s);
-    Integer[] integers = FArray.fill(
-      new Integer[7], new RandomSupplier.Integer());
-    for(int i: integers)
-      System.out.println(i);
-    // Autoboxing won't save you here. This won't compile:
-    // int[] b =
-    //   FArray.fill(new int[7], new RandIntSupplier());
+    String[] strings = FillArray.fill(
+      new String[5], new Rand.String(9));
+    System.out.println(Arrays.toString(strings));
+    int[] integers = FillArray.fill(
+      new int[9], new Rand.int_());
+    System.out.println(Arrays.toString(integers));
   }
 }
 /* Output:
-YNzbrnyGcF
-OWZnTcQrGs
-eGZMmJMRoE
-suEcUOneOE
-dLsmwHLGEa
-hKcxrEqUCB
-bkInaMesbt
-7052
-6665
-2654
-3909
-5202
-2209
-5458
+[YNzbrnyGc, FOWZnTcQr, GseGZMmJM, RoEsuEcUO, neOEdLsmw]
+[8689, 7185, 6992, 5746, 3976, 2447, 5368, 1854, 1395]
 */

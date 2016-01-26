@@ -2,24 +2,20 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-// Applies Test objects to lists of different collections.
+// Applies Test objects to lists of different collections
 import java.util.*;
+import java.time.*;
 
 public class Tester<C> {
   public static int fieldWidth = 8;
-  public static TestParam[] defaultParams= TestParam.array(
+  public static
+  TestParam[] defaultParams= TestParam.array(
     10, 5000, 100, 5000, 1000, 5000, 10000, 500);
   // Override this to modify pre-test initialization:
   protected C initialize(int size) { return collection; }
   protected C collection;
   private String headline = "";
   private List<Test<C>> tests;
-  private static String stringField() {
-    return "%" + fieldWidth + "s";
-  }
-  private static String numberField() {
-    return "%" + fieldWidth + "d";
-  }
   private static int sizeWidth = 5;
   private static String sizeField = "%" + sizeWidth + "s";
   private TestParam[] paramList = defaultParams;
@@ -38,7 +34,8 @@ public class Tester<C> {
     headline = newHeadline;
   }
   // Generic methods for convenience :
-  public static <C> void run(C cntnr, List<Test<C>> tests){
+  public static
+  <C> void run(C cntnr, List<Test<C>> tests) {
     new Tester<>(cntnr, tests).timedTest();
   }
   public static <C> void run(C cntnr,
@@ -61,7 +58,8 @@ public class Tester<C> {
     // Print column headers:
     System.out.format(sizeField, "size");
     for(Test<C> test : tests)
-      System.out.format(stringField(), test.name);
+      System.out.format(
+        "%" + fieldWidth + "s", test.name);
     System.out.println();
   }
   // Run the tests for this collection:
@@ -71,12 +69,14 @@ public class Tester<C> {
       System.out.format(sizeField, param.size);
       for(Test<C> test : tests) {
         C kontainer = initialize(param.size);
-        long start = System.nanoTime();
+        Instant start = Instant.now();
         // Call the overriden method:
         int reps = test.test(kontainer, param);
-        long duration = System.nanoTime() - start;
-        long timePerRep = duration / reps; // Nanoseconds
-        System.out.format(numberField(), timePerRep);
+        Duration elapsed =
+          Duration.between(start, Instant.now());
+        Duration timePerRep = elapsed.dividedBy(reps);
+        System.out.format("%" + fieldWidth + "d",
+          timePerRep.toNanos());
       }
       System.out.println();
     }

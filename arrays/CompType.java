@@ -2,10 +2,11 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-// Implementing Comparable in a class.
+// Implementing Comparable in a class
 import java.util.*;
 import java.util.function.*;
 import onjava.*;
+import static onjava.ArrayShow.*;
 
 public class CompType implements Comparable<CompType> {
   int i;
@@ -26,19 +27,17 @@ public class CompType implements Comparable<CompType> {
   public int compareTo(CompType rv) {
     return (i < rv.i ? -1 : (i == rv.i ? 0 : 1));
   }
-  private static Random r = new Random(47);
-  public static Supplier<CompType> generator() {
-    return () ->
-      new CompType(r.nextInt(100), r.nextInt(100));
+  private static SplittableRandom r =
+    new SplittableRandom(47);
+  public static CompType get() {
+    return new CompType(r.nextInt(100), r.nextInt(100));
   }
   public static void main(String[] args) {
-    CompType[] a =
-      Generated.array(new CompType[12], generator());
-    System.out.println("before sorting:");
-    System.out.println(Arrays.toString(a));
+    CompType[] a = new CompType[12];
+    Arrays.setAll(a, n -> get());
+    show("Before sorting", a);
     Arrays.sort(a);
-    System.out.println("after sorting:");
-    System.out.println(Arrays.toString(a));
+    show("After sorting", a);
   }
 }
 /* Output:

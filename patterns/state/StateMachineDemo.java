@@ -2,8 +2,7 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-// Demonstrates StateMachine pattern
-// and Template method.
+// The StateMachine pattern and Template method
 package patterns.state;
 
 interface State {
@@ -73,7 +72,7 @@ class Washer extends StateMachine {
 }
 
 public class StateMachineDemo {
-  public static void main(String args[]) {
+  public static void main(String[] args) {
     new Washer();
   }
 }

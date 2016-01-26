@@ -8,7 +8,7 @@ import org.eclipse.swt.layout.*;
 import java.io.*;
 
 public class DisplayProperties {
-  public static void main(String [] args) {
+  public static void main(String[] args) {
     Display display = new Display();
     Shell shell = new Shell(display);
     shell.setText("Display Properties");

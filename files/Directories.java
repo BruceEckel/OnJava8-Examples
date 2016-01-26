@@ -22,7 +22,8 @@ public class Directories {
     if(!Files.exists(test))
       Files.createDirectory(test);
   }
-  public static void main(String[] args) throws Exception {
+  public static void
+  main(String[] args) throws Exception {
     refreshTestDir();
     Files.createFile(test.resolve("Hello.txt"));
     Path variant = makeVariant();

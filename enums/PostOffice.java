@@ -2,7 +2,7 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-// Modeling a post office.
+// Modeling a post office
 import java.util.*;
 import onjava.*;
 
@@ -33,14 +33,16 @@ class Mail {
   // Generate test Mail:
   public static Mail randomMail() {
     Mail m = new Mail();
-    m.generalDelivery= Enums.random(GeneralDelivery.class);
+    m.generalDelivery =
+      Enums.random(GeneralDelivery.class);
     m.scannability = Enums.random(Scannability.class);
     m.readability = Enums.random(Readability.class);
     m.address = Enums.random(Address.class);
     m.returnAddress = Enums.random(ReturnAddress.class);
     return m;
   }
-  public static Iterable<Mail> generator(final int count) {
+  public static
+  Iterable<Mail> generator(final int count) {
     return new Iterable<Mail>() {
       int n = count;
       @Override

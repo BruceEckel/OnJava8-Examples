@@ -2,15 +2,19 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-// Exploring the meaning of wildcards.
+// Exploring the meaning of wildcards
 
 public class Wildcards {
    // Raw argument:
   static void rawArgs(Holder holder, Object arg) {
-    // holder.set(arg); // Warning:
-    //   Unchecked call to set(T) as a
-    //   member of the raw type Holder
-    // holder.set(new Wildcards()); // Same warning
+    //- holder.set(arg);
+    // warning: [unchecked] unchecked call to set(T)
+    // as a member of the raw type Holder
+    //     holder.set(arg);
+    //               ^
+    //   where T is a type-variable:
+    //     T extends Object declared in class Holder
+    // 1 warning
 
     // Can't do this; don't have any 'T':
     // T t = holder.get();
@@ -20,10 +24,20 @@ public class Wildcards {
   }
   // Similar to rawArgs(), but errors instead of warnings:
   static void unboundedArg(Holder<?> holder, Object arg) {
-    // holder.set(arg); // Error:
-    //   set(capture of ?) in Holder<capture of ?>
-    //   cannot be applied to (Object)
-    // holder.set(new Wildcards()); // Same error
+    //- holder.set(arg);
+    // error: method set in class Holder<T>
+    // cannot be applied to given types;
+    //     holder.set(arg);
+    //           ^
+    //   required: CAP#1
+    //   found: Object
+    //   reason: argument mismatch;
+    //     Object cannot be converted to CAP#1
+    //   where T is a type-variable:
+    //     T extends Object declared in class Holder
+    //   where CAP#1 is a fresh type-variable:
+    //     CAP#1 extends Object from capture of ?
+    // 1 error
 
     // Can't do this; don't have any 'T':
     // T t = holder.get();
@@ -40,17 +54,40 @@ public class Wildcards {
   }
   static <T>
   T wildSubtype(Holder<? extends T> holder, T arg) {
-    // holder.set(arg); // Error:
-    //   set(capture of ? extends T) in
-    //   Holder<capture of ? extends T>
-    //   cannot be applied to (T)
+    //- holder.set(arg);
+    // error: method set in class Holder<T#2>
+    // cannot be applied to given types;
+    //     holder.set(arg);
+    //           ^
+    //   required: CAP#1
+    //   found: T#1
+    //   reason: argument mismatch;
+    //     T#1 cannot be converted to CAP#1
+    //   where T#1,T#2 are type-variables:
+    //     T#1 extends Object declared in method
+    //     <T#1>wildSubtype(Holder<? extends T#1>,T#1)
+    //     T#2 extends Object declared in class Holder
+    //   where CAP#1 is a fresh type-variable:
+    //     CAP#1 extends T#1 from capture of ? extends T#1
+    // 1 error
+
     return holder.get();
   }
   static <T>
   void wildSupertype(Holder<? super T> holder, T arg) {
     holder.set(arg);
-    // T t = holder.get();  // Error:
-    //   Incompatible types: found Object, required T
+    //- T t = holder.get();
+    // error: incompatible types:
+    // CAP#1 cannot be converted to T
+    //     T t = holder.get();
+    //                     ^
+    //   where T is a type-variable:
+    //     T extends Object declared in method
+    //       <T>wildSupertype(Holder<? super T>,T)
+    //   where CAP#1 is a fresh type-variable:
+    //     CAP#1 extends Object super:
+    //       T from capture of ? super T
+    // 1 error
 
     // OK, but type information is lost:
     Object obj = holder.get();
@@ -74,49 +111,173 @@ public class Wildcards {
     unboundedArg(unbounded, lng);
     unboundedArg(bounded, lng);
 
-    // Object r1 = exact1(raw); // Warnings:
-    //   Unchecked conversion from Holder to Holder<T>
-    //   Unchecked method invocation: exact1(Holder<T>)
-    //   is applied to (Holder)
+    //- Object r1 = exact1(raw);
+    // warning: [unchecked] unchecked method invocation:
+    // method exact1 in class Wildcards is applied
+    // to given types
+    //      Object r1 = exact1(raw);
+    //                        ^
+    //   required: Holder<T>
+    //   found: Holder
+    //   where T is a type-variable:
+    //     T extends Object declared in
+    //     method <T>exact1(Holder<T>)
+    // warning: [unchecked] unchecked conversion
+    //      Object r1 = exact1(raw);
+    //                         ^
+    //   required: Holder<T>
+    //   found:    Holder
+    //   where T is a type-variable:
+    //     T extends Object declared in
+    //     method <T>exact1(Holder<T>)
+    // 2 warnings
+
     Long r2 = exact1(qualified);
     Object r3 = exact1(unbounded); // Must return Object
     Long r4 = exact1(bounded);
 
-    // Long r5 = exact2(raw, lng); // Warnings:
-    //   Unchecked conversion from Holder to Holder<Long>
-    //   Unchecked method invocation: exact2(Holder<T>,T)
-    //   is applied to (Holder,Long)
-    Long r6 = exact2(qualified, lng);
-    // Long r7 = exact2(unbounded, lng); // Error:
-    //   exact2(Holder<T>,T) cannot be applied to
-    //   (Holder<capture of ?>,Long)
-    // Long r8 = exact2(bounded, lng); // Error:
-    //   exact2(Holder<T>,T) cannot be applied
-    //   to (Holder<capture of ? extends Long>,Long)
+    //- Long r5 = exact2(raw, lng);
+    // warning: [unchecked] unchecked method invocation:
+    // method exact2 in class Wildcards is
+    // applied to given types
+    //     Long r5 = exact2(raw, lng);
+    //                     ^
+    //   required: Holder<T>,T
+    //   found: Holder,Long
+    //   where T is a type-variable:
+    //     T extends Object declared in
+    //       method <T>exact2(Holder<T>,T)
+    // warning: [unchecked] unchecked conversion
+    //     Long r5 = exact2(raw, lng);
+    //                      ^
+    //   required: Holder<T>
+    //   found:    Holder
+    //   where T is a type-variable:
+    //     T extends Object declared in
+    //       method <T>exact2(Holder<T>,T)
+    // 2 warnings
 
-    // Long r9 = wildSubtype(raw, lng); // Warnings:
-    //   Unchecked conversion from Holder
-    //   to Holder<? extends Long>
-    //   Unchecked method invocation:
-    //   wildSubtype(Holder<? extends T>,T) is
-    //   applied to (Holder,Long)
+    Long r6 = exact2(qualified, lng);
+
+    //- Long r7 = exact2(unbounded, lng);
+    // error: method exact2 in class Wildcards
+    // cannot be applied to given types;
+    //     Long r7 = exact2(unbounded, lng);
+    //               ^
+    //   required: Holder<T>,T
+    //   found: Holder<CAP#1>,Long
+    //   reason: inference variable T has
+    //     incompatible bounds
+    //     equality constraints: CAP#1
+    //     lower bounds: Long
+    //   where T is a type-variable:
+    //     T extends Object declared in
+    //       method <T>exact2(Holder<T>,T)
+    //   where CAP#1 is a fresh type-variable:
+    //     CAP#1 extends Object from capture of ?
+    // 1 error
+
+    //- Long r8 = exact2(bounded, lng);
+    // error: method exact2 in class Wildcards
+    // cannot be applied to given types;
+    //      Long r8 = exact2(bounded, lng);
+    //                ^
+    //   required: Holder<T>,T
+    //   found: Holder<CAP#1>,Long
+    //   reason: inference variable T
+    //     has incompatible bounds
+    //     equality constraints: CAP#1
+    //     lower bounds: Long
+    //   where T is a type-variable:
+    //     T extends Object declared in
+    //       method <T>exact2(Holder<T>,T)
+    //   where CAP#1 is a fresh type-variable:
+    //     CAP#1 extends Long from
+    //       capture of ? extends Long
+    // 1 error
+
+    //- Long r9 = wildSubtype(raw, lng);
+    // warning: [unchecked] unchecked method invocation:
+    // method wildSubtype in class Wildcards
+    // is applied to given types
+    //     Long r9 = wildSubtype(raw, lng);
+    //                          ^
+    //   required: Holder<? extends T>,T
+    //   found: Holder,Long
+    //   where T is a type-variable:
+    //     T extends Object declared in
+    //     method <T>wildSubtype(Holder<? extends T>,T)
+    // warning: [unchecked] unchecked conversion
+    //     Long r9 = wildSubtype(raw, lng);
+    //                           ^
+    //   required: Holder<? extends T>
+    //   found:    Holder
+    //   where T is a type-variable:
+    //     T extends Object declared in
+    //       method <T>wildSubtype(Holder<? extends T>,T)
+    // 2 warnings
+
     Long r10 = wildSubtype(qualified, lng);
     // OK, but can only return Object:
     Object r11 = wildSubtype(unbounded, lng);
     Long r12 = wildSubtype(bounded, lng);
 
-    // wildSupertype(raw, lng); // Warnings:
-    //   Unchecked conversion from Holder
-    //   to Holder<? super Long>
-    //   Unchecked method invocation:
-    //   wildSupertype(Holder<? super T>,T)
-    //   is applied to (Holder,Long)
+    //- wildSupertype(raw, lng);
+    // warning: [unchecked] unchecked method invocation:
+    //   method wildSupertype in class Wildcards
+    //   is applied to given types
+    //     wildSupertype(raw, lng);
+    //                  ^
+    //   required: Holder<? super T>,T
+    //   found: Holder,Long
+    //   where T is a type-variable:
+    //     T extends Object declared in
+    //     method <T>wildSupertype(Holder<? super T>,T)
+    // warning: [unchecked] unchecked conversion
+    //     wildSupertype(raw, lng);
+    //                   ^
+    //   required: Holder<? super T>
+    //   found:    Holder
+    //   where T is a type-variable:
+    //     T extends Object declared in
+    //     method <T>wildSupertype(Holder<? super T>,T)
+    // 2 warnings
+
     wildSupertype(qualified, lng);
-    // wildSupertype(unbounded, lng); // Error:
-    //   wildSupertype(Holder<? super T>,T) cannot be
-    //   applied to (Holder<capture of ?>,Long)
-    // wildSupertype(bounded, lng); // Error:
-    //   wildSupertype(Holder<? super T>,T) cannot be
-    //  applied to (Holder<capture of ? extends Long>,Long)
+
+    //- wildSupertype(unbounded, lng);
+    // error: method wildSupertype in class Wildcards
+    // cannot be applied to given types;
+    //     wildSupertype(unbounded, lng);
+    //     ^
+    //   required: Holder<? super T>,T
+    //   found: Holder<CAP#1>,Long
+    //   reason: cannot infer type-variable(s) T
+    //     (argument mismatch; Holder<CAP#1>
+    //     cannot be converted to Holder<? super T>)
+    //   where T is a type-variable:
+    //     T extends Object declared in
+    //     method <T>wildSupertype(Holder<? super T>,T)
+    //   where CAP#1 is a fresh type-variable:
+    //     CAP#1 extends Object from capture of ?
+    // 1 error
+
+    //- wildSupertype(bounded, lng);
+    // error: method wildSupertype in class Wildcards
+    // cannot be applied to given types;
+    //     wildSupertype(bounded, lng);
+    //     ^
+    //   required: Holder<? super T>,T
+    //   found: Holder<CAP#1>,Long
+    //   reason: cannot infer type-variable(s) T
+    //     (argument mismatch; Holder<CAP#1>
+    //     cannot be converted to Holder<? super T>)
+    //   where T is a type-variable:
+    //     T extends Object declared in
+    //     method <T>wildSupertype(Holder<? super T>,T)
+    //   where CAP#1 is a fresh type-variable:
+    //     CAP#1 extends Long from capture of
+    //     ? extends Long
+    // 1 error
   }
 }

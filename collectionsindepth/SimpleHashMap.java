@@ -2,11 +2,12 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-// A demonstration hashed Map.
+// A demonstration hashed Map
 import java.util.*;
 import onjava.*;
 
-public class SimpleHashMap<K, V> extends AbstractMap<K, V> {
+public
+class SimpleHashMap<K, V> extends AbstractMap<K, V> {
   // Choose a prime number for the hash table
   // size, to achieve a uniform distribution:
   static final int SIZE = 997;
@@ -24,7 +25,8 @@ public class SimpleHashMap<K, V> extends AbstractMap<K, V> {
     LinkedList<MapEntry<K, V>> bucket = buckets[index];
     MapEntry<K, V> pair = new MapEntry<>(key, value);
     boolean found = false;
-    ListIterator<MapEntry<K, V>> it = bucket.listIterator();
+    ListIterator<MapEntry<K, V>> it =
+      bucket.listIterator();
     while(it.hasNext()) {
       MapEntry<K, V> iPair = it.next();
       if(iPair.getKey().equals(key)) {
@@ -58,7 +60,8 @@ public class SimpleHashMap<K, V> extends AbstractMap<K, V> {
     return set;
   }
   public static void main(String[] args) {
-    SimpleHashMap<String,String> m = new SimpleHashMap<>();
+    SimpleHashMap<String,String> m =
+      new SimpleHashMap<>();
     m.putAll(Countries.capitals(25));
     System.out.println(m);
     System.out.println(m.get("ERITREA"));

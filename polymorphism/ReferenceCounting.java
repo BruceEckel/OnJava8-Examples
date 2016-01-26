@@ -2,7 +2,7 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-// Cleaning up shared member objects.
+// Cleaning up shared member objects
 
 class Shared {
   private int refcount = 0;
@@ -17,7 +17,9 @@ class Shared {
       System.out.println("Disposing " + this);
   }
   @Override
-  public String toString() { return "Shared " + id; }
+  public String toString() {
+    return "Shared " + id;
+  }
 }
 
 class Composing {
@@ -34,15 +36,21 @@ class Composing {
     shared.dispose();
   }
   @Override
-  public String toString() { return "Composing " + id; }
+  public String toString() {
+    return "Composing " + id;
+  }
 }
 
 public class ReferenceCounting {
   public static void main(String[] args) {
     Shared shared = new Shared();
-    Composing[] composing = { new Composing(shared),
-      new Composing(shared), new Composing(shared),
-      new Composing(shared), new Composing(shared) };
+    Composing[] composing = {
+      new Composing(shared),
+      new Composing(shared),
+      new Composing(shared),
+      new Composing(shared),
+      new Composing(shared)
+    };
     for(Composing c : composing)
       c.dispose();
   }

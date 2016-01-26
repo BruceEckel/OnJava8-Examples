@@ -2,7 +2,7 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-// Simple demonstration of HashMap.
+// Simple demonstration of HashMap
 import java.util.*;
 
 public class Statistics {
@@ -12,7 +12,7 @@ public class Statistics {
     for(int i = 0; i < 10000; i++) {
       // Produce a number between 0 and 20:
       int r = rand.nextInt(20);
-      Integer freq = m.get(r);
+      Integer freq = m.get(r); // (1)
       m.put(r, freq == null ? 1 : freq + 1);
     }
     System.out.println(m);

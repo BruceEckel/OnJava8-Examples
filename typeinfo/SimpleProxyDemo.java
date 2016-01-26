@@ -31,7 +31,8 @@ class SimpleProxy implements Interface {
   }
   @Override
   public void somethingElse(String arg) {
-    System.out.println("SimpleProxy somethingElse " + arg);
+    System.out.println(
+      "SimpleProxy somethingElse " + arg);
     proxied.somethingElse(arg);
   }
 }

@@ -5,17 +5,17 @@
 
 class Dog:
     def speak(self):
-        System.out.println("Arf!")
+        print("Arf!")
     def sit(self):
-        System.out.println("Sitting")
+        print("Sitting")
     def reproduce(self):
         pass
 
 class Robot:
     def speak(self):
-        System.out.println("Click!")
+        print("Click!")
     def sit(self):
-        System.out.println("Clank!")
+        print("Clank!")
     def oilChange(self):
         pass
 
@@ -27,3 +27,10 @@ a = Dog()
 b = Robot()
 perform(a)
 perform(b)
+
+output = """
+Arf!
+Sitting
+Click!
+Clank!
+"""

@@ -2,15 +2,17 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-// Building up a complex model using generic collections.
+// Building a complex model using generic collections
 import java.util.*;
 import java.util.function.*;
+import onjava.*;
 
 class Product {
   private final int id;
   private String description;
   private double price;
-  public Product(int IDnumber, String descr, double price){
+  public
+  Product(int IDnumber, String descr, double price) {
     id = IDnumber;
     description = descr;
     this.price = price;

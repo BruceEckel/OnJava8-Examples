@@ -6,8 +6,8 @@ import java.io.*;
 
 public class BasicFileOutput {
   static String file = "BasicFileOutput.dat";
-  public static void main(String[] args)
-  throws IOException {
+  public static void
+  main(String[] args) throws IOException {
     try(BufferedReader in = new BufferedReader(
           new StringReader(
             BufferedInputFile.read(

@@ -11,7 +11,7 @@ public class PetCount3 {
   static class Counter
   extends LinkedHashMap<Class<? extends Pet>, Integer> {
     public Counter() {
-      super(MapData.map(LiteralPetCreator.allTypes, 0));
+      super(FilledMap.map(LiteralPetCreator.allTypes, 0));
     }
     public void count(Pet pet) {
       // Class.isInstance() eliminates instanceofs:

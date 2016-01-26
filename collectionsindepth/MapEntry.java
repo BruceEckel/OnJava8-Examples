@@ -2,7 +2,7 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-// A simple Map.Entry for sample Map implementations.
+// A simple Map.Entry for sample Map implementations
 import java.util.*;
 
 public class MapEntry<K, V> implements Map.Entry<K, V> {
@@ -33,10 +33,11 @@ public class MapEntry<K, V> implements Map.Entry<K, V> {
     @SuppressWarnings("unchecked")
     MapEntry<K, V> me = (MapEntry<K, V>)o;
     return
-      (key == null ?
-       me.getKey() == null : key.equals(me.getKey())) &&
-      (value == null ?
-       me.getValue()== null : value.equals(me.getValue()));
+      (key == null ? me.getKey() == null :
+       key.equals(me.getKey()))
+       &&
+      (value == null ? me.getValue() == null :
+       value.equals(me.getValue()));
   }
   @Override
   public String toString() { return key + "=" + value; }

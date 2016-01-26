@@ -4,7 +4,7 @@
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 package onjava;
 
-public class Tuple3<A,B,C> extends Tuple2<A, B> {
+public class Tuple3<A, B, C> extends Tuple2<A, B> {
   public final C _3;
   public Tuple3(A a, B b, C c) {
     super(a, b);

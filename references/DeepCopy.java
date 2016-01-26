@@ -2,8 +2,8 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-// Cloning a composed object.
-// (Install libraries from www.junit.org)
+// Cloning a composed object
+// (Install libraries from junit.org)
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
@@ -13,17 +13,15 @@ class DepthReading implements Cloneable {
     this.depth = depth;
   }
   @Override
-  public Object clone() {
-    Object o = null;
+  public DepthReading clone() {
     try {
-      o = super.clone();
+      return (DepthReading)super.clone();
     } catch(CloneNotSupportedException e) {
       throw new RuntimeException(e);
     }
-    return o;
   }
   public double getDepth() { return depth; }
-  public void setDepth(double depth){
+  public void setDepth(double depth) {
     this.depth = depth;
   }
   @Override
@@ -35,19 +33,17 @@ class DepthReading implements Cloneable {
 class TemperatureReading implements Cloneable {
   private long time;
   private double temperature;
-  public TemperatureReading(double temperature){
+  public TemperatureReading(double temperature) {
     time = System.currentTimeMillis();
     this.temperature = temperature;
   }
   @Override
-  public Object clone() {
-    Object o = null;
+  public TemperatureReading clone() {
     try {
-      o = super.clone();
+      return (TemperatureReading)super.clone();
     } catch(CloneNotSupportedException e) {
       throw new RuntimeException(e);
     }
-    return o;
   }
   public double getTemperature() {
     return temperature;
@@ -70,26 +66,29 @@ class OceanReading implements Cloneable {
     depth = new DepthReading(ddata);
   }
   @Override
-  public Object clone() {
-    OceanReading o = null;
+  public OceanReading clone() {
+    OceanReading or = null;
     try {
-      o = (OceanReading)super.clone();
+      or = (OceanReading)super.clone();
     } catch(CloneNotSupportedException e) {
       throw new RuntimeException(e);
     }
     // Must clone references:
-    o.depth = (DepthReading)o.depth.clone();
-    o.temperature =
-      (TemperatureReading)o.temperature.clone();
-    return o; // Upcasts back to Object
+    or.depth = (DepthReading)or.depth.clone();
+    or.temperature =
+      (TemperatureReading)or.temperature.clone();
+    return or;
   }
   public TemperatureReading getTemperatureReading() {
     return temperature;
   }
-  public void setTemperatureReading(TemperatureReading tr){
+  public void
+  setTemperatureReading(TemperatureReading tr) {
     temperature = tr;
   }
-  public DepthReading getDepthReading() { return depth; }
+  public DepthReading getDepthReading() {
+    return depth;
+  }
   public void setDepthReading(DepthReading dr) {
     this.depth = dr;
   }
@@ -106,8 +105,7 @@ public class DeepCopy {
     OceanReading reading =
       new OceanReading(33.9, 100.5);
     // Now clone it:
-    OceanReading clone =
-      (OceanReading)reading.clone();
+    OceanReading clone = reading.clone();
     TemperatureReading tr =
       clone.getTemperatureReading();
     tr.setTemperature(tr.getTemperature() + 1);

@@ -2,14 +2,15 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-// A very simple version of the "grep" program.
+// A very simple version of the "grep" program
 // {Args: WhitherStringBuilder.java 'return|for|String'}
 import java.util.regex.*;
 import java.nio.file.*;
 import java.util.stream.*;
 
 public class JGrep {
-  public static void main(String[] args) throws Exception {
+  public static void
+  main(String[] args) throws Exception {
     if(args.length < 2) {
       System.out.println("Usage: java JGrep file regex");
       System.exit(0);

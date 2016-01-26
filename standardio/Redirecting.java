@@ -2,12 +2,12 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-// Demonstrates standard I/O redirection.
+// Demonstrates standard I/O redirection
 import java.io.*;
 
 public class Redirecting {
-  public static void main(String[] args)
-  throws IOException {
+  public static void
+  main(String[] args) throws IOException {
     PrintStream console = System.out;
     try(BufferedInputStream in = new BufferedInputStream(
           new FileInputStream("Redirecting.java"));
@@ -18,7 +18,7 @@ public class Redirecting {
       System.setOut(out);
       System.setErr(out);
       BufferedReader br = new BufferedReader(
-              new InputStreamReader(System.in));
+        new InputStreamReader(System.in));
       String s;
       while((s = br.readLine()) != null)
         System.out.println(s);

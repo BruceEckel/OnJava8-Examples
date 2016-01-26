@@ -2,7 +2,7 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-// Unsupported operations in Java collections.
+// Unsupported operations in Java collections
 import java.util.*;
 
 public class Unsupported {
@@ -44,7 +44,8 @@ public class Unsupported {
     test("Modifiable Copy", new ArrayList<>(list));
     test("Arrays.asList()", list);
     test("unmodifiableList()",
-      Collections.unmodifiableList(new ArrayList<>(list)));
+      Collections.unmodifiableList(
+        new ArrayList<>(list)));
   }
 }
 /* Output:

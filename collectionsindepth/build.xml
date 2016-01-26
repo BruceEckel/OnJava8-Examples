@@ -10,20 +10,19 @@
     <jrun cls="AssociativeArray" />
     <jrun cls="Bits" />
     <jrun cls="CanonicalMapping" />
-    <jrun cls="CollectionDataGeneration" />
-    <jrun cls="CollectionDataTest" />
     <jrun cls="CollectionMethods" />
     <jrun cls="CountedString" />
     <jrun cls="DequeTest" />
     <jrun cls="Enumerations" />
     <jrun cls="FailFast" />
+    <jrun cls="FilledCollectionGeneration" />
+    <jrun cls="FilledCollectionTest" />
     <jrun cls="FillingLists" />
     <jrun cls="IndividualTest" />
     <jrun cls="LinkedHashMapDemo" />
     <jrun cls="ListPerformance" arguments="100 500" />
     <jrun cls="Lists" />
     <jrun cls="ListSortSearch" />
-    <jrun cls="MapDataTest" />
     <jrun cls="MapPerformance" arguments="100 5000" />
     <jrun cls="Maps" />
     <jrun cls="QueueBehavior" />
@@ -50,20 +49,19 @@
     <jrunconsole cls="AssociativeArray" />
     <jrunconsole cls="Bits" />
     <jrunconsole cls="CanonicalMapping" />
-    <jrunconsole cls="CollectionDataGeneration" />
-    <jrunconsole cls="CollectionDataTest" />
     <jrunconsole cls="CollectionMethods" />
     <jrunconsole cls="CountedString" />
     <jrunconsole cls="DequeTest" />
     <jrunconsole cls="Enumerations" />
     <jrunconsole cls="FailFast" />
+    <jrunconsole cls="FilledCollectionGeneration" />
+    <jrunconsole cls="FilledCollectionTest" />
     <jrunconsole cls="FillingLists" />
     <jrunconsole cls="IndividualTest" />
     <jrunconsole cls="LinkedHashMapDemo" />
     <jrunconsole cls="ListPerformance" arguments="100 500" />
     <jrunconsole cls="Lists" />
     <jrunconsole cls="ListSortSearch" />
-    <jrunconsole cls="MapDataTest" />
     <jrunconsole cls="MapPerformance" arguments="100 5000" />
     <jrunconsole cls="Maps" />
     <jrunconsole cls="QueueBehavior" />

@@ -2,8 +2,9 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-// Initialization & re-assignment of arrays.
+// Initialization & re-assignment of arrays
 import java.util.*;
+import static onjava.ArrayShow.*;
 
 public class ArrayOptions {
   public static void main(String[] args) {
@@ -13,23 +14,25 @@ public class ArrayOptions {
 
     // The references inside the array are
     // automatically initialized to null:
-    System.out.println("b: " + Arrays.toString(b));
+    show("b", b);
     BerylliumSphere[] c = new BerylliumSphere[4];
     for(int i = 0; i < c.length; i++)
       if(c[i] == null) // Can test for null reference
         c[i] = new BerylliumSphere();
 
     // Aggregate initialization:
-    BerylliumSphere[] d = { new BerylliumSphere(),
-      new BerylliumSphere(), new BerylliumSphere()
+    BerylliumSphere[] d = {
+      new BerylliumSphere(),
+      new BerylliumSphere(),
+      new BerylliumSphere()
     };
 
     // Dynamic aggregate initialization:
     a = new BerylliumSphere[]{
       new BerylliumSphere(), new BerylliumSphere(),
     };
+    // (Trailing comma is optional)
 
-    // (Trailing comma is optional in both cases)
     System.out.println("a.length = " + a.length);
     System.out.println("b.length = " + b.length);
     System.out.println("c.length = " + c.length);
@@ -43,14 +46,14 @@ public class ArrayOptions {
 
     // The primitives inside the array are
     // automatically initialized to zero:
-    System.out.println("f: " + Arrays.toString(f));
+    show("f", f);
     int[] g = new int[4];
     for(int i = 0; i < g.length; i++)
       g[i] = i*i;
     int[] h = { 11, 47, 93 };
 
     //  Compile error: variable e not initialized:
-    //- print("e.length = " + e.length);
+    //- System.out.println("e.length = " + e.length);
     System.out.println("f.length = " + f.length);
     System.out.println("g.length = " + g.length);
     System.out.println("h.length = " + h.length);

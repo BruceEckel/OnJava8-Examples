@@ -6,8 +6,8 @@
 import java.net.*;
 
 public class LocalHost {
-  public static void main(String[] args)
-      throws Exception {
+  public static void
+  main(String[] args) throws Exception {
     InetAddress
       local1 = InetAddress.getByName(null),
       local2 = InetAddress.getByName("localhost"),

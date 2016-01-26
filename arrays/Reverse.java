@@ -5,16 +5,15 @@
 // The Collections.reverseOrder() Comparator
 import java.util.*;
 import onjava.*;
+import static onjava.ArrayShow.*;
 
 public class Reverse {
   public static void main(String[] args) {
-    CompType[] a = Generated.array(
-      new CompType[12], CompType.generator());
-    System.out.println("before sorting:");
-    System.out.println(Arrays.toString(a));
+    CompType[] a = new CompType[12];
+    Arrays.setAll(a, n -> CompType.get());
+    show("Before sorting", a);
     Arrays.sort(a, Collections.reverseOrder());
-    System.out.println("after sorting:");
-    System.out.println(Arrays.toString(a));
+    show("After sorting", a);
   }
 }
 /* Output:

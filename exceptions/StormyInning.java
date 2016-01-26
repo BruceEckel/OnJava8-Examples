@@ -4,7 +4,7 @@
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // Overridden methods can throw only the exceptions
 // specified in their base-class versions, or exceptions
-// derived from the base-class exceptions.
+// derived from the base-class exceptions
 
 class BaseballException extends Exception {}
 class Foul extends BaseballException {}

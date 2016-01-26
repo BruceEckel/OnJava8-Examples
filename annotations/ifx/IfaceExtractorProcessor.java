@@ -2,7 +2,7 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-// javac-based annotation processing.
+// javac-based annotation processing
 package annotations.ifx;
 import javax.annotation.processing.*;
 import javax.lang.model.SourceVersion;
@@ -51,8 +51,8 @@ extends AbstractProcessor {
   private void
   writeInterfaceFile(String interfaceName) {
     try(Writer writer = processingEnv.getFiler()
-      .createSourceFile(interfaceName)
-      .openWriter()) {
+          .createSourceFile(interfaceName)
+          .openWriter()) {
       String packageName = elementUtils
         .getPackageOf(interfaceMethods
                       .get(0)).toString();

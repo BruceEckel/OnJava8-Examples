@@ -16,6 +16,7 @@
     <jrun cls="CollectionMethods" />
     <jrun cls="CollectionSequence" />
     <jrun cls="CrossCollectionIteration" />
+    <jrun cls="CrossCollectionIteration2" />
     <jrun cls="EnvironmentVariables" />
     <jrun cls="ForInCollections" />
     <jrun cls="GenericsAndUpcasting" />
@@ -33,10 +34,11 @@
     <jrun cls="PriorityQueueDemo" />
     <jrun cls="QueueDemo" />
     <jrun cls="SetOfInteger" />
+    <jrun cls="SetOfString" />
     <jrun cls="SetOperations" />
     <jrun cls="SimpleCollection" />
     <jrun cls="SimpleIteration" />
-    <jrun cls="SortedSetOfInteger" />
+    <jrun cls="SortedSetOfString" />
     <jrun cls="StackCollision" />
     <jrun cls="StackTest" />
     <jrun cls="Statistics" />
@@ -54,6 +56,7 @@
     <jrunconsole cls="CollectionMethods" />
     <jrunconsole cls="CollectionSequence" />
     <jrunconsole cls="CrossCollectionIteration" />
+    <jrunconsole cls="CrossCollectionIteration2" />
     <jrunconsole cls="EnvironmentVariables" />
     <jrunconsole cls="ForInCollections" />
     <jrunconsole cls="GenericsAndUpcasting" />
@@ -71,10 +74,11 @@
     <jrunconsole cls="PriorityQueueDemo" />
     <jrunconsole cls="QueueDemo" />
     <jrunconsole cls="SetOfInteger" />
+    <jrunconsole cls="SetOfString" />
     <jrunconsole cls="SetOperations" />
     <jrunconsole cls="SimpleCollection" />
     <jrunconsole cls="SimpleIteration" />
-    <jrunconsole cls="SortedSetOfInteger" />
+    <jrunconsole cls="SortedSetOfString" />
     <jrunconsole cls="StackCollision" />
     <jrunconsole cls="StackTest" />
     <jrunconsole cls="Statistics" />

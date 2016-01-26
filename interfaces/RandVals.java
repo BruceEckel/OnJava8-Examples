@@ -3,7 +3,7 @@
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // Initializing interface fields with
-// non-constant initializers.
+// non-constant initializers
 import java.util.*;
 
 public interface RandVals {

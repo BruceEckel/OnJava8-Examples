@@ -2,7 +2,7 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-// Demonstration of BitSet.
+// Demonstration of BitSet
 import java.util.*;
 
 public class Bits {
@@ -14,7 +14,7 @@ public class Bits {
     System.out.println("bit pattern: " + bbits);
   }
   public static void main(String[] args) {
-    Random rand = new Random(47);
+    SplittableRandom rand = new SplittableRandom(47);
     // Take the LSB of nextInt():
     byte bt = (byte)rand.nextInt();
     BitSet bb = new BitSet();

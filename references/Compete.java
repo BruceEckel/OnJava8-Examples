@@ -6,35 +6,33 @@ import java.io.*;
 
 class Thing1 implements Serializable {}
 class Thing2 implements Serializable {
-  Thing1 o1 = new Thing1();
+  Thing1 t1 = new Thing1();
 }
 
 class Thing3 implements Cloneable {
   @Override
-  public Object clone() {
-    Object o = null;
+  public Thing3 clone() {
     try {
-      o = super.clone();
+      return (Thing3)super.clone();
     } catch(CloneNotSupportedException e) {
-      System.err.println("Thing3 can't clone");
+      throw new RuntimeException(e);
     }
-    return o;
   }
 }
 
 class Thing4 implements Cloneable {
-  private Thing3 o3 = new Thing3();
+  private Thing3 t3 = new Thing3();
   @Override
-  public Object clone() {
-    Thing4 o = null;
+  public Thing4 clone() {
+    Thing4 t4 = null;
     try {
-      o = (Thing4)super.clone();
+      t4 = (Thing4)super.clone();
     } catch(CloneNotSupportedException e) {
-      System.err.println("Thing4 can't clone");
+      throw new RuntimeException(e);
     }
     // Clone the field, too:
-    o.o3 = (Thing3)o3.clone();
-    return o;
+    t4.t3 = t3.clone();
+    return t4;
   }
 }
 
@@ -43,36 +41,39 @@ public class Compete {
   public static void
   main(String[] args) throws Exception {
     Thing2[] a = new Thing2[SIZE];
-    for(int i = 0; i < a.length; i++)
+    for(int i = 0; i < SIZE; i++)
       a[i] = new Thing2();
     Thing4[] b = new Thing4[SIZE];
-    for(int i = 0; i < b.length; i++)
+    for(int i = 0; i < SIZE; i++)
       b[i] = new Thing4();
     long t1 = System.currentTimeMillis();
-    ByteArrayOutputStream buf =
-      new ByteArrayOutputStream();
-    ObjectOutputStream o =
-      new ObjectOutputStream(buf);
-    for(Thing2 a1 : a) {
-      o.writeObject(a1);
+    try(ByteArrayOutputStream buf =
+          new ByteArrayOutputStream();
+        ObjectOutputStream oos =
+          new ObjectOutputStream(buf)) {
+      for(Thing2 a1 : a) {
+        oos.writeObject(a1);
+      }
+      // Now get copies:
+      try(ObjectInputStream in =
+            new ObjectInputStream(
+              new ByteArrayInputStream(
+                buf.toByteArray()))) {
+        Thing2[] c = new Thing2[SIZE];
+        for(int i = 0; i < SIZE; i++)
+          c[i] = (Thing2)in.readObject();
+      }
     }
-    // Now get copies:
-    ObjectInputStream in =
-      new ObjectInputStream(
-        new ByteArrayInputStream(
-          buf.toByteArray()));
-    Thing2[] c = new Thing2[SIZE];
-    for(int i = 0; i < c.length; i++)
-      c[i] = (Thing2)in.readObject();
     long t2 = System.currentTimeMillis();
     System.out.println(
       "Duplication via serialization: " +
       (t2 - t1) + " Milliseconds");
+
     // Now try cloning:
     t1 = System.currentTimeMillis();
     Thing4[] d = new Thing4[SIZE];
-    for(int i = 0; i < d.length; i++)
-      d[i] = (Thing4)b[i].clone();
+    for(int i = 0; i < SIZE; i++)
+      d[i] = b[i].clone();
     t2 = System.currentTimeMillis();
     System.out.println(
       "Duplication via cloning: " +
@@ -80,6 +81,6 @@ public class Compete {
   }
 }
 /* Output:
-Duplication via serialization: 274 Milliseconds
-Duplication via cloning: 21 Milliseconds
+Duplication via serialization: 202 Milliseconds
+Duplication via cloning: 17 Milliseconds
 */

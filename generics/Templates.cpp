@@ -22,3 +22,6 @@ int main() {
   Manipulator<HasF> manipulator(hf);
   manipulator.manipulate();
 }
+/* Output:
+HasF::f()
+*/

@@ -2,10 +2,11 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-// Nested classes (static inner classes).
+// Nested classes (static inner classes)
 
 public class Parcel11 {
-  private static class ParcelContents implements Contents {
+  private static class
+  ParcelContents implements Contents {
     private int i = 11;
     @Override
     public int value() { return i; }

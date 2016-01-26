@@ -8,7 +8,8 @@ import java.nio.file.*;
 public class Writing {
   static Random rand = new Random(47);
   static final int sz = 1000;
-  public static void main(String[] args) throws Exception {
+  public static void
+  main(String[] args) throws Exception {
     // Write bytes to a file:
     byte[] bytes = new byte[sz];
     rand.nextBytes(bytes);

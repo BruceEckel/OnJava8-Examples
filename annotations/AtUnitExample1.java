@@ -22,7 +22,8 @@ public class AtUnitExample1 {
   // Shows output for failure:
   @Test boolean failureTest() { return false; }
   @Test boolean anotherDisappointment() { return false; }
-  public static void main(String[] args) throws Exception {
+  public static void
+  main(String[] args) throws Exception {
     OSExecute.command("java -cp .. " +
       "onjava.atunit.AtUnit AtUnitExample1.class");
   }

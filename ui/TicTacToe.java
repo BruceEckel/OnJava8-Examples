@@ -2,7 +2,7 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-// Dialog boxes and creating your own components.
+// Dialog boxes and creating your own components
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -60,15 +60,6 @@ public class TicTacToe extends JFrame {
       }
     }
   }
-  class BL implements ActionListener {
-    @Override
-    public void actionPerformed(ActionEvent e) {
-      JDialog d = new ToeDialog(
-        new Integer(rows.getText()),
-        new Integer(cols.getText()));
-      d.setVisible(true);
-    }
-  }
   public TicTacToe() {
     JPanel p = new JPanel();
     p.setLayout(new GridLayout(2,2));
@@ -78,7 +69,12 @@ public class TicTacToe extends JFrame {
     p.add(cols);
     add(p, BorderLayout.NORTH);
     JButton b = new JButton("go");
-    b.addActionListener(new BL());
+    b.addActionListener(e -> {
+      JDialog d = new ToeDialog(
+        new Integer(rows.getText()),
+        new Integer(cols.getText()));
+      d.setVisible(true);
+    });
     add(b, BorderLayout.SOUTH);
   }
   public static void main(String[] args) {

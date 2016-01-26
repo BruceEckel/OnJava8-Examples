@@ -4,15 +4,15 @@
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 import java.util.*;
 
-interface Processor<T,E extends Exception> {
+interface Processor<T, E extends Exception> {
   void process(List<T> resultCollector) throws E;
 }
 
-class ProcessRunner<T,E extends Exception>
-extends ArrayList<Processor<T,E>> {
+class ProcessRunner<T, E extends Exception>
+extends ArrayList<Processor<T, E>> {
   List<T> processAll() throws E {
     List<T> resultCollector = new ArrayList<>();
-    for(Processor<T,E> processor : this)
+    for(Processor<T, E> processor : this)
       processor.process(resultCollector);
     return resultCollector;
   }
@@ -20,7 +20,7 @@ extends ArrayList<Processor<T,E>> {
 
 class Failure1 extends Exception {}
 
-class Processor1 implements Processor<String,Failure1> {
+class Processor1 implements Processor<String, Failure1> {
   static int count = 3;
   @Override
   public void
@@ -36,7 +36,7 @@ class Processor1 implements Processor<String,Failure1> {
 
 class Failure2 extends Exception {}
 
-class Processor2 implements Processor<Integer,Failure2> {
+class Processor2 implements Processor<Integer, Failure2> {
   static int count = 2;
   @Override
   public void
@@ -53,7 +53,7 @@ class Processor2 implements Processor<Integer,Failure2> {
 
 public class ThrowGenericException {
   public static void main(String[] args) {
-    ProcessRunner<String,Failure1> runner =
+    ProcessRunner<String, Failure1> runner =
       new ProcessRunner<>();
     for(int i = 0; i < 3; i++)
       runner.add(new Processor1());
@@ -63,7 +63,7 @@ public class ThrowGenericException {
       System.out.println(e);
     }
 
-    ProcessRunner<Integer,Failure2> runner2 =
+    ProcessRunner<Integer, Failure2> runner2 =
       new ProcessRunner<>();
     for(int i = 0; i < 3; i++)
       runner2.add(new Processor2());

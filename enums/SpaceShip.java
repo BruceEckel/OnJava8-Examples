@@ -5,7 +5,8 @@
 import java.util.stream.*;
 
 public enum SpaceShip {
-  SCOUT, CARGO, TRANSPORT, CRUISER, BATTLESHIP, MOTHERSHIP;
+  SCOUT, CARGO, TRANSPORT,
+  CRUISER, BATTLESHIP, MOTHERSHIP;
   @Override
   public String toString() {
     String id = name();

@@ -6,7 +6,8 @@ import java.util.*;
 
 public class ReceiptBuilder {
   private double total = 0;
-  private Formatter f = new Formatter(new StringBuilder());
+  private Formatter f =
+    new Formatter(new StringBuilder());
   public ReceiptBuilder() {
     f.format("%-15s %5s %10s\n", "Item", "Qty", "Price");
     f.format("%-15s %5s %10s\n", "----", "---", "-----");

@@ -2,12 +2,12 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-// Can't use package-access member from another package.
+// Can't use package-access member from another package
 import hiding.dessert.*;
 
 public class ChocolateChip extends Cookie {
   public ChocolateChip() {
-   System.out.println("ChocolateChip constructor");
+    System.out.println("ChocolateChip constructor");
   }
   public void chomp() {
     //- bite(); // Can't access bite

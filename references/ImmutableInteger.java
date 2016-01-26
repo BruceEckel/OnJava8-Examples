@@ -2,7 +2,7 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-// The Integer class cannot be changed.
+// The Integer class cannot be changed
 import java.util.*;
 
 public class ImmutableInteger {

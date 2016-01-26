@@ -5,7 +5,8 @@
 import java.util.prefs.*;
 
 public class PreferencesDemo {
-  public static void main(String[] args) throws Exception {
+  public static void
+  main(String[] args) throws Exception {
     Preferences prefs = Preferences
       .userNodeForPackage(PreferencesDemo.class);
     prefs.put("Location", "Oz");
@@ -16,7 +17,8 @@ public class PreferencesDemo {
     usageCount++;
     prefs.putInt("UsageCount", usageCount);
     for(String key : prefs.keys())
-      System.out.println(key + ": "+ prefs.get(key, null));
+      System.out.println(key + ": "
+        + prefs.get(key, null));
     // You must always provide a default value:
     System.out.println(
       "How many companions does Dorothy have? " +

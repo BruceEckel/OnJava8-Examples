@@ -34,7 +34,8 @@ class OptionalFlatMap {
       }
     });
 
-    test("Replace", s -> Optional.of(s.replace("2", "9")));
+    test("Replace",
+      s -> Optional.of(s.replace("2", "9")));
 
     test("Take last digit",
       s -> Optional.of(s.length() > 0 ?

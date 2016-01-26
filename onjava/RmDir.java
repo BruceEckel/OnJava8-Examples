@@ -9,7 +9,7 @@ import java.io.IOException;
 
 public class RmDir {
   public static void rmdir(Path dir) throws IOException {
-    Files.walkFileTree(dir, new SimpleFileVisitor<Path>(){
+    Files.walkFileTree(dir,new SimpleFileVisitor<Path>() {
        @Override
        public FileVisitResult
        visitFile(Path file, BasicFileAttributes attrs)

@@ -2,19 +2,20 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-// Searching with a Comparator.
+// Searching with a Comparator
 import java.util.*;
 import onjava.*;
+import static onjava.ArrayShow.*;
 
 public class AlphabeticSearch {
   public static void main(String[] args) {
-    String[] sa = Generated.array(new String[30],
-      new RandomSupplier.String(5));
+    String[] sa = new Rand.String().array(30);
     Arrays.sort(sa, String.CASE_INSENSITIVE_ORDER);
-    System.out.println(Arrays.toString(sa));
+    show(sa);
     int index = Arrays.binarySearch(sa, sa[10],
       String.CASE_INSENSITIVE_ORDER);
-    System.out.println("Index: "+ index + "\n"+ sa[index]);
+    System.out.println(
+      "Index: "+ index + "\n"+ sa[index]);
   }
 }
 /* Output:

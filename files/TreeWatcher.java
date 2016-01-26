@@ -31,7 +31,8 @@ public class TreeWatcher {
       throw new RuntimeException(e);
     }
   }
-  public static void main(String[] args) throws Exception {
+  public static void
+  main(String[] args) throws Exception {
     Directories.refreshTestDir();
     Directories.populateTestDir();
     Files.walk(Paths.get("test"))

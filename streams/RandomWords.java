@@ -25,9 +25,11 @@ public class RandomWords implements Supplier<String> {
   }
   @Override
   public String toString() {
-    return words.stream().collect(Collectors.joining(" "));
+    return words.stream()
+      .collect(Collectors.joining(" "));
   }
-  public static void main(String[] args) throws Exception {
+  public static void
+  main(String[] args) throws Exception {
     System.out.println(
       Stream.generate(new RandomWords("Cheese.dat"))
         .limit(10)

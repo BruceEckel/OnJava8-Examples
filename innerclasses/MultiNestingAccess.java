@@ -3,7 +3,7 @@
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // Nested classes can access all members of all
-// levels of the classes they are nested within.
+// levels of the classes they are nested within
 
 class MNA {
   private void f() {}

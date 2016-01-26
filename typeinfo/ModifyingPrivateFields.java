@@ -15,8 +15,10 @@ class WithPrivateFinalField {
 }
 
 public class ModifyingPrivateFields {
-  public static void main(String[] args) throws Exception {
-    WithPrivateFinalField pf = new WithPrivateFinalField();
+  public static void
+  main(String[] args) throws Exception {
+    WithPrivateFinalField pf =
+      new WithPrivateFinalField();
     System.out.println(pf);
     Field f = pf.getClass().getDeclaredField("i");
     f.setAccessible(true);

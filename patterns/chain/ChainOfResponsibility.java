@@ -2,7 +2,7 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-// Using the Functional interface.
+// Using the Functional interface
 package patterns.chain;
 import java.util.*;
 import java.util.function.*;
@@ -68,7 +68,7 @@ class FindMinima {
 }
 
 public class ChainOfResponsibility {
-  public static void main(String args[]) {
+  public static void main(String[] args) {
     FindMinima solver = new FindMinima();
     List<Double> line = Arrays.asList(
       1.0, 2.0, 1.0, 2.0, -1.0,

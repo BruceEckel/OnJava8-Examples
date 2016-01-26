@@ -15,10 +15,11 @@ public class TupleTest2 {
   }
   static
   Tuple4<Vehicle, Amphibian, String, Integer> h() {
-    return tuple(new Vehicle(), new Amphibian(), "hi", 47);
+    return tuple(
+      new Vehicle(), new Amphibian(), "hi", 47);
   }
   static
-  Tuple5<Vehicle, Amphibian, String, Integer, Double> k(){
+  Tuple5<Vehicle, Amphibian, String, Integer, Double> k() {
     return tuple(new Vehicle(), new Amphibian(),
       "hi", 47, 11.1);
   }

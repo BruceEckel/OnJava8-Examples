@@ -7,8 +7,8 @@ import java.nio.channels.*;
 import java.io.*;
 
 public class MappedIO {
-  private static int numOfInts = 4000000;
-  private static int numOfUbuffInts = 200000;
+  private static int numOfInts =      4_000_000;
+  private static int numOfUbuffInts = 1_000_000;
   private abstract static class Tester {
     private String name;
     public Tester(String name) { this.name = name; }
@@ -18,7 +18,7 @@ public class MappedIO {
         long start = System.nanoTime();
         test();
         double duration = System.nanoTime() - start;
-        System.out.format("%.2f\n", duration/1.0e9);
+        System.out.format("%.3f\n", duration/1.0e9);
       } catch(IOException e) {
         throw new RuntimeException(e);
       }
@@ -42,8 +42,8 @@ public class MappedIO {
       @Override
       public void test() throws IOException {
         try(FileChannel fc =
-            new RandomAccessFile("temp.tmp", "rw")
-            .getChannel()) {
+              new RandomAccessFile("temp.tmp", "rw")
+                .getChannel()) {
           IntBuffer ib = fc.map(
             FileChannel.MapMode.READ_WRITE, 0, fc.size())
             .asIntBuffer();
@@ -67,7 +67,7 @@ public class MappedIO {
       @Override
       public void test() throws IOException {
         try(FileChannel fc = new FileInputStream(
-             new File("temp.tmp")).getChannel()) {
+              new File("temp.tmp")).getChannel()) {
           IntBuffer ib = fc.map(
             FileChannel.MapMode.READ_ONLY, 0, fc.size())
             .asIntBuffer();
@@ -110,10 +110,10 @@ public class MappedIO {
   }
 }
 /* Output:
-Stream Write: 0.45
-Mapped Write: 0.04
-Stream Read: 0.42
-Mapped Read: 0.03
-Stream Read/Write: 3.43
-Mapped Read/Write: 0.00
+Stream Write: 0.329
+Mapped Write: 0.024
+Stream Read: 0.319
+Mapped Read: 0.019
+Stream Read/Write: 12.778
+Mapped Read/Write: 0.010
 */

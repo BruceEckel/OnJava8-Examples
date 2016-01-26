@@ -2,7 +2,7 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-// Simple use of Externalizable & a pitfall.
+// Simple use of Externalizable & a pitfall
 import java.io.*;
 
 class Blip1 implements Externalizable {
@@ -38,8 +38,9 @@ class Blip2 implements Externalizable {
 }
 
 public class Blips {
-  public static void main(String[] args)
-  throws IOException, ClassNotFoundException {
+  public static void
+  main(String[] args) throws IOException,
+  ClassNotFoundException {
     System.out.println("Constructing objects:");
     Blip1 b1 = new Blip1();
     Blip2 b2 = new Blip2();

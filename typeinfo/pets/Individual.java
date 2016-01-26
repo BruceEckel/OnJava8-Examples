@@ -4,7 +4,8 @@
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 package typeinfo.pets;
 
-public class Individual implements Comparable<Individual> {
+public class
+Individual implements Comparable<Individual> {
   private static long counter = 0;
   private final long id = counter++;
   private String name;

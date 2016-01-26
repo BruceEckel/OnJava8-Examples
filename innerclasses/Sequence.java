@@ -2,7 +2,7 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-// Holds a sequence of Objects.
+// Holds a sequence of Objects
 
 interface Selector {
   boolean end();
@@ -13,7 +13,9 @@ interface Selector {
 public class Sequence {
   private Object[] items;
   private int next = 0;
-  public Sequence(int size) { items = new Object[size]; }
+  public Sequence(int size) {
+    items = new Object[size];
+  }
   public void add(Object x) {
     if(next < items.length)
       items[next++] = x;

@@ -41,3 +41,7 @@ int main() {
   cout << mixin2.get() << " " << mixin2.getStamp() <<
     " " << mixin2.getSerialNumber() << endl;
 }
+/* Output:
+test string 1 1452987605 1
+test string 2 1452987605 2
+*/

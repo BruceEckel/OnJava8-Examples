@@ -2,7 +2,7 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-// Display the "addXXXListener" methods of any Swing class.
+// Display the "addXXXListener" methods of any Swing class
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -47,7 +47,8 @@ public class ShowAddListeners extends JFrame {
     NameL nameListener = new NameL();
     name.addActionListener(nameListener);
     JPanel top = new JPanel();
-    top.add(new JLabel("Swing class name (press Enter):"));
+    top.add(new JLabel(
+      "Swing class name (press Enter):"));
     top.add(name);
     add(BorderLayout.NORTH, top);
     add(new JScrollPane(results));

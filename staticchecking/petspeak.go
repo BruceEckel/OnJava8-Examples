@@ -12,9 +12,15 @@ type Dog struct {}
 func (this Dog) speak() { fmt.Printf("woof!\n")}
 
 type Bob struct {}
-func (this Bob) bow() { fmt.Printf("thank you, thank you!\n") }
-func (this Bob) speak() { fmt.Printf("Welcome to the neighborhood!\n") }
-func (this Bob) drive() { fmt.Printf("beep, beep!\n") }
+func (this Bob) bow() {
+  fmt.Printf("thank you, thank you!\n")
+}
+func (this Bob) speak() {
+  fmt.Printf("Welcome to the neighborhood!\n")
+}
+func (this Bob) drive() {
+  fmt.Printf("beep, beep!\n")
+}
 
 type Speaker interface {
   speak()
@@ -22,7 +28,8 @@ type Speaker interface {
 
 func command(s Speaker) { s.speak() }
 
-// If "Speaker" is never used anywhere else, it can be anonymous:
+// If "Speaker" is never used
+// anywhere else, it can be anonymous:
 func command2(s interface { speak() }) { s.speak() }
 
 func main() {
@@ -33,3 +40,12 @@ func main() {
   command2(Dog{})
   command2(Bob{})
 }
+
+/* Output:
+meow!
+woof!
+Welcome to the neighborhood!
+meow!
+woof!
+Welcome to the neighborhood!
+*/

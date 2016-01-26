@@ -5,23 +5,23 @@
 
 interface HasColor { java.awt.Color getColor(); }
 
-class Colored<T extends HasColor> {
+class WithColor<T extends HasColor> {
   T item;
-  Colored(T item) { this.item = item; }
+  WithColor(T item) { this.item = item; }
   T getItem() { return item; }
   // The bound allows you to call a method:
   java.awt.Color color() { return item.getColor(); }
 }
 
-class Dimension { public int x, y, z; }
+class Coord { public int x, y, z; }
 
-// This won't work -- class must be first, then interfaces:
-// class ColoredDimension<T extends HasColor & Dimension> {
+// This won't work. Class must be first, then interfaces:
+// class WithColorCoord<T extends HasColor & Coord> {
 
 // Multiple bounds:
-class ColoredDimension<T extends Dimension & HasColor> {
+class WithColorCoord<T extends Coord & HasColor> {
   T item;
-  ColoredDimension(T item) { this.item = item; }
+  WithColorCoord(T item) { this.item = item; }
   T getItem() { return item; }
   java.awt.Color color() { return item.getColor(); }
   int getX() { return item.x; }
@@ -33,7 +33,7 @@ interface Weight { int weight(); }
 
 // As with inheritance, you can have only one
 // concrete class but multiple interfaces:
-class Solid<T extends Dimension & HasColor & Weight> {
+class Solid<T extends Coord & HasColor & Weight> {
   T item;
   Solid(T item) { this.item = item; }
   T getItem() { return item; }
@@ -45,7 +45,7 @@ class Solid<T extends Dimension & HasColor & Weight> {
 }
 
 class Bounded
-extends Dimension implements HasColor, Weight {
+extends Coord implements HasColor, Weight {
   @Override
   public java.awt.Color getColor() { return null; }
   @Override

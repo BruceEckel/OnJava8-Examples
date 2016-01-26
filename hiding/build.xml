@@ -2,7 +2,7 @@
 
 <project default="run">
   <property name="chapter" value="hiding"/>
-  <property name="excludedfiles" value="foreign/Foreign.java"/>
+  <property name="excludedfiles" value=""/>
   <import file="../Ant-Common.xml"/>
   <import file="../Ant-Clean.xml"/>
 

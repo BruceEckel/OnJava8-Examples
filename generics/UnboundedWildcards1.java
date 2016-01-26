@@ -11,8 +11,12 @@ public class UnboundedWildcards1 {
   static void assign1(List list) {
     list1 = list;
     list2 = list;
-    // list3 = list; // Warning: unchecked conversion
-    // Found: List, Required: List<? extends Object>
+    //- list3 = list;
+    // warning: [unchecked] unchecked conversion
+    // list3 = list;
+    //         ^
+    // required: List<? extends Object>
+    // found:    List
   }
   static void assign2(List<?> list) {
     list1 = list;
@@ -27,9 +31,20 @@ public class UnboundedWildcards1 {
   public static void main(String[] args) {
     assign1(new ArrayList());
     assign2(new ArrayList());
-    // assign3(new ArrayList()); // Warning:
-    // Unchecked conversion. Found: ArrayList
-    // Required: List<? extends Object>
+    //- assign3(new ArrayList());
+    // warning: [unchecked] unchecked method invocation:
+    // method assign3 in class UnboundedWildcards1
+    // is applied to given types
+    // assign3(new ArrayList());
+    //        ^
+    // required: List<? extends Object>
+    // found: ArrayList
+    // warning: [unchecked] unchecked conversion
+    // assign3(new ArrayList());
+    //         ^
+    // required: List<? extends Object>
+    // found:    ArrayList
+    // 2 warnings
     assign1(new ArrayList<>());
     assign2(new ArrayList<>());
     assign3(new ArrayList<>());

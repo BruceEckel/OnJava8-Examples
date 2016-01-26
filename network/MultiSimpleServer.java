@@ -2,8 +2,7 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-// A server that uses multithreading
-// to handle any number of clients.
+// Uses multithreading to handle any number of clients
 // {ValidateByHand}
 import java.io.*;
 import java.net.*;
@@ -53,8 +52,8 @@ class ServeOneSimple extends Thread {
 
 public class MultiSimpleServer {
   static final int PORT = 8080;
-  public static void main(String[] args)
-      throws IOException {
+  public static void
+  main(String[] args) throws IOException {
     new TimedAbort(5); // Terminate after 5 seconds
     ServerSocket s = new ServerSocket(PORT);
     System.out.println("Server Started");

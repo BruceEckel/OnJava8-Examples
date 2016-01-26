@@ -2,7 +2,7 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-// Anonymous inner classes can't hide from reflection.
+// Anonymous inner classes can't hide from reflection
 import typeinfo.interfacea.*;
 
 class AnonymousA {
@@ -28,7 +28,8 @@ class AnonymousA {
 }
 
 public class AnonymousImplementation {
-  public static void main(String[] args) throws Exception {
+  public static void
+  main(String[] args) throws Exception {
     A a = AnonymousA.makeA();
     a.f();
     System.out.println(a.getClass().getName());

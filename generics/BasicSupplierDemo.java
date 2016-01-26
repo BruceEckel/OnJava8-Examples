@@ -3,14 +3,14 @@
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 import onjava.*;
-import java.util.function.*;
+import java.util.stream.*;
 
 public class BasicSupplierDemo {
   public static void main(String[] args) {
-    Supplier<CountedObject> gen =
-      BasicSupplier.create(CountedObject.class);
-    for(int i = 0; i < 5; i++)
-      System.out.println(gen.get());
+    Stream.generate(
+      BasicSupplier.create(CountedObject.class))
+      .limit(5)
+      .forEach(System.out::println);
   }
 }
 /* Output:

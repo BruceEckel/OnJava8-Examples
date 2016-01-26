@@ -2,7 +2,7 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-// Demonstration of Stack Class.
+// Demonstration of Stack Class
 import java.util.*;
 
 enum Month { JANUARY, FEBRUARY, MARCH, APRIL, MAY, JUNE,
@@ -16,7 +16,8 @@ public class Stacks {
     System.out.println("stack = " + stack);
     // Treating a stack as a Vector:
     stack.addElement("The last line");
-    System.out.println("element 5 = " + stack.elementAt(5));
+    System.out.println(
+      "element 5 = " + stack.elementAt(5));
     System.out.println("popping elements:");
     while(!stack.empty())
       System.out.print(stack.pop() + " ");

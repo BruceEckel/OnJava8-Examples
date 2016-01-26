@@ -2,7 +2,7 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-// Associates keys with values.
+// Associates keys with values
 
 public class AssociativeArray<K, V> {
   private Object[][] pairs;

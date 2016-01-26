@@ -2,7 +2,7 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-// Fun with menus.
+// Fun with menus
 import swt.util.*;
 import org.eclipse.swt.*;
 import org.eclipse.swt.widgets.*;
@@ -49,7 +49,8 @@ public class Menus implements SWTApplication {
   };
   void
   addItem(Menu bar, Iterator<String> it, MenuItem mItem) {
-    MenuItem item = new MenuItem(mItem.getMenu(),SWT.PUSH);
+    MenuItem item =
+      new MenuItem(mItem.getMenu(),SWT.PUSH);
     item.addListener(SWT.Selection, listener);
     item.setText(it.next());
   }

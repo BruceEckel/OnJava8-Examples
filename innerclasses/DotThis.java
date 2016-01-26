@@ -2,7 +2,7 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-// Qualifying access to the outer-class object.
+// Accessing the outer-class object
 
 public class DotThis {
   void f() { System.out.println("DotThis.f()"); }

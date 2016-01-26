@@ -4,7 +4,7 @@
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 package onjava;
 
-public class ConvertTo {
+public interface ConvertTo {
   public static boolean[] primitive(Boolean[] in) {
     boolean[] result = new boolean[in.length];
     for(int i = 0; i < in.length; i++)
@@ -49,6 +49,55 @@ public class ConvertTo {
   }
   public static double[] primitive(Double[] in) {
     double[] result = new double[in.length];
+    for(int i = 0; i < in.length; i++)
+      result[i] = in[i];
+    return result;
+  }
+  // Convert from primitive array to wrapped array:
+  public static Boolean[] boxed(boolean[] in) {
+    Boolean[] result = new Boolean[in.length];
+    for(int i = 0; i < in.length; i++)
+      result[i] = in[i]; // Autboxing
+    return result;
+  }
+  public static Character[] boxed(char[] in) {
+    Character[] result = new Character[in.length];
+    for(int i = 0; i < in.length; i++)
+      result[i] = in[i];
+    return result;
+  }
+  public static Byte[] boxed(byte[] in) {
+    Byte[] result = new Byte[in.length];
+    for(int i = 0; i < in.length; i++)
+      result[i] = in[i];
+    return result;
+  }
+  public static Short[] boxed(short[] in) {
+    Short[] result = new Short[in.length];
+    for(int i = 0; i < in.length; i++)
+      result[i] = in[i];
+    return result;
+  }
+  public static Integer[] boxed(int[] in) {
+    Integer[] result = new Integer[in.length];
+    for(int i = 0; i < in.length; i++)
+      result[i] = in[i];
+    return result;
+  }
+  public static Long[] boxed(long[] in) {
+    Long[] result = new Long[in.length];
+    for(int i = 0; i < in.length; i++)
+      result[i] = in[i];
+    return result;
+  }
+  public static Float[] boxed(float[] in) {
+    Float[] result = new Float[in.length];
+    for(int i = 0; i < in.length; i++)
+      result[i] = in[i];
+    return result;
+  }
+  public static Double[] boxed(double[] in) {
+    Double[] result = new Double[in.length];
     for(int i = 0; i < in.length; i++)
       result[i] = in[i];
     return result;

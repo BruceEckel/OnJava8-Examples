@@ -2,7 +2,7 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-// Overloading based on the order of the arguments.
+// Overloading based on the order of the arguments
 
 public class OverloadingOrder {
   static void f(String s, int i) {

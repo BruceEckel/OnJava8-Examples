@@ -46,7 +46,7 @@ class MinimaSolver {
 }
 
 public class StrategyPattern {
-  public static void main(String args[]) {
+  public static void main(String[] args) {
     MinimaSolver solver =
       new MinimaSolver(new LeastSquares());
     List<Double> line = Arrays.asList(

@@ -2,16 +2,15 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-// Very simple client that just sends
-// lines to the server and reads lines
-// that the server sends.
+// Sends lines to the server and
+// reads lines the server sends
 // {ValidateByHand}
 import java.net.*;
 import java.io.*;
 
 public class SimpleClient {
-  public static void main(String[] args)
-      throws IOException {
+  public static void
+  main(String[] args) throws IOException {
     // Passing null to getByName() produces the
     // special "Local Loopback" IP address, for
     // testing on one machine w/o a network:

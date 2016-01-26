@@ -2,9 +2,10 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-// Implementing a Comparator for a class.
+// Implementing a Comparator for a class
 import java.util.*;
 import onjava.*;
+import static onjava.ArrayShow.*;
 
 class CompTypeComparator implements Comparator<CompType> {
   public int compare(CompType o1, CompType o2) {
@@ -14,13 +15,11 @@ class CompTypeComparator implements Comparator<CompType> {
 
 public class ComparatorTest {
   public static void main(String[] args) {
-    CompType[] a = Generated.array(
-      new CompType[12], CompType.generator());
-    System.out.println("before sorting:");
-    System.out.println(Arrays.toString(a));
+    CompType[] a = new CompType[12];
+    Arrays.setAll(a, n -> CompType.get());
+    show("Before sorting", a);
     Arrays.sort(a, new CompTypeComparator());
-    System.out.println("after sorting:");
-    System.out.println(Arrays.toString(a));
+    show("After sorting", a);
   }
 }
 /* Output:

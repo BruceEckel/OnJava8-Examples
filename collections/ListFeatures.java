@@ -16,7 +16,8 @@ public class ListFeatures {
     System.out.println("3: " + pets.contains(h));
     pets.remove(h); // Remove by object
     Pet p = pets.get(2);
-    System.out.println("4: " +  p + " " + pets.indexOf(p));
+    System.out.println(
+      "4: " +  p + " " + pets.indexOf(p));
     Pet cymric = new Cymric();
     System.out.println("5: " + pets.indexOf(cymric));
     System.out.println("6: " + pets.remove(cymric));

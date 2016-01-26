@@ -2,8 +2,8 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-// Demonstration of Design by Contract (DbC) combined
-// with white-box unit testing.
+// Demonstration of Design by Contract (DbC)
+// combined with white-box unit testing
 // (Install libraries from www.junit.org)
 import java.util.*;
 import org.junit.Test;
@@ -24,7 +24,8 @@ public class Queue {
   }
   public Queue(int size) {
     data = new Object[size];
-    assert invariant(); // Must be true after construction
+    // Must be true after construction:
+    assert invariant();
   }
   public boolean empty() {
     return !wrapped && in == out;

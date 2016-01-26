@@ -2,15 +2,15 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-// Configure and execute the greenhouse system.
+// Configure and execute the greenhouse system
 // {Args: 5000}
 import innerclasses.controller.*;
 
 public class GreenhouseController {
   public static void main(String[] args) {
     GreenhouseControls gc = new GreenhouseControls();
-    // Instead of hard-wiring, you can parse
-    // configuration information from a text file here:
+    // Instead of using code, you could parse
+    // configuration information from a text file:
     gc.addEvent(gc.new Bell(900));
     Event[] eventList = {
       gc.new ThermostatNight(0),

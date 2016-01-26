@@ -5,12 +5,10 @@
 import java.util.*;
 import java.util.stream.*;
 
-public class RandomList<T> {
-  private ArrayList<T> items = new ArrayList<>();
+public class RandomList<T> extends ArrayList<T> {
   private Random rand = new Random(47);
-  public void add(T item) { items.add(item); }
   public T select() {
-    return items.get(rand.nextInt(items.size()));
+    return get(rand.nextInt(size()));
   }
   public static void main(String[] args) {
     RandomList<String> rs = new RandomList<>();

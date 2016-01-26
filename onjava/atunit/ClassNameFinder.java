@@ -76,7 +76,8 @@ public class ClassNameFinder {
     }
   }
   // Demonstration:
-  public static void main(String[] args) throws Exception {
+  public static void
+  main(String[] args) throws Exception {
     PathMatcher matcher = FileSystems.getDefault()
       .getPathMatcher("glob:**/*.class");
     // Walk the entire tree:

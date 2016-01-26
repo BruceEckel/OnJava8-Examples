@@ -2,8 +2,8 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-// Tests cloning to see if destination
-// of references are also cloned.
+// Tests cloning to see if reference
+// destinations are also cloned
 
 public class Snake implements Cloneable {
   private Snake next;
@@ -27,23 +27,20 @@ public class Snake implements Cloneable {
     return s;
   }
   @Override
-  public Object clone() {
-    Object o = null;
+  public Snake clone() {
     try {
-      o = super.clone();
+      return (Snake)super.clone();
     } catch(CloneNotSupportedException e) {
-      System.err.println("Snake can't clone");
+      throw new RuntimeException(e);
     }
-    return o;
   }
   public static void main(String[] args) {
     Snake s = new Snake(5, 'a');
     System.out.println("s = " + s);
-    Snake s2 = (Snake)s.clone();
+    Snake s2 = s.clone();
     System.out.println("s2 = " + s2);
     s.increment();
-    System.out.println(
-      "after s.increment, s2 = " + s2);
+    System.out.println("after s.increment, s2 = " + s2);
   }
 }
 /* Output:

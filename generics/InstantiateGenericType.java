@@ -2,12 +2,17 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
+import java.util.function.*;
 
-class ClassAsFactory<T> {
-  T x;
+class ClassAsFactory<T> implements Supplier<T> {
+  Class<T> kind;
   public ClassAsFactory(Class<T> kind) {
+    this.kind = kind;
+  }
+  @Override
+  public T get() {
     try {
-      x = kind.newInstance();
+      return kind.newInstance();
     } catch(InstantiationException |
             IllegalAccessException e) {
       throw new RuntimeException(e);
@@ -15,23 +20,26 @@ class ClassAsFactory<T> {
   }
 }
 
-class Employee {}
+class Employee {
+  @Override
+  public String toString() { return "Employee"; }
+}
 
 public class InstantiateGenericType {
   public static void main(String[] args) {
     ClassAsFactory<Employee> fe =
       new ClassAsFactory<>(Employee.class);
-    System.out.println(
-      "ClassAsFactory<Employee> succeeded");
+    System.out.println(fe.get());
+    ClassAsFactory<Integer> fi =
+      new ClassAsFactory<>(Integer.class);
     try {
-      ClassAsFactory<Integer> fi =
-        new ClassAsFactory<>(Integer.class);
+      System.out.println(fi.get());
     } catch(Exception e) {
-      System.out.println("ClassAsFactory<Integer> failed");
+      System.out.println(e.getMessage());
     }
   }
 }
 /* Output:
-ClassAsFactory<Employee> succeeded
-ClassAsFactory<Integer> failed
+Employee
+java.lang.InstantiationException: java.lang.Integer
 */

@@ -2,22 +2,25 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-// Restoring the state of the pretend CAD system.
+// Restoring the state of the fictitious CAD system
 // {RunFirst: AStoreCADState}
 import java.io.*;
 import java.util.*;
 
 public class RecoverCADState {
   @SuppressWarnings("unchecked")
-  public static void main(String[] args) throws Exception {
-    ObjectInputStream in = new ObjectInputStream(
-      new FileInputStream("CADState.dat"));
-    // Read in the same order they were written:
-    List<Class<? extends Shape>> shapeTypes =
-      (List<Class<? extends Shape>>)in.readObject();
-    Line.deserializeStaticState(in);
-    List<Shape> shapes = (List<Shape>)in.readObject();
-    System.out.println(shapes);
+  public static void
+  main(String[] args) throws Exception {
+    try(ObjectInputStream in =
+          new ObjectInputStream(
+            new FileInputStream("CADState.dat"))) {
+      // Read in the same order they were written:
+      List<Class<? extends Shape>> shapeTypes =
+        (List<Class<? extends Shape>>)in.readObject();
+      Line.deserializeStaticState(in);
+      List<Shape> shapes = (List<Shape>)in.readObject();
+      System.out.println(shapes);
+    }
   }
 }
 /* Output:

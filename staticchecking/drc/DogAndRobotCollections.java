@@ -25,13 +25,11 @@ public class DogAndRobotCollections {
     List<Robot> robotList = new ArrayList<>();
     for(int i = 0; i < 10; i++)
      dogList.add(new Dog());
-    // dogList.add(new Robot()); // Compile-time error
+    //- dogList.add(new Robot()); // Compile-time error
     for(int i = 0; i < 10; i++)
      robotList.add(new Robot());
-    // robotList.add(new Dog()); // Compile-time error
-    // No cast necessary
+    //- robotList.add(new Dog()); // Compile-time error
     dogList.forEach(Dog::talk);
-    // No cast necessary
     robotList.forEach(Robot::talk);
   }
 }

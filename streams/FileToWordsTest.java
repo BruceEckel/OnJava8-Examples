@@ -5,7 +5,8 @@
 import java.util.stream.*;
 
 public class FileToWordsTest {
-  public static void main(String[] args) throws Exception {
+  public static void
+  main(String[] args) throws Exception {
     FileToWords.stream("Cheese.dat")
       .limit(7)
       .forEach(s -> System.out.format("%s ", s));

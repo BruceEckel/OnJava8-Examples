@@ -7,6 +7,7 @@
   <import file="../Ant-Clean.xml"/>
 
   <target name="run" description="Compile and run" depends="build">
+    <jrun cls="ApplyFunctional" />
     <jrun cls="ApplyTest" />
     <jrun cls="ArrayMaker" />
     <jrun cls="ArrayOfGeneric" />
@@ -21,6 +22,7 @@
     <jrun cls="CreatorGeneric" />
     <jrun cls="CRGWithBasicHolder" />
     <jrun cls="Diamond" />
+    <jrun cls="DogsAndRobotMethodReferences" />
     <jrun cls="DogsAndRobots" />
     <jrun cls="DynamicProxyMixin" />
     <jrun cls="EpicBattle" />
@@ -28,10 +30,7 @@
     <jrun cls="ErasureAndInheritance" />
     <jrun cls="FactoryConstraint" />
     <jrun cls="Fibonacci" />
-    <jrun cls="FillTest" />
-    <jrun cls="Fill2Test" />
     <jrun cls="FilledListMaker" />
-    <jrun cls="Functional" />
     <jrun cls="GenericArray" />
     <jrun cls="GenericArray2" />
     <jrun cls="GenericArrayWithTypeToken" />
@@ -42,7 +41,6 @@
     <jrun cls="GenericReading" />
     <jrun cls="GenericsAndCovariance" />
     <jrun cls="GenericVarargs" />
-    <jrun cls="GenericWriting" />
     <jrun cls="Holder" />
     <jrun cls="InheritBounds" />
     <jrun cls="InstantiateGenericType" />
@@ -63,7 +61,6 @@
     <jrun cls="SimpleDogsAndRobots" />
     <jrun cls="SimpleHolder" />
     <jrun cls="Store" />
-    <jrun cls="Suppliers" />
     <jrun cls="ThrowGenericException" />
     <jrun cls="TupleList" />
     <jrun cls="TupleTest" />
@@ -78,6 +75,7 @@
   </target>
 
   <target name="runconsole" description="Compile and run" depends="build">
+    <jrunconsole cls="ApplyFunctional" />
     <jrunconsole cls="ApplyTest" />
     <jrunconsole cls="ArrayMaker" />
     <jrunconsole cls="ArrayOfGeneric" />
@@ -92,6 +90,7 @@
     <jrunconsole cls="CreatorGeneric" />
     <jrunconsole cls="CRGWithBasicHolder" />
     <jrunconsole cls="Diamond" />
+    <jrunconsole cls="DogsAndRobotMethodReferences" />
     <jrunconsole cls="DogsAndRobots" />
     <jrunconsole cls="DynamicProxyMixin" />
     <jrunconsole cls="EpicBattle" />
@@ -99,10 +98,7 @@
     <jrunconsole cls="ErasureAndInheritance" />
     <jrunconsole cls="FactoryConstraint" />
     <jrunconsole cls="Fibonacci" />
-    <jrunconsole cls="FillTest" />
-    <jrunconsole cls="Fill2Test" />
     <jrunconsole cls="FilledListMaker" />
-    <jrunconsole cls="Functional" />
     <jrunconsole cls="GenericArray" />
     <jrunconsole cls="GenericArray2" />
     <jrunconsole cls="GenericArrayWithTypeToken" />
@@ -113,7 +109,6 @@
     <jrunconsole cls="GenericReading" />
     <jrunconsole cls="GenericsAndCovariance" />
     <jrunconsole cls="GenericVarargs" />
-    <jrunconsole cls="GenericWriting" />
     <jrunconsole cls="Holder" />
     <jrunconsole cls="InheritBounds" />
     <jrunconsole cls="InstantiateGenericType" />
@@ -134,7 +129,6 @@
     <jrunconsole cls="SimpleDogsAndRobots" />
     <jrunconsole cls="SimpleHolder" />
     <jrunconsole cls="Store" />
-    <jrunconsole cls="Suppliers" />
     <jrunconsole cls="ThrowGenericException" />
     <jrunconsole cls="TupleList" />
     <jrunconsole cls="TupleTest" />

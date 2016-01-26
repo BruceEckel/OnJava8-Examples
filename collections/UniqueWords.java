@@ -6,7 +6,8 @@ import java.util.*;
 import java.nio.file.*;
 
 public class UniqueWords {
-  public static void main(String[] args) throws Exception {
+  public static void
+  main(String[] args) throws Exception {
     List<String> lines =
       Files.readAllLines(Paths.get("SetOperations.java"));
     Set<String> words = new TreeSet<>();

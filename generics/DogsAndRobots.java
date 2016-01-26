@@ -2,7 +2,7 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-// No latent typing in Java
+// No (direct) latent typing in Java
 import typeinfo.pets.*;
 
 class PerformingDog extends Dog implements Performs {
@@ -29,10 +29,8 @@ class Communicate {
 
 public class DogsAndRobots {
   public static void main(String[] args) {
-    PerformingDog d = new PerformingDog();
-    Robot r = new Robot();
-    Communicate.perform(d);
-    Communicate.perform(r);
+    Communicate.perform(new PerformingDog());
+    Communicate.perform(new Robot());
   }
 }
 /* Output:

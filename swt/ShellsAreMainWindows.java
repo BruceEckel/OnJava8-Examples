@@ -6,7 +6,7 @@ import org.eclipse.swt.widgets.*;
 
 public class ShellsAreMainWindows {
   static Shell[] shells = new Shell[10];
-  public static void main(String [] args) {
+  public static void main(String[] args) {
     Display display = new Display();
     for(int i = 0; i < shells.length; i++) {
       shells[i] = new Shell(display);

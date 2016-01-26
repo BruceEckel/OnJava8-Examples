@@ -2,7 +2,7 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-// Demonstration of "Observer" pattern.
+// Demonstration of "Observer" pattern
 package patterns.observer;
 import java.util.*;
 
@@ -75,7 +75,7 @@ class Hummingbird {
 }
 
 public class ObservedFlower {
-  public static void main(String args[]) {
+  public static void main(String[] args) {
     Flower f = new Flower();
     Bee
       ba = new Bee("A"),

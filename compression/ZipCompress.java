@@ -3,16 +3,17 @@
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // Uses Zip compression to compress any
-// number of files given on the command line.
+// number of files given on the command line
 // {Args: ZipCompress.java}
 import java.util.zip.*;
 import java.io.*;
 import java.util.*;
 
 public class ZipCompress {
-  public static void main(String[] args)
-  throws IOException {
-    try(FileOutputStream f = new FileOutputStream("test.zip");
+  public static void
+  main(String[] args) throws IOException {
+    try(FileOutputStream f =
+          new FileOutputStream("test.zip");
         CheckedOutputStream csum =
           new CheckedOutputStream(f, new Adler32());
         ZipOutputStream zos = new ZipOutputStream(csum);
@@ -23,7 +24,7 @@ public class ZipCompress {
       for(String arg : args) {
         System.out.println("Writing file " + arg);
         try(InputStream in = new BufferedInputStream(
-                new FileInputStream(arg))) {
+              new FileInputStream(arg))) {
           zos.putNextEntry(new ZipEntry(arg));
           int c;
           while((c = in.read()) != -1)
@@ -37,7 +38,8 @@ public class ZipCompress {
     }
     // Now extract the files:
     System.out.println("Reading file");
-    try(FileInputStream fi = new FileInputStream("test.zip");
+    try(FileInputStream fi =
+          new FileInputStream("test.zip");
         CheckedInputStream csumi =
           new CheckedInputStream(fi, new Adler32());
         ZipInputStream in2 = new ZipInputStream(csumi);

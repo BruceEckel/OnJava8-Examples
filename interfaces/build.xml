@@ -19,9 +19,11 @@
     <jrun cls="Jim" />
     <jrun cls="Machine" />
     <jrun cls="MultipleInheritance" />
+    <jrun cls="RandomDoubles" />
     <jrun cls="RandomWords" />
     <jrun cls="TestRandVals" />
     <jrun cls="interfaces.interfaceprocessor.FilterProcessor" dirpath="../interfaces/interfaceprocessor" />
+    <jrun cls="interfaces.interfaceprocessor.StringProcessor" dirpath="../interfaces/interfaceprocessor" />
     <jrun cls="interfaces.music4.Music4" dirpath="../interfaces/music4" />
     <jrun cls="interfaces.music5.Music5" dirpath="../interfaces/music5" />
     <jrun cls="interfaces.nesting.NestingInterfaces" dirpath="../interfaces/nesting" />
@@ -40,9 +42,11 @@
     <jrunconsole cls="Jim" />
     <jrunconsole cls="Machine" />
     <jrunconsole cls="MultipleInheritance" />
+    <jrunconsole cls="RandomDoubles" />
     <jrunconsole cls="RandomWords" />
     <jrunconsole cls="TestRandVals" />
     <jrunconsole cls="interfaces.interfaceprocessor.FilterProcessor" dirpath="../interfaces/interfaceprocessor" />
+    <jrunconsole cls="interfaces.interfaceprocessor.StringProcessor" dirpath="../interfaces/interfaceprocessor" />
     <jrunconsole cls="interfaces.music4.Music4" dirpath="../interfaces/music4" />
     <jrunconsole cls="interfaces.music5.Music5" dirpath="../interfaces/music5" />
     <jrunconsole cls="interfaces.nesting.NestingInterfaces" dirpath="../interfaces/nesting" />

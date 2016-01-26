@@ -14,15 +14,9 @@ public class ApplesAndOrangesWithGenerics {
     for(Apple apple : apples) {
       System.out.println(apple.id());
     }
-    // Using for-in:
-    for(Apple c : apples)
-      System.out.println(c.id());
   }
 }
 /* Output:
-0
-1
-2
 0
 1
 2

@@ -22,7 +22,7 @@ public class TupleTest {
         new Vehicle(), new Amphibian(), "hi", 47);
   }
   static
-  Tuple5<Vehicle, Amphibian, String, Integer, Double> k(){
+  Tuple5<Vehicle, Amphibian, String, Integer, Double> k() {
     return new
       Tuple5<>(
         new Vehicle(), new Amphibian(), "hi", 47, 11.1);

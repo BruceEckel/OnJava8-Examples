@@ -17,9 +17,15 @@ public class GenericArray<T> {
   public T[] rep() { return array; }
   public static void main(String[] args) {
     GenericArray<Integer> gai = new GenericArray<>(10);
-    // This causes a ClassCastException:
-    //- Integer[] ia = gai.rep();
+    try {
+      Integer[] ia = gai.rep();
+    } catch(ClassCastException e) {
+      System.out.println(e.getMessage());
+    }
     // This is OK:
     Object[] oa = gai.rep();
   }
 }
+/* Output:
+[Ljava.lang.Object; cannot be cast to [Ljava.lang.Integer;
+*/

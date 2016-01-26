@@ -2,8 +2,9 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-// Generate a Fibonacci sequence.
+// Generate a Fibonacci sequence
 import java.util.function.*;
+import java.util.stream.*;
 
 public class Fibonacci implements Supplier<Integer> {
   private int count = 0;
@@ -14,9 +15,10 @@ public class Fibonacci implements Supplier<Integer> {
     return fib(n-2) + fib(n-1);
   }
   public static void main(String[] args) {
-    Fibonacci gen = new Fibonacci();
-    for(int i = 0; i < 18; i++)
-      System.out.print(gen.get() + " ");
+    Stream.generate(new Fibonacci())
+      .limit(18)
+      .map(n -> n + " ")
+      .forEach(System.out::print);
   }
 }
 /* Output:

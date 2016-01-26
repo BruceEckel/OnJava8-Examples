@@ -2,7 +2,7 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-// Methods necessary to put your own type in a Set.
+// Methods necessary to put your own type in a Set
 import java.lang.reflect.InvocationTargetException;
 import java.util.*;
 
@@ -36,8 +36,8 @@ public class TypesForSets {
   static <T> Set<T> fill(Set<T> set, Class<T> type) {
     try {
       for(int i = 0; i < 10; i++)
-          set.add(
-            type.getConstructor(int.class).newInstance(i));
+          set.add(type.getConstructor(int.class)
+            .newInstance(i));
     } catch(NoSuchMethodException |
             SecurityException |
             InstantiationException |

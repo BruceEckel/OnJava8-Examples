@@ -2,7 +2,7 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-// Placing SWT components in tabbed panes.
+// Placing SWT components in tabbed panes
 import swt.util.*;
 import org.eclipse.swt.*;
 import org.eclipse.swt.widgets.*;
@@ -104,7 +104,8 @@ public class TabbedPane implements SWTApplication {
     tab.setText("Scribble");
     tab.setToolTipText("Simple graphics: drawing");
     final Canvas canvas = new Canvas(folder, SWT.NONE);
-    ScribbleMouseListener sml= new ScribbleMouseListener();
+    ScribbleMouseListener sml =
+      new ScribbleMouseListener();
     canvas.addMouseListener(sml);
     canvas.addMouseMoveListener(sml);
     tab.setControl(canvas);
@@ -120,7 +121,9 @@ public class TabbedPane implements SWTApplication {
       gc.dispose();
       updatePoint(e);
     }
-    public void mouseDown(MouseEvent e) { updatePoint(e); }
+    public void mouseDown(MouseEvent e) {
+      updatePoint(e);
+    }
     private void updatePoint(MouseEvent e) {
       p.x = e.x;
       p.y = e.y;

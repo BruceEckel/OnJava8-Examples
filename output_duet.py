@@ -4,8 +4,7 @@
 # Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 """
 ToDo:
-    - Validate errors (.err files, not just .out files)
-    - Are there any duplicate file names throughout the book?
+    - Right now it's ignoring the "(first x lines)" examples
 """
 import sys
 from pathlib import Path
@@ -33,9 +32,13 @@ class IgnoreDigits(Adjuster):
         trace("Ignoring digits")
         return trim(re.sub("-?\d", "", input_text))
 
+ignore_digits = IgnoreDigits()
+
 class IgnoreMemoryAddresses(Adjuster):
     def adjust(self, input_text):
         return trim(memlocation.sub("", input_text))
+
+ignore_memory_addresses = IgnoreMemoryAddresses()
 
 class RemoveCharacters(Adjuster):
     def __init__(self, chars_to_remove):
@@ -45,29 +48,39 @@ class RemoveCharacters(Adjuster):
             input_text = input_text.replace(c, "")
         return input_text
 
-class CompareSortedLines(Adjuster):
+class SortLines(Adjuster):
     def adjust(self, input_text):
         return "\n".join(sorted(input_text.splitlines())).strip()
 
-class CompareSortedWords(Adjuster):
+sort_lines = SortLines()
+
+class SortWords(Adjuster):
     def adjust(self, input_text):
         return "\n".join(sorted(input_text.split())).strip()
 
-class CompareUniqueLines(Adjuster):
+sort_words = SortWords()
+
+class UniqueLines(Adjuster):
     def adjust(self, input_text):
         return "\n".join(sorted(list(set(input_text.splitlines()))))
 
-class CompareUniqueWords(Adjuster):
+unique_lines = UniqueLines()
+
+class UniqueWords(Adjuster):
     # Fairly extreme but will still reveal significant changes
     def adjust(self, input_text):
         return "\n".join(sorted(set(input_text.split())))
 
-class CompareWordsOnly(Adjuster):
+unique_words = UniqueWords()
+
+class WordsOnly(Adjuster):
     # Fairly extreme but will still reveal significant changes
     def adjust(self, input_text):
         return "\n".join(
             sorted([w for w in input_text.split()
                     if word_only.fullmatch(w)]))
+
+words_only = WordsOnly()
 
 class IgnoreLines(Adjuster):
     def __init__(self, *lines_to_ignore):
@@ -76,83 +89,86 @@ class IgnoreLines(Adjuster):
         lines = input_text.splitlines()
         for ignore in sorted(list(self.lines_to_ignore), reverse=True):
             ignore = ignore - 1 # Compensate for zero indexing
-            trace("ignoring line %d: %s" % (ignore, lines[ignore]))
+            print("ignoring line %d: %s" % (ignore, lines[ignore]))
             del lines[ignore]
         return "\n".join(lines)
 
 
 match_adjustments = {
-    "ToastOMatic.java" : CompareSortedLines(),
-    "ThreadVariations.java" : CompareSortedLines(),
-    "ActiveObjectDemo.java" : [CompareSortedLines(), IgnoreDigits()],
-    "Interrupting.java" : CompareSortedLines(),
-    "SyncObject.java" : CompareSortedLines(),
-    "UseCaseTracker.java" : CompareSortedLines(),
-    "AtUnitComposition.java" : CompareSortedLines(),
-    "AtUnitExample1.java" : CompareSortedLines(),
-    "AtUnitExample2.java" : CompareSortedLines(),
-    "AtUnitExample3.java" : CompareSortedLines(),
-    "AtUnitExample5.java" : CompareSortedLines(),
-    "AtUnitExternalTest.java" : CompareSortedLines(),
-    "HashSetTest.java" : CompareSortedLines(),
-    "StackLStringTest.java" : CompareSortedLines(),
-    "WaxOMatic2.java" : CompareSortedLines(),
+    "ToastOMatic.java" : sort_lines,
+    "ThreadVariations.java" : sort_lines,
+    "ActiveObjectDemo.java" : [sort_lines, ignore_digits],
+    "Interrupting.java" : sort_lines,
+    "SyncObject.java" : sort_lines,
+    "UseCaseTracker.java" : sort_lines,
+    "AtUnitComposition.java" : sort_lines,
+    "AtUnitExample1.java" : sort_lines,
+    "AtUnitExample2.java" : sort_lines,
+    "AtUnitExample3.java" : sort_lines,
+    "AtUnitExample5.java" : sort_lines,
+    "AtUnitExternalTest.java" : sort_lines,
+    "HashSetTest.java" : sort_lines,
+    "StackLStringTest.java" : sort_lines,
+    "WaxOMatic2.java" : sort_lines,
 
-    "ForEach.java" : CompareSortedWords(),
-    "PetCount4.java" : [RemoveCharacters("{}"), CompareSortedWords()],
+    "ForEach.java" : sort_words,
+    "PetCount4.java" : [RemoveCharacters("{}"), sort_words],
 
-    "CachedThreadPool.java" : CompareWordsOnly(),
-    "FixedThreadPool.java" : CompareWordsOnly(),
-    "MoreBasicThreads.java" : CompareWordsOnly(),
-    "ConstantSpecificMethod.java" : CompareWordsOnly(),
+    "CachedThreadPool.java" : words_only,
+    "FixedThreadPool.java" : words_only,
+    "MoreBasicThreads.java" : words_only,
+    "ConstantSpecificMethod.java" : words_only,
 
-    "BankTellerSimulation.java" : [CompareWordsOnly(), CompareUniqueWords()],
+    "BankTellerSimulation.java" : [words_only, unique_words],
 
-    "MapComparisons.java" : IgnoreDigits(),
-    "ListComparisons.java" : IgnoreDigits(),
-    "NotifyVsNotifyAll.java" : IgnoreDigits(),
-    "SelfManaged.java" : IgnoreDigits(),
-    "SimpleMicroBenchmark.java" : IgnoreDigits(),
-    "SimpleThread.java" : IgnoreDigits(),
-    "SleepingTask.java" : IgnoreDigits(),
-    "ExchangerDemo.java" : IgnoreDigits(),
-    "Compete.java" : IgnoreDigits(),
-    "MappedIO.java" : IgnoreDigits(),
-    "Directories.java" : IgnoreDigits(),
-    "Find.java" : IgnoreDigits(),
-    "PathAnalysis.java" : IgnoreDigits(),
-    "TreeWatcher.java" : IgnoreDigits(),
-    "Mixins.java" : IgnoreDigits(),
-    "ListPerformance.java" : IgnoreDigits(),
-    "MapPerformance.java" : IgnoreDigits(),
-    "SetPerformance.java" : IgnoreDigits(),
-    "SynchronizationComparisons.java" : IgnoreDigits(),
-    "AtomicityTest.java" : IgnoreDigits(),
-    "TypesForSets.java" : IgnoreDigits(),
-    "PrintableLogRecord.java" : IgnoreDigits(),
-    "LockingMappedFiles.java" : IgnoreDigits(),
+    "MapComparisons.java" : ignore_digits,
+    "ListComparisons.java" : ignore_digits,
+    "NotifyVsNotifyAll.java" : ignore_digits,
+    "SelfManaged.java" : ignore_digits,
+    "SimpleMicroBenchmark.java" : ignore_digits,
+    "SimpleThread.java" : ignore_digits,
+    "SleepingTask.java" : ignore_digits,
+    "ExchangerDemo.java" : ignore_digits,
+    "Compete.java" : ignore_digits,
+    "MappedIO.java" : ignore_digits,
+    "Directories.java" : ignore_digits,
+    "Find.java" : ignore_digits,
+    "PathAnalysis.java" : ignore_digits,
+    "TreeWatcher.java" : ignore_digits,
+    "Mixins.java" : ignore_digits,
+    "ListPerformance.java" : ignore_digits,
+    "MapPerformance.java" : ignore_digits,
+    "SetPerformance.java" : ignore_digits,
+    "SynchronizationComparisons.java" : ignore_digits,
+    "AtomicityTest.java" : ignore_digits,
+    "TypesForSets.java" : ignore_digits,
+    "PrintableLogRecord.java" : ignore_digits,
+    "LockingMappedFiles.java" : ignore_digits,
+
 
     "Conversion.java" : IgnoreLines(27, 28),
     "DynamicProxyMixin.java" : IgnoreLines(2),
     "PreferencesDemo.java" : IgnoreLines(5),
+    "AtUnitExample4.java" : IgnoreLines(6, 9),
 
-    "SerialNumberChecker.java" : [IgnoreDigits(), CompareUniqueLines()],
-    "EvenSupplier.java" : [IgnoreDigits(), CompareUniqueLines()],
+    "SerialNumberChecker.java" : [ignore_digits, unique_lines],
+    "EvenSupplier.java" : [ignore_digits, unique_lines],
 
-    "FillingLists.java" : [ IgnoreMemoryAddresses(), CompareSortedWords() ],
+    "FillingLists.java" : [ ignore_memory_addresses, sort_words ],
 
-    "SimpleDaemons.java" : [ IgnoreMemoryAddresses(), IgnoreDigits() ],
+    "SimpleDaemons.java" : [ ignore_memory_addresses, ignore_digits ],
     "CaptureUncaughtException.java" : [
-        IgnoreMemoryAddresses(), IgnoreDigits(), CompareUniqueLines() ],
+        ignore_memory_addresses, ignore_digits, unique_lines ],
 
-    "CarBuilder.java" : [ IgnoreDigits(), CompareUniqueLines() ],
-    "CloseResource.java" : [ CompareUniqueLines() ],
+    "CarBuilder.java" : [ ignore_digits, unique_lines ],
+    "CloseResource.java" : [ unique_lines ],
 
-    "SpringDetector.java" : [ IgnoreDigits(), CompareSortedWords() ],
+    "SpringDetector.java" : [ ignore_digits, sort_words ],
 
-    "PipedIO.java" : [ CompareUniqueWords() ],
+    "PipedIO.java" : [ unique_words ],
 
-    "ExplicitCriticalSection.java" : IgnoreDigits(),
+    "CriticalSection.java" : ignore_digits,
+    "ExplicitCriticalSection.java" : ignore_digits,
 }
 
 

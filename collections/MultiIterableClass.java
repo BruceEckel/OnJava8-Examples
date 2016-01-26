@@ -2,7 +2,7 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-// Adding several Adapter Methods.
+// Adding several Adapter Methods
 import java.util.*;
 
 public class MultiIterableClass extends IterableClass {
@@ -11,8 +11,12 @@ public class MultiIterableClass extends IterableClass {
       public Iterator<String> iterator() {
         return new Iterator<String>() {
           int current = words.length - 1;
-          public boolean hasNext() { return current > -1; }
-          public String next() { return words[current--]; }
+          public boolean hasNext() {
+            return current > -1;
+          }
+          public String next() {
+            return words[current--];
+          }
           public void remove() { // Not implemented
             throw new UnsupportedOperationException();
           }

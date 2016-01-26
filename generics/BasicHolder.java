@@ -8,6 +8,7 @@ public class BasicHolder<T> {
   void set(T arg) { element = arg; }
   T get() { return element; }
   void f() {
-    System.out.println(element.getClass().getSimpleName());
+    System.out.println(
+      element.getClass().getSimpleName());
   }
 }

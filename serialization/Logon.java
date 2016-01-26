@@ -2,7 +2,7 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-// Demonstrates the "transient" keyword.
+// Demonstrates the "transient" keyword
 import java.util.concurrent.*;
 import java.io.*;
 import java.util.*;
@@ -20,11 +20,12 @@ public class Logon implements Serializable {
     return "logon info: \n   username: " + username +
       "\n   date: " + date + "\n   password: " + password;
   }
-  public static void main(String[] args) throws Exception {
+  public static void
+  main(String[] args) throws Exception {
     Logon a = new Logon("Hulk", "myLittlePony");
     System.out.println("logon a = " + a);
     try(ObjectOutputStream o = new ObjectOutputStream(
-         new FileOutputStream("Logon.dat"))) {
+          new FileOutputStream("Logon.dat"))) {
       o.writeObject(a);
     }
     TimeUnit.SECONDS.sleep(1); // Delay

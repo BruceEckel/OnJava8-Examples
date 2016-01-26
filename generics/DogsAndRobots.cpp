@@ -2,19 +2,21 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
+#include <iostream>
+using namespace std;
 
 class Dog {
 public:
-  void speak() {}
-  void sit() {}
+  void speak() { cout << "Arf!" << endl; }
+  void sit() { cout << "Sitting" << endl; }
   void reproduce() {}
 };
 
 class Robot {
 public:
-  void speak() {}
-  void sit() {}
-  void oilChange() {
+  void speak() { cout << "Click!" << endl; }
+  void sit() { cout << "Clank!" << endl; }
+  void oilChange() {}
 };
 
 template<class T> void perform(T anything) {
@@ -28,3 +30,9 @@ int main() {
   perform(d);
   perform(r);
 }
+/* Output:
+Arf!
+Sitting
+Click!
+Clank!
+*/

@@ -2,7 +2,7 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-// An example of the Abstract Factory pattern.
+// An example of the Abstract Factory pattern
 package patterns.absfactory;
 import java.util.function.*;
 
@@ -78,7 +78,7 @@ public class GameEnvironment {
   public void play() {
     p.interactWith(ob);
   }
-  public static void main(String args[]) {
+  public static void main(String[] args) {
     GameElementFactory
       kp = new KittiesAndPuzzles(),
       kd = new KillAndDismember();

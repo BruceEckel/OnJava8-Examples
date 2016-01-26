@@ -8,7 +8,8 @@ import org.eclipse.swt.widgets.*;
 import org.eclipse.swt.layout.*;
 import java.util.*;
 
-public class DisplayEnvironment implements SWTApplication {
+public class
+DisplayEnvironment implements SWTApplication {
   @Override
   public void createContents(Composite parent) {
     parent.setLayout(new FillLayout());
@@ -18,7 +19,7 @@ public class DisplayEnvironment implements SWTApplication {
         entry.getValue() + "\n");
     }
   }
-  public static void main(String [] args) {
+  public static void main(String[] args) {
     SWTConsole.run(new DisplayEnvironment(), 800, 600);
   }
 }

@@ -2,8 +2,7 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-// Very simple server that just
-// echoes whatever the client sends.
+// Just echoes whatever the client sends
 // {ValidateByHand}
 import java.io.*;
 import java.net.*;
@@ -11,8 +10,8 @@ import java.net.*;
 public class SimpleServer {
   // Choose a port outside of the range 1-1024:
   public static final int PORT = 8080;
-  public static void main(String[] args)
-      throws IOException {
+  public static void
+  main(String[] args) throws IOException {
     ServerSocket s = new ServerSocket(PORT);
     System.out.println("Started: " + s);
     try {

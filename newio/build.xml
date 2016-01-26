@@ -12,7 +12,6 @@
     <jrun cls="ChannelCopy" arguments="ChannelCopy.java test.txt" />
     <jrun cls="Endians" />
     <jrun cls="FileLocking" />
-    <jrun cls="GetChannel" />
     <jrun cls="GetData" />
     <jrun cls="IntBufferDemo" />
     <jrun cls="LargeMappedFiles" />
@@ -29,7 +28,6 @@
     <jrunconsole cls="ChannelCopy" arguments="ChannelCopy.java test.txt" />
     <jrunconsole cls="Endians" />
     <jrunconsole cls="FileLocking" />
-    <jrunconsole cls="GetChannel" />
     <jrunconsole cls="GetData" />
     <jrunconsole cls="IntBufferDemo" />
     <jrunconsole cls="LargeMappedFiles" />

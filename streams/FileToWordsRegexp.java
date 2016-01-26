@@ -18,7 +18,8 @@ public class FileToWordsRegexp {
   public Stream<String> stream() {
     return Pattern.compile("[ .,?]+").splitAsStream(all);
   }
-  public static void main(String[] args) throws Exception {
+  public static void
+  main(String[] args) throws Exception {
     FileToWordsRegexp fw =
       new FileToWordsRegexp("Cheese.dat");
     fw.stream()

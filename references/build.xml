@@ -11,7 +11,7 @@
     <jrun cls="Alias1" />
     <jrun cls="Alias2" />
     <jrun cls="CheckCloneable" />
-    <jrun cls="Cloning" />
+    <jrun cls="CloneArrayList" />
     <jrun cls="Compete" />
     <jrun cls="CopyConstructor" />
     <jrun cls="DeepCopy" />
@@ -20,9 +20,9 @@
     <jrun cls="Immutable2" />
     <jrun cls="ImmutableInteger" />
     <jrun cls="ImmutableStrings" />
-    <jrun cls="LocalCopy" />
     <jrun cls="MutableInteger" />
     <jrun cls="PassReferences" />
+    <jrun cls="SimplerMutableInteger" />
     <jrun cls="Snake" />
     <jrun cls="Stringer" />
   </target>
@@ -32,7 +32,7 @@
     <jrunconsole cls="Alias1" />
     <jrunconsole cls="Alias2" />
     <jrunconsole cls="CheckCloneable" />
-    <jrunconsole cls="Cloning" />
+    <jrunconsole cls="CloneArrayList" />
     <jrunconsole cls="Compete" />
     <jrunconsole cls="CopyConstructor" />
     <jrunconsole cls="DeepCopy" />
@@ -41,9 +41,9 @@
     <jrunconsole cls="Immutable2" />
     <jrunconsole cls="ImmutableInteger" />
     <jrunconsole cls="ImmutableStrings" />
-    <jrunconsole cls="LocalCopy" />
     <jrunconsole cls="MutableInteger" />
     <jrunconsole cls="PassReferences" />
+    <jrunconsole cls="SimplerMutableInteger" />
     <jrunconsole cls="Snake" />
     <jrunconsole cls="Stringer" />
   </target>

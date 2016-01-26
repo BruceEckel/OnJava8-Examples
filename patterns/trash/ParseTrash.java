@@ -3,7 +3,7 @@
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // Open a file and parse its contents into
-// Trash objects, placing each into a List.
+// Trash objects, placing each into a List
 package patterns.trash;
 import java.util.*;
 import java.util.stream.*;

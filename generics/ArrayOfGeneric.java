@@ -8,8 +8,11 @@ public class ArrayOfGeneric {
   static Generic<Integer>[] gia;
   @SuppressWarnings("unchecked")
   public static void main(String[] args) {
-    // Compiles; produces ClassCastException:
-    //- gia = (Generic<Integer>[])new Object[SIZE];
+    try {
+      gia = (Generic<Integer>[])new Object[SIZE];
+    } catch(ClassCastException e) {
+      System.out.println(e.getMessage());
+    }
     // Runtime type is the raw (erased) type:
     gia = (Generic<Integer>[])new Generic[SIZE];
     System.out.println(gia.getClass().getSimpleName());
@@ -20,5 +23,6 @@ public class ArrayOfGeneric {
   }
 }
 /* Output:
+[Ljava.lang.Object; cannot be cast to [LGeneric;
 Generic[]
 */

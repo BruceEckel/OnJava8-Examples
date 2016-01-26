@@ -20,7 +20,8 @@ public class Hex {
     result.append("\n");
     return result.toString();
   }
-  public static void main(String[] args) throws Exception {
+  public static void
+  main(String[] args) throws Exception {
     if(args.length == 0)
       // Test by displaying this class file:
       System.out.println(format(

@@ -2,7 +2,7 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-// Demonstrates object serialization.
+// Demonstrates object serialization
 import java.io.*;
 import java.util.*;
 
@@ -10,11 +10,13 @@ class Data implements Serializable {
   private int n;
   public Data(int n) { this.n = n; }
   @Override
-  public String toString() { return Integer.toString(n); }
+  public String toString() {
+    return Integer.toString(n);
+  }
 }
 
 public class Worm implements Serializable {
-  private static Random rand = new Random(47);
+  private static SplittableRandom rand = new SplittableRandom(47);
   private Data[] d = {
     new Data(rand.nextInt(10)),
     new Data(rand.nextInt(10)),
@@ -44,8 +46,9 @@ public class Worm implements Serializable {
       result.append(next);
     return result.toString();
   }
-  public static void main(String[] args)
-  throws ClassNotFoundException, IOException {
+  public static void
+  main(String[] args) throws ClassNotFoundException,
+    IOException {
     Worm w = new Worm(6, 'a');
     System.out.println("w = " + w);
     try(ObjectOutputStream out = new ObjectOutputStream(
@@ -67,7 +70,8 @@ public class Worm implements Serializable {
       out2.writeObject(w);
       out2.flush();
       try(ObjectInputStream in2 = new ObjectInputStream(
-          new ByteArrayInputStream(bout.toByteArray()))) {
+            new ByteArrayInputStream(
+              bout.toByteArray()))) {
         String s = (String)in2.readObject();
         Worm w3 = (Worm)in2.readObject();
         System.out.println(s + "w3 = " + w3);

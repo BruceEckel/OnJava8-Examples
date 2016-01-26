@@ -22,7 +22,8 @@ public class SpringDetector {
     else
       System.out.println("Key not found: " + gh);
   }
-  public static void main(String[] args) throws Exception {
+  public static void
+  main(String[] args) throws Exception {
     detectSpring(Groundhog.class);
   }
 }

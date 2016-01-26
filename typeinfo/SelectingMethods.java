@@ -2,7 +2,7 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-// Looking for particular methods in a dynamic proxy.
+// Looking for particular methods in a dynamic proxy
 import java.lang.reflect.*;
 
 class MethodSelector implements InvocationHandler {
@@ -43,10 +43,11 @@ class Implementation implements SomeMethods {
 
 class SelectingMethods {
   public static void main(String[] args) {
-    SomeMethods proxy= (SomeMethods)Proxy.newProxyInstance(
-      SomeMethods.class.getClassLoader(),
-      new Class[]{ SomeMethods.class },
-      new MethodSelector(new Implementation()));
+    SomeMethods proxy =
+      (SomeMethods)Proxy.newProxyInstance(
+        SomeMethods.class.getClassLoader(),
+        new Class[]{ SomeMethods.class },
+        new MethodSelector(new Implementation()));
     proxy.boring1();
     proxy.boring2();
     proxy.interesting("bonobo");

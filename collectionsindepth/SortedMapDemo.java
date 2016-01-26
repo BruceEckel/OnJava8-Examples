@@ -2,14 +2,14 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-// What you can do with a TreeMap.
+// What you can do with a TreeMap
 import java.util.*;
 import onjava.*;
 
 public class SortedMapDemo {
   public static void main(String[] args) {
     TreeMap<Integer,String> sortedMap =
-      new TreeMap<>(new CountingMapData(10));
+      new TreeMap<>(new CountingFilledMap(10));
     System.out.println(sortedMap);
     Integer low = sortedMap.firstKey();
     Integer high = sortedMap.lastKey();

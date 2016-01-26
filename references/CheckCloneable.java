@@ -2,7 +2,7 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-// Check to see if a reference can be cloned.
+// Check to see if a reference can be cloned
 
 // Can't clone this -- doesn't override clone():
 class Ordinary {}
@@ -65,15 +65,14 @@ public class CheckCloneable {
     Ordinary x = null;
     if(ord instanceof Cloneable) {
       try {
-        x= (Ordinary)((IsCloneable)ord).clone();
+        x = (Ordinary)((IsCloneable)ord).clone();
         System.out.println("Cloned " + id);
       } catch(CloneNotSupportedException e) {
         System.out.println(
           "Could not clone " + id);
       }
     } else {
-      System.out.println(
-        "Doesn't implement Cloneable");
+      System.out.println("Doesn't implement Cloneable");
     }
     return x;
   }
@@ -88,10 +87,10 @@ public class CheckCloneable {
       new ReallyNoMore(),
     };
     Ordinary x = new Ordinary();
-    // This won't compile;
+    // This won't compile because
     // clone() is protected in Object:
     //- x = (Ordinary)x.clone();
-    // Checks first to see if a class
+    // Checks first to see if the class
     // implements Cloneable:
     for(Ordinary ord1 : ord) {
       tryToClone(ord1);

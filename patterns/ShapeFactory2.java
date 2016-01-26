@@ -2,7 +2,7 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-// Polymorphic factory methods.
+// Polymorphic factory methods
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -65,7 +65,7 @@ class Square implements Shape {
 }
 
 public class ShapeFactory2 {
-  public static void main(String args[]) {
+  public static void main(String[] args) {
     List<Shape> shapes = Stream.of("Circle", "Square",
       "Square", "Circle", "Circle", "Square")
       .map(ShapeFactory::createShape)

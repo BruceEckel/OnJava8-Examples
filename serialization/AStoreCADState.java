@@ -2,14 +2,14 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-// Saving the state of a pretend CAD system.
+// Saving the state of a fictitious CAD system
 import java.io.*;
 import java.util.*;
 
 abstract class Shape implements Serializable {
   public static final int RED = 1, BLUE = 2, GREEN = 3;
   private int xPos, yPos, dimension;
-  private static Random rand = new Random(47);
+  private static SplittableRandom rand = new SplittableRandom(47);
   private static int counter = 0;
   public abstract void setColor(int newColor);
   public abstract int getColor();
@@ -71,7 +71,8 @@ class Line extends Shape {
 }
 
 public class AStoreCADState {
-  public static void main(String[] args) throws Exception {
+  public static void
+  main(String[] args) throws Exception {
     List<Class<? extends Shape>> shapeTypes =
       new ArrayList<>();
     // Add references to the class objects:
@@ -86,11 +87,13 @@ public class AStoreCADState {
     for(int i = 0; i < 10; i++)
       ((Shape)shapes.get(i)).setColor(Shape.GREEN);
     // Save the state vector:
-    ObjectOutputStream out = new ObjectOutputStream(
-      new FileOutputStream("CADState.dat"));
-    out.writeObject(shapeTypes);
-    Line.serializeStaticState(out);
-    out.writeObject(shapes);
+    try(ObjectOutputStream out =
+          new ObjectOutputStream(
+            new FileOutputStream("CADState.dat"))) {
+      out.writeObject(shapeTypes);
+      Line.serializeStaticState(out);
+      out.writeObject(shapes);
+    }
     // Display the shapes:
     System.out.println(shapes);
   }

@@ -3,7 +3,7 @@
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // Dynamically changing the behavior of an object
-// via composition (the "State" design pattern).
+// via composition (the "State" design pattern)
 
 class Actor {
   public void act() {}
@@ -11,12 +11,16 @@ class Actor {
 
 class HappyActor extends Actor {
   @Override
-  public void act() { System.out.println("HappyActor"); }
+  public void act() {
+    System.out.println("HappyActor");
+  }
 }
 
 class SadActor extends Actor {
   @Override
-  public void act() { System.out.println("SadActor"); }
+  public void act() {
+    System.out.println("SadActor");
+  }
 }
 
 class Stage {

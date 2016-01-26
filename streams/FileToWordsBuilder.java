@@ -18,7 +18,8 @@ public class FileToWordsBuilder {
       });
   }
   Stream<String> stream() { return builder.build(); }
-  public static void main(String[] args) throws Exception {
+  public static void
+  main(String[] args) throws Exception {
     new FileToWordsBuilder("Cheese.dat").stream()
       .limit(7)
       .map(w -> w + " ")

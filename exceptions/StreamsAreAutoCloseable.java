@@ -7,8 +7,8 @@ import java.nio.file.*;
 import java.util.stream.*;
 
 public class StreamsAreAutoCloseable {
-  public static
-  void main(String[] args) throws IOException{
+  public static void
+  main(String[] args) throws IOException{
     try(Stream<String> in = Files.lines(
           Paths.get("StreamsAreAutoCloseable.java"));
         PrintWriter outfile = new PrintWriter(

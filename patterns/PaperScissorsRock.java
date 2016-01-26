@@ -2,7 +2,7 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-// Demonstration of multiple dispatching.
+// Demonstration of multiple dispatching
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -86,7 +86,7 @@ class ItemFactory {
     Arrays.asList(
       Scissors::new, Paper::new, Rock::new);
   final static int sz = items.size();
-  private static Random rand = new Random(47);
+  private static SplittableRandom rand = new SplittableRandom(47);
   public static Item newItem() {
     return items.get(rand.nextInt(sz)).get();
   }
@@ -103,7 +103,7 @@ class Compete {
 }
 
 public class PaperScissorsRock {
-  public static void main(String args[]) {
+  public static void main(String[] args) {
     Stream.generate(ItemFactory::newPair)
       .limit(20)
       .map(Compete::match)

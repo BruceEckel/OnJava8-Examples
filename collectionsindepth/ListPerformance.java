@@ -2,13 +2,13 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-// Demonstrates performance differences in Lists.
+// Demonstrates performance differences in Lists
 // {Args: 100 500} Small to keep build testing short
 import java.util.*;
 import onjava.*;
 
 public class ListPerformance {
-  static Random rand = new Random();
+  static SplittableRandom rand = new SplittableRandom();
   static int reps = 1000;
   static List<Test<List<Integer>>> tests =
     new ArrayList<>();
@@ -53,7 +53,8 @@ public class ListPerformance {
       int test(List<Integer> list, TestParam tp) {
         final int LOOPS = 1000000;
         int half = list.size() / 2;
-        ListIterator<Integer> it = list.listIterator(half);
+        ListIterator<Integer> it =
+          list.listIterator(half);
         for(int i = 0; i < LOOPS; i++)
           it.add(47);
         return LOOPS;
@@ -145,7 +146,8 @@ public class ListPerformance {
       super(collection, tests);
     }
     // Fill to the appropriate size before each test:
-    @Override protected List<Integer> initialize(int size){
+    @Override
+    protected List<Integer> initialize(int size) {
       collection.clear();
       collection.addAll(new CountingIntegerList(size));
       return collection;
@@ -161,13 +163,14 @@ public class ListPerformance {
       Tester.defaultParams = TestParam.array(args);
     // Can only do these two tests on an array:
     Tester<List<Integer>> arrayTest =
-      new Tester<List<Integer>>(null, tests.subList(1, 3)){
+      new Tester<List<Integer>>(null,
+          tests.subList(1, 3)) {
         // This is called before each test. It
         // produces a non-resizeable array-backed list:
         @Override protected
         List<Integer> initialize(int size) {
-          Integer[] ia = Generated.array(Integer.class,
-            new CountingSupplier.Integer(), size);
+          Integer[] ia = new Integer[size];
+          Arrays.setAll(ia, new Count.Integer()::get);
           return Arrays.asList(ia);
         }
       };

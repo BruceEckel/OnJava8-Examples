@@ -3,7 +3,7 @@
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // Using finalize() to detect an object that
-// hasn't been properly cleaned up.
+// hasn't been properly cleaned up
 import onjava.*;
 
 class Book {
@@ -15,7 +15,7 @@ class Book {
     checkedOut = false;
   }
   @Override
-  protected void finalize() {
+  public void finalize() {
     if(checkedOut)
       System.out.println("Error: checked out");
     // Normally, you'll also do this:

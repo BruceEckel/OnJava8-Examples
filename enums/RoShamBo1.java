@@ -2,7 +2,7 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-// Demonstration of multiple dispatching.
+// Demonstration of multiple dispatching
 package enums;
 import java.util.*;
 import static enums.Outcome.*;
@@ -16,7 +16,9 @@ interface Item {
 
 class Paper implements Item {
   @Override
-  public Outcome compete(Item it) { return it.eval(this); }
+  public Outcome compete(Item it) {
+    return it.eval(this);
+  }
   @Override
   public Outcome eval(Paper p) { return DRAW; }
   @Override
@@ -29,7 +31,9 @@ class Paper implements Item {
 
 class Scissors implements Item {
   @Override
-  public Outcome compete(Item it) { return it.eval(this); }
+  public Outcome compete(Item it) {
+    return it.eval(this);
+  }
   @Override
   public Outcome eval(Paper p) { return LOSE; }
   @Override
@@ -42,7 +46,9 @@ class Scissors implements Item {
 
 class Rock implements Item {
   @Override
-  public Outcome compete(Item it) { return it.eval(this); }
+  public Outcome compete(Item it) {
+    return it.eval(this);
+  }
   @Override
   public Outcome eval(Paper p) { return WIN; }
   @Override
@@ -55,7 +61,7 @@ class Rock implements Item {
 
 public class RoShamBo1 {
   static final int SIZE = 20;
-  private static Random rand = new Random(47);
+  private static SplittableRandom rand = new SplittableRandom(47);
   public static Item newItem() {
     switch(rand.nextInt(3)) {
       default:

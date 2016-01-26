@@ -5,8 +5,8 @@
 import java.io.*;
 
 public class StoringAndRecoveringData {
-  public static void main(String[] args)
-  throws IOException {
+  public static void
+  main(String[] args) throws IOException {
     try(DataOutputStream out = new DataOutputStream(
           new BufferedOutputStream(
             new FileOutputStream("Data.txt")))) {

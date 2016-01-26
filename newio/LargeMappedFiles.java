@@ -2,22 +2,25 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-// Creating a very large file using mapping.
+// Creating a very large file using mapping
 import java.nio.*;
 import java.nio.channels.*;
 import java.io.*;
 
 public class LargeMappedFiles {
   static int length = 0x8000000; // 128 MB
-  public static void main(String[] args) throws Exception {
-    MappedByteBuffer out =
-      new RandomAccessFile("test.dat", "rw").getChannel()
-      .map(FileChannel.MapMode.READ_WRITE, 0, length);
-    for(int i = 0; i < length; i++)
-      out.put((byte)'x');
-    System.out.println("Finished writing");
-    for(int i = length/2; i < length/2 + 6; i++)
-      System.out.print((char)out.get(i));
+  public static void
+  main(String[] args) throws Exception {
+    try(RandomAccessFile tdat =
+          new RandomAccessFile("test.dat", "rw")) {
+      MappedByteBuffer out = tdat.getChannel()
+        .map(FileChannel.MapMode.READ_WRITE, 0, length);
+      for(int i = 0; i < length; i++)
+        out.put((byte)'x');
+      System.out.println("Finished writing");
+      for(int i = length/2; i < length/2 + 6; i++)
+        System.out.print((char)out.get(i));
+    }
   }
 }
 /* Output:

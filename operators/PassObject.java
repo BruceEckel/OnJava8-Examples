@@ -3,7 +3,7 @@
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // Passing objects to methods might not be
-// what you're used to.
+// what you're used to
 
 class Letter {
   char c;

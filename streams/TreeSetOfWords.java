@@ -7,7 +7,8 @@ import java.nio.file.*;
 import java.util.stream.*;
 
 public class TreeSetOfWords {
-  public static void main(String[] args) throws Exception {
+  public static void
+  main(String[] args) throws Exception {
     Set<String> words2 =
       Files.lines(Paths.get("TreeSetOfWords.java"))
         .flatMap(s -> Arrays.stream(s.split("\\W+")))

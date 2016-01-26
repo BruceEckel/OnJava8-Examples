@@ -2,7 +2,7 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-// SWT translation of Swing ColorBoxes.java.
+// SWT translation of Swing ColorBoxes.java
 import swt.util.*;
 import org.eclipse.swt.*;
 import org.eclipse.swt.widgets.*;
@@ -23,7 +23,7 @@ class CBox extends Canvas implements Runnable {
       color.dispose();
     }
   }
-  private static Random rand = new Random();
+  private static SplittableRandom rand = new SplittableRandom();
   private static RGB newColor() {
     return new RGB(rand.nextInt(255),
       rand.nextInt(255), rand.nextInt(255));

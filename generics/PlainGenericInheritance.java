@@ -4,13 +4,13 @@
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 
 class GenericSetter<T> { // Not self-bounded
-  void set(T arg){
+  void set(T arg) {
     System.out.println("GenericSetter.set(Base)");
   }
 }
 
 class DerivedGS extends GenericSetter<Base> {
-  void set(Derived derived){
+  void set(Derived derived) {
     System.out.println("DerivedGS.set(Derived)");
   }
 }
@@ -21,7 +21,7 @@ public class PlainGenericInheritance {
     Derived derived = new Derived();
     DerivedGS dgs = new DerivedGS();
     dgs.set(derived);
-    dgs.set(base); // Compiles: overloaded, not overridden!
+    dgs.set(base); // Overloaded, not overridden!
   }
 }
 /* Output:

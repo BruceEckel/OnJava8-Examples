@@ -16,8 +16,8 @@ public class GenericsAndUpcasting {
     apples.add(new Gala());
     apples.add(new Fuji());
     apples.add(new Braeburn());
-    for(Apple c : apples)
-      System.out.println(c);
+    for(Apple apple : apples)
+      System.out.println(apple);
   }
 }
 /* Output:

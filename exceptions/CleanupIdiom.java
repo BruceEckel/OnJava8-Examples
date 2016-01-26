@@ -2,7 +2,7 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-// Each disposable object must be followed by a try-finally
+// Disposable objects must be followed by a try-finally
 
 class NeedsCleanup { // Construction can't fail
   private static long counter = 1;
@@ -52,12 +52,12 @@ public class CleanupIdiom {
         } finally {
           nc5.dispose();
         }
-      } catch(ConstructionException e) { // nc5 constructor
+      } catch(ConstructionException e) { // nc5 const.
         System.out.println(e);
       } finally {
         nc4.dispose();
       }
-    } catch(ConstructionException e) { // nc4 constructor
+    } catch(ConstructionException e) { // nc4 const.
       System.out.println(e);
     }
   }

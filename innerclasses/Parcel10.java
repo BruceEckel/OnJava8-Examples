@@ -3,7 +3,7 @@
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // Using "instance initialization" to perform
-// construction on an anonymous inner class.
+// construction on an anonymous inner class
 
 public class Parcel10 {
   public Destination

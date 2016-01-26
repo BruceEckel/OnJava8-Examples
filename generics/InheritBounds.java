@@ -9,21 +9,21 @@ class HoldItem<T> {
   T getItem() { return item; }
 }
 
-class Colored2<T extends HasColor> extends HoldItem<T> {
-  Colored2(T item) { super(item); }
+class WithColor2<T extends HasColor> extends HoldItem<T> {
+  WithColor2(T item) { super(item); }
   java.awt.Color color() { return item.getColor(); }
 }
 
-class ColoredDimension2<T extends Dimension & HasColor>
-extends Colored2<T> {
-  ColoredDimension2(T item) {  super(item); }
+class WithColorCoord2<T extends Coord & HasColor>
+extends WithColor2<T> {
+  WithColorCoord2(T item) {  super(item); }
   int getX() { return item.x; }
   int getY() { return item.y; }
   int getZ() { return item.z; }
 }
 
-class Solid2<T extends Dimension & HasColor & Weight>
-extends ColoredDimension2<T> {
+class Solid2<T extends Coord & HasColor & Weight>
+extends WithColorCoord2<T> {
   Solid2(T item) {  super(item); }
   int weight() { return item.weight(); }
 }

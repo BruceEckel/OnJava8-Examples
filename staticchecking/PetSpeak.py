@@ -9,15 +9,20 @@ class Pet:
 
 class Cat(Pet):
     def speak(self):
-       System.out.println("meow!")
+       print("meow!")
 
 class Dog(Pet):
     def speak(self):
-       System.out.println("woof!")
+       print("woof!")
 
 def command(pet):
     pet.speak()
 
-pets = [ Cat(), Dog() ]
-for pet in pets:
+pets = [ Cat(), Dog() ] # (1)
+for pet in pets: # (2)
     command(pet)
+
+output = """
+meow!
+woof!
+"""

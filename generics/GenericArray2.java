@@ -15,7 +15,7 @@ public class GenericArray2<T> {
   public T get(int index) { return (T)array[index]; }
   @SuppressWarnings("unchecked")
   public T[] rep() {
-    return (T[])array; // Warning: unchecked cast
+    return (T[])array; // Unchecked cast
   }
   public static void main(String[] args) {
     GenericArray2<Integer> gai =

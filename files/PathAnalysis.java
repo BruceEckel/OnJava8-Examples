@@ -10,8 +10,8 @@ public class PathAnalysis {
     System.out.print(id + ": ");
     System.out.println(result);
   }
-  public
-  static void main(String[] args) throws IOException {
+  public static void
+  main(String[] args) throws IOException {
     System.out.println(System.getProperty("os.name"));
     Path p =
       Paths.get("PathAnalysis.java").toAbsolutePath();

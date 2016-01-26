@@ -3,7 +3,7 @@
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // It only looks like you can override
-// a private or private final method.
+// a private or private final method
 
 class WithFinals {
   // Identical to "private" alone:

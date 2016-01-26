@@ -2,7 +2,7 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-// Order of constructor calls.
+// Order of constructor calls
 package polymorphism;
 
 class Meal {
@@ -26,14 +26,18 @@ class Lunch extends Meal {
 }
 
 class PortableLunch extends Lunch {
-  PortableLunch() { System.out.println("PortableLunch()");}
+  PortableLunch() {
+    System.out.println("PortableLunch()");
+  }
 }
 
 public class Sandwich extends PortableLunch {
   private Bread b = new Bread();
   private Cheese c = new Cheese();
   private Lettuce l = new Lettuce();
-  public Sandwich() { System.out.println("Sandwich()"); }
+  public Sandwich() {
+    System.out.println("Sandwich()");
+  }
   public static void main(String[] args) {
     new Sandwich();
   }

@@ -6,10 +6,19 @@
 
 public class Erased<T> {
   private final int SIZE = 100;
-  public static void f(Object arg) {
-    if(arg instanceof T) {}          // Error
-    T var = new T();                 // Error
-    T[] array = new T[SIZE];         // Error
-    T[] array = (T)new Object[SIZE]; // Unchecked warning
+  public void f(Object arg) {
+
+    // error: illegal generic type for instanceof
+    if(arg instanceof T) {}
+
+    // error: unexpected type
+    T var = new T();
+
+    // error: generic array creation
+    T[] array = new T[SIZE];
+
+    // warning: [unchecked] unchecked cast
+    T[] array = (T[])new Object[SIZE];
+
   }
 }

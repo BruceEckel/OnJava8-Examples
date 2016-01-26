@@ -2,7 +2,7 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-// A visual demonstration of threading.
+// A visual demonstration of threading
 import javax.swing.*;
 import java.awt.*;
 import java.util.concurrent.*;
@@ -11,7 +11,7 @@ import static onjava.SwingConsole.*;
 
 class CBox extends JPanel implements Runnable {
   private int pause;
-  private static Random rand = new Random();
+  private static SplittableRandom rand = new SplittableRandom();
   private Color color = new Color(0);
   public void paintComponent(Graphics g) {
     g.setColor(color);

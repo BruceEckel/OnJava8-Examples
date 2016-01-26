@@ -2,7 +2,7 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-// Locking portions of a mapped file.
+// Locking portions of a mapped file
 import java.nio.*;
 import java.nio.channels.*;
 import java.io.*;
@@ -10,7 +10,8 @@ import java.io.*;
 public class LockingMappedFiles {
   static final int LENGTH = 0x8FFFFFF; // 128 MB
   static FileChannel fc;
-  public static void main(String[] args) throws Exception {
+  public static void
+  main(String[] args) throws Exception {
     fc =
       new RandomAccessFile("test.dat", "rw").getChannel();
     MappedByteBuffer out =
@@ -36,12 +37,14 @@ public class LockingMappedFiles {
       try {
         // Exclusive lock with no overlap:
         FileLock fl = fc.lock(start, end, false);
-        System.out.println("Locked: "+ start +" to "+ end);
+        System.out.println(
+          "Locked: "+ start +" to "+ end);
         // Perform modification:
         while(buff.position() < buff.limit() - 1)
           buff.put((byte)(buff.get() + 1));
         fl.release();
-        System.out.println("Released: "+start+" to "+ end);
+        System.out.println(
+          "Released: " + start + " to " + end);
       } catch(IOException e) {
         throw new RuntimeException(e);
       }

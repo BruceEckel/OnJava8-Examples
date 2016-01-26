@@ -20,7 +20,7 @@ public class ApplesAndOrangesWithoutGenerics {
     ArrayList apples = new ArrayList();
     for(int i = 0; i < 3; i++)
       apples.add(new Apple());
-    // Not prevented from adding an Orange to apples:
+    // No problem adding an Orange to apples:
     apples.add(new Orange());
     for(Object apple : apples) {
       ((Apple) apple).id();

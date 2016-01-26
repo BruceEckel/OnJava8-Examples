@@ -6,7 +6,8 @@ import java.util.stream.*;
 import java.util.function.*;
 
 public class Informational {
-  public static void main(String[] args) throws Exception {
+  public static void
+  main(String[] args) throws Exception {
       System.out.println(
         FileToWords.stream("Cheese.dat").count());
       System.out.println(

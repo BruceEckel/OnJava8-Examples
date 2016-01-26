@@ -21,3 +21,7 @@ func main() {
   speak(Dog{})
   speak(Robot{})
 }
+/* Output:
+woof!
+Click!
+*/

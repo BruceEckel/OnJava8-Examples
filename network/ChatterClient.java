@@ -4,7 +4,7 @@
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // {ValidateByHand}
 // Tests the ChatterServer by starting multiple
-// clients, each of which sends datagrams.
+// clients, each of which sends datagrams
 import java.net.*;
 import java.io.*;
 import onjava.*;

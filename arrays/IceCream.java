@@ -2,11 +2,13 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-// Returning arrays from methods.
+// Returning arrays from methods
 import java.util.*;
+import static onjava.ArrayShow.*;
 
 public class IceCream {
-  private static Random rand = new Random(47);
+  private static SplittableRandom rand =
+    new SplittableRandom(47);
   static final String[] FLAVORS = {
     "Chocolate", "Strawberry", "Vanilla Fudge Swirl",
     "Mint Chip", "Mocha Almond Fudge", "Rum Raisin",
@@ -29,7 +31,7 @@ public class IceCream {
   }
   public static void main(String[] args) {
     for(int i = 0; i < 7; i++)
-      System.out.println(Arrays.toString(flavorSet(3)));
+      show(flavorSet(3));
   }
 }
 /* Output:

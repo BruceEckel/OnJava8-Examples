@@ -5,7 +5,8 @@
 import java.nio.file.*;
 
 public class Find {
-  public static void main(String[] args) throws Exception {
+  public static void
+  main(String[] args) throws Exception {
     Path test = Paths.get("test");
     Directories.refreshTestDir();
     Directories.populateTestDir();

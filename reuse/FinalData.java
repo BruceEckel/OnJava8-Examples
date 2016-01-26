@@ -2,7 +2,7 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-// The effect of final on fields.
+// The effect of final on fields
 import java.util.*;
 
 class Value {
@@ -29,7 +29,8 @@ public class FinalData {
   private final int[] a = { 1, 2, 3, 4, 5, 6 };
   @Override
   public String toString() {
-    return id + ": " + "i4 = " + i4 + ", INT_5 = " + INT_5;
+    return id + ": " + "i4 = " + i4
+      + ", INT_5 = " + INT_5;
   }
   public static void main(String[] args) {
     FinalData fd1 = new FinalData("fd1");

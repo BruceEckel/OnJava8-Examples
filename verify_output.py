@@ -23,7 +23,7 @@ def clean():
             "strategies.txt",
             "validate_successes.txt",
             "validate_failures.txt",
-            ]):
+        ]):
         if p.exists():
             p.unlink()
 

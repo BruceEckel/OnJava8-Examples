@@ -7,7 +7,7 @@ import java.util.*;
 public interface RandomDoubles {
   Random rand = new Random(47);
   default double next() { return rand.nextDouble(); }
-  static void main(String[] args) {
+  public static void main(String[] args) {
     RandomDoubles rd = new RandomDoubles() {};
     for(int i = 0; i < 7; i ++)
       System.out.print(rd.next() + " ");

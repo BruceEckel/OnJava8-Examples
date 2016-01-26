@@ -29,7 +29,8 @@ class Initable3 {
 
 public class ClassInitialization {
   public static Random rand = new Random(47);
-  public static void main(String[] args) throws Exception {
+  public static void
+  main(String[] args) throws Exception {
     Class initable = Initable.class;
     System.out.println("After creating Initable ref");
     // Does not trigger initialization:

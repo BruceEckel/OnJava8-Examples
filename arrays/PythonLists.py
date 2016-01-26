@@ -24,3 +24,13 @@ class MyList(list): # Inherit from list
 list2 = MyList(aList)
 print(type(list2)) # <class '__main__.MyList'>
 print(list2.getReversed()) # [8, 7, 6, 5, 4, 3, 2, 1]
+
+output = """
+<class 'list'>
+[1, 2, 3, 4, 5]
+5
+[1, 2, 3, 4, 5, 6, 7, 8]
+[3, 4]
+<class '__main__.MyList'>
+[8, 7, 6, 5, 4, 3, 2, 1]
+"""

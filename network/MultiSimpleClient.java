@@ -2,8 +2,7 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-// Client that tests the MultiSimpleServer
-// by starting up multiple clients.
+// Testing MultiSimpleServer with multiple clients
 // {ValidateByHand}
 import java.net.*;
 import java.io.*;
@@ -74,8 +73,9 @@ class SimpleClientThread extends Thread {
 
 public class MultiSimpleClient {
   static final int MAX_THREADS = 40;
-  public static void main(String[] args)
-      throws IOException, InterruptedException {
+  public static void
+  main(String[] args) throws IOException,
+  InterruptedException {
     new TimedAbort(5); // Terminate after 5 seconds
     InetAddress addr =
       InetAddress.getByName(null);

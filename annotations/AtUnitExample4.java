@@ -16,10 +16,8 @@ public class AtUnitExample4 {
   public AtUnitExample4(String word) { this.word = word; }
   public String getWord() { return word; }
   public String scrambleWord() {
-    // <* Improve this: *>
-    List<Character> chars = new ArrayList<>();
-    for(Character c : word.toCharArray())
-      chars.add(c);
+    List<Character> chars =
+      Arrays.asList(ConvertTo.boxed(word.toCharArray()));
     Collections.shuffle(chars, rand);
     StringBuilder result = new StringBuilder();
     for(char ch : chars)
@@ -41,7 +39,7 @@ public class AtUnitExample4 {
     return getWord().equals("are");
   }
   @Test boolean scramble1() {
-    // Change to a specific seed to get verifiable results:
+    // Change to specific seed to get verifiable results:
     rand = new Random(47);
     System.out.println("'" + getWord() + "'");
     String scrambled = scrambleWord();
@@ -55,7 +53,8 @@ public class AtUnitExample4 {
     System.out.println(scrambled);
     return scrambled.equals("tsaeborornussu");
   }
-  public static void main(String[] args) throws Exception {
+  public static void
+  main(String[] args) throws Exception {
     System.out.println("starting");
     OSExecute.command("java -cp .. " +
       "onjava.atunit.AtUnit AtUnitExample4.class");
@@ -64,17 +63,13 @@ public class AtUnitExample4 {
 /* Output:
 starting
 annotations.AtUnitExample4
-  . words 'All'
-(failed)
+  . scramble1 'All'
+lAl
+
   . scramble2 'brontosauruses'
 tsaeborornussu
 
-  . scramble1 'are'
-rae
-(failed)
-(3 tests)
+  . words 'are'
 
->>> 2 FAILURES <<<
-  annotations.AtUnitExample4: words
-  annotations.AtUnitExample4: scramble1
+OK (3 tests)
 */

@@ -2,7 +2,7 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-// Using sliders, progress bars and progress monitors.
+// Using sliders, progress bars and progress monitors
 import javax.swing.*;
 import javax.swing.border.*;
 import java.awt.*;

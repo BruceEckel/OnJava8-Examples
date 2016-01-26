@@ -2,7 +2,7 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-// Text fields and Java events.
+// Text fields and Java events
 import javax.swing.*;
 import javax.swing.event.*;
 import javax.swing.text.*;
@@ -83,9 +83,9 @@ class UpperCaseDocument extends PlainDocument {
     upperCase = flag;
   }
   @Override
-  public void
-  insertString(int offset, String str, AttributeSet attSet)
-  throws BadLocationException {
+  public void insertString(
+    int offset, String str, AttributeSet attSet)
+    throws BadLocationException {
     if(upperCase) str = str.toUpperCase();
     super.insertString(offset, str, attSet);
   }

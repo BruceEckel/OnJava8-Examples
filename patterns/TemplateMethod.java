@@ -2,7 +2,7 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-// Simple demonstration of Template Method.
+// Simple demonstration of Template Method
 import java.util.stream.*;
 
 abstract class ApplicationFramework {
@@ -31,7 +31,7 @@ class MyApp extends ApplicationFramework {
 }
 
 public class TemplateMethod {
-  public static void main(String args[]) {
+  public static void main(String[] args) {
     new MyApp();
   }
 }
