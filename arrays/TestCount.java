@@ -15,82 +15,106 @@ public class TestCount {
     Boolean[] a1 = new Boolean[SZ];
     Arrays.setAll(a1, new Count.Boolean()::get);
     show(a1);
-    show(Stream.generate(new Count.Boolean())
-      .limit(SZ + 1).toArray());
-    show(new Count.Boolean().array(SZ + 2));
-    show(new Count.boolean_().array(SZ + 3));
+    a1 = Stream.generate(new Count.Boolean())
+      .limit(SZ + 1).toArray(Boolean[]::new);
+    show(a1);
+    a1 = new Count.Boolean().array(SZ + 2);
+    show(a1);
+    boolean[] a1b = new Count.boolean_().array(SZ + 3);
+    show(a1b);
 
     System.out.println("Byte");
     Byte[] a2 = new Byte[SZ];
     Arrays.setAll(a2, new Count.Byte()::get);
     show(a2);
-    show(Stream.generate(new Count.Byte())
-      .limit(SZ + 1).toArray());
-    show(new Count.Byte().array(SZ + 2));
-    show(new Count.byte_().array(SZ + 3));
+    a2 = Stream.generate(new Count.Byte())
+      .limit(SZ + 1).toArray(Byte[]::new);
+    show(a2);
+    a2 = new Count.Byte().array(SZ + 2);
+    show(a2);
+    byte[] a2b = new Count.byte_().array(SZ + 3);
+    show(a2b);
 
     System.out.println("Character");
     Character[] a3 = new Character[SZ];
     Arrays.setAll(a3, new Count.Character()::get);
     show(a3);
-    show(Stream.generate(new Count.Character())
-      .limit(SZ + 1).toArray());
-    show(new Count.Character().array(SZ + 2));
-    show(new Count.char_().array(SZ + 3));
+    a3 = Stream.generate(new Count.Character())
+      .limit(SZ + 1).toArray(Character[]::new);
+    show(a3);
+    a3 = new Count.Character().array(SZ + 2);
+    show(a3);
+    char[] a3b = new Count.char_().array(SZ + 3);
+    show(a3b);
 
     System.out.println("Short");
     Short[] a4 = new Short[SZ];
     Arrays.setAll(a4, new Count.Short()::get);
     show(a4);
-    show(Stream.generate(new Count.Short())
-      .limit(SZ + 1).toArray());
-    show(new Count.Short().array(SZ + 2));
-    show(new Count.short_().array(SZ + 3));
+    a4 = Stream.generate(new Count.Short())
+      .limit(SZ + 1).toArray(Short[]::new);
+    show(a4);
+    a4 = new Count.Short().array(SZ + 2);
+    show(a4);
+    short[] a4b = new Count.short_().array(SZ + 3);
+    show(a4b);
 
     System.out.println("Integer");
     int[] a5 = new int[SZ];
     Arrays.setAll(a5, new Count.Integer()::get);
     show(a5);
-    show(Stream.generate(new Count.Integer())
-      .limit(SZ + 1).toArray());
-    show(new Count.Integer().array(SZ + 2));
+    Integer[] a5b = Stream.generate(new Count.Integer())
+      .limit(SZ + 1).toArray(Integer[]::new);
+    show(a5b);
+    a5b = new Count.Integer().array(SZ + 2);
+    show(a5b);
     a5 = IntStream.generate(new Count.int_())
       .limit(SZ + 1).toArray();
     show(a5);
-    show(new Count.int_().array(SZ + 3));
+    a5 = new Count.int_().array(SZ + 3);
+    show(a5);
 
     System.out.println("Long");
     long[] a6 = new long[SZ];
     Arrays.setAll(a6, new Count.Long()::get);
     show(a6);
-    show(Stream.generate(new Count.Long())
-      .limit(SZ + 1).toArray());
-    show(new Count.Long().array(SZ + 2));
+    Long[] a6b = Stream.generate(new Count.Long())
+      .limit(SZ + 1).toArray(Long[]::new);
+    show(a6b);
+    a6b = new Count.Long().array(SZ + 2);
+    show(a6b);
     a6 = LongStream.generate(new Count.long_())
       .limit(SZ + 1).toArray();
     show(a6);
-    show(new Count.long_().array(SZ + 3));
+    a6 = new Count.long_().array(SZ + 3);
+    show(a6);
 
     System.out.println("Float");
     Float[] a7 = new Float[SZ];
     Arrays.setAll(a7, new Count.Float()::get);
     show(a7);
-    show(Stream.generate(new Count.Float())
-      .limit(SZ + 1).toArray());
-    show(new Count.Float().array(SZ + 2));
-    show(new Count.float_().array(SZ + 3));
+    a7 = Stream.generate(new Count.Float())
+      .limit(SZ + 1).toArray(Float[]::new);
+    show(a7);
+    a7 = new Count.Float().array(SZ + 2);
+    show(a7);
+    float[] a7b = new Count.float_().array(SZ + 3);
+    show(a7b);
 
     System.out.println("Double");
     double[] a8 = new double[SZ];
     Arrays.setAll(a8, new Count.Double()::get);
     show(a8);
-    show(Stream.generate(new Count.Double())
-      .limit(SZ + 1).toArray());
-    show(new Count.Double().array(SZ + 2));
+    Double[] a8b = Stream.generate(new Count.Double())
+      .limit(SZ + 1).toArray(Double[]::new);
+    show(a8b);
+    a8b = new Count.Double().array(SZ + 2);
+    show(a8b);
     a8 = DoubleStream.generate(new Count.double_())
       .limit(SZ + 1).toArray();
     show(a8);
-    show(new Count.double_().array(SZ + 3));
+    a8 = new Count.double_().array(SZ + 3);
+    show(a8);
   }
 }
 /* Output:

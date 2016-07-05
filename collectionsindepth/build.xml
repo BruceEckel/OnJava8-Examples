@@ -12,12 +12,10 @@
     <jrun cls="CanonicalMapping" />
     <jrun cls="CollectionMethods" />
     <jrun cls="CountedString" />
-    <jrun cls="DequeTest" />
     <jrun cls="Enumerations" />
     <jrun cls="FailFast" />
-    <jrun cls="FilledCollectionGeneration" />
-    <jrun cls="FilledCollectionTest" />
     <jrun cls="FillingLists" />
+    <jrun cls="FillMapTest" />
     <jrun cls="IndividualTest" />
     <jrun cls="LinkedHashMapDemo" />
     <jrun cls="ListPerformance" arguments="100 500" />
@@ -30,6 +28,7 @@
     <jrun cls="ReadOnly" />
     <jrun cls="References" />
     <jrun cls="SetPerformance" arguments="100 5000" />
+    <jrun cls="SimpleDeques" />
     <jrun cls="SimpleHashMap" />
     <jrun cls="SlowMap" />
     <jrun cls="SortedMapDemo" />
@@ -37,7 +36,9 @@
     <jrun cls="SpringDetector" />
     <jrun cls="SpringDetector2" />
     <jrun cls="Stacks" />
+    <jrun cls="StreamFillMaps" />
     <jrun cls="StringHashCode" />
+    <jrun cls="SuppliersCollectionTest" />
     <jrun cls="Synchronization" />
     <jrun cls="ToDoList" />
     <jrun cls="TypesForSets" />
@@ -51,12 +52,10 @@
     <jrunconsole cls="CanonicalMapping" />
     <jrunconsole cls="CollectionMethods" />
     <jrunconsole cls="CountedString" />
-    <jrunconsole cls="DequeTest" />
     <jrunconsole cls="Enumerations" />
     <jrunconsole cls="FailFast" />
-    <jrunconsole cls="FilledCollectionGeneration" />
-    <jrunconsole cls="FilledCollectionTest" />
     <jrunconsole cls="FillingLists" />
+    <jrunconsole cls="FillMapTest" />
     <jrunconsole cls="IndividualTest" />
     <jrunconsole cls="LinkedHashMapDemo" />
     <jrunconsole cls="ListPerformance" arguments="100 500" />
@@ -69,6 +68,7 @@
     <jrunconsole cls="ReadOnly" />
     <jrunconsole cls="References" />
     <jrunconsole cls="SetPerformance" arguments="100 5000" />
+    <jrunconsole cls="SimpleDeques" />
     <jrunconsole cls="SimpleHashMap" />
     <jrunconsole cls="SlowMap" />
     <jrunconsole cls="SortedMapDemo" />
@@ -76,7 +76,9 @@
     <jrunconsole cls="SpringDetector" />
     <jrunconsole cls="SpringDetector2" />
     <jrunconsole cls="Stacks" />
+    <jrunconsole cls="StreamFillMaps" />
     <jrunconsole cls="StringHashCode" />
+    <jrunconsole cls="SuppliersCollectionTest" />
     <jrunconsole cls="Synchronization" />
     <jrunconsole cls="ToDoList" />
     <jrunconsole cls="TypesForSets" />

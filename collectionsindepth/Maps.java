@@ -16,9 +16,9 @@ public class Maps {
   }
   public static void test(Map<Integer,String> map) {
     System.out.println(map.getClass().getSimpleName());
-    map.putAll(new CountingFilledMap(25));
+    map.putAll(new CountMap(25));
     // Map has 'Set' behavior for keys:
-    map.putAll(new CountingFilledMap(25));
+    map.putAll(new CountMap(25));
     printKeys(map);
     // Producing a Collection of the values:
     System.out.print("Values: ");
@@ -35,7 +35,7 @@ public class Maps {
     printKeys(map);
     map.clear();
     System.out.println("map.isEmpty(): " + map.isEmpty());
-    map.putAll(new CountingFilledMap(25));
+    map.putAll(new CountMap(25));
     // Operations on the Set change the Map:
     map.keySet().removeAll(map.keySet());
     System.out.println("map.isEmpty(): " + map.isEmpty());

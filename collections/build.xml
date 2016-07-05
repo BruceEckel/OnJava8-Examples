@@ -41,6 +41,7 @@
     <jrun cls="SortedSetOfString" />
     <jrun cls="StackCollision" />
     <jrun cls="StackTest" />
+    <jrun cls="StackTest2" />
     <jrun cls="Statistics" />
     <jrun cls="UniqueWords" />
     <jrun cls="UniqueWordsAlphabetic" />
@@ -81,6 +82,7 @@
     <jrunconsole cls="SortedSetOfString" />
     <jrunconsole cls="StackCollision" />
     <jrunconsole cls="StackTest" />
+    <jrunconsole cls="StackTest2" />
     <jrunconsole cls="Statistics" />
     <jrunconsole cls="UniqueWords" />
     <jrunconsole cls="UniqueWordsAlphabetic" />

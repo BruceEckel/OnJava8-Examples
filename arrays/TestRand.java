@@ -15,96 +15,124 @@ public class TestRand {
     Boolean[] a1 = new Boolean[SZ];
     Arrays.setAll(a1, new Rand.Boolean()::get);
     show(a1);
-    show(Stream.generate(new Rand.Boolean())
-      .limit(SZ + 1).toArray());
-    show(new Rand.Boolean().array(SZ + 2));
-    show(new Rand.boolean_().array(SZ + 3));
+    a1 = Stream.generate(new Rand.Boolean())
+      .limit(SZ + 1).toArray(Boolean[]::new);
+    show(a1);
+    a1 = new Rand.Boolean().array(SZ + 2);
+    show(a1);
+    boolean[] a1b = new Rand.boolean_().array(SZ + 3);
+    show(a1b);
 
     System.out.println("Byte");
     Byte[] a2 = new Byte[SZ];
     Arrays.setAll(a2, new Rand.Byte()::get);
     show(a2);
-    show(Stream.generate(new Rand.Byte())
-      .limit(SZ + 1).toArray());
-    show(new Rand.Byte().array(SZ + 2));
-    show(new Rand.byte_().array(SZ + 3));
+    a2 = Stream.generate(new Rand.Byte())
+      .limit(SZ + 1).toArray(Byte[]::new);
+    show(a2);
+    a2 = new Rand.Byte().array(SZ + 2);
+    show(a2);
+    byte[] a2b = new Rand.byte_().array(SZ + 3);
+    show(a2b);
 
     System.out.println("Character");
     Character[] a3 = new Character[SZ];
     Arrays.setAll(a3, new Rand.Character()::get);
     show(a3);
-    show(Stream.generate(new Rand.Character())
-      .limit(SZ + 1).toArray());
-    show(new Rand.Character().array(SZ + 2));
-    show(new Rand.char_().array(SZ + 3));
+    a3 = Stream.generate(new Rand.Character())
+      .limit(SZ + 1).toArray(Character[]::new);
+    show(a3);
+    a3 = new Rand.Character().array(SZ + 2);
+    show(a3);
+    char[] a3b = new Rand.char_().array(SZ + 3);
+    show(a3b);
 
     System.out.println("Short");
     Short[] a4 = new Short[SZ];
     Arrays.setAll(a4, new Rand.Short()::get);
     show(a4);
-    show(Stream.generate(new Rand.Short())
-      .limit(SZ + 1).toArray());
-    show(new Rand.Short().array(SZ + 2));
-    show(new Rand.short_().array(SZ + 3));
+    a4 = Stream.generate(new Rand.Short())
+      .limit(SZ + 1).toArray(Short[]::new);
+    show(a4);
+    a4 = new Rand.Short().array(SZ + 2);
+    show(a4);
+    short[] a4b = new Rand.short_().array(SZ + 3);
+    show(a4b);
 
     System.out.println("Integer");
     int[] a5 = new int[SZ];
     Arrays.setAll(a5, new Rand.Integer()::get);
     show(a5);
-    show(Stream.generate(new Rand.Integer())
-      .limit(SZ + 1).toArray());
-    show(new Rand.Integer().array(SZ + 2));
+    Integer[] a5b = Stream.generate(new Rand.Integer())
+      .limit(SZ + 1).toArray(Integer[]::new);
+    show(a5b);
+    a5b = new Rand.Integer().array(SZ + 2);
+    show(a5b);
     a5 = IntStream.generate(new Rand.int_())
       .limit(SZ + 1).toArray();
     show(a5);
-    show(new Rand.int_().array(SZ + 3));
+    a5 = new Rand.int_().array(SZ + 3);
+    show(a5);
 
     System.out.println("Long");
     long[] a6 = new long[SZ];
     Arrays.setAll(a6, new Rand.Long()::get);
     show(a6);
-    show(Stream.generate(new Rand.Long())
-      .limit(SZ + 1).toArray());
-    show(new Rand.Long().array(SZ + 2));
+    Long[] a6b = Stream.generate(new Rand.Long())
+      .limit(SZ + 1).toArray(Long[]::new);
+    show(a6b);
+    a6b = new Rand.Long().array(SZ + 2);
+    show(a6b);
     a6 = LongStream.generate(new Rand.long_())
       .limit(SZ + 1).toArray();
     show(a6);
-    show(new Rand.long_().array(SZ + 3));
+    a6 = new Rand.long_().array(SZ + 3);
+    show(a6);
 
     System.out.println("Float");
     Float[] a7 = new Float[SZ];
     Arrays.setAll(a7, new Rand.Float()::get);
     show(a7);
-    show(Stream.generate(new Rand.Float())
-      .limit(SZ + 1).toArray());
-    show(new Rand.Float().array(SZ + 2));
-    show(new Rand.float_().array(SZ + 3));
+    a7 = Stream.generate(new Rand.Float())
+      .limit(SZ + 1).toArray(Float[]::new);
+    show(a7);
+    a7 = new Rand.Float().array(SZ + 2);
+    show(a7);
+    float[] a7b = new Rand.float_().array(SZ + 3);
+    show(a7b);
 
     System.out.println("Double");
     double[] a8 = new double[SZ];
     Arrays.setAll(a8, new Rand.Double()::get);
     show(a8);
-    show(Stream.generate(new Rand.Double())
-      .limit(SZ + 1).toArray());
-    show(new Rand.Double().array(SZ + 2));
+    Double[] a8b = Stream.generate(new Rand.Double())
+      .limit(SZ + 1).toArray(Double[]::new);
+    show(a8b);
+    a8b = new Rand.Double().array(SZ + 2);
+    show(a8b);
     a8 = DoubleStream.generate(new Rand.double_())
-      .limit(SZ + 2).toArray();
+      .limit(SZ + 1).toArray();
     show(a8);
-    show(new Rand.double_().array(SZ + 3));
+    a8 = new Rand.double_().array(SZ + 3);
+    show(a8);
 
     System.out.println("String");
     String[] s = new String[SZ - 1];
     Arrays.setAll(s, new Rand.String()::get);
     show(s);
-    show(Stream.generate(new Rand.String())
-      .limit(SZ).toArray());
-    show(new Rand.String().array(SZ + 1));
+    s = Stream.generate(new Rand.String())
+      .limit(SZ).toArray(String[]::new);
+    show(s);
+    s = new Rand.String().array(SZ + 1);
+    show(s);
 
     Arrays.setAll(s, new Rand.String(4)::get);
     show(s);
-    show(Stream.generate(new Rand.String(4))
-      .limit(SZ).toArray());
-    show(new Rand.String(4).array(SZ + 1));
+    s = Stream.generate(new Rand.String(4))
+      .limit(SZ).toArray(String[]::new);
+    show(s);
+    s = new Rand.String(4).array(SZ + 1);
+    show(s);
   }
 }
 /* Output:

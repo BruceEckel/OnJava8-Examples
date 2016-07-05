@@ -5,32 +5,26 @@
 // Compares the behavior of some of the queues
 import java.util.concurrent.*;
 import java.util.*;
-import java.util.function.*;
-import onjava.*;
 
 public class QueueBehavior {
-  private static int count = 10;
-  static <T> void test(Queue<T> queue, Supplier<T> gen) {
-    for(int i = 0; i < count; i++)
-      queue.offer(gen.get());
+  private static String[] s =
+    ("one two three four five six seven " +
+    "eight nine ten").split(" ");
+  static void test(Queue<String> queue) {
+    for(String ss : s)
+      queue.offer(ss);
     while(queue.peek() != null)
       System.out.print(queue.remove() + " ");
     System.out.println();
   }
-  static class Gen implements Supplier<String> {
-    String[] s = ("one two three four five six seven " +
-      "eight nine ten").split(" ");
-    int i;
-    @Override
-    public String get() { return s[i++]; }
-  }
   public static void main(String[] args) {
-    test(new LinkedList<>(), new Gen());
-    test(new PriorityQueue<>(), new Gen());
-    test(new ArrayBlockingQueue<>(count), new Gen());
-    test(new ConcurrentLinkedQueue<>(), new Gen());
-    test(new LinkedBlockingQueue<>(), new Gen());
-    test(new PriorityBlockingQueue<>(), new Gen());
+   int count = 10;
+   test(new LinkedList<>());
+    test(new PriorityQueue<>());
+    test(new ArrayBlockingQueue<>(count));
+    test(new ConcurrentLinkedQueue<>());
+    test(new LinkedBlockingQueue<>());
+    test(new PriorityBlockingQueue<>());
   }
 }
 /* Output:

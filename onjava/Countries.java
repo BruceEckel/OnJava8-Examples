@@ -88,7 +88,7 @@ public class Countries {
     // Europe
     {"ALBANIA","Tirana"}, {"ANDORRA","Andorra la Vella"},
     {"AUSTRIA","Vienna"}, {"BELGIUM","Brussels"},
-    {"BOSNIA","-"}, {"HERZEGOVINA","Sarajevo"},
+    {"BOSNIA","---"}, {"HERZEGOVINA","Sarajevo"},
     {"CROATIA","Zagreb"}, {"CZECH REPUBLIC","Prague"},
     {"DENMARK","Copenhagen"}, {"ESTONIA","Tallinn"},
     {"FINLAND","Helsinki"}, {"FRANCE","Paris"},
@@ -119,7 +119,7 @@ public class Countries {
     {"HAITI","Port-au-Prince"},
     {"HONDURAS","Tegucigalpa"}, {"JAMAICA","Kingston"},
     {"MEXICO","Mexico City"}, {"NICARAGUA","Managua"},
-    {"PANAMA","Panama City"}, {"ST. KITTS","-"},
+    {"PANAMA","Panama City"}, {"ST. KITTS","---"},
     {"NEVIS","Basseterre"}, {"ST. LUCIA","Castries"},
     {"ST. VINCENT AND THE GRENADINES","Kingstown"},
     {"UNITED STATES OF AMERICA","Washington, D.C."},
@@ -157,7 +157,7 @@ public class Countries {
         return DATA[index][0].hashCode();
       }
     }
-    // Use AbstractSet by implementing size() & iterator()
+    // Implement size() & iterator() for AbstractSet:
     static class EntrySet
     extends AbstractSet<Map.Entry<String,String>> {
       private int size;

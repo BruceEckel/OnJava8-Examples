@@ -16,7 +16,6 @@
     <jrun cls="IntBufferDemo" />
     <jrun cls="LargeMappedFiles" />
     <jrun cls="LockingMappedFiles" />
-    <jrun cls="MappedIO" />
     <jrun cls="TransferTo" arguments="TransferTo.java TransferTo.txt" />
     <jrun cls="UsingBuffers" />
     <jrun cls="ViewBuffers" />
@@ -32,7 +31,6 @@
     <jrunconsole cls="IntBufferDemo" />
     <jrunconsole cls="LargeMappedFiles" />
     <jrunconsole cls="LockingMappedFiles" />
-    <jrunconsole cls="MappedIO" />
     <jrunconsole cls="TransferTo" arguments="TransferTo.java TransferTo.txt" />
     <jrunconsole cls="UsingBuffers" />
     <jrunconsole cls="ViewBuffers" />

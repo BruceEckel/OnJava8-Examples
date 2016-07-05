@@ -1,0 +1,130 @@
+<?xml version="1.0" ?>
+
+<project default="run">
+  <property name="chapter" value="threads"/>
+  <property name="excludedfiles" value=""/>
+  <import file="../Ant-Common.xml"/>
+  <import file="../Ant-Clean.xml"/>
+
+  <target name="run" description="Compile and run" depends="build">
+    <jrun cls="AtomicEvenSupplier" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
+    <jrun cls="AtomicIntegerTest" />
+    <jrun cls="AtomicityTest" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
+    <jrun cls="AttemptLocking" />
+    <jrun cls="BankTellerSimulation" arguments="5" />
+    <jrun cls="CachedThreadPool" />
+    <jrun cls="CachedThreadPool2" />
+    <jrun cls="CachedThreadPool3" />
+    <jrun cls="CaptureUncaughtException" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
+    <jrun cls="CarBuilder" />
+    <jrun cls="CloseResource" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
+    <jrun cls="CollectionToStream" />
+    <jrun cls="CountingStream" />
+    <jrun cls="threads.CriticalSection" dirpath="../threads" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
+    <jrun cls="DeadlockingDiningPhilosophers" arguments="0 5 timeout" />
+    <jrun cls="DelayQueueDemo" />
+    <jrun cls="EvenSupplier" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
+    <jrun cls="threads.ExplicitCriticalSection" dirpath="../threads" failOnError='false' msg='* Exception was Expected *' />
+    <jrun cls="FastSimulation" />
+    <jrun cls="FixedDiningPhilosophers" arguments="5 5 timeout" />
+    <jrun cls="Futures" />
+    <jrun cls="GreenhouseScheduler" arguments="5000" />
+    <jrun cls="HorseRace" />
+    <jrun cls="Interrupting" />
+    <jrun cls="Interrupting2" />
+    <jrun cls="InterruptingIdiom" arguments="1100" />
+    <jrun cls="LambdasAndMethodReferences" />
+    <jrun cls="MoreTasksAfterShutdown" />
+    <jrun cls="MultiLock" />
+    <jrun cls="MutexEvenSupplier" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
+    <jrun cls="NIOInterruption" />
+    <jrun cls="NumberOfProcessors" />
+    <jrun cls="OrnamentalGarden" />
+    <jrun cls="ParallelStreamPuzzle" />
+    <jrun cls="ParallelStreamPuzzle2" />
+    <jrun cls="ParallelStreamPuzzle3" />
+    <jrun cls="Prime" />
+    <jrun cls="PriorityBlockingQueueDemo" />
+    <jrun cls="QuittingTasks" />
+    <jrun cls="Restaurant" />
+    <jrun cls="SerialNumberChecker" arguments="4" />
+    <jrun cls="SettingDefaultHandler" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
+    <jrun cls="SingleThreadExecutor" />
+    <jrun cls="SingleThreadExecutor2" />
+    <jrun cls="SingleThreadExecutor3" />
+    <jrun cls="Summing" />
+    <jrun cls="Summing2" />
+    <jrun cls="Summing3" />
+    <jrun cls="Summing4" />
+    <jrun cls="SwallowedException" />
+    <jrun cls="SynchronizedEvenSupplier" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
+    <jrun cls="SyncObject" />
+    <jrun cls="ThreadLocalVariableHolder" />
+    <jrun cls="ThreadSize" />
+    <jrun cls="ToastOMatic" />
+    <jrun cls="WorkStealingPool" />
+    <jrun cls="threads.restaurant2.RestaurantWithQueues" dirpath="../threads/restaurant2" arguments="5" />
+  </target>
+
+  <target name="runconsole" description="Compile and run" depends="build">
+    <jrunconsole cls="AtomicEvenSupplier" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
+    <jrunconsole cls="AtomicIntegerTest" />
+    <jrunconsole cls="AtomicityTest" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
+    <jrunconsole cls="AttemptLocking" />
+    <jrunconsole cls="BankTellerSimulation" arguments="5" />
+    <jrunconsole cls="CachedThreadPool" />
+    <jrunconsole cls="CachedThreadPool2" />
+    <jrunconsole cls="CachedThreadPool3" />
+    <jrunconsole cls="CaptureUncaughtException" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
+    <jrunconsole cls="CarBuilder" />
+    <jrunconsole cls="CloseResource" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
+    <jrunconsole cls="CollectionToStream" />
+    <jrunconsole cls="CountingStream" />
+    <jrunconsole cls="threads.CriticalSection" dirpath="../threads" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
+    <jrunconsole cls="DeadlockingDiningPhilosophers" arguments="0 5 timeout" />
+    <jrunconsole cls="DelayQueueDemo" />
+    <jrunconsole cls="EvenSupplier" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
+    <jrunconsole cls="threads.ExplicitCriticalSection" dirpath="../threads" failOnError='false' msg='* Exception was Expected *' />
+    <jrunconsole cls="FastSimulation" />
+    <jrunconsole cls="FixedDiningPhilosophers" arguments="5 5 timeout" />
+    <jrunconsole cls="Futures" />
+    <jrunconsole cls="GreenhouseScheduler" arguments="5000" />
+    <jrunconsole cls="HorseRace" />
+    <jrunconsole cls="Interrupting" />
+    <jrunconsole cls="Interrupting2" />
+    <jrunconsole cls="InterruptingIdiom" arguments="1100" />
+    <jrunconsole cls="LambdasAndMethodReferences" />
+    <jrunconsole cls="MoreTasksAfterShutdown" />
+    <jrunconsole cls="MultiLock" />
+    <jrunconsole cls="MutexEvenSupplier" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
+    <jrunconsole cls="NIOInterruption" />
+    <jrunconsole cls="NumberOfProcessors" />
+    <jrunconsole cls="OrnamentalGarden" />
+    <jrunconsole cls="ParallelStreamPuzzle" />
+    <jrunconsole cls="ParallelStreamPuzzle2" />
+    <jrunconsole cls="ParallelStreamPuzzle3" />
+    <jrunconsole cls="Prime" />
+    <jrunconsole cls="PriorityBlockingQueueDemo" />
+    <jrunconsole cls="QuittingTasks" />
+    <jrunconsole cls="Restaurant" />
+    <jrunconsole cls="SerialNumberChecker" arguments="4" />
+    <jrunconsole cls="SettingDefaultHandler" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
+    <jrunconsole cls="SingleThreadExecutor" />
+    <jrunconsole cls="SingleThreadExecutor2" />
+    <jrunconsole cls="SingleThreadExecutor3" />
+    <jrunconsole cls="Summing" />
+    <jrunconsole cls="Summing2" />
+    <jrunconsole cls="Summing3" />
+    <jrunconsole cls="Summing4" />
+    <jrunconsole cls="SwallowedException" />
+    <jrunconsole cls="SynchronizedEvenSupplier" failOnError='false' timeOut='4000' msg='* Timeout for Testing *' />
+    <jrunconsole cls="SyncObject" />
+    <jrunconsole cls="ThreadLocalVariableHolder" />
+    <jrunconsole cls="ThreadSize" />
+    <jrunconsole cls="ToastOMatic" />
+    <jrunconsole cls="WorkStealingPool" />
+    <jrunconsole cls="threads.restaurant2.RestaurantWithQueues" dirpath="../threads/restaurant2" arguments="5" />
+  </target>
+
+
+</project>

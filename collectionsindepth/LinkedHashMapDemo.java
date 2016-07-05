@@ -9,11 +9,11 @@ import onjava.*;
 public class LinkedHashMapDemo {
   public static void main(String[] args) {
     LinkedHashMap<Integer,String> linkedMap =
-      new LinkedHashMap<>(new CountingFilledMap(9));
+      new LinkedHashMap<>(new CountMap(9));
     System.out.println(linkedMap);
     // Least-recently-used order:
     linkedMap = new LinkedHashMap<>(16, 0.75f, true);
-    linkedMap.putAll(new CountingFilledMap(9));
+    linkedMap.putAll(new CountMap(9));
     System.out.println(linkedMap);
     for(int i = 0; i < 6; i++) // Cause accesses:
       linkedMap.get(i);

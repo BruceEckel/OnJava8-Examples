@@ -8,8 +8,8 @@
 
   <target name="run" description="Compile and run" depends="build">
     <jrun cls="onjava.CollectionMethodDifferences" dirpath="../onjava" />
-    <jrun cls="onjava.CountingFilledMap" dirpath="../onjava" />
     <jrun cls="onjava.CountingIntegerList" dirpath="../onjava" />
+    <jrun cls="onjava.CountMap" dirpath="../onjava" />
     <jrun cls="onjava.Countries" dirpath="../onjava" />
     <jrun cls="onjava.Hex" dirpath="../onjava" />
     <jrun cls="onjava.atunit.AtUnit" dirpath="../onjava/atunit" />
@@ -18,8 +18,8 @@
 
   <target name="runconsole" description="Compile and run" depends="build">
     <jrunconsole cls="onjava.CollectionMethodDifferences" dirpath="../onjava" />
-    <jrunconsole cls="onjava.CountingFilledMap" dirpath="../onjava" />
     <jrunconsole cls="onjava.CountingIntegerList" dirpath="../onjava" />
+    <jrunconsole cls="onjava.CountMap" dirpath="../onjava" />
     <jrunconsole cls="onjava.Countries" dirpath="../onjava" />
     <jrunconsole cls="onjava.Hex" dirpath="../onjava" />
     <jrunconsole cls="onjava.atunit.AtUnit" dirpath="../onjava/atunit" />

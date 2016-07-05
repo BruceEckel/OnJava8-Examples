@@ -9,7 +9,7 @@ import onjava.*;
 public class SortedMapDemo {
   public static void main(String[] args) {
     TreeMap<Integer,String> sortedMap =
-      new TreeMap<>(new CountingFilledMap(10));
+      new TreeMap<>(new CountMap(10));
     System.out.println(sortedMap);
     Integer low = sortedMap.firstKey();
     Integer high = sortedMap.lastKey();

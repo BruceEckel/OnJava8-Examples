@@ -3,8 +3,8 @@
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // Methods necessary to put your own type in a Set
-import java.lang.reflect.InvocationTargetException;
 import java.util.*;
+import java.util.function.*;
 
 class SetType {
   int i;
@@ -33,43 +33,35 @@ implements Comparable<TreeType> {
 }
 
 public class TypesForSets {
-  static <T> Set<T> fill(Set<T> set, Class<T> type) {
-    try {
-      for(int i = 0; i < 10; i++)
-          set.add(type.getConstructor(int.class)
-            .newInstance(i));
-    } catch(NoSuchMethodException |
-            SecurityException |
-            InstantiationException |
-            IllegalAccessException |
-            IllegalArgumentException |
-            InvocationTargetException e) {
-      throw new RuntimeException(e);
-    }
+  static <T> Set<T>
+  fill(Set<T> set, Function<Integer, T> type) {
+    for(int i = 0; i < 10; i++)
+        set.add(type.apply(i));
     return set;
   }
-  static <T> void test(Set<T> set, Class<T> type) {
+  static <T> void
+  test(Set<T> set, Function<Integer, T> type) {
     fill(set, type);
     fill(set, type); // Try to add duplicates
     fill(set, type);
     System.out.println(set);
   }
   public static void main(String[] args) {
-    test(new HashSet<>(), HashType.class);
-    test(new LinkedHashSet<>(), HashType.class);
-    test(new TreeSet<>(), TreeType.class);
+    test(new HashSet<>(), HashType::new);
+    test(new LinkedHashSet<>(), HashType::new);
+    test(new TreeSet<>(), TreeType::new);
     // Things that don't work:
-    test(new HashSet<>(), SetType.class);
-    test(new HashSet<>(), TreeType.class);
-    test(new LinkedHashSet<>(), SetType.class);
-    test(new LinkedHashSet<>(), TreeType.class);
+    test(new HashSet<>(), SetType::new);
+    test(new HashSet<>(), TreeType::new);
+    test(new LinkedHashSet<>(), SetType::new);
+    test(new LinkedHashSet<>(), TreeType::new);
     try {
-      test(new TreeSet<>(), SetType.class);
+      test(new TreeSet<>(), SetType::new);
     } catch(Exception e) {
       System.out.println("Expected: " + e.getMessage());
     }
     try {
-      test(new TreeSet<>(), HashType.class);
+      test(new TreeSet<>(), HashType::new);
     } catch(Exception e) {
       System.out.println("Expected: " + e.getMessage());
     }

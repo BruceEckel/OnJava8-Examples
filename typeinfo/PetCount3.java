@@ -3,15 +3,19 @@
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // Using isInstance()
-import typeinfo.pets.*;
 import java.util.*;
+import java.util.stream.*;
 import onjava.*;
+import typeinfo.pets.*;
 
 public class PetCount3 {
   static class Counter
   extends LinkedHashMap<Class<? extends Pet>, Integer> {
     public Counter() {
-      super(FilledMap.map(LiteralPetCreator.allTypes, 0));
+      super(LiteralPetCreator.allTypes.stream()
+        .map(lpc -> Pair.make(lpc, 0))
+        .collect(
+          Collectors.toMap(Pair::key, Pair::value)));
     }
     public void count(Pet pet) {
       // Class.isInstance() eliminates instanceofs:

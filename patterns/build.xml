@@ -12,7 +12,6 @@
     <jrun cls="PaperScissorsRock" />
     <jrun cls="ProxyDemo" />
     <jrun cls="ShapeFactory2" />
-    <jrun cls="SingletonPattern" />
     <jrun cls="StateDemo" />
     <jrun cls="TemplateMethod" />
     <jrun cls="patterns.absfactory.GameEnvironment" dirpath="../patterns/absfactory" />
@@ -40,7 +39,6 @@
     <jrunconsole cls="PaperScissorsRock" />
     <jrunconsole cls="ProxyDemo" />
     <jrunconsole cls="ShapeFactory2" />
-    <jrunconsole cls="SingletonPattern" />
     <jrunconsole cls="StateDemo" />
     <jrunconsole cls="TemplateMethod" />
     <jrunconsole cls="patterns.absfactory.GameEnvironment" dirpath="../patterns/absfactory" />

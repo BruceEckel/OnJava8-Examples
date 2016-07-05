@@ -37,7 +37,7 @@ public class Stacks {
     for(Month m : Month.values())
       stack2.push(m.toString());
     System.out.println("stack2 = " + stack2);
-    while(!stack2.empty())
+    while(!stack2.isEmpty())
       System.out.print(stack2.pop() + " ");
 
   }

@@ -2,14 +2,14 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-import onjava.*;
+import java.util.*;
 
 public class StackTest {
   public static void main(String[] args) {
-    Stack<String> stack = new Stack<>();
+    Deque<String> stack = new ArrayDeque<>();
     for(String s : "My dog has fleas".split(" "))
       stack.push(s);
-    while(!stack.empty())
+    while(!stack.isEmpty())
       System.out.print(stack.pop() + " ");
   }
 }

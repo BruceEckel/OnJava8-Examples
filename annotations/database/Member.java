@@ -11,12 +11,12 @@ public class Member {
   @SQLInteger Integer age;
   @SQLString(value = 30,
   constraints = @Constraints(primaryKey = true))
-  String handle;
+  String reference;
   static int memberCount;
-  public String getHandle() { return handle; }
+  public String getReference() { return reference; }
   public String getFirstName() { return firstName; }
   public String getLastName() { return lastName; }
   @Override
-  public String toString() { return handle; }
+  public String toString() { return reference; }
   public Integer getAge() { return age; }
 }
