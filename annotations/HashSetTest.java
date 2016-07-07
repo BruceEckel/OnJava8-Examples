@@ -2,6 +2,8 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
+// {main: onjava.atunit.AtUnit}
+// {Args: build/classes/main/annotations/HashSetTest.class}
 package annotations;
 import java.util.*;
 import onjava.atunit.*;
@@ -20,11 +22,6 @@ public class HashSetTest {
     testObject.add("one");
     testObject.remove("one");
     assert testObject.isEmpty();
-  }
-  public static void
-  main(String[] args) throws Exception {
-    OSExecute.command("java -cp .. " +
-      "onjava.atunit.AtUnit HashSetTest.class");
   }
 }
 /* Output:

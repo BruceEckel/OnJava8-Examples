@@ -1,0 +1,9 @@
+configurations.all {
+    resolutionStrategy {
+        force 'xml-apis:xml-apis:1.0.b2'
+    }
+}
+
+dependencies {
+    compile 'com.io7m.xom:xom:1.2.10'
+}

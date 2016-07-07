@@ -3,6 +3,8 @@
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // Creating non-embedded tests
+// {main: onjava.atunit.AtUnit}
+// {Args: build/classes/main/annotations/AtUnitComposition.class}
 package annotations;
 import onjava.atunit.*;
 import onjava.*;
@@ -15,11 +17,6 @@ public class AtUnitComposition {
   }
   @Test boolean _methodTwo() {
     return testObject.methodTwo() == 2;
-  }
-  public static void
-  main(String[] args) throws Exception {
-    OSExecute.command("java -cp .. " +
-      "onjava.atunit.AtUnit AtUnitComposition.class");
   }
 }
 /* Output:

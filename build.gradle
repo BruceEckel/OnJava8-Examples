@@ -1,61 +1,127 @@
-repositories {
-    mavenLocal()
-    mavenCentral()
-    maven {
-        url 'http://maven-eclipse.github.io/maven'
+subprojects {
+    apply plugin: 'java'
+
+    sourceCompatibility = '1.8'
+    targetCompatibility = '1.8'
+
+    repositories {
+        mavenLocal()
+        mavenCentral()
     }
-}
 
-// these java plugin settings don't really need to be specified since ant does the actual build, but it makes things nicer in an IDE that understands gradle projects
-apply plugin: 'java'
-
-sourceCompatibility = '1.8'
-targetCompatibility = '1.8'
-
-sourceSets {
-    main {
-        java {
-            srcDirs 'annotations', 'arrays', 'assertions', 'com', 'compression', 'concurrency', 'containers', 'containersindepth', 'control', 'debugging', 'enums', 'exceptions', 'files', 'functional', 'generics', 'hiding', 'housekeeping', 'innerclasses', 'interfaces', 'iostreams', 'logging', 'network', 'newio', 'objects', 'onjava', 'operators', 'patterns', 'polymorphism', 'preferences', 'references', 'remote', 'reuse', 'serialization', 'standardio', 'staticchecking', 'streams', 'strings', 'swt', 'typeinfo', 'ui', 'unittesting'
+    sourceSets {
+        main {
+            java {
+                srcDir projectDir
+            }
         }
     }
-}
 
-// fix for a xom / xalan transitive dependency issue: http://stackoverflow.com/a/23870656/77409
-configurations.all {
-    resolutionStrategy {
-        force 'xml-apis:xml-apis:1.0.b2'
+    List tasks = []
+
+    projectDir.eachFileRecurse {
+        if (it.name.endsWith('.java')) {
+
+            List lines = it.readLines()
+
+            Boolean hasMainMethod = lines.join('').contains('main(String[] args)')
+            Boolean hasMainParam = lines.find { it.startsWith('// {main: ')}
+
+            // add tasks for java sources with main methods
+            if (hasMainMethod || hasMainParam) {
+
+                String maybeArgsLine = lines.find { it.startsWith('// {Args: ')}
+
+                List maybeArgs = []
+                if (maybeArgsLine != null) {
+                    maybeArgs = maybeArgsLine.trim().replaceAll('\\/\\/ \\{Args: ', '').reverse().replaceFirst('}', '').reverse().split(' ')
+                }
+
+                String mainClass = it.name.replaceAll('.java', '')
+
+                String taskName = mainClass
+                tasks.add(taskName)
+
+                // some java sources with a main method specify a different main class
+                String maybeMainLine = lines.find { it.startsWith('// {main: ')}
+                if (maybeMainLine != null) {
+                    mainClass = maybeMainLine.trim().replaceAll('\\/\\/ \\{main: ', '').replaceAll('}', '')
+                }
+
+                // some java sources with JVM args
+                List maybeJvmArgs = []
+                String maybeJvmArgsLine = lines.find { it.startsWith('// {JVMArgs: ')}
+                if (maybeJvmArgsLine != null) {
+                    maybeJvmArgs = maybeJvmArgsLine.trim().replaceAll('\\/\\/ \\{JVMArgs: ', '').replaceAll('}', '').split(' ')
+                }
+
+                // some java sources depend on others to be run first
+                String maybeRunFirst = null
+                String maybeRunFirstLine = lines.find { it.startsWith('// {RunFirst: ')}
+                if (maybeRunFirstLine != null) {
+                    maybeRunFirst = maybeRunFirstLine.trim().replaceAll('\\/\\/ \\{RunFirst: ', '').replaceAll('}', '')
+                }
+
+                task "$taskName"(type: JavaExec, dependsOn: maybeRunFirst) {
+                    main = mainClass
+                    classpath = sourceSets.main.runtimeClasspath
+                    args = maybeArgs
+                    jvmArgs = maybeJvmArgs
+                }
+
+                Integer expectedOutputStartLine = lines.findIndexOf { it.startsWith('/* Output:') }
+                Integer expectedOutputEndLine = -1
+                List expectedOutputLines = []
+
+                if (expectedOutputStartLine != -1) {
+                    expectedOutputStartLine += 1
+                    expectedOutputEndLine = lines.findIndexOf(expectedOutputStartLine, { it.startsWith('*/') })
+                    if (expectedOutputEndLine == -1) {
+                        expectedOutputEndLine = expectedOutputStartLine
+                    }
+                    expectedOutputLines = lines.subList(expectedOutputStartLine, expectedOutputEndLine)
+                }
+
+                OutputStream testStandardOutput = new ByteArrayOutputStream()
+                OutputStream testErrorOutput = new ByteArrayOutputStream()
+
+                task "test$taskName"(type: JavaExec, dependsOn: maybeRunFirst) {
+                    main = mainClass
+                    classpath = sourceSets.main.runtimeClasspath
+                    args = maybeArgs
+                    jvmArgs = maybeJvmArgs
+                    standardOutput = testStandardOutput
+                    errorOutput = testErrorOutput
+                    doLast {
+                        // test the output here
+                        println("Expected")
+                        println(expectedOutputLines)
+                        println("STDOUT")
+                        println(testStandardOutput.toString().readLines())
+                        println("STDERR")
+                        println(testErrorOutput.toString().readLines())
+                        throw new Exception("Expected output did not match the actual output")
+                    }
+                }
+            }
+
+            // exclude java sources that will not compile
+            if (lines.find { it.startsWith('// {CompileTimeError') } != null) {
+                sourceSets.main.java.excludes.add(it.name)
+            }
+        }
     }
+
+    task run(dependsOn: tasks)
+
+    List testTasks = tasks.collect { "test" + it }
+    task test(overwrite:true, dependsOn: testTasks)
 }
 
+configure(subprojects - project(':onjava')) {
 
-dependencies {
-    compile 'org.eclipse.swt:org.eclipse.swt.win32.win32.x86:4.4.2'
-    compile 'org.eclipse.swt:org.eclipse.swt.win32.win32.x86_64:4.4.2'
-    compile 'org.eclipse.swt:org.eclipse.swt.gtk.linux.x86:4.4.2'
-    compile 'org.eclipse.swt:org.eclipse.swt.gtk.linux.x86_64:4.4.2'
-    compile 'org.eclipse.swt:org.eclipse.swt.cocoa.macosx.x86_64:4.4.2'
-    compile 'junit:junit:4.12'
-    compile 'com.io7m.xom:xom:1.2.10'
+    dependencies {
+        compile project(':onjava')
+    }
+
 }
-
-// this sets the classpath that ant uses to include the dependency jars
-ant.properties['java.class.path'] = sourceSets.main.compileClasspath.getAsPath()
-
-// import the ant build and override a few task names
-ant.importBuild('build.xml') { antTaskName ->
-    if (antTaskName == 'build') 'ant-build' // rename ant's build task to ant-build so it doesn't override the gradle task with that name
-    else if (antTaskName == 'clean') 'ant-clean' // rename ant's clean task to ant-clean so it doesn't override the gradle task with that name
-    else antTaskName
-}
-
-// this task is already defined by gradle so we need to tell it to call the ant clean task
-clean << {
-    tasks['ant-clean'].execute()
-}
-
-// this task is already defined by gradle so we need to tell it to call the ant build task
-build << {
-    tasks['ant-build'].execute()
-}
-
-defaultTasks 'run'

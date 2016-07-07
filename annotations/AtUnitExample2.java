@@ -3,6 +3,8 @@
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // Assertions and exceptions can be used in @Tests
+// {main: onjava.atunit.AtUnit}
+// {Args: build/classes/main/annotations/AtUnitExample2.class}
 package annotations;
 import java.io.*;
 import onjava.atunit.*;
@@ -29,11 +31,6 @@ public class AtUnitExample2 {
     // Assertion with message:
     assert methodTwo() == 2: "methodTwo must equal 2";
     return methodOne().equals("This is methodOne");
-  }
-  public static void
-  main(String[] args) throws Exception {
-    OSExecute.command("java -cp .. " +
-      "onjava.atunit.AtUnit AtUnitExample2.class");
   }
 }
 /* Output:

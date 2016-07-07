@@ -2,6 +2,8 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
+// {main: onjava.atunit.AtUnit}
+// {Args: build/classes/main/annotations/AtUnitExample1.class}
 package annotations;
 import onjava.atunit.*;
 import onjava.*;
@@ -22,11 +24,6 @@ public class AtUnitExample1 {
   // Shows output for failure:
   @Test boolean failureTest() { return false; }
   @Test boolean anotherDisappointment() { return false; }
-  public static void
-  main(String[] args) throws Exception {
-    OSExecute.command("java -cp .. " +
-      "onjava.atunit.AtUnit AtUnitExample1.class");
-  }
 }
 /* Output:
 annotations.AtUnitExample1

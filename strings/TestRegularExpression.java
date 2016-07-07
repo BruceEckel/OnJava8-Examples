@@ -2,7 +2,7 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-// Easily try out regular expressions
+// Simple regular expression demonstration
 // {Args: abcabcabcdefabc "abc+" "(abc)+" "(abc){2,}" }
 import java.util.regex.*;
 

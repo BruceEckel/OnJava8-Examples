@@ -3,7 +3,8 @@
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // Non-informative style of assert
-// {JVMArgs: -ea} // Must run with -ea
+// Must run with -ea:
+// {JVMArgs: -ea} 
 // {ThrowsException}
 
 public class Assert1 {

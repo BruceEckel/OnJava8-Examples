@@ -15,13 +15,4 @@
     <execscript name="MultiSimpleServer"/>
   </target>
 
-  <target name="runconsole" description="Compile and run" depends="build">
-    <jrunconsole cls="LocalHost" />
-    <jrunconsole cls="WhoAmI" />
-    <execscript name="SimpleServer"/>
-    <execscript name="ChatterServer"/>
-    <execscript name="MultiSimpleServer"/>
-  </target>
-
-
 </project>

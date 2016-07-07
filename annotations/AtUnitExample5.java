@@ -2,6 +2,8 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
+// {main: onjava.atunit.AtUnit}
+// {Args: build/classes/main/annotations/AtUnitExample5.class}
 package annotations;
 import java.io.*;
 import onjava.atunit.*;
@@ -39,11 +41,6 @@ public class AtUnitExample5 {
   @Test boolean test3() {
     output.print("test3");
     return true;
-  }
-  public static void
-  main(String[] args) throws Exception {
-    OSExecute.command("java -cp .. " +
-      "onjava.atunit.AtUnit AtUnitExample5.class");
   }
 }
 /* Output:

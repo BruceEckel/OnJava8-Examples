@@ -1,4 +1,0 @@
-build_script:
-  - gradlew.bat runconsole --stacktrace
-
-test: off

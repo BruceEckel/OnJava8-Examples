@@ -10,9 +10,4 @@
     <execscript name="go"/>
   </target>
 
-  <target name="runconsole" description="Compile and run" depends="build">
-    <execscript name="go"/>
-  </target>
-
-
 </project>

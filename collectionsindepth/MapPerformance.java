@@ -3,7 +3,8 @@
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // Demonstrates performance differences in Maps
-// {Args: 100 5000} Small to keep build testing short
+// Small to keep build testing short:
+// {Args: 100 5000} 
 import java.util.*;
 
 public class MapPerformance {
