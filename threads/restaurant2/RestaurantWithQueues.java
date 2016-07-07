@@ -3,6 +3,7 @@
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // {Args: 5}
+// {main: threads.restaurant2.RestaurantWithQueues}
 package threads.restaurant2;
 import enums.menu.*;
 import java.util.concurrent.*;

@@ -13,10 +13,12 @@ public class FastSimulation {
   static final AtomicInteger[][] GRID =
     new AtomicInteger[N_ELEMENTS][N_GENES];
   static SplittableRandom rand = new SplittableRandom(47);
+  private static volatile boolean running = true;
+  public static void stop() { running = false; }
   static class Evolver implements Runnable {
     @Override
     public void run() {
-      while(!Thread.interrupted()) {
+      while(running) {
         // Randomly select an element to work on:
         int element = rand.nextInt(N_ELEMENTS);
         for(int i = 0; i < N_GENES; i++) {
@@ -50,7 +52,8 @@ public class FastSimulation {
           new AtomicInteger(rand.nextInt(1000));
     for(int i = 0; i < N_EVOLVERS; i++)
       es.execute(new Evolver());
-    TimeUnit.SECONDS.sleep(5);
+    TimeUnit.SECONDS.sleep(4);
+    FastSimulation.stop();
     es.shutdownNow();
   }
 }
