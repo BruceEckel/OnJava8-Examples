@@ -6,7 +6,7 @@ import java.util.*;
 import onjava.*;
 
 public class ParallelSetAll {
-  static final int SIZE = 20_000_000;
+  static final int SIZE = 10_000_000;
   static void intArray() {
     int[] ia = new int[SIZE];
     Arrays.setAll(ia, new Rand.int_()::get);

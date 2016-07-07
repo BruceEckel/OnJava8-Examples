@@ -16,7 +16,7 @@ public class ParseTrash {
   public static <T extends Trash> void
   fillBin(String pckg, Fillable<T> bin) {
     try {
-      Files.lines(Paths.get("..", "trash", "Trash.dat"))
+      Files.lines(Paths.get("trash", "Trash.dat"))
         // Remove empty lines and comment lines:
         .filter(line -> line.trim().length() != 0)
         .filter(line -> !line.startsWith("//"))
