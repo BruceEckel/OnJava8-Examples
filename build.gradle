@@ -28,6 +28,7 @@ subprojects {
             Boolean hasMainParam = lines.find { it.startsWith('// {main: ')}
             Boolean willNotCompile = lines.find { it.startsWith('// {CompileTimeError') }
             Boolean validateByHand = lines.find { it.startsWith('// {ValidateByHand}') }
+            Boolean throwsException = lines.find { it.startsWith('// {ThrowsException}') }
 
             // add tasks for java sources with main methods
             if ((hasMainMethod || hasMainParam) && (!willNotCompile)) {
@@ -42,7 +43,11 @@ subprojects {
                 String mainClass = it.name.replaceAll('.java', '')
 
                 String taskName = mainClass
-                tasks.add(taskName)
+
+                if (!validateByHand) {
+                    // only add tasks that we know we can run successfully to the task list
+                    tasks.add(taskName)
+                }
 
                 // some java sources with a main method specify a different main class
                 String maybeMainLine = lines.find { it.startsWith('// {main: ')}
@@ -65,10 +70,7 @@ subprojects {
                 }
 
                 // some java apps intentionally throw an exception
-                Boolean maybeIgnoreExitValue = false
-                if (lines.find { it.startsWith('// {ThrowsException}') } != null) {
-                    maybeIgnoreExitValue = true
-                }
+                Boolean maybeIgnoreExitValue = (validateByHand || throwsException)
 
                 // some java apps need a timeout
                 Boolean timeOutDuringTesting = false
@@ -76,6 +78,7 @@ subprojects {
                     timeOutDuringTesting = true
                 }
 
+                // create run and test tasks
                 if (timeOutDuringTesting) {
                     // todo: apps with timeOutDuringTesting need special handling
                     task "$taskName" << {
