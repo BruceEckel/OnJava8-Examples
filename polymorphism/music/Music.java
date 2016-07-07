@@ -3,6 +3,7 @@
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // Inheritance & upcasting
+// {main: polymorphism.music.Music}
 package polymorphism.music;
 
 public class Music {

@@ -3,6 +3,7 @@
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // Order of constructor calls
+// {main: polymorphism.Sandwich}
 package polymorphism;
 
 class Meal {
