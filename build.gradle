@@ -26,9 +26,11 @@ subprojects {
 
             Boolean hasMainMethod = lines.join('').contains('main(String[] args)')
             Boolean hasMainParam = lines.find { it.startsWith('// {main: ')}
+            Boolean willNotCompile = lines.find { it.startsWith('// {CompileTimeError') }
+            Boolean validateByHand = lines.find { it.startsWith('// {ValidateByHand}') }
 
             // add tasks for java sources with main methods
-            if (hasMainMethod || hasMainParam) {
+            if ((hasMainMethod || hasMainParam) && (!willNotCompile)) {
 
                 String maybeArgsLine = lines.find { it.startsWith('// {Args: ')}
 
@@ -62,51 +64,76 @@ subprojects {
                     maybeRunFirst = maybeRunFirstLine.trim().replaceAll('\\/\\/ \\{RunFirst: ', '').replaceAll('}', '')
                 }
 
-                task "$taskName"(type: JavaExec, dependsOn: maybeRunFirst) {
-                    main = mainClass
-                    classpath = sourceSets.main.runtimeClasspath
-                    args = maybeArgs
-                    jvmArgs = maybeJvmArgs
+                // some java apps intentionally throw an exception
+                Boolean maybeIgnoreExitValue = false
+                if (lines.find { it.startsWith('// {ThrowsException}') } != null) {
+                    maybeIgnoreExitValue = true
                 }
 
-                Integer expectedOutputStartLine = lines.findIndexOf { it.startsWith('/* Output:') }
-                Integer expectedOutputEndLine = -1
-                List expectedOutputLines = []
+                // some java apps need a timeout
+                Boolean timeOutDuringTesting = false
+                if (lines.find { it.startsWith('// {TimeOutDuringTesting}') } != null) {
+                    timeOutDuringTesting = true
+                }
 
-                if (expectedOutputStartLine != -1) {
-                    expectedOutputStartLine += 1
-                    expectedOutputEndLine = lines.findIndexOf(expectedOutputStartLine, { it.startsWith('*/') })
-                    if (expectedOutputEndLine == -1) {
-                        expectedOutputEndLine = expectedOutputStartLine
+                if (timeOutDuringTesting) {
+                    // todo: apps with timeOutDuringTesting need special handling
+                    task "$taskName" << {
+                        println "not implemented"
                     }
-                    expectedOutputLines = lines.subList(expectedOutputStartLine, expectedOutputEndLine)
+
+                    task "test$taskName" << {
+                        println "not implemented"
+                    }
                 }
+                else {
+                    task "$taskName"(type: JavaExec, dependsOn: maybeRunFirst) {
+                        main = mainClass
+                        classpath = sourceSets.main.runtimeClasspath
+                        args = maybeArgs
+                        jvmArgs = maybeJvmArgs
+                        ignoreExitValue = maybeIgnoreExitValue
+                    }
 
-                OutputStream testStandardOutput = new ByteArrayOutputStream()
-                OutputStream testErrorOutput = new ByteArrayOutputStream()
+                    Integer expectedOutputStartLine = lines.findIndexOf { it.startsWith('/* Output:') }
+                    Integer expectedOutputEndLine = -1
+                    List expectedOutputLines = []
 
-                task "test$taskName"(type: JavaExec, dependsOn: maybeRunFirst) {
-                    main = mainClass
-                    classpath = sourceSets.main.runtimeClasspath
-                    args = maybeArgs
-                    jvmArgs = maybeJvmArgs
-                    standardOutput = testStandardOutput
-                    errorOutput = testErrorOutput
-                    doLast {
-                        // test the output here
-                        println("Expected")
-                        println(expectedOutputLines)
-                        println("STDOUT")
-                        println(testStandardOutput.toString().readLines())
-                        println("STDERR")
-                        println(testErrorOutput.toString().readLines())
-                        throw new Exception("Expected output did not match the actual output")
+                    if (expectedOutputStartLine != -1) {
+                        expectedOutputStartLine += 1
+                        expectedOutputEndLine = lines.findIndexOf(expectedOutputStartLine, { it.startsWith('*/') })
+                        if (expectedOutputEndLine == -1) {
+                            expectedOutputEndLine = expectedOutputStartLine
+                        }
+                        expectedOutputLines = lines.subList(expectedOutputStartLine, expectedOutputEndLine)
+                    }
+
+                    OutputStream testStandardOutput = new ByteArrayOutputStream()
+                    OutputStream testErrorOutput = new ByteArrayOutputStream()
+
+                    task "test$taskName"(type: JavaExec, dependsOn: maybeRunFirst) {
+                        main = mainClass
+                        classpath = sourceSets.main.runtimeClasspath
+                        args = maybeArgs
+                        jvmArgs = maybeJvmArgs
+                        ignoreExitValue = maybeIgnoreExitValue
+                        standardOutput = testStandardOutput
+                        errorOutput = testErrorOutput
+                        doLast {
+                            // test the output here
+                            def rstrip = { it.replaceAll('\\s$', '') }
+                            List testStandardOutputLines = testStandardOutput.toString().readLines().collect(rstrip)
+
+                            assert expectedOutputLines.size() == testStandardOutputLines.size()
+
+                            expectedOutputLines.eachWithIndex { expectedLine, i -> assert expectedLine == testStandardOutputLines.get(i) }
+                        }
                     }
                 }
             }
 
             // exclude java sources that will not compile
-            if (lines.find { it.startsWith('// {CompileTimeError') } != null) {
+            if (willNotCompile) {
                 sourceSets.main.java.excludes.add(it.name)
             }
         }
