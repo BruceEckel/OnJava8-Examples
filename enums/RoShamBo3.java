@@ -3,6 +3,7 @@
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // Using constant-specific methods
+// {main: enums.RoShamBo3}
 package enums;
 import static enums.Outcome.*;
 

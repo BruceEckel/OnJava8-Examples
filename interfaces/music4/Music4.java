@@ -3,6 +3,7 @@
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // Abstract classes and methods
+// {main: interfaces.music4.Music4}
 package interfaces.music4;
 import polymorphism.music.Note;
 

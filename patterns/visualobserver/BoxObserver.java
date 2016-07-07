@@ -4,12 +4,13 @@
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // Demonstration of Observer pattern using
 // Java's built-in observer classes
-// {TimeOut:4000} During testing
+// {main: patterns.visualobserver.BoxObserver}
 package patterns.visualobserver;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.*;
+import onjava.*;
 import onjava.MouseClick;
 
 // You must inherit a new type of Observable:
@@ -33,6 +34,7 @@ public class BoxObserver extends JFrame {
         cp.add(new OCBox(x, y, notifier));
   }
   public static void main(String[] args) {
+    new TimedAbort(4);
     int grid = 8;
     if(args.length > 0)
       grid = Integer.parseInt(args[0]);

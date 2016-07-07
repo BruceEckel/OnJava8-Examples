@@ -4,6 +4,7 @@
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // Using multiple dispatching to handle more
 // than one unknown type during a method call
+// {main: patterns.doubledispatch.DoubleDispatch}
 package patterns.doubledispatch;
 import patterns.trash.*;
 import java.util.*;

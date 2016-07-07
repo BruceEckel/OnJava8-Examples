@@ -2,6 +2,7 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
+// {main: onjava.Hex}
 package onjava;
 import java.io.*;
 import java.nio.file.*;
@@ -25,7 +26,8 @@ public class Hex {
     if(args.length == 0)
       // Test by displaying this class file:
       System.out.println(format(
-        Files.readAllBytes(Paths.get("Hex.class"))));
+        Files.readAllBytes(Paths.get(
+          "build/classes/main/onjava/Hex.class"))));
     else
       System.out.println(format(
         Files.readAllBytes(Paths.get(args[0]))));

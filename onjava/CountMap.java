@@ -3,6 +3,7 @@
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // Unlimited-length Map containing sample data
+// {main: onjava.CountMap}
 package onjava;
 import java.util.*;
 

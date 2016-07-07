@@ -3,6 +3,7 @@
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // An annotation-based unit-test framework
+// {main: onjava.atunit.AtUnit}
 package onjava.atunit;
 import java.lang.reflect.*;
 import java.io.*;

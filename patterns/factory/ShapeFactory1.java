@@ -3,6 +3,7 @@
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // A simple static factory method
+// {main: patterns.factory.ShapeFactory1}
 package patterns.factory;
 import java.util.*;
 import java.util.stream.*;

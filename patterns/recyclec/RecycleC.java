@@ -3,6 +3,7 @@
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // Adding more objects to the recycling problem
+// {main: patterns.recyclec.RecycleC}
 package patterns.recyclec;
 import patterns.trash.*;
 import java.util.*;

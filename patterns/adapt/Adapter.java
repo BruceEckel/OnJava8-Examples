@@ -3,6 +3,7 @@
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // Variations on the Adapter pattern
+// {main: patterns.adapt.Adapter}
 package patterns.adapt;
 
 class WhatIHave {
