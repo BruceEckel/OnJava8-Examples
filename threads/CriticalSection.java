@@ -2,7 +2,6 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-// {TimeOutDuringTesting}
 // (Behavior may have changed in Java 8)
 // Synchronizing blocks instead of entire methods. Also
 // demonstrates protection of a non-thread-safe class
@@ -11,6 +10,7 @@ package threads;
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.*;
 import java.util.*;
+import onjava.TimedAbort;
 
 class Pair { // Not thread-safe
   private int x, y;
@@ -139,6 +139,7 @@ public class CriticalSection {
     System.exit(0);
   }
   public static void main(String[] args) {
+    new TimedAbort(4);
     PairManager
       pman1 = new PairManager1(),
       pman2 = new PairManager2();

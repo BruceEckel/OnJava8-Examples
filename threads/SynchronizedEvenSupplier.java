@@ -3,8 +3,8 @@
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // Simplifying mutexes with the synchronized keyword
-// {TimeOutDuringTesting}
 // {IgnoreOutput} // No output validation
+import onjava.TimedAbort;
 
 public class
 SynchronizedEvenSupplier extends IntSupplier {
@@ -17,6 +17,7 @@ SynchronizedEvenSupplier extends IntSupplier {
     return currentEvenValue;
   }
   public static void main(String[] args) {
+    new TimedAbort(4);
     EvenChecker.test(new SynchronizedEvenSupplier());
   }
 }

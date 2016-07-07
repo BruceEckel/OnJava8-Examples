@@ -3,7 +3,7 @@
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // When threads collide
-// {TimeOutDuringTesting} 
+import onjava.TimedAbort;
 
 public class EvenSupplier extends IntSupplier {
   private int currentEvenValue = 0;
@@ -14,6 +14,7 @@ public class EvenSupplier extends IntSupplier {
     return currentEvenValue;
   }
   public static void main(String[] args) {
+    new TimedAbort(4);
     EvenChecker.test(new EvenSupplier());
   }
 }
