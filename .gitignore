@@ -77,3 +77,26 @@ io/X.file
 
 /serialization/Blip3.serialized
 /serialization/Blips.serialized
+
+build/
+
+/compression/test.gz
+/compression/test.zip
+/iostreams/BasicFileOutput.dat
+/iostreams/Data.txt
+/iostreams/FileOutputShortcut.dat
+/iostreams/rtest.dat
+/logging/LogToFile.xml
+/logging/LogToFile2.txt
+/logging/MultipleHandlers.xml
+/logging/MultipleHandlers2.xml
+/logging/java0.log
+/logging/java1.log
+/logging/java2.log
+/newio/TransferTo.txt
+/newio/data2.txt
+/newio/file.txt
+/newio/test.dat
+/newio/test.txt
+/serialization/CADState.dat
+/serialization/worm.dat
