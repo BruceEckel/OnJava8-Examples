@@ -1,4 +1,4 @@
 build_script:
-  - gradlew.bat --parallel --info runconsole
+  - gradlew.bat --parallel --info run
 
 test: off
