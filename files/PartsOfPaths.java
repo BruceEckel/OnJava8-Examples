@@ -11,8 +11,6 @@ public class PartsOfPaths {
       Paths.get("PartsOfPaths.java").toAbsolutePath();
     for(int i = 0; i < p.getNameCount(); i++)
       System.out.println(p.getName(i));
-    Path sub = p.subpath(3, p.getNameCount() - 2);
-    System.out.println(sub);
     System.out.println("ends with '.java': " +
       p.endsWith(".java"));
     for(Path pp : p) {
