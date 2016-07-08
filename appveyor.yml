@@ -1,4 +1,4 @@
 build_script:
-  - gradlew.bat --parallel --info run
+  - gradlew.bat --parallel --stacktrace run
 
 test: off
