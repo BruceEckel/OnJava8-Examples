@@ -100,3 +100,8 @@ build/
 /newio/test.txt
 /serialization/CADState.dat
 /serialization/worm.dat
+/serialization/Logon.dat
+/serialization/X.file
+/standardio/Redirecting.txt
+/threads/PSP2.txt
+/threads/primes.txt
