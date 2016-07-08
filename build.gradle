@@ -1,15 +1,4 @@
-import org.python.util.PythonInterpreter
-import org.python.core.*
-
-buildscript {
-    repositories {
-        mavenLocal()
-        mavenCentral()
-    }
-    dependencies {
-        classpath group: 'org.python', name: 'jython-standalone', version: '2.7.1b2'
-    }
-}
+import org.apache.tools.ant.util.TeeOutputStream
 
 subprojects {
     apply plugin: 'java'
@@ -97,66 +86,28 @@ subprojects {
                     task "$taskName" << {
                         println "not implemented"
                     }
-
-                    task "test$taskName" << {
-                        println "not implemented"
-                    }
                 }
                 else {
+                    File outFile = new File(projectDir, "${taskName}.out")
+                    File errFile = new File(projectDir, "${taskName}.err")
+
+                    OutputStream runStandardOutput = new TeeOutputStream(new FileOutputStream(outFile), System.out)
+
+                    OutputStream runErrorOutput = new TeeOutputStream(new FileOutputStream(errFile), System.err)
+
                     task "$taskName"(type: JavaExec, dependsOn: maybeRunFirst) {
                         main = mainClass
                         classpath = sourceSets.main.runtimeClasspath
                         args = maybeArgs
                         jvmArgs = maybeJvmArgs
                         ignoreExitValue = maybeIgnoreExitValue
-                    }
-
-                    Integer expectedOutputStartLine = lines.findIndexOf { it.startsWith('/* Output:') }
-                    Integer expectedOutputEndLine = -1
-                    List expectedOutputLines = []
-
-                    if (expectedOutputStartLine != -1) {
-                        expectedOutputStartLine += 1
-                        expectedOutputEndLine = lines.findIndexOf(expectedOutputStartLine, { it.startsWith('*/') })
-                        if (expectedOutputEndLine == -1) {
-                            expectedOutputEndLine = expectedOutputStartLine
-                        }
-                        expectedOutputLines = lines.subList(expectedOutputStartLine, expectedOutputEndLine)
-                    }
-
-                    OutputStream testStandardOutput = new ByteArrayOutputStream()
-                    OutputStream testErrorOutput = new ByteArrayOutputStream()
-
-                    task "test$taskName"(type: JavaExec, dependsOn: maybeRunFirst) {
-                        main = mainClass
-                        classpath = sourceSets.main.runtimeClasspath
-                        args = maybeArgs
-                        jvmArgs = maybeJvmArgs
-                        ignoreExitValue = maybeIgnoreExitValue
-                        standardOutput = testStandardOutput
-                        errorOutput = testErrorOutput
-                        doLast {
-                            // test the output here
-                            def rstrip = { it.replaceAll('\\s$', '') }
-
-                            def textwrap = { String text ->
-                                if (text.length() > 0) {
-                                    PythonInterpreter interpreter = new PythonInterpreter()
-                                    interpreter.exec("from textwrap import fill")
-                                    PyFunction textwrapFill = (PyFunction) interpreter.get("fill")
-                                    PyObject result = textwrapFill.__call__(new PyString(text), new PyInteger(59))
-                                    return ((String) result.__tojava__(String.class)).readLines()
-                                }
-                                else {
-                                    return [""]
-                                }
-                            }
-
-                            List testStandardOutputLines = testStandardOutput.toString().readLines().collect(rstrip).collectMany(textwrap)
-
-                            assert expectedOutputLines.size() == testStandardOutputLines.size()
-
-                            expectedOutputLines.eachWithIndex { expectedLine, i -> assert expectedLine == testStandardOutputLines.get(i) }
+                        standardOutput = runStandardOutput
+                        errorOutput = runErrorOutput
+                        addShutdownHook {
+                            runStandardOutput.close()
+                            runErrorOutput.close()
+                            if (outFile.size() == 0) outFile.delete()
+                            if (errFile.size() == 0) errFile.delete()
                         }
                     }
                 }
@@ -170,9 +121,6 @@ subprojects {
     }
 
     task run(dependsOn: tasks)
-
-    List testTasks = tasks.collect { "test" + it }
-    task test(overwrite:true, dependsOn: testTasks)
 }
 
 configure(subprojects - project(':onjava')) {
