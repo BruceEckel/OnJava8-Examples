@@ -5,7 +5,7 @@
 import java.util.*;
 
 public class ParallelPrefix {
-  static final int SIZE = 20_000_000;
+  static final int SIZE = 10_000_000;
   public static void main(String[] args) {
     long[] nums = new long[SIZE];
     Arrays.setAll(nums, n -> n);
