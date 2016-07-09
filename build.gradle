@@ -88,8 +88,10 @@ subprojects {
                     }
                 }
                 else {
-                    File outFile = new File(projectDir, "${taskName}.out")
-                    File errFile = new File(projectDir, "${taskName}.err")
+                    String basePath = it.absolutePath.replaceAll('\\.java', '')
+
+                    File outFile = new File(basePath + '.out')
+                    File errFile = new File(basePath + '.err')
 
                     OutputStream runStandardOutput = new TeeOutputStream(new FileOutputStream(outFile), System.out)
 
