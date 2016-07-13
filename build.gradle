@@ -1,5 +1,74 @@
 import org.apache.tools.ant.util.TeeOutputStream
 
+class Tags {
+    Boolean mainMethod = false
+    Boolean compileTimeError = false
+    Boolean throwsException = false
+    Boolean errorOutputExpected = false
+    Boolean validateByHand = false
+    Boolean ignoreOutput = false // probably don't need this tag
+    String javaCmd = null
+    String args = null
+    String jVMArgs = null
+    String exec = null
+    String runFirst = null
+    private List<String> lines
+    private String block
+    def Tags(List<String> lines) {
+        this.lines = lines
+        block = lines.join('')
+        mainMethod = block.contains('main(String[] args)')
+        compileTimeError = testFor('CompileTimeError')
+        throwsException = testFor('ThrowsException')
+        errorOutputExpected = testFor('ErrorOutputExpected')
+        validateByHand = testFor('ValidateByHand')
+        ignoreOutput = testFor('IgnoreOutput')
+        javaCmd = extract('main:')
+        args = extract('Args:')
+        jVMArgs = extract('JVMArgs:')
+        exec = extract('Exec:')
+        runFirst = extract('RunFirst:')
+    }
+    private def testFor(String marker) {
+        return block.contains("// {" + marker + "}")
+    }
+    private def extract(String marker) {
+        if(!block.contains("// {" + marker)) 
+            return null
+        def re = "\\/\\/ \\{" + marker + /[^}]+}/
+        def tagline = block =~ re
+        if(tagline.getCount()) {
+            println lines[0]
+            def rtrim = tagline[0] - "}"
+            def ltrim = rtrim - ("// {" + marker)
+            println ">" + ltrim
+            return ltrim
+        } else {
+            println "Searching for: " + re
+            println block
+            System.exit(1)
+        }
+    }
+    public String toString() {
+        String result = ""
+        for(ln in lines)
+            result += ln + "\n"
+        result += "mainMethod: " + mainMethod + "\n"
+        result += "compileTimeError: " + compileTimeError + "\n"
+        result += "throwsException: " + throwsException + "\n"
+        result += "errorOutputExpected: " + errorOutputExpected + "\n"
+        result += "validateByHand: " + validateByHand + "\n"
+        result += "ignoreOutput: " + ignoreOutput + "\n"
+        result += "javaCmd: " + javaCmd + "\n"
+        result += "args: " + args + "\n"
+        result += "jVMArgs: " + jVMArgs + "\n"
+        result += "exec: " + exec + "\n"
+        result += "runFirst: " + runFirst + "\n"
+        return result
+    }
+}
+
+
 subprojects {
     apply plugin: 'java'
 
@@ -25,6 +94,9 @@ subprojects {
         if (it.name.endsWith('.java')) {
 
             List lines = it.readLines()
+
+            Tags tags = new Tags(lines)  // Not used yet; just for demo
+            println tags
 
             Boolean hasMainMethod = lines.join('').contains('main(String[] args)')
             Boolean hasMainParam = lines.find { it.startsWith('// {main: ')}
