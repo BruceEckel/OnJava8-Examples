@@ -7,6 +7,8 @@ class Tags {
     Boolean errorOutputExpected = false
     Boolean validateByHand = false
     Boolean ignoreOutput = false // probably don't need this tag
+    String fileRoot
+    String mainClass
     String javaCmd = null
     List<String> args = []
     String jVMArgs = null
@@ -18,14 +20,19 @@ class Tags {
         this.lines = lines
         block = lines.join('')
         mainMethod = block.contains('main(String[] args)')
+        fileRoot = lines[0].split("/")[-1] - ".java"
+        mainClass = fileRoot
+        javaCmd = extract('main:')
+        if(javaCmd)
+            mainClass = javaCmd
         compileTimeError = testFor('CompileTimeError')
         throwsException = testFor('ThrowsException')
         errorOutputExpected = testFor('ErrorOutputExpected')
         validateByHand = testFor('ValidateByHand')
         ignoreOutput = testFor('IgnoreOutput')
-        javaCmd = extract('main:')
         def argString = extract('Args:')
-        if(argString) args = argString.split(' ')
+        if(argString)
+            args = argString.split(' ')
         jVMArgs = extract('JVMArgs:')
         exec = extract('Exec:')
         runFirst = extract('RunFirst:')
@@ -39,11 +46,7 @@ class Tags {
         def re = "\\/\\/ \\{" + marker + /[^}]+}/
         def tagline = block =~ re
         if(tagline.getCount()) {
-            if(block.contains("TestRegularExpression"))
-                println tagline[0]
             def rtrim = tagline[0].reverse().dropWhile{ it != '}'}.reverse()[0..-2]
-            if(block.contains("TestRegularExpression"))
-                println rtrim
             def ltrim = rtrim - ("// {" + marker)
             return ltrim.trim()
         } else {
@@ -130,26 +133,9 @@ subprojects {
             // Add tasks for java sources with main methods
             if ((tags.mainMethod || tags.javaCmd) && (!tags.compileTimeError)) {
 
-/*                String maybeArgsLine = lines.find { it.startsWith('// {Args: ')}
-
-                List maybeArgs = []
-                if (maybeArgsLine != null) {
-                    maybeArgs = maybeArgsLine.trim().replaceAll('\\/\\/ \\{Args: ', '').reverse().replaceFirst('}', '').reverse().split(' ')
-                }
-*/
-                String mainClass = it.name.replaceAll('.java', '')
-
-                String taskName = mainClass
-
                 if (!tags.validateByHand) {
                     // only add tasks that we know we can run successfully to the task list
-                    tasks.add(taskName)
-                }
-
-                // some java sources with a main method specify a different main class
-                String maybeMainLine = lines.find { it.startsWith('// {main: ')}
-                if (maybeMainLine != null) {
-                    mainClass = maybeMainLine.trim().replaceAll('\\/\\/ \\{main: ', '').replaceAll('}', '')
+                    tasks.add(tags.fileRoot)
                 }
 
                 // some java sources with JVM args
@@ -178,8 +164,8 @@ subprojects {
 
                 OutputStream runErrorOutput = new TeeOutputStream(new FileOutputStream(errFile), System.err)
 
-                task "$taskName"(type: JavaExec, dependsOn: maybeRunFirst) {
-                    main = mainClass
+                task "$tags.fileRoot"(type: JavaExec, dependsOn: maybeRunFirst) {
+                    main = tags.mainClass
                     classpath = sourceSets.main.runtimeClasspath
                     args = tags.args
                     jvmArgs = maybeJvmArgs
