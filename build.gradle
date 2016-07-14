@@ -33,37 +33,61 @@ class Tags {
         return block.contains("// {" + marker + "}")
     }
     private def extract(String marker) {
-        if(!block.contains("// {" + marker)) 
+        if(!block.contains("// {" + marker))
             return null
         def re = "\\/\\/ \\{" + marker + /[^}]+}/
         def tagline = block =~ re
         if(tagline.getCount()) {
-            println lines[0]
             def rtrim = tagline[0] - "}"
             def ltrim = rtrim - ("// {" + marker)
-            println ">" + ltrim
-            return ltrim
+            return ltrim.trim()
         } else {
             println "Searching for: " + re
             println block
             System.exit(1)
         }
     }
+    public boolean hasTags() {
+        return compileTimeError ||
+        throwsException ||
+        errorOutputExpected ||
+        validateByHand ||
+        ignoreOutput ||
+        javaCmd ||
+        args ||
+        jVMArgs ||
+        exec ||
+        runFirst
+    }
     public String toString() {
         String result = ""
         for(ln in lines)
-            result += ln + "\n"
-        result += "mainMethod: " + mainMethod + "\n"
-        result += "compileTimeError: " + compileTimeError + "\n"
-        result += "throwsException: " + throwsException + "\n"
-        result += "errorOutputExpected: " + errorOutputExpected + "\n"
-        result += "validateByHand: " + validateByHand + "\n"
-        result += "ignoreOutput: " + ignoreOutput + "\n"
-        result += "javaCmd: " + javaCmd + "\n"
-        result += "args: " + args + "\n"
-        result += "jVMArgs: " + jVMArgs + "\n"
-        result += "exec: " + exec + "\n"
-        result += "runFirst: " + runFirst + "\n"
+            if(ln.startsWith("//") || ln.startsWith("package "))
+                result += ln + "\n"
+            else
+                break
+        if(mainMethod)
+            result += "mainMethod: " + mainMethod + "\n"
+        if(compileTimeError)
+            result += "compileTimeError: " + compileTimeError + "\n"
+        if(throwsException)
+            result += "throwsException: " + throwsException + "\n"
+        if(errorOutputExpected)
+            result += "errorOutputExpected: " + errorOutputExpected + "\n"
+        if(validateByHand)
+            result += "validateByHand: " + validateByHand + "\n"
+        if(ignoreOutput)
+            result += "ignoreOutput: " + ignoreOutput + "\n"
+        if(javaCmd)
+            result += "javaCmd: " + javaCmd + "\n"
+        if(args)
+            result += "args: " + args + "\n"
+        if(jVMArgs)
+            result += "jVMArgs: " + jVMArgs + "\n"
+        if(exec)
+            result += "exec: " + exec + "\n"
+        if(runFirst)
+            result += "runFirst: " + runFirst + "\n"
         return result
     }
 }
@@ -96,7 +120,8 @@ subprojects {
             List lines = it.readLines()
 
             Tags tags = new Tags(lines)  // Not used yet; just for demo
-            println tags
+            if(tags.hasTags())
+                println tags
 
             Boolean hasMainMethod = lines.join('').contains('main(String[] args)')
             Boolean hasMainParam = lines.find { it.startsWith('// {main: ')}
@@ -104,7 +129,7 @@ subprojects {
             Boolean validateByHand = lines.find { it.startsWith('// {ValidateByHand}') }
             Boolean throwsException = lines.find { it.startsWith('// {ThrowsException}') }
 
-            // add tasks for java sources with main methods
+            // Add tasks for java sources with main methods
             if ((hasMainMethod || hasMainParam) && (!willNotCompile)) {
 
                 String maybeArgsLine = lines.find { it.startsWith('// {Args: ')}
