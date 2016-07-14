@@ -202,12 +202,11 @@ subprojects {
                         ignoreExitValue = maybeIgnoreExitValue
                         standardOutput = runStandardOutput
                         errorOutput = runErrorOutput
-                        addShutdownHook {
-                            runStandardOutput.close()
-                            runErrorOutput.close()
-                            if (outFile.size() == 0) outFile.delete()
-                            if (errFile.size() == 0) errFile.delete()
-                        }
+                    } << {
+                        runStandardOutput.close()
+                        runErrorOutput.close()
+                        if (outFile.size() == 0) outFile.delete()
+                        if (errFile.size() == 0) errFile.delete()
                     }
                 }
             }
