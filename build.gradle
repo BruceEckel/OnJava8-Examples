@@ -11,7 +11,7 @@ class Tags {
     String mainClass
     String javaCmd = null
     List<String> args = []
-    String jVMArgs = null
+    List<String> jVMArgs = []
     String exec = null
     String runFirst = null
     private List<String> lines
@@ -33,7 +33,9 @@ class Tags {
         def argString = extract('Args:')
         if(argString)
             args = argString.split(' ')
-        jVMArgs = extract('JVMArgs:')
+        def jvmArgString = extract('JVMArgs:')
+        if(jvmArgString)
+            jVMArgs = jvmArgString.split(' ')
         exec = extract('Exec:')
         runFirst = extract('RunFirst:')
     }
@@ -138,13 +140,6 @@ subprojects {
                     tasks.add(tags.fileRoot)
                 }
 
-                // some java sources with JVM args
-                List maybeJvmArgs = []
-                String maybeJvmArgsLine = lines.find { it.startsWith('// {JVMArgs: ')}
-                if (maybeJvmArgsLine != null) {
-                    maybeJvmArgs = maybeJvmArgsLine.trim().replaceAll('\\/\\/ \\{JVMArgs: ', '').replaceAll('}', '').split(' ')
-                }
-
                 // some java sources depend on others to be run first
                 String maybeRunFirst = null
                 String maybeRunFirstLine = lines.find { it.startsWith('// {RunFirst: ')}
@@ -168,7 +163,7 @@ subprojects {
                     main = tags.mainClass
                     classpath = sourceSets.main.runtimeClasspath
                     args = tags.args
-                    jvmArgs = maybeJvmArgs
+                    jvmArgs = tags.jVMArgs
                     ignoreExitValue = maybeIgnoreExitValue
                     standardOutput = runStandardOutput
                     errorOutput = runErrorOutput
