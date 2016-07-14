@@ -127,9 +127,7 @@ subprojects {
     projectDir.eachFileRecurse {
         if (it.name.endsWith('.java')) {
 
-            List lines = it.readLines()
-
-            Tags tags = new Tags(lines)  // Not used yet; just for demo
+            Tags tags = new Tags(it.readLines())
             // if(tags.hasTags()) println tags // Trace output for debugging
 
             // Add tasks for java sources with main methods
@@ -140,16 +138,10 @@ subprojects {
                     tasks.add(tags.fileRoot)
                 }
 
-                // Some java apps intentionally throw an exception
-                Boolean maybeIgnoreExitValue = (tags.validateByHand || tags.throwsException)
-
                 String basePath = it.absolutePath.replaceAll('\\.java', '')
-
                 File outFile = new File(basePath + '.out')
                 File errFile = new File(basePath + '.err')
-
                 OutputStream runStandardOutput = new TeeOutputStream(new FileOutputStream(outFile), System.out)
-
                 OutputStream runErrorOutput = new TeeOutputStream(new FileOutputStream(errFile), System.err)
 
                 task "$tags.fileRoot"(type: JavaExec, dependsOn: tags.runFirst) {
@@ -157,7 +149,7 @@ subprojects {
                     classpath = sourceSets.main.runtimeClasspath
                     args = tags.args
                     jvmArgs = tags.jVMArgs
-                    ignoreExitValue = maybeIgnoreExitValue
+                    ignoreExitValue = tags.validateByHand || tags.throwsException
                     standardOutput = runStandardOutput
                     errorOutput = runErrorOutput
                 } << {
@@ -167,21 +159,17 @@ subprojects {
                     if (errFile.size() == 0) errFile.delete()
                 }
             }
-
             // exclude java sources that will not compile
             if (tags.compileTimeError) {
                 sourceSets.main.java.excludes.add(it.name)
             }
         }
     }
-
     task run(dependsOn: tasks)
 }
 
 configure(subprojects - project(':onjava')) {
-
     dependencies {
         compile project(':onjava')
     }
-
 }
