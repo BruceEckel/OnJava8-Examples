@@ -140,13 +140,6 @@ subprojects {
                     tasks.add(tags.fileRoot)
                 }
 
-                // some java sources depend on others to be run first
-                String maybeRunFirst = null
-                String maybeRunFirstLine = lines.find { it.startsWith('// {RunFirst: ')}
-                if (maybeRunFirstLine != null) {
-                    maybeRunFirst = maybeRunFirstLine.trim().replaceAll('\\/\\/ \\{RunFirst: ', '').replaceAll('}', '')
-                }
-
                 // Some java apps intentionally throw an exception
                 Boolean maybeIgnoreExitValue = (tags.validateByHand || tags.throwsException)
 
@@ -159,7 +152,7 @@ subprojects {
 
                 OutputStream runErrorOutput = new TeeOutputStream(new FileOutputStream(errFile), System.err)
 
-                task "$tags.fileRoot"(type: JavaExec, dependsOn: maybeRunFirst) {
+                task "$tags.fileRoot"(type: JavaExec, dependsOn: tags.runFirst) {
                     main = tags.mainClass
                     classpath = sourceSets.main.runtimeClasspath
                     args = tags.args
