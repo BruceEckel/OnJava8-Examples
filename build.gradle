@@ -8,7 +8,7 @@ class Tags {
     Boolean validateByHand = false
     Boolean ignoreOutput = false // probably don't need this tag
     String javaCmd = null
-    String args = null
+    List<String> args = []
     String jVMArgs = null
     String exec = null
     String runFirst = null
@@ -24,7 +24,8 @@ class Tags {
         validateByHand = testFor('ValidateByHand')
         ignoreOutput = testFor('IgnoreOutput')
         javaCmd = extract('main:')
-        args = extract('Args:')
+        def argString = extract('Args:')
+        if(argString) args = argString.split(' ')
         jVMArgs = extract('JVMArgs:')
         exec = extract('Exec:')
         runFirst = extract('RunFirst:')
@@ -38,7 +39,11 @@ class Tags {
         def re = "\\/\\/ \\{" + marker + /[^}]+}/
         def tagline = block =~ re
         if(tagline.getCount()) {
-            def rtrim = tagline[0] - "}"
+            if(block.contains("TestRegularExpression"))
+                println tagline[0]
+            def rtrim = tagline[0].reverse().dropWhile{ it != '}'}.reverse()[0..-2]
+            if(block.contains("TestRegularExpression"))
+                println rtrim
             def ltrim = rtrim - ("// {" + marker)
             return ltrim.trim()
         } else {
@@ -120,30 +125,23 @@ subprojects {
             List lines = it.readLines()
 
             Tags tags = new Tags(lines)  // Not used yet; just for demo
-            if(tags.hasTags())
-                println tags
-
-            Boolean hasMainMethod = lines.join('').contains('main(String[] args)')
-            Boolean hasMainParam = lines.find { it.startsWith('// {main: ')}
-            Boolean willNotCompile = lines.find { it.startsWith('// {CompileTimeError') }
-            Boolean validateByHand = lines.find { it.startsWith('// {ValidateByHand}') }
-            Boolean throwsException = lines.find { it.startsWith('// {ThrowsException}') }
+            // if(tags.hasTags()) println tags // Trace output for debugging
 
             // Add tasks for java sources with main methods
-            if ((hasMainMethod || hasMainParam) && (!willNotCompile)) {
+            if ((tags.mainMethod || tags.javaCmd) && (!tags.compileTimeError)) {
 
-                String maybeArgsLine = lines.find { it.startsWith('// {Args: ')}
+/*                String maybeArgsLine = lines.find { it.startsWith('// {Args: ')}
 
                 List maybeArgs = []
                 if (maybeArgsLine != null) {
                     maybeArgs = maybeArgsLine.trim().replaceAll('\\/\\/ \\{Args: ', '').reverse().replaceFirst('}', '').reverse().split(' ')
                 }
-
+*/
                 String mainClass = it.name.replaceAll('.java', '')
 
                 String taskName = mainClass
 
-                if (!validateByHand) {
+                if (!tags.validateByHand) {
                     // only add tasks that we know we can run successfully to the task list
                     tasks.add(taskName)
                 }
@@ -168,51 +166,36 @@ subprojects {
                     maybeRunFirst = maybeRunFirstLine.trim().replaceAll('\\/\\/ \\{RunFirst: ', '').replaceAll('}', '')
                 }
 
-                // some java apps intentionally throw an exception
-                Boolean maybeIgnoreExitValue = (validateByHand || throwsException)
+                // Some java apps intentionally throw an exception
+                Boolean maybeIgnoreExitValue = (tags.validateByHand || tags.throwsException)
 
-                // some java apps need a timeout
-                Boolean timeOutDuringTesting = false
-                if (lines.find { it.startsWith('// {TimeOutDuringTesting}') } != null) {
-                    timeOutDuringTesting = true
-                }
+                String basePath = it.absolutePath.replaceAll('\\.java', '')
 
-                // create run and test tasks
-                if (timeOutDuringTesting) {
-                    // todo: apps with timeOutDuringTesting need special handling
-                    task "$taskName" << {
-                        println "not implemented"
-                    }
-                }
-                else {
-                    String basePath = it.absolutePath.replaceAll('\\.java', '')
+                File outFile = new File(basePath + '.out')
+                File errFile = new File(basePath + '.err')
 
-                    File outFile = new File(basePath + '.out')
-                    File errFile = new File(basePath + '.err')
+                OutputStream runStandardOutput = new TeeOutputStream(new FileOutputStream(outFile), System.out)
 
-                    OutputStream runStandardOutput = new TeeOutputStream(new FileOutputStream(outFile), System.out)
+                OutputStream runErrorOutput = new TeeOutputStream(new FileOutputStream(errFile), System.err)
 
-                    OutputStream runErrorOutput = new TeeOutputStream(new FileOutputStream(errFile), System.err)
-
-                    task "$taskName"(type: JavaExec, dependsOn: maybeRunFirst) {
-                        main = mainClass
-                        classpath = sourceSets.main.runtimeClasspath
-                        args = maybeArgs
-                        jvmArgs = maybeJvmArgs
-                        ignoreExitValue = maybeIgnoreExitValue
-                        standardOutput = runStandardOutput
-                        errorOutput = runErrorOutput
-                    } << {
-                        runStandardOutput.close()
-                        runErrorOutput.close()
-                        if (outFile.size() == 0) outFile.delete()
-                        if (errFile.size() == 0) errFile.delete()
-                    }
+                task "$taskName"(type: JavaExec, dependsOn: maybeRunFirst) {
+                    main = mainClass
+                    classpath = sourceSets.main.runtimeClasspath
+                    args = tags.args
+                    jvmArgs = maybeJvmArgs
+                    ignoreExitValue = maybeIgnoreExitValue
+                    standardOutput = runStandardOutput
+                    errorOutput = runErrorOutput
+                } << {
+                    runStandardOutput.close()
+                    runErrorOutput.close()
+                    if (outFile.size() == 0) outFile.delete()
+                    if (errFile.size() == 0) errFile.delete()
                 }
             }
 
             // exclude java sources that will not compile
-            if (willNotCompile) {
+            if (tags.compileTimeError) {
                 sourceSets.main.java.excludes.add(it.name)
             }
         }
