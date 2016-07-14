@@ -3,8 +3,7 @@
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // Use the XOM library to write and read XML
-// {Requires: nu.xom.Node; You must install
-// the XOM library from http://www.xom.nu }
+// You must install nu.xom.Node from http://www.xom.nu
 import nu.xom.*;
 import java.io.*;
 import java.util.*;

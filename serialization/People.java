@@ -2,8 +2,7 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-// {Requires: nu.xom.Node; You must install
-// the XOM library from http://www.xom.nu }
+// You must install nu.xom.Node from http://www.xom.nu
 // {RunFirst: APerson}
 import nu.xom.*;
 import java.io.File;
