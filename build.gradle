@@ -1,4 +1,5 @@
 import org.apache.tools.ant.util.TeeOutputStream
+boolean debug = false
 
 class Tags {
     Boolean mainMethod = false
@@ -124,7 +125,7 @@ subprojects {
         if (it.name.endsWith('.java')) {
 
             Tags tags = new Tags(it.readLines())
-            // if(tags.hasTags()) println tags // Trace output for debugging
+            if(debug && tags.hasTags()) println tags
 
             // Add tasks for java sources with main methods
             if ((tags.mainMethod || tags.javaCmd) && (!tags.compileTimeError)) {
