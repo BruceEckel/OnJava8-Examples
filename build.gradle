@@ -6,7 +6,7 @@ class Tags {
     Boolean throwsException = false
     Boolean errorOutputExpected = false
     Boolean validateByHand = false
-    Boolean ignoreOutput = false // probably don't need this tag
+    Boolean ignoreOutput = false // This tag isn't used in the build...
     String fileRoot
     String mainClass
     String javaCmd = null
@@ -76,29 +76,25 @@ class Tags {
                 result += ln + "\n"
             else
                 break
-        if(mainMethod)
-            result += "mainMethod: " + mainMethod + "\n"
-        if(compileTimeError)
-            result += "compileTimeError: " + compileTimeError + "\n"
-        if(throwsException)
-            result += "throwsException: " + throwsException + "\n"
-        if(errorOutputExpected)
-            result += "errorOutputExpected: " + errorOutputExpected + "\n"
-        if(validateByHand)
-            result += "validateByHand: " + validateByHand + "\n"
-        if(ignoreOutput)
-            result += "ignoreOutput: " + ignoreOutput + "\n"
-        if(javaCmd)
-            result += "javaCmd: " + javaCmd + "\n"
-        if(args)
-            result += "args: " + args + "\n"
-        if(jVMArgs)
-            result += "jVMArgs: " + jVMArgs + "\n"
-        if(exec)
-            result += "exec: " + exec + "\n"
-        if(runFirst)
-            result += "runFirst: " + runFirst + "\n"
-        return result
+        """
+        mainMethod
+        compileTimeError
+        throwsException
+        errorOutputExpected
+        validateByHand
+        ignoreOutput
+        fileRoot
+        mainClass
+        javaCmd
+        args
+        jVMArgs
+        exec
+        runFirst
+        """.split().each { str ->
+            if(this[str])
+                result += str + ": " + this[str] + "\n"
+        }
+        result
     }
 }
 
