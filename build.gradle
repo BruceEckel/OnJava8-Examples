@@ -144,10 +144,12 @@ subprojects {
 
                 String basePath = it.absolutePath.replaceAll('\\.java', '')
                 File outFile = new File(basePath + '.out')
+                if(outFile.exists())
+                    outFile.delete()
                 if(tags.outputLine)
-                    outFile.write(tags.outputLine + "\n")
+                    outFile << tags.outputLine + "\n"
                 File errFile = new File(basePath + '.err')
-                OutputStream runStandardOutput = new TeeOutputStream(new FileOutputStream(outFile), System.out)
+                OutputStream runStandardOutput = new TeeOutputStream(new FileOutputStream(outFile, true), System.out)
                 OutputStream runErrorOutput = new TeeOutputStream(new FileOutputStream(errFile), System.err)
 
                 task "$tags.fileRoot"(type: JavaExec, dependsOn: tags.runFirst) {
