@@ -15,6 +15,7 @@ class Tags {
     List<String> jVMArgs = []
     String exec = null
     String runFirst = null
+    String outputLine = null
     private List<String> lines
     private String block
     def Tags(List<String> lines) {
@@ -39,6 +40,12 @@ class Tags {
             jVMArgs = jvmArgString.split(' ')
         exec = extract('Exec:')
         runFirst = extract('RunFirst:')
+        lines.each {
+            if(it =~ /\\/* Output:/) {
+                outputLine = it.trim()
+                println outputLine
+            }
+        }
     }
     private def testFor(String marker) {
         return block.contains("// {" + marker + "}")
@@ -137,6 +144,8 @@ subprojects {
 
                 String basePath = it.absolutePath.replaceAll('\\.java', '')
                 File outFile = new File(basePath + '.out')
+                if(tags.outputLine)
+                    outFile.write(tags.outputLine + "\n")
                 File errFile = new File(basePath + '.err')
                 OutputStream runStandardOutput = new TeeOutputStream(new FileOutputStream(outFile), System.out)
                 OutputStream runErrorOutput = new TeeOutputStream(new FileOutputStream(errFile), System.err)
