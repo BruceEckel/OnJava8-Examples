@@ -144,13 +144,7 @@ subprojects {
 
                 String basePath = it.absolutePath.replaceAll('\\.java', '')
                 File outFile = new File(basePath + '.out')
-                if(outFile.exists())
-                    outFile.delete()
-                if(tags.outputLine)
-                    outFile << tags.outputLine + "\n"
                 File errFile = new File(basePath + '.err')
-                OutputStream runStandardOutput = new TeeOutputStream(new FileOutputStream(outFile, true), System.out)
-                OutputStream runErrorOutput = new TeeOutputStream(new FileOutputStream(errFile), System.err)
 
                 task "$tags.fileRoot"(type: JavaExec, dependsOn: tags.runFirst) {
                     main = tags.mainClass
@@ -158,13 +152,21 @@ subprojects {
                     args = tags.args
                     jvmArgs = tags.jVMArgs
                     ignoreExitValue = tags.validateByHand || tags.throwsException
-                    standardOutput = runStandardOutput
-                    errorOutput = runErrorOutput
-                } << {
-                    println "$outFile size():> " + outFile.size()
-                    println "$errFile size():> " + errFile.size()
-                    if (outFile.size() == 0) outFile.delete()
-                    if (errFile.size() == 0) errFile.delete()
+                    doFirst {
+                        if(outFile.exists())
+                            outFile.delete()
+                        if(tags.outputLine)
+                            outFile << tags.outputLine + "\n"
+
+                        standardOutput = new TeeOutputStream(new FileOutputStream(outFile, true), System.out)
+                        errorOutput = new TeeOutputStream(new FileOutputStream(errFile), System.err)
+                    }
+                    doLast {
+                        println "$outFile size():> " + outFile.size()
+                        println "$errFile size():> " + errFile.size()
+                        if (outFile.size() == 0) outFile.delete()
+                        if (errFile.size() == 0) errFile.delete()
+                    }
                 }
             }
             // exclude java sources that will not compile
