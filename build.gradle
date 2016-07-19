@@ -1,4 +1,5 @@
 import org.apache.tools.ant.util.TeeOutputStream
+// TODO: test for tags that span multiple lines
 boolean debug = false
 
 class Tags {
@@ -43,7 +44,6 @@ class Tags {
         lines.each {
             if(it =~ /\\/* Output:/) {
                 outputLine = it.trim()
-                println outputLine
             }
         }
     }
@@ -161,8 +161,8 @@ subprojects {
                     standardOutput = runStandardOutput
                     errorOutput = runErrorOutput
                 } << {
-                    runStandardOutput.close()
-                    runErrorOutput.close()
+                    println "$outFile size():> " + outFile.size()
+                    println "$errFile size():> " + errFile.size()
                     if (outFile.size() == 0) outFile.delete()
                     if (errFile.size() == 0) errFile.delete()
                 }
