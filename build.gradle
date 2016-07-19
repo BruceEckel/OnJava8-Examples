@@ -138,7 +138,7 @@ subprojects {
             if ((tags.mainMethod || tags.javaCmd) && (!tags.compileTimeError)) {
 
                 if (!tags.validateByHand) {
-                    // only add tasks that we know we can run successfully to the task list
+                    // Only add tasks that we know we can run successfully to the task list
                     tasks.add(tags.fileRoot)
                 }
 
@@ -162,14 +162,12 @@ subprojects {
                         errorOutput = new TeeOutputStream(new FileOutputStream(errFile), System.err)
                     }
                     doLast {
-                        println "$outFile size():> " + outFile.size()
-                        println "$errFile size():> " + errFile.size()
                         if (outFile.size() == 0) outFile.delete()
                         if (errFile.size() == 0) errFile.delete()
                     }
                 }
             }
-            // exclude java sources that will not compile
+            // Exclude java sources that will not compile
             if (tags.compileTimeError) {
                 sourceSets.main.java.excludes.add(it.name)
             }
