@@ -88,7 +88,7 @@ public class HorseRace {
     new HorseRace(nHorses, pause);
   }
 }
-/* Output: (First and last 18 Lines)
+/* Output: (First and Last 18 Lines)
 ===========================================================
 ================
 *0

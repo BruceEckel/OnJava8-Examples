@@ -35,7 +35,7 @@ public class FixedDiningPhilosophers {
     es.shutdownNow();
   }
 }
-/* Output: (First and last 10 Lines)
+/* Output: (First and Last 10 Lines)
 Philosopher 4 thinking
 Philosopher 3 thinking
 Philosopher 0 thinking

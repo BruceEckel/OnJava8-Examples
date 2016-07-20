@@ -16,7 +16,7 @@ public class WhileTest {
     System.out.println("Exited 'while'");
   }
 }
-/* Output: (First and last 5 Lines)
+/* Output: (First and Last 5 Lines)
 true, Inside 'while'
 true, Inside 'while'
 true, Inside 'while'

@@ -70,7 +70,7 @@ public class DoubleDispatch {
     Trash.sumValue(bin);
   }
 }
-/* Output: (First and last 10 Lines)
+/* Output: (First and Last 10 Lines)
 Loading patterns.doubledispatch.DDGlass
 Loading patterns.doubledispatch.DDPaper
 Loading patterns.doubledispatch.DDAluminum

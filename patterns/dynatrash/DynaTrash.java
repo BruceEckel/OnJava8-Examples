@@ -49,7 +49,7 @@ public class DynaTrash {
     bin.values().forEach(Trash::sumValue);
   }
 }
-/* Output: (First and last 10 Lines)
+/* Output: (First and Last 10 Lines)
 Loading patterns.trash.Glass
 Loading patterns.trash.Paper
 Loading patterns.trash.Aluminum

@@ -31,7 +31,7 @@ public class RecycleB {
     Trash.sumValue(bin);
   }
 }
-/* Output: (First and last 10 Lines)
+/* Output: (First and Last 10 Lines)
 Loading patterns.trash.Glass
 Loading patterns.trash.Paper
 Loading patterns.trash.Aluminum

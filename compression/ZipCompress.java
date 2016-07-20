@@ -5,6 +5,7 @@
 // Uses Zip compression to compress any
 // number of files given on the command line
 // {Args: ZipCompress.java}
+// {ValidateByHand}
 import java.util.zip.*;
 import java.io.*;
 import java.util.*;
@@ -67,4 +68,3 @@ public class ZipCompress {
     }
   }
 }
-/* Output: (Execute to see) */

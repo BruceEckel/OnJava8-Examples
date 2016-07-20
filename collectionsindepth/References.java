@@ -63,7 +63,7 @@ public class References {
     }
   }
 }
-/* Output: (First and last 10 Lines)
+/* Output: (First and Last 10 Lines)
 Just created: java.lang.ref.SoftReference@19e0bfd
 Just created: java.lang.ref.SoftReference@139a55
 Just created: java.lang.ref.SoftReference@1db9742

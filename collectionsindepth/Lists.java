@@ -125,7 +125,7 @@ public class Lists {
     testLinkedList();
   }
 }
-/* Output: (First and last 2 Lines)
+/* Output: (First and Last 2 Lines)
 [ALGERIA, ANGOLA, BENIN, BOTSWANA, BURKINA FASO, BURUNDI,
 CAMEROON, CAPE VERDE, CENTRAL AFRICAN REPUBLIC, CHAD,
 COMOROS, CONGO, DJIBOUTI, EGYPT, EQUATORIAL GUINEA,

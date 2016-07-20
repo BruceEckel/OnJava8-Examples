@@ -127,7 +127,7 @@ public class PriorityBlockingQueueDemo {
     es.execute(new PrioritizedTaskConsumer(queue));
   }
 }
-/* Output: (First and last 12 Lines)
+/* Output: (First and Last 12 Lines)
 [8  ] Task 0
 [9  ] Task 5
 [9  ] Task 13

@@ -102,7 +102,7 @@ public class TrashVisitor {
     visitors.forEach(Visitor::total);
   }
 }
-/* Output: (First and last 10 Lines)
+/* Output: (First and Last 10 Lines)
 Loading patterns.trashvisitor.Glass
 Loading patterns.trashvisitor.Paper
 Loading patterns.trashvisitor.Aluminum

@@ -3,6 +3,7 @@
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // Testing for end of file
+// {ValidateByHand}
 import java.io.*;
 
 public class TestEOF {
@@ -16,4 +17,3 @@ public class TestEOF {
     }
   }
 }
-/* Output: (Execute to see) */

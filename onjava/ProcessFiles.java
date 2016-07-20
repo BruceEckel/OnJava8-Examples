@@ -53,4 +53,3 @@ public class ProcessFiles {
       "java").start(args);
   }
 }
-/* Output: (Execute to see) */

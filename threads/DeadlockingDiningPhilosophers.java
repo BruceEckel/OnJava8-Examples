@@ -31,7 +31,7 @@ public class DeadlockingDiningPhilosophers {
     es.shutdownNow();
   }
 }
-/* Output: (First and last 10 Lines)
+/* Output: (First and Last 10 Lines)
 Philosopher 1 thinking
 Philosopher 1 grabbing right
 Philosopher 1 grabbing left

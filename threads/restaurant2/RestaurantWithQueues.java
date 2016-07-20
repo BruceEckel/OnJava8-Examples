@@ -206,7 +206,7 @@ public class RestaurantWithQueues {
     es.shutdownNow();
   }
 }
-/* Output: (First and last 10 Lines)
+/* Output: (First and Last 10 Lines)
 WaitPerson 0 received SPRING_ROLLS delivering to Customer 1
 Customer 1 eating SPRING_ROLLS
 WaitPerson 3 received SPRING_ROLLS delivering to Customer 0

@@ -99,7 +99,7 @@ public class RecycleA {
     Trash.sumValue(bin);
   }
 }
-/* Output: (First and last 11 Lines)
+/* Output: (First and Last 11 Lines)
 weight of patterns.recyclea.Aluminum = 0.11435456649761422
 weight of patterns.recyclea.Aluminum = 0.5295954256745989
 weight of patterns.recyclea.Aluminum = 0.44032876173820623

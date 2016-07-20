@@ -168,7 +168,7 @@ public class GreenhouseScheduler {
     gh.repeat(gh.new CollectData(), 500, 500);
   }
 }
-/* Output: (First and last 10 Lines)
+/* Output: (First and Last 10 Lines)
 Bing!
 Thermostat to night setting
 Turning on lights
