@@ -162,8 +162,11 @@ subprojects {
                         errorOutput = new TeeOutputStream(new FileOutputStream(errFile), System.err)
                     }
                     doLast {
-                        if (outFile.size() == 0) outFile.delete()
-                        if (errFile.size() == 0) errFile.delete()
+                        if(outFile.size() == 0)
+                            outFile.delete()
+                        else if(!outFile.text.contains("/* Output:"))
+                            outFile.delete()
+                        if(errFile.size() == 0) errFile.delete()
                     }
                 }
             }
