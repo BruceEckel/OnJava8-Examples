@@ -25,9 +25,8 @@ public class LoggingExceptions2 {
 }
 /* Output:
 ___[ Error Output ]___
-Dec 15, 2015 10:34:25 PM LoggingExceptions2 logException
+Jul 22, 2016 11:55:47 AM LoggingExceptions2 logException
 SEVERE: java.lang.NullPointerException
         at
 LoggingExceptions2.main(LoggingExceptions2.java:17)
-___[ Error Output is Expected ]___
 */

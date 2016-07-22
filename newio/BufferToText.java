@@ -62,7 +62,7 @@ public class BufferToText {
 }
 /* Output:
 ????
-Decoded using Cp1252: Some text
+Decoded using windows-1252: Some text
 Some text
 Some textNULNULNUL
 */

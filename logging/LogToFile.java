@@ -17,7 +17,6 @@ public class LogToFile {
 }
 /* Output:
 ___[ Error Output ]___
-Dec 15, 2015 9:58:43 PM LogToFile main
+Jul 22, 2016 11:55:53 AM LogToFile main
 INFO: A message logged to the file
-___[ Error Output is Expected ]___
 */

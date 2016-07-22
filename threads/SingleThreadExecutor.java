@@ -29,22 +29,22 @@ All tasks submitted
 main awaiting termination
 main awaiting termination
 SleepAndPrintTask[0] pool-1-thread-1
-main awaiting termination
 SleepAndPrintTask[1] pool-1-thread-1
-SleepAndPrintTask[2] pool-1-thread-1
 main awaiting termination
+main awaiting termination
+SleepAndPrintTask[2] pool-1-thread-1
 SleepAndPrintTask[3] pool-1-thread-1
 main awaiting termination
 main awaiting termination
 SleepAndPrintTask[4] pool-1-thread-1
 main awaiting termination
 SleepAndPrintTask[5] pool-1-thread-1
-main awaiting termination
 SleepAndPrintTask[6] pool-1-thread-1
 main awaiting termination
-SleepAndPrintTask[7] pool-1-thread-1
 main awaiting termination
+SleepAndPrintTask[7] pool-1-thread-1
 SleepAndPrintTask[8] pool-1-thread-1
+main awaiting termination
 main awaiting termination
 SleepAndPrintTask[9] pool-1-thread-1
 */

@@ -15,6 +15,5 @@ public class Assert1 {
 /* Output:
 ___[ Error Output ]___
 Exception in thread "main" java.lang.AssertionError
-        at Assert1.main(Assert1.java:8)
-___[ Exception is Expected ]___
+        at Assert1.main(Assert1.java:9)
 */

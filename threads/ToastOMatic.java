@@ -193,20 +193,12 @@ Toast 12: DRY
 Toast 12: BUTTERED
 Toast 12: JAMMED
 Chomp! Toast 12: JAMMED
-Toast 13: DRY
-Toast 13: BUTTERED
-Toast 13: JAMMED
-Chomp! Toast 13: JAMMED
-Toast 14: DRY
-Toast 14: BUTTERED
-Toast 14: JAMMED
-Chomp! Toast 14: JAMMED
-Jammer interrupted
-Jammer off
-Butterer interrupted
-Butterer off
-Toaster interrupted
 Eater interrupted
+Butterer interrupted
+Toaster interrupted
 Toaster off
+Jammer interrupted
+Butterer off
 Eater off
+Jammer off
 */

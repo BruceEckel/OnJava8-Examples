@@ -98,24 +98,24 @@ public class BeeAndFlowers {
   }
 }
 /* Output:
-Chrysanthemum
-Chrysanthemum
-Renuculus
-Chrysanthemum
-Renuculus
-Chrysanthemum
-Renuculus
+Gladiolus
 Chrysanthemum
 Gladiolus
 Renuculus
-Bee and Chrysanthemum
-Bee and Chrysanthemum
-Bee and Renuculus
-Bee and Chrysanthemum
-Bee and Renuculus
-Bee and Chrysanthemum
-Bee and Renuculus
+Chrysanthemum
+Renuculus
+Chrysanthemum
+Chrysanthemum
+Chrysanthemum
+Renuculus
+Bee and Gladiolus
 Bee and Chrysanthemum
 Bee and Gladiolus
+Bee and Renuculus
+Bee and Chrysanthemum
+Bee and Renuculus
+Bee and Chrysanthemum
+Bee and Chrysanthemum
+Bee and Chrysanthemum
 Bee and Renuculus
 */

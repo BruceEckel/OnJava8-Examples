@@ -70,7 +70,7 @@ weight of patterns.trash.Aluminum = 25.0
 weight of patterns.trash.Aluminum = 34.0
 weight of patterns.trash.Aluminum = 27.0
 weight of patterns.trash.Aluminum = 18.0
-________...________...________...________...________
+...________...________...________...________...
 weight of patterns.trash.Aluminum = 93.0
 weight of patterns.trash.Glass = 93.0
 weight of patterns.trash.Paper = 80.0

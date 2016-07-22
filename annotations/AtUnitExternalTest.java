@@ -17,8 +17,8 @@ public class AtUnitExternalTest extends AtUnitExample1 {
 }
 /* Output:
 annotations.AtUnitExternalTest
+  . _methodOne
   . _methodTwo This is methodTwo
 
-  . _methodOne
 OK (2 tests)
 */

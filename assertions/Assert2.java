@@ -16,5 +16,4 @@ ___[ Error Output ]___
 Exception in thread "main" java.lang.AssertionError: Here's
 a message saying what happened
         at Assert2.main(Assert2.java:8)
-___[ Exception is Expected ]___
 */

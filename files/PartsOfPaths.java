@@ -27,17 +27,16 @@ Windows 10
 Users
 Bruce
 Documents
-Git
+GitHub
 on-java
 ExtractedExamples
 files
 PartsOfPaths.java
-Git\on-java\ExtractedExamples
 ends with '.java': false
 Users: false : false
 Bruce: false : false
 Documents: false : false
-Git: false : false
+GitHub: false : false
 on-java: false : false
 ExtractedExamples: false : false
 files: false : false

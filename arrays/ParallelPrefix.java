@@ -18,5 +18,5 @@ public class ParallelPrefix {
 /* Output:
 First 20: 190
 First 200: 19900
-All: 199999990000000
+All: 49999995000000
 */

@@ -44,41 +44,58 @@ public class ConfigureLogging {
   }
 }
 /* Output:
-Logger Name : com Level: null
- Logger Name : com.mindviewinc Level: null
- Logger Name : onjava Level: null
- Logger Name : com.mindviewinc.test Level: null
- Logger Name : random Level: null
+ Logger Name : com Level: null
+ Logger Name : com.mindviewinc Level: FINEST
+ Logger Name : onjava Level: INFO
+ Logger Name : com.mindviewinc.test Level: FINER
+ Logger Name : random Level: SEVERE
 ___[ Error Output ]___
-Dec 15, 2015 9:58:42 PM ConfigureLogging sendLogMessages
+Jul 22, 2016 11:55:52 AM ConfigureLogging sendLogMessages
+FINEST: Finest
+Jul 22, 2016 11:55:52 AM ConfigureLogging sendLogMessages
+FINER: Finer
+Jul 22, 2016 11:55:52 AM ConfigureLogging sendLogMessages
+FINE: Fine
+Jul 22, 2016 11:55:52 AM ConfigureLogging sendLogMessages
+CONFIG: Config
+Jul 22, 2016 11:55:52 AM ConfigureLogging sendLogMessages
 INFO: Info
-Dec 15, 2015 9:58:42 PM ConfigureLogging sendLogMessages
+Jul 22, 2016 11:55:52 AM ConfigureLogging sendLogMessages
 WARNING: Warning
-Dec 15, 2015 9:58:42 PM ConfigureLogging sendLogMessages
+Jul 22, 2016 11:55:52 AM ConfigureLogging sendLogMessages
 SEVERE: Severe
-Dec 15, 2015 9:58:42 PM ConfigureLogging sendLogMessages
+Jul 22, 2016 11:55:52 AM ConfigureLogging sendLogMessages
+FINEST: Finest
+Jul 22, 2016 11:55:52 AM ConfigureLogging sendLogMessages
+FINER: Finer
+Jul 22, 2016 11:55:52 AM ConfigureLogging sendLogMessages
+FINE: Fine
+Jul 22, 2016 11:55:52 AM ConfigureLogging sendLogMessages
+CONFIG: Config
+Jul 22, 2016 11:55:52 AM ConfigureLogging sendLogMessages
 INFO: Info
-Dec 15, 2015 9:58:42 PM ConfigureLogging sendLogMessages
+Jul 22, 2016 11:55:52 AM ConfigureLogging sendLogMessages
 WARNING: Warning
-Dec 15, 2015 9:58:42 PM ConfigureLogging sendLogMessages
+Jul 22, 2016 11:55:52 AM ConfigureLogging sendLogMessages
 SEVERE: Severe
-Dec 15, 2015 9:58:42 PM ConfigureLogging sendLogMessages
+Jul 22, 2016 11:55:52 AM ConfigureLogging sendLogMessages
 INFO: Info
-Dec 15, 2015 9:58:42 PM ConfigureLogging sendLogMessages
+Jul 22, 2016 11:55:52 AM ConfigureLogging sendLogMessages
 WARNING: Warning
-Dec 15, 2015 9:58:42 PM ConfigureLogging sendLogMessages
+Jul 22, 2016 11:55:52 AM ConfigureLogging sendLogMessages
 SEVERE: Severe
-Dec 15, 2015 9:58:42 PM ConfigureLogging sendLogMessages
+Jul 22, 2016 11:55:52 AM ConfigureLogging sendLogMessages
+FINER: Finer
+Jul 22, 2016 11:55:52 AM ConfigureLogging sendLogMessages
+FINE: Fine
+Jul 22, 2016 11:55:52 AM ConfigureLogging sendLogMessages
+CONFIG: Config
+Jul 22, 2016 11:55:52 AM ConfigureLogging sendLogMessages
 INFO: Info
-Dec 15, 2015 9:58:42 PM ConfigureLogging sendLogMessages
+Jul 22, 2016 11:55:52 AM ConfigureLogging sendLogMessages
 WARNING: Warning
-Dec 15, 2015 9:58:42 PM ConfigureLogging sendLogMessages
+Jul 22, 2016 11:55:52 AM ConfigureLogging sendLogMessages
 SEVERE: Severe
-Dec 15, 2015 9:58:42 PM ConfigureLogging sendLogMessages
-INFO: Info
-Dec 15, 2015 9:58:42 PM ConfigureLogging sendLogMessages
-WARNING: Warning
-Dec 15, 2015 9:58:42 PM ConfigureLogging sendLogMessages
+Jul 22, 2016 11:55:52 AM ConfigureLogging sendLogMessages
 SEVERE: Severe
-___[ Error Output is Expected ]___
 */

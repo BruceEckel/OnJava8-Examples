@@ -14,5 +14,5 @@ public class ReadLineStream {
   }
 }
 /* Output:
-show("RegularFile", Files.isRegularFile(p));
+    show("RegularFile", Files.isRegularFile(p));
 */

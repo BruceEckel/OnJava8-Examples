@@ -195,17 +195,17 @@ public class ListPerformance {
 /* Output:
 --- Array as List ---
  size     get     set
-  100      19      20
+  100      44      44
 --------------------- ArrayList ---------------------
  size     add     get     set iteradd  insert  remove
-  100      31      19      21      33     158     114
+  100      80      44      48     106       0     640
 --------------------- LinkedList ---------------------
  size     add     get     set iteradd  insert  remove
-  100      30      44      45      77     143      56
+  100      80     106      94     177       0     120
 ----------------------- Vector -----------------------
  size     add     get     set iteradd  insert  remove
-  100      26      32      33      64     147      67
+  100      40      62      58     114       0     120
 -------------------- Queue tests --------------------
  size    addFirst     addLast     rmFirst      rmLast
-  100          33          71         102         135
+  100          60         120         120         100
 */

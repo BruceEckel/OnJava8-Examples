@@ -52,9 +52,11 @@ a1 == a2: true
 a1 == a2: false
 a1w == a2w: true
 a1w == a2w: false
-[[], [YNzbrny], [YNzbrny, GcFOWZn], [YNzbrny, GcFOWZn, TcQrGse], [YNzbrny, GcFOWZn, TcQrGse, GZMmJMR]]
+[[], [btpenpc], [btpenpc, cuxszgv], [btpenpc, cuxszgv,
+gmeinne], [btpenpc, cuxszgv, gmeinne, eloztdv]]
 deepEquals(md1, md2): true
 md1 == md2: false
-[[], [YNzbrny], [YNzbrny, GcFOWZn], [YNzbrny, GcFOWZn, TcQrGse], [YNzbrny, #$#$#$#, TcQrGse, GZMmJMR]]
+[[], [btpenpc], [btpenpc, cuxszgv], [btpenpc, cuxszgv,
+gmeinne], [btpenpc, #$#$#$#, gmeinne, eloztdv]]
 deepEquals(md1, md2): false
 */

@@ -24,5 +24,4 @@ Exception in thread "main" java.lang.AssertionError:
 Loaded.go()
         at Loaded.go(LoaderAssertions.java:15)
         at LoaderAssertions.main(LoaderAssertions.java:9)
-___[ Exception is Expected ]___
 */

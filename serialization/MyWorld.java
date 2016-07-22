@@ -65,9 +65,9 @@ public class MyWorld {
   }
 }
 /* Output:
-animals: [Bosco the dog[Animal@19e0bfd], House@139a55
-, Ralph the hamster[Animal@1db9742], House@139a55
-, Molly the cat[Animal@106d69c], House@139a55
+animals: [Bosco the dog[Animal@1db9742], House@106d69c
+, Ralph the hamster[Animal@52e922], House@106d69c
+, Molly the cat[Animal@25154f], House@106d69c
 ]
 animals1: [Bosco the dog[Animal@10bedb4], House@103dbd3
 , Ralph the hamster[Animal@167cf4d], House@103dbd3

@@ -16,14 +16,14 @@ public class CachedThreadPool {
   }
 }
 /* Output:
-SleepAndPrintTask[2] pool-1-thread-3
-SleepAndPrintTask[8] pool-1-thread-9
-SleepAndPrintTask[7] pool-1-thread-8
-SleepAndPrintTask[9] pool-1-thread-10
-SleepAndPrintTask[6] pool-1-thread-7
-SleepAndPrintTask[5] pool-1-thread-6
-SleepAndPrintTask[1] pool-1-thread-2
-SleepAndPrintTask[3] pool-1-thread-4
 SleepAndPrintTask[0] pool-1-thread-1
+SleepAndPrintTask[5] pool-1-thread-6
+SleepAndPrintTask[8] pool-1-thread-9
 SleepAndPrintTask[4] pool-1-thread-5
+SleepAndPrintTask[9] pool-1-thread-10
+SleepAndPrintTask[1] pool-1-thread-2
+SleepAndPrintTask[2] pool-1-thread-3
+SleepAndPrintTask[6] pool-1-thread-7
+SleepAndPrintTask[7] pool-1-thread-8
+SleepAndPrintTask[3] pool-1-thread-4
 */

@@ -81,6 +81,6 @@ public class Compete {
   }
 }
 /* Output:
-Duplication via serialization: 202 Milliseconds
-Duplication via cloning: 17 Milliseconds
+Duplication via serialization: 296 Milliseconds
+Duplication via cloning: 20 Milliseconds
 */

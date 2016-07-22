@@ -33,5 +33,4 @@ by zero
         at SimpleDebugging.foo2(SimpleDebugging.java:10)
         at SimpleDebugging.foo1(SimpleDebugging.java:6)
         at SimpleDebugging.main(SimpleDebugging.java:19)
-___[ Exception is Expected ]___
 */

@@ -221,15 +221,15 @@ public class CarBuilder {
 /* Output:
 ChassisBuilder created Car 0 [ engine: false driveTrain:
 false wheels: false ]
-WheelRobot installing Wheels
 EngineRobot installing engine
+WheelRobot installing Wheels
 DriveTrainRobot installing DriveTrain
 Car 0 [ engine: true driveTrain: true wheels: true ]
 ChassisBuilder created Car 1 [ engine: false driveTrain:
 false wheels: false ]
 EngineRobot installing engine
-DriveTrainRobot installing DriveTrain
 WheelRobot installing Wheels
+DriveTrainRobot installing DriveTrain
 Car 1 [ engine: true driveTrain: true wheels: true ]
 ChassisBuilder created Car 2 [ engine: false driveTrain:
 false wheels: false ]
@@ -239,33 +239,33 @@ WheelRobot installing Wheels
 Car 2 [ engine: true driveTrain: true wheels: true ]
 ChassisBuilder created Car 3 [ engine: false driveTrain:
 false wheels: false ]
-DriveTrainRobot installing DriveTrain
 EngineRobot installing engine
 WheelRobot installing Wheels
+DriveTrainRobot installing DriveTrain
 Car 3 [ engine: true driveTrain: true wheels: true ]
 ChassisBuilder created Car 4 [ engine: false driveTrain:
 false wheels: false ]
 EngineRobot installing engine
-WheelRobot installing Wheels
 DriveTrainRobot installing DriveTrain
+WheelRobot installing Wheels
 Car 4 [ engine: true driveTrain: true wheels: true ]
 ChassisBuilder created Car 5 [ engine: false driveTrain:
 false wheels: false ]
+EngineRobot installing engine
 DriveTrainRobot installing DriveTrain
 WheelRobot installing Wheels
-EngineRobot installing engine
 Car 5 [ engine: true driveTrain: true wheels: true ]
 ChassisBuilder created Car 6 [ engine: false driveTrain:
 false wheels: false ]
 EngineRobot installing engine
-DriveTrainRobot installing DriveTrain
 WheelRobot installing Wheels
+DriveTrainRobot installing DriveTrain
 Car 6 [ engine: true driveTrain: true wheels: true ]
 ChassisBuilder created Car 7 [ engine: false driveTrain:
 false wheels: false ]
 EngineRobot installing engine
-DriveTrainRobot installing DriveTrain
 WheelRobot installing Wheels
+DriveTrainRobot installing DriveTrain
 Car 7 [ engine: true driveTrain: true wheels: true ]
 ChassisBuilder created Car 8 [ engine: false driveTrain:
 false wheels: false ]
@@ -281,20 +281,32 @@ EngineRobot installing engine
 Car 9 [ engine: true driveTrain: true wheels: true ]
 ChassisBuilder created Car 10 [ engine: false driveTrain:
 false wheels: false ]
+WheelRobot installing Wheels
+DriveTrainRobot installing DriveTrain
+EngineRobot installing engine
+Car 10 [ engine: true driveTrain: true wheels: true ]
+ChassisBuilder created Car 11 [ engine: false driveTrain:
+false wheels: false ]
 DriveTrainRobot installing DriveTrain
 WheelRobot installing Wheels
 EngineRobot installing engine
-Car 10 [ engine: true driveTrain: true wheels: true ]
+Car 11 [ engine: true driveTrain: true wheels: true ]
+ChassisBuilder created Car 12 [ engine: false driveTrain:
+false wheels: false ]
+DriveTrainRobot installing DriveTrain
+WheelRobot installing Wheels
+EngineRobot installing engine
+Car 12 [ engine: true driveTrain: true wheels: true ]
 Exiting Reporter via interrupt
-Exiting EngineRobot via interrupt
-Interrupted: ChassisBuilder
-Exiting WheelRobot via interrupt
-Exiting DriveTrainRobot via interrupt
-Exiting Assembler via interrupt
-Assembler off
-DriveTrainRobot off
-WheelRobot off
-ChassisBuilder off
-EngineRobot off
 Reporter off
+Exiting EngineRobot via interrupt
+EngineRobot off
+Exiting DriveTrainRobot via interrupt
+Exiting WheelRobot via interrupt
+Interrupted: ChassisBuilder
+Exiting Assembler via interrupt
+ChassisBuilder off
+WheelRobot off
+DriveTrainRobot off
+Assembler off
 */

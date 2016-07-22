@@ -35,7 +35,7 @@ public class Summing3 {
 }
 /* Output:
 50000005000000
-Long Array Stream Reduce: 1046ms
+Long Array Stream Reduce: 1142ms
 Long Basic Sum: 21ms
-Long parallelPrefix: 3287ms
+Long parallelPrefix: 3571ms
 */

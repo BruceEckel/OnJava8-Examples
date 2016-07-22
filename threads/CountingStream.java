@@ -17,15 +17,15 @@ public class CountingStream {
   }
 }
 /* Output:
-1 ForkJoinPool.commonPool-worker-3 100
-4 ForkJoinPool.commonPool-worker-5 100
-3 ForkJoinPool.commonPool-worker-3 100
-5 ForkJoinPool.commonPool-worker-5 100
-0 ForkJoinPool.commonPool-worker-6 100
-8 ForkJoinPool.commonPool-worker-2 100
-7 ForkJoinPool.commonPool-worker-4 100
-9 ForkJoinPool.commonPool-worker-7 100
+0 ForkJoinPool.commonPool-worker-4 100
+4 ForkJoinPool.commonPool-worker-3 100
+3 ForkJoinPool.commonPool-worker-5 100
 6 main 100
+8 ForkJoinPool.commonPool-worker-6 100
+5 ForkJoinPool.commonPool-worker-7 100
 2 ForkJoinPool.commonPool-worker-1 100
+1 ForkJoinPool.commonPool-worker-2 100
+9 ForkJoinPool.commonPool-worker-3 100
+7 ForkJoinPool.commonPool-worker-4 100
 1000
 */

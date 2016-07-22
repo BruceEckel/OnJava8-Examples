@@ -113,7 +113,7 @@ value of Paper= 2.2000000327825546
 Paper weight = 22.0
 value of Paper= 1.1000000163912773
 Paper weight = 11.0
-________...________...________...________...________
+...________...________...________...________...
 value of Cardboard = 5.060000091791153
 Cardboard weight = 22.0
 Total Aluminum: $860.0499778985977

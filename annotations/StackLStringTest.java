@@ -31,8 +31,8 @@ public class StackLStringTest extends StackL<String> {
 }
 /* Output:
 annotations.StackLStringTest
-  . _top
   . _push
+  . _top
   . _pop
 OK (3 tests)
 */

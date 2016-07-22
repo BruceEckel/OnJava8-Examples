@@ -24,15 +24,15 @@ public class RecoverCADState {
   }
 }
 /* Output:
-[class Circlecolor[1] xPos[58] yPos[55] dim[93]
-, class Squarecolor[0] xPos[61] yPos[61] dim[29]
-, class Linecolor[3] xPos[68] yPos[0] dim[22]
-, class Circlecolor[1] xPos[7] yPos[88] dim[28]
-, class Squarecolor[0] xPos[51] yPos[89] dim[9]
-, class Linecolor[3] xPos[78] yPos[98] dim[61]
-, class Circlecolor[1] xPos[20] yPos[58] dim[16]
-, class Squarecolor[0] xPos[40] yPos[11] dim[22]
-, class Linecolor[3] xPos[4] yPos[83] dim[6]
-, class Circlecolor[1] xPos[75] yPos[10] dim[42]
+[class Circlecolor[1] xPos[35] yPos[37] dim[41]
+, class Squarecolor[0] xPos[20] yPos[77] dim[79]
+, class Linecolor[3] xPos[56] yPos[68] dim[48]
+, class Circlecolor[1] xPos[93] yPos[70] dim[7]
+, class Squarecolor[0] xPos[0] yPos[25] dim[62]
+, class Linecolor[3] xPos[34] yPos[50] dim[82]
+, class Circlecolor[1] xPos[31] yPos[67] dim[66]
+, class Squarecolor[0] xPos[54] yPos[21] dim[6]
+, class Linecolor[3] xPos[63] yPos[39] dim[63]
+, class Circlecolor[1] xPos[13] yPos[90] dim[92]
 ]
 */

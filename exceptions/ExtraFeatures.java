@@ -55,15 +55,15 @@ public class ExtraFeatures {
 /* Output:
 Throwing MyException2 from f()
 MyException2: Detail Message: 0 null
-        at ExtraFeatures.f(ExtraFeatures.java:22)
-        at ExtraFeatures.main(ExtraFeatures.java:34)
+        at ExtraFeatures.f(ExtraFeatures.java:23)
+        at ExtraFeatures.main(ExtraFeatures.java:35)
 Throwing MyException2 from g()
 MyException2: Detail Message: 0 Originated in g()
-        at ExtraFeatures.g(ExtraFeatures.java:26)
-        at ExtraFeatures.main(ExtraFeatures.java:39)
+        at ExtraFeatures.g(ExtraFeatures.java:27)
+        at ExtraFeatures.main(ExtraFeatures.java:40)
 Throwing MyException2 from h()
 MyException2: Detail Message: 47 Originated in h()
-        at ExtraFeatures.h(ExtraFeatures.java:30)
-        at ExtraFeatures.main(ExtraFeatures.java:44)
+        at ExtraFeatures.h(ExtraFeatures.java:31)
+        at ExtraFeatures.main(ExtraFeatures.java:45)
 e.val() = 47
 */

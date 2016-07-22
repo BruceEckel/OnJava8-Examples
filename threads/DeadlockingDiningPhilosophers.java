@@ -32,25 +32,25 @@ public class DeadlockingDiningPhilosophers {
   }
 }
 /* Output: (First and Last 10 Lines)
+Philosopher 2 thinking
+Philosopher 3 thinking
+Philosopher 3 grabbing right
+Philosopher 3 grabbing left
+Philosopher 3 eating
 Philosopher 1 thinking
 Philosopher 1 grabbing right
 Philosopher 1 grabbing left
-Philosopher 1 eating
-Philosopher 1 thinking
-Philosopher 3 thinking
 Philosopher 4 thinking
-Philosopher 2 thinking
-Philosopher 1 grabbing right
 Philosopher 0 thinking
-________...________...________...________...________
-Philosopher 3 grabbing left
+...________...________...________...________...
+Philosopher 0 grabbing right
+Philosopher 1 grabbing right
+Philosopher 1 grabbing left
 Philosopher 2 grabbing left
 Philosopher 0 grabbing left
-Philosopher 4 grabbing left
-Philosopher 1 grabbing left
-Philosopher 3 exiting via interrupt
-Philosopher 4 exiting via interrupt
 Philosopher 1 exiting via interrupt
 Philosopher 0 exiting via interrupt
+Philosopher 3 exiting via interrupt
+Philosopher 4 exiting via interrupt
 Philosopher 2 exiting via interrupt
 */

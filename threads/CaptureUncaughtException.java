@@ -47,13 +47,14 @@ public class CaptureUncaughtException {
   }
 }
 /* Output:
-HandlerThreadFactory@10dea4e creating new Thread
-created Thread[Thread-0,5,main]
-eh = MyUncaughtExceptionHandler@647e05
-run() by Thread[Thread-0,5,main]
-eh = MyUncaughtExceptionHandler@647e05
-HandlerThreadFactory@10dea4e creating new Thread
+HandlerThreadFactory@14991ad creating new Thread
 created Thread[Thread-1,5,main]
-eh = MyUncaughtExceptionHandler@c34ec2
+eh = MyUncaughtExceptionHandler@d93b30
+run() by Thread-1
+eh = MyUncaughtExceptionHandler@d93b30
+HandlerThreadFactory@14991ad creating new Thread
+created Thread[Thread-2,5,main]
+eh = MyUncaughtExceptionHandler@28e402
 caught java.lang.RuntimeException
+TimedAbort 4
 */

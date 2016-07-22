@@ -41,6 +41,6 @@ public class PrimitiveGenericTest {
   }
 }
 /* Output:
-[YNzbrnyGc, FOWZnTcQr, GseGZMmJM, RoEsuEcUO, neOEdLsmw]
-[8689, 7185, 6992, 5746, 3976, 2447, 5368, 1854, 1395]
+[btpenpccu, xszgvgmei, nneeloztd, vewcippcy, gpoalkljl]
+[635, 8737, 3941, 4720, 6177, 8479, 6656, 3768, 4948]
 */

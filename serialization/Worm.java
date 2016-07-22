@@ -86,9 +86,9 @@ Worm constructor: 4
 Worm constructor: 3
 Worm constructor: 2
 Worm constructor: 1
-w = :a(853):b(119):c(802):d(788):e(199):f(881)
+w = :a(571):b(079):c(688):d(307):e(052):f(402)
 Worm storage
-w2 = :a(853):b(119):c(802):d(788):e(199):f(881)
+w2 = :a(571):b(079):c(688):d(307):e(052):f(402)
 Worm storage
-w3 = :a(853):b(119):c(802):d(788):e(199):f(881)
+w3 = :a(571):b(079):c(688):d(307):e(052):f(402)
 */

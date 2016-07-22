@@ -21,8 +21,8 @@ public class AtUnitComposition {
 }
 /* Output:
 annotations.AtUnitComposition
-  . _methodOne
   . _methodTwo This is methodTwo
 
+  . _methodOne
 OK (2 tests)
 */

@@ -33,17 +33,16 @@ public class LoggingExceptions {
 }
 /* Output:
 ___[ Error Output ]___
-Dec 15, 2015 10:34:24 PM LoggingException <init>
+Jul 22, 2016 11:55:45 AM LoggingException <init>
 SEVERE: LoggingException
         at
 LoggingExceptions.main(LoggingExceptions.java:20)
 
 Caught LoggingException
-Dec 15, 2015 10:34:24 PM LoggingException <init>
+Jul 22, 2016 11:55:45 AM LoggingException <init>
 SEVERE: LoggingException
         at
 LoggingExceptions.main(LoggingExceptions.java:25)
 
 Caught LoggingException
-___[ Error Output is Expected ]___
 */

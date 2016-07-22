@@ -14,6 +14,6 @@ public class PassReferences {
   }
 }
 /* Output:
-p inside main(): PassReferences@19e0bfd
-h inside f(): PassReferences@19e0bfd
+p inside main(): PassReferences@1db9742
+h inside f(): PassReferences@1db9742
 */

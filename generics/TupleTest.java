@@ -38,7 +38,7 @@ public class TupleTest {
 }
 /* Output:
 (hi, 47)
-(Amphibian@139a55, hi, 47)
-(Vehicle@1db9742, Amphibian@106d69c, hi, 47)
-(Vehicle@52e922, Amphibian@25154f, hi, 47, 11.1)
+(Amphibian@1c7c054, hi, 47)
+(Vehicle@14991ad, Amphibian@d93b30, hi, 47)
+(Vehicle@a14482, Amphibian@140e19d, hi, 47, 11.1)
 */

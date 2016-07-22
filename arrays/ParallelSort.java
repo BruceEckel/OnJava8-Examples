@@ -20,7 +20,7 @@ public class ParallelSort {
   }
 }
 /* Output:
-sort(): 484
-parallelSort(): 149
+sort(): 864
+parallelSort(): 274
 3
 */

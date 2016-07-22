@@ -29,13 +29,29 @@ public class GreenhouseController {
   }
 }
 /* Output:
-Bing!
 Thermostat on night setting
 Light is on
 Light is off
 Greenhouse water is on
 Greenhouse water is off
+Bing!
 Thermostat on day setting
+Bing!
 Restarting system
+Thermostat on night setting
+Light is on
+Light is off
+Greenhouse water is on
+Bing!
+Greenhouse water is off
+Thermostat on day setting
+Bing!
+Restarting system
+Thermostat on night setting
+Light is on
+Light is off
+Bing!
+Greenhouse water is on
+Greenhouse water is off
 Terminating
 */

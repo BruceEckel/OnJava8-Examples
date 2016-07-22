@@ -47,10 +47,10 @@ RegularFile: true
 Writable: true
 notExists: false
 Hidden: false
-size: 1617
-FileStore: (C:)
-LastModified: : 2015-12-13T21:24:32.029627Z
-Owner: GROOT\Bruce (User)
+size: 1631
+FileStore: SSD (C:)
+LastModified: : 2016-07-22T17:55:34.80143Z
+Owner: MINDVIEWTOSHIBA\Bruce (User)
 ContentType: null
 SymbolicLink: false
 */

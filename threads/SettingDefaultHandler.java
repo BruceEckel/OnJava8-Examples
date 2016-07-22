@@ -16,4 +16,5 @@ public class SettingDefaultHandler {
 }
 /* Output:
 caught java.lang.RuntimeException
+TimedAbort 4
 */

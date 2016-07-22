@@ -35,11 +35,11 @@ public class IceCream {
   }
 }
 /* Output:
-[Rum Raisin, Mint Chip, Mocha Almond Fudge]
-[Chocolate, Strawberry, Mocha Almond Fudge]
-[Strawberry, Mint Chip, Mocha Almond Fudge]
-[Rum Raisin, Vanilla Fudge Swirl, Mud Pie]
-[Vanilla Fudge Swirl, Chocolate, Mocha Almond Fudge]
-[Praline Cream, Strawberry, Mocha Almond Fudge]
-[Mocha Almond Fudge, Strawberry, Mint Chip]
+[Praline Cream, Mint Chip, Vanilla Fudge Swirl]
+[Strawberry, Vanilla Fudge Swirl, Mud Pie]
+[Chocolate, Strawberry, Vanilla Fudge Swirl]
+[Rum Raisin, Praline Cream, Chocolate]
+[Mint Chip, Rum Raisin, Mocha Almond Fudge]
+[Mocha Almond Fudge, Mud Pie, Vanilla Fudge Swirl]
+[Mocha Almond Fudge, Mud Pie, Mint Chip]
 */

@@ -174,29 +174,29 @@ Thermostat to night setting
 Turning on lights
 Turning off lights
 Turning greenhouse water on
-Turning on lights
 Turning greenhouse water off
 Thermostat to day setting
 Turning on lights
-Turning off lights
-________...________...________...________...________
 Turning on lights
-Mon Jun 15 16:00:00 PDT 2015 temperature: 66.4 humidity:
-50.05
-Mon Jun 15 16:30:00 PDT 2015 temperature: 68.0 humidity:
-50.47
-Mon Jun 15 17:00:00 PDT 2015 temperature: 69.7 humidity:
-51.42
-Mon Jun 15 17:30:00 PDT 2015 temperature: 70.8 humidity:
-50.87
-Mon Jun 15 18:00:00 PDT 2015 temperature: 72.0 humidity:
-50.32
-Mon Jun 15 18:30:00 PDT 2015 temperature: 73.2 humidity:
-49.92
-Mon Jun 15 19:00:00 PDT 2015 temperature: 71.9 humidity:
-49.81
-Mon Jun 15 19:30:00 PDT 2015 temperature: 70.1 humidity:
-50.25
-Mon Jun 15 20:00:00 PDT 2015 temperature: 68.9 humidity:
-51.00
+Turning off lights
+...________...________...________...________...
+Terminating
+Fri Jul 22 12:00:00 MDT 2016 temperature: 66.3 humidity:
+50.20
+Fri Jul 22 12:30:00 MDT 2016 temperature: 67.3 humidity:
+51.02
+Fri Jul 22 13:00:00 MDT 2016 temperature: 68.8 humidity:
+51.82
+Fri Jul 22 13:30:00 MDT 2016 temperature: 70.0 humidity:
+52.19
+Fri Jul 22 14:00:00 MDT 2016 temperature: 71.5 humidity:
+52.99
+Fri Jul 22 14:30:00 MDT 2016 temperature: 73.0 humidity:
+53.32
+Fri Jul 22 15:00:00 MDT 2016 temperature: 74.4 humidity:
+53.99
+Fri Jul 22 15:30:00 MDT 2016 temperature: 75.5 humidity:
+54.40
+Fri Jul 22 16:00:00 MDT 2016 temperature: 76.8 humidity:
+53.96
 */

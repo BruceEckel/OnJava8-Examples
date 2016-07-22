@@ -29,20 +29,6 @@ public class JGrep {
   }
 }
 /* Output:
-0: String: 18
-1: String: 20
-2: String: 9
-3: String: 25
-4: String: 4
-5: for: 4
-6: String: 8
-7: return: 4
-8: String: 9
-9: String: 25
-10: String: 4
-11: String: 31
-12: for: 4
-13: String: 8
-14: return: 4
-15: String: 20
+0: for: 4
+1: for: 4
 */

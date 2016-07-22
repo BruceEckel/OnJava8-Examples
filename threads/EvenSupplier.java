@@ -20,7 +20,8 @@ public class EvenSupplier extends IntSupplier {
 }
 /* Output:
 Press Control-C to exit
-1305 not even!
-1307 not even!
-1303 not even!
+23 not even!
+27 not even!
+25 not even!
+TimedAbort 4
 */

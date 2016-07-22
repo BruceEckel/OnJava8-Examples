@@ -36,8 +36,8 @@ public class Summing2 {
 }
 /* Output:
 200000010000000
-Array Stream Sum: 114ms
-Parallel: 27ms
+Array Stream Sum: 111ms
+Parallel: 26ms
 Basic Sum: 33ms
-parallelPrefix: 49ms
+parallelPrefix: 50ms
 */

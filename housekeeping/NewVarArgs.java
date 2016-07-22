@@ -25,6 +25,6 @@ public class NewVarArgs {
 47 3.14 11.11
 47 3.14 11.11
 one two three
-A@19e0bfd A@139a55 A@1db9742
+A@1db9742 A@106d69c A@52e922
 1 2 3 4
 */

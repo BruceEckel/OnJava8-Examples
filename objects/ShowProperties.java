@@ -15,8 +15,8 @@ public class ShowProperties {
 -- listing properties --
 java.runtime.name=Java(TM) SE Runtime Environment
 sun.boot.library.path=C:\Program Files
-(x86)\Java\jre1.8.0_...
-java.vm.version=25.60-b23
+(x86)\Java\jdk1.8.0_...
+java.vm.version=25.77-b03
 java.vm.vendor=Oracle Corporation
 java.vendor.url=http://java.oracle.com/
 path.separator=;
@@ -28,10 +28,10 @@ sun.java.launcher=SUN_STANDARD
 sun.os.patch.level=
 java.vm.specification.name=Java Virtual Machine
 Specification
-user.dir=C:\Users\Bruce\Documents\GitHub\OnJav...
-java.runtime.version=1.8.0_60-b27
+user.dir=C:\Users\Bruce\Documents\GitHub\on-ja...
+java.runtime.version=1.8.0_77-b03
 java.awt.graphicsenv=sun.awt.Win32GraphicsEnvironment
-java.endorsed.dirs=C:\Program Files (x86)\Java\jre1.8.0_...
+java.endorsed.dirs=C:\Program Files (x86)\Java\jdk1.8.0_...
 os.arch=x86
 java.io.tmpdir=C:\Users\Bruce\AppData\Local\Temp\
                   ...

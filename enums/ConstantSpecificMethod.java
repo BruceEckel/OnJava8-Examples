@@ -32,14 +32,8 @@ public enum ConstantSpecificMethod {
   }
 }
 /* Output:
-Dec 13, 2015
-.;..;C:\Program Files (x86)\Java\xom-1.2.10.jar;C:\Program
-Files (x86)\Java\jdk1.8.0_45\lib\tools.jar;C:\Program Files
-(x86)\Java\jre1.8.0_45\lib\javaws.jar;C:\Program Files
-(x86)\Java\swt-4.4.2-win32-win32-x86\swt.jar;C:\Program
-Files (x86)\Java\javassist.jar;C:\Users\Bruce\Documents\Git
-Hub\OnJava\ExtractedExamples;C:\Program Files
-(x86)\Java\junit-4.12.jar;C:\Program Files
-(x86)\Java\hamcrest-core-1.3.jar;
-1.8.0_66
+Jul 22, 2016
+C:\Users\Bruce\Documents\GitHub\on-
+java\ExtractedExamples\\gradle\wrapper\gradle-wrapper.jar
+1.8.0_77
 */

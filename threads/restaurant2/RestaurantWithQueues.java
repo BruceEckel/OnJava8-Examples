@@ -207,25 +207,25 @@ public class RestaurantWithQueues {
   }
 }
 /* Output: (First and Last 10 Lines)
-WaitPerson 0 received SPRING_ROLLS delivering to Customer 1
+WaitPerson 0 received SALAD delivering to Customer 0
+Customer 0 eating SALAD
+WaitPerson 2 received SPRING_ROLLS delivering to Customer 1
 Customer 1 eating SPRING_ROLLS
-WaitPerson 3 received SPRING_ROLLS delivering to Customer 0
-Customer 0 eating SPRING_ROLLS
-WaitPerson 3 received SOUP delivering to Customer 2
+WaitPerson 1 received SOUP delivering to Customer 2
 Customer 2 eating SOUP
-WaitPerson 0 received VINDALOO delivering to Customer 1
-Customer 1 eating VINDALOO
-WaitPerson 1 received SOUP delivering to Customer 3
-Customer 3 eating SOUP
-________...________...________...________...________
-WaitPerson 3  off duty
-Customer 6 finished meal, leaving
-WaitPerson 4  off duty
-Customer 42 finished meal, leaving
+WaitPerson 0 received LENTILS delivering to Customer 0
+Customer 0 eating LENTILS
+WaitPerson 0 received SPRING_ROLLS delivering to Customer 3
+Customer 3 eating SPRING_ROLLS
+...________...________...________...________...
+WaitPerson 0  off duty
+Customer 46 finished meal, leaving
+Customer 37 finished meal, leaving
+Customer 31 finished meal, leaving
+Customer 1 finished meal, leaving
+Customer 3 finished meal, leaving
+Customer 17 finished meal, leaving
+Customer 12 finished meal, leaving
+Customer 4 finished meal, leaving
 Customer 7 finished meal, leaving
-Customer 28 finished meal, leaving
-Customer 9 finished meal, leaving
-Customer 15 finished meal, leaving
-Customer 21 finished meal, leaving
-Customer 0 finished meal, leaving
 */

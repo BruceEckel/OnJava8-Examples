@@ -16,7 +16,6 @@ public class InfoLogging2 {
 }
 /* Output:
 ___[ Error Output ]___
-Dec 15, 2015 9:58:43 PM InfoLogging2 main
+Jul 22, 2016 11:55:53 AM InfoLogging2 main
 INFO: Logging an INFO-level message
-___[ Error Output is Expected ]___
 */

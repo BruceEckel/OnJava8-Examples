@@ -18,15 +18,15 @@ public class ParallelStreamPuzzle3 {
   }
 }
 /* Output:
-1: ForkJoinPool.commonPool-worker-3
-2: ForkJoinPool.commonPool-worker-6
-4: ForkJoinPool.commonPool-worker-1
-3: ForkJoinPool.commonPool-worker-7
-8: main
-0: ForkJoinPool.commonPool-worker-4
 6: ForkJoinPool.commonPool-worker-5
+3: ForkJoinPool.commonPool-worker-7
+2: ForkJoinPool.commonPool-worker-6
+0: ForkJoinPool.commonPool-worker-4
+4: ForkJoinPool.commonPool-worker-1
+1: ForkJoinPool.commonPool-worker-3
+8: main
+7: ForkJoinPool.commonPool-worker-7
+5: ForkJoinPool.commonPool-worker-5
 9: ForkJoinPool.commonPool-worker-2
-7: ForkJoinPool.commonPool-worker-6
-5: ForkJoinPool.commonPool-worker-3
 [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 */

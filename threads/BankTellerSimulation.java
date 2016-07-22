@@ -198,18 +198,21 @@ public class BankTellerSimulation {
   }
 }
 /* Output:
-[200][207] { T1 T0 }
-[861][258][140][322] { T1 T0 }
-[575][342][804][826][896] { T1 T0 }
-[896][984][810][141][12][689][992][976][368] { T2 T0 T1 }
+[768][193][807][125] { T1 T0 }
+[125][634][682][267][954][506][639][213] { T2 T0 T1 }
+[213][592][770][919][552][727][998][902] { T2 T0 T1 }
+[552][727][998][902][769][373][313][683][177][526] { T3 T2
+T1 T0 }
 TellerManager interrupted
-CustomerSupplier interrupted
 Teller 0 interrupted
-Teller 2 interrupted
-Teller 1 interrupted
-Teller 2 terminating
 Teller 0 terminating
+Teller 1 interrupted
+Teller 3 interrupted
+Teller 2 interrupted
+CustomerSupplier interrupted
 CustomerSupplier terminating
-TellerManager terminating
+Teller 2 terminating
+Teller 3 terminating
 Teller 1 terminating
+TellerManager terminating
 */

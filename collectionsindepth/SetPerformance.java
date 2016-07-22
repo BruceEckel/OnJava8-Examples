@@ -60,11 +60,11 @@ public class SetPerformance {
 /* Output:
 ------------- TreeSet -------------
  size       add  contains   iterate
-  100        85        51         9
+  100       200       132        24
 ------------- HashSet -------------
  size       add  contains   iterate
-  100        27        12        12
+  100        76        32        34
 ---------- LinkedHashSet ----------
  size       add  contains   iterate
-  100        28        10         7
+  100        70        25        19
 */

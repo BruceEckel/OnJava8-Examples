@@ -27,15 +27,15 @@ public class File_System {
 }
 /* Output:
 Windows 10
-File Store: (C:)
+File Store: SSD (C:)
 Root Directory: C:\
 Root Directory: D:\
 Separator: \
 UserPrincipalLookupService:
-sun.nio.fs.WindowsFileSystem$LookupService$1@106d69c
+sun.nio.fs.WindowsFileSystem$LookupService$1@1db9742
 isOpen: true
 isReadOnly: false
 FileSystemProvider:
-sun.nio.fs.WindowsFileSystemProvider@52e922
+sun.nio.fs.WindowsFileSystemProvider@106d69c
 File Attribute Views: [owner, dos, acl, basic, user]
 */

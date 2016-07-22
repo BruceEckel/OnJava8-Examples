@@ -35,5 +35,4 @@ INFO  :  SimpleFormatterExample -:- logMessages -:- Line
 One
 INFO  :  SimpleFormatterExample -:- logMessages -:- Line
 Two
-___[ Error Output is Expected ]___
 */

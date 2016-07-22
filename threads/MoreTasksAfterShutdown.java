@@ -20,10 +20,10 @@ public class MoreTasksAfterShutdown {
   }
 }
 /* Output:
-java.util.concurrent.RejectedExecutionException:
-Task SleepAndPrintTask[99] rejected from
-java.util.concurrent.ThreadPoolExecutor@25154f[
-Shutting down, pool size = 1, active threads = 1,
-queued tasks = 0, completed tasks = 0]
+java.util.concurrent.RejectedExecutionException: Task
+SleepAndPrintTask[99] rejected from
+java.util.concurrent.ThreadPoolExecutor@25154f[Shutting
+down, pool size = 1, active threads = 1, queued tasks = 0,
+completed tasks = 0]
 SleepAndPrintTask[1] pool-1-thread-1
 */

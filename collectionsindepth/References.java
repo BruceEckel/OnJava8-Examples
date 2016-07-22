@@ -64,8 +64,6 @@ public class References {
   }
 }
 /* Output: (First and Last 10 Lines)
-Just created: java.lang.ref.SoftReference@19e0bfd
-Just created: java.lang.ref.SoftReference@139a55
 Just created: java.lang.ref.SoftReference@1db9742
 Just created: java.lang.ref.SoftReference@106d69c
 Just created: java.lang.ref.SoftReference@52e922
@@ -74,15 +72,17 @@ Just created: java.lang.ref.SoftReference@10dea4e
 Just created: java.lang.ref.SoftReference@647e05
 Just created: java.lang.ref.SoftReference@1909752
 Just created: java.lang.ref.SoftReference@1f96302
-________...________...________...________...________
-Just created: java.lang.ref.PhantomReference@16f6e28
-In queue: null
-Just created: java.lang.ref.PhantomReference@15fbaa4
-In queue: null
+Just created: java.lang.ref.SoftReference@14eac69
+Just created: java.lang.ref.SoftReference@a57993
+...________...________...________...________...
 Just created: java.lang.ref.PhantomReference@1ee12a7
 In queue: null
 Just created: java.lang.ref.PhantomReference@10bedb4
 In queue: null
 Just created: java.lang.ref.PhantomReference@103dbd3
+In queue: null
+Just created: java.lang.ref.PhantomReference@167cf4d
+In queue: null
+Just created: java.lang.ref.PhantomReference@a987ac
 In queue: null
 */

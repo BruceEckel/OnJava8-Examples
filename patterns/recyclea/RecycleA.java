@@ -100,27 +100,27 @@ public class RecycleA {
   }
 }
 /* Output: (First and Last 11 Lines)
-weight of patterns.recyclea.Aluminum = 0.11435456649761422
-weight of patterns.recyclea.Aluminum = 0.5295954256745989
-weight of patterns.recyclea.Aluminum = 0.44032876173820623
-weight of patterns.recyclea.Aluminum = 0.483968447804611
-weight of patterns.recyclea.Aluminum = 0.2724064060083268
-weight of patterns.recyclea.Aluminum = 0.7661553155473436
-weight of patterns.recyclea.Aluminum = 0.32266202529378485
-weight of patterns.recyclea.Aluminum = 0.29010681217024337
-weight of patterns.recyclea.Aluminum = 0.04867885164993724
-weight of patterns.recyclea.Aluminum = 0.6398064631177899
-Total value = 6.526465168373229
-________...________...________...________...________
-weight of patterns.recyclea.Paper = 0.7024254510631527
-weight of patterns.recyclea.Paper = 0.7775491010186331
-weight of patterns.recyclea.Paper = 0.5929413550962656
-weight of patterns.recyclea.Paper = 0.8991222558891441
-weight of patterns.recyclea.Aluminum = 0.32266202529378485
-weight of patterns.recyclea.Aluminum = 0.29010681217024337
-weight of patterns.recyclea.Glass = 0.42812712031823896
-weight of patterns.recyclea.Paper = 0.8242175461669214
-weight of patterns.recyclea.Aluminum = 0.04867885164993724
-weight of patterns.recyclea.Aluminum = 0.6398064631177899
-Total value = 7.489772197549787
+weight of Aluminum = 0.2893030122276371
+weight of Aluminum = 0.1970234961398979
+weight of Aluminum = 0.36295525806274787
+weight of Aluminum = 0.4825532324565849
+weight of Aluminum = 0.8036398273294586
+weight of Aluminum = 0.510430896154935
+weight of Aluminum = 0.6703377164093444
+weight of Aluminum = 0.41477933066243455
+weight of Aluminum = 0.3603022312124007
+weight of Aluminum = 0.43690089841661006
+weight of Aluminum = 0.6708820087907101
+...________...________...________...________...
+weight of Aluminum = 0.41477933066243455
+weight of Aluminum = 0.3603022312124007
+weight of Aluminum = 0.43690089841661006
+weight of Glass = 0.5999637765664924
+weight of Glass = 0.7748836191212746
+weight of Paper = 0.5735994548427199
+weight of Glass = 0.5362827750851034
+weight of Aluminum = 0.6708820087907101
+weight of Paper = 0.8370669795210507
+weight of Glass = 0.3397919679731668
+Total value = 9.90671597531968
 */

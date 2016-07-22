@@ -18,6 +18,6 @@ extends ArrayList<Tuple4<A, B, C, D>> {
   }
 }
 /* Output:
-(Vehicle@18025c, Amphibian@16f27d, hi, 47)
-(Vehicle@7aac27, Amphibian@3abc88, hi, 47)
+(Vehicle@107d329, Amphibian@1629346, hi, 47)
+(Vehicle@4b9385, Amphibian@1311334, hi, 47)
 */

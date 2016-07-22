@@ -54,21 +54,21 @@ Loading patterns.trash.Glass
 Loading patterns.trash.Paper
 Loading patterns.trash.Aluminum
 Loading patterns.trash.Cardboard
-weight of patterns.trash.Glass = 54.0
-weight of patterns.trash.Glass = 17.0
-weight of patterns.trash.Glass = 11.0
-weight of patterns.trash.Glass = 68.0
-weight of patterns.trash.Glass = 43.0
-weight of patterns.trash.Glass = 63.0
-________...________...________...________...________
-weight of patterns.trash.Aluminum = 93.0
-weight of patterns.trash.Aluminum = 36.0
-Total value = 860.0499778985977
 weight of patterns.trash.Paper = 22.0
 weight of patterns.trash.Paper = 11.0
 weight of patterns.trash.Paper = 88.0
 weight of patterns.trash.Paper = 91.0
 weight of patterns.trash.Paper = 80.0
 weight of patterns.trash.Paper = 66.0
-Total value = 35.80000053346157
+...________...________...________...________...
+weight of patterns.trash.Aluminum = 81.0
+weight of patterns.trash.Aluminum = 36.0
+weight of patterns.trash.Aluminum = 93.0
+weight of patterns.trash.Aluminum = 36.0
+Total value = 860.0499778985977
+weight of patterns.trash.Cardboard = 96.0
+weight of patterns.trash.Cardboard = 44.0
+weight of patterns.trash.Cardboard = 12.0
+weight of patterns.trash.Cardboard = 22.0
+Total value = 40.02000072598457
 */

@@ -40,9 +40,8 @@ public class CustomHandler {
 , INFO:, CustomHandler:, main:, <Logging Info>,
 ]
 ___[ Error Output ]___
-Dec 15, 2015 9:58:42 PM CustomHandler main
+Jul 22, 2016 11:55:52 AM CustomHandler main
 WARNING: Logging Warning
-Dec 15, 2015 9:58:42 PM CustomHandler main
+Jul 22, 2016 11:55:52 AM CustomHandler main
 INFO: Logging Info
-___[ Error Output is Expected ]___
 */

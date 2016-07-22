@@ -111,24 +111,24 @@ public class PaperScissorsRock {
   }
 }
 /* Output:
+Scissors -> Rock : LOSE
+Scissors -> Paper : WIN
+Rock -> Paper : LOSE
 Rock -> Rock : DRAW
-Paper -> Rock : WIN
-Paper -> Rock : WIN
-Paper -> Rock : WIN
-Scissors -> Paper : WIN
+Rock -> Paper : LOSE
+Paper -> Scissors : LOSE
+Rock -> Paper : LOSE
 Scissors -> Scissors : DRAW
+Scissors -> Rock : LOSE
 Scissors -> Paper : WIN
-Rock -> Paper : LOSE
+Scissors -> Rock : LOSE
+Paper -> Scissors : LOSE
+Rock -> Rock : DRAW
+Scissors -> Scissors : DRAW
 Paper -> Paper : DRAW
-Rock -> Paper : LOSE
-Paper -> Scissors : LOSE
-Paper -> Scissors : LOSE
-Rock -> Scissors : WIN
-Rock -> Paper : LOSE
-Paper -> Rock : WIN
 Scissors -> Paper : WIN
-Paper -> Scissors : LOSE
-Paper -> Scissors : LOSE
-Paper -> Scissors : LOSE
-Paper -> Scissors : LOSE
+Scissors -> Rock : LOSE
+Scissors -> Paper : WIN
+Rock -> Paper : LOSE
+Rock -> Scissors : WIN
 */

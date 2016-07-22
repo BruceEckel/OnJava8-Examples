@@ -71,25 +71,25 @@ public class DoubleDispatch {
   }
 }
 /* Output: (First and Last 10 Lines)
-Loading patterns.doubledispatch.DDGlass
-Loading patterns.doubledispatch.DDPaper
-Loading patterns.doubledispatch.DDAluminum
-Loading patterns.doubledispatch.DDCardboard
-weight of patterns.doubledispatch.DDAluminum = 89.0
-weight of patterns.doubledispatch.DDAluminum = 76.0
-weight of patterns.doubledispatch.DDAluminum = 25.0
-weight of patterns.doubledispatch.DDAluminum = 34.0
-weight of patterns.doubledispatch.DDAluminum = 27.0
-weight of patterns.doubledispatch.DDAluminum = 18.0
-________...________...________...________...________
-weight of patterns.doubledispatch.DDAluminum = 93.0
-weight of patterns.doubledispatch.DDGlass = 93.0
-weight of patterns.doubledispatch.DDPaper = 80.0
-weight of patterns.doubledispatch.DDGlass = 36.0
-weight of patterns.doubledispatch.DDGlass = 12.0
-weight of patterns.doubledispatch.DDGlass = 60.0
-weight of patterns.doubledispatch.DDPaper = 66.0
-weight of patterns.doubledispatch.DDAluminum = 36.0
-weight of patterns.doubledispatch.DDCardboard = 22.0
+Loading patterns.doubledispatch.Glass
+Loading patterns.doubledispatch.Paper
+Loading patterns.doubledispatch.Aluminum
+Loading patterns.doubledispatch.Cardboard
+weight of patterns.doubledispatch.Aluminum = 89.0
+weight of patterns.doubledispatch.Aluminum = 76.0
+weight of patterns.doubledispatch.Aluminum = 25.0
+weight of patterns.doubledispatch.Aluminum = 34.0
+weight of patterns.doubledispatch.Aluminum = 27.0
+weight of patterns.doubledispatch.Aluminum = 18.0
+...________...________...________...________...
+weight of patterns.doubledispatch.Aluminum = 93.0
+weight of patterns.doubledispatch.Glass = 93.0
+weight of patterns.doubledispatch.Paper = 80.0
+weight of patterns.doubledispatch.Glass = 36.0
+weight of patterns.doubledispatch.Glass = 12.0
+weight of patterns.doubledispatch.Glass = 60.0
+weight of patterns.doubledispatch.Paper = 66.0
+weight of patterns.doubledispatch.Aluminum = 36.0
+weight of patterns.doubledispatch.Cardboard = 22.0
 Total value = 1086.0599818825722
 */

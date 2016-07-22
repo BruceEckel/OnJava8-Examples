@@ -148,6 +148,5 @@ public class CriticalSection {
   }
 }
 /* Output:
-pm1: Pair: x: 15, y: 15 checkCounter = 272565
-pm2: Pair: x: 16, y: 16 checkCounter = 3956974
+TimedAbort 4
 */

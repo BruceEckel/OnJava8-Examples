@@ -35,14 +35,14 @@ public class SyncObject {
   }
 }
 /* Output:
-f()
 g()
 g()
-f()
 g()
-f()
+g()
 g()
 f()
 f()
-g()
+f()
+f()
+f()
 */

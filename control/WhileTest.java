@@ -7,7 +7,7 @@
 public class WhileTest {
   static boolean condition() {
     boolean result = Math.random() < 0.99;
-    System.out.println(result + ", ");
+    System.out.print(result + ", ");
     return result;
   }
   public static void main(String[] args) {
@@ -22,7 +22,7 @@ true, Inside 'while'
 true, Inside 'while'
 true, Inside 'while'
 true, Inside 'while'
-________...________...________...________...________
+...________...________...________...________...
 true, Inside 'while'
 true, Inside 'while'
 true, Inside 'while'

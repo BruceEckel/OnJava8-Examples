@@ -23,5 +23,4 @@ f()
         at NeverCaught.f(NeverCaught.java:7)
         at NeverCaught.g(NeverCaught.java:10)
         at NeverCaught.main(NeverCaught.java:13)
-___[ Exception is Expected ]___
 */

@@ -40,6 +40,4 @@ Match "abc" at positions 12-14
 Regular expression: "(abc)+"
 Match "abcabcabc" at positions 0-8
 Match "abc" at positions 12-14
-Regular expression: "(abc){2,}"
-Match "abcabcabc" at positions 0-8
 */

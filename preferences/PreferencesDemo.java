@@ -30,6 +30,12 @@ Location: Oz
 Footwear: Ruby Slippers
 Companions: 4
 Are there witches?: true
-UsageCount: 33
+UsageCount: 183
 How many companions does Dorothy have? 4
+___[ Error Output ]___
+Jul 22, 2016 11:56:00 AM java.util.prefs.WindowsPreferences
+<init>
+WARNING: Could not open/create prefs root node
+Software\JavaSoft\Prefs at root 0x80000002. Windows
+RegCreateKeyEx(...) returned error code 5.
 */

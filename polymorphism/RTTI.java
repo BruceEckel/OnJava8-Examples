@@ -39,5 +39,4 @@ ___[ Error Output ]___
 Exception in thread "main" java.lang.ClassCastException:
 Useful cannot be cast to MoreUseful
         at RTTI.main(RTTI.java:31)
-___[ Exception is Expected ]___
 */

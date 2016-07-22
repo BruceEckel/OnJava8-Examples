@@ -42,14 +42,14 @@ public class FillingArrays {
   }
 }
 /* Output:
-a1 = [true, true, true, true, true, true]
-a2 = [11, 11, 11, 11, 11, 11]
-a3 = [x, x, x, x, x, x]
-a4 = [17, 17, 17, 17, 17, 17]
-a5 = [19, 19, 19, 19, 19, 19]
-a6 = [23, 23, 23, 23, 23, 23]
-a7 = [29.0, 29.0, 29.0, 29.0, 29.0, 29.0]
-a8 = [47.0, 47.0, 47.0, 47.0, 47.0, 47.0]
-a9 = [Hello, Hello, Hello, Hello, Hello, Hello]
-a9 = [Hello, Hello, Hello, World, World, Hello]
+a1: [true, true, true, true, true, true]
+a2: [11, 11, 11, 11, 11, 11]
+a3: [x, x, x, x, x, x]
+a4: [17, 17, 17, 17, 17, 17]
+a5: [19, 19, 19, 19, 19, 19]
+a6: [23, 23, 23, 23, 23, 23]
+a7: [29.0, 29.0, 29.0, 29.0, 29.0, 29.0]
+a8: [47.0, 47.0, 47.0, 47.0, 47.0, 47.0]
+a9: [Hello, Hello, Hello, Hello, Hello, Hello]
+a9: [Hello, Hello, Hello, World, World, Hello]
 */

@@ -63,20 +63,20 @@ public class MapPerformance {
 /* Output:
 ---------- TreeMap ----------
  size     put     get iterate
-  100      86      47       9
+  100     228     128      25
 ---------- HashMap ----------
  size     put     get iterate
-  100      25      10      12
+  100      68      26      35
 ------- LinkedHashMap -------
  size     put     get iterate
-  100      27       8       6
+  100      70      35      18
 ------ IdentityHashMap ------
  size     put     get iterate
-  100      51      47      13
+  100     128     126      38
 -------- WeakHashMap --------
  size     put     get iterate
-  100      28      11      12
+  100      62      31      25
 --------- Hashtable ---------
  size     put     get iterate
-  100      31      21      13
+  100      56      30      20
 */

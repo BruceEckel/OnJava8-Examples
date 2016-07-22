@@ -48,7 +48,7 @@ public class PrintableLogRecord extends LogRecord {
 Level<FINEST>
 LoggerName<null>
 Message<Simple Log Record>
-CurrentMillis<1434408472765>
+CurrentMillis<1469210155053>
 Params<null>
 ResourceBundle<null>
 ResourceBundleName<null>

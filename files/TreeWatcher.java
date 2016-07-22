@@ -43,8 +43,8 @@ public class TreeWatcher {
 }
 /* Output:
 deleting test\bag\foo\bar\baz\File.txt
+deleting test\bar\baz\bag\foo\File.txt
 evt.context(): File.txt
 evt.count(): 1
 evt.kind(): ENTRY_DELETE
-deleting test\bar\baz\bag\foo\File.txt
 */
