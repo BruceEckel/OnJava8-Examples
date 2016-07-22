@@ -184,3 +184,8 @@ configure(subprojects - project(':onjava')) {
         compile project(':onjava')
     }
 }
+
+task verify(type:Exec) {
+    println("execute 'gradlew run' first")
+    commandLine 'python', 'test_output.py'
+}
