@@ -25,9 +25,12 @@ class Tags {
         mainMethod = block.contains('main(String[] args)')
         fileRoot = lines[0].split("/")[-1] - ".java"
         mainClass = fileRoot
-        javaCmd = extract('main:')
-        if(javaCmd)
+        javaCmd = extract('java')
+        if(javaCmd) {
             mainClass = javaCmd
+            println("fileRoot: " + fileRoot)
+            println("mainClass: " + mainClass)
+        }
         compileTimeError = testFor('CompileTimeError')
         throwsException = testFor('ThrowsException')
         errorOutputExpected = testFor('ErrorOutputExpected')
@@ -58,6 +61,7 @@ class Tags {
         if(tagline.getCount()) {
             def rtrim = tagline[0].reverse().dropWhile{ it != '}'}.reverse()[0..-2]
             def ltrim = rtrim - ("// {" + marker)
+            ltrim = ltrim.replaceAll("//", " ")
             return ltrim.trim()
         } else {
             println "Searching for: " + re
