@@ -56,5 +56,4 @@ tryLock(): true
 tryLock(2, TimeUnit.SECONDS): true
 tryLock(): true
 tryLock(2, TimeUnit.SECONDS): true
-acquired
 */

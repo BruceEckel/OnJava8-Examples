@@ -47,9 +47,9 @@ RegularFile: true
 Writable: true
 notExists: false
 Hidden: false
-size: 1631
+size: 1630
 FileStore: SSD (C:)
-LastModified: : 2016-07-22T17:55:34.80143Z
+LastModified: : 2016-07-27T15:52:49.898848Z
 Owner: MINDVIEWTOSHIBA\Bruce (User)
 ContentType: null
 SymbolicLink: false

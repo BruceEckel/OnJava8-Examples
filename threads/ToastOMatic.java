@@ -194,11 +194,11 @@ Toast 12: BUTTERED
 Toast 12: JAMMED
 Chomp! Toast 12: JAMMED
 Eater interrupted
-Butterer interrupted
-Toaster interrupted
-Toaster off
-Jammer interrupted
-Butterer off
 Eater off
+Jammer interrupted
 Jammer off
+Toaster interrupted
+Butterer interrupted
+Butterer off
+Toaster off
 */

@@ -34,12 +34,12 @@ public class SimpleFilter {
 }
 /* Output:
 ___[ Error Output ]___
-Jul 22, 2016 11:55:55 AM SimpleFilter sendLogMessages
+Jul 27, 2016 10:50:44 AM SimpleFilter sendLogMessages
 WARNING: A duck in the house!
-Jul 22, 2016 11:55:55 AM SimpleFilter sendLogMessages
+Jul 27, 2016 10:50:44 AM SimpleFilter sendLogMessages
 WARNING: A Wombat at large!
-Jul 22, 2016 11:55:55 AM SimpleFilter main
+Jul 27, 2016 10:50:44 AM SimpleFilter main
 INFO: After setting filter..
-Jul 22, 2016 11:55:55 AM SimpleFilter sendLogMessages
+Jul 27, 2016 10:50:44 AM SimpleFilter sendLogMessages
 WARNING: A duck in the house!
 */

@@ -50,52 +50,52 @@ public class ConfigureLogging {
  Logger Name : com.mindviewinc.test Level: FINER
  Logger Name : random Level: SEVERE
 ___[ Error Output ]___
-Jul 22, 2016 11:55:52 AM ConfigureLogging sendLogMessages
+Jul 27, 2016 10:50:38 AM ConfigureLogging sendLogMessages
 FINEST: Finest
-Jul 22, 2016 11:55:52 AM ConfigureLogging sendLogMessages
+Jul 27, 2016 10:50:38 AM ConfigureLogging sendLogMessages
 FINER: Finer
-Jul 22, 2016 11:55:52 AM ConfigureLogging sendLogMessages
+Jul 27, 2016 10:50:38 AM ConfigureLogging sendLogMessages
 FINE: Fine
-Jul 22, 2016 11:55:52 AM ConfigureLogging sendLogMessages
+Jul 27, 2016 10:50:38 AM ConfigureLogging sendLogMessages
 CONFIG: Config
-Jul 22, 2016 11:55:52 AM ConfigureLogging sendLogMessages
+Jul 27, 2016 10:50:38 AM ConfigureLogging sendLogMessages
 INFO: Info
-Jul 22, 2016 11:55:52 AM ConfigureLogging sendLogMessages
+Jul 27, 2016 10:50:38 AM ConfigureLogging sendLogMessages
 WARNING: Warning
-Jul 22, 2016 11:55:52 AM ConfigureLogging sendLogMessages
+Jul 27, 2016 10:50:38 AM ConfigureLogging sendLogMessages
 SEVERE: Severe
-Jul 22, 2016 11:55:52 AM ConfigureLogging sendLogMessages
+Jul 27, 2016 10:50:38 AM ConfigureLogging sendLogMessages
 FINEST: Finest
-Jul 22, 2016 11:55:52 AM ConfigureLogging sendLogMessages
+Jul 27, 2016 10:50:38 AM ConfigureLogging sendLogMessages
 FINER: Finer
-Jul 22, 2016 11:55:52 AM ConfigureLogging sendLogMessages
+Jul 27, 2016 10:50:38 AM ConfigureLogging sendLogMessages
 FINE: Fine
-Jul 22, 2016 11:55:52 AM ConfigureLogging sendLogMessages
+Jul 27, 2016 10:50:38 AM ConfigureLogging sendLogMessages
 CONFIG: Config
-Jul 22, 2016 11:55:52 AM ConfigureLogging sendLogMessages
+Jul 27, 2016 10:50:38 AM ConfigureLogging sendLogMessages
 INFO: Info
-Jul 22, 2016 11:55:52 AM ConfigureLogging sendLogMessages
+Jul 27, 2016 10:50:38 AM ConfigureLogging sendLogMessages
 WARNING: Warning
-Jul 22, 2016 11:55:52 AM ConfigureLogging sendLogMessages
+Jul 27, 2016 10:50:38 AM ConfigureLogging sendLogMessages
 SEVERE: Severe
-Jul 22, 2016 11:55:52 AM ConfigureLogging sendLogMessages
+Jul 27, 2016 10:50:38 AM ConfigureLogging sendLogMessages
 INFO: Info
-Jul 22, 2016 11:55:52 AM ConfigureLogging sendLogMessages
+Jul 27, 2016 10:50:38 AM ConfigureLogging sendLogMessages
 WARNING: Warning
-Jul 22, 2016 11:55:52 AM ConfigureLogging sendLogMessages
+Jul 27, 2016 10:50:38 AM ConfigureLogging sendLogMessages
 SEVERE: Severe
-Jul 22, 2016 11:55:52 AM ConfigureLogging sendLogMessages
+Jul 27, 2016 10:50:38 AM ConfigureLogging sendLogMessages
 FINER: Finer
-Jul 22, 2016 11:55:52 AM ConfigureLogging sendLogMessages
+Jul 27, 2016 10:50:38 AM ConfigureLogging sendLogMessages
 FINE: Fine
-Jul 22, 2016 11:55:52 AM ConfigureLogging sendLogMessages
+Jul 27, 2016 10:50:38 AM ConfigureLogging sendLogMessages
 CONFIG: Config
-Jul 22, 2016 11:55:52 AM ConfigureLogging sendLogMessages
+Jul 27, 2016 10:50:38 AM ConfigureLogging sendLogMessages
 INFO: Info
-Jul 22, 2016 11:55:52 AM ConfigureLogging sendLogMessages
+Jul 27, 2016 10:50:38 AM ConfigureLogging sendLogMessages
 WARNING: Warning
-Jul 22, 2016 11:55:52 AM ConfigureLogging sendLogMessages
+Jul 27, 2016 10:50:38 AM ConfigureLogging sendLogMessages
 SEVERE: Severe
-Jul 22, 2016 11:55:52 AM ConfigureLogging sendLogMessages
+Jul 27, 2016 10:50:38 AM ConfigureLogging sendLogMessages
 SEVERE: Severe
 */

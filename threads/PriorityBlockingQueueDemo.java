@@ -133,11 +133,11 @@ public class PriorityBlockingQueueDemo {
 [10 ] Task 20
 [8  ] Task 8
 [10 ] Task 21
-[7  ] Task 19
-[10 ] Task 22
-[7  ] Task 11
-[10 ] Task 23
 [7  ] Task 4
+[10 ] Task 22
+[7  ] Task 19
+[10 ] Task 23
+[7  ] Task 11
 [10 ] Task 24
 [7  ] Task 1
 ...________...________...________...________...

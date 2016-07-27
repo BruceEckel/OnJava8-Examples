@@ -39,11 +39,11 @@ annotations.AtUnitExample2
 surprise!
 (failed)
   . assertExample
-  . assertAndReturn This is methodTwo
-
   . exceptionExample java.io.FileNotFoundException:
 nofile.txt (The system cannot find the file specified)
 (failed)
+  . assertAndReturn This is methodTwo
+
 (4 tests)
 
 >>> 2 FAILURES <<<

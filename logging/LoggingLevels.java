@@ -40,22 +40,22 @@ com level: SEVERE
 individual loggers set to FINEST
 com level: SEVERE
 ___[ Error Output ]___
-Jul 22, 2016 11:55:54 AM LoggingLevels logMessages
+Jul 27, 2016 10:50:42 AM LoggingLevels logMessages
 INFO: util : info
-Jul 22, 2016 11:55:54 AM LoggingLevels logMessages
+Jul 27, 2016 10:50:42 AM LoggingLevels logMessages
 SEVERE: test : severe
-Jul 22, 2016 11:55:54 AM LoggingLevels logMessages
+Jul 27, 2016 10:50:42 AM LoggingLevels logMessages
 INFO: random : info
-Jul 22, 2016 11:55:54 AM LoggingLevels logMessages
+Jul 27, 2016 10:50:42 AM LoggingLevels logMessages
 INFO: util : info
-Jul 22, 2016 11:55:54 AM LoggingLevels logMessages
+Jul 27, 2016 10:50:42 AM LoggingLevels logMessages
 SEVERE: test : severe
-Jul 22, 2016 11:55:54 AM LoggingLevels logMessages
+Jul 27, 2016 10:50:42 AM LoggingLevels logMessages
 INFO: random : info
-Jul 22, 2016 11:55:54 AM LoggingLevels logMessages
+Jul 27, 2016 10:50:42 AM LoggingLevels logMessages
 INFO: util : info
-Jul 22, 2016 11:55:54 AM LoggingLevels logMessages
+Jul 27, 2016 10:50:42 AM LoggingLevels logMessages
 SEVERE: test : severe
-Jul 22, 2016 11:55:54 AM LoggingLevels logMessages
+Jul 27, 2016 10:50:42 AM LoggingLevels logMessages
 INFO: random : info
 */

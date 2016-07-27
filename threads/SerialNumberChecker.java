@@ -65,5 +65,5 @@ public class SerialNumberChecker {
   }
 }
 /* Output:
-Duplicate: 5178
+Duplicate: 4119
 */

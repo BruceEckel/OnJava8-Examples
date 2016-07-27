@@ -16,6 +16,6 @@ public class BadMicroBenchmark {
   }
 }
 /* Output:
-setAll: 62
-parallelSetAll: 75
+setAll: 75
+parallelSetAll: 110
 */

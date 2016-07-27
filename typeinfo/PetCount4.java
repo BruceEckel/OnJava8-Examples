@@ -21,5 +21,5 @@ Rat Manx Cymric Mutt Pug Cymric Pug Manx Cymric Rat
 EgyptianMau Hamster EgyptianMau Mutt Mutt Cymric Mouse Pug
 Mouse Cymric
 {EgyptianMau=2, Hamster=1, Pug=3, Manx=7, Cymric=5, Dog=6,
-Mutt=3, Rat=2, Mouse=2, Rodent=5, Pet=20, Cat=9}
+Pet=20, Mutt=3, Rat=2, Mouse=2, Rodent=5, Cat=9}
 */

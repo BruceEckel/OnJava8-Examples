@@ -27,7 +27,7 @@ public class HashSetTest {
 /* Output:
 annotations.HashSetTest
   . _remove
-  . initialization
   . _contains
+  . initialization
 OK (3 tests)
 */

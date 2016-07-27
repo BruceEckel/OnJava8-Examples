@@ -21,6 +21,6 @@ public class MultipleHandlers2 {
 }
 /* Output:
 ___[ Error Output ]___
-Jul 22, 2016 11:55:54 AM MultipleHandlers2 main
+Jul 27, 2016 10:50:43 AM MultipleHandlers2 main
 WARNING: Output to multiple handlers
 */

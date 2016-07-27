@@ -16,5 +16,5 @@ public class WhoAmI {
 }
 /* Output:
 MindviewToshibaLaptop
-192.168.0.107
+192.168.0.104
 */

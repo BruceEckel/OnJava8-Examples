@@ -22,5 +22,5 @@ public class HelloDate {
 }
 /* Output:
 Hello, it's:
-Fri Jul 22 11:55:55 MDT 2016
+Wed Jul 27 10:50:45 MDT 2016
 */

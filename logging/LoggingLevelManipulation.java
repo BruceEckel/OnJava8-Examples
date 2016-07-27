@@ -76,109 +76,109 @@ onjava : FINEST com.mindviewinc.test : FINEST random :
 FINEST
 net level: FINEST
 ___[ Error Output ]___
-Jul 22, 2016 11:55:53 AM LoggingLevelManipulation
+Jul 27, 2016 10:50:42 AM LoggingLevelManipulation
 printLogMessages
 SEVERE: com Severe
-Jul 22, 2016 11:55:54 AM LoggingLevelManipulation
+Jul 27, 2016 10:50:42 AM LoggingLevelManipulation
 printLogMessages
 SEVERE: com.mindviewinc Severe
-Jul 22, 2016 11:55:54 AM LoggingLevelManipulation
+Jul 27, 2016 10:50:42 AM LoggingLevelManipulation
 printLogMessages
 INFO: onjava Info
-Jul 22, 2016 11:55:54 AM LoggingLevelManipulation
+Jul 27, 2016 10:50:42 AM LoggingLevelManipulation
 printLogMessages
 WARNING: onjava Warning
-Jul 22, 2016 11:55:54 AM LoggingLevelManipulation
+Jul 27, 2016 10:50:42 AM LoggingLevelManipulation
 printLogMessages
 SEVERE: onjava Severe
-Jul 22, 2016 11:55:54 AM LoggingLevelManipulation
+Jul 27, 2016 10:50:42 AM LoggingLevelManipulation
 printLogMessages
 SEVERE: com.mindviewinc.test Severe
-Jul 22, 2016 11:55:54 AM LoggingLevelManipulation
+Jul 27, 2016 10:50:42 AM LoggingLevelManipulation
 printLogMessages
 INFO: random Info
-Jul 22, 2016 11:55:54 AM LoggingLevelManipulation
+Jul 27, 2016 10:50:42 AM LoggingLevelManipulation
 printLogMessages
 WARNING: random Warning
-Jul 22, 2016 11:55:54 AM LoggingLevelManipulation
+Jul 27, 2016 10:50:42 AM LoggingLevelManipulation
 printLogMessages
 SEVERE: random Severe
-Jul 22, 2016 11:55:54 AM LoggingLevelManipulation
+Jul 27, 2016 10:50:42 AM LoggingLevelManipulation
 printLogMessages
 SEVERE: com Severe
-Jul 22, 2016 11:55:54 AM LoggingLevelManipulation
+Jul 27, 2016 10:50:42 AM LoggingLevelManipulation
 printLogMessages
 SEVERE: com.mindviewinc Severe
-Jul 22, 2016 11:55:54 AM LoggingLevelManipulation
+Jul 27, 2016 10:50:42 AM LoggingLevelManipulation
 printLogMessages
 INFO: onjava Info
-Jul 22, 2016 11:55:54 AM LoggingLevelManipulation
+Jul 27, 2016 10:50:42 AM LoggingLevelManipulation
 printLogMessages
 WARNING: onjava Warning
-Jul 22, 2016 11:55:54 AM LoggingLevelManipulation
+Jul 27, 2016 10:50:42 AM LoggingLevelManipulation
 printLogMessages
 SEVERE: onjava Severe
-Jul 22, 2016 11:55:54 AM LoggingLevelManipulation
+Jul 27, 2016 10:50:42 AM LoggingLevelManipulation
 printLogMessages
 INFO: com.mindviewinc.test Info
-Jul 22, 2016 11:55:54 AM LoggingLevelManipulation
+Jul 27, 2016 10:50:42 AM LoggingLevelManipulation
 printLogMessages
 WARNING: com.mindviewinc.test Warning
-Jul 22, 2016 11:55:54 AM LoggingLevelManipulation
+Jul 27, 2016 10:50:42 AM LoggingLevelManipulation
 printLogMessages
 SEVERE: com.mindviewinc.test Severe
-Jul 22, 2016 11:55:54 AM LoggingLevelManipulation
+Jul 27, 2016 10:50:42 AM LoggingLevelManipulation
 printLogMessages
 INFO: random Info
-Jul 22, 2016 11:55:54 AM LoggingLevelManipulation
+Jul 27, 2016 10:50:42 AM LoggingLevelManipulation
 printLogMessages
 WARNING: random Warning
-Jul 22, 2016 11:55:54 AM LoggingLevelManipulation
+Jul 27, 2016 10:50:42 AM LoggingLevelManipulation
 printLogMessages
 SEVERE: random Severe
-Jul 22, 2016 11:55:54 AM LoggingLevelManipulation
+Jul 27, 2016 10:50:42 AM LoggingLevelManipulation
 printLogMessages
 INFO: com Info
-Jul 22, 2016 11:55:54 AM LoggingLevelManipulation
+Jul 27, 2016 10:50:42 AM LoggingLevelManipulation
 printLogMessages
 WARNING: com Warning
-Jul 22, 2016 11:55:54 AM LoggingLevelManipulation
+Jul 27, 2016 10:50:42 AM LoggingLevelManipulation
 printLogMessages
 SEVERE: com Severe
-Jul 22, 2016 11:55:54 AM LoggingLevelManipulation
+Jul 27, 2016 10:50:42 AM LoggingLevelManipulation
 printLogMessages
 INFO: com.mindviewinc Info
-Jul 22, 2016 11:55:54 AM LoggingLevelManipulation
+Jul 27, 2016 10:50:42 AM LoggingLevelManipulation
 printLogMessages
 WARNING: com.mindviewinc Warning
-Jul 22, 2016 11:55:54 AM LoggingLevelManipulation
+Jul 27, 2016 10:50:42 AM LoggingLevelManipulation
 printLogMessages
 SEVERE: com.mindviewinc Severe
-Jul 22, 2016 11:55:54 AM LoggingLevelManipulation
+Jul 27, 2016 10:50:42 AM LoggingLevelManipulation
 printLogMessages
 INFO: onjava Info
-Jul 22, 2016 11:55:54 AM LoggingLevelManipulation
+Jul 27, 2016 10:50:42 AM LoggingLevelManipulation
 printLogMessages
 WARNING: onjava Warning
-Jul 22, 2016 11:55:54 AM LoggingLevelManipulation
+Jul 27, 2016 10:50:42 AM LoggingLevelManipulation
 printLogMessages
 SEVERE: onjava Severe
-Jul 22, 2016 11:55:54 AM LoggingLevelManipulation
+Jul 27, 2016 10:50:42 AM LoggingLevelManipulation
 printLogMessages
 INFO: com.mindviewinc.test Info
-Jul 22, 2016 11:55:54 AM LoggingLevelManipulation
+Jul 27, 2016 10:50:42 AM LoggingLevelManipulation
 printLogMessages
 WARNING: com.mindviewinc.test Warning
-Jul 22, 2016 11:55:54 AM LoggingLevelManipulation
+Jul 27, 2016 10:50:42 AM LoggingLevelManipulation
 printLogMessages
 SEVERE: com.mindviewinc.test Severe
-Jul 22, 2016 11:55:54 AM LoggingLevelManipulation
+Jul 27, 2016 10:50:42 AM LoggingLevelManipulation
 printLogMessages
 INFO: random Info
-Jul 22, 2016 11:55:54 AM LoggingLevelManipulation
+Jul 27, 2016 10:50:42 AM LoggingLevelManipulation
 printLogMessages
 WARNING: random Warning
-Jul 22, 2016 11:55:54 AM LoggingLevelManipulation
+Jul 27, 2016 10:50:42 AM LoggingLevelManipulation
 printLogMessages
 SEVERE: random Severe
 */

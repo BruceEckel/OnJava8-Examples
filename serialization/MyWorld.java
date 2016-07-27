@@ -69,16 +69,16 @@ animals: [Bosco the dog[Animal@1db9742], House@106d69c
 , Ralph the hamster[Animal@52e922], House@106d69c
 , Molly the cat[Animal@25154f], House@106d69c
 ]
-animals1: [Bosco the dog[Animal@10bedb4], House@103dbd3
-, Ralph the hamster[Animal@167cf4d], House@103dbd3
-, Molly the cat[Animal@a987ac], House@103dbd3
+animals1: [Bosco the dog[Animal@1a4f24f], House@19a45b3
+, Ralph the hamster[Animal@99a589], House@19a45b3
+, Molly the cat[Animal@372a00], House@19a45b3
 ]
-animals2: [Bosco the dog[Animal@10bedb4], House@103dbd3
-, Ralph the hamster[Animal@167cf4d], House@103dbd3
-, Molly the cat[Animal@a987ac], House@103dbd3
+animals2: [Bosco the dog[Animal@1a4f24f], House@19a45b3
+, Ralph the hamster[Animal@99a589], House@19a45b3
+, Molly the cat[Animal@372a00], House@19a45b3
 ]
-animals3: [Bosco the dog[Animal@a3a380], House@1453f44
-, Ralph the hamster[Animal@ad8086], House@1453f44
-, Molly the cat[Animal@be858], House@1453f44
+animals3: [Bosco the dog[Animal@dd8dc3], House@103e736
+, Ralph the hamster[Animal@8db2f2], House@103e736
+, Molly the cat[Animal@18bf509], House@103e736
 ]
 */

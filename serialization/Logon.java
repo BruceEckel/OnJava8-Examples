@@ -42,11 +42,11 @@ public class Logon implements Serializable {
 /* Output:
 logon a = logon info:
    username: Hulk
-   date: Fri Jul 22 11:56:03 MDT 2016
+   date: Wed Jul 27 10:50:53 MDT 2016
    password: myLittlePony
-Recovering object at Fri Jul 22 11:56:04 MDT 2016
+Recovering object at Wed Jul 27 10:50:55 MDT 2016
 logon a = logon info:
    username: Hulk
-   date: Fri Jul 22 11:56:03 MDT 2016
+   date: Wed Jul 27 10:50:53 MDT 2016
    password: null
 */

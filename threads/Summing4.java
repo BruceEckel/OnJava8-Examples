@@ -16,5 +16,5 @@ public class Summing4 {
 }
 /* Output:
 50000005000000
-Long Parallel: 978ms
+Long Parallel: 1014ms
 */

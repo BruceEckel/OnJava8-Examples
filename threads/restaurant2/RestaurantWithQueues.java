@@ -218,14 +218,14 @@ Customer 0 eating LENTILS
 WaitPerson 0 received SPRING_ROLLS delivering to Customer 3
 Customer 3 eating SPRING_ROLLS
 ...________...________...________...________...
-WaitPerson 0  off duty
+WaitPerson 2  off duty
+Customer 33 finished meal, leaving
+Customer 18 finished meal, leaving
+Customer 35 finished meal, leaving
 Customer 46 finished meal, leaving
-Customer 37 finished meal, leaving
-Customer 31 finished meal, leaving
-Customer 1 finished meal, leaving
-Customer 3 finished meal, leaving
-Customer 17 finished meal, leaving
-Customer 12 finished meal, leaving
-Customer 4 finished meal, leaving
-Customer 7 finished meal, leaving
+WaitPerson 4  off duty
+Customer 24 finished meal, leaving
+Customer 30 finished meal, leaving
+Customer 34 finished meal, leaving
+Customer 48 finished meal, leaving
 */

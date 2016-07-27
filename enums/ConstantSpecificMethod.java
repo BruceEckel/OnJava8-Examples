@@ -32,8 +32,8 @@ public enum ConstantSpecificMethod {
   }
 }
 /* Output:
-Jul 22, 2016
+Jul 27, 2016
 C:\Users\Bruce\Documents\GitHub\on-
 java\ExtractedExamples\\gradle\wrapper\gradle-wrapper.jar
-1.8.0_77
+1.8.0_102
 */

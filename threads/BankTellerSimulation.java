@@ -204,15 +204,15 @@ public class BankTellerSimulation {
 [552][727][998][902][769][373][313][683][177][526] { T3 T2
 T1 T0 }
 TellerManager interrupted
+Teller 3 interrupted
+CustomerSupplier interrupted
+Teller 3 terminating
+Teller 2 interrupted
+Teller 2 terminating
+TellerManager terminating
+Teller 1 interrupted
 Teller 0 interrupted
 Teller 0 terminating
-Teller 1 interrupted
-Teller 3 interrupted
-Teller 2 interrupted
-CustomerSupplier interrupted
-CustomerSupplier terminating
-Teller 2 terminating
-Teller 3 terminating
 Teller 1 terminating
-TellerManager terminating
+CustomerSupplier terminating
 */

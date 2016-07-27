@@ -47,4 +47,7 @@ deleting test\bar\baz\bag\foo\File.txt
 evt.context(): File.txt
 evt.count(): 1
 evt.kind(): ENTRY_DELETE
+evt.context(): File.txt
+evt.count(): 1
+evt.kind(): ENTRY_DELETE
 */

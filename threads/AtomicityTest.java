@@ -29,5 +29,5 @@ public class AtomicityTest implements Runnable {
   }
 }
 /* Output:
-5
+1
 */

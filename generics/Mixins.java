@@ -64,6 +64,6 @@ public class Mixins {
   }
 }
 /* Output:
-test string 1 1469210158525 1
-test string 2 1469210158525 2
+test string 1 1469638250315 1
+test string 2 1469638250317 2
 */

@@ -181,22 +181,22 @@ Turning on lights
 Turning off lights
 ...________...________...________...________...
 Terminating
-Fri Jul 22 12:00:00 MDT 2016 temperature: 66.3 humidity:
+Wed Jul 27 11:00:00 MDT 2016 temperature: 66.3 humidity:
 50.20
-Fri Jul 22 12:30:00 MDT 2016 temperature: 67.3 humidity:
+Wed Jul 27 11:30:00 MDT 2016 temperature: 67.3 humidity:
 51.02
-Fri Jul 22 13:00:00 MDT 2016 temperature: 68.8 humidity:
+Wed Jul 27 12:00:00 MDT 2016 temperature: 68.8 humidity:
 51.82
-Fri Jul 22 13:30:00 MDT 2016 temperature: 70.0 humidity:
+Wed Jul 27 12:30:00 MDT 2016 temperature: 70.0 humidity:
 52.19
-Fri Jul 22 14:00:00 MDT 2016 temperature: 71.5 humidity:
+Wed Jul 27 13:00:00 MDT 2016 temperature: 71.5 humidity:
 52.99
-Fri Jul 22 14:30:00 MDT 2016 temperature: 73.0 humidity:
+Wed Jul 27 13:30:00 MDT 2016 temperature: 73.0 humidity:
 53.32
-Fri Jul 22 15:00:00 MDT 2016 temperature: 74.4 humidity:
+Wed Jul 27 14:00:00 MDT 2016 temperature: 74.4 humidity:
 53.99
-Fri Jul 22 15:30:00 MDT 2016 temperature: 75.5 humidity:
+Wed Jul 27 14:30:00 MDT 2016 temperature: 75.5 humidity:
 54.40
-Fri Jul 22 16:00:00 MDT 2016 temperature: 76.8 humidity:
+Wed Jul 27 15:00:00 MDT 2016 temperature: 76.8 humidity:
 53.96
 */

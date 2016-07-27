@@ -54,7 +54,7 @@ run() by Thread-1
 eh = MyUncaughtExceptionHandler@d93b30
 HandlerThreadFactory@14991ad creating new Thread
 created Thread[Thread-2,5,main]
-eh = MyUncaughtExceptionHandler@28e402
+eh = MyUncaughtExceptionHandler@1351c58
 caught java.lang.RuntimeException
 TimedAbort 4
 */
