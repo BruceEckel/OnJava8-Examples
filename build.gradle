@@ -41,7 +41,7 @@ class Tags {
         errorOutputExpected = hasTag('ErrorOutputExpected')
         validateByHand = hasTag('ValidateByHand')
         ignoreOutput = hasTag('IgnoreOutput')
-        javap = extract('javap') # Includes only arguments to command
+        javap = extract('javap') // Includes only arguments to command
         runFirst = extract('RunFirst:')
         lines.each {
             if(it =~ /\\/* Output:/) {
