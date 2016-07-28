@@ -4,7 +4,7 @@
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // Demonstrates performance differences in Lists
 // Small to keep build testing short:
-// {Args: 100 500}
+// {java ListPerformance 100 500}
 import java.util.*;
 import onjava.*;
 

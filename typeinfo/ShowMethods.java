@@ -4,7 +4,7 @@
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // Using reflection to show all the methods of a class,
 // even if the methods are defined in the base class
-// {Args: ShowMethods}
+// {java ShowMethods ShowMethods}
 import java.lang.reflect.*;
 import java.util.regex.*;
 

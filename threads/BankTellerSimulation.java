@@ -3,7 +3,7 @@
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // Using queues and multithreading
-// {Args: 5}
+// {java BankTellerSimulation 5}
 import java.util.concurrent.*;
 import java.util.*;
 

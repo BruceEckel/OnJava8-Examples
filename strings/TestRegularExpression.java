@@ -3,7 +3,8 @@
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // Simple regular expression demonstration
-// {Args: abcabcabcdefabc "abc+" "(abc)+" }
+// {java TestRegularExpression
+// abcabcabcdefabc "abc+" "(abc)+" }
 import java.util.regex.*;
 
 public class TestRegularExpression {

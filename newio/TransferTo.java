@@ -3,7 +3,7 @@
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // Using transferTo() between channels
-// {Args: TransferTo.java TransferTo.txt}
+// {java TransferTo TransferTo.java TransferTo.txt}
 import java.nio.channels.*;
 import java.io.*;
 

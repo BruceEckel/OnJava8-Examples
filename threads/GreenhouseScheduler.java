@@ -4,7 +4,7 @@
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // Rewriting innerclasses/GreenhouseController.java
 // to use a ScheduledThreadPoolExecutor
-// {Args: 5000}
+// {java GreenhouseScheduler 5000}
 import java.util.concurrent.*;
 import java.util.*;
 

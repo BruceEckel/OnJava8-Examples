@@ -3,7 +3,7 @@
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // Copying a file using channels and buffers
-// {Args: ChannelCopy.java test.txt}
+// {java ChannelCopy ChannelCopy.java test.txt}
 import java.nio.*;
 import java.nio.channels.*;
 import java.io.*;

@@ -4,7 +4,7 @@
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // Operations that might seem safe are not,
 // when threads are present
-// {Args: 4}
+// {java SerialNumberChecker 4}
 import java.util.concurrent.*;
 
 // Reuses storage so we don't run out of memory:

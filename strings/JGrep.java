@@ -3,7 +3,8 @@
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // A very simple version of the "grep" program
-// {Args: WhitherStringBuilder.java 'return|for|String'}
+// {java JGrep
+// WhitherStringBuilder.java 'return|for|String'}
 import java.util.regex.*;
 import java.nio.file.*;
 import java.util.stream.*;

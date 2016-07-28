@@ -4,7 +4,7 @@
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // Demonstrates performance differences in Maps
 // Small to keep build testing short:
-// {Args: 100 5000}
+// {java MapPerformance 100 5000}
 import java.util.*;
 
 public class MapPerformance {

@@ -3,7 +3,7 @@
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // Dining philosophers without deadlock
-// {Args: 5 5 timeout}
+// {java FixedDiningPhilosophers 5 5 timeout}
 import java.util.concurrent.*;
 
 public class FixedDiningPhilosophers {

@@ -4,7 +4,7 @@
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // Non-informative style of assert
 // Must run with -ea:
-// {JVMArgs: -ea}
+// {java -ea Assert1}
 // {ThrowsException}
 
 public class Assert1 {

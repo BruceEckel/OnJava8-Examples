@@ -3,7 +3,7 @@
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // Demonstrates how deadlock can be hidden in a program
-// {Args: 0 5 timeout}
+// {java DeadlockingDiningPhilosophers 0 5 timeout}
 import java.util.concurrent.*;
 
 public class DeadlockingDiningPhilosophers {

@@ -3,7 +3,7 @@
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // Configure and execute the greenhouse system
-// {Args: 5000}
+// {java GreenhouseController 5000}
 import innerclasses.controller.*;
 
 public class GreenhouseController {

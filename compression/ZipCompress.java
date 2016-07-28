@@ -4,7 +4,7 @@
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // Uses Zip compression to compress any
 // number of files given on the command line
-// {Args: ZipCompress.java}
+// {java ZipCompress ZipCompress.java}
 // {ValidateByHand}
 import java.util.zip.*;
 import java.io.*;

@@ -41,12 +41,6 @@ class Tags {
         errorOutputExpected = hasTag('ErrorOutputExpected')
         validateByHand = hasTag('ValidateByHand')
         ignoreOutput = hasTag('IgnoreOutput')
-        def argString = extract('Args:')
-        if(argString)
-            args = argString.split(' ')
-        def jvmArgString = extract('JVMArgs:')
-        if(jvmArgString)
-            jVMArgs = jvmArgString.split(' ')
         exec = extract('Exec:')
         runFirst = extract('RunFirst:')
         lines.each {
