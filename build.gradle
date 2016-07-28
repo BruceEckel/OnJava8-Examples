@@ -3,7 +3,7 @@ import org.apache.tools.ant.util.TeeOutputStream
 boolean debug = false
 
 class Tags {
-    Boolean mainMethod = false
+    Boolean hasMainMethod = false
     Boolean compileTimeError = false
     Boolean throwsException = false
     Boolean errorOutputExpected = false
@@ -22,20 +22,25 @@ class Tags {
     def Tags(List<String> lines) {
         this.lines = lines
         block = lines.join('')
-        mainMethod = block.contains('main(String[] args)')
+        hasMainMethod = block.contains('main(String[] args)')
         fileRoot = lines[0].split("/")[-1] - ".java"
         mainClass = fileRoot
         javaCmd = extract('java')
         if(javaCmd) {
-            mainClass = javaCmd
-            println("fileRoot: " + fileRoot)
-            println("mainClass: " + mainClass)
+            def pieces = javaCmd.split()
+            mainClass = pieces[0]
+            if(pieces.size() > 1)
+                for(p in pieces[1..-1])
+                    if(p.startsWith("-"))
+                        jVMArgs << p
+                    else
+                        args << p
         }
-        compileTimeError = testFor('CompileTimeError')
-        throwsException = testFor('ThrowsException')
-        errorOutputExpected = testFor('ErrorOutputExpected')
-        validateByHand = testFor('ValidateByHand')
-        ignoreOutput = testFor('IgnoreOutput')
+        compileTimeError = hasTag('CompileTimeError')
+        throwsException = hasTag('ThrowsException')
+        errorOutputExpected = hasTag('ErrorOutputExpected')
+        validateByHand = hasTag('ValidateByHand')
+        ignoreOutput = hasTag('IgnoreOutput')
         def argString = extract('Args:')
         if(argString)
             args = argString.split(' ')
@@ -50,7 +55,7 @@ class Tags {
             }
         }
     }
-    private def testFor(String marker) {
+    private def hasTag(String marker) {
         return block.contains("// {" + marker + "}")
     }
     private def extract(String marker) {
@@ -89,7 +94,7 @@ class Tags {
             else
                 break
         """
-        mainMethod
+        hasMainMethod
         compileTimeError
         throwsException
         errorOutputExpected
@@ -139,7 +144,7 @@ subprojects {
             if(debug && tags.hasTags()) println tags
 
             // Add tasks for java sources with main methods
-            if ((tags.mainMethod || tags.javaCmd) && (!tags.compileTimeError)) {
+            if ((tags.hasMainMethod || tags.javaCmd) && (!tags.compileTimeError)) {
 
                 if (!tags.validateByHand) {
                     // Only add tasks that we know we can run successfully to the task list

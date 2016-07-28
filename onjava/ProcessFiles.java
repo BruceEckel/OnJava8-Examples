@@ -3,7 +3,7 @@
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // {ValidateByHand}
-// {main: onjava.ProcessFiles}
+// {java onjava.ProcessFiles}
 package onjava;
 import java.io.*;
 import java.nio.file.*;

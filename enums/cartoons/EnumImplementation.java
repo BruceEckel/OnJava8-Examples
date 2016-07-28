@@ -3,7 +3,7 @@
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // An enum can implement an interface
-// {main: enums.cartoons.EnumImplementation}
+// {java enums.cartoons.EnumImplementation}
 package enums.cartoons;
 import java.util.*;
 import java.util.function.*;

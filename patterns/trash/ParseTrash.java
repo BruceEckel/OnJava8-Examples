@@ -4,7 +4,7 @@
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // Open a file and parse its contents into
 // Trash objects, placing each into a List
-// {main: patterns.trash.ParseTrash}
+// {java patterns.trash.ParseTrash}
 package patterns.trash;
 import java.util.*;
 import java.util.stream.*;

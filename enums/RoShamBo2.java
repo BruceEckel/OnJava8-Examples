@@ -3,7 +3,7 @@
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // Switching one enum on another
-// {main: enums.RoShamBo2}
+// {java enums.RoShamBo2}
 package enums;
 import static enums.Outcome.*;
 

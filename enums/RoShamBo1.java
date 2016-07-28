@@ -3,7 +3,7 @@
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // Demonstration of multiple dispatching
-// {main: enums.RoShamBo1}
+// {java enums.RoShamBo1}
 package enums;
 import java.util.*;
 import static enums.Outcome.*;

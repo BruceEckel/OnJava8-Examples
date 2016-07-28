@@ -3,7 +3,7 @@
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // Speaking pets in Java
-// {main: staticchecking.petspeak.PetSpeak}
+// {java staticchecking.petspeak.PetSpeak}
 package staticchecking.petspeak;
 
 interface Pet {

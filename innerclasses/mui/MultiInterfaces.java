@@ -3,7 +3,7 @@
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // Two ways that a class can implement multiple interfaces
-// {main: innerclasses.mui.MultiInterfaces}
+// {java innerclasses.mui.MultiInterfaces}
 package innerclasses.mui;
 
 interface A {}

@@ -3,7 +3,7 @@
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // Multiple dispatching using an EnumMap of EnumMaps
-// {main: enums.RoShamBo5}
+// {java enums.RoShamBo5}
 package enums;
 import java.util.*;
 import static enums.Outcome.*;

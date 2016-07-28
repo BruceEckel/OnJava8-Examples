@@ -4,7 +4,7 @@
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // For concrete or abstract classes, inner classes
 // produce "multiple implementation inheritance"
-// {main: innerclasses.MultiImplementation}
+// {java innerclasses.MultiImplementation}
 package innerclasses;
 
 class D {}

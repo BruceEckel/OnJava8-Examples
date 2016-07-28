@@ -102,17 +102,18 @@ def no_match(input_text): return True
 
 # Chain of responsibility:
 strategies = [
-    # Filter                               Retain result for rest of chain
-    (exact_match,                           False),
-    (ignore_dates,                          True ),
-    (ignore_memory_addresses,               True ),
-    (sort_lines,                            False),
-    (ignore_digits,                         False),
-    (sort_words,                            False),
-    (unique_lines,                          False),
-    (unique_words,                          False),
-    (words_only,                            False),
-    (no_match,                              False),
+    # Filter                  # Retain result
+                              # for rest of chain
+    (exact_match,               False),
+    (ignore_dates,              True),
+    (ignore_memory_addresses,   True),
+    (sort_lines,                False),
+    (ignore_digits,             False),
+    (sort_words,                False),
+    (unique_lines,              False),
+    (unique_words,              False),
+    (words_only,                False),
+    (no_match,                  False),
 ]
 
 
@@ -142,8 +143,8 @@ class Validator(defaultdict): # Map of lists
                 with Validator.compare_output.open('a') as batch:
                     batch.write("subl " + str(tfile) + "\n")
                 with tfile.open('w') as trace_file:
-                    trace_file.write(str(embedded_output) + "\n\n")
-                    trace_file.write("=== Actual ===\n\n")
+                    trace_file.write(javafile.read_text() + "\n\n")
+                    trace_file.write("// === Actual ===\n\n")
                     trace_file.write(str(generated_output))
                 return
             if retain:

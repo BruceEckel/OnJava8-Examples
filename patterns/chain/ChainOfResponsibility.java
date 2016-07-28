@@ -3,7 +3,7 @@
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // Using the Functional interface
-// {main: patterns.chain.ChainOfResponsibility}
+// {java patterns.chain.ChainOfResponsibility}
 package patterns.chain;
 import java.util.*;
 import java.util.function.*;

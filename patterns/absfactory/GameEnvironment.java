@@ -3,7 +3,7 @@
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // An example of the Abstract Factory pattern
-// {main: patterns.absfactory.GameEnvironment}
+// {java patterns.absfactory.GameEnvironment}
 package patterns.absfactory;
 import java.util.function.*;
 

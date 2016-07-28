@@ -3,8 +3,8 @@
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // Creating non-embedded tests
-// {main: onjava.atunit.AtUnit}
-// {Args: build/classes/main/annotations/AtUnitComposition.class}
+// {java onjava.atunit.AtUnit
+// build/classes/main/annotations/AtUnitComposition.class}
 package annotations;
 import onjava.atunit.*;
 import onjava.*;

@@ -4,7 +4,7 @@
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // Demonstration of Observer pattern using
 // Java's built-in observer classes
-// {main: patterns.visualobserver.BoxObserver}
+// {java patterns.visualobserver.BoxObserver}
 package patterns.visualobserver;
 import javax.swing.*;
 import java.awt.*;

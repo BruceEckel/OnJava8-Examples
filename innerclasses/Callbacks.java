@@ -3,7 +3,7 @@
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // Using inner classes for callbacks
-// {main: innerclasses.Callbacks}
+// {java innerclasses.Callbacks}
 package innerclasses;
 
 interface Incrementable {

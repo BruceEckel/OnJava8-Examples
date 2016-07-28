@@ -5,7 +5,7 @@
 // Using a Map of Lists and RTTI to automatically
 // sort trash into Lists. This solution, despite
 // the use of RTTI, is extensible.
-// {main: patterns.dynatrash.DynaTrash}
+// {java patterns.dynatrash.DynaTrash}
 package patterns.dynatrash;
 import patterns.trash.*;
 import java.util.*;

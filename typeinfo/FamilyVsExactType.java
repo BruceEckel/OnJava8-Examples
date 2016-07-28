@@ -3,7 +3,7 @@
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // The difference between instanceof and class
-// {main: typeinfo.FamilyVsExactType}
+// {java typeinfo.FamilyVsExactType}
 package typeinfo;
 
 class Base {}

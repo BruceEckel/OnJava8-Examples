@@ -3,7 +3,7 @@
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // Overloading instead of upcasting
-// {main: polymorphism.music.Music2}
+// {java polymorphism.music.Music2}
 package polymorphism.music;
 
 class Stringed extends Instrument {
