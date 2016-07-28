@@ -14,7 +14,7 @@ class Tags {
     String javaCmd = null
     List<String> args = []
     List<String> jVMArgs = []
-    String exec = null
+    String javap = null
     String runFirst = null
     String outputLine = null
     private List<String> lines
@@ -41,7 +41,7 @@ class Tags {
         errorOutputExpected = hasTag('ErrorOutputExpected')
         validateByHand = hasTag('ValidateByHand')
         ignoreOutput = hasTag('IgnoreOutput')
-        exec = extract('Exec:')
+        javap = extract('javap') # Includes only arguments to command
         runFirst = extract('RunFirst:')
         lines.each {
             if(it =~ /\\/* Output:/) {
@@ -77,7 +77,7 @@ class Tags {
         javaCmd ||
         args ||
         jVMArgs ||
-        exec ||
+        javap ||
         runFirst
     }
     public String toString() {
@@ -99,7 +99,7 @@ class Tags {
         javaCmd
         args
         jVMArgs
-        exec
+        javap
         runFirst
         """.split().each { str ->
             if(this[str])
