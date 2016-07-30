@@ -1,5 +1,4 @@
 import org.apache.tools.ant.util.TeeOutputStream
-// TODO: test for tags that span multiple lines
 boolean debug = false
 
 class Tags {
@@ -136,7 +135,7 @@ subprojects {
 
             Tags tags = new Tags(it.readLines())
             if(debug && tags.hasTags()) println tags
-
+            if(tags.javap) return  // TEMPORARILY IGNORE JAVAP FILES UNTIL PROBLEM FIXED
             // Add tasks for java sources with main methods
             if ((tags.hasMainMethod || tags.javaCmd) && (!tags.compileTimeError)) {
 
