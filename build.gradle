@@ -140,7 +140,7 @@ subprojects {
 
             // Exclude java sources that will not compile
             if (tags.compileTimeError) {
-                sourceSets.main.java.excludes.add(it.name)
+                sourceSets.main.java.excludes.add(file.name)
             } else {
                 JavaExec javaTask = null
                 // Add tasks for java sources with main methods
