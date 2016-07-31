@@ -1,6 +1,7 @@
+import org.gradle.internal.jvm.Jvm
 import org.apache.tools.ant.util.TeeOutputStream
 // TODO: test for tags that span multiple lines
-boolean debug = false
+boolean debug = false 
 
 class Tags {
     Boolean hasMainMethod = false
@@ -17,13 +18,12 @@ class Tags {
     String javap = null
     String runFirst = null
     String outputLine = null
-    private List<String> lines
     private String block
-    def Tags(List<String> lines) {
-        this.lines = lines
-        block = lines.join('')
+    def Tags(File file) {
+        block = file.text
         hasMainMethod = block.contains('main(String[] args)')
-        fileRoot = lines[0].split("/")[-1] - ".java"
+        def firstLine = block.substring(0, block.indexOf("\n"))
+        fileRoot = firstLine.split("/")[-1] - ".java"
         mainClass = fileRoot
         javaCmd = extract('java')
         if(javaCmd) {
@@ -43,27 +43,30 @@ class Tags {
         ignoreOutput = hasTag('IgnoreOutput')
         javap = extract('javap') // Includes only arguments to command
         runFirst = extract('RunFirst:')
-        lines.each {
-            if(it =~ /\\/* Output:/) {
-                outputLine = it.trim()
-            }
-        }
+        outputLine = extractOutputLine()
     }
     private def hasTag(String marker) {
         return block.contains("// {" + marker + "}")
     }
-    private def extract(String marker) {
-        if(!block.contains("// {" + marker))
+
+    def extractOutputLine() {
+        if (!block.contains("/* Output:")) {
             return null
-        def re = "\\/\\/ \\{" + marker + /[^}]+}/
-        def tagline = block =~ re
-        if(tagline.getCount()) {
-            def rtrim = tagline[0].reverse().dropWhile{ it != '}'}.reverse()[0..-2]
-            def ltrim = rtrim - ("// {" + marker)
-            ltrim = ltrim.replaceAll("//", " ")
-            return ltrim.trim()
         } else {
-            println "Searching for: " + re
+            return "/* Output:"
+        }
+    }
+
+    private def extract(String marker) {
+        // Assume some whitespace is after marker
+        if(!block.contains("// {${marker} "))
+            return null
+        def matcher = (block =~ /\/\/ \{${marker}\s+([^}]+)/)
+        if (matcher) {
+            def matched = matcher[0][1].trim()
+            return matched.replaceAll("\n?//", "")
+        } else {
+            println "Searching for: " + matcher
             println block
             System.exit(1)
         }
@@ -82,11 +85,10 @@ class Tags {
     }
     public String toString() {
         String result = ""
-        for(ln in lines)
+        block.eachLine{ ln ->
             if(ln.startsWith("//") || ln.startsWith("package "))
                 result += ln + "\n"
-            else
-                break
+        }
         """
         hasMainMethod
         compileTimeError
@@ -129,57 +131,72 @@ subprojects {
         }
     }
 
-    List tasks = []
+    List createdTasks = []
 
-    projectDir.eachFileRecurse {
-        if (it.name.endsWith('.java')) {
+    projectDir.eachFileRecurse { file ->
+        if (file.name.endsWith('.java')) {
 
-            Tags tags = new Tags(it.readLines())
+            Tags tags = new Tags(file)
             if(debug && tags.hasTags()) println tags
 
-            // Add tasks for java sources with main methods
-            if ((tags.hasMainMethod || tags.javaCmd) && (!tags.compileTimeError)) {
-
-                if (!tags.validateByHand) {
-                    // Only add tasks that we know we can run successfully to the task list
-                    tasks.add(tags.fileRoot)
-                }
-
-                String basePath = it.absolutePath.replaceAll('\\.java', '')
-                File outFile = new File(basePath + '.out')
-                File errFile = new File(basePath + '.err')
-
-                task "$tags.fileRoot"(type: JavaExec, dependsOn: tags.runFirst) {
-                    main = tags.mainClass
-                    classpath = sourceSets.main.runtimeClasspath
-                    args = tags.args
-                    jvmArgs = tags.jVMArgs
-                    ignoreExitValue = tags.validateByHand || tags.throwsException
-                    doFirst {
-                        if(outFile.exists())
-                            outFile.delete()
-                        if(tags.outputLine)
-                            outFile << tags.outputLine + "\n"
-
-                        standardOutput = new TeeOutputStream(new FileOutputStream(outFile, true), System.out)
-                        errorOutput = new TeeOutputStream(new FileOutputStream(errFile), System.err)
-                    }
-                    doLast {
-                        if(outFile.size() == 0)
-                            outFile.delete()
-                        else if(!outFile.text.contains("/* Output:"))
-                            outFile.delete()
-                        if(errFile.size() == 0) errFile.delete()
-                    }
-                }
-            }
             // Exclude java sources that will not compile
             if (tags.compileTimeError) {
                 sourceSets.main.java.excludes.add(it.name)
+            } else {
+                JavaExec javaTask = null
+                // Add tasks for java sources with main methods
+                if (tags.hasMainMethod || tags.javaCmd) {
+
+                    javaTask = tasks.create(name: tags.fileRoot, type: JavaExec, dependsOn: tags.runFirst) {
+                        main = tags.mainClass
+                        classpath = sourceSets.main.runtimeClasspath
+                        args = tags.args
+                        jvmArgs = tags.jVMArgs
+                    }
+                } else if (tags.javap) {
+                    // Create task for running javap
+                    javaTask = tasks.create(name: "${tags.fileRoot}", type: JavaExec, dependsOn: tags.runFirst) {
+                        main = "com.sun.tools.javap.Main"
+                        classpath = sourceSets.main.runtimeClasspath + files(Jvm.current().toolsJar)
+                        // Assuming javap represents all the args and there's no need to jVMArgs
+                        args tags.javap.split()
+                    }
+                }
+
+                if (javaTask) {
+                    def baseName = file.name.substring(0, file.name.lastIndexOf('.'))
+                    File outFile = new File(file.parentFile, baseName + '.out')
+                    File errFile = new File(file.parentFile, baseName + '.err')
+
+                    javaTask.configure {
+                        ignoreExitValue = tags.validateByHand || tags.throwsException
+                        doFirst {
+                            if(outFile.exists())
+                                outFile.delete()
+                            if(tags.outputLine)
+                                outFile << tags.outputLine + "\n"
+
+                            standardOutput = new TeeOutputStream(new FileOutputStream(outFile, true), System.out)
+                            errorOutput = new TeeOutputStream(new FileOutputStream(errFile), System.err)
+                        }
+                        doLast {
+                            if(outFile.size() == 0)
+                                outFile.delete()
+                            else if(!outFile.text.contains("/* Output:"))
+                                outFile.delete()
+                            if(errFile.size() == 0) errFile.delete()
+                       }
+                    }
+
+                    if (!tags.validateByHand) {
+                        // Only add tasks that we know we can run successfully to the task list
+                        createdTasks.add(javaTask)
+                    }
+                }
             }
         }
     }
-    task run(dependsOn: tasks)
+    task run(dependsOn: createdTasks)
 }
 
 configure(subprojects - project(':onjava')) {
