@@ -1,6 +1,5 @@
 import org.gradle.internal.jvm.Jvm
 import org.apache.tools.ant.util.TeeOutputStream
-// TODO: test for tags that span multiple lines
 boolean debug = false 
 
 class Tags {
