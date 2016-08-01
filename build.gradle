@@ -49,10 +49,11 @@ class Tags {
     }
 
     def extractOutputLine() {
-        if (!block.contains("/* Output:")) {
-            return null
+        def matcher = (block =~ /(?m)^(\/\* Output:.*)$/)
+        if (matcher) {
+            return matcher[0][1]
         } else {
-            return "/* Output:"
+            return null
         }
     }
 
