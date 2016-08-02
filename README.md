@@ -18,3 +18,16 @@ To compile only a single chapter (including dependencies), use for example:
 To run only a single chapter, say:
 
 `gradlew :strings:run`
+
+Gradle can also be used to run a single program. Here, we run the **ReplacingStringTokenizer.java**
+program in the **strings** chapter subdirectory:
+
+`gradlew  :strings:ReplacingStringTokenizer`
+
+However, if the file name is unique throughout the book (the majority are), you can just give the
+program name, like this:
+
+`gradlew  ReplacingStringTokenizer`
+
+Note that all these commands are run from the base directory where the example code is installed, and where you find the
+`gradlew` script.
