@@ -31,3 +31,5 @@ program name, like this:
 
 Note that all these commands are run from the base directory where the example code is installed, and where you find the
 `gradlew` script.
+
+You can learn about other options by just typing `gradlew` with no arguments.
