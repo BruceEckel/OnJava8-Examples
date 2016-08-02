@@ -22,7 +22,7 @@ class Tags {
         block = file.text
         hasMainMethod = block.contains('main(String[] args)')
         def firstLine = block.substring(0, block.indexOf("\n"))
-        fileRoot = firstLine.split("/")[-1] - ".java"
+        fileRoot = (firstLine.split("/")[-1] - ".java").trim() // Remove \r if it exists
         mainClass = fileRoot
         javaCmd = extract('java')
         if(javaCmd) {
