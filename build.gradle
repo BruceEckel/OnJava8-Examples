@@ -1,3 +1,15 @@
+buildscript {
+    repositories {
+        mavenLocal()
+        jcenter()
+        mavenCentral()
+    }
+}
+
+plugins {
+    id 'me.champeau.gradle.jmh' version '0.3.0'
+}
+
 import org.gradle.internal.jvm.Jvm
 import org.apache.tools.ant.util.TeeOutputStream
 boolean debug = false
@@ -111,8 +123,8 @@ class Tags {
     }
 }
 
-
 subprojects {
+    apply plugin: 'me.champeau.gradle.jmh'
     apply plugin: 'java'
 
     sourceCompatibility = '1.8'
