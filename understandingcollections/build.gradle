@@ -2,3 +2,7 @@ dependencies {
     compile project(':typeinfo')
     compile project(':collections')
 }
+
+jmh {
+    include = 'understandingcollections.jmhtests.*'
+}
