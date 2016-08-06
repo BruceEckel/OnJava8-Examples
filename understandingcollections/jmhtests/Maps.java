@@ -1,4 +1,4 @@
-// understandingcollections/jmhtests/MapPerformance.java
+// understandingcollections/jmhtests/Maps.java
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
@@ -15,11 +15,11 @@ import static java.util.concurrent.TimeUnit.*;
 @Fork(1)
 @BenchmarkMode(Mode.AverageTime)
 @OutputTimeUnit(NANOSECONDS)
-public class MapPerformance {
+public class Maps {
   private Map<Integer, Integer> map;
 
-  @Param({"hashmap", "treemap", "linkedhashmap",
-    "identityhashmap", "weakhashmap", "hashtable"})
+  @Param({"HashMap", "TreeMap", "LinkedHashMap",
+    "IdentityHashMap", "WeakHashMap", "Hashtable",})
   private String type;
 
   private int begin;
@@ -28,22 +28,22 @@ public class MapPerformance {
   @Setup
   public void setup() {
     switch(type) {
-      case "hashmap":
+      case "HashMap":
         map = new HashMap<>();
         break;
-      case "treemap":
+      case "TreeMap":
         map = new TreeMap<>();
         break;
-      case "linkedhashmap":
+      case "LinkedHashMap":
         map = new LinkedHashMap<>();
         break;
-      case "identityhashmap":
+      case "IdentityHashMap":
         map = new IdentityHashMap<>();
         break;
-      case "weakhashmap":
+      case "WeakHashMap":
         map = new WeakHashMap<>();
         break;
-      case "hashtable":
+      case "Hashtable":
         map = new Hashtable<>();
         break;
       default:
@@ -65,9 +65,9 @@ public class MapPerformance {
   }
 
   @Benchmark
-  public void put(Blackhole bh) {
+  public void put() {
     for (int i = begin; i < end; i++) {
-      bh.consume(map.put(i, i));
+      map.put(i, i);
     }
   }
 
