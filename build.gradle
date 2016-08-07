@@ -221,11 +221,11 @@ subprojects {
     task run(dependsOn: createdTasks)
 }
 
-repositories {
+/*repositories {
     mavenLocal()
     jcenter()
     mavenCentral()
-}
+}*/
 
 configure(subprojects - project(':onjava')) {
     dependencies {
