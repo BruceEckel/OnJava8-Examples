@@ -221,16 +221,10 @@ subprojects {
     task run(dependsOn: createdTasks)
 }
 
-/*repositories {
-    mavenLocal()
-    jcenter()
-    mavenCentral()
-}*/
-
 configure(subprojects - project(':onjava')) {
     dependencies {
         compile project(':onjava')
-        compile 'org.openjdk.jmh:jmh-core:1.13'
+        compile "org.openjdk.jmh:jmh-core:${jmh.jmhVersion}"
     }
 }
 
