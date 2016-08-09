@@ -1,4 +1,5 @@
 build_script:
   - gradlew.bat --parallel --stacktrace run
+  - gradlew.bat --parallel --stacktrace :understandingcollections:jmh
 
 test: off
