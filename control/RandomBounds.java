@@ -1,4 +1,4 @@
-// understandingcollections/RandomBounds.java
+// control/RandomBounds.java
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
@@ -7,16 +7,9 @@
 import onjava.*;
 
 public class RandomBounds {
-  static void usage() {
-    System.out.println("Usage:");
-    System.out.println("\tRandomBounds lower");
-    System.out.println("\tRandomBounds upper");
-    System.exit(1);
-  }
   public static void main(String[] args) {
-    if(args.length != 1) usage();
     new TimedAbort(3);
-    switch(args[0]) {
+    switch(args.length == 0 ? "" : args[0]) {
       case "lower":
         while(Math.random() != 0.0)
           ; // Keep trying
@@ -28,7 +21,10 @@ public class RandomBounds {
         System.out.println("Produced 1.0!");
         break;
       default:
-        usage();
+        System.out.println("Usage:");
+        System.out.println("\tRandomBounds lower");
+        System.out.println("\tRandomBounds upper");
+        System.exit(1);
     }
   }
 }

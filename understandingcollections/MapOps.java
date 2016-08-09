@@ -1,4 +1,4 @@
-// understandingcollections/Maps.java
+// understandingcollections/MapOps.java
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
@@ -7,7 +7,7 @@ import java.util.concurrent.*;
 import java.util.*;
 import onjava.*;
 
-public class Maps {
+public class MapOps {
   public static void printKeys(Map<Integer,String> map) {
     System.out.print("Size = " + map.size() + ", ");
     System.out.print("Keys: ");
