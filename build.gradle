@@ -225,6 +225,8 @@ configure(subprojects - project(':onjava')) {
     dependencies {
         compile project(':onjava')
         compile "org.openjdk.jmh:jmh-core:${jmh.jmhVersion}"
+        compile group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.6.2'
+        compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.6.2'
     }
 }
 
