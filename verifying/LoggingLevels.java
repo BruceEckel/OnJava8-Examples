@@ -3,35 +3,36 @@
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // {ErrorOutputExpected}
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import org.apache.logging.log4j.*;
+import org.apache.logging.log4j.spi.*;
+import org.apache.logging.log4j.core.config.Configurator;
 
 public class LoggingLevels {
   private static Logger
-  lgr = Logger.getLogger("com"),
-  lgr2 = Logger.getLogger("com.mindviewinc"),
-  util= Logger.getLogger("onjava"),
-  test= Logger.getLogger("com.mindviewinc.test"),
-  rand = Logger.getLogger("random");
+  lgr = LogManager.getLogger("com"),
+  lgr2 = LogManager.getLogger("com.mindviewinc"),
+  util= LogManager.getLogger("onjava"),
+  test= LogManager.getLogger("com.mindviewinc.test"),
+  rand = LogManager.getLogger("random");
   private static void logMessages() {
     lgr.info("com : info");
     lgr2.info("com.mindviewinc : info");
     util.info("util : info");
-    test.severe("test : severe");
+    test.fatal("test : fatal");
     rand.info("random : info");
   }
   public static void main(String[] args) {
-    lgr.setLevel(Level.SEVERE);
-    System.out.println("com level: SEVERE");
+    Configurator.setLevel("com", Level.FATAL);
+    System.out.println("com level: FATAL");
     logMessages();
-    util.setLevel(Level.FINEST);
-    test.setLevel(Level.FINEST);
-    rand.setLevel(Level.FINEST);
+    Configurator.setLevel("onjava", Level.TRACE);
+    Configurator.setLevel("com.mindviewinc.test", Level.TRACE);
+    Configurator.setLevel("random", Level.TRACE);
     System.out.println(
-        "individual loggers set to FINEST");
+        "individual loggers set to TRACE");
     logMessages();
-    lgr.setLevel(Level.SEVERE);
-    System.out.println("com level: SEVERE");
+    Configurator.setLevel("com", Level.FATAL);
+    System.out.println("com level: FATAL");
     logMessages();
   }
 }

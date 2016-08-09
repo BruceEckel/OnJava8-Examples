@@ -3,11 +3,11 @@
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // {ErrorOutputExpected}
-import java.util.logging.*;
+import org.apache.logging.log4j.*;
 
 public class InfoLogging {
-  private static Logger logger =
-    Logger.getLogger("InfoLogging");
+  private static final Logger logger =
+    LogManager.getLogger(InfoLogging.class);
   public static void main(String[] args) {
     logger.info("Logging: INFO-level message");
   }
