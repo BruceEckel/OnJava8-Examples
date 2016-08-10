@@ -221,6 +221,75 @@ subprojects {
     task run(dependsOn: createdTasks)
 }
 
+project(':verifying') {
+    dependencies {
+        compile 'junit:junit:4.12'
+    }
+}
+
+project(':understandingcollections') {
+    dependencies {
+        compile project(':typeinfo')
+        compile project(':collections')
+    }
+    jmh {
+        include = 'understandingcollections.jmhtests.*'
+    }
+}
+
+project(':threads') {
+    dependencies {
+        compile project(':enums')
+    }
+}
+
+project(':strings') {
+    dependencies {
+        compile project(':generics')
+    }
+}
+
+project(':serialization') {
+    configurations.all {
+        resolutionStrategy {
+            force 'xml-apis:xml-apis:1.0.b2'
+        }
+    }
+    dependencies {
+        compile 'com.io7m.xom:xom:1.2.10'
+    }
+}
+
+project(':references') {
+    dependencies {
+        compile 'junit:junit:4.12'
+    }
+}
+
+project(':interfaces') {
+    dependencies {
+        compile project(':polymorphism')
+    }
+}
+
+project(':hiding') {
+    dependencies {
+        compile project(':com')
+    }
+}
+
+project(':generics') {
+    dependencies {
+        compile project(':typeinfo')
+    }
+}
+
+project(':collections') {
+    dependencies {
+        compile project(':typeinfo')
+    }
+}
+
 configure(subprojects - project(':onjava')) {
     dependencies {
         compile project(':onjava')
