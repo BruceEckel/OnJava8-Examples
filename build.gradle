@@ -59,7 +59,6 @@ class Tags {
     private def hasTag(String marker) {
         return block.contains("// {" + marker + "}")
     }
-
     def extractOutputLine() {
         def matcher = (block =~ /(?m)^(\/\* Output:.*)$/)
         if (matcher) {
@@ -68,7 +67,6 @@ class Tags {
             return null
         }
     }
-
     private def extract(String marker) {
         // Assume some whitespace is after marker
         if(!block.contains("// {${marker} "))
