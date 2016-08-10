@@ -223,6 +223,9 @@ project(':verifying') {
     dependencies {
         compile 'junit:junit:4.12'
     }
+    jmh {
+        include = 'verifying.jmhtests.*'
+    }
 }
 
 project(':understandingcollections') {
