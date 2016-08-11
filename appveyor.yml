@@ -1,5 +1,5 @@
 build_script:
   - gradlew.bat --parallel --stacktrace run
-  - gradlew.bat --parallel --stacktrace :understandingcollections:jmh
+  - gradlew.bat --parallel --stacktrace :verifying:jmh
 
 test: off
