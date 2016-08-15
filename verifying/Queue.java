@@ -97,7 +97,7 @@ public class Queue {
     private int i = 0;
     public WhiteBoxTest() {
       while(i < 5) // Preload with some data
-        queue.put("" + i++);
+        queue.put(Integer.toString(i++));
     }
     // Support methods:
     private void showFullness() {
@@ -118,7 +118,7 @@ public class Queue {
       System.out.println(queue.get());
       System.out.println(queue.get());
       while(!queue.full())
-        queue.put("" + i++);
+        queue.put(Integer.toString(i++));
       String msg = "";
       try {
         queue.put("");
@@ -160,7 +160,7 @@ public class Queue {
     public void circularity() {
       System.out.println("testCircularity");
       while(!queue.full())
-        queue.put("" + i++);
+        queue.put(Integer.toString(i++));
       showFullness();
       // White-box testing accesses private field:
       assertTrue(queue.wrapped);
@@ -168,7 +168,7 @@ public class Queue {
         System.out.println(queue.get());
       showEmptiness();
       while(!queue.full())
-        queue.put("" + i++);
+        queue.put(Integer.toString(i++));
       showFullness();
       while(!queue.empty())
         System.out.println(queue.get());

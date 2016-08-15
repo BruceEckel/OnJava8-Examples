@@ -1,13 +1,11 @@
-// verifying/JUnitDemo.java
+// verifying/SimpleJUnit.java
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // Simple use of JUnit to test ArrayList
 import java.util.*;
-import org.junit.Test;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
-import static java.lang.System.out;
+import org.junit.*;
+import static org.junit.Assert.*;
 
 // So we can see the list objects being created,
 // and keep track of when they are cleaned up:
@@ -15,33 +13,28 @@ class CountedList extends ArrayList<String> {
   private static int counter = 0;
   private int id = counter++;
   public CountedList() {
-    out.println("CountedList #" + id);
+    System.out.println("CountedList #" + id);
   }
   public int getId() { return id; }
 }
 
-public class JUnitDemo {
-  private CountedList list = new CountedList();
-  // You can use the constructor instead of setUp():
-  public JUnitDemo() {
+public class SimpleJUnit {
+  private CountedList list;
+  @Before
+  public void initialize() {
+    list = new CountedList();
+    System.out.println("Set up for " + list.getId());
     for(int i = 0; i < 3; i++)
-      list.add("" + i);
+      list.add(Integer.toString(i));
   }
-  // Thus, setUp() is optional, but is run right
-  // before the test:
-  protected void setUp() {
-    out.println("Set up for " + list.getId());
-  }
-  // tearDown() is also optional, and is called after
-  // each test. setUp() and tearDown() can be either
-  // protected or public:
-  public void tearDown() {
-    out.println("Tearing down " + list.getId());
+  @After
+  public void cleanup() {
+    System.out.println("Cleaning up " + list.getId());
   }
   // All tests are marked with the @Test annotation:
   @Test
   public void insert() {
-    out.println("Running testInsert()");
+    System.out.println("Running testInsert()");
     assertEquals(list.size(), 3);
     list.add(1, "Insert");
     assertEquals(list.size(), 4);
@@ -49,7 +42,7 @@ public class JUnitDemo {
   }
   @Test
   public void replace() {
-    out.println("Running testReplace()");
+    System.out.println("Running testReplace()");
     assertEquals(list.size(), 3);
     list.set(1, "Replace");
     assertEquals(list.size(), 3);
@@ -68,12 +61,12 @@ public class JUnitDemo {
   }
   @Test
   public void order() {
-    out.println("Running testOrder()");
+    System.out.println("Running testOrder()");
     compare(list, new String[] { "0", "1", "2" });
   }
   @Test
   public void remove() {
-    out.println("Running testRemove()");
+    System.out.println("Running testRemove()");
     assertEquals(list.size(), 3);
     list.remove(1);
     assertEquals(list.size(), 2);
@@ -81,7 +74,7 @@ public class JUnitDemo {
   }
   @Test
   public void addAll() {
-    out.println("Running testAddAll()");
+    System.out.println("Running testAddAll()");
     list.addAll(Arrays.asList(new String[] {
       "An", "African", "Swallow"}));
     assertEquals(list.size(), 6);
@@ -91,7 +84,7 @@ public class JUnitDemo {
   public static void main(String[] args) {
     // Invoke JUnit on the class:
     org.junit.runner.JUnitCore.runClasses(
-      JUnitDemo.class);
+      SimpleJUnit.class);
   }
 }
 /* Output:
