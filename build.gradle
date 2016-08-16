@@ -134,6 +134,10 @@ subprojects {
         mavenCentral()
     }
 
+    dependencies {
+        compile 'junit:junit:4.12'
+    }
+
     sourceSets {
         main {
             java {
@@ -220,9 +224,6 @@ subprojects {
 }
 
 project(':verifying') {
-    dependencies {
-        compile 'junit:junit:4.12'
-    }
     jmh {
         include = 'verifying.jmhtests.*'
     }
@@ -258,12 +259,6 @@ project(':serialization') {
     }
     dependencies {
         compile 'com.io7m.xom:xom:1.2.10'
-    }
-}
-
-project(':references') {
-    dependencies {
-        compile 'junit:junit:4.12'
     }
 }
 
