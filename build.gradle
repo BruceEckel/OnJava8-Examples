@@ -7,7 +7,9 @@ buildscript {
 }
 
 plugins {
-    id 'me.champeau.gradle.jmh' version '0.3.0'
+    id 'com.gradle.build-scan' version '1.0' // Should be first in list
+    id 'com.github.johnrengelman.shadow' version '1.2.3'
+    id 'me.champeau.gradle.jmh' version '0.3.1'
 }
 
 import org.gradle.internal.jvm.Jvm
@@ -122,6 +124,7 @@ class Tags {
 }
 
 subprojects {
+    apply plugin: 'com.github.johnrengelman.shadow'
     apply plugin: 'me.champeau.gradle.jmh'
     apply plugin: 'java'
 
@@ -153,6 +156,7 @@ subprojects {
 
     jmh {
         jmhVersion = '1.13'
+        duplicateClassesStrategy = 'warn'
     }
 
     List createdTasks = []
@@ -302,4 +306,9 @@ task verify(type:Exec) {
     doFirst {
         println("execute 'gradlew run' first")
     }
+}
+
+buildScan {
+    licenseAgreementUrl = 'https://gradle.com/terms-of-service'
+    licenseAgree = 'yes'
 }
