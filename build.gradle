@@ -139,6 +139,10 @@ subprojects {
 
     dependencies {
         compile 'junit:junit:4.12'
+        compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.+'
+        compile group: 'ch.qos.logback', name: 'logback-classic', version: '1.+'
+        // You can also use the JDK's built-in logging as the back end:
+        // compile group: 'org.slf4j', name: 'slf4j-jdk14', version: '1.7.5'
     }
 
     sourceSets {

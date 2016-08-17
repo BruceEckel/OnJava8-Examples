@@ -7,8 +7,8 @@ import java.util.*;
 import org.junit.*;
 import static org.junit.Assert.*;
 
-// So we can see the list objects being created,
-// and keep track of when they are cleaned up:
+// Keeps track of list objects as they are
+// created and cleaned up:
 class CountedList extends ArrayList<String> {
   private static int counter = 0;
   private int id = counter++;
