@@ -299,8 +299,8 @@ configure(subprojects - project(':onjava')) {
         compile project(':onjava')
         compile group: 'com.google.guava', name: 'guava', version: '19.0'
         compile "org.openjdk.jmh:jmh-core:${jmh.jmhVersion}"
-        compile group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.6.2'
-        compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.6.2'
+        //compile group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.6.2'
+        //compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.6.2'
     }
 }
 
