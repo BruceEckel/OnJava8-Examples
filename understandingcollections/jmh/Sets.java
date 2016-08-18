@@ -1,9 +1,9 @@
-// understandingcollections/jmhtests/Queues.java
+// understandingcollections/jmh/Sets.java
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-// Demonstrates performance differences in Queues
-package understandingcollections.jmhtests;
+// Demonstrates performance differences in Sets
+package understandingcollections.jmh;
 import org.openjdk.jmh.annotations.*;
 import org.openjdk.jmh.infra.Blackhole;
 import java.util.*;
@@ -15,10 +15,10 @@ import static java.util.concurrent.TimeUnit.*;
 @Fork(1)
 @BenchmarkMode(Mode.AverageTime)
 @OutputTimeUnit(MICROSECONDS)
-public class Queues {
-  private LinkedList<Integer> queue;
+public class Sets {
+  private Set<Integer> set;
 
-  @Param({"LinkedList"})
+  @Param({"HashSet", "TreeSet", "LinkedHashSet"})
   private String type;
 
   private int begin;
@@ -27,36 +27,37 @@ public class Queues {
   @Setup
   public void setup() {
     switch(type) {
-      case "LinkedList":
-        queue = new LinkedList<>();
+      case "HashSet":
+        set = new HashSet<>();
+        break;
+      case "TreeSet":
+        set = new TreeSet<>();
+        break;
+      case "LinkedHashSet":
+        set = new LinkedHashSet<>();
         break;
       default:
         throw new IllegalStateException("Unknown " + type);
     }
     begin = 1;
     end = 256;
-    for(int i = begin; i < end; i++) {
-      queue.add(i);
-    }
+    for (int i = begin; i < end; i++)
+      set.add(i);
   }
   @Benchmark
-  public void queue_addFirst() {
+  public void add() {
     for(int i = begin; i < end; i++)
-      queue.addFirst(47);
+      set.add(i);
   }
   @Benchmark
-  public void queue_addLast() {
+  public void contains(Blackhole bh) {
     for(int i = begin; i < end; i++)
-      queue.addLast(47);
+      bh.consume(set.contains(i));
   }
   @Benchmark
-  public void queue_removeFirst(Blackhole bh) {
-    while(queue.size() > 0)
-      bh.consume(queue.removeFirst());
-  }
-  @Benchmark
-  public void queue_removeLast(Blackhole bh) {
-    while(queue.size() > 0)
-      bh.consume(queue.removeLast());
+  public void iterate(Blackhole bh) {
+    Iterator<Integer> it = set.iterator();
+    while(it.hasNext())
+      bh.consume(it.next());
   }
 }

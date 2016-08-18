@@ -233,7 +233,7 @@ subprojects {
 
 project(':verifying') {
     jmh {
-        include = 'verifying.jmhtests.*'
+        include = 'verifying.jmh.*'
     }
 }
 
@@ -243,7 +243,7 @@ project(':understandingcollections') {
         compile project(':collections')
     }
     jmh {
-        include = 'understandingcollections.jmhtests.*'
+        include = 'understandingcollections.jmh.*'
     }
 }
 
