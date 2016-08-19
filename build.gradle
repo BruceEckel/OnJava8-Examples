@@ -192,8 +192,10 @@ subprojects {
                 exclude "StringInverter*.java"
                 exclude "Queue.java"
             }
-/*            filter {
-            }*/
+            resources {
+                srcDir projectDir
+                include '*.xml'
+            }
         }
         jmh {
             java {
