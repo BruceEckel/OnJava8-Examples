@@ -3,6 +3,7 @@
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // Simple use of JUnit to test ArrayList
+package verifying;
 import java.util.*;
 import org.junit.*;
 import static org.junit.Assert.*;

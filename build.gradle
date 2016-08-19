@@ -4,10 +4,12 @@ buildscript {
         jcenter()
         mavenCentral()
     }
+    dependencies {
+        classpath 'org.junit.platform:junit-platform-gradle-plugin:1.0.0-M2'
+    }
 }
 
 plugins {
-    // id 'com.gradle.build-scan' version '1.0' // Should be first in list
     id 'com.github.johnrengelman.shadow' version '1.2.3'
     id 'me.champeau.gradle.jmh' version '0.3.1'
 }
@@ -123,10 +125,16 @@ class Tags {
     }
 }
 
+ext.junit4Version        = '4.12'
+ext.junitVintageVersion  = '4.12.0-M2'
+ext.junitPlatformVersion = '1.0.0-M2'
+ext.junitJupiterVersion  = '5.0.0-M2'
+
 subprojects {
     apply plugin: 'com.github.johnrengelman.shadow'
     apply plugin: 'me.champeau.gradle.jmh'
     apply plugin: 'java'
+    apply plugin: 'org.junit.platform.gradle.plugin'
 
     sourceCompatibility = '1.8'
     targetCompatibility = '1.8'
@@ -138,25 +146,71 @@ subprojects {
     }
 
     dependencies {
-        compile 'junit:junit:4.12'
+        //compile 'junit:junit:4.12'
         compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.+'
         compile group: 'ch.qos.logback', name: 'logback-classic', version: '1.+'
         // You can also use the JDK's built-in logging as the back end:
         // compile group: 'org.slf4j', name: 'slf4j-jdk14', version: '1.7.5'
+
+        // JUnit Jupiter API and TestEngine implementation
+/*        testCompile("org.junit.jupiter:junit-jupiter-api:${junitJupiterVersion}")
+        testRuntime("org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}")
+
+        // If you also want to support JUnit 3 and JUnit 4 tests
+        testCompile("junit:junit:${junit4Version}")
+        testRuntime("org.junit.vintage:junit-vintage-engine:${junitVintageVersion}")*/
+        testCompile "org.junit.jupiter:junit-jupiter-api:5.0.0-M2"
+        testRuntime "org.junit.jupiter:junit-jupiter-engine:5.0.0-M2"
+        testCompile "junit:junit:4.12"
+        testRuntime "org.junit.vintage:junit-vintage-engine:4.12.0-M2"
+    }
+
+    junitPlatform {
+        // platformVersion '1.0.0-SNAPSHOT'
+        //engines {
+          //  include 'junit-jupiter', 'junit-vintage'
+            // exclude 'custom-engine'
+        //}
+/*        tags {
+            // include 'fast'
+            exclude 'slow'
+        }*/
+        //includeClassNamePattern '.*Test'
+        includeClassNamePattern '.*'
+        // enableStandardTestTask true
+        // reportsDir "build/test-results/junit-platform" // this is the default
+        //logManager 'org.apache.logging.log4j.jul.LogManager'
     }
 
     sourceSets {
         main {
             java {
                 srcDir projectDir
+                exclude "*Test.java"
+                exclude "*Tests.java"
+                exclude "*JUnit.java"
+                exclude "StringInverter*.java"
+                exclude "Queue.java"
             }
+/*            filter {
+            }*/
         }
         jmh {
             java {
                 srcDir projectDir
             }
         }
+        test {
+            java {
+                srcDir projectDir
+            }
+        }
     }
+
+    /*test {
+        testClassesDir = sourceSets.main.output.classesDir
+        classpath  = sourceSets.main.runtimeClasspath
+    }*/
 
     jmh {
         jmhVersion = '1.13'
@@ -299,6 +353,8 @@ configure(subprojects - project(':onjava')) {
         compile project(':onjava')
         compile group: 'com.google.guava', name: 'guava', version: '19.0'
         compile "org.openjdk.jmh:jmh-core:${jmh.jmhVersion}"
+        compile 'org.junit.platform:junit-platform-gradle-plugin:1.0.0-M2'
+
         //compile group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.6.2'
         //compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.6.2'
     }
@@ -311,8 +367,3 @@ task verify(type:Exec) {
         println("execute 'gradlew run' first")
     }
 }
-
-/*buildScan {
-    licenseAgreementUrl = 'https://gradle.com/terms-of-service'
-    licenseAgree = 'yes'
-}*/

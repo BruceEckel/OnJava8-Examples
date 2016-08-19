@@ -4,6 +4,7 @@
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // Demonstration of Design by Contract (DbC)
 // combined with white-box unit testing
+package verifying;
 import java.util.*;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
