@@ -7,7 +7,7 @@ buildscript {
 }
 
 plugins {
-    id 'com.gradle.build-scan' version '1.0' // Should be first in list
+    // id 'com.gradle.build-scan' version '1.0' // Should be first in list
     id 'com.github.johnrengelman.shadow' version '1.2.3'
     id 'me.champeau.gradle.jmh' version '0.3.1'
 }
@@ -312,7 +312,7 @@ task verify(type:Exec) {
     }
 }
 
-buildScan {
+/*buildScan {
     licenseAgreementUrl = 'https://gradle.com/terms-of-service'
     licenseAgree = 'yes'
-}
+}*/
