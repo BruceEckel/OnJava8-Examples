@@ -5,12 +5,13 @@
 import org.slf4j.*;
 
 public class SLF4JLogging {
-  private static final Logger logger =
+  private static final Logger log =
     LoggerFactory.getLogger(SLF4JLogging.class);
   public static void main(String[] args) {
-    logger.info("hello logging");
+    log.info("hello logging");
   }
 }
 /* Output:
-17:58:42.798 [main] INFO SLF4JLogging - hello logging
+2016-08-22T14:42:44.177
+[main] INFO  SLF4JLogging - hello logging
 */

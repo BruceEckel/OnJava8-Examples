@@ -14,7 +14,7 @@ aSlice = aList[2:4]
 print(aSlice) # [3, 4]
 
 class MyList(list): # Inherit from list
-    # Define a method, 'this' pointer is explicit:
+    # Define a method; 'this' pointer is explicit:
     def getReversed(self):
         reversed = self[:] # Copy list using slices
         reversed.reverse() # Built-in list method

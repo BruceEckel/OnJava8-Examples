@@ -4,7 +4,6 @@
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // Relying on a common resource
 import java.util.*;
-import static onjava.TimeIt.*;
 
 public class BadMicroBenchmark3 {
   static final int SIZE = 20_000_000;
@@ -12,17 +11,17 @@ public class BadMicroBenchmark3 {
     long[] la = new long[SIZE];
     Random r = new Random();
     System.out.print("parallelSetAll: ");
-    timeIt(() ->
+    Time.it(() ->
       Arrays.parallelSetAll(la, n -> r.nextLong()));
     System.out.print("setAll: ");
-    timeIt(() ->
+    Time.it(() ->
       Arrays.setAll(la, n -> r.nextLong()));
     SplittableRandom sr = new SplittableRandom();
     System.out.print("parallelSetAll: ");
-    timeIt(() ->
+    Time.it(() ->
       Arrays.parallelSetAll(la, n -> sr.nextLong()));
     System.out.print("setAll: ");
-    timeIt(() ->
+    Time.it(() ->
       Arrays.setAll(la, n -> sr.nextLong()));
   }
 }

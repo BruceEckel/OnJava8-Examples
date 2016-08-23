@@ -82,11 +82,11 @@ public class SimpleJUnit {
     compare(list, new String[] { "0", "1", "2",
        "An", "African", "Swallow" });
   }
-  public static void main(String[] args) {
+/*  public static void main(String[] args) {
     // Invoke JUnit on the class:
     org.junit.runner.JUnitCore.runClasses(
       SimpleJUnit.class);
-  }
+  } */
 }
 /* Output:
 CountedList #0

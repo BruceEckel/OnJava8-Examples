@@ -229,6 +229,7 @@ subprojects {
 
             // Exclude java sources that will not compile
             if (tags.compileTimeError) {
+                println ">>> Excluding " + file.name
                 sourceSets.main.java.excludes.add(file.name)
             } else {
                 JavaExec javaTask = null

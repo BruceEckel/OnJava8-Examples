@@ -1,4 +1,4 @@
-// arrays/Prefix1.java
+// arrays/ParallelPrefix1.java
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
@@ -6,7 +6,7 @@ import java.util.*;
 import onjava.*;
 import static onjava.ArrayShow.*;
 
-public class Prefix1 {
+public class ParallelPrefix1 {
   public static void main(String[] args) {
     int[] nums = new Count.int_().array(10);
     show(nums);
