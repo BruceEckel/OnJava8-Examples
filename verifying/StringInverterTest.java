@@ -6,8 +6,7 @@
 import java.util.*;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
-import org.junit.jupiter.runner.*;
-import org.junit.jupiter.runner.notification.Failure;
+// import org.junit.platform.runner.JUnitPlatform;
 
 public class StringInverterTest {
   static StringInverter inverter;
@@ -17,39 +16,44 @@ public class StringInverterTest {
     String out = "eXIT, pURSUED BY A bEAR.";
     assertEquals(inverter.invert(in), out);
   }
-  @Test(expected = ComparisonFailure.class)
+  @Test
   public final void basicInversion_Fail() {
-    assertEquals(inverter.invert("X"), "X");
+    expectThrows(RuntimeException.class, () -> {
+      assertEquals(inverter.invert("X"), "X");
+    });
   }
-  @Test(expected = RuntimeException.class)
+  @Test
   public final void allowedCharacters_Fail() {
-    inverter.invert(";-_()*&^%$#@!~`");
-    inverter.invert("0123456789");
+    expectThrows(RuntimeException.class, () -> {
+      inverter.invert(";-_()*&^%$#@!~`");
+      inverter.invert("0123456789");
+    });
   }
-  /*@Test
+  @Test
   public final void allowedCharacters_Succeed() {
     inverter.invert("abcdefghijklmnopqrstuvwxyz ,.");
     inverter.invert("ABCDEFGHIJKLMNOPQRSTUVWXYZ ,.");
-    assertTrue(true); // No exception thrown
-  }*/
-  @Test(expected = RuntimeException.class)
+  }
+  @Test
   public final void lengthLessThan26_Fail() {
     String str = "xxxxxxxxxxxxxxxxxxxxxxxxxx";
     assertTrue(str.length() > 25);
-    inverter.invert(str);
+    expectThrows(RuntimeException.class, () -> {
+      inverter.invert(str);
+    });
   }
   @Test
   public final void lengthLessThan26_Succeed() {
     String str = "xxxxxxxxxxxxxxxxxxxxxxxxx";
     assertTrue(str.length() < 26);
     inverter.invert(str);
-    assertTrue(true); // No exception thrown
   }
+  /*
   public static void main(String[] args) throws Exception{
     assertEquals(args.length, 1);
     inverter = (StringInverter)
       Class.forName(args[0]).newInstance();
-    Result result = JUnitCore.runClasses(
+    Result result = org.junit.runner.JUnitCore.runClasses(
       StringInverterTest.class);
     List<Failure> failures = result.getFailures();
     System.out.printf("%s has %d FAILURES:\n",
@@ -61,4 +65,5 @@ public class StringInverterTest {
       System.out.println(f.getMessage());
     }
   }
+  */
 }

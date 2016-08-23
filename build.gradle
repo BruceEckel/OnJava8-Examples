@@ -161,7 +161,7 @@ subprojects {
         // If you also want to support JUnit 3 and JUnit 4 tests
         testCompile("junit:junit:${junit4Version}")
         testRuntime("org.junit.vintage:junit-vintage-engine:${junitVintageVersion}")*/
-        compile "org.junit.jupiter:junit-jupiter-api:5.0.0-M2"
+        compile     "org.junit.jupiter:junit-jupiter-api:5.0.0-M2"
         testCompile "org.junit.jupiter:junit-jupiter-api:5.0.0-M2"
         testRuntime "org.junit.jupiter:junit-jupiter-engine:5.0.0-M2"
 /*        testCompile "junit:junit:4.12"

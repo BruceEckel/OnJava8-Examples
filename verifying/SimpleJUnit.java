@@ -21,14 +21,14 @@ class CountedList extends ArrayList<String> {
 
 public class SimpleJUnit {
   private CountedList list;
-  @Before
+  @BeforeEach
   public void initialize() {
     list = new CountedList();
     System.out.println("Set up for " + list.getId());
     for(int i = 0; i < 3; i++)
       list.add(Integer.toString(i));
   }
-  @After
+  @AfterEach
   public void cleanup() {
     System.out.println("Cleaning up " + list.getId());
   }
@@ -55,8 +55,8 @@ public class SimpleJUnit {
   private
   void compare(ArrayList<String> lst, String[] strs) {
     String[] array = (String[])lst.toArray();
-    assertTrue("Arrays not the same length",
-      array.length == strs.length);
+    assertTrue(array.length == strs.length,
+      "Arrays not the same length");
     for(int i = 0; i < array.length; i++)
       assertEquals(strs[i], array[i]);
   }

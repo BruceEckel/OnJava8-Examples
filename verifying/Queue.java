@@ -87,3 +87,4 @@ public class Queue {
       ", empty() = " + empty() +
       ", queue = " + Arrays.asList(data);
   }
+}

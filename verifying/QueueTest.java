@@ -3,14 +3,14 @@
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 package verifying;
-import verifying.Queue;
+import verifying.Queue.*;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class QueueTest {
   private Queue queue = new Queue(10);
   private int i = 0;
-  @Before
+  @BeforeEach
   public void initialize() {
     while(i < 5) // Preload with some data
       queue.put(Integer.toString(i++));
