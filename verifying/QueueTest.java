@@ -4,8 +4,8 @@
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 package verifying;
 import verifying.Queue;
-import org.junit.Test;
-import static org.junit.Assert.*;
+import org.junit.jupiter.api.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class QueueTest {
   private Queue queue = new Queue(10);

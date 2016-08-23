@@ -5,8 +5,8 @@
 // Simple use of JUnit to test ArrayList
 package verifying;
 import java.util.*;
-import org.junit.*;
-import static org.junit.Assert.*;
+import org.junit.jupiter.api.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 // Keeps track of list objects as they are
 // created and cleaned up:

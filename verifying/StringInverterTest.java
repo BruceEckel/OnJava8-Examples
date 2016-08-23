@@ -4,10 +4,10 @@
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // {ValidateByHand} // Don't run by itself
 import java.util.*;
-import org.junit.*;
-import static org.junit.Assert.*;
-import org.junit.runner.*;
-import org.junit.runner.notification.Failure;
+import org.junit.jupiter.api.*;
+import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.runner.*;
+import org.junit.jupiter.runner.notification.Failure;
 
 public class StringInverterTest {
   static StringInverter inverter;

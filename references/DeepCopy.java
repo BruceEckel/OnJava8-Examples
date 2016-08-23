@@ -4,8 +4,8 @@
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // Cloning a composed object
 // (Install libraries from junit.org)
-import org.junit.Test;
-import static org.junit.Assert.assertEquals;
+import org.junit.jupiter.api.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 class DepthReading implements Cloneable {
   private double depth;

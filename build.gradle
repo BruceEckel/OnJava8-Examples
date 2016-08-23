@@ -125,10 +125,12 @@ class Tags {
     }
 }
 
-ext.junit4Version        = '4.12'
-ext.junitVintageVersion  = '4.12.0-M2'
-ext.junitPlatformVersion = '1.0.0-M2'
-ext.junitJupiterVersion  = '5.0.0-M2'
+ext {
+    junit4Version        = '4.12'
+    junitVintageVersion  = '4.12.0-M2'
+    junitPlatformVersion = '1.0.0-M2'
+    junitJupiterVersion  = '5.0.0-M2'
+}
 
 subprojects {
     apply plugin: 'com.github.johnrengelman.shadow'
@@ -146,7 +148,7 @@ subprojects {
     }
 
     dependencies {
-        //compile 'junit:junit:4.12'
+        // compile 'junit:junit:4.12'
         compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.+'
         compile group: 'ch.qos.logback', name: 'logback-classic', version: '1.+'
         // You can also use the JDK's built-in logging as the back end:
@@ -159,11 +161,12 @@ subprojects {
         // If you also want to support JUnit 3 and JUnit 4 tests
         testCompile("junit:junit:${junit4Version}")
         testRuntime("org.junit.vintage:junit-vintage-engine:${junitVintageVersion}")*/
+        compile "org.junit.jupiter:junit-jupiter-api:5.0.0-M2"
         testCompile "org.junit.jupiter:junit-jupiter-api:5.0.0-M2"
         testRuntime "org.junit.jupiter:junit-jupiter-engine:5.0.0-M2"
-        testCompile "junit:junit:4.12"
+/*        testCompile "junit:junit:4.12"
         testRuntime "org.junit.vintage:junit-vintage-engine:4.12.0-M2"
-/*        compile "org.junit.jupiter:junit-jupiter-api:5.0.0-M2"
+*//*        compile "org.junit.jupiter:junit-jupiter-api:5.0.0-M2"
         compile "org.junit.vintage:junit-vintage-engine:4.12.0-M2"*/
     }
 
