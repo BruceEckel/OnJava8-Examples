@@ -4,9 +4,6 @@
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 import onjava.*;
 
-class Amphibian {}
-class Vehicle {}
-
 public class TupleTest {
   static Tuple2<String, Integer> f() {
     // Autoboxing converts the int to Integer:

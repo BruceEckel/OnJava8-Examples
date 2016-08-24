@@ -191,11 +191,11 @@ subprojects {
         main {
             java {
                 srcDir projectDir
-                exclude "*Test.java"
+                // exclude "*Test.java"
                 exclude "*Tests.java"
                 exclude "*JUnit.java"
                 exclude "StringInverter*.java"
-                exclude "Queue.java"
+                // exclude "Queue.java"
             }
             resources {
                 srcDir projectDir
@@ -207,11 +207,11 @@ subprojects {
                 srcDir projectDir
             }
         }
-        test {
+/*        test {
             java {
                 srcDir projectDir
             }
-        }
+        }*/
     }
 
     /*test {

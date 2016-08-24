@@ -3,7 +3,7 @@
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 package verifying;
-import verifying.Queue.*;
+import verifying.Queue;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
 

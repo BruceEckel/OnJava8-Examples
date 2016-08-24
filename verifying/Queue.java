@@ -13,10 +13,6 @@ public class Queue {
     out = 0; // Next gettable object
   // Has it wrapped around the circular queue?
   private boolean wrapped = false;
-  public static class
-  QueueException extends RuntimeException {
-    public QueueException(String why) { super(why); }
-  }
   public Queue(int size) {
     data = new Object[size];
     // Must be true after construction:

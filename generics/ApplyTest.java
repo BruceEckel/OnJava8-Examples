@@ -6,29 +6,6 @@ import java.util.*;
 import java.util.function.*;
 import onjava.*;
 
-class Shape {
-  private static long counter = 0;
-  private final long id = counter++;
-  @Override
-  public String toString() {
-    return getClass().getSimpleName() + " " + id;
-  }
-  public void rotate() {
-    System.out.println(this + " rotate");
-  }
-  public void resize(int newSize) {
-    System.out.println(this + " resize " + newSize);
-  }
-}
-
-class Square extends Shape {}
-
-class FilledList<T> extends ArrayList<T> {
-  public FilledList(Supplier<T> gen, int size) {
-    Suppliers.fill(this, gen, size);
-  }
-}
-
 public class ApplyTest {
   public static void main(String[] args) throws Exception {
     List<Shape> shapes =
