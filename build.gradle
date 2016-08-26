@@ -370,7 +370,7 @@ configure(subprojects - project(':onjava')) {
 
 task verify(type:Exec) {
     description 'Uses Python tool to verify example output'
-    commandLine 'python', 'verify_output.py'
+    commandLine 'python', '_verify_output.py'
     doFirst {
         println("execute 'gradlew run' first")
     }
