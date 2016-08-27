@@ -7,8 +7,9 @@ import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 class FirstJUnit5Tests {
-    @Test
-    void myFirstTest() {
-        assertEquals(2, 1 + 1);
-    }
+  @Test
+  void myFirstTest() {
+    System.out.println("FirstJUnit5Tests");
+    assertEquals(2, 1 + 1);
+  }
 }

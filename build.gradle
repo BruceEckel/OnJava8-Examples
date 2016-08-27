@@ -126,9 +126,6 @@ class Tags {
 }
 
 ext {
-    junit4Version        = '4.12'
-    junitVintageVersion  = '4.12.0-M2'
-    junitPlatformVersion = '1.0.0-M2'
     junitJupiterVersion  = '5.0.0-M2'
 }
 
@@ -148,26 +145,16 @@ subprojects {
     }
 
     dependencies {
-        // compile 'junit:junit:4.12'
+        // Logging:
         compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.+'
         compile group: 'ch.qos.logback', name: 'logback-classic', version: '1.+'
         // You can also use the JDK's built-in logging as the back end:
         // compile group: 'org.slf4j', name: 'slf4j-jdk14', version: '1.7.5'
 
-        // JUnit Jupiter API and TestEngine implementation
-/*        testCompile("org.junit.jupiter:junit-jupiter-api:${junitJupiterVersion}")
-        testRuntime("org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}")
-
-        // If you also want to support JUnit 3 and JUnit 4 tests
-        testCompile("junit:junit:${junit4Version}")
-        testRuntime("org.junit.vintage:junit-vintage-engine:${junitVintageVersion}")*/
-        compile     "org.junit.jupiter:junit-jupiter-api:5.0.0-M2"
-        testCompile "org.junit.jupiter:junit-jupiter-api:5.0.0-M2"
-        testRuntime "org.junit.jupiter:junit-jupiter-engine:5.0.0-M2"
-/*        testCompile "junit:junit:4.12"
-        testRuntime "org.junit.vintage:junit-vintage-engine:4.12.0-M2"
-*//*        compile "org.junit.jupiter:junit-jupiter-api:5.0.0-M2"
-        compile "org.junit.vintage:junit-vintage-engine:4.12.0-M2"*/
+        // JUnit testing:
+        compile     "org.junit.jupiter:junit-jupiter-api:${junitJupiterVersion}"
+        testCompile "org.junit.jupiter:junit-jupiter-api:${junitJupiterVersion}"
+        testRuntime "org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}"
     }
 
     junitPlatform {
@@ -191,11 +178,8 @@ subprojects {
         main {
             java {
                 srcDir projectDir
-                // exclude "*Test.java"
-                exclude "*Tests.java"
-                exclude "*JUnit.java"
-                exclude "StringInverter*.java"
-                // exclude "Queue.java"
+                // Remove this when it's working:
+                exclude "DynamicStringInverterTests.java"
             }
             resources {
                 srcDir projectDir
@@ -234,7 +218,7 @@ subprojects {
 
             // Exclude java sources that will not compile
             if (tags.compileTimeError) {
-                println ">>> Excluding " + file.name
+                // println ">>> Excluding " + file.name
                 sourceSets.main.java.excludes.add(file.name)
             } else {
                 JavaExec javaTask = null
@@ -362,9 +346,6 @@ configure(subprojects - project(':onjava')) {
         compile group: 'com.google.guava', name: 'guava', version: '19.0'
         compile "org.openjdk.jmh:jmh-core:${jmh.jmhVersion}"
         compile 'org.junit.platform:junit-platform-gradle-plugin:1.0.0-M2'
-
-        //compile group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.6.2'
-        //compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.6.2'
     }
 }
 

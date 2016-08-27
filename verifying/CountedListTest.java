@@ -5,7 +5,6 @@
 // Simple use of JUnit to test CountedList.
 package verifying;
 import java.util.*;
-//import verifying.CountedList;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -43,8 +42,8 @@ public class CountedListTest {
   // as it isn't annotated with @Test, it will not
   // be automatically executed by JUnit.
   private
-  void compare(ArrayList<String> lst, String[] strs) {
-    String[] array = (String[])lst.toArray();
+  void compare(List<String> lst, String[] strs) {
+    String[] array = lst.toArray(new String[0]);
     assertTrue(array.length == strs.length,
       "Arrays not the same length");
     for(int i = 0; i < array.length; i++)
@@ -72,11 +71,6 @@ public class CountedListTest {
     compare(list, new String[] { "0", "1", "2",
        "An", "African", "Swallow" });
   }
-/*  public static void main(String[] args) {
-    // Invoke JUnit on the class:
-    org.junit.runner.JUnitCore.runClasses(
-      SimpleJUnit.class);
-  } */
 }
 /* Output:
 CountedList #0
