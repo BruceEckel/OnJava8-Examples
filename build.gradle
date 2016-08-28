@@ -179,7 +179,7 @@ subprojects {
             java {
                 srcDir projectDir
                 // Remove this when it's working:
-                exclude "DynamicStringInverterTests.java"
+                // exclude "DynamicStringInverterTests.java"
             }
             resources {
                 srcDir projectDir

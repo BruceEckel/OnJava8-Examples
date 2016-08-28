@@ -17,12 +17,3 @@ public class StringInverter2 implements StringInverter {
     return result;
   }
 }
-/* Output:
-StringInverter2 has 2 FAILURES:
-Failure 1:
-allowedCharacters_Fail(StringInverterTest)
-Expected exception: java.lang.RuntimeException
-Failure 2:
-lengthLessThan26_Fail(StringInverterTest)
-Expected exception: java.lang.RuntimeException
-*/

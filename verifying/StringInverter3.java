@@ -7,7 +7,7 @@ import static java.lang.Character.*;
 
 public class StringInverter3 implements StringInverter {
   public String invert(String str) {
-    if(str.length() > 25)
+    if(str.length() > 30)
       throw new RuntimeException("argument too long!");
     String result = "";
     for(int i = 0; i < str.length(); i++) {
@@ -19,9 +19,3 @@ public class StringInverter3 implements StringInverter {
     return result;
   }
 }
-/* Output:
-StringInverter3 has 1 FAILURES:
-Failure 1:
-allowedCharacters_Fail(StringInverterTest)
-Expected exception: java.lang.RuntimeException
-*/

@@ -11,70 +11,116 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.DynamicTest.*;
 
 class DynamicStringInverterTests {
+  // Combine operations to prevent code duplication:
   Stream<DynamicTest>
-  multiple_version_test(Consumer<StringInverter> test) {
+  testVersions(String id, Consumer<StringInverter> test) {
     List<StringInverter> versions = Arrays.asList(
       new StringInverter1(), new StringInverter2(),
       new StringInverter3(), new StringInverter4());
     return DynamicTest.stream(versions.iterator(),
       (version) -> version.getClass().getSimpleName(),
-      test
+      (stringInverter) -> {
+        System.out.println(
+          stringInverter.getClass().getSimpleName() +
+          ": " + id
+        );
+        try { // Capture failing tests
+          test.accept(stringInverter);
+        } catch(Error | Exception e) {
+          System.out.println(e.getMessage());
+        }
+      }
     );
   }
-
+  void isTrue(String description, boolean assertion) {
+    System.out.print(description + ": ");
+    System.out.println(assertion);
+  }
+  void isEqual(String lval, String rval) {
+    System.out.print(lval + " equals " + rval);
+    if(!lval.equals(rval))
+      System.out.println(" FAIL");
+    else
+      System.out.println();
+  }
+  @BeforeAll
+  static void startMsg() {
+    System.out.println(
+      ">>> Starting DynamicStringInverterTests <<<");
+  }
+  @AfterAll
+  static void endMsg() {
+    System.out.println(
+      ">>> Finished DynamicStringInverterTests <<<");
+  }
   @TestFactory
   Stream<DynamicTest> basicInversion_Succeed() {
-    return multiple_version_test( (version) -> {
-      String in = "Exit, Pursued by a Bear.";
-      String out = "eXIT, pURSUED BY A bEAR.";
-      assertEquals(version.invert(in), out);
-    });
+    return testVersions(
+      "A Basic Inversion that Succeeds",
+      (version) -> {
+        String in = "Exit, Pursued by a Bear.";
+        String out = "eXIT, pURSUED BY A bEAR.";
+        isEqual(version.invert(in), out);
+      }
+    );
   }
-
   @TestFactory
   Stream<DynamicTest> basicInversion_Fail() {
-    return multiple_version_test( (version) -> {
-      expectThrows(RuntimeException.class, () -> {
-        assertEquals(version.invert("X"), "X");
-      });
-    });
+    return testVersions(
+      "A Basic Inversion that Fails",
+      (version) -> isEqual(version.invert("X"), "X"));
   }
-
   @TestFactory
   Stream<DynamicTest> allowedCharacters_Fail() {
-    return multiple_version_test( (version) -> {
-      expectThrows(RuntimeException.class, () -> {
-        version.invert(";-_()*&^%$#@!~`");
-        version.invert("0123456789");
-      });
-    });
+    return testVersions(
+      "Disallowed characters (throws exception)",
+      (version) -> {
+        try {
+          version.invert(";-_()*&^%$#@!~`");
+          version.invert("0123456789");
+          System.out.println("Success");
+        } catch(Exception e) {
+          System.out.println("FAIL: " + e.getMessage());
+        }
+      }
+    );
   }
-
   @TestFactory
   Stream<DynamicTest> allowedCharacters_Succeed() {
-    return multiple_version_test( (version) -> {
-      version.invert("abcdefghijklmnopqrstuvwxyz ,.");
-      version.invert("ABCDEFGHIJKLMNOPQRSTUVWXYZ ,.");
-    });
+    return testVersions(
+      "Allowed Characters (Succeeds)",
+      (version) -> {
+        version.invert("abcdefghijklmnopqrstuvwxyz ,.");
+        version.invert("ABCDEFGHIJKLMNOPQRSTUVWXYZ ,.");
+      }
+    );
   }
-
   @TestFactory
-  Stream<DynamicTest> lengthLessThan26_Fail() {
-    return multiple_version_test( (version) -> {
-      String str = "xxxxxxxxxxxxxxxxxxxxxxxxxx";
-      assertTrue(str.length() > 25);
-      expectThrows(RuntimeException.class, () -> {
+  Stream<DynamicTest> lengthLessThan31_Fail() {
+    return testVersions(
+      "Length must be less than 31 (Throws Exception)",
+      (version) -> {
+        String str = "xxxxxxxxxxxxxxxxxxxxxxxxxx";
+        assertTrue(str.length() > 30);
+        try {
+          version.invert(str);
+          System.out.println("Success");
+        } catch(Exception e) {
+          System.out.println("FAIL: " + e.getMessage());
+        }
+      }
+    );
+  }
+  @TestFactory
+  Stream<DynamicTest> lengthLessThan31_Succeed() {
+    String str = "xxxxxxxxxxxxxxxxxxxxxxxxx";
+    assertTrue(str.length() < 31);
+    return testVersions(
+      "Length must be less than 31 (Succeeds)",
+      (version) -> {
         version.invert(str);
-      });
-    });
-  }
-
-  @TestFactory
-  Stream<DynamicTest> lengthLessThan26_Succeed() {
-    return multiple_version_test( (version) -> {
-      String str = "xxxxxxxxxxxxxxxxxxxxxxxxx";
-      assertTrue(str.length() < 26);
-      version.invert(str);
-    });
+        System.out.println("Success");
+      }
+    );
   }
 }

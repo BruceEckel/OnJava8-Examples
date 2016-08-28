@@ -7,15 +7,3 @@ package verifying;
 public class StringInverter1 implements StringInverter {
   public String invert(String str) { return ""; }
 }
-/* Output:
-StringInverter1 has 3 FAILURES:
-Failure 1:
-allowedCharacters_Fail(StringInverterTest)
-Expected exception: java.lang.RuntimeException
-Failure 2:
-basicInversion_Succeed(StringInverterTest)
-expected:<[]> but was:<[eXIT, pURSUED BY A bEAR.]>
-Failure 3:
-lengthLessThan26_Fail(StringInverterTest)
-Expected exception: java.lang.RuntimeException
-*/

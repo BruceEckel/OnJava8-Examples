@@ -10,7 +10,7 @@ public class StringInverter4 implements StringInverter {
     "abcdefghijklmnopqrstuvwxyz ,." +
     "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   public String invert(String str) {
-    if(str.length() > 25)
+    if(str.length() > 30)
       throw new RuntimeException("argument too long!");
     String result = "";
     for(int i = 0; i < str.length(); i++) {
@@ -24,6 +24,3 @@ public class StringInverter4 implements StringInverter {
     return result;
   }
 }
-/* Output:
-StringInverter4 has 0 FAILURES:
-*/
