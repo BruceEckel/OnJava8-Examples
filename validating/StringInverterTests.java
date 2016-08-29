@@ -1,42 +1,55 @@
-// verifying/StringInverterTests.java
+// validating/StringInverterTests.java
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-package verifying;
+package validating;
 import java.util.*;
+import java.util.stream.*;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class StringInverterTests {
-  StringInverter inverter = new StringInverter4();
+  StringInverter inverter = new Inverter4();
+  @BeforeAll
+  static void startMsg() {
+    System.out.println(">>> StringInverterTests <<<");
+  }
   @Test
-  void basicInversion_Succeed() {
+  void basicInversion1() {
     String in = "Exit, Pursued by a Bear.";
     String out = "eXIT, pURSUED BY A bEAR.";
     assertEquals(inverter.invert(in), out);
   }
   @Test
-  void basicInversion_Fail() {
+  void basicInversion2() {
     expectThrows(Error.class, () -> {
       assertEquals(inverter.invert("X"), "X");
     });
   }
   @Test
-  void allowedCharacters_Fail() {
-    expectThrows(RuntimeException.class, () -> {
-      inverter.invert(";-_()*&^%$#@!~`");
-      inverter.invert("0123456789");
-    });
+  void disallowedCharacters() {
+    String disallowed = ";-_()*&^%$#@!~`0123456789";
+    String result = disallowed.chars()
+      .mapToObj(c -> {
+        String cc = Character.toString((char)c);
+        try {
+          inverter.invert(cc);
+          return "";
+        } catch(RuntimeException e) {
+          return cc;
+        }
+      }).collect(Collectors.joining(""));
+    assertEquals(result, disallowed);
   }
   @Test
-  void allowedCharacters_Succeed() {
+  void allowedCharacters() {
     String lowcase = "abcdefghijklmnopqrstuvwxyz ,.";
     String upcase =  "ABCDEFGHIJKLMNOPQRSTUVWXYZ ,.";
     assertEquals(inverter.invert(lowcase), upcase);
     assertEquals(inverter.invert(upcase), lowcase);
   }
   @Test
-  void lengthLessThan31_Fail() {
+  void lengthNoGreaterThan30() {
     String str = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
     assertTrue(str.length() > 30);
     expectThrows(RuntimeException.class, () -> {
@@ -44,7 +57,7 @@ public class StringInverterTests {
     });
   }
   @Test
-  void lengthLessThan31_Succeed() {
+  void lengthLessThan31() {
     String str = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
     assertTrue(str.length() < 31);
     inverter.invert(str);

@@ -11,9 +11,8 @@ import java.io.*;
 public class SimpleClient {
   public static void
   main(String[] args) throws IOException {
-    // Passing null to getByName() produces the
-    // special "Local Loopback" IP address, for
-    // testing on one machine w/o a network:
+    // Produce the "Local Loopback" IP address
+    // for testing on one machine w/o a network:
     InetAddress addr =
       InetAddress.getLoopbackAddress();
     System.out.println("addr = " + addr);
@@ -35,7 +34,7 @@ public class SimpleClient {
             new OutputStreamWriter(
               socket.getOutputStream())),true);
       for(int i = 0; i < 10; i ++) {
-        out.println("howdy " + i);
+        out.println("hello " + i);
         String str = in.readLine();
         System.out.println(str);
       }

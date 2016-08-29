@@ -277,9 +277,9 @@ subprojects {
     task run(dependsOn: createdTasks)
 }
 
-project(':verifying') {
+project(':validating') {
     jmh {
-        include = 'verifying.jmh.*'
+        include = 'validating.jmh.*'
     }
 }
 

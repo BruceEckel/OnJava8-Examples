@@ -2,7 +2,7 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-// Just echoes whatever the client sends
+// Echoes what the client sends
 // {ValidateByHand}
 import java.io.*;
 import java.net.*;
@@ -30,7 +30,7 @@ public class SimpleServer {
           new PrintWriter(
             new BufferedWriter(
               new OutputStreamWriter(
-                socket.getOutputStream())),true);
+                socket.getOutputStream())), true);
         while (true) {
           String str = in.readLine();
           if(str.equals("END")) break;
