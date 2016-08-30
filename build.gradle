@@ -277,7 +277,6 @@ subprojects {
     task run(dependsOn: createdTasks)
 }
 
-// Note change of chapter name
 project(':validating') {
     jmh {
         include = 'validating.jmh.*'
