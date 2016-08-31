@@ -22,13 +22,14 @@ class DynamicStringInverterTests {
       inverter -> inverter.getClass().getSimpleName(),
       inverter -> {
         System.out.println(
-          inverter.getClass().getSimpleName() + ": " + id
-        );
+          inverter.getClass().getSimpleName() +
+            ": " + id);
         try {
           if(test.apply(inverter) != "fail")
             System.out.println("Success");
         } catch(Exception | Error e) {
-          System.out.println("Exception: " + e.getMessage());
+          System.out.println(
+            "Exception: " + e.getMessage());
         }
       }
     );

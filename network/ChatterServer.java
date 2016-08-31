@@ -31,7 +31,7 @@ public class ChatterServer {
           "Echoed: " + rcvd;
         // Extract the address and port from the
         // received datagram to find out where to
-        // send it back:
+        // send it back to:
         DatagramPacket echo =
           Dgram.toDatagram(echoString,
             dp.getAddress(), dp.getPort());

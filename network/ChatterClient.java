@@ -4,7 +4,7 @@
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // {ValidateByHand}
 // Tests the ChatterServer by starting multiple
-// clients, each of which sends datagrams
+// clients, each of which sends datagrams.
 import java.net.*;
 import java.io.*;
 import onjava.*;
@@ -37,12 +37,11 @@ public class ChatterClient extends Thread {
   public void sendAndEcho(String msg) {
     try {
       // Make and send a datagram:
-      s.send(Dgram.toDatagram(msg,
-        hostAddress,
-        ChatterServer.INPORT));
+      s.send(Dgram.toDatagram(
+        msg, hostAddress, ChatterServer.INPORT));
       // Block until it echoes back:
       s.receive(dp);
-      // Print out the echoed contents:
+      // Display the echoed contents:
       String rcvd = "Client #" + id +
         ", rcvd from " +
         dp.getAddress() + ", " +

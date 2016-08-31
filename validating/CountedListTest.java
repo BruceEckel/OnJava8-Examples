@@ -10,6 +10,14 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class CountedListTest {
   private CountedList list;
+  @BeforeAll
+  static void beforeAllMsg() {
+    System.out.println(">>> Starting CountedListTest");
+  }
+  @AfterAll
+  static void afterAllMsg() {
+    System.out.println(">>> Finished CountedListTest");
+  }
   @BeforeEach
   public void initialize() {
     list = new CountedList();
@@ -21,7 +29,6 @@ public class CountedListTest {
   public void cleanup() {
     System.out.println("Cleaning up " + list.getId());
   }
-  // All tests are marked with the @Test annotation:
   @Test
   public void insert() {
     System.out.println("Running testInsert()");
@@ -38,16 +45,12 @@ public class CountedListTest {
     assertEquals(list.size(), 3);
     assertEquals(list.get(1), "Replace");
   }
-  // A helper method to reduce code duplication. As long
-  // as it isn't annotated with @Test, it will not
-  // be automatically executed by JUnit.
+  // A helper method to simplify the code. As
+  // long as it isn't annotated with @Test, it will
+  // not be automatically executed by JUnit.
   private
   void compare(List<String> lst, String[] strs) {
-    String[] array = lst.toArray(new String[0]);
-    assertTrue(array.length == strs.length,
-      "Arrays not the same length");
-    for(int i = 0; i < array.length; i++)
-      assertEquals(strs[i], array[i]);
+    assertArrayEquals(lst.toArray(new String[0]), strs);
   }
   @Test
   public void order() {
@@ -72,15 +75,3 @@ public class CountedListTest {
        "An", "African", "Swallow" });
   }
 }
-/* Output:
-CountedList #0
-Running testAddAll()
-CountedList #1
-Running testInsert()
-CountedList #2
-Running testRemove()
-CountedList #3
-Running testOrder()
-CountedList #4
-Running testReplace()
-*/

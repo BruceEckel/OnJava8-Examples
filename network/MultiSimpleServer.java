@@ -2,7 +2,7 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-// Uses multithreading to handle any number of clients
+// Uses threads to handle any number of clients
 // {ValidateByHand}
 import java.io.*;
 import java.net.*;
@@ -25,10 +25,9 @@ class ServeOneSimple extends Thread {
         new BufferedWriter(
           new OutputStreamWriter(
             socket.getOutputStream())), true);
-    // If any of the above calls throw an
-    // exception, the caller is responsible for
-    // closing the socket. Otherwise the thread
-    // will close it.
+    // If any of the above calls throw an exception,
+    // the caller is responsible for closing the
+    // socket. Otherwise the thread closes it.
     start(); // Calls run()
   }
   @Override
@@ -42,10 +41,13 @@ class ServeOneSimple extends Thread {
       }
       System.out.println("closing...");
     } catch (IOException e) {
+      throw new RuntimeException(e);
     } finally {
       try {
         socket.close();
-      } catch(IOException e) {}
+      } catch(IOException e) {
+        throw new RuntimeException(e);
+      }
     }
   }
 }

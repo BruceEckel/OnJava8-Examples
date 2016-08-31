@@ -46,7 +46,9 @@ class SimpleClientThread extends Thread {
       // constructor:
       try {
         socket.close();
-      } catch(IOException e2) {}
+      } catch(IOException e2) {
+        throw new RuntimeException(e2);
+      }
     }
     // Otherwise the socket will be closed by
     // the run() method of the thread.
@@ -61,11 +63,14 @@ class SimpleClientThread extends Thread {
       }
       out.println("END");
     } catch(IOException e) {
+      throw new RuntimeException(e);
     } finally {
       // Always close it:
       try {
         socket.close();
-      } catch(IOException e) {}
+      } catch(IOException e) {
+        throw new RuntimeException(e);
+      }
       threadcount--; // Ending this thread
     }
   }
@@ -77,11 +82,9 @@ public class MultiSimpleClient {
   main(String[] args) throws IOException,
   InterruptedException {
     new TimedAbort(5); // Terminate after 5 seconds
-    InetAddress addr =
-      InetAddress.getByName(null);
+    InetAddress addr = InetAddress.getByName(null);
     while(true) {
-      if(SimpleClientThread.threadCount()
-         < MAX_THREADS)
+      if(SimpleClientThread.threadCount() < MAX_THREADS)
         new SimpleClientThread(addr);
       Thread.sleep(100);
     }
