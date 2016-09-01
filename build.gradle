@@ -263,6 +263,26 @@ subprojects {
         }
     }
     task run(dependsOn: createdTasks)
+
+    /* Store test output in $projectName/tests
+      JUnit 5's junitPlatformTest runs as a "javaExec" rather than a "test",
+      so we can't hook into the before/after test behavior.
+    */
+    tasks.findByPath(":$name:junitPlatformTest").configure{
+      File testDir = new File(project.name + "/tests")
+      if ( testDir.exists() ) {
+        File outFile = new File(testDir, 'report.txt')
+        doFirst{
+          standardOutput = new TeeOutputStream(new FileOutputStream(outFile, true), System.out)
+        }
+        doLast {
+          if(outFile.size() == 0)
+            outFile.delete()
+          else if(outFile.text.contains("0 tests found"))
+            outFile.delete()
+        }
+      }
+    }
 }
 
 project(':validating') {
