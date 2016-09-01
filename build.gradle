@@ -134,6 +134,7 @@ subprojects {
     apply plugin: 'me.champeau.gradle.jmh'
     apply plugin: 'java'
     apply plugin: 'org.junit.platform.gradle.plugin'
+    apply plugin: 'checkstyle'
 
     sourceCompatibility = '1.8'
     targetCompatibility = '1.8'
@@ -172,6 +173,14 @@ subprojects {
         // enableStandardTestTask true
         // reportsDir "build/test-results/junit-platform" // this is the default
         //logManager 'org.apache.logging.log4j.jul.LogManager'
+    }
+
+    // See: http://blog.jessitron.com/2012/07/using-checkstyle-in-gradle.html
+    // https://github.com/checkstyle/checkstyle/blob/master/src/main/resources/google_checks.xml
+    // http://checkstyle.sourceforge.net/reports/google-java-style.html
+    checkstyle {
+        configFile = new File(rootDir, "checkstyle.xml")
+        toolVersion = '6.7'
     }
 
     sourceSets {
