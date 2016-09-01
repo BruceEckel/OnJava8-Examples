@@ -159,20 +159,7 @@ subprojects {
     }
 
     junitPlatform {
-        // platformVersion '1.0.0-SNAPSHOT'
-        //engines {
-          //  include 'junit-jupiter', 'junit-vintage'
-            // exclude 'custom-engine'
-        //}
-/*        tags {
-            // include 'fast'
-            exclude 'slow'
-        }*/
-        //includeClassNamePattern '.*Test'
         includeClassNamePattern '.*'
-        // enableStandardTestTask true
-        // reportsDir "build/test-results/junit-platform" // this is the default
-        //logManager 'org.apache.logging.log4j.jul.LogManager'
     }
 
     // See: http://blog.jessitron.com/2012/07/using-checkstyle-in-gradle.html
@@ -187,8 +174,7 @@ subprojects {
         main {
             java {
                 srcDir projectDir
-                // Remove this when it's working:
-                // exclude "DynamicStringInverterTests.java"
+                exclude "tests/**"
             }
             resources {
                 srcDir projectDir
@@ -200,17 +186,12 @@ subprojects {
                 srcDir projectDir
             }
         }
-/*        test {
+        test {
             java {
-                srcDir projectDir
+                srcDir new File(projectDir, "tests")
             }
-        }*/
+        }
     }
-
-    /*test {
-        testClassesDir = sourceSets.main.output.classesDir
-        classpath  = sourceSets.main.runtimeClasspath
-    }*/
 
     jmh {
         jmhVersion = '1.13'
@@ -227,13 +208,11 @@ subprojects {
 
             // Exclude java sources that will not compile
             if (tags.compileTimeError) {
-                // println ">>> Excluding " + file.name
                 sourceSets.main.java.excludes.add(file.name)
             } else {
                 JavaExec javaTask = null
                 // Add tasks for java sources with main methods
                 if (tags.hasMainMethod || tags.javaCmd) {
-
                     javaTask = tasks.create(name: tags.fileRoot, type: JavaExec, dependsOn: tags.runFirst) {
                         main = tags.mainClass
                         classpath = sourceSets.main.runtimeClasspath
