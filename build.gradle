@@ -134,7 +134,8 @@ subprojects {
     apply plugin: 'me.champeau.gradle.jmh'
     apply plugin: 'java'
     apply plugin: 'org.junit.platform.gradle.plugin'
-    apply plugin: 'checkstyle'
+    //apply plugin: 'checkstyle'
+    //apply plugin: 'findbugs'
 
     sourceCompatibility = '1.8'
     targetCompatibility = '1.8'
@@ -165,11 +166,27 @@ subprojects {
     // See: http://blog.jessitron.com/2012/07/using-checkstyle-in-gradle.html
     // https://github.com/checkstyle/checkstyle/blob/master/src/main/resources/google_checks.xml
     // http://checkstyle.sourceforge.net/reports/google-java-style.html
-    checkstyle {
-        configFile = new File(rootDir, "checkstyle.xml")
+/*    checkstyle {
+        // configFile = new File(rootDir, "checkstyle.xml")
         toolVersion = '6.7'
+    }*/
+
+/*    findbugsMain {
+      reports {
+        xml.enabled = false
+        html.enabled = true
+      }
+      ignoreFailures = true
     }
 
+    findbugsJmh {
+      reports {
+        xml.enabled = false
+        html.enabled = true
+      }
+      ignoreFailures = true
+    }
+*/
     sourceSets {
         main {
             java {
@@ -268,20 +285,20 @@ subprojects {
       JUnit 5's junitPlatformTest runs as a "javaExec" rather than a "test",
       so we can't hook into the before/after test behavior.
     */
-    tasks.findByPath(":$name:junitPlatformTest").configure{
-      File testDir = new File(project.name + "/tests")
-      if ( testDir.exists() ) {
-        File outFile = new File(testDir, 'report.txt')
-        doFirst{
-          standardOutput = new TeeOutputStream(new FileOutputStream(outFile, true), System.out)
+    tasks.findByPath(":$name:junitPlatformTest").configure {
+        File testDir = new File(project.name + "/tests")
+        if(testDir.exists()) {
+            File outFile = new File(testDir, 'report.txt')
+            doFirst {
+                standardOutput = new TeeOutputStream(new FileOutputStream(outFile, true), System.out)
+            }
+            doLast {
+                if(outFile.size() == 0)
+                    outFile.delete()
+                else if(outFile.text.contains("0 tests found"))
+                    outFile.delete()
+            }
         }
-        doLast {
-          if(outFile.size() == 0)
-            outFile.delete()
-          else if(outFile.text.contains("0 tests found"))
-            outFile.delete()
-        }
-      }
     }
 }
 
