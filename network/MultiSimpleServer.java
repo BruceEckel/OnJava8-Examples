@@ -4,6 +4,7 @@
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // Uses threads to handle any number of clients.
 // {ValidateByHand}
+package network;
 import java.io.*;
 import java.net.*;
 import onjava.*;

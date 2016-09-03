@@ -2,8 +2,7 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-// Finds out your machine name and network address
-// when you're connected to the Internet
+// Discovers your machine name and network address.
 import java.net.*;
 
 public class WhoAmI {

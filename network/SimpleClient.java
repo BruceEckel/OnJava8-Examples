@@ -5,6 +5,7 @@
 // Sends lines to the server and
 // reads lines the server sends.
 // {ValidateByHand}
+package network;
 import java.net.*;
 import java.io.*;
 

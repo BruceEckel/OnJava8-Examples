@@ -5,6 +5,7 @@
 // {ValidateByHand}
 // Tests the ChatterServer by starting multiple
 // clients, each of which sends datagrams.
+package network;
 import java.net.*;
 import java.io.*;
 import onjava.*;

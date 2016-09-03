@@ -4,6 +4,7 @@
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // Echoes what the client sends.
 // {ValidateByHand}
+package network;
 import java.io.*;
 import java.net.*;
 

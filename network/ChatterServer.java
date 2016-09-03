@@ -4,6 +4,7 @@
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // {ValidateByHand}
 // A server that echoes datagrams
+package network;
 import java.net.*;
 import java.io.*;
 import onjava.*;
