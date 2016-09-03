@@ -2,75 +2,50 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-// Testing MultiSimpleServer with multiple clients
+// Testing MultiSimpleServer with multiple clients.
 // {ValidateByHand}
 import java.net.*;
 import java.io.*;
 import onjava.*;
 
-class SimpleClientThread extends Thread {
-  private Socket socket;
-  private BufferedReader in;
-  private PrintWriter out;
+class SimpleClientThread implements Runnable {
+  private InetAddress address;
   private static int counter = 0;
   private int id = counter++;
   private static int threadcount = 0;
   public static int threadCount() {
     return threadcount;
   }
-  public SimpleClientThread(InetAddress addr) {
+  public SimpleClientThread(InetAddress address) {
     System.out.println("Making client " + id);
+    this.address = address;
     threadcount++;
-    try {
-      socket =
-        new Socket(addr, MultiSimpleServer.PORT);
-    } catch(IOException e) {
-      // If the creation of the socket fails,
-      // nothing needs cleanup.
-    }
-    try {
-      in =
-        new BufferedReader(
-          new InputStreamReader(
-            socket.getInputStream()));
-      // Enable auto-flush:
-      out =
-        new PrintWriter(
-          new BufferedWriter(
-            new OutputStreamWriter(
-              socket.getOutputStream())), true);
-      start();
-    } catch(IOException e) {
-      // The socket should be closed on any
-      // failures other than the socket
-      // constructor:
-      try {
-        socket.close();
-      } catch(IOException e2) {
-        throw new RuntimeException(e2);
-      }
-    }
-    // Otherwise the socket will be closed by
-    // the run() method of the thread.
   }
   @Override
   public void run() {
-    try {
-      for(int i = 0; i < 25; i++) {
+    try (
+      Socket socket =
+        new Socket(address, MultiSimpleServer.PORT);
+      BufferedReader in =
+        new BufferedReader(
+          new InputStreamReader(
+            socket.getInputStream()));
+      PrintWriter out =
+        new PrintWriter(
+          new BufferedWriter(
+            new OutputStreamWriter(
+              // Enable auto-flush:
+              socket.getOutputStream())), true)
+    ) {
+      for (int i = 0; i < 25; i++) {
         out.println("Client " + id + ": " + i);
         String str = in.readLine();
         System.out.println(str);
       }
       out.println("END");
-    } catch(IOException e) {
-      throw new RuntimeException(e);
+    } catch (IOException ex) {
+        throw new RuntimeException(ex);
     } finally {
-      // Always close it:
-      try {
-        socket.close();
-      } catch(IOException e) {
-        throw new RuntimeException(e);
-      }
       threadcount--; // Ending this thread
     }
   }
@@ -82,10 +57,10 @@ public class MultiSimpleClient {
   main(String[] args) throws IOException,
   InterruptedException {
     new TimedAbort(5); // Terminate after 5 seconds
-    InetAddress addr = InetAddress.getByName(null);
+    InetAddress address = InetAddress.getByName(null);
     while(true) {
       if(SimpleClientThread.threadCount() < MAX_THREADS)
-        new SimpleClientThread(addr);
+        new SimpleClientThread(address);
       Thread.sleep(100);
     }
   }

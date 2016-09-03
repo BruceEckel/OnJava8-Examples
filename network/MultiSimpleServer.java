@@ -2,52 +2,42 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-// Uses threads to handle any number of clients
+// Uses threads to handle any number of clients.
 // {ValidateByHand}
 import java.io.*;
 import java.net.*;
 import onjava.*;
 
-class ServeOneSimple extends Thread {
-  private Socket socket;
-  private BufferedReader in;
-  private PrintWriter out;
-  public ServeOneSimple(Socket s)
-      throws IOException {
-    socket = s;
-    in =
-      new BufferedReader(
-        new InputStreamReader(
-          socket.getInputStream()));
-    // Enable auto-flush:
-    out =
-      new PrintWriter(
-        new BufferedWriter(
-          new OutputStreamWriter(
-            socket.getOutputStream())), true);
-    // If any of the above calls throw an exception,
-    // the caller is responsible for closing the
-    // socket. Otherwise the thread closes it.
-    start(); // Calls run()
+class ServeOneSimple implements Runnable {
+  private ServerSocket ss;
+  public
+  ServeOneSimple(ServerSocket ss) throws IOException {
+    this.ss = ss;
   }
   @Override
   public void run() {
-    try {
+    try (
+      Socket socket = ss.accept();
+      BufferedReader in =
+        new BufferedReader(
+          new InputStreamReader(
+            socket.getInputStream()));
+      PrintWriter out =
+        new PrintWriter(
+          new BufferedWriter(
+            new OutputStreamWriter(
+              // Enable auto-flush:
+              socket.getOutputStream())), true)
+    ) {
       while (true) {
         String str = in.readLine();
         if(str.equals("END")) break;
         System.out.println("Echoing: " + str);
         out.println(str);
       }
-      System.out.println("closing...");
+      System.out.println("closing socket...");
     } catch (IOException e) {
       throw new RuntimeException(e);
-    } finally {
-      try {
-        socket.close();
-      } catch(IOException e) {
-        throw new RuntimeException(e);
-      }
     }
   }
 }
@@ -57,22 +47,12 @@ public class MultiSimpleServer {
   public static void
   main(String[] args) throws IOException {
     new TimedAbort(5); // Terminate after 5 seconds
-    ServerSocket s = new ServerSocket(PORT);
     System.out.println("Server Started");
-    try {
+    try (ServerSocket ss = new ServerSocket(PORT)){
+      // Block until a connection occurs:
       while(true) {
-        // Blocks until a connection occurs:
-        Socket socket = s.accept();
-        try {
-          new ServeOneSimple(socket);
-        } catch(IOException e) {
-          // If it fails, close the socket,
-          // otherwise the thread will close it:
-          socket.close();
-        }
+          new ServeOneSimple(ss);
       }
-    } finally {
-      s.close();
     }
   }
 }
