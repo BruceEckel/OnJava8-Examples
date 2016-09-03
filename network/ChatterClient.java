@@ -10,8 +10,6 @@ import java.io.*;
 import onjava.*;
 
 public class ChatterClient extends Thread {
-  // Can listen & send on the same socket:
-  private DatagramSocket s;
   private InetAddress hostAddress;
   private byte[] buf = new byte[1000];
   private DatagramPacket dp =
@@ -21,21 +19,19 @@ public class ChatterClient extends Thread {
   public ChatterClient(int identifier) {
     id = identifier;
     try {
-      // Auto-assign port number:
-      s = new DatagramSocket();
       hostAddress =
         InetAddress.getByName("localhost");
     } catch(UnknownHostException e) {
       System.err.println("Cannot find host");
       System.exit(1);
-    } catch(SocketException e) {
-      System.err.println("Can't open socket");
-      throw new RuntimeException(e);
     }
     System.out.println("ChatterClient starting");
   }
   public void sendAndEcho(String msg) {
-    try {
+    try (
+      // Auto-assign port number:
+      DatagramSocket s = new DatagramSocket();
+    ) {
       // Make and send a datagram:
       s.send(Dgram.toDatagram(
         msg, hostAddress, ChatterServer.INPORT));
@@ -48,6 +44,9 @@ public class ChatterClient extends Thread {
         dp.getPort() + ": " +
         Dgram.toString(dp);
       System.out.println(rcvd);
+    } catch(SocketException e) {
+      System.err.println("Can't open socket");
+      throw new RuntimeException(e);
     } catch(IOException e) {
       throw new RuntimeException(e);
     }
