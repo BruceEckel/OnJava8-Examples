@@ -9,11 +9,13 @@ public class FileOutputShortcut {
   static String file = "FileOutputShortcut.dat";
   public static void
   main(String[] args) throws IOException {
-    try(BufferedReader in = new BufferedReader(
-          new StringReader(BufferedInputFile.read(
-            "FileOutputShortcut.java")));
-    // Here's the shortcut:
-    PrintWriter out = new PrintWriter(file)) {
+    try(
+      BufferedReader in = new BufferedReader(
+        new StringReader(BufferedInputFile.read(
+          "FileOutputShortcut.java")));
+      // Here's the shortcut:
+      PrintWriter out = new PrintWriter(file)
+    ) {
       int lineCount = 1;
       String s;
       while((s = in.readLine()) != null )

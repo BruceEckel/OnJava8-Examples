@@ -13,11 +13,13 @@ public class OSExecute {
     try {
       Process process =
         new ProcessBuilder(command.split(" ")).start();
-      try(BufferedReader results = new BufferedReader(
-            new InputStreamReader(process.getInputStream()));
-          BufferedReader errors = new BufferedReader(
-            new InputStreamReader(
-              process.getErrorStream()))) {
+      try(
+        BufferedReader results = new BufferedReader(
+          new InputStreamReader(process.getInputStream()));
+        BufferedReader errors = new BufferedReader(
+          new InputStreamReader(
+            process.getErrorStream()))
+      ) {
         String s;
         while((s = results.readLine())!= null)
           System.out.println(s);

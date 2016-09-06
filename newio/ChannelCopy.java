@@ -17,10 +17,12 @@ public class ChannelCopy {
         "arguments: sourcefile destfile");
       System.exit(1);
     }
-    try(FileChannel in = new FileInputStream(
-          args[0]).getChannel();
-        FileChannel out = new FileOutputStream(
-          args[1]).getChannel()) {
+    try(
+      FileChannel in = new FileInputStream(
+        args[0]).getChannel();
+      FileChannel out = new FileOutputStream(
+        args[1]).getChannel()
+    ) {
       ByteBuffer buffer = ByteBuffer.allocate(BSIZE);
       while(in.read(buffer) != -1) {
         buffer.flip(); // Prepare for writing

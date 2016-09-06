@@ -9,9 +9,11 @@ import java.io.*;
 public class FileLocking {
   public static void
   main(String[] args) throws Exception {
-    try(FileOutputStream fos =
-          new FileOutputStream("file.txt");
-        FileLock fl = fos.getChannel().tryLock()) {
+    try(
+      FileOutputStream fos =
+        new FileOutputStream("file.txt");
+      FileLock fl = fos.getChannel().tryLock()
+    ) {
       if(fl != null) {
         System.out.println("Locked File");
         TimeUnit.MILLISECONDS.sleep(100);

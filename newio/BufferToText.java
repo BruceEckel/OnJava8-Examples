@@ -12,13 +12,17 @@ public class BufferToText {
   private static final int BSIZE = 1024;
   public static void
   main(String[] args) throws Exception {
-    try(FileChannel fc = new FileOutputStream(
-          "data2.txt").getChannel()) {
+    try(
+      FileChannel fc = new FileOutputStream(
+        "data2.txt").getChannel()
+    ) {
       fc.write(ByteBuffer.wrap("Some text".getBytes()));
     }
     ByteBuffer buff = ByteBuffer.allocate(BSIZE);
-    try(FileChannel fc = new FileInputStream(
-          "data2.txt").getChannel()) {
+    try(
+      FileChannel fc = new FileInputStream(
+        "data2.txt").getChannel()
+    ) {
       fc.read(buff);
     }
     buff.flip();
@@ -30,15 +34,19 @@ public class BufferToText {
     System.out.println("Decoded using " + encoding + ": "
       + Charset.forName(encoding).decode(buff));
     // Or, we could encode with something that prints:
-    try(FileChannel fc = new FileOutputStream(
-          "data2.txt").getChannel()) {
+    try(
+      FileChannel fc = new FileOutputStream(
+        "data2.txt").getChannel()
+    ) {
       fc.write(ByteBuffer.wrap(
         "Some text".getBytes("UTF-16BE")));
     }
     // Now try reading again:
     buff.clear();
-    try(FileChannel fc = new FileInputStream(
-          "data2.txt").getChannel()) {
+    try(
+      FileChannel fc = new FileInputStream(
+        "data2.txt").getChannel()
+    ) {
       fc.read(buff);
     }
     buff.flip();
@@ -46,14 +54,18 @@ public class BufferToText {
     // Use a CharBuffer to write through:
     buff = ByteBuffer.allocate(24); // More than needed
     buff.asCharBuffer().put("Some text");
-    try(FileChannel fc = new FileOutputStream(
-          "data2.txt").getChannel()) {
+    try(
+      FileChannel fc = new FileOutputStream(
+        "data2.txt").getChannel()
+    ) {
       fc.write(buff);
     }
     // Read and display:
     buff.clear();
-    try(FileChannel fc = new FileInputStream(
-          "data2.txt").getChannel()) {
+    try(
+      FileChannel fc = new FileInputStream(
+        "data2.txt").getChannel()
+    ) {
       fc.read(buff);
     }
     buff.flip();

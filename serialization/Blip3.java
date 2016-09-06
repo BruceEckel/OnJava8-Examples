@@ -42,15 +42,19 @@ public class Blip3 implements Externalizable {
     System.out.println("Constructing objects:");
     Blip3 b3 = new Blip3("A String ", 47);
     System.out.println(b3);
-    try(ObjectOutputStream o = new ObjectOutputStream(
-          new FileOutputStream("Blip3.serialized"))) {
+    try(
+      ObjectOutputStream o = new ObjectOutputStream(
+        new FileOutputStream("Blip3.serialized"))
+    ) {
       System.out.println("Saving object:");
       o.writeObject(b3);
     }
     // Now get it back:
     System.out.println("Recovering b3:");
-    try(ObjectInputStream in = new ObjectInputStream(
-          new FileInputStream("Blip3.serialized"))) {
+    try(
+      ObjectInputStream in = new ObjectInputStream(
+        new FileInputStream("Blip3.serialized"))
+    ) {
       b3 = (Blip3)in.readObject();
     }
     System.out.println(b3);

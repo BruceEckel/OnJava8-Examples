@@ -24,14 +24,18 @@ public class Logon implements Serializable {
   main(String[] args) throws Exception {
     Logon a = new Logon("Hulk", "myLittlePony");
     System.out.println("logon a = " + a);
-    try(ObjectOutputStream o = new ObjectOutputStream(
-          new FileOutputStream("Logon.dat"))) {
+    try(
+      ObjectOutputStream o = new ObjectOutputStream(
+        new FileOutputStream("Logon.dat"))
+    ) {
       o.writeObject(a);
     }
     TimeUnit.SECONDS.sleep(1); // Delay
     // Now get them back:
-    try(ObjectInputStream in = new ObjectInputStream(
-          new FileInputStream("Logon.dat"))) {
+    try(
+      ObjectInputStream in = new ObjectInputStream(
+        new FileInputStream("Logon.dat"))
+    ) {
       System.out.println(
         "Recovering object at " + new Date());
       a = (Logon)in.readObject();

@@ -75,3 +75,27 @@ public class CountedListTest {
        "An", "African", "Swallow" });
   }
 }
+/* Output:
+>>> Starting CountedListTest
+CountedList #0
+Set up for 0
+Running testRemove()
+Cleaning up 0
+CountedList #1
+Set up for 1
+Running testReplace()
+Cleaning up 1
+CountedList #2
+Set up for 2
+Running testAddAll()
+Cleaning up 2
+CountedList #3
+Set up for 3
+Running testInsert()
+Cleaning up 3
+CountedList #4
+Set up for 4
+Running testOrder()
+Cleaning up 4
+>>> Finished CountedListTest
+*/

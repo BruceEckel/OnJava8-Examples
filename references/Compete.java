@@ -47,18 +47,22 @@ public class Compete {
     for(int i = 0; i < SIZE; i++)
       b[i] = new Thing4();
     long t1 = System.currentTimeMillis();
-    try(ByteArrayOutputStream buf =
-          new ByteArrayOutputStream();
-        ObjectOutputStream oos =
-          new ObjectOutputStream(buf)) {
+    try(
+      ByteArrayOutputStream buf =
+        new ByteArrayOutputStream();
+      ObjectOutputStream oos =
+        new ObjectOutputStream(buf)
+    ) {
       for(Thing2 a1 : a) {
         oos.writeObject(a1);
       }
       // Now get copies:
-      try(ObjectInputStream in =
-            new ObjectInputStream(
-              new ByteArrayInputStream(
-                buf.toByteArray()))) {
+      try(
+        ObjectInputStream in =
+          new ObjectInputStream(
+            new ByteArrayInputStream(
+              buf.toByteArray()))
+      ) {
         Thing2[] c = new Thing2[SIZE];
         for(int i = 0; i < SIZE; i++)
           c[i] = (Thing2)in.readObject();

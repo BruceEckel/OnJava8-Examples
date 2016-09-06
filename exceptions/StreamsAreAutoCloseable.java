@@ -9,10 +9,12 @@ import java.util.stream.*;
 public class StreamsAreAutoCloseable {
   public static void
   main(String[] args) throws IOException{
-    try(Stream<String> in = Files.lines(
-          Paths.get("StreamsAreAutoCloseable.java"));
-        PrintWriter outfile = new PrintWriter(
-          "Results.txt");) { // (1)
+    try(
+      Stream<String> in = Files.lines(
+        Paths.get("StreamsAreAutoCloseable.java"));
+      PrintWriter outfile = new PrintWriter(
+        "Results.txt"); // (1)
+    ) {
       in.skip(5)
         .limit(1)
         .map(String::toLowerCase)

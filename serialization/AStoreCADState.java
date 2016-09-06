@@ -87,9 +87,11 @@ public class AStoreCADState {
     for(int i = 0; i < 10; i++)
       ((Shape)shapes.get(i)).setColor(Shape.GREEN);
     // Save the state vector:
-    try(ObjectOutputStream out =
-          new ObjectOutputStream(
-            new FileOutputStream("CADState.dat"))) {
+    try(
+      ObjectOutputStream out =
+        new ObjectOutputStream(
+          new FileOutputStream("CADState.dat"))
+    ) {
       out.writeObject(shapeTypes);
       Line.serializeStaticState(out);
       out.writeObject(shapes);

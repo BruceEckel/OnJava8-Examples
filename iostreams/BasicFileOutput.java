@@ -9,12 +9,14 @@ public class BasicFileOutput {
   static String file = "BasicFileOutput.dat";
   public static void
   main(String[] args) throws IOException {
-    try(BufferedReader in = new BufferedReader(
-          new StringReader(
-            BufferedInputFile.read(
-              "BasicFileOutput.java")));
-        PrintWriter out = new PrintWriter(
-          new BufferedWriter(new FileWriter(file)))) {
+    try(
+      BufferedReader in = new BufferedReader(
+        new StringReader(
+          BufferedInputFile.read(
+            "BasicFileOutput.java")));
+      PrintWriter out = new PrintWriter(
+        new BufferedWriter(new FileWriter(file)))
+    ) {
       int lineCount = 1;
       String s;
       while((s = in.readLine()) != null )

@@ -9,9 +9,11 @@ import java.io.*;
 public class TestEOF {
   public static void
   main(String[] args) throws IOException {
-    try(DataInputStream in = new DataInputStream(
-          new BufferedInputStream(
-            new FileInputStream("TestEOF.java")))) {
+    try(
+      DataInputStream in = new DataInputStream(
+        new BufferedInputStream(
+          new FileInputStream("TestEOF.java")))
+    ) {
       while(in.available() != 0)
         System.out.write(in.readByte());
     }

@@ -8,8 +8,10 @@ import java.io.*;
 public class BufferedInputFile {
   public static String
   read(String filename) throws IOException {
-    try(BufferedReader in = new BufferedReader(
-          new FileReader(filename))) {
+    try(
+      BufferedReader in = new BufferedReader(
+        new FileReader(filename))
+    ) {
       String s;
       StringBuilder sb = new StringBuilder();
       while((s = in.readLine())!= null)

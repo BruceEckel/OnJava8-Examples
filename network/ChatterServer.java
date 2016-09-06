@@ -2,20 +2,18 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-// {ValidateByHand}
 // A server that echoes datagrams
 package network;
 import java.net.*;
 import java.io.*;
-import onjava.*;
 
-public class ChatterServer {
+public class ChatterServer implements Runnable {
   static final int INPORT = 1711;
   private byte[] buf = new byte[1000];
   private DatagramPacket dp =
     new DatagramPacket(buf, buf.length);
 
-  public ChatterServer() {
+  public void run() {
     // Can listen & send on the same socket:
     try (
       DatagramSocket socket = new DatagramSocket(INPORT)
@@ -38,13 +36,6 @@ public class ChatterServer {
             dp.getAddress(), dp.getPort());
         socket.send(echo);
       }
-    } catch(IOException e) {
-      System.out.println("Communication error");
-      throw new RuntimeException(e);
-    }
-  }
-  public static void main(String[] args) {
-    new TimedAbort(5); // Terminate after 5 seconds
-    new ChatterServer();
+    } catch(IOException e) { throw new RuntimeException(e); }
   }
 }

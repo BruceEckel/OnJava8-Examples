@@ -25,9 +25,11 @@ class Closer extends Reporter2 {
 
 public class CloseExceptions {
   public static void main(String[] args) {
-    try(First f = new First();
-        Closer c = new Closer();
-        Second s = new Second()) {
+    try(
+      First f = new First();
+      Closer c = new Closer();
+      Second s = new Second()
+    ) {
       System.out.println("In body");
     } catch(CloseException e) {
       System.out.println("Caught: " + e);

@@ -2,31 +2,22 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-// {ValidateByHand}
-// Tests the ChatterServer by starting multiple
-// clients, each of which sends datagrams.
+// Starts multiple clients, each of which sends datagrams.
 package network;
 import java.net.*;
 import java.io.*;
-import onjava.*;
 
-public class ChatterClient extends Thread {
+public class ChatterClient implements Runnable {
   private InetAddress hostAddress;
   private byte[] buf = new byte[1000];
   private DatagramPacket dp =
     new DatagramPacket(buf, buf.length);
-  private int id;
+  private static int counter = 0;
+  private int id = counter++;
 
-  public ChatterClient(int identifier) {
-    id = identifier;
-    try {
-      hostAddress =
-        InetAddress.getByName("localhost");
-    } catch(UnknownHostException e) {
-      System.err.println("Cannot find host");
-      System.exit(1);
-    }
-    System.out.println("ChatterClient starting");
+  public ChatterClient(InetAddress hostAddress) {
+    this.hostAddress = hostAddress;
+    System.out.println("ChatterClient #" + id + " starting");
   }
   public void sendAndEcho(String msg) {
     try (
@@ -45,21 +36,13 @@ public class ChatterClient extends Thread {
         dp.getPort() + ": " +
         Dgram.toString(dp);
       System.out.println(rcvd);
-    } catch(SocketException e) {
-      System.err.println("Can't open socket");
-      throw new RuntimeException(e);
     } catch(IOException e) {
       throw new RuntimeException(e);
     }
   }
   @Override
   public void run() {
-    for(int i = 0; i <= 25; i++)
+    for(int i = 0; i <= 5; i++)
       sendAndEcho("Client #" + id + ", message #" + i);
-  }
-  public static void main(String[] args) {
-    new TimedAbort(5); // Terminate after 5 seconds
-    for(int i = 0; i <= 10; i++)
-      new ChatterClient(i).start();
   }
 }

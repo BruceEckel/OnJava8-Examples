@@ -4,22 +4,19 @@
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // Sends lines to the server and
 // reads lines the server sends.
-// {ValidateByHand}
 package network;
 import java.net.*;
 import java.io.*;
 
-public class SimpleClient {
-  public static void
-  main(String[] args) throws IOException {
-    // Produce the "Local Loopback" IP address
-    // for testing on one machine w/o a network:
-    InetAddress addr =
-      InetAddress.getLoopbackAddress();
-    System.out.println("addr = " + addr);
-    // TWR will sure that the socket is closed:
+public class SimpleClient implements Runnable {
+  private InetAddress hostAddress;
+  public SimpleClient(InetAddress hostAddress) {
+    this.hostAddress = hostAddress;
+  }
+  public void run() {
+    System.out.println("hostAddress = " + hostAddress);
     try (
-      Socket socket = new Socket(addr, SimpleServer.PORT);
+      Socket socket = new Socket(hostAddress, SimpleServer.PORT);
       BufferedReader in =
         new BufferedReader(
           new InputStreamReader(
@@ -35,9 +32,11 @@ public class SimpleClient {
       for(int i = 0; i < 10; i ++) {
         out.println("hello " + i);
         String str = in.readLine();
-        System.out.println(str);
+        System.out.println("client Message : " + str);
       }
       out.println("END");
+    } catch (IOException e) {
+      throw new RuntimeException(e);
     }
   }
 }

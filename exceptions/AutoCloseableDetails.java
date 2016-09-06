@@ -18,8 +18,10 @@ class Second extends Reporter {}
 
 public class AutoCloseableDetails {
   public static void main(String[] args) {
-    try(First f = new First();
-        Second s = new Second()) {
+    try(
+      First f = new First();
+      Second s = new Second()
+    ) {
     }
   }
 }

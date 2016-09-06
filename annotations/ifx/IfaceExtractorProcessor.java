@@ -50,9 +50,11 @@ extends AbstractProcessor {
   }
   private void
   writeInterfaceFile(String interfaceName) {
-    try(Writer writer = processingEnv.getFiler()
-          .createSourceFile(interfaceName)
-          .openWriter()) {
+    try(
+      Writer writer = processingEnv.getFiler()
+        .createSourceFile(interfaceName)
+        .openWriter()
+    ) {
       String packageName = elementUtils
         .getPackageOf(interfaceMethods
                       .get(0)).toString();

@@ -15,10 +15,12 @@ public class TransferTo {
         "arguments: sourcefile destfile");
       System.exit(1);
     }
-    try(FileChannel in = new FileInputStream(
-          args[0]).getChannel();
-        FileChannel out = new FileOutputStream(
-          args[1]).getChannel()) {
+    try(
+      FileChannel in = new FileInputStream(
+        args[0]).getChannel();
+      FileChannel out = new FileOutputStream(
+        args[1]).getChannel()
+    ) {
       in.transferTo(0, in.size(), out);
       // Or:
       // out.transferFrom(in, 0, in.size());

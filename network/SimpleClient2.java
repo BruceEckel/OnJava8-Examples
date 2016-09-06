@@ -1,15 +1,12 @@
-// network/MultiSimpleClient.java
+// network/SimpleClient2.java
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
-// Testing MultiSimpleServer with multiple clients.
-// {ValidateByHand}
 package network;
 import java.net.*;
 import java.io.*;
-import onjava.*;
 
-class SimpleClientThread implements Runnable {
+public class SimpleClient2 implements Runnable {
   private InetAddress address;
   private static int counter = 0;
   private int id = counter++;
@@ -17,7 +14,7 @@ class SimpleClientThread implements Runnable {
   public static int threadCount() {
     return threadcount;
   }
-  public SimpleClientThread(InetAddress address) {
+  public SimpleClient2(InetAddress address) {
     System.out.println("Making client " + id);
     this.address = address;
     threadcount++;
@@ -26,7 +23,7 @@ class SimpleClientThread implements Runnable {
   public void run() {
     try (
       Socket socket =
-        new Socket(address, MultiSimpleServer.PORT);
+        new Socket(address, ServeOne.PORT);
       BufferedReader in =
         new BufferedReader(
           new InputStreamReader(
@@ -48,21 +45,6 @@ class SimpleClientThread implements Runnable {
         throw new RuntimeException(ex);
     } finally {
       threadcount--; // Ending this thread
-    }
-  }
-}
-
-public class MultiSimpleClient {
-  static final int MAX_THREADS = 40;
-  public static void
-  main(String[] args) throws IOException,
-  InterruptedException {
-    new TimedAbort(5); // Terminate after 5 seconds
-    InetAddress address = InetAddress.getByName(null);
-    while(true) {
-      if(SimpleClientThread.threadCount() < MAX_THREADS)
-        new SimpleClientThread(address);
-      Thread.sleep(100);
     }
   }
 }

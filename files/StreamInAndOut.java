@@ -8,10 +8,12 @@ import java.util.stream.*;
 
 public class StreamInAndOut {
   public static void main(String[] args) {
-    try(Stream<String> input =
-          Files.lines(Paths.get("StreamInAndOut.java"));
-        PrintWriter output =
-          new PrintWriter("StreamInAndOut.txt")) {
+    try(
+      Stream<String> input =
+        Files.lines(Paths.get("StreamInAndOut.java"));
+      PrintWriter output =
+        new PrintWriter("StreamInAndOut.txt")
+    ) {
       input
         .map(String::toUpperCase)
         .forEachOrdered(output::println);

@@ -11,9 +11,11 @@ public class RecoverCADState {
   @SuppressWarnings("unchecked")
   public static void
   main(String[] args) throws Exception {
-    try(ObjectInputStream in =
-          new ObjectInputStream(
-            new FileInputStream("CADState.dat"))) {
+    try(
+      ObjectInputStream in =
+        new ObjectInputStream(
+          new FileInputStream("CADState.dat"))
+    ) {
       // Read in the same order they were written:
       List<Class<? extends Shape>> shapeTypes =
         (List<Class<? extends Shape>>)in.readObject();
