@@ -4,6 +4,8 @@
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // Uses remote object PerfectTime
 // {ValidateByHand}
+package remote;
+
 import java.rmi.registry.*;
 
 public class DisplayPerfectTime {

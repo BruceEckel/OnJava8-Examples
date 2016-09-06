@@ -4,6 +4,8 @@
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // Server for the PerfectTime remote object
 // {ValidateByHand}
+package remote;
+
 import java.rmi.registry.Registry;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.RemoteException;
