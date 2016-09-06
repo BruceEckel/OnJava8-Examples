@@ -3,6 +3,8 @@
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://mindviewinc.com/Books/OnJava/ for more book information.
 // The PerfectTime remote interface
+package remote;
+
 import java.rmi.*;
 
 public interface PerfectTime extends Remote {
