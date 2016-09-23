@@ -1,9 +1,9 @@
 // validating/Assert1.java
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
-// Visit http://mindviewinc.com/Books/OnJava/ for more book information.
+// Visit http://OnJava8.com for more book information.
 // Non-informative style of assert
-// Must run with -ea:
+// Must run using -ea flag:
 // {java -ea Assert1}
 // {ThrowsException}
 

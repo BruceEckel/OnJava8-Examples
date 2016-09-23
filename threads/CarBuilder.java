@@ -1,7 +1,7 @@
 // threads/CarBuilder.java
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
-// Visit http://mindviewinc.com/Books/OnJava/ for more book information.
+// Visit http://OnJava8.com for more book information.
 // A complex example of tasks working together
 import java.util.concurrent.*;
 import java.util.*;
