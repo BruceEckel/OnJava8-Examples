@@ -5,7 +5,7 @@
 import java.util.*;
 
 public class BadMicroBenchmark {
-  static final int SIZE = 20_000_000;
+  static final int SIZE = 250_000_000;
   public static void main(String[] args) {
     long[] la = new long[SIZE];
     System.out.print("setAll: ");
@@ -15,6 +15,6 @@ public class BadMicroBenchmark {
   }
 }
 /* Output:
-setAll: 75
-parallelSetAll: 110
+setAll: 272
+parallelSetAll: 301
 */

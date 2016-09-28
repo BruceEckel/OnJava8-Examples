@@ -1,17 +1,24 @@
-// validating/jmh/ParallelSetAll.java
+// validating/jmh/JMH1.java
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 package validating.jmh;
 import java.util.*;
 import org.openjdk.jmh.annotations.*;
+import java.util.concurrent.TimeUnit;
 
 @State(Scope.Thread)
-public class ParallelSetAll {
+@BenchmarkMode(Mode.AverageTime)
+@OutputTimeUnit(TimeUnit.MICROSECONDS)
+// Increase these three for more accuracy:
+@Warmup(iterations = 5)
+@Measurement(iterations = 5)
+@Fork(1)
+public class JMH1 {
   private long[] la;
   @Setup
   public void setup() {
-    la = new long[20_000_000];
+    la = new long[250_000_000];
   }
   @Benchmark
   public void setAll() {
