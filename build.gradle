@@ -211,7 +211,7 @@ subprojects {
     }
 
     jmh {
-        jmhVersion = '1.14.1'
+        jmhVersion = '1.15'
         duplicateClassesStrategy = 'warn'
     }
 
