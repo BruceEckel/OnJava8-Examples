@@ -2,61 +2,68 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
-// Demonstrates performance differences in Queues
+// Performance differences between Queues
 package understandingcollections.jmh;
 import org.openjdk.jmh.annotations.*;
 import org.openjdk.jmh.infra.Blackhole;
 import java.util.*;
-import static java.util.concurrent.TimeUnit.*;
+import java.util.concurrent.*;
 
 @State(Scope.Thread)
-@Warmup(iterations = 5, time = 1, timeUnit = SECONDS)
-@Measurement(iterations = 5, time = 1, timeUnit = SECONDS)
+@OutputTimeUnit(TimeUnit.MICROSECONDS)
+@Warmup(iterations = 5, batchSize = 5000)
+@Measurement(iterations = 5, batchSize = 5000)
+@BenchmarkMode(Mode.SingleShotTime)
 @Fork(1)
-@BenchmarkMode(Mode.AverageTime)
-@OutputTimeUnit(MICROSECONDS)
 public class Queues {
-  private LinkedList<Integer> queue;
+  private Queue<String> queue;
 
-  @Param({"LinkedList"})
+  @Param({
+    "java.util.LinkedList",
+    "java.util.concurrent.ConcurrentLinkedQueue",
+    "java.util.concurrent.LinkedBlockingQueue",
+    "java.util.concurrent.LinkedTransferQueue",
+    "java.util.concurrent.PriorityBlockingQueue",
+    "java.util.PriorityQueue",
+    // Requires a size for construction:
+    //"java.util.concurrent.ArrayBlockingQueue",
+    // Won't accept more than one element:
+    //"java.util.concurrent.SynchronousQueue",
+    // Requires "Delayed" elements:
+    //"java.util.concurrent.DelayQueue",
+  })
   private String type;
 
-  private int begin;
-  private int end;
+  @Param({
+    "1",
+    "10",
+    "100",
+    "1000",
+    "10000",
+    "100000"
+  })
+  private int size;
 
   @Setup
   public void setup() {
-    switch(type) {
-      case "LinkedList":
-        queue = new LinkedList<>();
-        break;
-      default:
-        throw new IllegalStateException("Unknown " + type);
+    try {
+      queue = (Queue<String>)
+        Class.forName(type).newInstance();
+    } catch(Exception e) {
+      System.err.println(
+        "-> Cannot create: " + type);
+      System.exit(99);
     }
-    begin = 1;
-    end = 256;
-    for(int i = begin; i < end; i++) {
-      queue.add(i);
-    }
+    for(int i = 0; i < size; i++)
+      queue.add(Integer.toString(i));
   }
   @Benchmark
-  public void queue_addFirst() {
-    for(int i = begin; i < end; i++)
-      queue.addFirst(47);
+  public Queue<String> add() {
+    queue.add("test");
+    return queue;
   }
   @Benchmark
-  public void queue_addLast() {
-    for(int i = begin; i < end; i++)
-      queue.addLast(47);
-  }
-  @Benchmark
-  public void queue_removeFirst(Blackhole bh) {
-    while(queue.size() > 0)
-      bh.consume(queue.removeFirst());
-  }
-  @Benchmark
-  public void queue_removeLast(Blackhole bh) {
-    while(queue.size() > 0)
-      bh.consume(queue.removeLast());
+  public void poll(Blackhole bh) {
+    bh.consume(queue.poll());
   }
 }

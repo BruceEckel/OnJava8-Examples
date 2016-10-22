@@ -14,7 +14,7 @@ public class CountedString {
     s = str;
     created.add(s);
     // id is the total number of instances
-    // of this String in use by CountedString:
+    // of this String used by CountedString:
     for(String s2 : created)
       if(s2.equals(s))
         id++;

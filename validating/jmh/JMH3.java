@@ -34,8 +34,8 @@ public class JMH3 {
     la = new long[size];
   }
   public static long f(long x) {
-    long divisor = x % 25 + 1;
-    return Long.divideUnsigned(x, divisor);
+    long quadratic = 42 * x * x + 19 * x + 47;
+    return Long.divideUnsigned(quadratic, x + 1);
   }
   @Benchmark
   public void setAll() {

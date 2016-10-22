@@ -29,7 +29,7 @@ public class SuppliersCollectionTest {
     Suppliers.fill(list, new Government(), 15);
     System.out.println(list);
 
-    // Or we could just use Streams:
+    // Or we can use Streams:
     set = Arrays.stream(Government.foundation).collect(
       Collectors.toSet());
     System.out.println(set);

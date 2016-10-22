@@ -7,65 +7,60 @@ package understandingcollections.jmh;
 import org.openjdk.jmh.annotations.*;
 import org.openjdk.jmh.infra.Blackhole;
 import java.util.*;
-import static java.util.concurrent.TimeUnit.*;
+import java.util.concurrent.*;
 
 @State(Scope.Thread)
-@Warmup(iterations = 5, time = 1, timeUnit = SECONDS)
-@Measurement(iterations = 5, time = 1, timeUnit = SECONDS)
+@OutputTimeUnit(TimeUnit.MICROSECONDS)
+@Warmup(iterations = 5, batchSize = 5000)
+@Measurement(iterations = 5, batchSize = 5000)
+@BenchmarkMode(Mode.SingleShotTime)
 @Fork(1)
-@BenchmarkMode(Mode.AverageTime)
-@OutputTimeUnit(MICROSECONDS)
 public class Maps {
-  private Map<Integer, Integer> map;
+  private Map<String,String> map;
 
-  @Param({"HashMap", "TreeMap", "LinkedHashMap",
-    "IdentityHashMap", "WeakHashMap", "Hashtable",})
+  @Param({
+    "java.util.HashMap",
+    "java.util.Hashtable",
+    "java.util.TreeMap",
+    "java.util.LinkedHashMap",
+    "java.util.IdentityHashMap",
+    "java.util.WeakHashMap",
+    "java.util.concurrent.ConcurrentHashMap",
+    "java.util.concurrent.ConcurrentSkipListMap",
+  })
   private String type;
 
-  private int begin;
-  private int end;
+  @Param({
+    "1",
+    "10",
+    "100",
+    "1000",
+    "10000",
+  })
+  private int size;
 
   @Setup
   public void setup() {
-    switch(type) {
-      case "HashMap":
-        map = new HashMap<>();
-        break;
-      case "TreeMap":
-        map = new TreeMap<>();
-        break;
-      case "LinkedHashMap":
-        map = new LinkedHashMap<>();
-        break;
-      case "IdentityHashMap":
-        map = new IdentityHashMap<>();
-        break;
-      case "WeakHashMap":
-        map = new WeakHashMap<>();
-        break;
-      case "Hashtable":
-        map = new Hashtable<>();
-        break;
-      default:
-        throw new IllegalStateException("Unknown " + type);
+    try {
+      map = (Map<String,String>)
+        Class.forName(type).newInstance();
+    } catch(Exception e) {
+      System.err.println(
+        "-> Cannot create: " + type);
+      System.exit(99);
     }
-    begin = 1;
-    end = 256;
-    for (int i = begin; i < end; i++) {
-      map.put(i, i);
-    }
+    for(int i = 0; i < size; i++)
+      map.put(Integer.toString(i), Integer.toString(i));
   }
   @Benchmark
   public void get(Blackhole bh) {
-    for (int i = begin; i < end; i++) {
-      bh.consume(map.get(i));
-    }
+    String key = Integer.toString(size / 2);
+    bh.consume(map.get(key));
   }
   @Benchmark
-  public void put() {
-    for (int i = begin; i < end; i++) {
-      map.put(i, i);
-    }
+  public Map<String,String> put() {
+    map.put("test", "test");
+    return map;
   }
   @Benchmark
   public void iterate(Blackhole bh) {

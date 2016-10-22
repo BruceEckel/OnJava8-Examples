@@ -1,13 +1,13 @@
-// understandingcollections/jmh/Sets.java
+// understandingcollections/jmh/Deques.java
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
-// Demonstrates performance differences in Sets
+// Performance differences between Deques
 package understandingcollections.jmh;
 import org.openjdk.jmh.annotations.*;
 import org.openjdk.jmh.infra.Blackhole;
+import java.util.concurrent.TimeUnit;
 import java.util.*;
-import java.util.concurrent.*;
 
 @State(Scope.Thread)
 @OutputTimeUnit(TimeUnit.MICROSECONDS)
@@ -15,15 +15,14 @@ import java.util.concurrent.*;
 @Measurement(iterations = 5, batchSize = 5000)
 @BenchmarkMode(Mode.SingleShotTime)
 @Fork(1)
-public class Sets {
-  private Set<String> set;
+public class Deques {
+  private Deque<String> deque;
 
   @Param({
-    "java.util.HashSet",
-    "java.util.TreeSet",
-    "java.util.LinkedHashSet",
-    "java.util.concurrent.ConcurrentSkipListSet",
-    "java.util.concurrent.CopyOnWriteArraySet",
+    "java.util.LinkedList",
+    "java.util.ArrayDeque",
+    "java.util.concurrent.ConcurrentLinkedDeque",
+    "java.util.concurrent.LinkedBlockingDeque",
   })
   private String type;
 
@@ -33,13 +32,14 @@ public class Sets {
     "100",
     "1000",
     "10000",
+    "100000"
   })
   private int size;
 
   @Setup
   public void setup() {
     try {
-      set = (Set<String>)
+      deque = (Deque<String>)
         Class.forName(type).newInstance();
     } catch(Exception e) {
       System.err.println(
@@ -47,22 +47,24 @@ public class Sets {
       System.exit(99);
     }
     for(int i = 0; i < size; i++)
-      set.add(Integer.toString(i));
+      deque.add(Integer.toString(i));
   }
   @Benchmark
-  public Set<String> add() {
-    set.add("test");
-    return set;
+  public Deque<String> addFirst() {
+    deque.addFirst("test");
+    return deque;
   }
   @Benchmark
-  public void contains(Blackhole bh) {
-    String key = Integer.toString(size/2);
-    bh.consume(set.contains(key));
+  public Deque<String> addLast() {
+    deque.addLast("test");
+    return deque;
   }
   @Benchmark
-  public void iterate(Blackhole bh) {
-    Iterator<String> it = set.iterator();
-    while(it.hasNext())
-      bh.consume(it.next());
+  public void pollFirst(Blackhole bh) {
+    bh.consume(deque.pollFirst());
+  }
+  @Benchmark
+  public void pollLast(Blackhole bh) {
+    bh.consume(deque.pollLast());
   }
 }

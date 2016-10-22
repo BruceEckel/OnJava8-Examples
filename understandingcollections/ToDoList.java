@@ -36,15 +36,15 @@ class ToDoList extends PriorityQueue<ToDoList.ToDoItem> {
     super.add(new ToDoItem(td, pri, sec));
   }
   public static void main(String[] args) {
-    ToDoList toDoList = new ToDoList();
-    toDoList.add("Empty trash", 'C', 4);
-    toDoList.add("Feed dog", 'A', 2);
-    toDoList.add("Feed bird", 'B', 7);
-    toDoList.add("Mow lawn", 'C', 3);
-    toDoList.add("Water lawn", 'A', 1);
-    toDoList.add("Feed cat", 'B', 1);
-    while(!toDoList.isEmpty())
-      System.out.println(toDoList.remove());
+    ToDoList toDo = new ToDoList();
+    toDo.add("Empty trash", 'C', 4);
+    toDo.add("Feed dog", 'A', 2);
+    toDo.add("Feed bird", 'B', 7);
+    toDo.add("Mow lawn", 'C', 3);
+    toDo.add("Water lawn", 'A', 1);
+    toDo.add("Feed cat", 'B', 1);
+    while(!toDo.isEmpty())
+      System.out.println(toDo.remove());
   }
 }
 /* Output:

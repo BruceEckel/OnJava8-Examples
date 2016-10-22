@@ -2,80 +2,90 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
-// Demonstrates performance differences in Lists
+// Performance differences between Lists
 package understandingcollections.jmh;
 import org.openjdk.jmh.annotations.*;
 import org.openjdk.jmh.infra.Blackhole;
 import java.util.*;
-import static java.util.concurrent.TimeUnit.*;
+import java.util.concurrent.*;
 
 @State(Scope.Thread)
-@Warmup(iterations = 5, time = 1, timeUnit = SECONDS)
-@Measurement(iterations = 5, time = 1, timeUnit = SECONDS)
+@OutputTimeUnit(TimeUnit.MICROSECONDS)
+@Warmup(iterations = 5, batchSize = 5000)
+@Measurement(iterations = 5, batchSize = 5000)
+@BenchmarkMode(Mode.SingleShotTime)
 @Fork(1)
-@BenchmarkMode(Mode.AverageTime)
-@OutputTimeUnit(MICROSECONDS)
 public class Lists {
-  private List<Integer> list;
+  private List<String> list;
 
-  @Param({"ArrayList", "LinkedList", "Vector"})
+  @Param({
+    "java.util.ArrayList",
+    "java.util.Vector",
+    "java.util.LinkedList",
+    "java.util.concurrent.CopyOnWriteArrayList"
+  })
   private String type;
 
-  private int begin;
-  private int end;
+  @Param({
+    "1",
+    "10",
+    "100",
+    "1000",
+    "10000",
+    "100000"
+  })
+  private int size;
 
   @Setup
   public void setup() {
-    switch(type) {
-      case "ArrayList":
-        list = new ArrayList<>();
-        break;
-      case "LinkedList":
-        list = new LinkedList<>();
-        break;
-      case "Vector":
-        list = new Vector<>();
-        break;
-      default:
-        throw new IllegalStateException("Unknown " + type);
+    try {
+      list = (List<String>)
+        Class.forName(type).newInstance();
+    } catch(Exception e) {
+      System.err.println(
+        "-> Cannot create: " + type);
+      System.exit(99);
     }
-    begin = 0;
-    end = 256;
-    for(int i = begin; i < end; i++) {
-      list.add(i);
-    }
+    for(int i = 0; i < size; i++)
+      list.add(Integer.toString(i));
   }
   @Benchmark
-  public void add() {
-    for(int i = begin; i < end; i++)
-      list.add(i);
+  public List<String> add() {
+    list.add(list.size() / 2, "test");
+    return list;
   }
   @Benchmark
   public void get(Blackhole bh) {
-    for(int i = begin; i < end; i++)
-      bh.consume(list.get(i));
+    bh.consume(list.get(list.size() / 2));
   }
   @Benchmark
-  public void set() {
-    for(int i = begin; i < end; i++)
-      list.set(i, 47);
+  public List<String> set() {
+    list.set(list.size() / 2, "test");
+    return list;
   }
   @Benchmark
-  public void iteradd() {
-    int half = list.size() / 2;
-    ListIterator<Integer> it =
-      list.listIterator(half);
-    for(int i = begin; i < end; i++)
-      it.add(47);
+  public List<String> iteradd() {
+    ListIterator<String> it =
+      list.listIterator(list.size() / 2);
+    try {
+      it.add("test");
+    } catch(UnsupportedOperationException e) {
+      System.err.println(
+        "-> Unsupported: listIterator.add() in " +
+        list.getClass().getSimpleName());
+    }
+    return list;
   }
   @Benchmark
-  public void insert() {
-    for(int i = begin; i < end; i++)
-      list.add(5, 47);
+  public List<String> insert() {
+    list.add(list.size() / 2, "test");
+    return list;
   }
   @Benchmark
-  public void remove() {
-    while(list.size() > 5)
-      list.remove(5);
+  public List<String> remove() {
+    int index = list.size() / 2;
+    if(index > 0)
+      list.remove(index);
+    return list;
   }
 }
