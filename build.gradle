@@ -129,6 +129,10 @@ ext {
     junitJupiterVersion  = '5.0.0-M2'
 }
 
+compileJava {
+    options.compilerArgs << "-Xlint:unchecked" << "-Xlint:deprecation"
+}
+
 subprojects {
     apply plugin: 'com.github.johnrengelman.shadow'
     apply plugin: 'me.champeau.gradle.jmh'
