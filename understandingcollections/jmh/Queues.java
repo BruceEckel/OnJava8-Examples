@@ -5,7 +5,6 @@
 // Performance differences between Queues
 package understandingcollections.jmh;
 import org.openjdk.jmh.annotations.*;
-import org.openjdk.jmh.infra.Blackhole;
 import java.util.*;
 import java.util.concurrent.*;
 
@@ -45,15 +44,9 @@ public class Queues {
   private int size;
 
   @Setup
-  public void setup() {
-    try {
-      queue = (Queue<String>)
-        Class.forName(type).newInstance();
-    } catch(Exception e) {
-      System.err.println(
-        "-> Cannot create: " + type);
-      System.exit(99);
-    }
+  public void setup() throws Exception {
+    queue = (Queue<String>)
+      Class.forName(type).newInstance();
     for(int i = 0; i < size; i++)
       queue.add(Integer.toString(i));
   }
@@ -63,7 +56,7 @@ public class Queues {
     return queue;
   }
   @Benchmark
-  public void poll(Blackhole bh) {
-    bh.consume(queue.poll());
+  public String poll() {
+    return queue.poll();
   }
 }

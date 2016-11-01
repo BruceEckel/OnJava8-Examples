@@ -5,7 +5,6 @@
 // Performance differences between Deques
 package understandingcollections.jmh;
 import org.openjdk.jmh.annotations.*;
-import org.openjdk.jmh.infra.Blackhole;
 import java.util.concurrent.TimeUnit;
 import java.util.*;
 
@@ -37,15 +36,9 @@ public class Deques {
   private int size;
 
   @Setup
-  public void setup() {
-    try {
-      deque = (Deque<String>)
-        Class.forName(type).newInstance();
-    } catch(Exception e) {
-      System.err.println(
-        "-> Cannot create: " + type);
-      System.exit(99);
-    }
+  public void setup() throws Exception {
+    deque = (Deque<String>)
+      Class.forName(type).newInstance();
     for(int i = 0; i < size; i++)
       deque.add(Integer.toString(i));
   }
@@ -60,11 +53,11 @@ public class Deques {
     return deque;
   }
   @Benchmark
-  public void pollFirst(Blackhole bh) {
-    bh.consume(deque.pollFirst());
+  public String pollFirst() {
+    return deque.pollFirst();
   }
   @Benchmark
-  public void pollLast(Blackhole bh) {
-    bh.consume(deque.pollLast());
+  public String pollLast() {
+    return deque.pollLast();
   }
 }

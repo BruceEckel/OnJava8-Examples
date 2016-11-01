@@ -4,9 +4,12 @@
 // Visit http://OnJava8.com for more book information.
 // Things you can do with Lists
 import java.util.*;
-import onjava.*;
+import onjava.HTMLColors;
 
 public class ListOps {
+  // Create a short list for testing:
+  static final List<String> LIST =
+    HTMLColors.LIST.subList(0, 10);
   private static boolean b;
   private static String s;
   private static int i;
@@ -16,12 +19,12 @@ public class ListOps {
     a.add(1, "x"); // Add at location 1
     a.add("x"); // Add at end
     // Add a collection:
-    a.addAll(Countries.names(25));
+    a.addAll(LIST);
     // Add a collection starting at location 3:
-    a.addAll(3, Countries.names(25));
+    a.addAll(3, LIST);
     b = a.contains("1"); // Is it in there?
     // Is the entire collection in there?
-    b = a.containsAll(Countries.names(25));
+    b = a.containsAll(LIST);
     // Lists allow random access, which is cheap
     // for ArrayList, expensive for LinkedList:
     s = a.get(1); // Get (typed) object at location 1
@@ -36,9 +39,9 @@ public class ListOps {
     a.set(1, "y"); // Set location 1 to "y"
     // Keep everything that's in the argument
     // (the intersection of the two sets):
-    a.retainAll(Countries.names(25));
+    a.retainAll(LIST);
     // Remove everything that's in the argument:
-    a.removeAll(Countries.names(25));
+    a.removeAll(LIST);
     i = a.size(); // How big is it?
     a.clear(); // Remove all elements
   }
@@ -65,7 +68,7 @@ public class ListOps {
   }
   public static void testVisual(List<String> a) {
     System.out.println(a);
-    List<String> b = Countries.names(25);
+    List<String> b = LIST;
     System.out.println("b = " + b);
     a.addAll(b);
     a.addAll(b);
@@ -90,7 +93,7 @@ public class ListOps {
   // There are some things that only LinkedLists can do:
   public static void testLinkedList() {
     LinkedList<String> ll = new LinkedList<>();
-    ll.addAll(Countries.names(25));
+    ll.addAll(LIST);
     System.out.println(ll);
     // Treat it like a stack, pushing:
     ll.addFirst("one");
@@ -108,39 +111,15 @@ public class ListOps {
   }
   public static void main(String[] args) {
     // Make and fill a new list each time:
-    basicTest(
-      new LinkedList<>(Countries.names(25)));
-    basicTest(
-      new ArrayList<>(Countries.names(25)));
-    iterMotion(
-      new LinkedList<>(Countries.names(25)));
-    iterMotion(
-      new ArrayList<>(Countries.names(25)));
-    iterManipulation(
-      new LinkedList<>(Countries.names(25)));
-    iterManipulation(
-      new ArrayList<>(Countries.names(25)));
-    testVisual(
-      new LinkedList<>(Countries.names(25)));
+    basicTest(new LinkedList<>(LIST));
+    basicTest(new ArrayList<>(LIST));
+    iterMotion(new LinkedList<>(LIST));
+    iterMotion(new ArrayList<>(LIST));
+    iterManipulation(new LinkedList<>(LIST));
+    iterManipulation(new ArrayList<>(LIST));
+    testVisual(new LinkedList<>(LIST));
     testLinkedList();
   }
 }
-/* Output: (First and Last 2 Lines)
-[ALGERIA, ANGOLA, BENIN, BOTSWANA, BURKINA FASO, BURUNDI,
-CAMEROON, CAPE VERDE, CENTRAL AFRICAN REPUBLIC, CHAD,
-COMOROS, CONGO, DJIBOUTI, EGYPT, EQUATORIAL GUINEA,
-ERITREA, ETHIOPIA, GABON, THE GAMBIA, GHANA, GUINEA,
-BISSAU, COTE D'IVOIR (IVORY COAST), KENYA, LESOTHO]
-b = [ALGERIA, ANGOLA, BENIN, BOTSWANA, BURKINA FASO,
-BURUNDI, CAMEROON, CAPE VERDE, CENTRAL AFRICAN REPUBLIC,
-CHAD, COMOROS, CONGO, DJIBOUTI, EGYPT, EQUATORIAL GUINEA,
-ERITREA, ETHIOPIA, GABON, THE GAMBIA, GHANA, GUINEA,
-BISSAU, COTE D'IVOIR (IVORY COAST), KENYA, LESOTHO]
-...________...________...________...________...
-LESOTHO
-[ALGERIA, ANGOLA, BENIN, BOTSWANA, BURKINA FASO, BURUNDI,
-CAMEROON, CAPE VERDE, CENTRAL AFRICAN REPUBLIC, CHAD,
-COMOROS, CONGO, DJIBOUTI, EGYPT, EQUATORIAL GUINEA,
-ERITREA, ETHIOPIA, GABON, THE GAMBIA, GHANA, GUINEA,
-BISSAU, COTE D'IVOIR (IVORY COAST), KENYA]
+/* Output:
 */

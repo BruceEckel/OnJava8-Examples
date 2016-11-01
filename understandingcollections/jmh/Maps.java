@@ -39,23 +39,23 @@ public class Maps {
   })
   private int size;
 
+  private String key;
+
   @Setup
-  public void setup() {
-    try {
-      map = (Map<String,String>)
-        Class.forName(type).newInstance();
-    } catch(Exception e) {
-      System.err.println(
-        "-> Cannot create: " + type);
-      System.exit(99);
-    }
+  public void setup() throws Exception {
+    map = (Map<String,String>)
+      Class.forName(type).newInstance();
     for(int i = 0; i < size; i++)
       map.put(Integer.toString(i), Integer.toString(i));
+    key = Integer.toString(size / 2);
   }
   @Benchmark
-  public void get(Blackhole bh) {
-    String key = Integer.toString(size / 2);
-    bh.consume(map.get(key));
+  public boolean containsKey() {
+    return map.containsKey(key);
+  }
+  @Benchmark
+  public String get() {
+    return map.get(key);
   }
   @Benchmark
   public Map<String,String> put() {

@@ -36,18 +36,15 @@ public class Sets {
   })
   private int size;
 
+  private String key;
+
   @Setup
-  public void setup() {
-    try {
-      set = (Set<String>)
-        Class.forName(type).newInstance();
-    } catch(Exception e) {
-      System.err.println(
-        "-> Cannot create: " + type);
-      System.exit(99);
-    }
+  public void setup() throws Exception {
+    set = (Set<String>)
+      Class.forName(type).newInstance();
     for(int i = 0; i < size; i++)
       set.add(Integer.toString(i));
+    key = Integer.toString(size/2);
   }
   @Benchmark
   public Set<String> add() {
@@ -55,9 +52,8 @@ public class Sets {
     return set;
   }
   @Benchmark
-  public void contains(Blackhole bh) {
-    String key = Integer.toString(size/2);
-    bh.consume(set.contains(key));
+  public boolean contains() {
+    return set.contains(key);
   }
   @Benchmark
   public void iterate(Blackhole bh) {

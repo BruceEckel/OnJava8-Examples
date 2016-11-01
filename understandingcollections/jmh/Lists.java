@@ -5,7 +5,6 @@
 // Performance differences between Lists
 package understandingcollections.jmh;
 import org.openjdk.jmh.annotations.*;
-import org.openjdk.jmh.infra.Blackhole;
 import java.util.*;
 import java.util.concurrent.*;
 
@@ -36,37 +35,39 @@ public class Lists {
   })
   private int size;
 
+  private int middle;
+  private ListIterator<String> it;
+
   @Setup
-  public void setup() {
-    try {
-      list = (List<String>)
-        Class.forName(type).newInstance();
-    } catch(Exception e) {
-      System.err.println(
-        "-> Cannot create: " + type);
-      System.exit(99);
-    }
+  public void setup() throws Exception {
+    list = (List<String>)
+      Class.forName(type).newInstance();
     for(int i = 0; i < size; i++)
       list.add(Integer.toString(i));
+    middle = size / 2;
+    it = list.listIterator(middle);
   }
   @Benchmark
-  public List<String> add() {
-    list.add(list.size() / 2, "test");
+  public List<String> append() {
+    list.add("test");
     return list;
   }
   @Benchmark
-  public void get(Blackhole bh) {
-    bh.consume(list.get(list.size() / 2));
+  public List<String> insert() {
+    list.add(middle, "test");
+    return list;
+  }
+  @Benchmark
+  public String get() {
+    return list.get(middle);
   }
   @Benchmark
   public List<String> set() {
-    list.set(list.size() / 2, "test");
+    list.set(middle, "test");
     return list;
   }
   @Benchmark
   public List<String> iteradd() {
-    ListIterator<String> it =
-      list.listIterator(list.size() / 2);
     try {
       it.add("test");
     } catch(UnsupportedOperationException e) {
@@ -77,15 +78,16 @@ public class Lists {
     return list;
   }
   @Benchmark
-  public List<String> insert() {
-    list.add(list.size() / 2, "test");
-    return list;
-  }
-  @Benchmark
   public List<String> remove() {
-    int index = list.size() / 2;
-    if(index > 0)
-      list.remove(index);
+    middle = list.size() / 2;
+    if(middle - 1 > 0)
+      try {
+        list.remove(middle - 1);
+      } catch(ArrayIndexOutOfBoundsException e) {
+        System.out.println("Out of bounds -> size: "
+          + list.size() + " middle - 1: " + (middle - 1) +
+          " for " + list.getClass().getSimpleName());
+      }
     return list;
   }
 }
