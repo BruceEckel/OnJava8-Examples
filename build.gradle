@@ -1,6 +1,8 @@
 buildscript {
     repositories {
+        mavenLocal()
         jcenter()
+        mavenCentral()
     }
     dependencies {
         classpath 'org.junit.platform:junit-platform-gradle-plugin:1.0.0-M2'
@@ -14,6 +16,7 @@ plugins {
 
 import org.gradle.internal.jvm.Jvm
 import org.apache.tools.ant.util.TeeOutputStream
+boolean debug = false
 
 class Tags {
     Boolean hasMainMethod = false
@@ -155,8 +158,7 @@ subprojects {
         // compile group: 'org.slf4j', name: 'slf4j-jdk14', version: '1.7.5'
 
         // JUnit testing:
-        // Commented as per Ben
-        // compile     "org.junit.jupiter:junit-jupiter-api:${junitJupiterVersion}"
+        compile     "org.junit.jupiter:junit-jupiter-api:${junitJupiterVersion}"
         testCompile "org.junit.jupiter:junit-jupiter-api:${junitJupiterVersion}"
         testRuntime "org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}"
     }
@@ -226,6 +228,7 @@ subprojects {
         if (file.name.endsWith('.java')) {
 
             Tags tags = new Tags(file)
+            if(debug && tags.hasTags()) println tags
 
             // Exclude java sources that will not compile
             if (tags.compileTimeError) {
@@ -374,8 +377,7 @@ configure(subprojects - project(':onjava')) {
         compile project(':onjava')
         compile group: 'com.google.guava', name: 'guava', version: '19.0'
         compile "org.openjdk.jmh:jmh-core:${jmh.jmhVersion}"
-        // commented as per Ben:
-        // compile 'org.junit.platform:junit-platform-gradle-plugin:1.0.0-M2'
+        compile 'org.junit.platform:junit-platform-gradle-plugin:1.0.0-M2'
     }
 }
 
