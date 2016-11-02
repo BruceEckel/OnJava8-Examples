@@ -1,3 +1,5 @@
+https://travis-ci.org/BruceEckel/OnJava8-Examples.svg?branch=master
+
 To compile and run these programs, you only need JDK 8 installed. 
 Invoking `gradlew` will automatically download and install Gradle.
 Gradle will also install all additional libraries necessary to compile
