@@ -65,6 +65,6 @@ configure(subprojects - project(':onjava')) {
     dependencies {
         compile project(':onjava')
         compile 'com.google.guava:guava:19.0'
-        compile "org.openjdk.jmh:jmh-core:${jmh.jmhVersion}"
+        compileOnly "org.openjdk.jmh:jmh-core:${jmh.jmhVersion}"
     }
 }
