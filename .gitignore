@@ -49,6 +49,7 @@ Generated.txt
 *-results.txt
 *-out.txt
 OutputErrors.txt
+report.txt
 failures
 People.xml
 annotations/Test0.txt
@@ -79,6 +80,7 @@ io/X.file
 /serialization/Blips.serialized
 
 build/
+buildSrc/
 
 /compression/test.gz
 /compression/test.zip
