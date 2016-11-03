@@ -32,8 +32,8 @@ repositories {
 
 dependencies {
     // Logging:
-    compile 'org.slf4j:slf4j-api:1.7.+'
-    compile 'ch.qos.logback:logback-classic:1.+'
+    compile 'org.slf4j:slf4j-api:1.7.21'
+    compile 'ch.qos.logback:logback-classic:1.1.7'
     // You can also use the JDK's built-in logging as the back end:
-    // compile group: 'org.slf4j', name: 'slf4j-jdk14', version: '1.7.5'
+    // compile group: 'org.slf4j:slf4j-jdk14:1.7.21'
 }
