@@ -71,7 +71,7 @@ io/X.file
 /files/Cheese.txt
 /files/StreamInAndOut.txt
 
-/.gradle/
+.gradle
 /*.iml
 /.idea/
 
