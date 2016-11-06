@@ -7,7 +7,7 @@ and run the Java examples in the book.
 
 To compile everything, the command is:
 
-`gradlew build`
+`gradlew classes`
 
 To run everything (including compiling if necessary), the command is:
 
@@ -15,7 +15,7 @@ To run everything (including compiling if necessary), the command is:
 
 To compile only a single chapter (including dependencies), use for example:
 
-`gradlew :strings:build`
+`gradlew :strings:classes`
 
 To run only a single chapter, say:
 
