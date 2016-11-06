@@ -13,5 +13,7 @@ tasks.withType(Checkstyle) {
 }
 
 task checkstyle {
+    group = 'Verification'
+    description = 'Runs Checkstyle analysis for all classes.'
     dependsOn tasks.withType(Checkstyle)
 }

@@ -12,5 +12,7 @@ tasks.withType(FindBugs) {
 }
 
 task findbugs {
+    group = 'Verification'
+    description = 'Runs FindBugs analysis for all classes.'
     dependsOn tasks.withType(FindBugs)
 }
