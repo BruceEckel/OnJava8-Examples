@@ -1,4 +1,4 @@
-![https://travis-ci.org/BruceEckel/OnJava8-Examples](https://travis-ci.org/BruceEckel/OnJava8-Examples.svg?branch=master)
+[![](https://travis-ci.org/BruceEckel/OnJava8-Examples.svg?branch=master)](https://travis-ci.org/BruceEckel/OnJava8-Examples)
 
 To compile and run these programs, you only need JDK 8 installed. 
 Invoking `gradlew` will automatically download and install Gradle.
