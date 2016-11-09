@@ -9,7 +9,7 @@ sourceSets {
 }
 
 jmh {
-    jmhVersion = '1.15'
+    jmhVersion = '1.16'
     duplicateClassesStrategy = 'warn'
     failOnError = true
     // See https://github.com/melix/jmh-gradle-plugin
