@@ -3,6 +3,7 @@ apply plugin: 'checkstyle'
 checkstyle {
     ignoreFailures = true
     configFile = new File(rootProject.projectDir, 'sun_checks.xml')
+    sourceSets = [sourceSets.main]
 }
 
 tasks.withType(Checkstyle) {
@@ -10,10 +11,4 @@ tasks.withType(Checkstyle) {
         xml.enabled = false
         html.enabled = true
     }
-}
-
-task checkstyle {
-    group = 'Verification'
-    description = 'Runs Checkstyle analysis for all classes.'
-    dependsOn tasks.withType(Checkstyle)
 }
