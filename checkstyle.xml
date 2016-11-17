@@ -110,7 +110,7 @@
         <!-- Checks for Size Violations.                    -->
         <!-- See http://checkstyle.sf.net/config_sizes.html -->
         <module name="LineLength"/>
-        <module name="MethodLength"/>
+        <!-- <module name="MethodLength"/> -->
         <module name="ParameterNumber"/>
 
 
@@ -146,7 +146,7 @@
         <!-- Checks for common coding problems               -->
         <!-- See http://checkstyle.sf.net/config_coding.html -->
         <!-- <module name="AvoidInlineConditionals"/> -->
-        <module name="EmptyStatement"/>
+        <!-- <module name="EmptyStatement"/> -->
         <module name="EqualsHashCode"/>
         <!-- <module name="HiddenField"/> -->
         <module name="IllegalInstantiation"/>
@@ -154,7 +154,7 @@
 <!--         <module name="MagicNumber"/> -->
         <module name="MissingSwitchDefault"/>
         <module name="RedundantThrows"/>
-        <module name="SimplifyBooleanExpression"/>
+        <!-- <module name="SimplifyBooleanExpression"/> -->
         <module name="SimplifyBooleanReturn"/>
 
         <!-- Checks for class design                         -->
@@ -162,7 +162,7 @@
         <!-- <module name="DesignForExtension"/> -->
         <module name="FinalClass"/>
         <!-- <module name="HideUtilityClassConstructor"/> -->
-        <module name="InterfaceIsType"/>
+        <!-- <module name="InterfaceIsType"/> -->
         <!-- <module name="VisibilityModifier"/> -->
 
 
