@@ -8,13 +8,13 @@ import java.util.*;
 
 interface StringProcessor extends Processor {
   @Override
-  String process(Object input);  // (1)
-  String s = // (2)
+  String process(Object input);  // [1]
+  String S = // [2]
   "If she weighs the same as a duck, she's made of wood";
-  public static void main(String[] args) { // (3)
-    Applicator.apply(new Upcase(), s);
-    Applicator.apply(new Downcase(), s);
-    Applicator.apply(new Splitter(), s);
+  static void main(String[] args) { // [3]
+    Applicator.apply(new Upcase(), S);
+    Applicator.apply(new Downcase(), S);
+    Applicator.apply(new Splitter(), S);
   }
 }
 

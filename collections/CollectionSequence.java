@@ -12,7 +12,7 @@ extends AbstractCollection<Pet> {
   public int size() { return pets.length; }
   @Override
   public Iterator<Pet> iterator() {
-    return new Iterator<Pet>() { // (1)
+    return new Iterator<Pet>() { // [1]
       private int index = 0;
       @Override
       public boolean hasNext() {

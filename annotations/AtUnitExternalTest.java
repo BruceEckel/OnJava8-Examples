@@ -10,15 +10,15 @@ import onjava.atunit.*;
 import onjava.*;
 
 public class AtUnitExternalTest extends AtUnitExample1 {
-  @Test boolean _methodOne() {
+  @Test boolean tMethodOne() {
     return methodOne().equals("This is methodOne");
   }
-  @Test boolean _methodTwo() { return methodTwo() == 2; }
+  @Test boolean tMethodTwo() { return methodTwo() == 2; }
 }
 /* Output:
 annotations.AtUnitExternalTest
-  . _methodTwo This is methodTwo
+  . tMethodTwo This is methodTwo
 
-  . _methodOne
+  . tMethodOne
 OK (2 tests)
 */

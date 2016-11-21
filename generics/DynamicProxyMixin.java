@@ -13,12 +13,12 @@ class MixinProxy implements InvocationHandler {
   public MixinProxy(Tuple2<Object, Class<?>>... pairs) {
     delegatesByMethod = new HashMap<>();
     for(Tuple2<Object, Class<?>> pair : pairs) {
-      for(Method method : pair._2.getMethods()) {
+      for(Method method : pair.a2.getMethods()) {
         String methodName = method.getName();
         // The first interface in the map
         // implements the method.
         if(!delegatesByMethod.containsKey(methodName))
-          delegatesByMethod.put(methodName, pair._1);
+          delegatesByMethod.put(methodName, pair.a1);
       }
     }
   }
@@ -33,10 +33,10 @@ class MixinProxy implements InvocationHandler {
   public static Object newInstance(Tuple2... pairs) {
     Class[] interfaces = new Class[pairs.length];
     for(int i = 0; i < pairs.length; i++) {
-      interfaces[i] = (Class)pairs[i]._2;
+      interfaces[i] = (Class)pairs[i].a2;
     }
     ClassLoader cl =
-      pairs[0]._1.getClass().getClassLoader();
+      pairs[0].a1.getClass().getClassLoader();
     return Proxy.newProxyInstance(
       cl, interfaces, new MixinProxy(pairs));
   }

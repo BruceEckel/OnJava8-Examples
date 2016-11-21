@@ -4,15 +4,16 @@
 // Visit http://OnJava8.com for more book information.
 // Things you can do with all Collections
 import java.util.*;
-import onjava.*;
+import static onjava.HTMLColors.*;
 
 public class CollectionMethods {
   public static void main(String[] args) {
-    Collection<String> c = new ArrayList<>();
-    c.addAll(Countries.names(6));
+    Collection<String> c =
+        new ArrayList<>(LIST.subList(0, 4));
     c.add("ten");
     c.add("eleven");
-    System.out.println(c);
+    show(c);
+    border();
     // Make an array from the List:
     Object[] array = c.toArray();
     // Make a String array from the List:
@@ -24,23 +25,26 @@ public class CollectionMethods {
       "Collections.max(c) = " + Collections.max(c));
     System.out.println(
       "Collections.min(c) = " + Collections.min(c));
+    border();
     // Add a Collection to another Collection
-    Collection<String> c2 = new ArrayList<>();
-    c2.addAll(Countries.names(6));
+    Collection<String> c2 =
+        new ArrayList<>(LIST.subList(10, 14));
     c.addAll(c2);
-    System.out.println(c);
-    c.remove(Countries.DATA[0][0]);
-    System.out.println(c);
-    c.remove(Countries.DATA[1][0]);
-    System.out.println(c);
+    show(c);
+    border();
+    c.remove(LIST.get(0));
+    show(c);
+    border();
     // Remove all components that are
     // in the argument collection:
     c.removeAll(c2);
-    System.out.println(c);
+    show(c);
+    border();
     c.addAll(c2);
-    System.out.println(c);
+    show(c);
+    border();
     // Is an element in this Collection?
-    String val = Countries.DATA[3][0];
+    String val = LIST.get(3);
     System.out.println(
       "c.contains(" + val  + ") = " + c.contains(val));
     // Is a Collection in this Collection?
@@ -51,38 +55,80 @@ public class CollectionMethods {
     // Keep all the elements that are in both
     // c2 and c3 (an intersection of sets):
     c2.retainAll(c3);
-    System.out.println(c2);
+    show(c2);
     // Throw away all the elements
     // in c2 that also appear in c3:
     c2.removeAll(c3);
     System.out.println("c2.isEmpty() = " +  c2.isEmpty());
-    c = new ArrayList<>();
-    c.addAll(Countries.names(6));
-    System.out.println(c);
+    border();
+    // Functional operation:
+    c = new ArrayList<>(LIST);
+    c.removeIf(s -> !s.startsWith("P"));
+    c.removeIf(s -> s.startsWith("Pale"));
+    // Stream operation:
+    c.stream().forEach(System.out::println);
     c.clear(); // Remove all elements
     System.out.println("after c.clear():" + c);
   }
 }
 /* Output:
-[ALGERIA, ANGOLA, BENIN, BOTSWANA, BURKINA FASO, BURUNDI,
-ten, eleven]
+AliceBlue
+AntiqueWhite
+Aquamarine
+Azure
+ten
+eleven
+------------------------------
 Collections.max(c) = ten
-Collections.min(c) = ALGERIA
-[ALGERIA, ANGOLA, BENIN, BOTSWANA, BURKINA FASO, BURUNDI,
-ten, eleven, ALGERIA, ANGOLA, BENIN, BOTSWANA, BURKINA
-FASO, BURUNDI]
-[ANGOLA, BENIN, BOTSWANA, BURKINA FASO, BURUNDI, ten,
-eleven, ALGERIA, ANGOLA, BENIN, BOTSWANA, BURKINA FASO,
-BURUNDI]
-[BENIN, BOTSWANA, BURKINA FASO, BURUNDI, ten, eleven,
-ALGERIA, ANGOLA, BENIN, BOTSWANA, BURKINA FASO, BURUNDI]
-[ten, eleven]
-[ten, eleven, ALGERIA, ANGOLA, BENIN, BOTSWANA, BURKINA
-FASO, BURUNDI]
-c.contains(BOTSWANA) = true
+Collections.min(c) = AliceBlue
+------------------------------
+AliceBlue
+AntiqueWhite
+Aquamarine
+Azure
+ten
+eleven
+Brown
+BurlyWood
+CadetBlue
+Chartreuse
+------------------------------
+AntiqueWhite
+Aquamarine
+Azure
+ten
+eleven
+Brown
+BurlyWood
+CadetBlue
+Chartreuse
+------------------------------
+AntiqueWhite
+Aquamarine
+Azure
+ten
+eleven
+------------------------------
+AntiqueWhite
+Aquamarine
+Azure
+ten
+eleven
+Brown
+BurlyWood
+CadetBlue
+Chartreuse
+------------------------------
+c.contains(Azure) = true
 c.containsAll(c2) = true
-[ANGOLA, BENIN]
 c2.isEmpty() = true
-[ALGERIA, ANGOLA, BENIN, BOTSWANA, BURKINA FASO, BURUNDI]
+------------------------------
+PapayaWhip
+PeachPuff
+Peru
+Pink
+Plum
+PowderBlue
+Purple
 after c.clear():[]
 */

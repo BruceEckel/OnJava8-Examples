@@ -5,7 +5,7 @@
 import java.util.regex.*;
 
 public class Groups {
-  static public final String POEM =
+  public static final String POEM =
     "Twas brillig, and the slithy toves\n" +
     "Did gyre and gimble in the wabe.\n" +
     "All mimsy were the borogoves,\n" +

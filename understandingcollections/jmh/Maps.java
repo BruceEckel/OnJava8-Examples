@@ -42,6 +42,7 @@ public class Maps {
   private String key;
 
   @Setup
+  @SuppressWarnings("unchecked")
   public void setup() throws Exception {
     map = (Map<String,String>)
       Class.forName(type).newInstance();

@@ -9,11 +9,11 @@ import java.awt.event.*;
 // Default everything except mouseClicked():
 public interface MouseClick extends MouseListener {
     @Override
-    public default void mouseEntered(MouseEvent e) {}
+    default void mouseEntered(MouseEvent e) {}
     @Override
-    public default void mouseExited(MouseEvent e) {}
+    default void mouseExited(MouseEvent e) {}
     @Override
-    public default void mousePressed(MouseEvent e) {}
+    default void mousePressed(MouseEvent e) {}
     @Override
-    public default void mouseReleased(MouseEvent e) {}
+    default void mouseReleased(MouseEvent e) {}
 }

@@ -11,7 +11,7 @@ public class ModifyExisting {
     double[] da = new double[7];
     Arrays.setAll(da, new Rand.Double()::get);
     show(da);
-    Arrays.setAll(da, n -> da[n] / 100); // (1)
+    Arrays.setAll(da, n -> da[n] / 100); // [1]
     show(da);
   }
 }

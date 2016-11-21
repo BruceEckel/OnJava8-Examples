@@ -36,7 +36,7 @@ public class PrimitiveGenericTest {
       new String[5], new Rand.String(9));
     System.out.println(Arrays.toString(strings));
     int[] integers = FillArray.fill(
-      new int[9], new Rand.int_());
+      new int[9], new Rand.Pint());
     System.out.println(Arrays.toString(integers));
   }
 }

@@ -6,7 +6,7 @@ package validating;
 import static java.lang.Character.*;
 
 public class Inverter4 implements StringInverter {
-  static final String allowed =
+  static final String ALLOWED =
     "abcdefghijklmnopqrstuvwxyz ,." +
     "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   public String invert(String str) {
@@ -15,7 +15,7 @@ public class Inverter4 implements StringInverter {
     String result = "";
     for(int i = 0; i < str.length(); i++) {
       char c = str.charAt(i);
-      if(allowed.indexOf(c) == -1)
+      if(ALLOWED.indexOf(c) == -1)
         throw new RuntimeException(c + " Not allowed");
       result += isUpperCase(c) ?
                 toLowerCase(c) :

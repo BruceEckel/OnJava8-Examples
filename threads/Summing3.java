@@ -7,29 +7,29 @@ import java.util.*;
 public class Summing3 {
   static long basicSum(Long[] ia) {
     long sum = 0;
-    final int sz = ia.length;
-    for(int i = 0; i < sz; i++)
+    int size = ia.length;
+    for(int i = 0; i < size; i++)
       sum += ia[i];
     return sum;
   }
   // Approximate largest value of SZ before
   // running out of memory on my machine:
-  public static int SZ = 10_000_000;
+  public static final int SZ = 10_000_000;
   public static final long CHECK =
     (long)SZ * ((long)SZ + 1)/2;
   public static void main(String[] args) {
     System.out.println(CHECK);
-    Long[] La = new Long[SZ+1];
-    Arrays.parallelSetAll(La, i -> (long)i);
+    Long[] aL = new Long[SZ+1];
+    Arrays.parallelSetAll(aL, i -> (long)i);
     Summing.timeTest("Long Array Stream Reduce",
       CHECK, () ->
-      Arrays.stream(La).reduce(0L, Long::sum));
+      Arrays.stream(aL).reduce(0L, Long::sum));
     Summing.timeTest("Long Basic Sum", CHECK, () ->
-      basicSum(La));
+      basicSum(aL));
     // Destructive summation:
     Summing.timeTest("Long parallelPrefix",CHECK, ()-> {
-      Arrays.parallelPrefix(La, Long::sum);
-      return La[La.length - 1];
+      Arrays.parallelPrefix(aL, Long::sum);
+      return aL[aL.length - 1];
     });
   }
 }

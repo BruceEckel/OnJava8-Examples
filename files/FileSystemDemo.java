@@ -1,10 +1,10 @@
-// files/File_System.java
+// files/FileSystemDemo.java
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 import java.nio.file.*;
 
-public class File_System {
+public class FileSystemDemo {
   static void show(String id, Object o) {
     System.out.println(id + ": " + o);
   }

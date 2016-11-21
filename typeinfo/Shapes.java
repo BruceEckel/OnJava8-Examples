@@ -7,7 +7,7 @@ import java.util.stream.*;
 abstract class Shape {
   void draw() { System.out.println(this + ".draw()"); }
   @Override
-  abstract public String toString();
+  public abstract String toString();
 }
 
 class Circle extends Shape {

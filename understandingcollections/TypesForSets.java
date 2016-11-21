@@ -5,22 +5,25 @@
 // Methods necessary to put your own type in a Set
 import java.util.*;
 import java.util.function.*;
+import java.util.Objects;
 
 class SetType {
   int i;
   public SetType(int n) { i = n; }
   @Override
   public boolean equals(Object o) {
-    return o instanceof SetType && (i == ((SetType)o).i);
+    if (o == this) return true;
+    return o instanceof SetType &&
+      Objects.equals(i, ((SetType)o).i);
   }
+  @Override
+  public int hashCode() { return Objects.hash(i); }
   @Override
   public String toString() { return Integer.toString(i); }
 }
 
 class HashType extends SetType {
   public HashType(int n) { super(n); }
-  @Override
-  public int hashCode() { return i; }
 }
 
 class TreeType extends SetType
@@ -68,17 +71,13 @@ public class TypesForSets {
   }
 }
 /* Output:
-[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
 [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 [9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
-[8, 6, 3, 5, 4, 2, 2, 1, 0, 3, 6, 7, 9, 1, 3, 1, 5, 0, 9,
-8, 0, 9, 8, 7, 4, 6, 2, 4, 7, 5]
-[2, 2, 1, 4, 6, 6, 8, 4, 9, 3, 0, 4, 8, 5, 8, 1, 7, 5, 5,
-3, 1, 9, 6, 0, 7, 0, 9, 7, 2, 3]
-[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8,
-9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8,
-9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 Expected: SetType cannot be cast to java.lang.Comparable
 Expected: HashType cannot be cast to java.lang.Comparable
 */

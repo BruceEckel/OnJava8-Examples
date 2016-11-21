@@ -39,6 +39,7 @@ public class Lists {
   private ListIterator<String> it;
 
   @Setup
+  @SuppressWarnings("unchecked")
   public void setup() throws Exception {
     list = (List<String>)
       Class.forName(type).newInstance();

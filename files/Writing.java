@@ -7,11 +7,11 @@ import java.nio.file.*;
 
 public class Writing {
   static Random rand = new Random(47);
-  static final int sz = 1000;
+  static final int SIZE = 1000;
   public static void
   main(String[] args) throws Exception {
     // Write bytes to a file:
-    byte[] bytes = new byte[sz];
+    byte[] bytes = new byte[SIZE];
     rand.nextBytes(bytes);
     Files.write(Paths.get("bytes.dat"), bytes);
     System.out.println("bytes.dat: " +

@@ -2,6 +2,7 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
+import java.util.Objects;
 
 public class Holder<T> {
   private T value;
@@ -10,8 +11,14 @@ public class Holder<T> {
   public void set(T val) { value = val; }
   public T get() { return value; }
   @Override
-  public boolean equals(Object obj) {
-    return value.equals(obj);
+  public boolean equals(Object o) {
+    if (o == this) return true;
+    return o instanceof Holder &&
+      Objects.equals(value, ((Holder)o).value);
+  }
+  @Override
+  public int hashCode() {
+    return Objects.hash(value);
   }
   public static void main(String[] args) {
     Holder<Apple> apple = new Holder<>(new Apple());
@@ -32,5 +39,5 @@ public class Holder<T> {
 /* Output:
 java.lang.ClassCastException: Apple cannot be cast to
 Orange
-true
+false
 */

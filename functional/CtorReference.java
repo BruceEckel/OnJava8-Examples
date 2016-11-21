@@ -25,9 +25,9 @@ interface Make2Args {
 
 public class CtorReference {
   public static void main(String[] args) {
-    MakeNoArgs mna = Dog::new; // (1)
-    Make1Arg m1a = Dog::new;   // (2)
-    Make2Args m2a = Dog::new;  // (3)
+    MakeNoArgs mna = Dog::new; // [1]
+    Make1Arg m1a = Dog::new;   // [2]
+    Make2Args m2a = Dog::new;  // [3]
 
     Dog dn = mna.make();
     Dog d1 = m1a.make("Comet");

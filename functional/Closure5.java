@@ -6,7 +6,7 @@
 import java.util.function.*;
 
 public class Closure5 {
-  IntSupplier make_fun(int x) {
+  IntSupplier makeFun(int x) {
     int i = 0;
     i++;
     x++;

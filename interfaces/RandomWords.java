@@ -8,11 +8,11 @@ import java.util.*;
 
 public class RandomWords implements Readable {
   private static Random rand = new Random(47);
-  private static final char[] capitals =
+  private static final char[] CAPITALS =
     "ABCDEFGHIJKLMNOPQRSTUVWXYZ".toCharArray();
-  private static final char[] lowers =
+  private static final char[] LOWERS =
     "abcdefghijklmnopqrstuvwxyz".toCharArray();
-  private static final char[] vowels =
+  private static final char[] VOWELS =
     "aeiou".toCharArray();
   private int count;
   public RandomWords(int count) { this.count = count; }
@@ -20,10 +20,10 @@ public class RandomWords implements Readable {
   public int read(CharBuffer cb) {
     if(count-- == 0)
       return -1; // Indicates end of input
-    cb.append(capitals[rand.nextInt(capitals.length)]);
+    cb.append(CAPITALS[rand.nextInt(CAPITALS.length)]);
     for(int i = 0; i < 4; i++) {
-      cb.append(vowels[rand.nextInt(vowels.length)]);
-      cb.append(lowers[rand.nextInt(lowers.length)]);
+      cb.append(VOWELS[rand.nextInt(VOWELS.length)]);
+      cb.append(LOWERS[rand.nextInt(LOWERS.length)]);
     }
     cb.append(" ");
     return 10; // Number of characters appended

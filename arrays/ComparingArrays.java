@@ -8,7 +8,7 @@ import onjava.*;
 
 public class ComparingArrays {
   public static final int SZ = 15;
-  static String[][] TwoDArray() {
+  static String[][] twoDArray() {
     String[][] md = new String[5][];
     Arrays.setAll(md, n -> new String[n]);
     for(int i = 0; i < md.length; i++)
@@ -35,7 +35,7 @@ public class ComparingArrays {
     System.out.println(
       "a1w == a2w: " + Arrays.equals(a1w, a2w));
 
-    String[][] md1 = TwoDArray(), md2 = TwoDArray();
+    String[][] md1 = twoDArray(), md2 = twoDArray();
     System.out.println(Arrays.deepToString(md1));
     System.out.println("deepEquals(md1, md2): " +
       Arrays.deepEquals(md1, md2));

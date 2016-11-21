@@ -11,16 +11,16 @@ class This {
 }
 
 interface TwoArgs {
-  void call2(This _this, int i, double d);
+  void call2(This athis, int i, double d);
 }
 
 interface ThreeArgs {
-  void call3(This _this, int i, double d, String s);
+  void call3(This athis, int i, double d, String s);
 }
 
 interface FourArgs {
   void call4(
-    This _this, int i, double d, String s, char c);
+    This athis, int i, double d, String s, char c);
 }
 
 public class MultiUnbound {
@@ -28,9 +28,9 @@ public class MultiUnbound {
     TwoArgs twoargs = This::two;
     ThreeArgs threeargs = This::three;
     FourArgs fourargs = This::four;
-    This _this = new This();
-    twoargs.call2(_this, 11, 3.14);
-    threeargs.call3(_this, 11, 3.14, "Three");
-    fourargs.call4(_this, 11, 3.14, "Four", 'Z');
+    This athis = new This();
+    twoargs.call2(athis, 11, 3.14);
+    threeargs.call3(athis, 11, 3.14, "Three");
+    fourargs.call4(athis, 11, 3.14, "Four", 'Z');
   }
 }

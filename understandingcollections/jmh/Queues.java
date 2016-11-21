@@ -44,6 +44,7 @@ public class Queues {
   private int size;
 
   @Setup
+  @SuppressWarnings("unchecked")
   public void setup() throws Exception {
     queue = (Queue<String>)
       Class.forName(type).newInstance();

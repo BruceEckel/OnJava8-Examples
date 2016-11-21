@@ -5,15 +5,15 @@
 import static onjava.HTMLColors.*;
 
 public class HTMLColorTest {
-  static final int DISPLAYSIZE = 20;
+  static final int DISPLAY_SIZE = 20;
   public static void main(String[] args) {
-    show(MAP, DISPLAYSIZE);
+    show(MAP, DISPLAY_SIZE);
     border();
-    show_inv(INVMAP, DISPLAYSIZE);
+    showInv(INVMAP, DISPLAY_SIZE);
     border();
-    show(LIST, DISPLAYSIZE);
+    show(LIST, DISPLAY_SIZE);
     border();
-    showrgb(RGBLIST, DISPLAYSIZE);
+    showrgb(RGBLIST, DISPLAY_SIZE);
   }
 }
 /* Output:

@@ -11,18 +11,18 @@ import onjava.*;
 
 public class AtUnitComposition {
   AtUnitExample1 testObject = new AtUnitExample1();
-  @Test boolean _methodOne() {
+  @Test boolean tMethodOne() {
     return
       testObject.methodOne().equals("This is methodOne");
   }
-  @Test boolean _methodTwo() {
+  @Test boolean tMethodTwo() {
     return testObject.methodTwo() == 2;
   }
 }
 /* Output:
 annotations.AtUnitComposition
-  . _methodOne
-  . _methodTwo This is methodTwo
+  . tMethodOne
+  . tMethodTwo This is methodTwo
 
 OK (2 tests)
 */

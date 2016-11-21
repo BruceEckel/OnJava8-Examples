@@ -12,7 +12,7 @@ public class PetCount3 {
   static class Counter
   extends LinkedHashMap<Class<? extends Pet>, Integer> {
     public Counter() {
-      super(LiteralPetCreator.allTypes.stream()
+      super(LiteralPetCreator.ALL_TYPES.stream()
         .map(lpc -> Pair.make(lpc, 0))
         .collect(
           Collectors.toMap(Pair::key, Pair::value)));

@@ -13,7 +13,7 @@ public class SetOrder {
     "java.util.LinkedHashSet",
     "java.util.concurrent.CopyOnWriteArraySet",
   };
-  static List<String> RLIST =
+  static final List<String> RLIST =
     new ArrayList<>(HTMLColors.LIST);
   static {
     Collections.reverse(RLIST);
@@ -21,7 +21,7 @@ public class SetOrder {
   public static void
   main(String[] args) throws Exception {
     for(String type: sets) {
-      System.out.format("[-> %s <-]\n",
+      System.out.format("[-> %s <-]%n",
         type.substring(type.lastIndexOf('.') + 1));
       @SuppressWarnings("unchecked")
       Set<String> set = (Set<String>)

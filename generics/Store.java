@@ -12,8 +12,8 @@ class Product {
   private String description;
   private double price;
   public
-  Product(int IDnumber, String descr, double price) {
-    id = IDnumber;
+  Product(int idNumber, String descr, double price) {
+    id = idNumber;
     description = descr;
     this.price = price;
     System.out.println(toString());

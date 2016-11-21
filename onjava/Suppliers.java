@@ -7,7 +7,6 @@ package onjava;
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
-import java.util.function.*;
 
 public class Suppliers {
   // Create a collection and fill it:

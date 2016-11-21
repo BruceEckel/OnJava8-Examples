@@ -5,8 +5,8 @@
 import java.util.*;
 
 class Initable {
-  static final int staticFinal = 47;
-  static final int staticFinal2 =
+  static final int STATIC_FINAL = 47;
+  static final int STATIC_FINAL2 =
     ClassInitialization.rand.nextInt(1000);
   static {
     System.out.println("Initializing Initable");
@@ -34,9 +34,9 @@ public class ClassInitialization {
     Class initable = Initable.class;
     System.out.println("After creating Initable ref");
     // Does not trigger initialization:
-    System.out.println(Initable.staticFinal);
+    System.out.println(Initable.STATIC_FINAL);
     // Does trigger initialization:
-    System.out.println(Initable.staticFinal2);
+    System.out.println(Initable.STATIC_FINAL2);
     // Does trigger initialization:
     System.out.println(Initable2.staticNonFinal);
     Class initable3 = Class.forName("Initable3");

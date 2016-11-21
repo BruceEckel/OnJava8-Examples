@@ -19,9 +19,9 @@ public class ClassNameFinder {
       int magic = data.readInt();  // 0xcafebabe
       int minorVersion = data.readShort();
       int majorVersion = data.readShort();
-      int constant_pool_count = data.readShort();
-      int[] constant_pool = new int[constant_pool_count];
-      for(int i = 1; i < constant_pool_count; i++) {
+      int constantPoolCount = data.readShort();
+      int[] constantPool = new int[constantPoolCount];
+      for(int i = 1; i < constantPoolCount; i++) {
         int tag = data.read();
         // int tableSize;
         switch(tag) {
@@ -65,13 +65,13 @@ public class ClassNameFinder {
             throw new RuntimeException("Bad tag " + tag);
         }
       }
-      short access_flags = data.readShort();
-      String access = (access_flags & 0x0001) == 0 ?
+      short accessFlags = data.readShort();
+      String access = (accessFlags & 0x0001) == 0 ?
         "nonpublic:" : "public:";
-      int this_class = data.readShort();
-      int super_class = data.readShort();
+      int thisClass = data.readShort();
+      int superClass = data.readShort();
       return access + classNameTable.get(
-        offsetTable.get(this_class)).replace('/', '.');
+        offsetTable.get(thisClass)).replace('/', '.');
     } catch(IOException | RuntimeException e) {
       throw new RuntimeException(e);
     }
@@ -113,21 +113,21 @@ onjava.BasicSupplier
 onjava.CollectionMethodDifferences
 onjava.ConvertTo
 onjava.Count$Boolean
-onjava.Count$boolean_
+onjava.Count$Pboolean
 onjava.Count$Byte
-onjava.Count$byte_
+onjava.Count$Pbyte
 onjava.Count$Character
-onjava.Count$char_
+onjava.Count$Pchar
 onjava.Count$Double
-onjava.Count$double_
+onjava.Count$Pdouble
 onjava.Count$Float
-onjava.Count$float_
+onjava.Count$Pfloat
 onjava.Count$Integer
-onjava.Count$int_
+onjava.Count$Pint
 onjava.Count$Long
-onjava.Count$long_
+onjava.Count$Plong
 onjava.Count$Short
-onjava.Count$short_
+onjava.Count$Pshort
 onjava.Count
 onjava.CountingIntegerList
 onjava.CountMap
@@ -144,21 +144,21 @@ onjava.Pair
 onjava.ProcessFiles$Strategy
 onjava.ProcessFiles
 onjava.Rand$Boolean
-onjava.Rand$boolean_
+onjava.Rand$Pboolean
 onjava.Rand$Byte
-onjava.Rand$byte_
+onjava.Rand$Pbyte
 onjava.Rand$Character
-onjava.Rand$char_
+onjava.Rand$Pchar
 onjava.Rand$Double
-onjava.Rand$double_
+onjava.Rand$Pdouble
 onjava.Rand$Float
-onjava.Rand$float_
+onjava.Rand$Pfloat
 onjava.Rand$Integer
-onjava.Rand$int_
+onjava.Rand$Pint
 onjava.Rand$Long
-onjava.Rand$long_
+onjava.Rand$Plong
 onjava.Rand$Short
-onjava.Rand$short_
+onjava.Rand$Pshort
 onjava.Rand$String
 onjava.Rand
 onjava.Range

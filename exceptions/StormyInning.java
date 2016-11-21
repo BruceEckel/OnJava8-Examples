@@ -24,8 +24,8 @@ class RainedOut extends StormException {}
 class PopFoul extends Foul {}
 
 interface Storm {
-  public void event() throws RainedOut;
-  public void rainHard() throws RainedOut;
+  void event() throws RainedOut;
+  void rainHard() throws RainedOut;
 }
 
 public
@@ -35,7 +35,7 @@ class StormyInning extends Inning implements Storm {
   public StormyInning()
     throws RainedOut, BaseballException {}
   public StormyInning(String s)
-    throws Foul, BaseballException {}
+    throws BaseballException {}
   // Regular methods must conform to base class:
   //- void walk() throws PopFoul {} //Compile error
   // Interface CANNOT add exceptions to existing

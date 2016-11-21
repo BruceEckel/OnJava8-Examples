@@ -85,10 +85,10 @@ class ItemFactory {
   static List<Supplier<Item>> items =
     Arrays.asList(
       Scissors::new, Paper::new, Rock::new);
-  final static int sz = items.size();
+  static final int SZ = items.size();
   private static SplittableRandom rand = new SplittableRandom(47);
   public static Item newItem() {
-    return items.get(rand.nextInt(sz)).get();
+    return items.get(rand.nextInt(SZ)).get();
   }
   public static Tuple2<Item,Item> newPair() {
     return tuple(newItem(), newItem());
@@ -97,8 +97,8 @@ class ItemFactory {
 
 class Compete {
   public static Outcome match(Tuple2<Item,Item> p) {
-    System.out.print(p._1 + " -> " + p._2 + " : ");
-    return p._1.compete(p._2);
+    System.out.print(p.a1 + " -> " + p.a2 + " : ");
+    return p.a1.compete(p.a2);
   }
 }
 

@@ -12,7 +12,7 @@ interface State {
 
 abstract class StateMachine {
   protected State currentState;
-  abstract protected boolean changeState();
+  protected abstract boolean changeState();
   // Template method:
   protected final void runAll() {
     while(changeState()) // Customizable
@@ -55,7 +55,7 @@ class Rinse implements State {
 class Washer extends StateMachine {
   private int i = 0;
   // The state table:
-  private State states[] = {
+  private State[] states = {
     new Wash(), new Spin(),
     new Rinse(), new Spin(),
   };

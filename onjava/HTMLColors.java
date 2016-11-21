@@ -200,33 +200,33 @@ public class HTMLColors {
     show(m, m.size());
   }
   public static
-  void show(List<String> lst, int count) {
+  void show(Collection<String> lst, int count) {
     lst.stream()
       .limit(count)
       .forEach(System.out::println);
   }
-  public static void show(List<String> lst) {
+  public static void show(Collection<String> lst) {
     show(lst, lst.size());
   }
   public static
-  void showrgb(List<Integer> lst, int count) {
+  void showrgb(Collection<Integer> lst, int count) {
     lst.stream()
       .limit(count)
-      .forEach(n -> System.out.format("0x%06X\n", n));
+      .forEach(n -> System.out.format("0x%06X%n", n));
   }
-  public static void showrgb(List<Integer> lst) {
+  public static void showrgb(Collection<Integer> lst) {
     showrgb(lst, lst.size());
   }
   public static
-  void show_inv(Map<String,Integer> m, int count) {
+  void showInv(Map<String,Integer> m, int count) {
     m.entrySet().stream()
       .limit(count)
       .forEach(e ->
         System.out.format(
           "%-20s  0x%06X\n", e.getKey(), e.getValue()));
   }
-  public static void show_inv(Map<String,Integer> m) {
-    show_inv(m, m.size());
+  public static void showInv(Map<String,Integer> m) {
+    showInv(m, m.size());
   }
   public static void border() {
     System.out.println("------------------------------");

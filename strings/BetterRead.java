@@ -17,8 +17,8 @@ public class BetterRead {
     double favorite = stdin.nextDouble();
     System.out.println(age);
     System.out.println(favorite);
-    System.out.format("Hi %s.\n", name);
-    System.out.format("In 5 years you will be %d.\n",
+    System.out.format("Hi %s.%n", name);
+    System.out.format("In 5 years you will be %d.%n",
       age + 5);
     System.out.format("My favorite double is %f.",
       favorite / 2);

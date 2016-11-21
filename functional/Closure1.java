@@ -6,7 +6,7 @@ import java.util.function.*;
 
 public class Closure1 {
   int i;
-  IntSupplier make_fun(int x) {
+  IntSupplier makeFun(int x) {
     return () -> x + i++;
   }
 }

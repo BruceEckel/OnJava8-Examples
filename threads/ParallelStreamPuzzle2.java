@@ -14,7 +14,7 @@ public class ParallelStreamPuzzle2 {
   static class
   IntGenerator implements Supplier<Integer> {
     private int current = 0;
-    public synchronized Integer get() {  // (1)
+    public synchronized Integer get() {  // [1]
       trace.add(current + ": " +
         Thread.currentThread().getName());
       return current++;

@@ -40,7 +40,7 @@ public class Applicator {
     System.out.println("Using Processor " + p.name());
     System.out.println(p.process(s));
   }
-  public static String s =
+  public static final String s =
   "Disagreement with beliefs is by definition incorrect";
   public static void main(String[] args) {
     apply(new Upcase(), s);

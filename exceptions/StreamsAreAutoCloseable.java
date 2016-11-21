@@ -13,12 +13,12 @@ public class StreamsAreAutoCloseable {
       Stream<String> in = Files.lines(
         Paths.get("StreamsAreAutoCloseable.java"));
       PrintWriter outfile = new PrintWriter(
-        "Results.txt"); // (1)
+        "Results.txt"); // [1]
     ) {
       in.skip(5)
         .limit(1)
         .map(String::toLowerCase)
         .forEachOrdered(outfile::println);
-    } // (2)
+    } // [2]
   }
 }

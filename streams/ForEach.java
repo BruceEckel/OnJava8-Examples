@@ -7,16 +7,16 @@ import java.util.stream.*;
 import static streams.RandInts.*;
 
 public class ForEach {
-  final static int sz = 14;
+  static final int SZ = 14;
   public static void main(String[] args) {
-    rands().limit(sz)
+    rands().limit(SZ)
       .forEach(n -> System.out.format("%d ", n));
     System.out.println();
-    rands().limit(sz)
+    rands().limit(SZ)
       .parallel()
       .forEach(n -> System.out.format("%d ", n));
     System.out.println();
-    rands().limit(sz)
+    rands().limit(SZ)
       .parallel()
       .forEachOrdered(n -> System.out.format("%d ", n));
   }

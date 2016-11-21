@@ -74,10 +74,10 @@ class FlowerFactory {
   static List<Supplier<Flower>> flowers =
     Arrays.asList(Gladiolus::new,
       Renuculus::new, Chrysanthemum::new);
-  final static int sz = flowers.size();
+  static final int SZ = flowers.size();
   private static SplittableRandom rand = new SplittableRandom(47);
   public static Flower newFlower() {
-    return flowers.get(rand.nextInt(sz)).get();
+    return flowers.get(rand.nextInt(SZ)).get();
   }
 }
 

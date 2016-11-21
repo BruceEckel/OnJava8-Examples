@@ -112,7 +112,7 @@ class GreenZebra extends Tomato {
 public class CopyConstructor {
   public static void ripen(Tomato t) {
     // Use the "copy constructor":
-    t = new Tomato(t); // (1)
+    t = new Tomato(t); // [1]
     System.out.println("In ripen, t is a " +
       t.getClass().getName());
   }

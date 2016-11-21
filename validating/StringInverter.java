@@ -5,5 +5,5 @@
 package validating;
 
 interface StringInverter {
-  public String invert(String str);
+  String invert(String str);
 }

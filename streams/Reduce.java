@@ -14,9 +14,9 @@ class Frobnitz {
   }
   // Generator:
   static Random rand = new Random(47);
-  static final int bound = 100;
+  static final int BOUND = 100;
   static Frobnitz supply() {
-    return new Frobnitz(rand.nextInt(bound));
+    return new Frobnitz(rand.nextInt(BOUND));
   }
 }
 

@@ -8,7 +8,7 @@ import java.util.*;
 public class ForNameCreator extends PetCreator {
   private static List<Class<? extends Pet>> types =
     new ArrayList<>();
-  // Types that you want randomly created:
+  // Types you want randomly created:
   private static String[] typeNames = {
     "typeinfo.pets.Mutt",
     "typeinfo.pets.Pug",

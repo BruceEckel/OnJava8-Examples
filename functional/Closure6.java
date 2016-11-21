@@ -5,12 +5,12 @@
 import java.util.function.*;
 
 public class Closure6 {
-  IntSupplier make_fun(int x) {
+  IntSupplier makeFun(int x) {
     int i = 0;
     i++;
     x++;
-    final int i_final = i;
-    final int x_final = x;
-    return () -> x_final + i_final;
+    final int iFinal = i;
+    final int xFinal = x;
+    return () -> xFinal + iFinal;
   }
 }

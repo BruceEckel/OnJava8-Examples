@@ -27,7 +27,7 @@ public class SprinklerSystem {
       "valve3 = " + valve3 + " " +
       "valve4 = " + valve4 + "\n" +
       "i = " + i + " " + "f = " + f + " " +
-      "source = " + source; // (1)
+      "source = " + source; // [1]
   }
   public static void main(String[] args) {
     SprinklerSystem sprinklers = new SprinklerSystem();

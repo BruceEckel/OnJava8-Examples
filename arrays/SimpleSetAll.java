@@ -22,13 +22,13 @@ public class SimpleSetAll {
     int[] ia = new int[SZ];
     long[] la = new long[SZ];
     double[] da = new double[SZ];
-    Arrays.setAll(ia, n -> n); // (1)
+    Arrays.setAll(ia, n -> n); // [1]
     Arrays.setAll(la, n -> n);
     Arrays.setAll(da, n -> n);
     show(ia);
     show(la);
     show(da);
-    Arrays.setAll(ia, n -> val++); // (2)
+    Arrays.setAll(ia, n -> val++); // [2]
     Arrays.setAll(la, n -> val++);
     Arrays.setAll(da, n -> val++);
     show(ia);
@@ -36,11 +36,11 @@ public class SimpleSetAll {
     show(da);
 
     Bob[] ba = new Bob[SZ];
-    Arrays.setAll(ba, Bob::new); // (3)
+    Arrays.setAll(ba, Bob::new); // [3]
     show(ba);
 
     Character[] ca = new Character[SZ];
-    Arrays.setAll(ca, SimpleSetAll::getChar); // (4)
+    Arrays.setAll(ca, SimpleSetAll::getChar); // [4]
     show(ca);
   }
 }

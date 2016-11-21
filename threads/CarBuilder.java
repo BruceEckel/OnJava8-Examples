@@ -107,8 +107,8 @@ class Reporter implements Runnable {
 
 abstract class Robot implements Runnable {
   private RobotPool pool;
-  public Robot(RobotPool p) { pool = p; }
   protected Assembler assembler;
+  public Robot(RobotPool p) { pool = p; }
   public Robot assignAssembler(Assembler assembler) {
     this.assembler = assembler;
     return this;
@@ -119,7 +119,7 @@ abstract class Robot implements Runnable {
     notifyAll();
   }
   // The part of run() that's different for each robot:
-  abstract protected void performService();
+  protected abstract void performService();
   public void run() {
     try {
       powerDown(); // Wait until needed

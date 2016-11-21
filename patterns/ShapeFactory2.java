@@ -7,7 +7,6 @@ import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
 
-
 class BadShapeCreation extends RuntimeException {
   BadShapeCreation(String msg) {
     super(msg);
@@ -22,8 +21,7 @@ interface Shape {
 abstract class ShapeFactory {
   static Map<String, Supplier<Shape>> factories =
     new HashMap<>();
-  static Shape createShape(String id)
-  throws BadShapeCreation {
+  static Shape createShape(String id) {
     if(!factories.containsKey(id)) {
       try {
         Class.forName(id); // Load dynamically
@@ -38,7 +36,7 @@ abstract class ShapeFactory {
   }
 }
 
-class Circle implements Shape {
+final class Circle implements Shape {
   private Circle() {}
   public void draw() {
     System.out.println("Circle.draw");
@@ -51,7 +49,7 @@ class Circle implements Shape {
   }
 }
 
-class Square implements Shape {
+final class Square implements Shape {
   private Square() {}
   public void draw() {
     System.out.println("Square.draw");

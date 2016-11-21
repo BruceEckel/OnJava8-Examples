@@ -14,7 +14,7 @@ public class StreamFromArray {
       .map(ss -> ss + "!")
       .forEach(System.out::println);
 
-    int[] ia = new Rand.int_().array(10);
+    int[] ia = new Rand.Pint().array(10);
     Arrays.stream(ia)
       .skip(3)
       .limit(5)
@@ -32,7 +32,7 @@ public class StreamFromArray {
     //- Arrays.stream(new float[10]);
 
     // For the other types you must use wrapped arrays:
-    float[] fa = new Rand.float_().array(10);
+    float[] fa = new Rand.Pfloat().array(10);
     Arrays.stream(ConvertTo.boxed(fa));
     Arrays.stream(new Rand.Float().array(10));
   }

@@ -65,11 +65,11 @@ class TrashFactory {
   static List<Function<Double, Trash>> ttypes =
     Arrays.asList(
       Aluminum::new, Paper::new, Glass::new);
-  final static int sz = ttypes.size();
+  static final int SZ = ttypes.size();
   private static SplittableRandom rand = new SplittableRandom(47);
   public static Trash newTrash() {
     return ttypes
-      .get(rand.nextInt(sz))
+      .get(rand.nextInt(SZ))
       .apply(rand.nextDouble());
   }
 }

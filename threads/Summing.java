@@ -16,13 +16,13 @@ public class Summing {
     if(result == checkValue)
       System.out.println(duration + "ms");
     else
-      System.out.format("result: %d\ncheckValue: %d\n",
+      System.out.format("result: %d%ncheckValue: %d%n",
         result, checkValue);
     x = result; // Prevent optimization
   }
-  public static int SZ = 100_000_000;
+  public static final int SZ = 100_000_000;
   // This even works:
-  // public static int SZ = 1_000_000_000;
+  // public static final int SZ = 1_000_000_000;
   // Gauss's formula:
   public static final long CHECK =
     (long)SZ * ((long)SZ + 1)/2;

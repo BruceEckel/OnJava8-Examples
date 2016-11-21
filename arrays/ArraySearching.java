@@ -9,8 +9,8 @@ import static onjava.ArrayShow.*;
 
 public class ArraySearching {
   public static void main(String[] args) {
-    Rand.int_ rand = new Rand.int_();
-    int[] a = new Rand.int_().array(25);
+    Rand.Pint rand = new Rand.Pint();
+    int[] a = new Rand.Pint().array(25);
     Arrays.sort(a);
     show("Sorted array", a);
     while(true) {

@@ -10,19 +10,19 @@ import onjava.atunit.*;
 import onjava.*;
 
 public class StackLStringTest extends StackL<String> {
-  @Test void _push() {
+  @Test void tPush() {
     push("one");
     assert top().equals("one");
     push("two");
     assert top().equals("two");
   }
-  @Test void _pop() {
+  @Test void tPop() {
     push("one");
     push("two");
     assert pop().equals("two");
     assert pop().equals("one");
   }
-  @Test void _top() {
+  @Test void tTop() {
     push("A");
     push("B");
     assert top().equals("B");
@@ -31,8 +31,8 @@ public class StackLStringTest extends StackL<String> {
 }
 /* Output:
 annotations.StackLStringTest
-  . _pop
-  . _top
-  . _push
+  . tPop
+  . tTop
+  . tPush
 OK (3 tests)
 */

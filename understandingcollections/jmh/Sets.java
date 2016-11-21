@@ -39,6 +39,7 @@ public class Sets {
   private String key;
 
   @Setup
+  @SuppressWarnings("unchecked")
   public void setup() throws Exception {
     set = (Set<String>)
       Class.forName(type).newInstance();

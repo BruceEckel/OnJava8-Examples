@@ -9,9 +9,9 @@ public class Underscores {
     System.out.println(d);
     int bin = 0b0010_1111_1010_1111_1010_1111_1010_1111;
     System.out.println(Integer.toBinaryString(bin));
-    System.out.printf("%x\n", bin);
+    System.out.printf("%x%n", bin);
     long hex = 0x7f_e9_b7_aa;
-    System.out.printf("%x\n", hex);
+    System.out.printf("%x%n", hex);
   }
 }
 /* Output:

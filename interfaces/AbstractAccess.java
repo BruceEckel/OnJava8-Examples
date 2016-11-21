@@ -11,5 +11,5 @@ abstract class AbstractAccess {
   void m3() {}
   abstract void m3a();
   public void m4() {}
-  abstract public void m4a();
+  public abstract void m4a();
 }

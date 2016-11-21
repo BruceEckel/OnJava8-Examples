@@ -9,7 +9,8 @@ class Parcel4 {
     @Override
     public int value() { return i; }
   }
-  protected class PDestination implements Destination {
+  protected final class
+  PDestination implements Destination {
     private String label;
     private PDestination(String whereTo) {
       label = whereTo;

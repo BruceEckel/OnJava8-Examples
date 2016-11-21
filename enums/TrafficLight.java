@@ -11,7 +11,7 @@ public class TrafficLight {
   Signal color = Signal.RED;
   public void change() {
     switch(color) {
-      // Note that you don't have to say Signal.RED
+      // Note you don't have to say Signal.RED
       // in the case statement:
       case RED:    color = Signal.GREEN;
                    break;

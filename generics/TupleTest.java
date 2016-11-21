@@ -27,7 +27,7 @@ public class TupleTest {
   public static void main(String[] args) {
     Tuple2<String, Integer> ttsi = f();
     System.out.println(ttsi);
-    // ttsi._1 = "there"; // Compile error: final
+    // ttsi.a1 = "there"; // Compile error: final
     System.out.println(g());
     System.out.println(h());
     System.out.println(k());

@@ -5,7 +5,7 @@
 import java.util.function.*;
 
 public class AnonymousClosure {
-  IntSupplier make_fun(int x) {
+  IntSupplier makeFun(int x) {
     int i = 0;
     // Same rules apply:
     // i++; // Not "effectively final"

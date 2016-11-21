@@ -13,7 +13,7 @@ public class Alias1 {
     System.out.println("x: " + x.i);
     System.out.println("y: " + y.i);
     System.out.println("Incrementing x");
-    x.i++; // (2)
+    x.i++; // [2]
     System.out.println("x: " + x.i);
     System.out.println("y: " + y.i);
   }

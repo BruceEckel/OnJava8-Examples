@@ -20,7 +20,7 @@ public class HiddenImplementation {
     } */
     // Oops! Reflection still allows us to call g():
     callHiddenMethod(a, "g");
-    // And even methods that are less accessible!
+    // And even less accessible methods!
     callHiddenMethod(a, "u");
     callHiddenMethod(a, "v");
     callHiddenMethod(a, "w");

@@ -7,5 +7,5 @@ package annotations.database;
 
 public @interface Uniqueness {
   Constraints constraints()
-    default @Constraints(unique = true);
+  default @Constraints(unique = true);
 }

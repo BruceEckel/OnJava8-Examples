@@ -17,8 +17,7 @@ class BadShapeCreation extends RuntimeException {
 abstract class Shape {
   public abstract void draw();
   public abstract void erase();
-  static Shape factory(String type)
-    throws BadShapeCreation {
+  static Shape factory(String type) {
     switch(type) {
       case "Circle": return new Circle();
       case "Square": return new Square();

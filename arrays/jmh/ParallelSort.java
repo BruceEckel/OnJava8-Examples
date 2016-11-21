@@ -12,7 +12,7 @@ public class ParallelSort {
   private long[] la;
   @Setup
   public void setup() {
-    la = new Rand.long_().array(100_000);
+    la = new Rand.Plong().array(100_000);
   }
   @Benchmark
   public void sort() {

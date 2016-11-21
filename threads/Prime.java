@@ -20,7 +20,7 @@ public class Prime {
     long start = System.currentTimeMillis();
     List<String> primes =
       iterate(2, i -> i + 1)
-        .parallel() //(1)
+        .parallel()              // [1]
         .filter(Prime::isPrime)
         .limit(COUNT)
         .mapToObj(Long::toString)

@@ -36,6 +36,7 @@ public class Deques {
   private int size;
 
   @Setup
+  @SuppressWarnings("unchecked")
   public void setup() throws Exception {
     deque = (Deque<String>)
       Class.forName(type).newInstance();

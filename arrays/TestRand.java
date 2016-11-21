@@ -20,7 +20,7 @@ public class TestRand {
     show(a1);
     a1 = new Rand.Boolean().array(SZ + 2);
     show(a1);
-    boolean[] a1b = new Rand.boolean_().array(SZ + 3);
+    boolean[] a1b = new Rand.Pboolean().array(SZ + 3);
     show(a1b);
 
     System.out.println("Byte");
@@ -32,7 +32,7 @@ public class TestRand {
     show(a2);
     a2 = new Rand.Byte().array(SZ + 2);
     show(a2);
-    byte[] a2b = new Rand.byte_().array(SZ + 3);
+    byte[] a2b = new Rand.Pbyte().array(SZ + 3);
     show(a2b);
 
     System.out.println("Character");
@@ -44,7 +44,7 @@ public class TestRand {
     show(a3);
     a3 = new Rand.Character().array(SZ + 2);
     show(a3);
-    char[] a3b = new Rand.char_().array(SZ + 3);
+    char[] a3b = new Rand.Pchar().array(SZ + 3);
     show(a3b);
 
     System.out.println("Short");
@@ -56,7 +56,7 @@ public class TestRand {
     show(a4);
     a4 = new Rand.Short().array(SZ + 2);
     show(a4);
-    short[] a4b = new Rand.short_().array(SZ + 3);
+    short[] a4b = new Rand.Pshort().array(SZ + 3);
     show(a4b);
 
     System.out.println("Integer");
@@ -68,10 +68,10 @@ public class TestRand {
     show(a5b);
     a5b = new Rand.Integer().array(SZ + 2);
     show(a5b);
-    a5 = IntStream.generate(new Rand.int_())
+    a5 = IntStream.generate(new Rand.Pint())
       .limit(SZ + 1).toArray();
     show(a5);
-    a5 = new Rand.int_().array(SZ + 3);
+    a5 = new Rand.Pint().array(SZ + 3);
     show(a5);
 
     System.out.println("Long");
@@ -83,10 +83,10 @@ public class TestRand {
     show(a6b);
     a6b = new Rand.Long().array(SZ + 2);
     show(a6b);
-    a6 = LongStream.generate(new Rand.long_())
+    a6 = LongStream.generate(new Rand.Plong())
       .limit(SZ + 1).toArray();
     show(a6);
-    a6 = new Rand.long_().array(SZ + 3);
+    a6 = new Rand.Plong().array(SZ + 3);
     show(a6);
 
     System.out.println("Float");
@@ -98,7 +98,7 @@ public class TestRand {
     show(a7);
     a7 = new Rand.Float().array(SZ + 2);
     show(a7);
-    float[] a7b = new Rand.float_().array(SZ + 3);
+    float[] a7b = new Rand.Pfloat().array(SZ + 3);
     show(a7b);
 
     System.out.println("Double");
@@ -110,10 +110,10 @@ public class TestRand {
     show(a8b);
     a8b = new Rand.Double().array(SZ + 2);
     show(a8b);
-    a8 = DoubleStream.generate(new Rand.double_())
+    a8 = DoubleStream.generate(new Rand.Pdouble())
       .limit(SZ + 1).toArray();
     show(a8);
-    a8 = new Rand.double_().array(SZ + 3);
+    a8 = new Rand.Pdouble().array(SZ + 3);
     show(a8);
 
     System.out.println("String");

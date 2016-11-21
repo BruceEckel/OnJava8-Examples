@@ -22,7 +22,7 @@ class NeedsCleanup2 extends NeedsCleanup {
 
 public class CleanupIdiom {
   public static void main(String[] args) {
-    // (1):
+    // [1]:
     NeedsCleanup nc1 = new NeedsCleanup();
     try {
       // ...
@@ -30,7 +30,7 @@ public class CleanupIdiom {
       nc1.dispose();
     }
 
-    // (2):
+    // [2]:
     // If construction cannot fail you can group objects:
     NeedsCleanup nc2 = new NeedsCleanup();
     NeedsCleanup nc3 = new NeedsCleanup();
@@ -41,7 +41,7 @@ public class CleanupIdiom {
       nc2.dispose();
     }
 
-    // (3):
+    // [3]:
     // If construction can fail you must guard each one:
     try {
       NeedsCleanup2 nc4 = new NeedsCleanup2();

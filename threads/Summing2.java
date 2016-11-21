@@ -7,14 +7,14 @@ import java.util.*;
 public class Summing2 {
   static long basicSum(long[] ia) {
     long sum = 0;
-    final int sz = ia.length;
-    for(int i = 0; i < sz; i++)
+    int size = ia.length;
+    for(int i = 0; i < size; i++)
       sum += ia[i];
     return sum;
   }
   // Approximate largest value of SZ before
   // running out of memory on my machine:
-  public static int SZ = 20_000_000;
+  public static final int SZ = 20_000_000;
   public static final long CHECK =
     (long)SZ * ((long)SZ + 1)/2;
   public static void main(String[] args) {

@@ -31,7 +31,7 @@ class Order { // (A data-transfer object)
   }
 }
 
-// This is what comes back from the chef:
+// This comes back from the chef:
 class Plate {
   private final Order order;
   private final Food food;

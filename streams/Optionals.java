@@ -13,17 +13,17 @@ public class Optionals {
     else
       System.out.println("Nothing inside!");
   }
-  static void if_present(Optional<String> optString) {
+  static void ifPresent(Optional<String> optString) {
     optString.ifPresent(System.out::println);
   }
-  static void or_else(Optional<String> optString) {
+  static void orElse(Optional<String> optString) {
     System.out.println(optString.orElse("Nada"));
   }
-  static void or_else_get(Optional<String> optString) {
+  static void orElseGet(Optional<String> optString) {
     System.out.println(
       optString.orElseGet(() -> "Generated"));
   }
-  static void or_else_throw(Optional<String> optString) {
+  static void orElseThrow(Optional<String> optString) {
     try {
       System.out.println(optString.orElseThrow(
         () -> new Exception("Supplied")));
@@ -39,10 +39,10 @@ public class Optionals {
   }
   public static void main(String[] args) {
     test("basics", Optionals::basics);
-    test("ifPresent", Optionals::if_present);
-    test("orElse", Optionals::or_else);
-    test("orElseGet", Optionals::or_else_get);
-    test("orElseThrow", Optionals::or_else_throw);
+    test("ifPresent", Optionals::ifPresent);
+    test("orElse", Optionals::orElse);
+    test("orElseGet", Optionals::orElseGet);
+    test("orElseThrow", Optionals::orElseThrow);
   }
 }
 /* Output:

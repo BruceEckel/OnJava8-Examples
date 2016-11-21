@@ -8,7 +8,7 @@ import java.util.stream.*;
 
 public class CachedThreadPool3 {
   public static Integer
-  extract_result(Future<Integer> f) {
+  extractResult(Future<Integer> f) {
     try {
       return f.get();
     } catch(Exception e) {
@@ -26,7 +26,7 @@ public class CachedThreadPool3 {
     List<Future<Integer>> futures =
       exec.invokeAll(tasks);
     Integer sum = futures.stream()
-      .map(CachedThreadPool3::extract_result)
+      .map(CachedThreadPool3::extractResult)
       .reduce(0, Integer::sum);
     System.out.println("sum = " + sum);
     exec.shutdown();

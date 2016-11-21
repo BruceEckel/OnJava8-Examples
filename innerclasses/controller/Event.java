@@ -9,8 +9,8 @@ import java.time.*; // Java 8 time classes
 public abstract class Event {
   private Instant eventTime;
   protected final Duration delayTime;
-  public Event(long millisecond_delay) {
-    delayTime = Duration.ofMillis(millisecond_delay);
+  public Event(long millisecondDelay) {
+    delayTime = Duration.ofMillis(millisecondDelay);
     start();
   }
   public void start() { // Allows restarting

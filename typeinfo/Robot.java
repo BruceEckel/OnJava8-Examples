@@ -9,7 +9,7 @@ public interface Robot {
   String name();
   String model();
   List<Operation> operations();
-  public static void test(Robot r) {
+  static void test(Robot r) {
     if(r instanceof Null)
       System.out.println("[Null Robot]");
     System.out.println("Robot name: " + r.name());

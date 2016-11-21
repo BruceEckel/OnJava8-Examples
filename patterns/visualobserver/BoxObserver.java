@@ -49,7 +49,7 @@ class OCBox extends JPanel implements Observer {
   Observable notifier;
   int x, y; // Locations in grid
   Color cColor = newColor();
-  static final Color[] colors = {
+  static final Color[] COLORS = {
     Color.black, Color.blue, Color.cyan,
     Color.darkGray, Color.gray, Color.green,
     Color.lightGray, Color.magenta,
@@ -57,8 +57,8 @@ class OCBox extends JPanel implements Observer {
     Color.white, Color.yellow
   };
   static Color newColor() {
-    return colors[
-      (int)(Math.random() * colors.length)
+    return COLORS[
+      (int)(Math.random() * COLORS.length)
     ];
   }
   OCBox(int x, int y, Observable notifier) {

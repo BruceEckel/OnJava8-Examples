@@ -6,7 +6,7 @@ import java.util.*;
 import java.util.function.*;
 
 public class Closure8 {
-  Supplier<List<Integer>> make_fun() {
+  Supplier<List<Integer>> makeFun() {
     final List<Integer> ai = new ArrayList<>();
     ai.add(1);
     return () -> ai;
@@ -14,8 +14,8 @@ public class Closure8 {
   public static void main(String[] args) {
     Closure8 c7 = new Closure8();
     List<Integer>
-      l1 = c7.make_fun().get(),
-      l2 = c7.make_fun().get();
+      l1 = c7.makeFun().get(),
+      l2 = c7.makeFun().get();
     System.out.println(l1);
     System.out.println(l2);
     l1.add(42);

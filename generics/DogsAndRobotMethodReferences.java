@@ -6,19 +6,19 @@
 import typeinfo.pets.*;
 import java.util.function.*;
 
-class PerformingDog_ extends Dog {
+class PerformingDogA extends Dog {
   public void speak() { System.out.println("Woof!"); }
   public void sit() { System.out.println("Sitting"); }
   public void reproduce() {}
 }
 
-class Robot_ {
+class RobotA {
   public void speak() { System.out.println("Click!"); }
   public void sit() { System.out.println("Clank!"); }
   public void oilChange() {}
 }
 
-class Communicate_ {
+class CommunicateA {
   public static <P> void perform(P performer,
     Consumer<P> action1, Consumer<P> action2) {
     action1.accept(performer);
@@ -28,11 +28,11 @@ class Communicate_ {
 
 public class DogsAndRobotMethodReferences {
   public static void main(String[] args) {
-    Communicate_.perform(new PerformingDog_(),
-      PerformingDog_::speak, PerformingDog_::sit);
-    Communicate_.perform(new Robot_(),
-      Robot_::speak, Robot_::sit);
-    Communicate_.perform(new Mime(),
+    CommunicateA.perform(new PerformingDogA(),
+      PerformingDogA::speak, PerformingDogA::sit);
+    CommunicateA.perform(new RobotA(),
+      RobotA::speak, RobotA::sit);
+    CommunicateA.perform(new Mime(),
       Mime::walkAgainstTheWind, Mime::pushInvisibleWalls);
   }
 }

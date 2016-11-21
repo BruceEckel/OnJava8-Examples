@@ -25,7 +25,7 @@ public interface Count {
       return result;
     }
   }
-  public static class boolean_ {
+  public static class Pboolean {
     private boolean b = true;
     public boolean get() {
       b = !b;
@@ -48,7 +48,7 @@ public interface Count {
       return result;
     }
   }
-  public static class byte_ {
+  public static class Pbyte {
     private byte b;
     public byte get() { return b++; }
     public byte get(int n) { return get(); }
@@ -56,15 +56,15 @@ public interface Count {
       return primitive(new Byte().array(sz));
     }
   }
-  static final char[] chars =
+  char[] CHARS =
     "abcdefghijklmnopqrstuvwxyz".toCharArray();
   public static class Character
   implements Supplier<java.lang.Character> {
     private int i;
     @Override
     public java.lang.Character get() {
-      i = (i + 1) % chars.length;
-      return chars[i];
+      i = (i + 1) % CHARS.length;
+      return CHARS[i];
     }
     public java.lang.Character get(int n) {
       return get();
@@ -76,11 +76,11 @@ public interface Count {
       return result;
     }
   }
-  public static class char_ {
+  public static class Pchar {
     private int i;
     public char get() {
-      i = (i + 1) % chars.length;
-      return chars[i];
+      i = (i + 1) % CHARS.length;
+      return CHARS[i];
     }
     public char get(int n) { return get(); }
     public char[] array(int sz) {
@@ -99,7 +99,7 @@ public interface Count {
       return result;
     }
   }
-  public static class short_ {
+  public static class Pshort {
     short s;
     public short get() { return s++; }
     public short get(int n) { return get(); }
@@ -120,7 +120,7 @@ public interface Count {
       return result;
     }
   }
-  public static class int_ implements IntSupplier {
+  public static class Pint implements IntSupplier {
     int i;
     public int get() { return i++; }
     public int get(int n) { return get(); }
@@ -142,7 +142,7 @@ public interface Count {
       return result;
     }
   }
-  public static class long_ implements LongSupplier {
+  public static class Plong implements LongSupplier {
     private long l;
     public long get() { return l++; }
     public long get(int n) { return get(); }
@@ -166,7 +166,7 @@ public interface Count {
       return result;
     }
   }
-  public class float_ {
+  public class Pfloat {
     private int i;
     public float get() { return i++; }
     public float get(int n) { return get(); }
@@ -189,7 +189,7 @@ public interface Count {
       return result;
     }
   }
-  public class double_ implements DoubleSupplier {
+  public class Pdouble implements DoubleSupplier {
     private int i;
     public double get() { return i++; }
     public double get(int n) { return get(); }

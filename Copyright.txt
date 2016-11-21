@@ -1,5 +1,5 @@
 // Copyright.txt
-This computer source code is Copyright Â©2016 MindView LLC
+This computer source code is Copyright ©2016 MindView LLC.
 All Rights Reserved.
 
 Permission to use, copy, modify, and distribute this
@@ -16,7 +16,7 @@ personal and commercial software programs.
 2. Permission is granted to use the Source Code without
 modification in classroom situations, including in
 presentation materials, provided that the book "On
-Java" is cited as the origin.
+Java 8" is cited as the origin.
 
 3. Permission to incorporate the Source Code into printed
 media may be obtained by contacting:
@@ -64,9 +64,9 @@ ENHANCEMENTS, OR MODIFICATIONS.
 
 Please note that MindView LLC maintains a Web site which
 is the sole distribution point for electronic copies of the
-Source Code, https://github.com/BruceEckel/OnJava-Examples,
+Source Code, https://github.com/BruceEckel/OnJava8-examples,
 where it is freely available under the terms stated above.
 
 If you think you've found an error in the Source Code,
 please submit a correction at:
-https://github.com/BruceEckel/OnJava-Examples/issues
+https://github.com/BruceEckel/OnJava8-examples/issues

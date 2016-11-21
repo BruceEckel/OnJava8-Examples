@@ -14,11 +14,11 @@ public class HashSetTest {
   @Test void initialization() {
     assert testObject.isEmpty();
   }
-  @Test void _contains() {
+  @Test void tContains() {
     testObject.add("one");
     assert testObject.contains("one");
   }
-  @Test void _remove() {
+  @Test void tRemove() {
     testObject.add("one");
     testObject.remove("one");
     assert testObject.isEmpty();
@@ -26,8 +26,8 @@ public class HashSetTest {
 }
 /* Output:
 annotations.HashSetTest
-  . _remove
-  . _contains
+  . tRemove
+  . tContains
   . initialization
 OK (3 tests)
 */

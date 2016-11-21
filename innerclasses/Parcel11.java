@@ -11,7 +11,7 @@ public class Parcel11 {
     @Override
     public int value() { return i; }
   }
-  protected static class ParcelDestination
+  protected static final class ParcelDestination
   implements Destination {
     private String label;
     private ParcelDestination(String whereTo) {

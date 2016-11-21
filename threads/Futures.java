@@ -13,7 +13,7 @@ public class Futures {
       Executors.newSingleThreadExecutor();
     Future<Integer> f =
       exec.submit(new CountingTask(99));
-    System.out.println(f.get()); //(1)
+    System.out.println(f.get()); // [1]
     exec.shutdown();
   }
 }

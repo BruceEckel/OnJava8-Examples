@@ -6,7 +6,7 @@
 
 public class Parcel5 {
   public Destination destination(String s) {
-    class PDestination implements Destination {
+    final class PDestination implements Destination {
       private String label;
       private PDestination(String whereTo) {
         label = whereTo;
