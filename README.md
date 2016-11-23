@@ -7,17 +7,21 @@ Invoking `gradlew` will automatically download and install Gradle.
 Gradle will also install all additional libraries necessary to compile
 and run the Java examples in the book.
 
-To compile everything, the command is:
-
-`gradlew classes`
-
-To run everything (including compiling if necessary), the command is:
+To compile and run everything, the command is:
 
 `gradlew run`
 
+If you are on a Unix/Linux based system, you must select the local directory for all commands, for example:
+
+`./gradlew run`
+
+To only compile everything, the command is:
+
+`gradlew compileJava`
+
 To compile only a single chapter (including dependencies), use for example:
 
-`gradlew :strings:classes`
+`gradlew :strings:compileJava`
 
 To run only a single chapter, say:
 
@@ -33,7 +37,7 @@ program name, like this:
 
 `gradlew  ReplacingStringTokenizer`
 
-Note that all these commands are run from the base directory where the example code is installed, and where you find the
+Note that all commands are run from the base directory where the example code is installed, and where you find the
 `gradlew` script.
 
 You can learn about other options by just typing `gradlew` with no arguments.
