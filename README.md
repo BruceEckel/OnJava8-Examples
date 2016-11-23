@@ -1,6 +1,6 @@
 [![](https://travis-ci.org/BruceEckel/OnJava8-Examples.svg?branch=master)](https://travis-ci.org/BruceEckel/OnJava8-Examples)
 
-[![](https://ci.appveyor.com/api/projects/status/github/BruceEckel/OnJava8-Examples)](https://ci.appveyor.com/api/projects/status/github/BruceEckel/OnJava8-Examples)
+[![](https://ci.appveyor.com/api/projects/status/github/BruceEckel/OnJava8-Examples)](https://ci.appveyor.com/project/BruceEckel/onjava-examples)
 
 To compile and run these programs, you only need JDK 8 installed. 
 Invoking `gradlew` will automatically download and install Gradle.
