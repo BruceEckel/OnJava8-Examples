@@ -14,7 +14,7 @@ project(':understandingcollections') {
     }
 }
 
-project(':threads') {
+project(':concurrent') {
     dependencies {
         compile project(':enums')
     }
