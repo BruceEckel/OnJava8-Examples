@@ -7,11 +7,16 @@ import java.util.*;
 public class BadMicroBenchmark {
   static final int SIZE = 250_000_000;
   public static void main(String[] args) {
-    long[] la = new long[SIZE];
-    System.out.print("setAll: ");
-    Time.it(() -> Arrays.setAll(la, n -> n));
-    System.out.print("parallelSetAll: ");
-    Time.it(() -> Arrays.parallelSetAll(la, n -> n));
+    try { // For machines with insufficient memory
+      long[] la = new long[SIZE];
+      System.out.print("setAll: ");
+      Time.it(() -> Arrays.setAll(la, n -> n));
+      System.out.print("parallelSetAll: ");
+      Time.it(() -> Arrays.parallelSetAll(la, n -> n));
+    } catch(OutOfMemoryError e) {
+      System.out.println("Insufficient memory");
+      System.exit(0);
+    }
   }
 }
 /* Output:

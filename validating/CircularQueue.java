@@ -1,4 +1,4 @@
-// validating/Queue.java
+// validating/CircularQueue.java
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
@@ -6,14 +6,14 @@
 package validating;
 import java.util.*;
 
-public class Queue {
+public class CircularQueue {
   private Object[] data;
   private int
     in = 0, // Next available storage space
     out = 0; // Next gettable object
   // Has it wrapped around the circular queue?
   private boolean wrapped = false;
-  public Queue(int size) {
+  public CircularQueue(int size) {
     data = new Object[size];
     // Must be true after construction:
     assert invariant();
@@ -27,7 +27,8 @@ public class Queue {
   public boolean isWrapped() { return wrapped; }
   public void put(Object item) {
     precondition(item != null, "put() null item");
-    precondition(!full(), "put() into full Queue");
+    precondition(!full(),
+      "put() into full CircularQueue");
     assert invariant();
     data[in++] = item;
     if(in >= data.length) {
@@ -37,7 +38,8 @@ public class Queue {
     assert invariant();
   }
   public Object get() {
-    precondition(!empty(), "get() from empty Queue");
+    precondition(!empty(),
+      "get() from empty CircularQueue");
     assert invariant();
     Object returnVal = data[out];
     data[out] = null;
@@ -47,18 +49,19 @@ public class Queue {
       wrapped = false;
     }
     assert postcondition(
-      returnVal != null, "Null item in Queue");
+      returnVal != null,
+        "Null item in CircularQueue");
     assert invariant();
     return returnVal;
   }
   // Design-by-contract support methods:
   private static void
   precondition(boolean cond, String msg) {
-    if(!cond) throw new QueueException(msg);
+    if(!cond) throw new CircularQueueException(msg);
   }
   private static boolean
   postcondition(boolean cond, String msg) {
-    if(!cond) throw new QueueException(msg);
+    if(!cond) throw new CircularQueueException(msg);
     return true;
   }
   private boolean invariant() {
@@ -66,14 +69,16 @@ public class Queue {
     // region of 'data' that holds objects:
     for(int i = out; i != in; i = (i + 1) % data.length)
       if(data[i] == null)
-        throw new QueueException("null in queue");
+        throw new CircularQueueException(
+          "null in CircularQueue");
     // Guarantee that only null values are outside the
     // region of 'data' that holds objects:
     if(full()) return true;
     for(int i = in; i != out; i = (i + 1) % data.length)
       if(data[i] != null)
-        throw new QueueException(
-          "non-null outside of queue range: " + dump());
+        throw new CircularQueueException(
+          "non-null outside of CircularQueue range: "
+          + dump());
     return true;
   }
   public String dump() {
@@ -81,6 +86,6 @@ public class Queue {
       ", out = " + out +
       ", full() = " + full() +
       ", empty() = " + empty() +
-      ", queue = " + Arrays.asList(data);
+      ", CircularQueue = " + Arrays.asList(data);
   }
 }

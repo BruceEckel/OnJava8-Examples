@@ -46,7 +46,7 @@ public class CountedListTest {
     assertEquals(list.get(1), "Replace");
   }
   // A helper method to simplify the code. As
-  // long as it isn't annotated with @Test, it will
+  // long as it's not annotated with @Test, it will
   // not be automatically executed by JUnit.
   private
   void compare(List<String> lst, String[] strs) {
