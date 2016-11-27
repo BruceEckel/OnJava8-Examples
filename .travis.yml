@@ -4,4 +4,4 @@ jdk:
 install: true
 script:
   - ./gradlew --parallel --stacktrace run
-  - ./gradlew --parallel --stacktrace :validating:jmh
+#  - ./gradlew --parallel --stacktrace :validating:jmh
