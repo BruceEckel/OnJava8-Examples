@@ -13,7 +13,7 @@ public class ChatterTest {
   }
   @Test
   void chatterTest() throws Exception {
-    // <* These need to be handed to an executor: *>
+    // <* These must be handed to an executor: *>
     new ChatterServer();
     new ChatterClient(InetAddress.getLocalHost());
     // No exceptions means success

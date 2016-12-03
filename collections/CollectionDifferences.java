@@ -1,10 +1,10 @@
-// collections/CollectionMethods.java
+// collections/CollectionDifferences.java
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 import onjava.*;
 
-public class CollectionMethods {
+public class CollectionDifferences {
   public static void main(String[] args) {
     CollectionMethodDifferences.main(args);
   }
