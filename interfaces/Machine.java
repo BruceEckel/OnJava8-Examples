@@ -3,29 +3,29 @@
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 import java.util.*;
-import onjava.Operation;
+import onjava.Operations;
 
-class Bing implements Operation {
+class Bing implements Operations {
   public void execute() {
-    Operation.show("Bing");
+    Operations.show("Bing");
   }
 }
 
-class Crack implements Operation {
+class Crack implements Operations {
   public void execute() {
-    Operation.show("Crack");
+    Operations.show("Crack");
   }
 }
 
-class Twist implements Operation {
+class Twist implements Operations {
   public void execute() {
-    Operation.show("Twist");
+    Operations.show("Twist");
   }
 }
 
 public class Machine {
   public static void main(String[] args) {
-    Operation.runOps(
+    Operations.runOps(
       new Bing(), new Crack(), new Twist());
   }
 }

@@ -1,4 +1,4 @@
-// concurrent/Prime.java
+// concurrent/ParallelPrime.java
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
@@ -9,7 +9,7 @@ import java.io.*;
 import java.nio.file.*;
 import java.nio.charset.*;
 
-public class Prime {
+public class ParallelPrime {
   static final int COUNT = 100_000;
   public static boolean isPrime(long n) {
     return rangeClosed(2, (long)Math.sqrt(n))
@@ -21,7 +21,7 @@ public class Prime {
     List<String> primes =
       iterate(2, i -> i + 1)
         .parallel()              // [1]
-        .filter(Prime::isPrime)
+        .filter(ParallelPrime::isPrime)
         .limit(COUNT)
         .mapToObj(Long::toString)
         .collect(Collectors.toList());

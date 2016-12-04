@@ -1,15 +1,15 @@
-// reuse/SpaceShip.java
+// reuse/DerivedSpaceShip.java
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 
-public class SpaceShip extends SpaceShipControls {
+public class DerivedSpaceShip extends SpaceShipControls {
   private String name;
-  public SpaceShip(String name) { this.name = name; }
+  public DerivedSpaceShip(String name) { this.name = name; }
   @Override
   public String toString() { return name; }
   public static void main(String[] args) {
-    SpaceShip protector = new SpaceShip("NSEA Protector");
+    DerivedSpaceShip protector = new DerivedSpaceShip("NSEA Protector");
     protector.forward(100);
   }
 }

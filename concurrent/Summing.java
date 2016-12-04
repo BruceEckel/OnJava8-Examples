@@ -23,9 +23,8 @@ public class Summing {
   public static final int SZ = 100_000_000;
   // This even works:
   // public static final int SZ = 1_000_000_000;
-  // Gauss's formula:
   public static final long CHECK =
-    (long)SZ * ((long)SZ + 1)/2;
+    (long)SZ * ((long)SZ + 1)/2; // Gauss's formula
   public static void main(String[] args) {
     System.out.println(CHECK);
     timeTest("Sum Stream", CHECK, () ->

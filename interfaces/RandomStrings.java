@@ -1,4 +1,4 @@
-// interfaces/RandomWords.java
+// interfaces/RandomStrings.java
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
@@ -6,7 +6,7 @@
 import java.nio.*;
 import java.util.*;
 
-public class RandomWords implements Readable {
+public class RandomStrings implements Readable {
   private static Random rand = new Random(47);
   private static final char[] CAPITALS =
     "ABCDEFGHIJKLMNOPQRSTUVWXYZ".toCharArray();
@@ -15,7 +15,7 @@ public class RandomWords implements Readable {
   private static final char[] VOWELS =
     "aeiou".toCharArray();
   private int count;
-  public RandomWords(int count) { this.count = count; }
+  public RandomStrings(int count) { this.count = count; }
   @Override
   public int read(CharBuffer cb) {
     if(count-- == 0)
@@ -29,7 +29,7 @@ public class RandomWords implements Readable {
     return 10; // Number of characters appended
   }
   public static void main(String[] args) {
-    Scanner s = new Scanner(new RandomWords(10));
+    Scanner s = new Scanner(new RandomStrings(10));
     while(s.hasNext())
       System.out.println(s.next());
   }

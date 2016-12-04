@@ -3,16 +3,16 @@
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 import java.util.*;
-import onjava.Operation;
+import onjava.Operations;
 
 public class Machine2 {
   public static void main(String[] args) {
-    Arrays.stream(new Operation[] {
-      () -> Operation.show("Bing"),
-      () -> Operation.show("Crack"),
-      () -> Operation.show("Twist"),
-      () -> Operation.show("Pop")
-    }).forEach(Operation::execute);
+    Arrays.stream(new Operations[] {
+      () -> Operations.show("Bing"),
+      () -> Operations.show("Crack"),
+      () -> Operations.show("Twist"),
+      () -> Operations.show("Pop")
+    }).forEach(Operations::execute);
   }
 }
 /* Output:
