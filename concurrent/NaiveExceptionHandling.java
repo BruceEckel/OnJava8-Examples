@@ -8,13 +8,15 @@ import java.util.concurrent.*;
 
 public class NaiveExceptionHandling {
   public static void main(String[] args) {
+    ExecutorService es =
+      Executors.newCachedThreadPool();
     try {
-      ExecutorService exec =
-        Executors.newCachedThreadPool();
-      exec.execute(new ExceptionThread());
+      es.execute(new ExceptionThread());
     } catch(RuntimeException ue) {
       // This statement will NOT execute!
       System.out.println("Exception was handled!");
+    } finally {
+      es.shutdown();
     }
   }
 }

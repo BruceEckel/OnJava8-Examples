@@ -14,5 +14,6 @@ public class ExceptionThread implements Runnable {
   public static void main(String[] args) {
     ExecutorService es = Executors.newCachedThreadPool();
     es.execute(new ExceptionThread());
+    es.shutdown();
   }
 }

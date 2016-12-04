@@ -29,6 +29,8 @@ public class ThreadSize {
       System.out.println(
         e.getClass().getSimpleName() + ": " + count);
       System.exit(0);
+    } finally {
+      exec.shutdown();
     }
   }
 }

@@ -12,6 +12,6 @@ public class SwallowedException {
     exec.submit(() -> {
       throw new RuntimeException();
     });
-    exec.shutdownNow();
+    exec.shutdown();
   }
 }

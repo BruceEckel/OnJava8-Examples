@@ -3,7 +3,6 @@
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 import java.util.concurrent.*;
-import onjava.TimedAbort;
 
 class ExceptionThread2 implements Runnable {
   @Override
@@ -40,21 +39,17 @@ class HandlerThreadFactory implements ThreadFactory {
 
 public class CaptureUncaughtException {
   public static void main(String[] args) {
-    new TimedAbort(4);
     ExecutorService exec = Executors.newCachedThreadPool(
       new HandlerThreadFactory());
     exec.execute(new ExceptionThread2());
+    exec.shutdown();
   }
 }
 /* Output:
-HandlerThreadFactory@14991ad creating new Thread
-created Thread[Thread-1,5,main]
-eh = MyUncaughtExceptionHandler@d93b30
-run() by Thread-1
-eh = MyUncaughtExceptionHandler@d93b30
-HandlerThreadFactory@14991ad creating new Thread
-created Thread[Thread-2,5,main]
-eh = MyUncaughtExceptionHandler@1351c58
+HandlerThreadFactory@4e25154f creating new Thread
+created Thread[Thread-0,5,main]
+eh = MyUncaughtExceptionHandler@70dea4e
+run() by Thread-0
+eh = MyUncaughtExceptionHandler@70dea4e
 caught java.lang.RuntimeException
-TimedAbort 4
 */
