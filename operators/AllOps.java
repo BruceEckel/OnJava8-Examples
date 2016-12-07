@@ -67,8 +67,8 @@ public class AllOps {
     x = (char)(x - y);
     x++;
     x--;
-    x = (char)+y;
-    x = (char)-y;
+    x = (char) + y;
+    x = (char) - y;
     // Relational and logical:
     f(x > y);
     f(x >= y);
@@ -117,8 +117,8 @@ public class AllOps {
     x = (byte)(x - y);
     x++;
     x--;
-    x = (byte)+ y;
-    x = (byte)- y;
+    x = (byte) + y;
+    x = (byte) - y;
     // Relational and logical:
     f(x > y);
     f(x >= y);
@@ -167,8 +167,8 @@ public class AllOps {
     x = (short)(x - y);
     x++;
     x--;
-    x = (short)+y;
-    x = (short)-y;
+    x = (short) + y;
+    x = (short) - y;
     // Relational and logical:
     f(x > y);
     f(x >= y);
@@ -180,7 +180,7 @@ public class AllOps {
     //- f(x && y);
     //- f(x || y);
     // Bitwise operators:
-    x = (short)~y;
+    x = (short) ~ y;
     x = (short)(x & y);
     x = (short)(x | y);
     x = (short)(x ^ y);

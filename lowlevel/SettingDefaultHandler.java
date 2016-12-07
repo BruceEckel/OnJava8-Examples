@@ -1,19 +1,18 @@
-// concurrent/ExceptionThread.java
+// lowlevel/SettingDefaultHandler.java
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
-// {ValidateByHand}
-// {ThrowsException}
 import java.util.concurrent.*;
 
-public class ExceptionThread implements Runnable {
-  @Override
-  public void run() {
-    throw new RuntimeException();
-  }
+public class SettingDefaultHandler {
   public static void main(String[] args) {
+    Thread.setDefaultUncaughtExceptionHandler(
+      new MyUncaughtExceptionHandler());
     ExecutorService es = Executors.newCachedThreadPool();
     es.execute(new ExceptionThread());
     es.shutdown();
   }
 }
+/* Output:
+caught java.lang.RuntimeException
+*/
