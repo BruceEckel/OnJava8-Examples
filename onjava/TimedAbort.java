@@ -8,7 +8,7 @@ import java.util.*;
 
 public class TimedAbort {
   public TimedAbort(int n) {
-    new Timer().schedule(new TimerTask() {
+    new java.util.Timer().schedule(new TimerTask() {
       @Override
       public void run() {
         System.out.println("TimedAbort " + n);

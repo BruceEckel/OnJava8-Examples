@@ -4,17 +4,17 @@
 // Visit http://OnJava8.com for more book information.
 import java.util.stream.*;
 import java.util.function.*;
+import onjava.Timer;
 
 public class Summing {
   static volatile long x;
   static void timeTest(String id, long checkValue,
     LongSupplier operation) {
     System.out.print(id + ": ");
-    long t = System.currentTimeMillis();
+    Timer timer = new Timer();
     long result = operation.getAsLong();
-    long duration = System.currentTimeMillis() - t;
     if(result == checkValue)
-      System.out.println(duration + "ms");
+      System.out.println(timer.duration() + "ms");
     else
       System.out.format("result: %d%ncheckValue: %d%n",
         result, checkValue);

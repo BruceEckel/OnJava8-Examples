@@ -12,7 +12,6 @@ public class CachedThreadPool {
     for(int id = 0; id < 10; id++)
       exec.execute(new SleepAndPrintTask(id));
     exec.shutdown();
-    exec.awaitTermination(5, TimeUnit.SECONDS);
   }
 }
 /* Output:

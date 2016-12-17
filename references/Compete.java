@@ -3,6 +3,7 @@
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 import java.io.*;
+import onjava.Timer;
 
 class Thing1 implements Serializable {}
 class Thing2 implements Serializable {
@@ -46,7 +47,7 @@ public class Compete {
     Thing4[] b = new Thing4[SIZE];
     for(int i = 0; i < SIZE; i++)
       b[i] = new Thing4();
-    long t1 = System.currentTimeMillis();
+    Timer timer = new Timer();
     try(
       ByteArrayOutputStream buf =
         new ByteArrayOutputStream();
@@ -68,20 +69,18 @@ public class Compete {
           c[i] = (Thing2)in.readObject();
       }
     }
-    long t2 = System.currentTimeMillis();
     System.out.println(
       "Duplication via serialization: " +
-      (t2 - t1) + " Milliseconds");
+      timer.duration() + " Milliseconds");
 
     // Now try cloning:
-    t1 = System.currentTimeMillis();
+    timer = new Timer();
     Thing4[] d = new Thing4[SIZE];
     for(int i = 0; i < SIZE; i++)
       d[i] = b[i].clone();
-    t2 = System.currentTimeMillis();
     System.out.println(
       "Duplication via cloning: " +
-      (t2 - t1) + " Milliseconds");
+      timer.duration() + " Milliseconds");
   }
 }
 /* Output:

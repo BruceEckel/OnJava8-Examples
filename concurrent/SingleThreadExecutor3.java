@@ -12,7 +12,6 @@ public class SingleThreadExecutor3 {
     for(int id = 0; id < 10; id++)
       exec.execute(new InterferingTask(id));
     exec.shutdown();
-    exec.awaitTermination(5, TimeUnit.SECONDS);
   }
 }
 /* Output:

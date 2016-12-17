@@ -8,6 +8,7 @@ import static java.util.stream.LongStream.*;
 import java.io.*;
 import java.nio.file.*;
 import java.nio.charset.*;
+import onjava.Timer;
 
 public class ParallelPrime {
   static final int COUNT = 100_000;
@@ -17,7 +18,7 @@ public class ParallelPrime {
   }
   public static void main(String[] args)
     throws IOException {
-    long start = System.currentTimeMillis();
+    Timer timer = new Timer();
     List<String> primes =
       iterate(2, i -> i + 1)
         .parallel()              // [1]
@@ -25,8 +26,7 @@ public class ParallelPrime {
         .limit(COUNT)
         .mapToObj(Long::toString)
         .collect(Collectors.toList());
-    System.out.println(
-      System.currentTimeMillis() - start);
+    System.out.println(timer.duration());
     Files.write(Paths.get("primes.txt"), primes,
       StandardOpenOption.CREATE);
   }

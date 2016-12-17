@@ -30,7 +30,6 @@ public class LambdasAndMethodReferences {
     });
     exec.submit(new NotCallable()::get);
     exec.shutdown();
-    exec.awaitTermination(1, TimeUnit.SECONDS);
   }
 }
 /* Output:

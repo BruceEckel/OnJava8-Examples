@@ -16,7 +16,6 @@ public class MoreTasksAfterShutdown {
     } catch(RejectedExecutionException e) {
       System.out.println(e);
     }
-    exec.awaitTermination(5, TimeUnit.SECONDS);
   }
 }
 /* Output:
