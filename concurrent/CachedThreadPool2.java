@@ -3,14 +3,15 @@
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 import java.util.concurrent.*;
+import java.util.stream.*;
 
 public class CachedThreadPool2 {
-  public static void main(String[] args)
-    throws InterruptedException {
+  public static void main(String[] args) {
     ExecutorService exec =
       Executors.newCachedThreadPool();
-    for(int id = 0; id < 10; id++)
-      exec.execute(new InterferingTask(id));
+    IntStream.range(0, 10)
+      .mapToObj(InterferingTask::new)
+      .forEach(exec::execute);
     exec.shutdown();
   }
 }

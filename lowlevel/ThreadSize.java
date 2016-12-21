@@ -4,17 +4,12 @@
 // Visit http://OnJava8.com for more book information.
 // {ValidateByHand}
 import java.util.concurrent.*;
+import onjava.Nap;
 
 public class ThreadSize {
   static class Dummy extends Thread {
     @Override
-    public void run() {
-      try {
-        Thread.sleep(1000);
-      } catch(Exception e) {
-        throw new RuntimeException(e);
-      }
-    }
+    public void run() { new Nap(1000); }
   }
   public static void main(String[] args) {
     ExecutorService exec =

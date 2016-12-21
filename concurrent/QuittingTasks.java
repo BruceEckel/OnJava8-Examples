@@ -5,11 +5,11 @@
 import java.util.*;
 import java.util.stream.*;
 import java.util.concurrent.*;
+import onjava.Nap;
 
 public class QuittingTasks {
   public static final int COUNT = 150;
-  public static void main(String[] args)
-    throws InterruptedException {
+  public static void main(String[] args) {
     ExecutorService es =
       Executors.newCachedThreadPool();
     List<QuittableTask> tasks =
@@ -17,7 +17,7 @@ public class QuittingTasks {
         .mapToObj(QuittableTask::new)
         .peek(qt -> es.execute(qt))
         .collect(Collectors.toList());
-    TimeUnit.SECONDS.sleep(1);
+    new Nap(1000);
     tasks.forEach(QuittableTask::quit);
     es.shutdown();
   }

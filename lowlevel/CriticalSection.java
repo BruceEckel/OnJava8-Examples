@@ -11,7 +11,7 @@ package threads;
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.*;
 import java.util.*;
-import onjava.TimedAbort;
+import onjava.*;
 
 class Pair { // Not thread-safe
   private int x, y;
@@ -54,9 +54,7 @@ abstract class PairManager {
   // Assume this is a time consuming operation
   protected void store(Pair p) {
     storage.add(p);
-    try {
-      TimeUnit.MILLISECONDS.sleep(50);
-    } catch(InterruptedException ignore) {}
+    new Nap(50);
   }
   public abstract void increment();
 }
@@ -131,11 +129,7 @@ public class CriticalSection {
     es.execute(pm2);
     es.execute(pcheck1);
     es.execute(pcheck2);
-    try {
-      TimeUnit.MILLISECONDS.sleep(500);
-    } catch(InterruptedException e) {
-      System.out.println("Sleep interrupted");
-    }
+    new Nap(500);
     System.out.println("pm1: " + pm1 + "\npm2: " + pm2);
     System.exit(0);
   }

@@ -5,6 +5,7 @@
 // Using CyclicBarriers
 import java.util.concurrent.*;
 import java.util.*;
+import onjava.Nap;
 
 class Horse implements Runnable {
   private static int counter = 0;
@@ -61,12 +62,7 @@ public class HorseRace {
           exec.shutdownNow();
           return;
         }
-      try {
-        TimeUnit.MILLISECONDS.sleep(pause);
-      } catch(InterruptedException e) {
-        System.out.println(
-          "barrier-action sleep interrupted");
-      }
+      new Nap(pause);
     });
     for(int i = 0; i < nHorses; i++) {
       Horse horse = new Horse(barrier);

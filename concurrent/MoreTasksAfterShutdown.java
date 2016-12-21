@@ -5,14 +5,13 @@
 import java.util.concurrent.*;
 
 public class MoreTasksAfterShutdown {
-  public static void main(String[] args)
-    throws InterruptedException {
+  public static void main(String[] args) {
     ExecutorService exec =
       Executors.newSingleThreadExecutor();
-    exec.execute(new SleepAndPrintTask(1));
+    exec.execute(new NapTask(1));
     exec.shutdown();
     try {
-      exec.execute(new SleepAndPrintTask(99));
+      exec.execute(new NapTask(99));
     } catch(RejectedExecutionException e) {
       System.out.println(e);
     }
@@ -20,9 +19,9 @@ public class MoreTasksAfterShutdown {
 }
 /* Output:
 java.util.concurrent.RejectedExecutionException: Task
-SleepAndPrintTask[99] rejected from
+NapTask[99] rejected from
 java.util.concurrent.ThreadPoolExecutor@25154f[Shutting
 down, pool size = 1, active threads = 1, queued tasks = 0,
 completed tasks = 0]
-SleepAndPrintTask[1] pool-1-thread-1
+NapTask[1] pool-1-thread-1
 */

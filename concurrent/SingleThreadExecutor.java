@@ -3,47 +3,46 @@
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 import java.util.concurrent.*;
+import java.util.stream.*;
+import onjava.*;
 
 public class SingleThreadExecutor {
   public static void main(String[] args) {
     ExecutorService exec =
       Executors.newSingleThreadExecutor();
-    for(int id = 0; id < 10; id++)
-      exec.execute(new SleepAndPrintTask(id));
+    IntStream.range(0, 10)
+      .mapToObj(NapTask::new)
+      .forEach(exec::execute);
     System.out.println("All tasks submitted");
     exec.shutdown();
     while(!exec.isTerminated()) {
       System.out.println(
         Thread.currentThread().getName() +
         " awaiting termination");
-      try {
-        Thread.sleep(100);
-      } catch(InterruptedException e) {
-        throw new RuntimeException(e);
-      }
+      new Nap(100);
     }
   }
 }
 /* Output:
 All tasks submitted
 main awaiting termination
-SleepAndPrintTask[0] pool-1-thread-1
+NapTask[0] pool-1-thread-1
 main awaiting termination
-SleepAndPrintTask[1] pool-1-thread-1
+NapTask[1] pool-1-thread-1
 main awaiting termination
-SleepAndPrintTask[2] pool-1-thread-1
+NapTask[2] pool-1-thread-1
 main awaiting termination
-SleepAndPrintTask[3] pool-1-thread-1
+NapTask[3] pool-1-thread-1
 main awaiting termination
-SleepAndPrintTask[4] pool-1-thread-1
+NapTask[4] pool-1-thread-1
 main awaiting termination
-SleepAndPrintTask[5] pool-1-thread-1
+NapTask[5] pool-1-thread-1
 main awaiting termination
-SleepAndPrintTask[6] pool-1-thread-1
+NapTask[6] pool-1-thread-1
 main awaiting termination
-SleepAndPrintTask[7] pool-1-thread-1
+NapTask[7] pool-1-thread-1
 main awaiting termination
-SleepAndPrintTask[8] pool-1-thread-1
+NapTask[8] pool-1-thread-1
 main awaiting termination
-SleepAndPrintTask[9] pool-1-thread-1
+NapTask[9] pool-1-thread-1
 */

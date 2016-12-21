@@ -3,8 +3,8 @@
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // A dining philosopher
-import java.util.concurrent.*;
 import java.util.*;
+import onjava.Nap;
 
 public class Philosopher implements Runnable {
   private Chopstick left;
@@ -12,10 +12,9 @@ public class Philosopher implements Runnable {
   private final int id;
   private final int ponderFactor;
   private SplittableRandom rand = new SplittableRandom(47);
-  private void pause() throws InterruptedException {
+  private void pause() {
     if(ponderFactor == 0) return;
-    TimeUnit.MILLISECONDS.sleep(
-      rand.nextInt(ponderFactor * 250));
+    new Nap(rand.nextInt(ponderFactor * 250));
   }
   public Philosopher(Chopstick left, Chopstick right,
     int ident, int ponder) {

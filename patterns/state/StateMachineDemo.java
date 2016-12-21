@@ -5,6 +5,7 @@
 // The StateMachine pattern and Template method
 // {java patterns.state.StateMachineDemo}
 package patterns.state;
+import onjava.Nap;
 
 interface State {
   void run();
@@ -26,9 +27,7 @@ class Wash implements State {
   @Override
   public void run() {
     System.out.println("Washing");
-    try {
-      Thread.sleep(500);
-    } catch(InterruptedException e) {}
+    new Nap(500);
   }
 }
 
@@ -36,9 +35,7 @@ class Spin implements State {
   @Override
   public void run() {
     System.out.println("Spinning");
-    try {
-      Thread.sleep(500);
-    } catch(InterruptedException e) {}
+    new Nap(500);
   }
 }
 
@@ -46,9 +43,7 @@ class Rinse implements State {
   @Override
   public void run() {
     System.out.println("Rinsing");
-    try {
-      Thread.sleep(500);
-    } catch(InterruptedException e) {}
+    new Nap(500);
   }
 }
 

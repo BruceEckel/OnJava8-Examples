@@ -2,7 +2,8 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
-import static java.util.concurrent.TimeUnit.*;
+import java.util.function.*;
+import onjava.Nap;
 
 public class Pizza {
   public enum Step {
@@ -12,35 +13,37 @@ public class Pizza {
     Step(int effort) { this.effort = effort; }
     Step forward() {
       if(equals(BOXED)) return BOXED;
-      try {
-        MILLISECONDS.sleep(effort * 100);
-      } catch(InterruptedException e) {
-        throw new RuntimeException(e);
-      }
+      new Nap(effort * 100);
       return values()[ordinal() + 1];
     }
   }
   private Step step = Step.DOUGH;
   private final int id;
   public Pizza(int id) { this.id = id; }
-  public void next() {
+  public Pizza next() {
     step = step.forward();
     System.out.println("Pizza " + id + ": " + step);
+    return this;
   }
-  public void next(Step previousStep) {
+  public Pizza next(Step previousStep) {
     if(!step.equals(previousStep))
       throw new IllegalStateException("Expected " +
         previousStep + " but found " + step);
-    next();
+    return next();
   }
-  public void roll() { next(Step.DOUGH); }
-  public void sauce() { next(Step.ROLLED); }
-  public void cheese() { next(Step.SAUCED); }
-  public void toppings() { next(Step.CHEESED); }
-  public void bake() { next(Step.TOPPED); }
-  public void slice() { next(Step.BAKED); }
-  public void box() { next(Step.SLICED); }
+  public Pizza roll() { return next(Step.DOUGH); }
+  public Pizza sauce() { return next(Step.ROLLED); }
+  public Pizza cheese() { return next(Step.SAUCED); }
+  public Pizza toppings() { return next(Step.CHEESED); }
+  public Pizza bake() { return next(Step.TOPPED); }
+  public Pizza slice() { return next(Step.BAKED); }
+  public Pizza box() { return next(Step.SLICED); }
   public boolean complete() {
     return step.equals(Step.BOXED);
+  }
+  @Override
+  public String toString() {
+    return "Pizza" + id + ": " +
+      (step.equals(Step.BOXED)? "complete" : step);
   }
 }

@@ -6,6 +6,7 @@
 // when threads are present
 // {java SerialNumberChecker 4}
 import java.util.concurrent.*;
+import onjava.Nap;
 
 // Reuses storage so we don't run out of memory:
 class CircularSet {
@@ -52,13 +53,12 @@ public class SerialNumberChecker {
       }
     }
   }
-  public static void
-  main(String[] args) throws Exception {
+  public static void main(String[] args) {
     for(int i = 0; i < SIZE; i++)
       exec.execute(new SerialChecker());
     // Stop after n seconds if there's an argument:
     if(args.length > 0) {
-      TimeUnit.SECONDS.sleep(new Integer(args[0]));
+      new Nap(new Integer(args[0]) * 1000);
       System.out.println("No duplicates detected");
       System.exit(0);
     }

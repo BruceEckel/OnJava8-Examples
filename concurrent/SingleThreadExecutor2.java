@@ -3,26 +3,28 @@
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 import java.util.concurrent.*;
+import java.util.stream.*;
 
 public class SingleThreadExecutor2 {
   public static void main(String[] args)
     throws InterruptedException {
     ExecutorService exec =
       Executors.newSingleThreadExecutor();
-    for(int id = 0; id < 10; id++)
-      exec.execute(new SleepAndPrintTask(id));
+    IntStream.range(0, 10)
+      .mapToObj(NapTask::new)
+      .forEach(exec::execute);
     exec.shutdown();
   }
 }
 /* Output:
-SleepAndPrintTask[0] pool-1-thread-1
-SleepAndPrintTask[1] pool-1-thread-1
-SleepAndPrintTask[2] pool-1-thread-1
-SleepAndPrintTask[3] pool-1-thread-1
-SleepAndPrintTask[4] pool-1-thread-1
-SleepAndPrintTask[5] pool-1-thread-1
-SleepAndPrintTask[6] pool-1-thread-1
-SleepAndPrintTask[7] pool-1-thread-1
-SleepAndPrintTask[8] pool-1-thread-1
-SleepAndPrintTask[9] pool-1-thread-1
+NapTask[0] pool-1-thread-1
+NapTask[1] pool-1-thread-1
+NapTask[2] pool-1-thread-1
+NapTask[3] pool-1-thread-1
+NapTask[4] pool-1-thread-1
+NapTask[5] pool-1-thread-1
+NapTask[6] pool-1-thread-1
+NapTask[7] pool-1-thread-1
+NapTask[8] pool-1-thread-1
+NapTask[9] pool-1-thread-1
 */

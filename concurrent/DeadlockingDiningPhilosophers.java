@@ -5,10 +5,10 @@
 // Demonstrates how deadlock can be hidden in a program
 // {java DeadlockingDiningPhilosophers 0 5 timeout}
 import java.util.concurrent.*;
+import onjava.Nap;
 
 public class DeadlockingDiningPhilosophers {
-  public static void
-  main(String[] args) throws Exception {
+  public static void main(String[] args) {
     int ponder = 5;
     if(args.length > 0)
       ponder = Integer.parseInt(args[0]);
@@ -23,10 +23,14 @@ public class DeadlockingDiningPhilosophers {
       es.execute(new Philosopher(
         sticks[i], sticks[(i+1) % size], i, ponder));
     if(args.length == 3 && args[2].equals("timeout"))
-      TimeUnit.SECONDS.sleep(5);
+      new Nap(5000);
     else {
       System.out.println("Press 'Enter' to quit");
-      System.in.read();
+      try {
+        System.in.read();
+      } catch(Exception e) {
+        throw new RuntimeException(e);
+      }
     }
     es.shutdownNow();
   }

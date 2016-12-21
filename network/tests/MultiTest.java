@@ -4,6 +4,7 @@
 // Visit http://OnJava8.com for more book information.
 package network;
 import java.net.*;
+import java.util.concurrent.*;
 import org.junit.jupiter.api.*;
 
 public class MultiTest {
@@ -19,7 +20,7 @@ public class MultiTest {
     while(true) {
       if(SimpleClient2.threadCount() < MAX_THREADS)
         new SimpleClient2(address);
-      Thread.sleep(100);
+      TimeUnit.MILLISECONDS.sleep(100);
     }
     // No exceptions mean success
   }

@@ -4,6 +4,7 @@
 // Visit http://OnJava8.com for more book information.
 import java.util.concurrent.*;
 import java.util.*;
+import onjava.Nap;
 
 class PrioritizedTask implements
 Runnable, Comparable<PrioritizedTask>  {
@@ -24,11 +25,7 @@ Runnable, Comparable<PrioritizedTask>  {
   }
   @Override
   public void run() {
-    try {
-      TimeUnit.MILLISECONDS.sleep(rand.nextInt(250));
-    } catch(InterruptedException e) {
-      // Acceptable way to exit
-    }
+    new Nap(rand.nextInt(250));
     System.out.println(this);
   }
   @Override
@@ -79,19 +76,15 @@ class PrioritizedTaskProducer implements Runnable {
       Thread.yield();
     }
     // Trickle in highest-priority jobs:
-    try {
-      for(int i = 0; i < 10; i++) {
-        TimeUnit.MILLISECONDS.sleep(250);
-        queue.add(new PrioritizedTask(10));
-      }
-      // Add jobs, lowest priority first:
-      for(int i = 0; i < 10; i++)
-        queue.add(new PrioritizedTask(i));
-      // A sentinel to stop all the tasks:
-      queue.add(new PrioritizedTask.EndSentinel(exec));
-    } catch(InterruptedException e) {
-      // Acceptable way to exit
+    for(int i = 0; i < 10; i++) {
+      new Nap(250);
+      queue.add(new PrioritizedTask(10));
     }
+    // Add jobs, lowest priority first:
+    for(int i = 0; i < 10; i++)
+      queue.add(new PrioritizedTask(i));
+    // A sentinel to stop all the tasks:
+    queue.add(new PrioritizedTask.EndSentinel(exec));
     System.out.println(
       "Finished PrioritizedTaskProducer");
   }
