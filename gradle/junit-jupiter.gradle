@@ -16,6 +16,31 @@ junitPlatform {
     includeClassNamePattern '.*'
 }
 
+/* NEW: (REQUIRES CODE REWRITES IN BOOK AND TEST CODE)
+-> http://junit.org/junit5/docs/current/user-guide/
+
+ext {
+    junitJupiterVersion  = '5.0.0-M3'
+}
+
+dependencies {
+    testCompile "org.junit.jupiter:junit-jupiter-api:${junitJupiterVersion}"
+    testRuntime "org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}"
+}
+
+
+junitPlatform {
+    platformVersion '1.0.0-M3'
+
+    filters {
+        packages {
+            exclude 'understandingcollections.jmh'
+        }
+        includeClassNamePattern '.*'
+    }
+}
+*/
+
 /* Store test output in $projectName/tests
   JUnit 5's junitPlatformTest runs as a "javaExec" rather than a "test",
   so we can't hook into the before/after test behavior.
