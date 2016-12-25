@@ -23,3 +23,6 @@ public class ParallelStreamPuzzle {
     System.out.println(x);
   }
 }
+/* Output:
+[2, 8, 21, 24, 27, 30, 33, 37, 40, 43]
+*/

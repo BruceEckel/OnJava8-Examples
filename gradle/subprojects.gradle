@@ -14,7 +14,7 @@ project(':understandingcollections') {
     }
 }
 
-project(':concurrent') {
+project(':lowlevel') {
     dependencies {
         compile project(':enums')
     }

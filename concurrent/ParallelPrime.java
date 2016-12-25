@@ -31,3 +31,7 @@ public class ParallelPrime {
       StandardOpenOption.CREATE);
   }
 }
+/* Output:
+/* Output:
+616
+*/

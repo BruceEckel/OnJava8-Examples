@@ -19,3 +19,9 @@ public class CompletableApply {
       cf4.thenApply(Machina::work);
   }
 }
+/* Output:
+Machina0: ONE
+Machina0: TWO
+Machina0: THREE
+Machina0: complete
+*/

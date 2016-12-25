@@ -2,48 +2,58 @@
 // (c)2016 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
-// A dining philosopher
 import java.util.*;
-import onjava.Nap;
+import java.util.stream.*;
+import java.util.concurrent.*;
+import static java.util.concurrent.TimeUnit.*;
+import java.util.concurrent.atomic.*;
 
-public class Philosopher implements Runnable {
-  private Chopstick left;
-  private Chopstick right;
-  private final int id;
-  private final int ponderFactor;
-  private SplittableRandom rand = new SplittableRandom(47);
-  private void pause() {
-    if(ponderFactor == 0) return;
-    new Nap(rand.nextInt(ponderFactor * 250));
-  }
-  public Philosopher(Chopstick left, Chopstick right,
-    int ident, int ponder) {
-    this.left = left;
-    this.right = right;
-    id = ident;
-    ponderFactor = ponder;
+class Philosopher implements Runnable {
+  static class Chopstick {}
+  public static final int QUANTITY = 5;
+  static Queue<String> trace =
+    new ConcurrentLinkedQueue<>();
+  static AtomicBoolean running =
+    new AtomicBoolean(true);
+  public static
+  List<BlockingQueue<Chopstick>> chopsticks =
+    IntStream.range(0, Philosopher.QUANTITY)
+      .mapToObj(i -> {
+        BlockingQueue<Chopstick> bd =
+          new ArrayBlockingQueue<>(1);
+        bd.add(new Chopstick());
+        return bd;
+      })
+      .collect(Collectors.toList());
+  private final int seatNumber;
+  private final int left, right;
+  public Philosopher(int seatNumber) {
+    this.seatNumber = left = seatNumber;
+    right = (seatNumber + 1) % QUANTITY;
   }
   @Override
   public void run() {
     try {
-      while(!Thread.interrupted()) {
-        System.out.println(this + " " + "thinking");
-        pause();
+      while(running.get()) {
+        trace.add(this + " thinking");
         // Philosopher becomes hungry
-        System.out.println(this + " " + "grabbing right");
-        right.take();
-        System.out.println(this + " " + "grabbing left");
-        left.take();
-        System.out.println(this + " " + "eating");
-        pause();
-        right.drop();
-        left.drop();
+        trace.add(this + " grabbing right");
+        Chopstick rightStick =
+          chopsticks.get(right).poll(2, SECONDS);
+        trace.add(this + " grabbing left");
+        Chopstick leftStick =
+          chopsticks.get(left).poll(2, SECONDS);
+        trace.add(this + " eating");
+        // Finished, return chopsticks to table:
+        chopsticks.get(right).put(rightStick);
+        chopsticks.get(left).put(leftStick);
       }
     } catch(InterruptedException e) {
-      System.out.println(
-        this + " " + "exiting via interrupt");
+      trace.add("exiting via interrupt");
     }
   }
   @Override
-  public String toString() { return "Philosopher " + id; }
+  public String toString() {
+    return "P" + seatNumber;
+  }
 }
