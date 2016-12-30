@@ -4,13 +4,13 @@ project(':validating') {
     }
 }
 
-project(':understandingcollections') {
+project(':moreaboutcollections') {
     dependencies {
         compile project(':typeinfo')
         compile project(':collections')
     }
     jmh {
-        include = 'understandingcollections.jmh.*'
+        include = 'moreaboutcollections.jmh.*'
     }
 }
 

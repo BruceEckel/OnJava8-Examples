@@ -34,7 +34,7 @@ junitPlatform {
 
     filters {
         packages {
-            exclude 'understandingcollections.jmh'
+            exclude 'moreaboutcollections.jmh'
         }
         includeClassNamePattern '.*'
     }
