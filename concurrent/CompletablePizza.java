@@ -42,7 +42,6 @@ public class CompletablePizza {
   }
 }
 /* Output:
-/* Output:
 56
 Pizza 0: ROLLED
 Pizza 1: ROLLED

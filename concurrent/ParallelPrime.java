@@ -7,7 +7,6 @@ import java.util.stream.*;
 import static java.util.stream.LongStream.*;
 import java.io.*;
 import java.nio.file.*;
-import java.nio.charset.*;
 import onjava.Timer;
 
 public class ParallelPrime {
@@ -31,7 +30,6 @@ public class ParallelPrime {
       StandardOpenOption.CREATE);
   }
 }
-/* Output:
 /* Output:
 616
 */
