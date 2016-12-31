@@ -1,5 +1,5 @@
 // housekeeping/TerminationCondition.java
-// (c)2016 MindView LLC: see Copyright.txt
+// (c)2017 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // Using finalize() to detect an object that
