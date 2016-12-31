@@ -9,7 +9,7 @@ import java.util.concurrent.*;
 import java.nio.file.*;
 
 public class ParallelStreamPuzzle2 {
-  public static ConcurrentLinkedDeque<String> trace =
+  public static Deque<String> trace =
     new ConcurrentLinkedDeque<>();
   static class
   IntGenerator implements Supplier<Integer> {
@@ -20,11 +20,13 @@ public class ParallelStreamPuzzle2 {
       return current++;
     }
   }
-  public static void main(String[] args) throws Exception {
-    List<Integer> x = Stream.generate(new IntGenerator())
-      .limit(10)
-      .parallel()
-      .collect(Collectors.toList());
+  public static void
+  main(String[] args) throws Exception {
+    List<Integer> x =
+      Stream.generate(new IntGenerator())
+        .limit(10)
+        .parallel()
+        .collect(Collectors.toList());
     System.out.println(x);
     Files.write(Paths.get("PSP2.txt"), trace);
   }

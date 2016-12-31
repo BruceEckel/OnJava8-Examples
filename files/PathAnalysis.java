@@ -32,7 +32,7 @@ public class PathAnalysis {
     if(Files.isSymbolicLink(p))
       say("SymbolicLink", Files.readSymbolicLink(p));
     if(FileSystems.getDefault()
-        .supportedFileAttributeViews().contains("posix"))
+       .supportedFileAttributeViews().contains("posix"))
       say("PosixFilePermissions",
         Files.getPosixFilePermissions(p));
   }
