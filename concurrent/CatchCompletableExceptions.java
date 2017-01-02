@@ -7,8 +7,8 @@ import onjava.Nap;
 
 public class CatchCompletableExceptions {
   static void handleException(int failcount) {
-    // Call Function only if there's an exception,
-    // Must produce same type as came in:
+    // Call the Function only if there's an
+    // exception, must produce same type as came in:
     CompletableExceptions
       .test("exceptionally", failcount)
       .exceptionally((ex) -> { // Function

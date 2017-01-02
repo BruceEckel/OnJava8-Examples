@@ -26,7 +26,7 @@ public class FrostedCake {
       .thenCombineAsync(Frosting.make(),
         (cake, frosting) ->
           new FrostedCake(cake, frosting))
-      .thenAcceptAsync(System.out::println).join());
-      // Need to rewrite...
+      .thenAcceptAsync(System.out::println)
+      .join());
   }
 }

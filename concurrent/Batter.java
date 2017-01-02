@@ -14,16 +14,16 @@ public class Batter {
     new Nap(100);
     return ingredient;
   }
-  static <T> CompletableFuture<T> cf(T ingredient) {
+  static <T> CompletableFuture<T> prep(T ingredient) {
     return CompletableFuture
       .completedFuture(ingredient)
-      .thenApply(Batter::prepare);
+      .thenApplyAsync(Batter::prepare);
   }
   public static CompletableFuture<Batter> mix() {
-    CompletableFuture<Eggs> eggs = cf(new Eggs());
-    CompletableFuture<Milk> milk = cf(new Milk());
-    CompletableFuture<Sugar> sugar = cf(new Sugar());
-    CompletableFuture<Flour> flour = cf(new Flour());
+    CompletableFuture<Eggs> eggs = prep(new Eggs());
+    CompletableFuture<Milk> milk = prep(new Milk());
+    CompletableFuture<Sugar> sugar = prep(new Sugar());
+    CompletableFuture<Flour> flour = prep(new Flour());
     CompletableFuture
       .allOf(eggs, milk, sugar, flour)
       .join();
