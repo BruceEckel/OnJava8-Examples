@@ -6,6 +6,7 @@ import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
 import java.util.concurrent.*;
+import java.util.concurrent.atomic.*;
 import java.nio.file.*;
 
 public class ParallelStreamPuzzle2 {
@@ -13,11 +14,12 @@ public class ParallelStreamPuzzle2 {
     new ConcurrentLinkedDeque<>();
   static class
   IntGenerator implements Supplier<Integer> {
-    private int current = 0;
-    public synchronized Integer get() {  // [1]
-      trace.add(current + ": " +
+    private AtomicInteger current =
+      new AtomicInteger();
+    public Integer get() {
+      trace.add(current.get() + ": " +
         Thread.currentThread().getName());
-      return current++;
+      return current.getAndIncrement();
     }
   }
   public static void
@@ -32,5 +34,5 @@ public class ParallelStreamPuzzle2 {
   }
 }
 /* Output:
-[2, 3, 4, 5, 6, 7, 8, 9, 10, 63]
+[4, 25, 27, 32, 37, 44, 49, 56, 61, 73]
 */
