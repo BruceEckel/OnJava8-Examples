@@ -3,6 +3,7 @@
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 import java.util.concurrent.*;
+import static onjava.CompletableUtilities.*;
 
 public class DualCompletableOperations {
   static CompletableFuture<Workable> cfA, cfB;
@@ -17,41 +18,41 @@ public class DualCompletableOperations {
   }
   public static void main(String[] args) {
     init();
-    cfA.runAfterEitherAsync(cfB, () ->
-      System.out.println("runAfterEither"));
+    voidr(cfA.runAfterEitherAsync(cfB, () ->
+      System.out.println("runAfterEither")));
     join();
 
     init();
-    cfA.runAfterBothAsync(cfB, () ->
-      System.out.println("runAfterBoth"));
+    voidr(cfA.runAfterBothAsync(cfB, () ->
+      System.out.println("runAfterBoth")));
     join();
 
     init();
-    cfA.applyToEitherAsync(cfB, w -> {
+    showr(cfA.applyToEitherAsync(cfB, w -> {
       System.out.println("applyToEither: " + w);
       return w;
-    });
+    }));
     join();
 
     init();
-    cfA.acceptEitherAsync(cfB, w -> {
+    voidr(cfA.acceptEitherAsync(cfB, w -> {
       System.out.println("acceptEither: " + w);
-    });
+    }));
     join();
 
     init();
-    cfA.thenAcceptBothAsync(cfB, (w1, w2) -> {
+    voidr(cfA.thenAcceptBothAsync(cfB, (w1, w2) -> {
       System.out.println("thenAcceptBoth: "
         + w1 + ", " + w2);
-    });
+    }));
     join();
 
     init();
-    cfA.thenCombineAsync(cfB, (w1, w2) -> {
+    showr(cfA.thenCombineAsync(cfB, (w1, w2) -> {
       System.out.println("thenCombine: "
         + w1 + ", " + w2);
       return w1;
-    });
+    }));
     join();
 
     init();
@@ -79,10 +80,11 @@ Workable[AW]
 *****************
 Workable[BW]
 Workable[AW]
-*****************
 runAfterBoth
+*****************
 Workable[BW]
 applyToEither: Workable[BW]
+Workable[BW]
 Workable[AW]
 *****************
 Workable[BW]
@@ -91,21 +93,22 @@ Workable[AW]
 *****************
 Workable[BW]
 Workable[AW]
-*****************
 thenAcceptBoth: Workable[AW], Workable[BW]
+*****************
 Workable[BW]
 Workable[AW]
-*****************
 thenCombine: Workable[AW], Workable[BW]
+Workable[AW]
+*****************
 Workable[CW]
 anyOf
-Workable[DW]
 Workable[BW]
+Workable[DW]
 Workable[AW]
 *****************
 Workable[CW]
-Workable[DW]
 Workable[BW]
+Workable[DW]
 Workable[AW]
 *****************
 allOf
