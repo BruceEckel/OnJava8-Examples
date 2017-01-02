@@ -3,6 +3,7 @@
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 import java.util.concurrent.*;
+import static onjava.CompletableUtilities.*;
 
 public class CompletableOperations {
   static CompletableFuture<Integer> cfi(int i) {
@@ -10,30 +11,14 @@ public class CompletableOperations {
       CompletableFuture.completedFuture(
         new Integer(i));
   }
-  // Get and show value stored in a CF:
-  static void showr(CompletableFuture<Integer> c) {
-    try {
-      System.out.println(c.get());
-    } catch(InterruptedException
-            | ExecutionException e) {
-      throw new RuntimeException(e);
-    }
-  }
-  // For CF operations that have no value:
-  static void voidr(CompletableFuture<Void> c) {
-    try {
-      c.get(); // Returns void
-    } catch(InterruptedException
-            | ExecutionException e) {
-      throw new RuntimeException(e);
-    }
-  }
   public static void main(String[] args) {
     showr(cfi(1)); // Basic test
     voidr(cfi(2).runAsync(() ->
       System.out.println("runAsync")));
     voidr(cfi(3).thenRunAsync(() ->
       System.out.println("thenRunAsync")));
+    voidr(CompletableFuture.runAsync(() ->
+      System.out.println("runAsync is static")));
     showr(CompletableFuture.supplyAsync(() -> 99));
     voidr(cfi(4).thenAcceptAsync(i ->
       System.out.println("thenAcceptAsync: " + i)));
