@@ -4,8 +4,8 @@
 // Visit http://OnJava8.com for more book information.
 // {ThrowsException} on a multiprocessor machine
 // Using explicit Lock objects to create critical sections
-// {java threads.ExplicitCriticalSection}
-package threads;
+// {java lowlevel.ExplicitCriticalSection}
+package lowlevel;
 import java.util.concurrent.locks.*;
 
 // Synchronize the entire method:

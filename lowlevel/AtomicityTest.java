@@ -8,7 +8,9 @@ import onjava.TimedAbort;
 public class AtomicityTest implements Runnable {
   private int i = 0;
   public int getValue() { return i; }
-  private synchronized void evenIncrement() { i++; i++; }
+  private synchronized void evenIncrement() {
+    i++; i++;
+  }
   @Override
   public void run() {
     while(true)
@@ -16,7 +18,8 @@ public class AtomicityTest implements Runnable {
   }
   public static void main(String[] args) {
     new TimedAbort(4);
-    ExecutorService es = Executors.newCachedThreadPool();
+    ExecutorService es =
+      Executors.newCachedThreadPool();
     AtomicityTest at = new AtomicityTest();
     es.execute(at);
     while(true) {

@@ -16,26 +16,26 @@ public class Atomicity {
   public Atomicity();
     Code:
        0: aload_0
-       1: invokespecial #1                  // Method
+       1: invokespecial #1     // Method
 java/lang/Object."<init>":()V
        4: return
   void f1();
     Code:
        0: aload_0
        1: dup
-       2: getfield      #2                  // Field i:I
+       2: getfield      #2     // Field i:I
        5: iconst_1
        6: iadd
-       7: putfield      #2                  // Field i:I
+       7: putfield      #2     // Field i:I
       10: return
   void f2();
     Code:
        0: aload_0
        1: dup
-       2: getfield      #2                  // Field i:I
+       2: getfield      #2     // Field i:I
        5: iconst_3
        6: iadd
-       7: putfield      #2                  // Field i:I
+       7: putfield      #2     // Field i:I
       10: return
 }
 */
