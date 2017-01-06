@@ -17,9 +17,12 @@ public class Breakable {
       " [" + failcount + "]";
   }
   public static Breakable work(Breakable b) {
-    if(--b.failcount == 0)
+    if(--b.failcount == 0) {
+      System.out.println(
+        "Throwing Exception for " + b.id + "");
       throw new RuntimeException(
         "Breakable_" + b.id + " failed");
+    }
     System.out.println(b);
     return b;
   }
