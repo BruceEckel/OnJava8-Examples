@@ -6,9 +6,10 @@
 import java.util.*;
 import java.util.function.*;
 import java.util.Objects;
+import onjava.CountMap;
 
 class SetType {
-  int i;
+  protected int i;
   public SetType(int n) { i = n; }
   @Override
   public boolean equals(Object o) {
@@ -16,13 +17,17 @@ class SetType {
       Objects.equals(i, ((SetType)o).i);
   }
   @Override
-  public int hashCode() { return Objects.hash(i); }
-  @Override
-  public String toString() { return Integer.toString(i); }
+  public String toString() {
+    return Integer.toString(i);
+  }
 }
 
 class HashType extends SetType {
   public HashType(int n) { super(n); }
+  @Override
+  public int hashCode() {
+    return Objects.hashCode(i);
+  }
 }
 
 class TreeType extends SetType
@@ -30,16 +35,19 @@ implements Comparable<TreeType> {
   public TreeType(int n) { super(n); }
   @Override
   public int compareTo(TreeType arg) {
-    return (arg.i < i ? -1 : (arg.i == i ? 0 : 1));
+    return Integer.compare(arg.i, i);
+    // Equivalent to:
+    // return arg.i < i ? -1 : (arg.i == i ? 0 : 1);
   }
 }
 
 public class TypesForSets {
-  static <T> Set<T>
+  static <T> void
   fill(Set<T> set, Function<Integer, T> type) {
-    for(int i = 0; i < 10; i++)
-        set.add(type.apply(i));
-    return set;
+    for(int i = 10; i >= 5; i--) // Descending
+      set.add(type.apply(i));
+    for(int i = 0; i < 5; i++) // Ascending
+      set.add(type.apply(i));
   }
   static <T> void
   test(Set<T> set, Function<Integer, T> type) {
@@ -60,23 +68,27 @@ public class TypesForSets {
     try {
       test(new TreeSet<>(), SetType::new);
     } catch(Exception e) {
-      System.out.println("Expected: " + e.getMessage());
+      System.out.println(e.getMessage());
     }
     try {
       test(new TreeSet<>(), HashType::new);
     } catch(Exception e) {
-      System.out.println("Expected: " + e.getMessage());
+      System.out.println(e.getMessage());
     }
   }
 }
 /* Output:
-[1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
-[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-[9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
-[1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
-[1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
-[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-Expected: SetType cannot be cast to java.lang.Comparable
-Expected: HashType cannot be cast to java.lang.Comparable
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+[10, 9, 8, 7, 6, 5, 0, 1, 2, 3, 4]
+[10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
+[1, 6, 8, 6, 2, 7, 8, 9, 4, 10, 7, 5, 1, 3, 4, 9, 9,
+10, 5, 3, 2, 0, 4, 1, 2, 0, 8, 3, 0, 10, 6, 5, 7]
+[3, 1, 4, 8, 7, 6, 9, 5, 3, 0, 10, 5, 5, 10, 7, 8, 8,
+9, 1, 4, 10, 2, 6, 9, 1, 6, 0, 3, 2, 0, 7, 2, 4]
+[10, 9, 8, 7, 6, 5, 0, 1, 2, 3, 4, 10, 9, 8, 7, 6, 5,
+0, 1, 2, 3, 4, 10, 9, 8, 7, 6, 5, 0, 1, 2, 3, 4]
+[10, 9, 8, 7, 6, 5, 0, 1, 2, 3, 4, 10, 9, 8, 7, 6, 5,
+0, 1, 2, 3, 4, 10, 9, 8, 7, 6, 5, 0, 1, 2, 3, 4]
+SetType cannot be cast to java.lang.Comparable
+HashType cannot be cast to java.lang.Comparable
 */

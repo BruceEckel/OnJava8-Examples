@@ -75,7 +75,8 @@ class FlowerFactory {
     Arrays.asList(Gladiolus::new,
       Renuculus::new, Chrysanthemum::new);
   static final int SZ = flowers.size();
-  private static SplittableRandom rand = new SplittableRandom(47);
+  private static SplittableRandom rand =
+    new SplittableRandom(47);
   public static Flower newFlower() {
     return flowers.get(rand.nextInt(SZ)).get();
   }

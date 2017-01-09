@@ -6,7 +6,7 @@
 // Trash hierarchy without modifying the base class
 package patterns.trashvisitor;
 
-interface Visitable {
+public interface Visitable {
   // The new method:
   void accept(Visitor v);
 }

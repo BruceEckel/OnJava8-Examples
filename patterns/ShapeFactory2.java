@@ -7,37 +7,32 @@ import java.lang.reflect.*;
 import java.util.stream.*;
 import patterns.shapes.*;
 
-class DynamicFactory {
-  static Map<String, Constructor> factories =
+public class ShapeFactory2 implements FactoryMethod {
+  Map<String, Constructor> factories =
     new HashMap<>();
   static Constructor load(String id) {
     System.out.println("loading " + id);
     try {
       return Class.forName("patterns.shapes." + id)
         .getConstructor();
-    } catch(Exception e) {
+    } catch(ClassNotFoundException |
+            NoSuchMethodException e) {
       throw new BadShapeCreation(id);
     }
   }
-  static Shape create(String id) {
+  public Shape create(String id) {
     try {
       return (Shape)factories
-        .computeIfAbsent(id, DynamicFactory::load)
+        .computeIfAbsent(id, ShapeFactory2::load)
         .newInstance();
-    } catch(Exception e) {
+    } catch(InstantiationException |
+            IllegalAccessException |
+            InvocationTargetException e) {
       throw new BadShapeCreation(id);
     }
   }
-}
-
-public class ShapeFactory2 {
   public static void main(String[] args) {
-    Stream.of("Circle", "Square", "Triangle",
-      "Square", "Circle", "Circle", "Triangle")
-      .map(DynamicFactory::create)
-      .peek(Shape::draw)
-      .peek(Shape::erase)
-      .count();
+    FactoryTest.test(new ShapeFactory2());
   }
 }
 /* Output:

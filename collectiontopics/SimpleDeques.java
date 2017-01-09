@@ -3,8 +3,8 @@
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // Very basic test of Deques
-import java.util.concurrent.*;
 import java.util.*;
+import java.util.concurrent.*;
 import java.util.function.*;
 
 class CountString implements Supplier<String> {
@@ -12,7 +12,9 @@ class CountString implements Supplier<String> {
   public CountString() {}
   public CountString(int start) { n = start; }
   @Override
-  public String get() { return Integer.toString(n++); }
+  public String get() {
+    return Integer.toString(n++);
+  }
 }
 
 public class SimpleDeques {

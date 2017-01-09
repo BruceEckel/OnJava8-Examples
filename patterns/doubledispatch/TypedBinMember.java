@@ -8,7 +8,7 @@
 package patterns.doubledispatch;
 import java.util.*;
 
-interface TypedBinMember {
+public interface TypedBinMember {
   // The new method:
   boolean addToBin(List<TypedBin> bins);
 }

@@ -5,7 +5,7 @@
 // The base interface for visitors
 package patterns.trashvisitor;
 
-interface Visitor {
+public interface Visitor {
   void visit(Aluminum a);
   void visit(Paper p);
   void visit(Glass g);

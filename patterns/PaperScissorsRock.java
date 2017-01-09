@@ -86,7 +86,8 @@ class ItemFactory {
     Arrays.asList(
       Scissors::new, Paper::new, Rock::new);
   static final int SZ = items.size();
-  private static SplittableRandom rand = new SplittableRandom(47);
+  private static SplittableRandom rand =
+    new SplittableRandom(47);
   public static Item newItem() {
     return items.get(rand.nextInt(SZ)).get();
   }

@@ -19,8 +19,7 @@ extends AbstractMap<Integer,String> {
       Integer.toString(key / chars.length);
   }
   public CountMap(int size) {
-    if(size < 0) this.size = 0;
-    else this.size = size;
+    this.size = size < 0 ? 0 : size;
   }
   @Override
   public String get(Object key) {
@@ -57,9 +56,17 @@ extends AbstractMap<Integer,String> {
         Collectors.toCollection(LinkedHashSet::new));
   }
   public static void main(String[] args) {
+    final int LIM = 6;
     CountMap cm = new CountMap(60);
     System.out.println(cm);
     System.out.println(cm.get(500));
+    cm.values().stream()
+      .limit(LIM)
+      .forEach(System.out::println);
+    System.out.println();
+    new Random().ints(LIM, 0, 1000)
+      .mapToObj(cm::get)
+      .forEach(System.out::println);
   }
 }
 /* Output:
@@ -72,4 +79,17 @@ extends AbstractMap<Integer,String> {
 49=X1, 50=Y1, 51=Z1, 52=A2, 53=B2, 54=C2, 55=D2, 56=E2,
 57=F2, 58=G2, 59=H2}
 G19
+A0
+B0
+C0
+D0
+E0
+F0
+
+E4
+X33
+P15
+L28
+M24
+Y36
 */

@@ -7,8 +7,8 @@ import java.util.*;
 import java.util.stream.*;
 import patterns.shapes.*;
 
-class StaticFactory {
-  static Shape create(String type) {
+public class ShapeFactory1 implements FactoryMethod {
+  public Shape create(String type) {
     switch(type) {
       case "Circle": return new Circle();
       case "Square": return new Square();
@@ -17,16 +17,8 @@ class StaticFactory {
         throw new BadShapeCreation(type);
     }
   }
-}
-
-public class ShapeFactory1 {
   public static void main(String[] args) {
-    Stream.of("Circle", "Square", "Triangle",
-      "Square", "Circle", "Circle", "Triangle")
-      .map(StaticFactory::create)
-      .peek(Shape::draw)
-      .peek(Shape::erase)
-      .count(); // Terminal operation
+    FactoryTest.test(new ShapeFactory1());
   }
 }
 /* Output:

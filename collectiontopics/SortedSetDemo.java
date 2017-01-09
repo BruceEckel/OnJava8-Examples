@@ -2,15 +2,16 @@
 // (c)2017 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
-// What you can do with a TreeSet
 import java.util.*;
+import static java.util.stream.Collectors.*;
 
 public class SortedSetDemo {
   public static void main(String[] args) {
-    SortedSet<String> sortedSet = new TreeSet<>();
-    Collections.addAll(sortedSet,
-      "one two three four five six seven eight"
-        .split(" "));
+    SortedSet<String> sortedSet =
+      Arrays.stream(
+        "one two three four five six seven eight"
+        .split(" "))
+        .collect(toCollection(TreeSet::new));
     System.out.println(sortedSet);
     String low = sortedSet.first();
     String high = sortedSet.last();

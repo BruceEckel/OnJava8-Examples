@@ -66,8 +66,8 @@ public abstract class Trash {
         try {
           // Get the dynamic constructor method
           // that takes a double argument:
-          Constructor ctor = trashType.getConstructor(
-                  double.class);
+          Constructor ctor =
+            trashType.getConstructor(double.class);
           // Call the constructor to create a
           // new object:
           return (T)ctor.newInstance(info.data);
