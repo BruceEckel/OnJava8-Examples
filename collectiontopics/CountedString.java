@@ -37,8 +37,8 @@ public class CountedString {
   @Override
   public boolean equals(Object o) {
     return o instanceof CountedString &&
-      s.equals(((CountedString)o).s) &&
-      id == ((CountedString)o).id;
+      Objects.equals(s, ((CountedString)o).s) &&
+      Objects.equals(id, ((CountedString)o).id);
   }
   public static void main(String[] args) {
     Map<CountedString,Integer> map =

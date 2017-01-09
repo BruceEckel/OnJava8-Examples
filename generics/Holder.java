@@ -12,7 +12,6 @@ public class Holder<T> {
   public T get() { return value; }
   @Override
   public boolean equals(Object o) {
-    if (o == this) return true;
     return o instanceof Holder &&
       Objects.equals(value, ((Holder)o).value);
   }

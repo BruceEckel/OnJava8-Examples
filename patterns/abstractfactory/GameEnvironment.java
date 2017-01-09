@@ -1,10 +1,10 @@
-// patterns/absfactory/GameEnvironment.java
+// patterns/abstractfactory/GameEnvironment.java
 // (c)2017 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // An example of the Abstract Factory pattern
-// {java patterns.absfactory.GameEnvironment}
-package patterns.absfactory;
+// {java patterns.abstractfactory.GameEnvironment}
+package patterns.abstractfactory;
 import java.util.function.*;
 
 interface Obstacle {

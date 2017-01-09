@@ -15,7 +15,7 @@ class Element {
   @Override
   public boolean equals(Object r) {
     return r instanceof Element &&
-      ident.equals(((Element)r).ident);
+      Objects.equals(ident, ((Element)r).ident);
   }
   @Override
   protected void finalize() {

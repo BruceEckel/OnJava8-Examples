@@ -2,87 +2,60 @@
 // (c)2017 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
-// Polymorphic factory methods
 import java.util.*;
-import java.util.function.*;
+import java.lang.reflect.*;
 import java.util.stream.*;
+import patterns.shapes.*;
 
-class BadShapeCreation extends RuntimeException {
-  BadShapeCreation(String msg) {
-    super(msg);
-  }
-}
-
-interface Shape {
-  void draw();
-  void erase();
-}
-
-abstract class ShapeFactory {
-  static Map<String, Supplier<Shape>> factories =
+class DynamicFactory {
+  static Map<String, Constructor> factories =
     new HashMap<>();
-  static Shape createShape(String id) {
-    if(!factories.containsKey(id)) {
-      try {
-        Class.forName(id); // Load dynamically
-      } catch(ClassNotFoundException e) {
-        throw new BadShapeCreation(id);
-      }
-      // See if it was put in:
-      if(!factories.containsKey(id))
-        throw new BadShapeCreation(id);
+  static Constructor load(String id) {
+    System.out.println("loading " + id);
+    try {
+      return Class.forName("patterns.shapes." + id)
+        .getConstructor();
+    } catch(Exception e) {
+      throw new BadShapeCreation(id);
     }
-    return factories.get(id).get();
   }
-}
-
-final class Circle implements Shape {
-  private Circle() {}
-  public void draw() {
-    System.out.println("Circle.draw");
-  }
-  public void erase() {
-    System.out.println("Circle.erase");
-  }
-  static {
-    ShapeFactory.factories.put("Circle", Circle::new);
-  }
-}
-
-final class Square implements Shape {
-  private Square() {}
-  public void draw() {
-    System.out.println("Square.draw");
-  }
-  public void erase() {
-    System.out.println("Square.erase");
-  }
-  static {
-    ShapeFactory.factories.put("Square", Square::new);
+  static Shape create(String id) {
+    try {
+      return (Shape)factories
+        .computeIfAbsent(id, DynamicFactory::load)
+        .newInstance();
+    } catch(Exception e) {
+      throw new BadShapeCreation(id);
+    }
   }
 }
 
 public class ShapeFactory2 {
   public static void main(String[] args) {
-    List<Shape> shapes = Stream.of("Circle", "Square",
-      "Square", "Circle", "Circle", "Square")
-      .map(ShapeFactory::createShape)
-      .collect(Collectors.toList());
-    shapes.forEach(Shape::draw);
-    shapes.forEach(Shape::erase);
+    Stream.of("Circle", "Square", "Triangle",
+      "Square", "Circle", "Circle", "Triangle")
+      .map(DynamicFactory::create)
+      .peek(Shape::draw)
+      .peek(Shape::erase)
+      .count();
   }
 }
 /* Output:
-Circle.draw
-Square.draw
-Square.draw
-Circle.draw
-Circle.draw
-Square.draw
-Circle.erase
-Square.erase
-Square.erase
-Circle.erase
-Circle.erase
-Square.erase
+loading Circle
+Circle[0] draw
+Circle[0] erase
+loading Square
+Square[1] draw
+Square[1] erase
+loading Triangle
+Triangle[2] draw
+Triangle[2] erase
+Square[3] draw
+Square[3] erase
+Circle[4] draw
+Circle[4] erase
+Circle[5] draw
+Circle[5] erase
+Triangle[6] draw
+Triangle[6] erase
 */

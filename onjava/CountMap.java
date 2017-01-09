@@ -6,6 +6,7 @@
 // {java onjava.CountMap}
 package onjava;
 import java.util.*;
+import java.util.stream.*;
 
 public class CountMap
 extends AbstractMap<Integer,String> {
@@ -31,7 +32,8 @@ extends AbstractMap<Integer,String> {
     Entry(int index) { this.index = index; }
     @Override
     public boolean equals(Object o) {
-      return Integer.valueOf(index).equals(o);
+      return o instanceof Entry &&
+        Objects.equals(index, ((Entry)o).index);
     }
     @Override
     public Integer getKey() { return index; }
@@ -49,11 +51,10 @@ extends AbstractMap<Integer,String> {
   @Override
   public Set<Map.Entry<Integer,String>> entrySet() {
     // LinkedHashSet retains initialization order:
-    Set<Map.Entry<Integer,String>> entries =
-      new LinkedHashSet<>();
-    for(int i = 0; i < size; i++)
-      entries.add(new Entry(i));
-    return entries;
+    return IntStream.range(0, size)
+      .mapToObj(Entry::new)
+      .collect(
+        Collectors.toCollection(LinkedHashSet::new));
   }
   public static void main(String[] args) {
     CountMap cm = new CountMap(60);

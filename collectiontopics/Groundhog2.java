@@ -4,6 +4,7 @@
 // Visit http://OnJava8.com for more book information.
 // A class that's used as a key in a HashMap
 // must override hashCode() and equals()
+import java.util.*;
 
 public class Groundhog2 extends Groundhog {
   public Groundhog2(int n) { super(n); }
@@ -12,6 +13,7 @@ public class Groundhog2 extends Groundhog {
   @Override
   public boolean equals(Object o) {
     return o instanceof Groundhog2 &&
-      (number == ((Groundhog2)o).number);
+      Objects.equals(
+        number, ((Groundhog2)o).number);
   }
 }

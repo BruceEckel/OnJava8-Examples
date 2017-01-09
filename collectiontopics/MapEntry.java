@@ -34,10 +34,10 @@ public class MapEntry<K, V> implements Map.Entry<K, V> {
     MapEntry<K, V> me = (MapEntry<K, V>)o;
     return
       (key == null ? me.getKey() == null :
-       key.equals(me.getKey()))
+        key.equals(me.getKey()))
        &&
       (value == null ? me.getValue() == null :
-       value.equals(me.getValue()));
+        value.equals(me.getValue()));
   }
   @Override
   public String toString() { return key + "=" + value; }

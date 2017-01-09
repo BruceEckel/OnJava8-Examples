@@ -220,7 +220,12 @@ public class Countries {
       Entry(int index) { this.index = index; }
       @Override
       public boolean equals(Object o) {
-        return DATA[index][0].equals(o);
+        return o instanceof FlyweightMap &&
+          Objects.equals(DATA[index][0], o);
+      }
+      @Override
+      public int hashCode() {
+        return DATA[index][0].hashCode();
       }
       @Override
       public String getKey() { return DATA[index][0]; }
@@ -229,10 +234,6 @@ public class Countries {
       @Override
       public String setValue(String value) {
         throw new UnsupportedOperationException();
-      }
-      @Override
-      public int hashCode() {
-        return DATA[index][0].hashCode();
       }
     }
     // Implement size() & iterator() for AbstractSet:

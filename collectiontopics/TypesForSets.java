@@ -12,7 +12,6 @@ class SetType {
   public SetType(int n) { i = n; }
   @Override
   public boolean equals(Object o) {
-    if (o == this) return true;
     return o instanceof SetType &&
       Objects.equals(i, ((SetType)o).i);
   }

@@ -3,6 +3,7 @@
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 package typeinfo.pets;
+import java.util.*;
 
 public class
 Individual implements Comparable<Individual> {
@@ -21,7 +22,7 @@ Individual implements Comparable<Individual> {
   @Override
   public boolean equals(Object o) {
     return o instanceof Individual &&
-      id == ((Individual)o).id;
+      Objects.equals(id, ((Individual)o).id);
   }
   @Override
   public int hashCode() {
