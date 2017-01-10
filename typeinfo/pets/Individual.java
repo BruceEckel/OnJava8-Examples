@@ -26,11 +26,7 @@ Individual implements Comparable<Individual> {
   }
   @Override
   public int hashCode() {
-    int result = 17;
-    if(name != null)
-      result = 37 * result + name.hashCode();
-    result = 37 * result + (int)id;
-    return result;
+    return Objects.hash(name, id);
   }
   @Override
   public int compareTo(Individual arg) {
@@ -39,7 +35,7 @@ Individual implements Comparable<Individual> {
     String argFirst = arg.getClass().getSimpleName();
     int firstCompare = first.compareTo(argFirst);
     if(firstCompare != 0)
-    return firstCompare;
+      return firstCompare;
     if(name != null && arg.name != null) {
       int secondCompare = name.compareTo(arg.name);
       if(secondCompare != 0)

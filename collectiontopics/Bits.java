@@ -14,7 +14,7 @@ public class Bits {
     System.out.println("bit pattern: " + bbits);
   }
   public static void main(String[] args) {
-    SplittableRandom rand = new SplittableRandom(47);
+    Random rand = new Random(47);
     // Take the LSB of nextInt():
     byte bt = (byte)rand.nextInt();
     BitSet bb = new BitSet();

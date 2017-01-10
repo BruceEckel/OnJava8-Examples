@@ -1,4 +1,4 @@
-// collectiontopics/CountedString.java
+// equalshashcode/CountedString.java
 // (c)2017 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
@@ -41,8 +41,7 @@ public class CountedString {
       Objects.equals(id, ((CountedString)o).id);
   }
   public static void main(String[] args) {
-    Map<CountedString,Integer> map =
-      new HashMap<>();
+    Map<CountedString,Integer> map = new HashMap<>();
     CountedString[] cs = new CountedString[5];
     for(int i = 0; i < cs.length; i++) {
       cs[i] = new CountedString("hi");

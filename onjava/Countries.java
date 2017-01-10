@@ -225,7 +225,7 @@ public class Countries {
       }
       @Override
       public int hashCode() {
-        return DATA[index][0].hashCode();
+        return Objects.hashCode(DATA[index][0]);
       }
       @Override
       public String getKey() { return DATA[index][0]; }

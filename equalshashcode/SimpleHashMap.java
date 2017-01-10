@@ -1,4 +1,4 @@
-// collectiontopics/SimpleHashMap.java
+// equalshashcode/SimpleHashMap.java
 // (c)2017 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
@@ -62,30 +62,29 @@ class SimpleHashMap<K, V> extends AbstractMap<K, V> {
   public static void main(String[] args) {
     SimpleHashMap<String,String> m =
       new SimpleHashMap<>();
-    m.putAll(Countries.capitals(25));
-    System.out.println(m);
-    System.out.println(m.get("ERITREA"));
-    System.out.println(m.entrySet());
+    m.putAll(Countries.capitals(8));
+    m.forEach((k, v) ->
+      System.out.println(k + "=" + v));
+    System.out.println(m.get("BENIN"));
+    m.entrySet().forEach(System.out::println);
   }
 }
 /* Output:
-{CAPE VERDE=Praia, ANGOLA=Luanda, ETHIOPIA=Addis Ababa,
-BENIN=Porto-Novo, CONGO=Brazzaville, LESOTHO=Maseru,
-CENTRAL AFRICAN REPUBLIC=Bangui, EQUATORIAL GUINEA=Malabo,
-ERITREA=Asmara, COMOROS=Moroni, BURKINA FASO=Ouagadougou,
-GABON=Libreville, THE GAMBIA=Banjul, GUINEA=Conakry,
-EGYPT=Cairo, BURUNDI=Bujumbura, ALGERIA=Algiers,
-CAMEROON=Yaounde, GHANA=Accra, KENYA=Nairobi, COTE D'IVOIR
-(IVORY COAST)=Yamoussoukro, BISSAU=Bissau,
-DJIBOUTI=Dijibouti, CHAD=N'djamena, BOTSWANA=Gaberone}
-Asmara
-[CAPE VERDE=Praia, ANGOLA=Luanda, ETHIOPIA=Addis Ababa,
-BENIN=Porto-Novo, CONGO=Brazzaville, LESOTHO=Maseru,
-CENTRAL AFRICAN REPUBLIC=Bangui, EQUATORIAL GUINEA=Malabo,
-ERITREA=Asmara, COMOROS=Moroni, BURKINA FASO=Ouagadougou,
-GABON=Libreville, THE GAMBIA=Banjul, GUINEA=Conakry,
-EGYPT=Cairo, BURUNDI=Bujumbura, ALGERIA=Algiers,
-CAMEROON=Yaounde, GHANA=Accra, KENYA=Nairobi, COTE D'IVOIR
-(IVORY COAST)=Yamoussoukro, BISSAU=Bissau,
-DJIBOUTI=Dijibouti, CHAD=N'djamena, BOTSWANA=Gaberone]
+CAMEROON=Yaounde
+ANGOLA=Luanda
+BURKINA FASO=Ouagadougou
+BURUNDI=Bujumbura
+ALGERIA=Algiers
+BENIN=Porto-Novo
+CAPE VERDE=Praia
+BOTSWANA=Gaberone
+Porto-Novo
+CAMEROON=Yaounde
+ANGOLA=Luanda
+BURKINA FASO=Ouagadougou
+BURUNDI=Bujumbura
+ALGERIA=Algiers
+BENIN=Porto-Novo
+CAPE VERDE=Praia
+BOTSWANA=Gaberone
 */

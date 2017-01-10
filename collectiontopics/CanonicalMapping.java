@@ -11,7 +11,9 @@ class Element {
   @Override
   public String toString() { return ident; }
   @Override
-  public int hashCode() { return ident.hashCode(); }
+  public int hashCode() {
+    return Objects.hashCode(ident);
+  }
   @Override
   public boolean equals(Object r) {
     return r instanceof Element &&

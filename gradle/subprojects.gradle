@@ -5,12 +5,15 @@ project(':validating') {
 }
 
 project(':collectiontopics') {
+    jmh {
+        include = 'collectiontopics.jmh.*'
+    }
+}
+
+project(':equalshashcode') {
     dependencies {
         compile project(':typeinfo')
         compile project(':collections')
-    }
-    jmh {
-        include = 'collectiontopics.jmh.*'
     }
 }
 

@@ -17,7 +17,7 @@ public class Holder<T> {
   }
   @Override
   public int hashCode() {
-    return Objects.hash(value);
+    return Objects.hashCode(value);
   }
   public static void main(String[] args) {
     Holder<Apple> apple = new Holder<>(new Apple());

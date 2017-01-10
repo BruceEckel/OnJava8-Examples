@@ -1,4 +1,4 @@
-// collectiontopics/IndividualTest.java
+// equalshashcode/IndividualTest.java
 // (c)2017 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
@@ -13,12 +13,19 @@ public class IndividualTest {
         MapOfList.petPeople.values())
       for(Pet p : lp)
         pets.add(p);
-    System.out.println(pets);
+    pets.forEach(System.out::println);
   }
 }
 /* Output:
-[Cat Elsie May, Cat Pinkola, Cat Shackleton, Cat Stanford
-aka Stinky el Negro, Cymric Molly, Dog Margrett, Mutt Spot,
-Pug Louie aka Louis Snorkelstein Dupree, Rat Fizzy, Rat
-Freckly, Rat Fuzzy]
+Cat Elsie May
+Cat Pinkola
+Cat Shackleton
+Cat Stanford aka Stinky el Negro
+Cymric Molly
+Dog Margrett
+Mutt Spot
+Pug Louie aka Louis Snorkelstein Dupree
+Rat Fizzy
+Rat Freckly
+Rat Fuzzy
 */

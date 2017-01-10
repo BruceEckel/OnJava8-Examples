@@ -1,33 +1,52 @@
-// collectiontopics/SuccinctEquality.java
+// equalshashcode/ComposedEquality.java
 // (c)2017 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 import java.util.*;
 
-public class SuccinctEquality extends Equality {
-  public SuccinctEquality(int i, String s, double d) {
-    super(i, s, d);
-    System.out.println("made 'SuccinctEquality'");
+class Part {
+  String ss;
+  double dd;
+  public Part(String ss, double dd) {
+    this.ss = ss;
+    this.dd = dd;
   }
   @Override
   public boolean equals(Object rval) {
-    return rval instanceof SuccinctEquality &&
-      Objects.equals(i, ((SuccinctEquality)rval).i) &&
-      Objects.equals(s, ((SuccinctEquality)rval).s) &&
-      Objects.equals(d, ((SuccinctEquality)rval).d);
+    return rval instanceof Part &&
+      Objects.equals(ss, ((Part)rval).ss) &&
+      Objects.equals(dd, ((Part)rval).dd);
+  }
+}
+
+public class ComposedEquality extends SuccinctEquality {
+  Part part;
+  public ComposedEquality(int i, String s, double d) {
+    super(i, s, d);
+    part = new Part(s, d);
+    System.out.println("made 'ComposedEquality'");
+  }
+  @Override
+  public boolean equals(Object rval) {
+    return rval instanceof ComposedEquality &&
+      super.equals(rval) &&
+      Objects.equals(part, ((ComposedEquality)rval).part);
   }
   public static void main(String[] args) {
     Equality.testAll( (i, s, d) ->
-      new SuccinctEquality(i, s, d));
+      new ComposedEquality(i, s, d));
   }
 }
 /* Output:
 made 'Equality'
 made 'SuccinctEquality'
+made 'ComposedEquality'
 made 'Equality'
 made 'SuccinctEquality'
+made 'ComposedEquality'
 made 'Equality'
 made 'SuccinctEquality'
+made 'ComposedEquality'
 -- Testing null --
 null instanceof Equality: false
 Expected false, got false

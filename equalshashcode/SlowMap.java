@@ -1,4 +1,4 @@
-// collectiontopics/SlowMap.java
+// equalshashcode/SlowMap.java
 // (c)2017 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
@@ -36,24 +36,29 @@ public class SlowMap<K, V> extends AbstractMap<K, V> {
   }
   public static void main(String[] args) {
     SlowMap<String,String> m= new SlowMap<>();
-    m.putAll(Countries.capitals(15));
-    System.out.println(m);
-    System.out.println(m.get("BULGARIA"));
-    System.out.println(m.entrySet());
+    m.putAll(Countries.capitals(8));
+    m.forEach((k, v) ->
+      System.out.println(k + "=" + v));
+    System.out.println(m.get("BENIN"));
+    m.entrySet().forEach(System.out::println);
   }
 }
 /* Output:
-{ANGOLA=Luanda, CAPE VERDE=Praia, EGYPT=Cairo,
-BURUNDI=Bujumbura, BENIN=Porto-Novo, ALGERIA=Algiers,
-CAMEROON=Yaounde, CONGO=Brazzaville, CENTRAL AFRICAN
-REPUBLIC=Bangui, EQUATORIAL GUINEA=Malabo, COMOROS=Moroni,
-DJIBOUTI=Dijibouti, BURKINA FASO=Ouagadougou,
-CHAD=N'djamena, BOTSWANA=Gaberone}
-null
-[ANGOLA=Luanda, CAPE VERDE=Praia, EGYPT=Cairo,
-BURUNDI=Bujumbura, BENIN=Porto-Novo, ALGERIA=Algiers,
-CAMEROON=Yaounde, CONGO=Brazzaville, CENTRAL AFRICAN
-REPUBLIC=Bangui, EQUATORIAL GUINEA=Malabo, COMOROS=Moroni,
-DJIBOUTI=Dijibouti, BURKINA FASO=Ouagadougou,
-CHAD=N'djamena, BOTSWANA=Gaberone]
+CAMEROON=Yaounde
+ANGOLA=Luanda
+BURKINA FASO=Ouagadougou
+BURUNDI=Bujumbura
+ALGERIA=Algiers
+BENIN=Porto-Novo
+CAPE VERDE=Praia
+BOTSWANA=Gaberone
+Porto-Novo
+CAMEROON=Yaounde
+ANGOLA=Luanda
+BURKINA FASO=Ouagadougou
+BURUNDI=Bujumbura
+ALGERIA=Algiers
+BENIN=Porto-Novo
+CAPE VERDE=Praia
+BOTSWANA=Gaberone
 */

@@ -1,4 +1,4 @@
-// collectiontopics/MapEntry.java
+// equalshashcode/MapEntry.java
 // (c)2017 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
@@ -24,21 +24,19 @@ public class MapEntry<K, V> implements Map.Entry<K, V> {
   }
   @Override
   public int hashCode() {
-    return (key==null ? 0 : key.hashCode()) ^
-      (value==null ? 0 : value.hashCode());
+    return Objects.hash(key, value);
+  }
+  @SuppressWarnings("unchecked")
+  @Override
+  public boolean equals(Object rval) {
+    return rval instanceof MapEntry &&
+      Objects.equals(key,
+        ((MapEntry<K, V>)rval).getKey()) &&
+      Objects.equals(value,
+        ((MapEntry<K, V>)rval).getValue());
   }
   @Override
-  public boolean equals(Object o) {
-    if(!(o instanceof MapEntry)) return false;
-    @SuppressWarnings("unchecked")
-    MapEntry<K, V> me = (MapEntry<K, V>)o;
-    return
-      (key == null ? me.getKey() == null :
-        key.equals(me.getKey()))
-       &&
-      (value == null ? me.getValue() == null :
-        value.equals(me.getValue()));
+  public String toString() {
+    return key + "=" + value;
   }
-  @Override
-  public String toString() { return key + "=" + value; }
 }

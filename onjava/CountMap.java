@@ -44,7 +44,7 @@ extends AbstractMap<Integer,String> {
     }
     @Override
     public int hashCode() {
-      return Integer.valueOf(index).hashCode();
+      return Objects.hashCode(index);
     }
   }
   @Override
@@ -64,7 +64,7 @@ extends AbstractMap<Integer,String> {
       .limit(LIM)
       .forEach(System.out::println);
     System.out.println();
-    new Random().ints(LIM, 0, 1000)
+    new Random(47).ints(LIM, 0, 1000)
       .mapToObj(cm::get)
       .forEach(System.out::println);
   }
@@ -86,10 +86,10 @@ D0
 E0
 F0
 
-E4
-X33
-P15
-L28
-M24
-Y36
+Y9
+J21
+R26
+D33
+Z36
+N16
 */
