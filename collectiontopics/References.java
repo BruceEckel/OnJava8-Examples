@@ -37,7 +37,8 @@ public class References {
     for(int i = 0; i < size; i++) {
       sa.add(new SoftReference<>(
         new VeryBig("Soft " + i), rq));
-      System.out.println("Just created: " + sa.getLast());
+      System.out.println(
+        "Just created: " + sa.getLast());
       checkQueue();
     }
     LinkedList<WeakReference<VeryBig>> wa =
@@ -45,7 +46,8 @@ public class References {
     for(int i = 0; i < size; i++) {
       wa.add(new WeakReference<>(
         new VeryBig("Weak " + i), rq));
-      System.out.println("Just created: " + wa.getLast());
+      System.out.println(
+        "Just created: " + wa.getLast());
       checkQueue();
     }
     SoftReference<VeryBig> s =
@@ -58,7 +60,8 @@ public class References {
     for(int i = 0; i < size; i++) {
       pa.add(new PhantomReference<>(
         new VeryBig("Phantom " + i), rq));
-      System.out.println("Just created: " + pa.getLast());
+      System.out.println(
+        "Just created: " + pa.getLast());
       checkQueue();
     }
   }

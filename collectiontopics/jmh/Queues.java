@@ -3,7 +3,7 @@
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // Performance differences between Queues
-package understandingcollections.jmh;
+package collectiontopics.jmh;
 import org.openjdk.jmh.annotations.*;
 import java.util.*;
 import java.util.concurrent.*;
