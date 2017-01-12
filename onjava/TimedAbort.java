@@ -4,16 +4,14 @@
 // Visit http://OnJava8.com for more book information.
 // Terminate a program after n seconds
 package onjava;
-import java.util.*;
+import java.util.concurrent.*;
 
 public class TimedAbort {
   public TimedAbort(int n) {
-    new java.util.Timer().schedule(new TimerTask() {
-      @Override
-      public void run() {
-        System.out.println("TimedAbort " + n);
-        System.exit(0);
-      }
-    }, n * 1000);
+    CompletableFuture.runAsync(() -> {
+      new Nap(1000 * n);
+      System.out.println("TimedAbort " + n);
+      System.exit(0);
+    });
   }
 }

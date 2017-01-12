@@ -3,13 +3,14 @@
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 import java.util.concurrent.*;
+import onjava.TimedAbort;
 
 public class EvenChecker implements Runnable {
-  private IntSupplier generator;
+  private IntGenerator generator;
   private final int id;
-  public EvenChecker(IntSupplier g, int ident) {
-    generator = g;
-    id = ident;
+  public EvenChecker(IntGenerator generator, int id) {
+    this.generator = generator;
+    this.id = id;
   }
   @Override
   public void run() {
@@ -21,8 +22,8 @@ public class EvenChecker implements Runnable {
       }
     }
   }
-  // Test any type of IntSupplier:
-  public static void test(IntSupplier gp, int count) {
+  // Test any IntGenerator:
+  public static void test(IntGenerator gp, int count) {
     System.out.println("Press Control-C to exit");
     ExecutorService es = Executors.newCachedThreadPool();
     for(int i = 0; i < count; i++)
@@ -30,7 +31,8 @@ public class EvenChecker implements Runnable {
     es.shutdown();
   }
   // Default value for count:
-  public static void test(IntSupplier gp) {
+  public static void test(IntGenerator gp) {
+    new TimedAbort(4);
     test(gp, 10);
   }
 }

@@ -1,13 +1,12 @@
-// lowlevel/MutexEvenSupplier.java
+// lowlevel/MutexEvenProducer.java
 // (c)2017 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // Preventing thread collisions with mutexes
 // {IgnoreOutput} // No output validation
 import java.util.concurrent.locks.*;
-import onjava.TimedAbort;
 
-public class MutexEvenSupplier extends IntSupplier {
+public class MutexEvenProducer extends IntGenerator {
   private int currentEvenValue = 0;
   private Lock lock = new ReentrantLock();
   @Override
@@ -23,7 +22,6 @@ public class MutexEvenSupplier extends IntSupplier {
     }
   }
   public static void main(String[] args) {
-    new TimedAbort(4);
-    EvenChecker.test(new MutexEvenSupplier());
+    EvenChecker.test(new MutexEvenProducer());
   }
 }

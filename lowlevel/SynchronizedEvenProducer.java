@@ -1,23 +1,22 @@
-// lowlevel/SynchronizedEvenSupplier.java
+// lowlevel/SynchronizedEvenProducer.java
 // (c)2017 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // Simplifying mutexes with the synchronized keyword
 // {IgnoreOutput} // No output validation
-import onjava.TimedAbort;
+import onjava.Nap;
 
 public class
-SynchronizedEvenSupplier extends IntSupplier {
+SynchronizedEvenProducer extends IntGenerator {
   private int currentEvenValue = 0;
   @Override
   public synchronized int next() {
     ++currentEvenValue;
-    Thread.yield(); // Cause failure faster
+    new Nap(10); // Cause failure faster
     ++currentEvenValue;
     return currentEvenValue;
   }
   public static void main(String[] args) {
-    new TimedAbort(4);
-    EvenChecker.test(new SynchronizedEvenSupplier());
+    EvenChecker.test(new SynchronizedEvenProducer());
   }
 }

@@ -1,26 +1,25 @@
-// lowlevel/EvenSupplier.java
+// lowlevel/EvenProducer.java
 // (c)2017 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // When threads collide
-import onjava.TimedAbort;
 
-public class EvenSupplier extends IntSupplier {
+public class EvenProducer extends IntGenerator {
   private int currentEvenValue = 0;
   @Override
   public int next() {
-    ++currentEvenValue; // Danger point here!
+    ++currentEvenValue; // [1]
     ++currentEvenValue;
     return currentEvenValue;
   }
   public static void main(String[] args) {
-    new TimedAbort(4);
-    EvenChecker.test(new EvenSupplier());
+    EvenChecker.test(new EvenProducer());
   }
 }
 /* Output:
 Press Control-C to exit
-193 not even!
-191 not even!
-TimedAbort 4
+841 not even!
+847 not even!
+845 not even!
+843 not even!
 */

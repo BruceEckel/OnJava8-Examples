@@ -2,6 +2,7 @@
 // (c)2017 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
+import java.util.stream.*;
 import java.util.concurrent.*;
 
 class ShowThread implements Runnable {
@@ -19,8 +20,9 @@ public class WorkStealingPool {
       Runtime.getRuntime().availableProcessors());
     ExecutorService exec =
       Executors.newWorkStealingPool();
-    for(int i = 0; i < 10; i++)
-      exec.execute(new ShowThread());
+    IntStream.range(0, 10)
+      .mapToObj(n -> new ShowThread())
+      .forEach(exec::execute);
     exec.awaitTermination(1, TimeUnit.SECONDS);
   }
 }
