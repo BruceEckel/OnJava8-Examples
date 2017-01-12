@@ -3,20 +3,21 @@
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // Synchronizing on another object
+import onjava.Nap;
 
 class DualSynch {
   private Object syncObject = new Object();
   public synchronized void f() {
     for(int i = 0; i < 5; i++) {
       System.out.println("f()");
-      Thread.yield();
+      new Nap(10);
     }
   }
   public void g() {
     synchronized(syncObject) {
       for(int i = 0; i < 5; i++) {
         System.out.println("g()");
-        Thread.yield();
+        new Nap(10);
       }
     }
   }

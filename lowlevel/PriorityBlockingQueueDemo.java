@@ -73,7 +73,7 @@ class PrioritizedTaskProducer implements Runnable {
     // Fill it up fast with random priorities:
     for(int i = 0; i < 20; i++) {
       queue.add(new PrioritizedTask(rand.nextInt(10)));
-      Thread.yield();
+      new Nap(10);
     }
     // Trickle in highest-priority jobs:
     for(int i = 0; i < 10; i++) {

@@ -5,6 +5,7 @@
 // Preventing thread collisions with mutexes
 // {IgnoreOutput} // No output validation
 import java.util.concurrent.locks.*;
+import onjava.Nap;
 
 public class MutexEvenProducer extends IntGenerator {
   private int currentEvenValue = 0;
@@ -14,7 +15,7 @@ public class MutexEvenProducer extends IntGenerator {
     lock.lock();
     try {
       ++currentEvenValue;
-      Thread.yield(); // Cause failure faster
+      new Nap(10); // Cause failure faster
       ++currentEvenValue;
       return currentEvenValue;
     } finally {

@@ -6,6 +6,7 @@
 // to give up on trying to acquire a lock
 import java.util.concurrent.*;
 import java.util.concurrent.locks.*;
+import onjava.Nap;
 
 public class AttemptLocking {
   private ReentrantLock lock = new ReentrantLock();
@@ -46,7 +47,7 @@ public class AttemptLocking {
         System.out.println("acquired");
       }
     }.start();
-    Thread.yield(); // Give the 2nd task a chance
+    new Nap(10);  // Give the 2nd task a chance
     al.untimed(); // False -- lock grabbed by task
     al.timed();   // False -- lock grabbed by task
   }
