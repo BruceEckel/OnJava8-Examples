@@ -4,7 +4,6 @@
 // Visit http://OnJava8.com for more book information.
 // Demonstration of Observer pattern using
 // Java's built-in observer classes
-// {ValidateByHand} --- TEST TEST TEST
 package patterns.visualobserver;
 import javax.swing.*;
 import java.awt.*;
