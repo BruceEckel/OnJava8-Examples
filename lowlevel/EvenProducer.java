@@ -17,9 +17,10 @@ public class EvenProducer extends IntGenerator {
   }
 }
 /* Output:
-Press Control-C to exit
-841 not even!
-847 not even!
-845 not even!
-843 not even!
+1563 not even!
+1573 not even!
+1571 not even!
+1569 not even!
+1567 not even!
+1565 not even!
 */

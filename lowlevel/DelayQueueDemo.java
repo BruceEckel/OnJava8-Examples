@@ -2,8 +2,9 @@
 // (c)2017 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
-import java.util.concurrent.*;
 import java.util.*;
+import java.util.stream.*;
+import java.util.concurrent.*;
 import static java.util.concurrent.TimeUnit.*;
 
 class DelayedTask implements Runnable, Delayed {
@@ -12,7 +13,7 @@ class DelayedTask implements Runnable, Delayed {
   private final int delta;
   private final long trigger;
   protected static List<DelayedTask> sequence =
-    new ArrayList<>();
+    new CopyOnWriteArrayList<>();
   public DelayedTask(int delayInMilliseconds) {
     delta = delayInMilliseconds;
     trigger = System.nanoTime() +
@@ -32,74 +33,69 @@ class DelayedTask implements Runnable, Delayed {
     return 0;
   }
   @Override
-  public void run() { System.out.print(this + " "); }
+  public void run() {
+    System.out.print(this + " ");
+  }
   @Override
   public String toString() {
-    return String.format("[%1$-4d]", delta) +
-      " Task " + id;
+    return
+      String.format("[%d] Task %d", delta, id);
   }
   public String summary() {
-    return "(" + id + ":" + delta + ")";
+    return String.format("(%d:%d)", id, delta);
   }
-  public static class EndSentinel extends DelayedTask {
-    private ExecutorService exec;
-    public EndSentinel(int delay, ExecutorService e) {
-      super(delay);
-      exec = e;
-    }
+  public static class EndTask extends DelayedTask {
+    public EndTask(int delay) { super(delay); }
     @Override
     public void run() {
-      for(DelayedTask pt : sequence) {
-        System.out.print(pt.summary() + " ");
-      }
-      System.out.println();
-      System.out.println(this + " Calling shutdownNow()");
-      exec.shutdownNow();
+      sequence.forEach(dt ->
+        System.out.println(dt.summary() + " "));
     }
-  }
-}
-
-class DelayedTaskConsumer implements Runnable {
-  private DelayQueue<DelayedTask> q;
-  public DelayedTaskConsumer(DelayQueue<DelayedTask> q) {
-    this.q = q;
-  }
-  @Override
-  public void run() {
-    try {
-      while(!Thread.interrupted())
-        q.take().run(); // Run task with current thread
-    } catch(InterruptedException e) {
-      // Acceptable way to exit
-    }
-    System.out.println("Finished DelayedTaskConsumer");
   }
 }
 
 public class DelayQueueDemo {
-  public static void main(String[] args) {
-    SplittableRandom rand = new SplittableRandom(47);
-    ExecutorService es = Executors.newCachedThreadPool();
-    DelayQueue<DelayedTask> queue =
-      new DelayQueue<>();
-    // Fill with tasks that have random delays:
-    for(int i = 0; i < 20; i++)
-      queue.put(new DelayedTask(rand.nextInt(5000)));
-    // Set the stopping point
-    queue.add(new DelayedTask.EndSentinel(5000, es));
-    es.execute(new DelayedTaskConsumer(queue));
+  public static void
+  main(String[] args) throws Exception {
+    DelayQueue<DelayedTask> tasks =
+      Stream.concat(
+        // Tasks with random delays:
+        new Random(47).ints(20, 0, 4000)
+          .mapToObj(DelayedTask::new),
+        // Add the summarizing task:
+        Stream.of(
+          new DelayedTask.EndTask(4000)))
+      .collect(Collectors
+        .toCollection(DelayQueue::new));
+    DelayQueue<DelayedTask> delayQueue =
+      new DelayQueue<>(tasks);
+    while(delayQueue.size() > 0)
+      delayQueue.take().run();
   }
 }
 /* Output:
-[70  ] Task 10 [125 ] Task 13 [267 ] Task 19 [635 ] Task 0
-[650 ] Task 16 [682 ] Task 17 [807 ] Task 11 [1131] Task 18
-[1177] Task 4 [1193] Task 9 [1634] Task 15 [1656] Task 6
-[2400] Task 12 [3479] Task 5 [3737] Task 1 [3768] Task 7
-[3941] Task 2 [4720] Task 3 [4762] Task 14 [4948] Task 8
-(0:635) (1:3737) (2:3941) (3:4720) (4:1177) (5:3479)
-(6:1656) (7:3768) (8:4948) (9:1193) (10:70) (11:807)
-(12:2400) (13:125) (14:4762) (15:1634) (16:650) (17:682)
-(18:1131) (19:267) (20:5000)
-[5000] Task 20 Calling shutdownNow()
-Finished DelayedTaskConsumer
+[128] Task 12 [429] Task 6 [551] Task 13 [555] Task 2 [693] Task 3 [809] Task 15
+ [961] Task 5 [1258] Task 1 [1258] Task 20 [1520] Task 19 [1861] Task 4 [1998] T
+ask 17 [2200] Task 8 [2207] Task 10 [2288] Task 11 [2522] Task 9 [2589] Task 14
+[2861] Task 18 [2868] Task 7 [3278] Task 16 (0:4000)
+(1:1258)
+(2:555)
+(3:693)
+(4:1861)
+(5:961)
+(6:429)
+(7:2868)
+(8:2200)
+(9:2522)
+(10:2207)
+(11:2288)
+(12:128)
+(13:551)
+(14:2589)
+(15:809)
+(16:3278)
+(17:1998)
+(18:2861)
+(19:1520)
+(20:1258)
 */

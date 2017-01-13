@@ -3,7 +3,6 @@
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // Atomic classes are occasionally useful in regular code
-// {IgnoreOutput} // No output validation
 import java.util.concurrent.atomic.*;
 
 public class AtomicEvenProducer extends IntGenerator {
@@ -17,3 +16,6 @@ public class AtomicEvenProducer extends IntGenerator {
     EvenChecker.test(new AtomicEvenProducer());
   }
 }
+/* Output:
+No odd numbers discovered
+*/

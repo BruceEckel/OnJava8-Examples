@@ -3,7 +3,6 @@
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // Preventing thread collisions with mutexes
-// {IgnoreOutput} // No output validation
 import java.util.concurrent.locks.*;
 import onjava.Nap;
 
@@ -26,3 +25,6 @@ public class MutexEvenProducer extends IntGenerator {
     EvenChecker.test(new MutexEvenProducer());
   }
 }
+/*
+No odd numbers discovered
+*/

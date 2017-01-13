@@ -17,20 +17,18 @@ public class AtomicityTest implements Runnable {
       evenIncrement();
   }
   public static void main(String[] args) {
-    new TimedAbort(4);
-    ExecutorService es =
-      Executors.newCachedThreadPool();
+    new TimedAbort(4, "No failures found");
     AtomicityTest at = new AtomicityTest();
-    es.execute(at);
+    CompletableFuture.runAsync(at);
     while(true) {
       int val = at.getValue();
       if(val % 2 != 0) {
-        System.out.println(val);
+        System.out.println("failed with: " + val);
         System.exit(0);
       }
     }
   }
 }
 /* Output:
-1
+failed with: 21
 */

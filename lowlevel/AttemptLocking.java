@@ -38,16 +38,12 @@ public class AttemptLocking {
     final AttemptLocking al = new AttemptLocking();
     al.untimed(); // True -- lock is available
     al.timed();   // True -- lock is available
-    // Now create a separate task to grab the lock:
-    new Thread() {
-      { setDaemon(true); }
-      @Override
-      public void run() {
+    // Now create a second task to grab the lock:
+    CompletableFuture.runAsync( () -> {
         al.lock.lock();
         System.out.println("acquired");
-      }
-    }.start();
-    new Nap(10);  // Give the 2nd task a chance
+    });
+    new Nap(100);  // Give the second task a chance
     al.untimed(); // False -- lock grabbed by task
     al.timed();   // False -- lock grabbed by task
   }
@@ -55,6 +51,7 @@ public class AttemptLocking {
 /* Output:
 tryLock(): true
 tryLock(2, TimeUnit.SECONDS): true
-tryLock(): true
-tryLock(2, TimeUnit.SECONDS): true
+acquired
+tryLock(): false
+tryLock(2, TimeUnit.SECONDS): false
 */

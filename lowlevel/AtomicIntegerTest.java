@@ -17,11 +17,9 @@ public class AtomicIntegerTest implements Runnable {
       evenIncrement();
   }
   public static void main(String[] args) {
-    new TimedAbort(5); // Terminate after 5 seconds
-    ExecutorService exec =
-      Executors.newCachedThreadPool();
+    new TimedAbort(4, "No failures discovered");
     AtomicIntegerTest ait = new AtomicIntegerTest();
-    exec.execute(ait);
+    CompletableFuture.runAsync(ait);
     while(true) {
       int val = ait.getValue();
       if(val % 2 != 0) {
@@ -32,5 +30,5 @@ public class AtomicIntegerTest implements Runnable {
   }
 }
 /* Output:
-TimedAbort 5
+No failures discovered
 */

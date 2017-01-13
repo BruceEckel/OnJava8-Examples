@@ -7,11 +7,14 @@ package onjava;
 import java.util.concurrent.*;
 
 public class TimedAbort {
-  public TimedAbort(int n) {
+  public TimedAbort(int n, String msg) {
     CompletableFuture.runAsync(() -> {
       new Nap(1000 * n);
-      System.out.println("TimedAbort " + n);
+      System.out.println(msg);
       System.exit(0);
     });
+  }
+  public TimedAbort(int n) {
+    this(n, "TimedAbort " + n);
   }
 }

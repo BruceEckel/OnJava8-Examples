@@ -3,7 +3,6 @@
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // Simplifying mutexes with the synchronized keyword
-// {IgnoreOutput} // No output validation
 import onjava.Nap;
 
 public class
@@ -20,3 +19,6 @@ SynchronizedEvenProducer extends IntGenerator {
     EvenChecker.test(new SynchronizedEvenProducer());
   }
 }
+/* Output:
+No odd numbers discovered
+*/

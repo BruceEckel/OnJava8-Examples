@@ -14,4 +14,8 @@ public class Nap {
       throw new RuntimeException(e);
     }
   }
+  public Nap(int n, String msg) {
+    this(n);
+    System.out.println(msg);
+  }
 }

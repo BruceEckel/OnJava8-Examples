@@ -2,6 +2,8 @@
 // (c)2017 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
+import java.util.*;
+import java.util.stream.*;
 import java.util.concurrent.*;
 import onjava.TimedAbort;
 
@@ -24,15 +26,16 @@ public class EvenChecker implements Runnable {
   }
   // Test any IntGenerator:
   public static void test(IntGenerator gp, int count) {
-    System.out.println("Press Control-C to exit");
-    ExecutorService es = Executors.newCachedThreadPool();
-    for(int i = 0; i < count; i++)
-      es.execute(new EvenChecker(gp, i));
-    es.shutdown();
+    List<CompletableFuture<Void>> checkers =
+      IntStream.range(0, count)
+        .mapToObj(i -> new EvenChecker(gp, i))
+        .map(CompletableFuture::runAsync)
+        .collect(Collectors.toList());
+    checkers.forEach(CompletableFuture::join);
   }
   // Default value for count:
   public static void test(IntGenerator gp) {
-    new TimedAbort(4);
+    new TimedAbort(4, "No odd numbers discovered");
     test(gp, 10);
   }
 }
