@@ -63,14 +63,11 @@ public class DelayQueueDemo {
         new Random(47).ints(20, 0, 4000)
           .mapToObj(DelayedTask::new),
         // Add the summarizing task:
-        Stream.of(
-          new DelayedTask.EndTask(4000)))
+        Stream.of(new DelayedTask.EndTask(4000)))
       .collect(Collectors
         .toCollection(DelayQueue::new));
-    DelayQueue<DelayedTask> delayQueue =
-      new DelayQueue<>(tasks);
-    while(delayQueue.size() > 0)
-      delayQueue.take().run();
+    while(tasks.size() > 0)
+      tasks.take().run();
   }
 }
 /* Output:
