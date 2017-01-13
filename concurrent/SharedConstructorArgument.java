@@ -1,0 +1,44 @@
+// concurrent/SharedConstructorArgument.java
+// (c)2017 MindView LLC: see Copyright.txt
+// We make no guarantees that this code is fit for any purpose.
+// Visit http://OnJava8.com for more book information.
+import java.util.concurrent.atomic.*;
+
+interface SharedArg {
+  int get();
+}
+
+class Unsafe implements SharedArg {
+  private int i = 0;
+  public int get() { return i++; }
+}
+
+class Safe implements SharedArg {
+  private static AtomicInteger counter =
+    new AtomicInteger();
+  public int get() {
+    return counter.getAndAdd(1);
+  }
+}
+
+class SharedUser implements HasID {
+  private final int id;
+  public SharedUser(SharedArg sa) {
+    id = sa.get();
+  }
+  @Override
+  public int getID() { return id; }
+}
+
+public class SharedConstructorArgument {
+  public static void main(String[] args) {
+    Unsafe us = new Unsafe();
+    IDChecker.test(() -> new SharedUser(us));
+    Safe sa = new Safe();
+    IDChecker.test(() -> new SharedUser(sa));
+  }
+}
+/* Output:
+47747
+0
+*/
