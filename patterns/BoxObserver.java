@@ -1,11 +1,10 @@
-// patterns/visualobserver/BoxObserver.java
+// patterns/BoxObserver.java
 // (c)2017 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // Demonstration of Observer pattern using
 // Java's built-in observer classes
-// {java patterns.visualobserver.BoxObserver}
-package patterns.visualobserver;
+// {ValidateByHand} // CI servers have problems
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
