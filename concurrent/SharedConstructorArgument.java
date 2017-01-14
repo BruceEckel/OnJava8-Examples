@@ -32,10 +32,10 @@ class SharedUser implements HasID {
 
 public class SharedConstructorArgument {
   public static void main(String[] args) {
-    Unsafe us = new Unsafe();
-    IDChecker.test(() -> new SharedUser(us));
-    Safe sa = new Safe();
-    IDChecker.test(() -> new SharedUser(sa));
+    Unsafe unsafe = new Unsafe();
+    IDChecker.test(() -> new SharedUser(unsafe));
+    Safe safe = new Safe();
+    IDChecker.test(() -> new SharedUser(safe));
   }
 }
 /* Output:
