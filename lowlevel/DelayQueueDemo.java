@@ -13,7 +13,7 @@ class DelayedTask implements Runnable, Delayed {
   private final int delta;
   private final long trigger;
   protected static List<DelayedTask> sequence =
-    new CopyOnWriteArrayList<>();
+    new ArrayList<>();
   public DelayedTask(int delayInMilliseconds) {
     delta = delayInMilliseconds;
     trigger = System.nanoTime() +
@@ -49,7 +49,7 @@ class DelayedTask implements Runnable, Delayed {
     @Override
     public void run() {
       sequence.forEach(dt ->
-        System.out.println(dt.summary() + " "));
+        System.out.println(dt.summary()));
     }
   }
 }
@@ -58,8 +58,7 @@ public class DelayQueueDemo {
   public static void
   main(String[] args) throws Exception {
     DelayQueue<DelayedTask> tasks =
-      Stream.concat(
-        // Tasks with random delays:
+      Stream.concat( // Random delays:
         new Random(47).ints(20, 0, 4000)
           .mapToObj(DelayedTask::new),
         // Add the summarizing task:
