@@ -39,6 +39,8 @@ class CriticalSection extends Guarded {
 class Caller implements Runnable {
   private Guarded g;
   public Caller(Guarded g) { this.g = g; }
+  private AtomicLong successfulCalls =
+    new AtomicLong();
   private AtomicBoolean stop =
     new AtomicBoolean(false);
   class Stop extends TimerTask {
@@ -48,8 +50,12 @@ class Caller implements Runnable {
   @Override
   public void run() {
     new Timer().schedule(new Stop(), 2500);
-    while(!stop.get())
+    while(!stop.get()) {
       g.method();
+      successfulCalls.getAndIncrement();
+    }
+    System.out.println(
+      "-> " + successfulCalls.get());
   }
 }
 
@@ -72,6 +78,14 @@ public class SynchronizedComparison {
   }
 }
 /* Output:
-CriticalSection: 972
-SynchronizedMethod: 247
+-> 152
+-> 152
+-> 153
+-> 153
+CriticalSection: 610
+-> 44
+-> 28
+-> 62
+-> 24
+SynchronizedMethod: 158
 */
