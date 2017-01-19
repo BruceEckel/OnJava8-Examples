@@ -8,7 +8,8 @@ public class SettingDefaultHandler {
   public static void main(String[] args) {
     Thread.setDefaultUncaughtExceptionHandler(
       new MyUncaughtExceptionHandler());
-    ExecutorService es = Executors.newCachedThreadPool();
+    ExecutorService es =
+      Executors.newCachedThreadPool();
     es.execute(new ExceptionThread());
     es.shutdown();
   }

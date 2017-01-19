@@ -5,7 +5,7 @@
 // Hidden deadlock
 import java.util.*;
 import java.util.concurrent.*;
-import static java.util.concurrent.TimeUnit.*;
+import onjava.Nap;
 
 public class DiningPhilosophers {
   private StickHolder[] sticks;
@@ -17,7 +17,7 @@ public class DiningPhilosophers {
     Arrays.setAll(philosophers, i ->
       new Philosopher(i,
         sticks[i], sticks[(i + 1) % n]));    // [1]
-    // Fix by reversing stick order:
+    // Fix by reversing stick order for this one:
     // philosophers[1] =                     // [2]
     //   new Philosopher(0, sticks[0], sticks[1]);
     Arrays.stream(philosophers)
@@ -27,11 +27,6 @@ public class DiningPhilosophers {
     // Returns right away:
     new DiningPhilosophers(5);               // [4]
     // Keeps main() from exiting:
-    ScheduledExecutorService sched =
-      Executors.newScheduledThreadPool(1);
-    sched.schedule( () -> {
-      System.out.println("Shutdown");
-      sched.shutdown();
-    }, 3, SECONDS);
+    new Nap(3000, "Shutdown");
   }
 }

@@ -1,27 +1,27 @@
-// concurrent/SynchronizedConstructor.java
+// concurrent/SynchronizedFactory.java
 // (c)2017 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 import java.util.concurrent.atomic.*;
 
-class SyncConstructor implements HasID {
+class SyncFactory implements HasID {
   private final int id;
-  private static Object
-    constructorLock = new Object();
-  public SyncConstructor(SharedArg sa) {
-    synchronized(constructorLock) {
-      id = sa.get();
-    }
+  private SyncFactory(SharedArg sa) {
+    id = sa.get();
   }
   @Override
   public int getID() { return id; }
+  public static synchronized
+  SyncFactory factory(SharedArg sa) {
+    return new SyncFactory(sa);
+  }
 }
 
-public class SynchronizedConstructor {
+public class SynchronizedFactory {
   public static void main(String[] args) {
     Unsafe unsafe = new Unsafe();
     IDChecker.test(() ->
-      new SyncConstructor(unsafe));
+      SyncFactory.factory(unsafe));
   }
 }
 /* Output:

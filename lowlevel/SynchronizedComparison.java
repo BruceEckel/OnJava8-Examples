@@ -43,13 +43,11 @@ class Caller implements Runnable {
     new AtomicLong();
   private AtomicBoolean stop =
     new AtomicBoolean(false);
-  class Stop extends TimerTask {
-    @Override
-    public void run() { stop.set(true); }
-  }
   @Override
   public void run() {
-    new Timer().schedule(new Stop(), 2500);
+    new Timer().schedule(new TimerTask() {
+      public void run() { stop.set(true); }
+    }, 2500);
     while(!stop.get()) {
       g.method();
       successfulCalls.getAndIncrement();

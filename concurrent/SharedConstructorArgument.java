@@ -17,7 +17,7 @@ class Safe implements SharedArg {
   private static AtomicInteger counter =
     new AtomicInteger();
   public int get() {
-    return counter.getAndAdd(1);
+    return counter.getAndIncrement();
   }
 }
 
