@@ -3,6 +3,7 @@
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // Displays Charsets and aliases
+// {ValidateByHand} // CI has trouble
 import java.nio.charset.*;
 import java.util.*;
 
