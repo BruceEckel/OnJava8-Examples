@@ -5,6 +5,7 @@
 // Counts instances of a type family
 package onjava;
 import java.util.*;
+import java.util.stream.*;
 
 public class
 TypeCounter extends HashMap<Class<?>, Integer> {
@@ -30,15 +31,11 @@ TypeCounter extends HashMap<Class<?>, Integer> {
   }
   @Override
   public String toString() {
-    StringBuilder result = new StringBuilder("{");
-    for(Map.Entry<Class<?>, Integer> pair : entrySet()) {
-      result.append(pair.getKey().getSimpleName());
-      result.append("=");
-      result.append(pair.getValue());
-      result.append(", ");
-    }
-    result.delete(result.length() - 2, result.length());
-    result.append("}");
-    return result.toString();
+    String result = entrySet().stream()
+      .map(pair -> String.format("%s=%s",
+        pair.getKey().getSimpleName(),
+        pair.getValue()))
+      .collect(Collectors.joining(", "));
+    return "{" + result + "}";
   }
 }

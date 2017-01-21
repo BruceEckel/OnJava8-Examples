@@ -7,7 +7,7 @@ import java.util.*;
 import onjava.*;
 
 class Mail {
-  // The NO's lower the probability of random selection:
+  // The NO's reduce probability of random selection:
   enum GeneralDelivery {YES,NO1,NO2,NO3,NO4,NO5}
   enum Scannability {UNSCANNABLE,YES1,YES2,YES3,YES4}
   enum Readability {ILLEGIBLE,YES1,YES2,YES3,YES4}
@@ -35,10 +35,13 @@ class Mail {
     Mail m = new Mail();
     m.generalDelivery =
       Enums.random(GeneralDelivery.class);
-    m.scannability = Enums.random(Scannability.class);
-    m.readability = Enums.random(Readability.class);
+    m.scannability =
+      Enums.random(Scannability.class);
+    m.readability =
+      Enums.random(Readability.class);
     m.address = Enums.random(Address.class);
-    m.returnAddress = Enums.random(ReturnAddress.class);
+    m.returnAddress =
+      Enums.random(ReturnAddress.class);
     return m;
   }
   public static
@@ -49,9 +52,13 @@ class Mail {
       public Iterator<Mail> iterator() {
         return new Iterator<Mail>() {
           @Override
-          public boolean hasNext() { return n-- > 0; }
+          public boolean hasNext() {
+            return n-- > 0;
+          }
           @Override
-          public Mail next() { return randomMail(); }
+          public Mail next() {
+            return randomMail();
+          }
           @Override
           public void remove() { // Not implemented
             throw new UnsupportedOperationException();

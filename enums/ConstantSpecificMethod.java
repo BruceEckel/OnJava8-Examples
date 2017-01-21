@@ -10,7 +10,8 @@ public enum ConstantSpecificMethod {
     @Override
     String getInfo() {
       return
-        DateFormat.getDateInstance().format(new Date());
+        DateFormat.getDateInstance()
+          .format(new Date());
     }
   },
   CLASSPATH {

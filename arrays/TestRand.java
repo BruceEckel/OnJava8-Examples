@@ -20,7 +20,8 @@ public class TestRand {
     show(a1);
     a1 = new Rand.Boolean().array(SZ + 2);
     show(a1);
-    boolean[] a1b = new Rand.Pboolean().array(SZ + 3);
+    boolean[] a1b =
+      new Rand.Pboolean().array(SZ + 3);
     show(a1b);
 
     System.out.println("Byte");
@@ -63,8 +64,9 @@ public class TestRand {
     int[] a5 = new int[SZ];
     Arrays.setAll(a5, new Rand.Integer()::get);
     show(a5);
-    Integer[] a5b = Stream.generate(new Rand.Integer())
-      .limit(SZ + 1).toArray(Integer[]::new);
+    Integer[] a5b =
+      Stream.generate(new Rand.Integer())
+        .limit(SZ + 1).toArray(Integer[]::new);
     show(a5b);
     a5b = new Rand.Integer().array(SZ + 2);
     show(a5b);
@@ -105,8 +107,9 @@ public class TestRand {
     double[] a8 = new double[SZ];
     Arrays.setAll(a8, new Rand.Double()::get);
     show(a8);
-    Double[] a8b = Stream.generate(new Rand.Double())
-      .limit(SZ + 1).toArray(Double[]::new);
+    Double[] a8b =
+      Stream.generate(new Rand.Double())
+        .limit(SZ + 1).toArray(Double[]::new);
     show(a8b);
     a8b = new Rand.Double().array(SZ + 2);
     show(a8b);

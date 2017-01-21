@@ -15,11 +15,14 @@ public class AtUnitExample4 {
     "middle, and then thin again at the far end.";
   private String word;
   private Random rand = new Random(); // Time-based seed
-  public AtUnitExample4(String word) { this.word = word; }
+  public AtUnitExample4(String word) {
+    this.word = word;
+  }
   public String getWord() { return word; }
   public String scrambleWord() {
     List<Character> chars =
-      Arrays.asList(ConvertTo.boxed(word.toCharArray()));
+      Arrays.asList(
+        ConvertTo.boxed(word.toCharArray()));
     Collections.shuffle(chars, rand);
     StringBuilder result = new StringBuilder();
     for(char ch : chars)
@@ -41,7 +44,7 @@ public class AtUnitExample4 {
     return getWord().equals("are");
   }
   @Test boolean scramble1() {
-    // Change to specific seed to get verifiable results:
+    // Use specific seed to get verifiable results:
     rand = new Random(47);
     System.out.println("'" + getWord() + "'");
     String scrambled = scrambleWord();

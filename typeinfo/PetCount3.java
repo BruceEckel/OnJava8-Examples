@@ -9,8 +9,8 @@ import onjava.*;
 import typeinfo.pets.*;
 
 public class PetCount3 {
-  static class Counter
-  extends LinkedHashMap<Class<? extends Pet>, Integer> {
+  static class Counter extends
+  LinkedHashMap<Class<? extends Pet>, Integer> {
     public Counter() {
       super(LiteralPetCreator.ALL_TYPES.stream()
         .map(lpc -> Pair.make(lpc, 0))
@@ -19,24 +19,19 @@ public class PetCount3 {
     }
     public void count(Pet pet) {
       // Class.isInstance() eliminates instanceofs:
-      for(Map.Entry<Class<? extends Pet>, Integer>
-        pair : entrySet())
-        if(pair.getKey().isInstance(pet))
-          put(pair.getKey(), pair.getValue() + 1);
+      entrySet().stream()
+        .filter(pair -> pair.getKey().isInstance(pet))
+        .forEach(pair ->
+          put(pair.getKey(), pair.getValue() + 1));
     }
     @Override
     public String toString() {
-      StringBuilder result = new StringBuilder("{");
-      for(Map.Entry<Class<? extends Pet>, Integer>
-          pair : entrySet()) {
-        result.append(pair.getKey().getSimpleName());
-        result.append("=");
-        result.append(pair.getValue());
-        result.append(", ");
-      }
-      result.delete(result.length() - 2, result.length());
-      result.append("}");
-      return result.toString();
+      String result = entrySet().stream()
+        .map(pair -> String.format("%s=%s",
+          pair.getKey().getSimpleName(),
+          pair.getValue()))
+        .collect(Collectors.joining(", "));
+      return "{" + result + "}";
     }
   }
   public static void main(String[] args) {

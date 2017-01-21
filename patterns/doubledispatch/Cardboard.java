@@ -12,6 +12,7 @@ public class Cardboard extends patterns.trash.Cardboard
   public Cardboard(double wt) { super(wt); }
   @Override
   public boolean addToBin(List<TypedBin> tbins) {
-    return tbins.stream().anyMatch(tb -> tb.add(this));
+    return tbins.stream()
+      .anyMatch(tb -> tb.add(this));
   }
 }

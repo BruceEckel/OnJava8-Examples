@@ -9,7 +9,7 @@ import static onjava.ArrayShow.*;
 public class ArrayOptions {
   public static void main(String[] args) {
     // Arrays of objects:
-    BerylliumSphere[] a; // Local uninitialized variable
+    BerylliumSphere[] a; // Uninitialized local
     BerylliumSphere[] b = new BerylliumSphere[5];
 
     // The references inside the array are

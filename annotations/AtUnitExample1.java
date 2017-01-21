@@ -23,7 +23,9 @@ public class AtUnitExample1 {
   @Test private boolean m3() { return true; }
   // Shows output for failure:
   @Test boolean failureTest() { return false; }
-  @Test boolean anotherDisappointment() { return false; }
+  @Test boolean anotherDisappointment() {
+    return false;
+  }
 }
 /* Output:
 annotations.AtUnitExample1

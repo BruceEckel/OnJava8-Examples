@@ -52,13 +52,17 @@ public class CarWash {
   }
   EnumSet<Cycle> cycles =
     EnumSet.of(Cycle.BASIC, Cycle.RINSE);
-  public void add(Cycle cycle) { cycles.add(cycle); }
+  public void add(Cycle cycle) {
+    cycles.add(cycle);
+  }
   public void washCar() {
     for(Cycle c : cycles)
       c.action();
   }
   @Override
-  public String toString() { return cycles.toString(); }
+  public String toString() {
+    return cycles.toString();
+  }
   public static void main(String[] args) {
     CarWash wash = new CarWash();
     System.out.println(wash);

@@ -9,23 +9,19 @@ import java.util.function.*;
 // Fill an array using a generator:
 interface FillArray {
   static <T> T[] fill(T[] a, Supplier<T> gen) {
-    for(int i = 0; i < a.length; i++)
-      a[i] = gen.get();
+    Arrays.setAll(a, n -> gen.get());
     return a;
   }
   static int[] fill(int[] a, IntSupplier gen) {
-    for(int i = 0; i < a.length; i++)
-      a[i] = gen.getAsInt();
+    Arrays.setAll(a, n -> gen.getAsInt());
     return a;
   }
   static long[] fill(long[] a, LongSupplier gen) {
-    for(int i = 0; i < a.length; i++)
-      a[i] = gen.getAsLong();
+    Arrays.setAll(a, n -> gen.getAsLong());
     return a;
   }
   static double[] fill(double[] a, DoubleSupplier gen) {
-    for(int i = 0; i < a.length; i++)
-      a[i] = gen.getAsDouble();
+    Arrays.setAll(a, n -> gen.getAsDouble());
     return a;
   }
 }

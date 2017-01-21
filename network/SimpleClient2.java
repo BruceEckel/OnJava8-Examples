@@ -35,7 +35,7 @@ public class SimpleClient2 implements Runnable {
               // Enable auto-flush:
               socket.getOutputStream())), true)
     ) {
-      for (int i = 0; i < 25; i++) {
+      for(int i = 0; i < 25; i++) {
         out.println("Client " + id + ": " + i);
         String str = in.readLine();
         System.out.println(str);

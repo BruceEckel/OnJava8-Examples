@@ -8,15 +8,13 @@ import java.nio.file.*;
 public class ListOfLines {
   public static void
   main(String[] args) throws Exception {
-    List<String> lines = Files.readAllLines(
-      Paths.get("../streams/Cheese.dat"));
-    for(String line : lines) {
-      if(line.startsWith("//"))
-        continue;
-      System.out.println(
-        line.substring(0, line.length()/2));
-    }
-
+    Files.readAllLines(
+      Paths.get("../streams/Cheese.dat"))
+      .stream()
+      .filter(line -> !line.startsWith("//"))
+      .map(line ->
+        line.substring(0, line.length()/2))
+      .forEach(System.out::println);
   }
 }
 /* Output:

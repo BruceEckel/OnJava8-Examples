@@ -14,7 +14,8 @@ public enum SpaceShip {
     return id.charAt(0) + lower;
   }
   public static void main(String[] args) {
-    Stream.of(values()).forEach(System.out::println);
+    Stream.of(values())
+      .forEach(System.out::println);
   }
 }
 /* Output:

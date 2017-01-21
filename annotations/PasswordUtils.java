@@ -12,7 +12,8 @@ public class PasswordUtils {
   }
   @UseCase(id = 48)
   public String encryptPassword(String passwd) {
-   return new StringBuilder(passwd).reverse().toString();
+   return new StringBuilder(passwd)
+    .reverse().toString();
   }
   @UseCase(id = 49, description =
   "New passwords can't equal previously used ones")

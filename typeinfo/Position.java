@@ -25,12 +25,13 @@ class Position {
   public Person getPerson() { return person; }
   public void setPerson(Person newPerson) {
     // Uses empty Person if newPerson is null:
-    person =
-      Optional.ofNullable(newPerson).orElse(new Person());
+    person = Optional.ofNullable(newPerson)
+      .orElse(new Person());
   }
   @Override
   public String toString() {
-    return "Position: " + title + ", Employee: " + person;
+    return "Position: " + title +
+      ", Employee: " + person;
   }
   public static void main(String[] args) {
     System.out.println(new Position("CEO"));

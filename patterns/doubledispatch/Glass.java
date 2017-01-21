@@ -12,6 +12,7 @@ public class Glass extends patterns.trash.Glass
   public Glass(double wt) { super(wt); }
   @Override
   public boolean addToBin(List<TypedBin> tbins) {
-    return tbins.stream().anyMatch(tb -> tb.add(this));
+    return tbins.stream()
+      .anyMatch(tb -> tb.add(this));
   }
 }

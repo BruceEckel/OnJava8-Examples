@@ -9,7 +9,8 @@ package annotations;
 import onjava.atunit.*;
 import onjava.*;
 
-public class StackLStringTest extends StackL<String> {
+public class
+StackLStringTest extends StackL<String> {
   @Test void tPush() {
     push("one");
     assert top().equals("one");

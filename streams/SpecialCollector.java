@@ -13,9 +13,9 @@ public class SpecialCollector {
         .collect(ArrayList::new,
                  ArrayList::add,
                  ArrayList::addAll);
-    for(String s : words)
-      if(s.equals("cheese"))
-        System.out.println(s);
+    words.stream()
+      .filter(s -> s.equals("cheese"))
+      .forEach(System.out::println);
   }
 }
 /* Output:

@@ -9,11 +9,14 @@ package annotations;
 import onjava.atunit.*;
 import onjava.*;
 
-public class AtUnitExternalTest extends AtUnitExample1 {
+public class
+AtUnitExternalTest extends AtUnitExample1 {
   @Test boolean tMethodOne() {
     return methodOne().equals("This is methodOne");
   }
-  @Test boolean tMethodTwo() { return methodTwo() == 2; }
+  @Test boolean tMethodTwo() {
+    return methodTwo() == 2;
+  }
 }
 /* Output:
 annotations.AtUnitExternalTest

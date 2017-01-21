@@ -11,7 +11,9 @@ import onjava.*;
 
 public class AtUnitExample5 {
   private String text;
-  public AtUnitExample5(String text) { this.text = text; }
+  public AtUnitExample5(String text) {
+    this.text = text;
+  }
   @Override
   public String toString() { return text; }
   @TestProperty static PrintWriter output;

@@ -11,7 +11,7 @@ interface OrdinaryGetter {
 }
 
 interface DerivedGetter extends OrdinaryGetter {
-  // Return type of overridden method is allowed to vary:
+  // Overridden method return type can vary:
   @Override
   Derived get();
 }

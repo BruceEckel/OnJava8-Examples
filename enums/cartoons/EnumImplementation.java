@@ -10,8 +10,10 @@ import java.util.function.*;
 
 enum CartoonCharacter
 implements Supplier<CartoonCharacter> {
-  SLAPPY, SPANKY, PUNCHY, SILLY, BOUNCY, NUTTY, BOB;
-  private SplittableRandom rand = new SplittableRandom(47);
+  SLAPPY, SPANKY, PUNCHY,
+  SILLY, BOUNCY, NUTTY, BOB;
+  private Random rand =
+    new Random(47);
   @Override
   public CartoonCharacter get() {
     return values()[rand.nextInt(values().length)];

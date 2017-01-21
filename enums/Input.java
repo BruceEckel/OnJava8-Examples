@@ -16,16 +16,18 @@ public enum Input {
   STOP { // This must be the last instance.
     @Override
     public int amount() { // Disallow
-      throw new RuntimeException("SHUT_DOWN.amount()");
+      throw new
+        RuntimeException("SHUT_DOWN.amount()");
     }
   };
   int value; // In cents
   Input(int value) { this.value = value; }
   Input() {}
   int amount() { return value; }; // In cents
-  static SplittableRandom rand = new SplittableRandom(47);
+  static Random rand = new Random(47);
   public static Input randomSelection() {
     // Don't include STOP:
-    return values()[rand.nextInt(values().length - 1)];
+    return
+      values()[rand.nextInt(values().length - 1)];
   }
 }

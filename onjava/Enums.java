@@ -6,7 +6,7 @@ package onjava;
 import java.util.*;
 
 public class Enums {
-  private static SplittableRandom rand = new SplittableRandom(47);
+  private static Random rand = new Random(47);
   public static
   <T extends Enum<T>> T random(Class<T> ec) {
     return random(ec.getEnumConstants());

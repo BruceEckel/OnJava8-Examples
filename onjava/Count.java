@@ -17,7 +17,9 @@ public interface Count {
       b = !b;
       return java.lang.Boolean.valueOf(b);
     }
-    public java.lang.Boolean get(int n) { return get(); }
+    public java.lang.Boolean get(int n) {
+      return get();
+    }
     public java.lang.Boolean[] array(int sz) {
       java.lang.Boolean[] result =
         new java.lang.Boolean[sz];
@@ -41,9 +43,12 @@ public interface Count {
     private byte b;
     @Override
     public java.lang.Byte get() { return b++; }
-    public java.lang.Byte get(int n) { return get(); }
+    public java.lang.Byte get(int n) {
+      return get();
+    }
     public java.lang.Byte[] array(int sz) {
-      java.lang.Byte[] result = new java.lang.Byte[sz];
+      java.lang.Byte[] result =
+        new java.lang.Byte[sz];
       Arrays.setAll(result, n -> get());
       return result;
     }
@@ -92,9 +97,12 @@ public interface Count {
     short s;
     @Override
     public java.lang.Short get() { return s++; }
-    public java.lang.Short get(int n) { return get(); }
+    public java.lang.Short get(int n) {
+      return get();
+    }
     public java.lang.Short[] array(int sz) {
-      java.lang.Short[] result = new java.lang.Short[sz];
+      java.lang.Short[] result =
+        new java.lang.Short[sz];
       Arrays.setAll(result, n -> get());
       return result;
     }
@@ -112,7 +120,9 @@ public interface Count {
     int i;
     @Override
     public java.lang.Integer get() { return i++; }
-    public java.lang.Integer get(int n) { return get(); }
+    public java.lang.Integer get(int n) {
+      return get();
+    }
     public java.lang.Integer[] array(int sz) {
       java.lang.Integer[] result =
         new java.lang.Integer[sz];
@@ -135,14 +145,18 @@ public interface Count {
     private long l;
     @Override
     public java.lang.Long get() { return l++; }
-    public java.lang.Long get(int n) { return get(); }
+    public java.lang.Long get(int n) {
+      return get();
+    }
     public java.lang.Long[] array(int sz) {
-      java.lang.Long[] result = new java.lang.Long[sz];
+      java.lang.Long[] result =
+        new java.lang.Long[sz];
       Arrays.setAll(result, n -> get());
       return result;
     }
   }
-  public static class Plong implements LongSupplier {
+  public static
+  class Plong implements LongSupplier {
     private long l;
     public long get() { return l++; }
     public long get(int n) { return get(); }
@@ -159,9 +173,12 @@ public interface Count {
     public java.lang.Float get() {
       return java.lang.Float.valueOf(i++);
     }
-    public java.lang.Float get(int n) { return get(); }
+    public java.lang.Float get(int n) {
+      return get();
+    }
     public java.lang.Float[] array(int sz) {
-      java.lang.Float[] result = new java.lang.Float[sz];
+      java.lang.Float[] result =
+        new java.lang.Float[sz];
       Arrays.setAll(result, n -> get());
       return result;
     }
@@ -181,7 +198,9 @@ public interface Count {
     public java.lang.Double get() {
       return java.lang.Double.valueOf(i++);
     }
-    public java.lang.Double get(int n) { return get(); }
+    public java.lang.Double get(int n) {
+      return get();
+    }
     public java.lang.Double[] array(int sz) {
       java.lang.Double[] result =
         new java.lang.Double[sz];

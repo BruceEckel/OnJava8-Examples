@@ -12,6 +12,7 @@ public class Paper extends patterns.trash.Paper
   public Paper(double wt) { super(wt); }
   @Override
   public boolean addToBin(List<TypedBin> tbins) {
-    return tbins.stream().anyMatch(tb -> tb.add(this));
+    return tbins.stream()
+      .anyMatch(tb -> tb.add(this));
   }
 }

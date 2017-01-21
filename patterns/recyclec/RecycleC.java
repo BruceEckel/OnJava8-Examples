@@ -26,14 +26,14 @@ class Tbin<T extends Trash> extends ArrayList<T> {
 }
 
 class TbinList<T extends Trash>
-extends ArrayList<Tbin<? extends T>> { // [*1*]
+extends ArrayList<Tbin<? extends T>> { // [1]
   boolean sort(T t) {
     for(Tbin<? extends T> ts : this)
       if(ts.grab(t))
         return true;
     return false; // bin not found for t
   }
-  void sortBin(Tbin<T> bin) { // [*2*]
+  void sortBin(Tbin<T> bin) { // [2]
     for(T aBin : bin)
       if(!sort(aBin))
         System.err.println("Bin not found");
@@ -53,7 +53,7 @@ public class RecycleC {
     // add one line here: [*3*]
     trashBins.add(new Tbin<>(Cardboard.class));
 
-    trashBins.sortBin(bin); // [*4*]
+    trashBins.sortBin(bin); // [4]
 
     trashBins.forEach(Trash::sumValue);
     Trash.sumValue(bin);

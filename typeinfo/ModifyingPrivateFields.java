@@ -22,7 +22,8 @@ public class ModifyingPrivateFields {
     System.out.println(pf);
     Field f = pf.getClass().getDeclaredField("i");
     f.setAccessible(true);
-    System.out.println("f.getInt(pf): " + f.getInt(pf));
+    System.out.println(
+      "f.getInt(pf): " + f.getInt(pf));
     f.setInt(pf, 47);
     System.out.println(pf);
     f = pf.getClass().getDeclaredField("s");

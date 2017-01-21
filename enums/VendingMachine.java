@@ -125,7 +125,9 @@ public class VendingMachine {
 // For a basic sanity check:
 class RandomInputSupplier implements Supplier<Input> {
   @Override
-  public Input get() { return Input.randomSelection(); }
+  public Input get() {
+    return Input.randomSelection();
+  }
 }
 
 // Create Inputs from a file of ';'-separated strings:
@@ -147,7 +149,8 @@ class FileInputSupplier implements Supplier<Input> {
   public Input get() {
     if(!input.hasNext())
       return null;
-    return Enum.valueOf(Input.class, input.next().trim());
+    return Enum.valueOf(
+      Input.class, input.next().trim());
   }
 }
 /* Output:

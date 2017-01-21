@@ -62,7 +62,7 @@ class Rock implements Item {
 
 public class RoShamBo1 {
   static final int SIZE = 20;
-  private static SplittableRandom rand = new SplittableRandom(47);
+  private static Random rand = new Random(47);
   public static Item newItem() {
     switch(rand.nextInt(3)) {
       default:

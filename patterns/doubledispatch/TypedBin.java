@@ -7,7 +7,7 @@ package patterns.doubledispatch;
 import patterns.trash.*;
 import java.util.*;
 
-public abstract class TypedBin {
+public class TypedBin {
   List<Trash> v = new ArrayList<>();
   protected boolean addIt(Trash t) {
     v.add(t);
