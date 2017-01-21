@@ -4,23 +4,20 @@
 // Visit http://OnJava8.com for more book information.
 // {ValidateByHand}
 import java.io.*;
+import java.util.stream.*;
 
 public class BufferedInputFile {
-  public static String
-  read(String filename) throws IOException {
-    try(
-      BufferedReader in = new BufferedReader(
-        new FileReader(filename))
-    ) {
-      String s;
-      StringBuilder sb = new StringBuilder();
-      while((s = in.readLine())!= null)
-        sb.append(s + "\n");
-      return sb.toString();
+  public static String read(String filename) {
+    try(BufferedReader in = new BufferedReader(
+      new FileReader(filename))) {
+      return in.lines()
+        .collect(Collectors.joining("\n"));
+    } catch(IOException e) {
+      throw new RuntimeException(e);
     }
   }
-  public static void
-  main(String[] args) throws IOException {
-    System.out.print(read("BufferedInputFile.java"));
+  public static void main(String[] args) {
+    System.out.print(
+      read("BufferedInputFile.java"));
   }
 }

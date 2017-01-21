@@ -7,8 +7,7 @@ import java.io.*;
 
 public class FileOutputShortcut {
   static String file = "FileOutputShortcut.dat";
-  public static void
-  main(String[] args) throws IOException {
+  public static void main(String[] args) {
     try(
       BufferedReader in = new BufferedReader(
         new StringReader(BufferedInputFile.read(
@@ -16,12 +15,10 @@ public class FileOutputShortcut {
       // Here's the shortcut:
       PrintWriter out = new PrintWriter(file)
     ) {
-      int lineCount = 1;
-      String s;
-      while((s = in.readLine()) != null )
-        out.println(lineCount++ + ": " + s);
+      in.lines().forEach(out::println);
+    } catch(IOException e) {
+      throw new RuntimeException(e);
     }
-    // Show the stored file:
     System.out.println(BufferedInputFile.read(file));
   }
 }

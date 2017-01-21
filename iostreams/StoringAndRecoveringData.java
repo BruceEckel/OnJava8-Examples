@@ -5,8 +5,7 @@
 import java.io.*;
 
 public class StoringAndRecoveringData {
-  public static void
-  main(String[] args) throws IOException {
+  public static void main(String[] args) {
     try(
       DataOutputStream out = new DataOutputStream(
         new BufferedOutputStream(
@@ -16,6 +15,8 @@ public class StoringAndRecoveringData {
       out.writeUTF("That was pi");
       out.writeDouble(1.41413);
       out.writeUTF("Square root of 2");
+    } catch(IOException e) {
+      throw new RuntimeException(e);
     }
     try(
       DataInputStream in = new DataInputStream(
@@ -28,6 +29,8 @@ public class StoringAndRecoveringData {
       System.out.println(in.readUTF());
       System.out.println(in.readDouble());
       System.out.println(in.readUTF());
+    } catch(IOException e) {
+      throw new RuntimeException(e);
     }
   }
 }

@@ -6,7 +6,7 @@ import java.io.*;
 
 public class UsingRandomAccessFile {
   static String file = "rtest.dat";
-  static void display() throws IOException {
+  public static void display() {
     try(
       RandomAccessFile rf =
         new RandomAccessFile(file, "r")
@@ -15,10 +15,11 @@ public class UsingRandomAccessFile {
         System.out.println(
           "Value " + i + ": " + rf.readDouble());
       System.out.println(rf.readUTF());
+    } catch(IOException e) {
+      throw new RuntimeException(e);
     }
   }
-  public static void
-  main(String[] args) throws IOException {
+  public static void main(String[] args) {
     try(
       RandomAccessFile rf =
         new RandomAccessFile(file, "rw")
@@ -28,6 +29,8 @@ public class UsingRandomAccessFile {
       rf.writeUTF("The end of the file");
       rf.close();
       display();
+    } catch(IOException e) {
+      throw new RuntimeException(e);
     }
     try(
       RandomAccessFile rf =
@@ -37,6 +40,8 @@ public class UsingRandomAccessFile {
       rf.writeDouble(47.0001);
       rf.close();
       display();
+    } catch(IOException e) {
+      throw new RuntimeException(e);
     }
   }
 }

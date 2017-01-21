@@ -6,8 +6,7 @@
 import java.io.*;
 
 public class FormattedMemoryInput {
-  public static void
-  main(String[] args) throws IOException {
+  public static void main(String[] args) {
     try(
       DataInputStream in = new DataInputStream(
         new ByteArrayInputStream(
@@ -18,7 +17,9 @@ public class FormattedMemoryInput {
       while(true)
         System.out.write((char)in.readByte());
     } catch(EOFException e) {
-      System.out.println("End of stream");
+      System.out.println("\nEnd of stream");
+    } catch(IOException e) {
+      throw new RuntimeException(e);
     }
   }
 }
