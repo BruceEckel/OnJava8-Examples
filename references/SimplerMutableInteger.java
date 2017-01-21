@@ -4,6 +4,7 @@
 // Visit http://OnJava8.com for more book information.
 // A trivial wrapper class
 import java.util.*;
+import java.util.stream.*;
 
 class IntValue2 {
   public int n;
@@ -12,16 +13,15 @@ class IntValue2 {
 
 public class SimplerMutableInteger {
   public static void main(String[] args) {
-    List<IntValue2> v = new ArrayList<>();
-    for(int i = 0; i < 10; i++)
-      v.add(new IntValue2(i));
-    for(IntValue2 i : v)
-      System.out.print(i.n + " ");
+    List<IntValue2> v = IntStream.range(0, 10)
+      .mapToObj(IntValue2::new)
+      .collect(Collectors.toList());
+    v.forEach(iv2 ->
+      System.out.print(iv2.n + " "));
     System.out.println();
-    for(int i = 0; i < v.size(); i++)
-      v.get(i).n = v.get(i).n + 1;
-    for(IntValue2 i : v)
-      System.out.print(i.n + " ");
+    v.forEach(iv2 -> iv2.n += 1);
+    v.forEach(iv2 ->
+      System.out.print(iv2.n + " "));
   }
 }
 /* Output:

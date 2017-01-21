@@ -117,7 +117,7 @@ public class CopyConstructor {
       t.getClass().getName());
   }
   public static void slice(Fruit f) {
-    f = new Fruit(f); // Hmmm... will this work? (2)
+    f = new Fruit(f); // [2] Hmmm... will this work?
     System.out.println("In slice, f is a " +
       f.getClass().getName());
   }

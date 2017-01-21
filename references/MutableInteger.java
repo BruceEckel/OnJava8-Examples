@@ -4,6 +4,7 @@
 // Visit http://OnJava8.com for more book information.
 // A changeable wrapper class
 import java.util.*;
+import java.util.stream.*;
 
 class IntValue {
   private int n;
@@ -19,12 +20,11 @@ class IntValue {
 
 public class MutableInteger {
   public static void main(String[] args) {
-    List<IntValue> v = new ArrayList<>();
-    for(int i = 0; i < 10; i++)
-      v.add(new IntValue(i));
+    List<IntValue> v = IntStream.range(0, 10)
+      .mapToObj(IntValue::new)
+      .collect(Collectors.toList());
     System.out.println(v);
-    for(int i = 0; i < v.size(); i++)
-      v.get(i).increment();
+    v.forEach(IntValue::increment);
     System.out.println(v);
   }
 }

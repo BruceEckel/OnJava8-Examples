@@ -40,7 +40,8 @@ public class Snake implements Cloneable {
     Snake s2 = s.clone();
     System.out.println("s2 = " + s2);
     s.increment();
-    System.out.println("after s.increment, s2 = " + s2);
+    System.out.println(
+      "after s.increment, s2 = " + s2);
   }
 }
 /* Output:

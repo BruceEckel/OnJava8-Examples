@@ -5,6 +5,7 @@
 // You must go through a few gyrations
 // to add cloning to your own class
 import java.util.*;
+import java.util.stream.*;
 
 class Int2 implements Cloneable {
   private int i;
@@ -41,18 +42,18 @@ public class AddingClone {
     // Anything inherited is also cloneable:
     Int3 x3 = new Int3(7);
     x3 = (Int3)x3.clone();
-    ArrayList<Int2> v = new ArrayList<>();
-    for(int i = 0; i < 10; i++ )
-      v.add(new Int2(i));
+    ArrayList<Int2> v = IntStream.range(0, 10)
+      .mapToObj(Int2::new)
+      .collect(Collectors
+        .toCollection(ArrayList::new));
     System.out.println("v: " + v);
     ArrayList<Int2> v2 =
       (ArrayList<Int2>)v.clone();
     // Now clone each element:
-    for(int i = 0; i < v.size(); i++)
-      v2.set(i, v2.get(i).clone());
+    IntStream.range(0, v.size())
+      .forEach(i -> v2.set(i, v.get(i).clone()));
     // Increment all v2's elements:
-    for(Int2 i2 : v2)
-      i2.increment();
+    v2.forEach(Int2::increment);
     System.out.println("v2: " + v2);
     // See if it changed v's elements:
     System.out.println("v: " + v);
