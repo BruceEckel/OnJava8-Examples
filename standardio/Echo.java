@@ -7,15 +7,14 @@ import java.io.*;
 import onjava.TimedAbort;
 
 public class Echo {
-  public static void
-  main(String[] args) throws IOException {
-    new TimedAbort(4);
-    BufferedReader stdin = new BufferedReader(
-      new InputStreamReader(System.in));
-    String s;
-    while((s=stdin.readLine()) != null &&
-          s.length() != 0)
-      System.out.println(s);
-    // An empty line or Ctrl-Z terminates the program
+  public static void main(String[] args) {
+    TimedAbort abort = new TimedAbort(2);
+    new BufferedReader(
+      new InputStreamReader(System.in))
+      .lines()
+      .peek(ln -> abort.restart())
+      .forEach(System.out::println);
+    // Ctrl-Z or two seconds inactivity
+    // terminates the program
   }
 }

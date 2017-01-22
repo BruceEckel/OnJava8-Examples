@@ -15,8 +15,8 @@ public class LargeMappedFiles {
       RandomAccessFile tdat =
         new RandomAccessFile("test.dat", "rw")
     ) {
-      MappedByteBuffer out = tdat.getChannel()
-        .map(FileChannel.MapMode.READ_WRITE, 0, length);
+      MappedByteBuffer out = tdat.getChannel().map(
+        FileChannel.MapMode.READ_WRITE, 0, length);
       for(int i = 0; i < length; i++)
         out.put((byte)'x');
       System.out.println("Finished writing");

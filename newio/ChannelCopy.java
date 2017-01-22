@@ -10,8 +10,7 @@ import java.io.*;
 
 public class ChannelCopy {
   private static final int BSIZE = 1024;
-  public static void
-  main(String[] args) throws Exception {
+  public static void main(String[] args) {
     if(args.length != 2) {
       System.out.println(
         "arguments: sourcefile destfile");
@@ -29,6 +28,8 @@ public class ChannelCopy {
         out.write(buffer);
         buffer.clear();  // Prepare for reading
       }
+    } catch(IOException e) {
+      throw new RuntimeException(e);
     }
   }
 }

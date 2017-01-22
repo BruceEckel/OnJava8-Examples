@@ -11,26 +11,23 @@ public class OSExecute {
   public static void command(String command) {
     boolean err = false;
     try {
-      Process process =
-        new ProcessBuilder(command.split(" ")).start();
+      Process process = new ProcessBuilder(
+        command.split(" ")).start();
       try(
         BufferedReader results = new BufferedReader(
-          new InputStreamReader(process.getInputStream()));
+          new InputStreamReader(
+            process.getInputStream()));
         BufferedReader errors = new BufferedReader(
           new InputStreamReader(
             process.getErrorStream()))
       ) {
-        String s;
-        while((s = results.readLine())!= null)
-          System.out.println(s);
-        // Report errors and return nonzero value
-        // to calling process if there are problems:
-        while((s = errors.readLine())!= null) {
-          System.err.println(s);
-          err = true;
-        }
+        results.lines()
+          .forEach(System.out::println);
+        err = errors.lines()
+          .peek(System.err::println)
+          .count() > 0;
       }
-    } catch(Exception e) {
+    } catch(IOException e) {
       throw new RuntimeException(e);
     }
     if(err)

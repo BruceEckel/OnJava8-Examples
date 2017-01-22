@@ -7,8 +7,7 @@ import java.util.concurrent.*;
 import java.io.*;
 
 public class FileLocking {
-  public static void
-  main(String[] args) throws Exception {
+  public static void main(String[] args) {
     try(
       FileOutputStream fos =
         new FileOutputStream("file.txt");
@@ -20,6 +19,8 @@ public class FileLocking {
         fl.release();
         System.out.println("Released Lock");
       }
+    } catch(IOException | InterruptedException e) {
+      throw new RuntimeException(e);
     }
   }
 }

@@ -8,8 +8,7 @@ import java.nio.channels.*;
 import java.io.*;
 
 public class TransferTo {
-  public static void
-  main(String[] args) throws Exception {
+  public static void main(String[] args) {
     if(args.length != 2) {
       System.out.println(
         "arguments: sourcefile destfile");
@@ -24,6 +23,8 @@ public class TransferTo {
       in.transferTo(0, in.size(), out);
       // Or:
       // out.transferFrom(in, 0, in.size());
+    } catch(IOException e) {
+      throw new RuntimeException(e);
     }
   }
 }

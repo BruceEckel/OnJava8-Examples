@@ -4,6 +4,9 @@
 // Visit http://OnJava8.com for more book information.
 package onjava;
 
-public class OSExecuteException extends RuntimeException {
-  public OSExecuteException(String why) { super(why); }
+public class
+OSExecuteException extends RuntimeException {
+  public OSExecuteException(String why) {
+    super(why);
+  }
 }

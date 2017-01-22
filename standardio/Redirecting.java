@@ -6,8 +6,7 @@
 import java.io.*;
 
 public class Redirecting {
-  public static void
-  main(String[] args) throws IOException {
+  public static void main(String[] args) {
     PrintStream console = System.out;
     try(
       BufferedInputStream in = new BufferedInputStream(
@@ -19,13 +18,14 @@ public class Redirecting {
       System.setIn(in);
       System.setOut(out);
       System.setErr(out);
-      BufferedReader br = new BufferedReader(
-        new InputStreamReader(System.in));
-      String s;
-      while((s = br.readLine()) != null)
-        System.out.println(s);
-      out.close(); // Remember this!
+      new BufferedReader(
+        new InputStreamReader(System.in))
+        .lines()
+        .forEach(System.out::println);
+    } catch(IOException e) {
+      throw new RuntimeException(e);
+    } finally {
+      System.setOut(console);
     }
-    System.setOut(console);
   }
 }
