@@ -1,4 +1,4 @@
-// network/TestSimpleServerClient.java
+// network/TestSimpleServer.java
 // (c)2017 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
@@ -6,7 +6,7 @@ import java.net.*;
 import java.util.concurrent.*;
 import onjava.Nap;
 
-public class TestSimpleServerClient {
+public class TestSimpleServer {
   public static void main(String[] args) {
     CompletableFuture.runAsync(
       new SimpleServer());

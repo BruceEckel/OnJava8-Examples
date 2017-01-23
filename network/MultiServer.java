@@ -7,15 +7,16 @@ import java.io.*;
 import java.net.*;
 import java.util.concurrent.*;
 
-class ServeOne implements Runnable {
-  static final int PORT = 8080;
+class Serve1 implements Runnable {
   private ServerSocket ss;
-  public ServeOne(ServerSocket ss) {
+  public Serve1(ServerSocket ss) {
     this.ss = ss;
   }
   @Override
+  public String toString() { return "Serve1: "; }
+  @Override
   public void run() {
-    System.out.println("Starting ServeOne");
+    System.out.println(this + "Running");
     try (
       Socket socket = ss.accept();
       BufferedReader in =
@@ -31,12 +32,12 @@ class ServeOne implements Runnable {
     ) {
       in.lines().anyMatch(message -> {
         if(message.equals("END")) {
-          System.out.println(
+          System.out.println(this +
             "Received END. Closing Socket.");
           return true;
         }
         System.out.println(
-          "Message  : " + message);
+          this + "Message: " + message);
         out.println(message);
         return false;
       });
@@ -49,13 +50,15 @@ class ServeOne implements Runnable {
 public class MultiServer implements Runnable {
   @Override
   public void run() {
-    System.out.println("Running MultiServer");
+    System.out.println("Server: Running");
     try (
       ServerSocket ss =
-        new ServerSocket(ServeOne.PORT)
+        new ServerSocket(SimpleClient.PORT)
     ) {
-      while(true)
-        CompletableFuture.runAsync(new ServeOne(ss));
+      System.out.println("Server: " + ss);
+      for(int i = 0; i < 10; i++)
+        CompletableFuture
+          .runAsync(new Serve1(ss));
     } catch(IOException e) {
       throw new RuntimeException(e);
     }

@@ -7,12 +7,13 @@ import java.io.*;
 import java.net.*;
 
 public class SimpleServer implements Runnable {
-  // Choose a port outside of the range 1-1024:
-  public static final int PORT = 8080;
+  @Override
+  public String toString() { return "Server: "; }
   @Override
   public void run() {
     try (
-      ServerSocket s = new ServerSocket(PORT);
+      ServerSocket s =
+        new ServerSocket(SimpleClient.PORT);
       // Blocks until a connection occurs:
       Socket socket = s.accept();
       BufferedReader in =
@@ -26,16 +27,14 @@ public class SimpleServer implements Runnable {
               // Enable auto-flush:
               socket.getOutputStream())), true)
     ) {
-      System.out.println("Connection: " + socket);
-      in.lines().anyMatch(message->{
-        if (message.equals("END")) {
-          System.out.println(
+      System.out.println(this.toString() + socket);
+      in.lines().anyMatch(message -> {
+        if(message.equals("END")) {
+          System.out.println(this +
             "Received END. Closing Socket.");
           return true;
         }
-        System.out.println(
-          "Server Response: " + message);
-        out.println(message);
+        out.println(this + message);
         return false;
       });
     } catch(IOException e) {

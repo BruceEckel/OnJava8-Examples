@@ -9,11 +9,12 @@ import onjava.Nap;
 public class TestMultiServer {
   public static void main(String[] args) {
     CompletableFuture.runAsync(new MultiServer());
+    new Nap(1); // Let the server get started
     for(int i = 0; i < 10; i++) {
       CompletableFuture.runAsync(
-        new SimpleClient2(Local.host()));
+        new SimpleClient(Local.host()));
     }
-    new Nap(2);
+    new Nap(4);
     // No exceptions mean success
   }
 }

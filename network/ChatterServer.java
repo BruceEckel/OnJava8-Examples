@@ -27,9 +27,8 @@ public class ChatterServer implements Runnable {
         System.out.println(rcvd);
         String echoString =
           "Echoed: " + rcvd;
-        // Extract the address and port from the
-        // received datagram to find out where to
-        // send it back to:
+        // Extract address and port from received
+        // datagram and send it back there:
         DatagramPacket echo =
           Dgram.toDatagram(echoString,
             dp.getAddress(), dp.getPort());
