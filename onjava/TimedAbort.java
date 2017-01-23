@@ -2,18 +2,19 @@
 // (c)2017 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
-// Terminate a program after n seconds
+// Terminate a program after t seconds
 package onjava;
 import java.util.concurrent.*;
 
 public class TimedAbort {
   private volatile boolean restart = true;
-  public TimedAbort(int n, String msg) {
+  public TimedAbort(double t, String msg) {
     CompletableFuture.runAsync(() -> {
       try {
         while(restart) {
           restart = false;
-          TimeUnit.SECONDS.sleep(n);
+          TimeUnit.MILLISECONDS
+            .sleep((int)(1000 * t));
         }
       } catch(InterruptedException e) {
         throw new RuntimeException(e);
@@ -22,8 +23,8 @@ public class TimedAbort {
       System.exit(0);
     });
   }
-  public TimedAbort(int n) {
-    this(n, "TimedAbort " + n);
+  public TimedAbort(double t) {
+    this(t, "TimedAbort " + t);
   }
   public void restart() { restart = true; }
 }
