@@ -9,7 +9,7 @@ public class WhoCalled {
     // Generate an exception to fill in the stack trace
     try {
       throw new Exception();
-    } catch (Exception e) {
+    } catch(Exception e) {
       for(StackTraceElement ste : e.getStackTrace())
         System.out.println(ste.getMethodName());
     }

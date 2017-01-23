@@ -15,7 +15,8 @@ public class SortedMapDemo {
     Integer high = sortedMap.lastKey();
     System.out.println(low);
     System.out.println(high);
-    Iterator<Integer> it = sortedMap.keySet().iterator();
+    Iterator<Integer> it =
+      sortedMap.keySet().iterator();
     for(int i = 0; i <= 6; i++) {
       if(i == 3) low = it.next();
       if(i == 6) high = it.next();

@@ -33,7 +33,7 @@ public class PathInfo {
     info(ap.getParent());
     try {
       info(p.toRealPath());
-    } catch (IOException e) {
+    } catch(IOException e) {
       System.out.println(e);
     }
     URI u = p.toUri();

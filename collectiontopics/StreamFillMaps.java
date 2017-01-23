@@ -7,7 +7,8 @@ import java.util.function.*;
 import java.util.stream.*;
 import onjava.*;
 
-class Letters implements Supplier<Pair<Integer,String>> {
+class Letters
+implements Supplier<Pair<Integer,String>> {
   private int number = 1;
   private char letter = 'A';
   @Override
@@ -21,7 +22,8 @@ public class StreamFillMaps {
     Map<Integer,String> m =
       Stream.generate(new Letters())
       .limit(11)
-      .collect(Collectors.toMap(Pair::key, Pair::value));
+      .collect(Collectors
+        .toMap(Pair::key, Pair::value));
     System.out.println(m);
 
     // Two separate Suppliers:
@@ -30,14 +32,16 @@ public class StreamFillMaps {
     Map<Character,String> mcs = Stream.generate(
       () -> Pair.make(cc.get(), rs.get()))
       .limit(8)
-      .collect(Collectors.toMap(Pair::key, Pair::value));
+      .collect(Collectors
+        .toMap(Pair::key, Pair::value));
     System.out.println(mcs);
 
     // A key Supplier and a single value:
     Map<Character,String> mcs2 = Stream.generate(
       () -> Pair.make(cc.get(), "Val"))
       .limit(8)
-      .collect(Collectors.toMap(Pair::key, Pair::value));
+      .collect(Collectors
+        .toMap(Pair::key, Pair::value));
     System.out.println(mcs2);
   }
 }

@@ -9,11 +9,11 @@ import onjava.Nap;
 public class Baked {
   static class Pan {}
   static Pan pan(Batter b) {
-    new Nap(100);
+    new Nap(0.1);
     return new Pan();
   }
   static Baked heat(Pan p) {
-    new Nap(100);
+    new Nap(0.1);
     return new Baked();
   }
   static CompletableFuture<Baked>

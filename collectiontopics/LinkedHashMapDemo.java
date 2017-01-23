@@ -12,10 +12,11 @@ public class LinkedHashMapDemo {
       new LinkedHashMap<>(new CountMap(9));
     System.out.println(linkedMap);
     // Least-recently-used order:
-    linkedMap = new LinkedHashMap<>(16, 0.75f, true);
+    linkedMap =
+      new LinkedHashMap<>(16, 0.75f, true);
     linkedMap.putAll(new CountMap(9));
     System.out.println(linkedMap);
-    for(int i = 0; i < 6; i++) // Cause accesses:
+    for(int i = 0; i < 6; i++)
       linkedMap.get(i);
     System.out.println(linkedMap);
     linkedMap.get(0);

@@ -11,14 +11,17 @@ import onjava.*;
 
 public class HashSetTest {
   HashSet<String> testObject = new HashSet<>();
-  @Test void initialization() {
+  @Test
+  void initialization() {
     assert testObject.isEmpty();
   }
-  @Test void tContains() {
+  @Test
+  void tContains() {
     testObject.add("one");
     assert testObject.contains("one");
   }
-  @Test void tRemove() {
+  @Test
+  void tRemove() {
     testObject.add("one");
     testObject.remove("one");
     assert testObject.isEmpty();

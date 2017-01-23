@@ -27,7 +27,7 @@ class Wash implements State {
   @Override
   public void run() {
     System.out.println("Washing");
-    new Nap(500);
+    new Nap(0.5);
   }
 }
 
@@ -35,7 +35,7 @@ class Spin implements State {
   @Override
   public void run() {
     System.out.println("Spinning");
-    new Nap(500);
+    new Nap(0.5);
   }
 }
 
@@ -43,7 +43,7 @@ class Rinse implements State {
   @Override
   public void run() {
     System.out.println("Rinsing");
-    new Nap(500);
+    new Nap(0.5);
   }
 }
 

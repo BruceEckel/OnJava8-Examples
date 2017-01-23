@@ -32,7 +32,7 @@ public class TerminationCondition {
     new Book(true);
     // Force garbage collection & finalization:
     System.gc();
-    new Nap(1000); // Delay
+    new Nap(1); // One second delay
   }
 }
 /* Output:

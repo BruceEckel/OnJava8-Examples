@@ -5,23 +5,25 @@
 // Saving the state of a fictitious CAD system
 import java.io.*;
 import java.util.*;
+import java.util.stream.*;
+
+enum Color { RED, BLUE, GREEN }
 
 abstract class Shape implements Serializable {
-  public static final int RED = 1, BLUE = 2, GREEN = 3;
   private int xPos, yPos, dimension;
-  private static SplittableRandom rand = new SplittableRandom(47);
+  private static Random rand = new Random(47);
   private static int counter = 0;
-  public abstract void setColor(int newColor);
-  public abstract int getColor();
+  public abstract void setColor(Color newColor);
+  public abstract Color getColor();
   public Shape(int xVal, int yVal, int dim) {
     xPos = xVal;
     yPos = yVal;
     dimension = dim;
   }
   public String toString() {
-    return getClass() +
-      "color[" + getColor() + "] xPos[" + xPos +
-      "] yPos[" + yPos + "] dim[" + dimension + "]\n";
+    return getClass() + "color[" + getColor() +
+      "] xPos[" + xPos + "] yPos[" + yPos +
+      "] dim[" + dimension + "]\n";
   }
   public static Shape randomFactory() {
     int xVal = rand.nextInt(100);
@@ -37,55 +39,56 @@ abstract class Shape implements Serializable {
 }
 
 class Circle extends Shape {
-  private static int color = RED;
+  private static Color color = Color.RED;
   public Circle(int xVal, int yVal, int dim) {
     super(xVal, yVal, dim);
   }
-  public void setColor(int newColor) { color = newColor; }
-  public int getColor() { return color; }
+  public void setColor(Color newColor) {
+    color = newColor;
+  }
+  public Color getColor() { return color; }
 }
 
 class Square extends Shape {
-  private static int color;
+  private static Color color = Color.RED;
   public Square(int xVal, int yVal, int dim) {
     super(xVal, yVal, dim);
-    color = RED;
   }
-  public void setColor(int newColor) { color = newColor; }
-  public int getColor() { return color; }
+  public void setColor(Color newColor) {
+    color = newColor;
+  }
+  public Color getColor() { return color; }
 }
 
 class Line extends Shape {
-  private static int color = RED;
+  private static Color color = Color.RED;
   public static void
   serializeStaticState(ObjectOutputStream os)
-  throws IOException { os.writeInt(color); }
+  throws IOException { os.writeObject(color); }
   public static void
   deserializeStaticState(ObjectInputStream os)
-  throws IOException { color = os.readInt(); }
+  throws IOException, ClassNotFoundException {
+    color = (Color)os.readObject();
+  }
   public Line(int xVal, int yVal, int dim) {
     super(xVal, yVal, dim);
   }
-  public void setColor(int newColor) { color = newColor; }
-  public int getColor() { return color; }
+  public void setColor(Color newColor) {
+    color = newColor;
+  }
+  public Color getColor() { return color; }
 }
 
 public class AStoreCADState {
-  public static void
-  main(String[] args) throws Exception {
+  public static void main(String[] args) {
     List<Class<? extends Shape>> shapeTypes =
-      new ArrayList<>();
-    // Add references to the class objects:
-    shapeTypes.add(Circle.class);
-    shapeTypes.add(Square.class);
-    shapeTypes.add(Line.class);
-    List<Shape> shapes = new ArrayList<>();
-    // Make some shapes:
-    for(int i = 0; i < 10; i++)
-      shapes.add(Shape.randomFactory());
+      Arrays.asList(
+        Circle.class, Square.class, Line.class);
+    List<Shape> shapes = IntStream.range(0, 10)
+      .mapToObj(i -> Shape.randomFactory())
+      .collect(Collectors.toList());
     // Set all the static colors to GREEN:
-    for(int i = 0; i < 10; i++)
-      ((Shape)shapes.get(i)).setColor(Shape.GREEN);
+    shapes.forEach(s -> s.setColor(Color.GREEN));
     // Save the state vector:
     try(
       ObjectOutputStream out =
@@ -95,21 +98,23 @@ public class AStoreCADState {
       out.writeObject(shapeTypes);
       Line.serializeStaticState(out);
       out.writeObject(shapes);
+    } catch(IOException e) {
+      throw new RuntimeException(e);
     }
     // Display the shapes:
     System.out.println(shapes);
   }
 }
 /* Output:
-[class Circlecolor[3] xPos[35] yPos[37] dim[41]
-, class Squarecolor[3] xPos[20] yPos[77] dim[79]
-, class Linecolor[3] xPos[56] yPos[68] dim[48]
-, class Circlecolor[3] xPos[93] yPos[70] dim[7]
-, class Squarecolor[3] xPos[0] yPos[25] dim[62]
-, class Linecolor[3] xPos[34] yPos[50] dim[82]
-, class Circlecolor[3] xPos[31] yPos[67] dim[66]
-, class Squarecolor[3] xPos[54] yPos[21] dim[6]
-, class Linecolor[3] xPos[63] yPos[39] dim[63]
-, class Circlecolor[3] xPos[13] yPos[90] dim[92]
+[class Circlecolor[GREEN] xPos[58] yPos[55] dim[93]
+, class Squarecolor[GREEN] xPos[61] yPos[61] dim[29]
+, class Linecolor[GREEN] xPos[68] yPos[0] dim[22]
+, class Circlecolor[GREEN] xPos[7] yPos[88] dim[28]
+, class Squarecolor[GREEN] xPos[51] yPos[89] dim[9]
+, class Linecolor[GREEN] xPos[78] yPos[98] dim[61]
+, class Circlecolor[GREEN] xPos[20] yPos[58] dim[16]
+, class Squarecolor[GREEN] xPos[40] yPos[11] dim[22]
+, class Linecolor[GREEN] xPos[4] yPos[83] dim[6]
+, class Circlecolor[GREEN] xPos[75] yPos[10] dim[42]
 ]
 */

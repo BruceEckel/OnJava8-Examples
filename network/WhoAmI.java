@@ -7,7 +7,7 @@ import java.net.*;
 
 public class WhoAmI {
   public static void
-  main(String[] args) throws Exception {
+  main(String[] args) throws UnknownHostException {
     InetAddress whoami = InetAddress.getLocalHost();
     System.out.println(whoami.getHostName());
     System.out.println(whoami.getHostAddress());

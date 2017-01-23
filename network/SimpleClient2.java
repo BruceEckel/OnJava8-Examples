@@ -2,7 +2,6 @@
 // (c)2017 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
-package network;
 import java.net.*;
 import java.io.*;
 
@@ -10,17 +9,13 @@ public class SimpleClient2 implements Runnable {
   private InetAddress address;
   private static int counter = 0;
   private int id = counter++;
-  private static int threadcount = 0;
-  public static int threadCount() {
-    return threadcount;
-  }
   public SimpleClient2(InetAddress address) {
     System.out.println("Making client " + id);
     this.address = address;
-    threadcount++;
   }
   @Override
   public void run() {
+    System.out.println("Running client " + id);
     try (
       Socket socket =
         new Socket(address, ServeOne.PORT);
@@ -41,10 +36,8 @@ public class SimpleClient2 implements Runnable {
         System.out.println(str);
       }
       out.println("END");
-    } catch (IOException ex) {
+    } catch(IOException ex) {
         throw new RuntimeException(ex);
-    } finally {
-      threadcount--; // Ending this thread
     }
   }
 }

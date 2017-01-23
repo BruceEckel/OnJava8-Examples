@@ -28,11 +28,13 @@ public class ReadOnly {
     //- s.add("one"); // Can't change it
 
     // For a SortedSet:
-    Set<String> ss = Collections.unmodifiableSortedSet(
-      new TreeSet<>(data));
+    Set<String> ss =
+      Collections.unmodifiableSortedSet(
+        new TreeSet<>(data));
 
-    Map<String,String> m = Collections.unmodifiableMap(
-      new HashMap<>(Countries.capitals(6)));
+    Map<String,String> m =
+      Collections.unmodifiableMap(
+        new HashMap<>(Countries.capitals(6)));
     System.out.println(m); // Reading is OK
     //- m.put("Ralph", "Howdy!");
 

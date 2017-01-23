@@ -11,19 +11,22 @@ import onjava.*;
 
 public class
 StackLStringTest extends StackL<String> {
-  @Test void tPush() {
+  @Test
+  void tPush() {
     push("one");
     assert top().equals("one");
     push("two");
     assert top().equals("two");
   }
-  @Test void tPop() {
+  @Test
+  void tPop() {
     push("one");
     push("two");
     assert pop().equals("two");
     assert pop().equals("one");
   }
-  @Test void tTop() {
+  @Test
+  void tTop() {
     push("A");
     push("B");
     assert top().equals("B");

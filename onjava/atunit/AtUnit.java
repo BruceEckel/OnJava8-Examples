@@ -146,7 +146,8 @@ public class AtUnit implements ProcessFiles.Strategy {
     m.setAccessible(true);
     return m;
   }
-  private static Object createTestObject(Method creator) {
+  private static Object
+  createTestObject(Method creator) {
     if(creator != null) {
       try {
         return creator.invoke(testClass);
@@ -161,8 +162,9 @@ public class AtUnit implements ProcessFiles.Strategy {
         return testClass.newInstance();
       } catch(InstantiationException |
               IllegalAccessException e) {
-        throw new RuntimeException("Couldn't create a " +
-          "test object. Try using a @TestObject method.");
+        throw new RuntimeException(
+          "Couldn't create a test object. " +
+          "Try using a @TestObject method.");
       }
     }
   }

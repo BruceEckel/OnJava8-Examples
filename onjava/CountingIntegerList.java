@@ -21,7 +21,8 @@ extends AbstractList<Integer> {
   @Override
   public int size() { return size; }
   public static void main(String[] args) {
-    List<Integer> cil = new CountingIntegerList(30);
+    List<Integer> cil =
+      new CountingIntegerList(30);
     System.out.println(cil);
     System.out.println(cil.get(500));
   }

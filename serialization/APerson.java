@@ -3,7 +3,7 @@
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // Use the XOM library to write and read XML
-// You must install nu.xom.Node from http://www.xom.nu
+// nu.xom.Node comes from http://www.xom.nu
 import nu.xom.*;
 import java.io.*;
 import java.util.*;
@@ -25,18 +25,21 @@ public class APerson {
     person.appendChild(lastName);
     return person;
   }
-  // Constructor restores a APerson from an XML Element:
+  // Constructor restores a APerson from XML:
   public APerson(Element person) {
-    first =
-      person.getFirstChildElement("first").getValue();
-    last =
-      person.getFirstChildElement("last").getValue();
+    first = person
+      .getFirstChildElement("first").getValue();
+    last = person
+      .getFirstChildElement("last").getValue();
   }
   @Override
-  public String toString() { return first + " " + last; }
+  public String toString() {
+    return first + " " + last;
+  }
   // Make it human-readable:
   public static void
-  format(OutputStream os, Document doc) throws Exception {
+  format(OutputStream os, Document doc)
+  throws Exception {
     Serializer serializer =
       new Serializer(os,"ISO-8859-1");
     serializer.setIndent(4);

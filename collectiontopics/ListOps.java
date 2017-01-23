@@ -59,7 +59,7 @@ public class ListOps {
     it.add("47");
     // Must move to an element after add():
     it.next();
-    // Remove the element after the newly produced one:
+    // Remove the element after the new one:
     it.remove();
     // Must move to an element after remove():
     it.next();
@@ -75,7 +75,8 @@ public class ListOps {
     System.out.println(a);
     // Insert, remove, and replace elements
     // using a ListIterator:
-    ListIterator<String> x = a.listIterator(a.size()/2);
+    ListIterator<String> x =
+      a.listIterator(a.size()/2);
     x.add("one");
     System.out.println(a);
     System.out.println(x.next());

@@ -9,6 +9,7 @@ import javax.lang.model.SourceVersion;
 import javax.lang.model.element.*;
 import javax.lang.model.util.*;
 import java.util.*;
+import java.util.stream.*;
 import java.io.*;
 
 @SupportedAnnotationTypes(
@@ -20,14 +21,16 @@ extends AbstractProcessor {
     interfaceMethods = new ArrayList<>();
   Elements elementUtils;
   private ProcessingEnvironment processingEnv;
-  @Override public void
-  init(ProcessingEnvironment processingEnv) {
+  @Override
+  public void init(
+    ProcessingEnvironment processingEnv) {
     this.processingEnv = processingEnv;
     elementUtils = processingEnv.getElementUtils();
   }
-  @Override public boolean
-  process(Set<? extends TypeElement> annotations,
-  RoundEnvironment env) {
+  @Override
+  public boolean process(
+    Set<? extends TypeElement> annotations,
+    RoundEnvironment env) {
     for(Element elem:env.getElementsAnnotatedWith(
         ExtractInterface.class)) {
       String interfaceName = elem.getAnnotation(
@@ -66,7 +69,7 @@ extends AbstractProcessor {
         ExecutableElement method =
           (ExecutableElement)elem;
         String signature = "  public ";
-        signature += method.getReturnType()+" ";
+        signature += method.getReturnType() + " ";
         signature += method.getSimpleName();
         signature += createArgList(
           method.getParameters());
@@ -80,15 +83,9 @@ extends AbstractProcessor {
   }
   private String createArgList(
     List<? extends VariableElement> parameters) {
-    if(parameters.size() == 0)
-      return "()";
-    String args = "(";
-    for(VariableElement p : parameters) {
-      args += p.asType() + " ";
-      args += p.getSimpleName() + ", ";
-    }
-    args = args.substring(0, args.length() - 2);
-    args += ")";
-    return args;
+    String args = parameters.stream()
+      .map(p -> p.asType() + " " + p.getSimpleName())
+      .collect(Collectors.joining(", "));
+    return "(" + args + ")";
   }
 }

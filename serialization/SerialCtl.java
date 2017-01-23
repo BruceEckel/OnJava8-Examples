@@ -25,20 +25,29 @@ public class SerialCtl implements Serializable {
     stream.defaultReadObject();
     b = (String)stream.readObject();
   }
-  public static void
-  main(String[] args) throws IOException,
-  ClassNotFoundException {
+  public static void main(String[] args) {
     SerialCtl sc = new SerialCtl("Test1", "Test2");
     System.out.println("Before:\n" + sc);
-    ByteArrayOutputStream buf =
-      new ByteArrayOutputStream();
-    ObjectOutputStream o = new ObjectOutputStream(buf);
-    o.writeObject(sc);
-    // Now get it back:
-    ObjectInputStream in = new ObjectInputStream(
-      new ByteArrayInputStream(buf.toByteArray()));
-    SerialCtl sc2 = (SerialCtl)in.readObject();
-    System.out.println("After:\n" + sc2);
+    try (
+      ByteArrayOutputStream buf =
+        new ByteArrayOutputStream();
+      ObjectOutputStream o =
+        new ObjectOutputStream(buf);
+    ) {
+      o.writeObject(sc);
+      // Now get it back:
+      try (
+        ObjectInputStream in =
+          new ObjectInputStream(
+            new ByteArrayInputStream(
+              buf.toByteArray()));
+      ) {
+        SerialCtl sc2 = (SerialCtl)in.readObject();
+        System.out.println("After:\n" + sc2);
+      }
+    } catch(IOException | ClassNotFoundException e) {
+      throw new RuntimeException(e);
+    }
   }
 }
 /* Output:

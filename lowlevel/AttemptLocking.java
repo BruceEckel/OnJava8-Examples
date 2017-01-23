@@ -43,7 +43,7 @@ public class AttemptLocking {
         al.lock.lock();
         System.out.println("acquired");
     });
-    new Nap(100);  // Give the second task a chance
+    new Nap(0.1);  // Give the second task a chance
     al.untimed(); // False -- lock grabbed by task
     al.timed();   // False -- lock grabbed by task
   }

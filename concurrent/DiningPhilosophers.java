@@ -27,6 +27,6 @@ public class DiningPhilosophers {
     // Returns right away:
     new DiningPhilosophers(5);               // [4]
     // Keeps main() from exiting:
-    new Nap(3000, "Shutdown");
+    new Nap(3, "Shutdown");
   }
 }

@@ -14,8 +14,10 @@ public class MapOps {
     // Produce a Set of the keys:
     System.out.println(map.keySet());
   }
-  public static void test(Map<Integer,String> map) {
-    System.out.println(map.getClass().getSimpleName());
+  public static
+  void test(Map<Integer,String> map) {
+    System.out.println(
+      map.getClass().getSimpleName());
     map.putAll(new CountMap(25));
     // Map has 'Set' behavior for keys:
     map.putAll(new CountMap(25));
@@ -24,9 +26,10 @@ public class MapOps {
     System.out.print("Values: ");
     System.out.println(map.values());
     System.out.println(map);
+    System.out.println("map.containsKey(11): " +
+      map.containsKey(11));
     System.out.println(
-      "map.containsKey(11): " + map.containsKey(11));
-    System.out.println("map.get(11): " + map.get(11));
+      "map.get(11): " + map.get(11));
     System.out.println("map.containsValue(\"F0\"): "
       + map.containsValue("F0"));
     Integer key = map.keySet().iterator().next();
@@ -34,11 +37,13 @@ public class MapOps {
     map.remove(key);
     printKeys(map);
     map.clear();
-    System.out.println("map.isEmpty(): " + map.isEmpty());
+    System.out.println(
+      "map.isEmpty(): " + map.isEmpty());
     map.putAll(new CountMap(25));
     // Operations on the Set change the Map:
     map.keySet().removeAll(map.keySet());
-    System.out.println("map.isEmpty(): " + map.isEmpty());
+    System.out.println(
+      "map.isEmpty(): " + map.isEmpty());
   }
   public static void main(String[] args) {
     test(new HashMap<>());

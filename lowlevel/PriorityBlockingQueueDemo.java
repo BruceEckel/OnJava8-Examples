@@ -11,7 +11,7 @@ import onjava.Nap;
 class Prioritized implements Comparable<Prioritized>  {
   private static AtomicInteger counter =
     new AtomicInteger();
-  private final int id = counter.getAndAdd(1);
+  private final int id = counter.getAndIncrement();
   private final int priority;
   private static List<Prioritized> sequence =
     new CopyOnWriteArrayList<>();
@@ -55,8 +55,7 @@ class Producer implements Runnable {
   public void run() {
     rand.ints(10, 0, 20)
       .mapToObj(Prioritized::new)
-      .peek(p -> new Nap(rand.nextInt(
-        PriorityBlockingQueueDemo.NAPTIME)))
+      .peek(p -> new Nap(rand.nextDouble() / 10))
       .forEach(p -> queue.add(p));
     queue.add(new Prioritized.EndSentinel());
   }
@@ -80,8 +79,7 @@ class Consumer implements Runnable {
           pt.displaySequence();
           break;
         }
-        new Nap(rand.nextInt(
-          PriorityBlockingQueueDemo.NAPTIME));
+        new Nap(rand.nextDouble() / 10);
       } catch(InterruptedException e) {
         throw new RuntimeException(e);
       }
@@ -90,7 +88,6 @@ class Consumer implements Runnable {
 }
 
 public class PriorityBlockingQueueDemo {
-  static final int NAPTIME = 50;
   public static void main(String[] args) {
     PriorityBlockingQueue<Prioritized> queue =
       new PriorityBlockingQueue<>();
@@ -102,42 +99,42 @@ public class PriorityBlockingQueueDemo {
   }
 }
 /* Output:
-[12] Prioritized 1
-[17] Prioritized 2
-[15] Prioritized 0
-[18] Prioritized 17
-[17] Prioritized 10
-[16] Prioritized 20
-[16] Prioritized 16
-[15] Prioritized 15
-[14] Prioritized 8
-[14] Prioritized 13
-[13] Prioritized 12
-[12] Prioritized 19
-[12] Prioritized 14
-[11] Prioritized 6
-[11] Prioritized 22
+[15] Prioritized 1
+[17] Prioritized 0
+[17] Prioritized 5
+[16] Prioritized 6
+[14] Prioritized 9
+[12] Prioritized 2
 [11] Prioritized 4
-[11] Prioritized 31
-[10] Prioritized 30
-[10] Prioritized 26
-[8] Prioritized 18
-[8] Prioritized 23
-[8] Prioritized 9
-[6] Prioritized 24
-[3] Prioritized 3
-[2] Prioritized 29
-[1] Prioritized 7
-[0] Prioritized 27
-[0] Prioritized 5
+[11] Prioritized 12
+[13] Prioritized 13
+[12] Prioritized 16
+[14] Prioritized 18
+[15] Prioritized 23
+[18] Prioritized 26
+[16] Prioritized 29
+[12] Prioritized 17
+[11] Prioritized 30
+[11] Prioritized 24
+[10] Prioritized 15
+[10] Prioritized 22
+[8] Prioritized 25
+[8] Prioritized 11
+[8] Prioritized 10
+[6] Prioritized 31
+[3] Prioritized 7
+[2] Prioritized 20
+[1] Prioritized 3
+[0] Prioritized 19
+[0] Prioritized 8
+[0] Prioritized 14
 [0] Prioritized 21
-[0] Prioritized 11
-[-1] Prioritized 25
-(0:15)(2:17)(1:12)(3:3)(4:11)
-(5:0)(6:11)(7:1)(8:14)(9:8)
-(10:17)(11:0)(12:13)(13:14)(14:12)
-(15:15)(16:16)(17:18)(18:8)(19:12)
-(20:16)(21:0)(22:11)(23:8)(24:6)
-(25:-1)(26:10)(27:0)(28:-1)(29:2)
-(30:10)(31:11)(32:-1)
+[-1] Prioritized 28
+(0:17)(2:12)(1:15)(3:1)(4:11)
+(5:17)(6:16)(7:3)(8:0)(9:14)
+(10:8)(11:8)(12:11)(13:13)(14:0)
+(15:10)(16:12)(17:12)(18:14)(19:0)
+(20:2)(21:0)(22:10)(23:15)(24:11)
+(25:8)(26:18)(27:-1)(28:-1)(29:16)
+(30:11)(31:6)(32:-1)
 */

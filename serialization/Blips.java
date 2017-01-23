@@ -38,9 +38,7 @@ class Blip2 implements Externalizable {
 }
 
 public class Blips {
-  public static void
-  main(String[] args) throws IOException,
-  ClassNotFoundException {
+  public static void main(String[] args) {
     System.out.println("Constructing objects:");
     Blip1 b1 = new Blip1();
     Blip2 b2 = new Blip2();
@@ -51,6 +49,8 @@ public class Blips {
       System.out.println("Saving objects:");
       o.writeObject(b1);
       o.writeObject(b2);
+    } catch(IOException e) {
+      throw new RuntimeException(e);
     }
     // Now get them back:
     System.out.println("Recovering b1:");
@@ -59,6 +59,8 @@ public class Blips {
         new FileInputStream("Blips.serialized"))
     ) {
       b1 = (Blip1)in.readObject();
+    } catch(IOException | ClassNotFoundException e) {
+      throw new RuntimeException(e);
     }
     // OOPS! Throws an exception:
     //- System.out.println("Recovering b2:");

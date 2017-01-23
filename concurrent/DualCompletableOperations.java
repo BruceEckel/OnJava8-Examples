@@ -8,8 +8,8 @@ import static onjava.CompletableUtilities.*;
 public class DualCompletableOperations {
   static CompletableFuture<Workable> cfA, cfB;
   static void init() {
-    cfA = Workable.make("A", 150);
-    cfB = Workable.make("B", 100); // Always wins
+    cfA = Workable.make("A", 0.15);
+    cfB = Workable.make("B", 0.10); // Always wins
   }
   static void join() {
     cfA.join();
@@ -57,16 +57,16 @@ public class DualCompletableOperations {
 
     init();
     CompletableFuture<Workable>
-      cfC = Workable.make("C", 75),
-      cfD = Workable.make("D", 99);
+      cfC = Workable.make("C", 0.08),
+      cfD = Workable.make("D", 0.09);
     CompletableFuture.anyOf(cfA, cfB, cfC, cfD)
       .thenRunAsync(() ->
         System.out.println("anyOf"));
     join();
 
     init();
-    cfC = Workable.make("C", 75);
-    cfD = Workable.make("D", 99);
+    cfC = Workable.make("C", 0.08);
+    cfD = Workable.make("D", 0.09);
     CompletableFuture.allOf(cfA, cfB, cfC, cfD)
       .thenRunAsync(() ->
         System.out.println("allOf"));

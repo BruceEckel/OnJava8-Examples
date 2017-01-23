@@ -13,7 +13,7 @@ public class ListSortSearch {
     System.out.println(list);
     Collections.shuffle(list, new Random(47));
     System.out.println("Shuffled: " + list);
-    // Use a ListIterator to trim off the last elements:
+    // Use ListIterator to trim off last elements:
     ListIterator<String> it = list.listIterator(10);
     while(it.hasNext()) {
       it.next();
@@ -26,8 +26,10 @@ public class ListSortSearch {
     int index = Collections.binarySearch(list, key);
     System.out.println(
       "Location of " + key + " is " + index +
-      ", list.get(" + index + ") = " + list.get(index));
-    Collections.sort(list, String.CASE_INSENSITIVE_ORDER);
+      ", list.get(" + index + ") = " +
+      list.get(index));
+    Collections.sort(list,
+      String.CASE_INSENSITIVE_ORDER);
     System.out.println(
       "Case-insensitive sorted: " + list);
     key = list.get(7);
@@ -35,7 +37,8 @@ public class ListSortSearch {
       String.CASE_INSENSITIVE_ORDER);
     System.out.println(
       "Location of " + key + " is " + index +
-      ", list.get(" + index + ") = " + list.get(index));
+      ", list.get(" + index + ") = " +
+      list.get(index));
   }
 }
 /* Output:

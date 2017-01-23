@@ -5,8 +5,9 @@
 // Demonstration of Stack Class
 import java.util.*;
 
-enum Month { JANUARY, FEBRUARY, MARCH, APRIL, MAY, JUNE,
-  JULY, AUGUST, SEPTEMBER, OCTOBER, NOVEMBER }
+enum Month { JANUARY, FEBRUARY, MARCH, APRIL,
+  MAY, JUNE, JULY, AUGUST, SEPTEMBER,
+  OCTOBER, NOVEMBER }
 
 public class Stacks {
   public static void main(String[] args) {

@@ -22,14 +22,15 @@ class Animal implements Serializable {
 }
 
 public class MyWorld {
-  public static void
-  main(String[] args) throws IOException,
-  ClassNotFoundException {
+  public static void main(String[] args) {
     House house = new House();
     List<Animal> animals = new ArrayList<>();
-    animals.add(new Animal("Bosco the dog", house));
-    animals.add(new Animal("Ralph the hamster", house));
-    animals.add(new Animal("Molly the cat", house));
+    animals.add(
+      new Animal("Bosco the dog", house));
+    animals.add(
+      new Animal("Ralph the hamster", house));
+    animals.add(
+      new Animal("Molly the cat", house));
     System.out.println("animals: " + animals);
     try(
       ByteArrayOutputStream buf1 =
@@ -62,11 +63,16 @@ public class MyWorld {
             animals1 = (List)in1.readObject(),
             animals2 = (List)in1.readObject(),
             animals3 = (List)in2.readObject();
-          System.out.println("animals1: " + animals1);
-          System.out.println("animals2: " + animals2);
-          System.out.println("animals3: " + animals3);
+          System.out.println(
+            "animals1: " + animals1);
+          System.out.println(
+            "animals2: " + animals2);
+          System.out.println(
+            "animals3: " + animals3);
         }
       }
+    } catch(IOException | ClassNotFoundException e) {
+      throw new RuntimeException(e);
     }
   }
 }

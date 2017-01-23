@@ -11,7 +11,7 @@ SynchronizedEvenProducer extends IntGenerator {
   @Override
   public synchronized int next() {
     ++currentEvenValue;
-    new Nap(10); // Cause failure faster
+    new Nap(0.01); // Cause failure faster
     ++currentEvenValue;
     return currentEvenValue;
   }

@@ -8,8 +8,7 @@ import java.util.zip.*;
 import java.io.*;
 
 public class GZIPcompress {
-  public static void
-  main(String[] args) throws IOException {
+  public static void main(String[] args) {
     if(args.length == 0) {
       System.out.println(
         "Usage: \nGZIPcompress file\n" +
@@ -29,6 +28,8 @@ public class GZIPcompress {
       int c;
       while((c = in.read()) != -1)
         out.write(c);
+    } catch(IOException e) {
+      throw new RuntimeException(e);
     }
     System.out.println("Reading file");
     try(
@@ -36,9 +37,9 @@ public class GZIPcompress {
         new InputStreamReader(new GZIPInputStream(
           new FileInputStream("test.gz"))))
     ) {
-      String s;
-      while((s = in2.readLine()) != null)
-        System.out.println(s);
+      in2.lines().forEach(System.out::println);
+    } catch(IOException e) {
+      throw new RuntimeException(e);
     }
   }
 }

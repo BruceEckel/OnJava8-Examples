@@ -13,7 +13,7 @@ public class Pizza {
     Step(int effort) { this.effort = effort; }
     Step forward() {
       if(equals(BOXED)) return BOXED;
-      new Nap(effort * 100);
+      new Nap(effort * 0.1);
       return values()[ordinal() + 1];
     }
   }

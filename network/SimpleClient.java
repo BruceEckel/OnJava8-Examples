@@ -4,7 +4,6 @@
 // Visit http://OnJava8.com for more book information.
 // Sends lines to the server and
 // reads lines the server sends.
-package network;
 import java.net.*;
 import java.io.*;
 
@@ -13,10 +12,12 @@ public class SimpleClient implements Runnable {
   public SimpleClient(InetAddress hostAddress) {
     this.hostAddress = hostAddress;
   }
+  @Override
   public void run() {
     System.out.println("hostAddress = " + hostAddress);
     try (
-      Socket socket = new Socket(hostAddress, SimpleServer.PORT);
+      Socket socket =
+        new Socket(hostAddress, SimpleServer.PORT);
       BufferedReader in =
         new BufferedReader(
           new InputStreamReader(
@@ -35,7 +36,7 @@ public class SimpleClient implements Runnable {
         System.out.println("client Message : " + str);
       }
       out.println("END");
-    } catch (IOException e) {
+    } catch(IOException e) {
       throw new RuntimeException(e);
     }
   }

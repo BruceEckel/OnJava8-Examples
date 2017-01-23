@@ -59,7 +59,8 @@ public class CollectionMethods {
     // Throw away all the elements
     // in c2 that also appear in c3:
     c2.removeAll(c3);
-    System.out.println("c2.isEmpty() = " +  c2.isEmpty());
+    System.out.println(
+      "c2.isEmpty() = " +  c2.isEmpty());
     border();
     // Functional operation:
     c = new ArrayList<>(LIST);

@@ -9,7 +9,7 @@ import onjava.Nap;
 public class ThreadSize {
   static class Dummy extends Thread {
     @Override
-    public void run() { new Nap(1000); }
+    public void run() { new Nap(1); }
   }
   public static void main(String[] args) {
     ExecutorService exec =

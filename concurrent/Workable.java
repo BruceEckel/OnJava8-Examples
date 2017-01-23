@@ -7,8 +7,8 @@ import onjava.Nap;
 
 public class Workable {
   String id;
-  final int duration;
-  public Workable(String id, int duration) {
+  final double duration;
+  public Workable(String id, double duration) {
     this.id = id;
     this.duration = duration;
   }
@@ -17,13 +17,13 @@ public class Workable {
     return "Workable[" + id + "]";
   }
   public static Workable work(Workable tt) {
-    new Nap(tt.duration); // Milliseconds
+    new Nap(tt.duration); // Seconds
     tt.id = tt.id + "W";
     System.out.println(tt);
     return tt;
   }
   public static CompletableFuture<Workable>
-  make(String id, int duration) {
+  make(String id, double duration) {
     return
       CompletableFuture.completedFuture(
         new Workable(id, duration))

@@ -22,14 +22,14 @@ abstract class Guarded {
 
 class SynchronizedMethod extends Guarded {
   public synchronized void method() {
-    new Nap(10);
+    new Nap(0.01);
     callCount.incrementAndGet();
   }
 }
 
 class CriticalSection extends Guarded {
   public void method() {
-    new Nap(10);
+    new Nap(0.01);
     synchronized(this) {
       callCount.incrementAndGet();
     }

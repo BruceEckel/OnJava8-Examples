@@ -19,7 +19,7 @@ public class SingleThreadExecutor {
       System.out.println(
         Thread.currentThread().getName() +
         " awaiting termination");
-      new Nap(100);
+      new Nap(0.1);
     }
   }
 }

@@ -15,6 +15,7 @@ public class DisplayPerfectTime {
     PerfectTime pt =
       (PerfectTime)reg.lookup("PerfectTime");
     for(int i = 0; i < 10; i++)
-      System.out.println("Time: "+ pt.getPerfectTime());
+      System.out.println(
+        "Time: "+ pt.getPerfectTime());
   }
 }

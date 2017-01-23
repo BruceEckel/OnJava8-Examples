@@ -11,7 +11,7 @@ public class Batter {
   static class Sugar {}
   static class Flour {}
   static <T> T prepare(T ingredient) {
-    new Nap(100);
+    new Nap(0.1);
     return ingredient;
   }
   static <T> CompletableFuture<T> prep(T ingredient) {
@@ -27,7 +27,7 @@ public class Batter {
     CompletableFuture
       .allOf(eggs, milk, sugar, flour)
       .join();
-    new Nap(100); // Mixing time
+    new Nap(0.1); // Mixing time
     return
       CompletableFuture.completedFuture(new Batter());
   }

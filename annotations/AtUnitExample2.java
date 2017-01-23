@@ -18,16 +18,20 @@ public class AtUnitExample2 {
     System.out.println("This is methodTwo");
     return 2;
   }
-  @Test void assertExample() {
+  @Test
+  void assertExample() {
     assert methodOne().equals("This is methodOne");
   }
-  @Test void assertFailureExample() {
+  @Test
+  void assertFailureExample() {
     assert 1 == 2: "What a surprise!";
   }
-  @Test void exceptionExample() throws IOException {
+  @Test
+  void exceptionExample() throws IOException {
     new FileInputStream("nofile.txt"); // Throws
   }
-  @Test boolean assertAndReturn() {
+  @Test
+  boolean assertAndReturn() {
     // Assertion with message:
     assert methodTwo() == 2: "methodTwo must equal 2";
     return methodOne().equals("This is methodOne");

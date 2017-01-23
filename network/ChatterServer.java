@@ -3,7 +3,6 @@
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // A server that echoes datagrams
-package network;
 import java.net.*;
 import java.io.*;
 
@@ -12,7 +11,7 @@ public class ChatterServer implements Runnable {
   private byte[] buf = new byte[1000];
   private DatagramPacket dp =
     new DatagramPacket(buf, buf.length);
-
+  @Override
   public void run() {
     // Can listen & send on the same socket:
     try (

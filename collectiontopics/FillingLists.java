@@ -2,7 +2,7 @@
 // (c)2017 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
-// The Collections.fill() + Collections.nCopies() methods
+// Collections.fill() & Collections.nCopies()
 import java.util.*;
 
 class StringAddress {
@@ -17,9 +17,11 @@ class StringAddress {
 public class FillingLists {
   public static void main(String[] args) {
     List<StringAddress> list = new ArrayList<>(
-      Collections.nCopies(4, new StringAddress("Hello")));
+      Collections.nCopies(4,
+        new StringAddress("Hello")));
     System.out.println(list);
-    Collections.fill(list, new StringAddress("World!"));
+    Collections.fill(list,
+      new StringAddress("World!"));
     System.out.println(list);
   }
 }

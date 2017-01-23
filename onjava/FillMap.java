@@ -12,8 +12,8 @@ public class FillMap {
   basic(Supplier<Pair<K,V>> pairGen, int size) {
     return Stream.generate(pairGen)
       .limit(size)
-      .collect(
-        Collectors.toMap(Pair::key, Pair::value));
+      .collect(Collectors
+        .toMap(Pair::key, Pair::value));
   }
   public static <K, V> Map<K,V>
   basic(Supplier<K> keyGen,
@@ -21,18 +21,18 @@ public class FillMap {
     return Stream.generate(
       () -> Pair.make(keyGen.get(), valueGen.get()))
       .limit(size)
-      .collect(
-        Collectors.toMap(Pair::key, Pair::value));
+      .collect(Collectors
+        .toMap(Pair::key, Pair::value));
   }
   public static <K, V, M extends Map<K,V>>
   M create(Supplier<K> keyGen,
            Supplier<V> valueGen,
            Supplier<M> mapSupplier, int size) {
-    return Stream.generate(
-      () -> Pair.make(keyGen.get(), valueGen.get()))
-      .limit(size)
-      .collect(
-        Collectors.toMap(Pair::key, Pair::value,
-                         (k, v) -> k, mapSupplier));
+    return Stream.generate( () ->
+      Pair.make(keyGen.get(), valueGen.get()))
+        .limit(size)
+        .collect(Collectors
+          .toMap(Pair::key, Pair::value,
+                 (k, v) -> k, mapSupplier));
   }
 }

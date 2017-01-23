@@ -6,6 +6,7 @@
 import java.util.concurrent.*;
 import java.io.*;
 import java.util.*;
+import onjava.Nap;
 
 public class Logon implements Serializable {
   private Date date = new Date();
@@ -17,20 +18,23 @@ public class Logon implements Serializable {
   }
   @Override
   public String toString() {
-    return "logon info: \n   username: " + username +
-      "\n   date: " + date + "\n   password: " + password;
+    return "logon info: \n   username: " +
+      username + "\n   date: " + date +
+      "\n   password: " + password;
   }
-  public static void
-  main(String[] args) throws Exception {
+  public static void main(String[] args) {
     Logon a = new Logon("Hulk", "myLittlePony");
     System.out.println("logon a = " + a);
     try(
-      ObjectOutputStream o = new ObjectOutputStream(
-        new FileOutputStream("Logon.dat"))
+      ObjectOutputStream o =
+        new ObjectOutputStream(
+          new FileOutputStream("Logon.dat"))
     ) {
       o.writeObject(a);
+    } catch(IOException e) {
+      throw new RuntimeException(e);
     }
-    TimeUnit.SECONDS.sleep(1); // Delay
+    new Nap(1);
     // Now get them back:
     try(
       ObjectInputStream in = new ObjectInputStream(
@@ -39,6 +43,8 @@ public class Logon implements Serializable {
       System.out.println(
         "Recovering object at " + new Date());
       a = (Logon)in.readObject();
+    } catch(IOException | ClassNotFoundException e) {
+      throw new RuntimeException(e);
     }
     System.out.println("logon a = " + a);
   }
@@ -46,11 +52,11 @@ public class Logon implements Serializable {
 /* Output:
 logon a = logon info:
    username: Hulk
-   date: Wed Jul 27 10:50:53 MDT 2016
+   date: Sat Jan 21 22:06:35 PST 2017
    password: myLittlePony
-Recovering object at Wed Jul 27 10:50:55 MDT 2016
+Recovering object at Sat Jan 21 22:06:36 PST 2017
 logon a = logon info:
    username: Hulk
-   date: Wed Jul 27 10:50:53 MDT 2016
+   date: Sat Jan 21 22:06:35 PST 2017
    password: null
 */

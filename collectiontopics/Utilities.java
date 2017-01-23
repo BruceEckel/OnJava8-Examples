@@ -13,8 +13,10 @@ public class Utilities {
     System.out.println("'list' disjoint (Four)?: " +
       Collections.disjoint(list,
         Collections.singletonList("Four")));
-    System.out.println("max: " + Collections.max(list));
-    System.out.println("min: " + Collections.min(list));
+    System.out.println(
+      "max: " + Collections.max(list));
+    System.out.println(
+      "min: " + Collections.min(list));
     System.out.println(
       "max w/ comparator: " + Collections.max(list,
       String.CASE_INSENSITIVE_ORDER));
@@ -45,12 +47,14 @@ public class Utilities {
     System.out.println("fill: " + list);
     System.out.println("frequency of 'pop': " +
       Collections.frequency(list, "pop"));
-    List<String> dups = Collections.nCopies(3, "snap");
+    List<String> dups =
+      Collections.nCopies(3, "snap");
     System.out.println("dups: " + dups);
     System.out.println("'list' disjoint 'dups'?: " +
       Collections.disjoint(list, dups));
     // Getting an old-style Enumeration:
-    Enumeration<String> e = Collections.enumeration(dups);
+    Enumeration<String> e =
+      Collections.enumeration(dups);
     Vector<String> v = new Vector<>();
     while(e.hasMoreElements())
       v.addElement(e.nextElement());

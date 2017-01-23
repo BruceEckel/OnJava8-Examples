@@ -34,7 +34,8 @@ class ToDoItem implements Comparable<ToDoItem> {
 
 class ToDoList {
   public static void main(String[] args) {
-    PriorityQueue<ToDoItem> toDo = new PriorityQueue<>();
+    PriorityQueue<ToDoItem> toDo =
+      new PriorityQueue<>();
     toDo.add(new ToDoItem("Empty trash", 'C', 4));
     toDo.add(new ToDoItem("Feed dog", 'A', 2));
     toDo.add(new ToDoItem("Feed bird", 'B', 7));

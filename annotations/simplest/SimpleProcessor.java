@@ -14,9 +14,10 @@ import java.util.*;
 @SupportedSourceVersion(SourceVersion.RELEASE_8)
 public class SimpleProcessor
 extends AbstractProcessor {
-  @Override public boolean
-  process(Set<? extends TypeElement> annotations,
-  RoundEnvironment env) {
+  @Override
+  public boolean process(
+    Set<? extends TypeElement> annotations,
+    RoundEnvironment env) {
     for(TypeElement t : annotations)
       System.out.println(t);
     for(Element el :

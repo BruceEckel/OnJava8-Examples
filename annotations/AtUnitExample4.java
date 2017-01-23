@@ -20,30 +20,33 @@ public class AtUnitExample4 {
   }
   public String getWord() { return word; }
   public String scrambleWord() {
-    List<Character> chars =
-      Arrays.asList(
-        ConvertTo.boxed(word.toCharArray()));
+    List<Character> chars = Arrays.asList(
+      ConvertTo.boxed(word.toCharArray()));
     Collections.shuffle(chars, rand);
     StringBuilder result = new StringBuilder();
     for(char ch : chars)
       result.append(ch);
     return result.toString();
   }
-  @TestProperty static List<String> input =
+  @TestProperty
+  static List<String> input =
     Arrays.asList(theory.split(" "));
   @TestProperty
-    static Iterator<String> words = input.iterator();
-  @TestObjectCreate static AtUnitExample4 create() {
+  static Iterator<String> words = input.iterator();
+  @TestObjectCreate
+  static AtUnitExample4 create() {
     if(words.hasNext())
       return new AtUnitExample4(words.next());
     else
       return null;
   }
-  @Test boolean words() {
+  @Test
+  boolean words() {
     System.out.println("'" + getWord() + "'");
     return getWord().equals("are");
   }
-  @Test boolean scramble1() {
+  @Test
+  boolean scramble1() {
     // Use specific seed to get verifiable results:
     rand = new Random(47);
     System.out.println("'" + getWord() + "'");
@@ -51,7 +54,8 @@ public class AtUnitExample4 {
     System.out.println(scrambled);
     return scrambled.equals("lAl");
   }
-  @Test boolean scramble2() {
+  @Test
+  boolean scramble2() {
     rand = new Random(74);
     System.out.println("'" + getWord() + "'");
     String scrambled = scrambleWord();

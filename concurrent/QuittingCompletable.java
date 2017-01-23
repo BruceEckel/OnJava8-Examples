@@ -17,7 +17,7 @@ public class QuittingCompletable {
       tasks.stream()
         .map(CompletableFuture::runAsync)
         .collect(Collectors.toList());
-    new Nap(1000);
+    new Nap(1);
     tasks.forEach(QuittableTask::quit);
     cfutures.forEach(CompletableFuture::join);
   }

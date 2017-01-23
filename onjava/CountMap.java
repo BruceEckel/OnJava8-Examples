@@ -37,7 +37,9 @@ extends AbstractMap<Integer,String> {
     @Override
     public Integer getKey() { return index; }
     @Override
-    public String getValue() { return value(index); }
+    public String getValue() {
+      return value(index);
+    }
     @Override
     public String setValue(String value) {
       throw new UnsupportedOperationException();
@@ -52,8 +54,8 @@ extends AbstractMap<Integer,String> {
     // LinkedHashSet retains initialization order:
     return IntStream.range(0, size)
       .mapToObj(Entry::new)
-      .collect(
-        Collectors.toCollection(LinkedHashSet::new));
+      .collect(Collectors
+        .toCollection(LinkedHashSet::new));
   }
   public static void main(String[] args) {
     final int LIM = 6;

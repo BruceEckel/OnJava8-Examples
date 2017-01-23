@@ -11,10 +11,12 @@ import onjava.*;
 
 public class
 AtUnitExternalTest extends AtUnitExample1 {
-  @Test boolean tMethodOne() {
+  @Test
+  boolean tMethodOne() {
     return methodOne().equals("This is methodOne");
   }
-  @Test boolean tMethodTwo() {
+  @Test
+  boolean tMethodTwo() {
     return methodTwo() == 2;
   }
 }

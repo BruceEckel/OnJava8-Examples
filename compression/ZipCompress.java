@@ -11,8 +11,7 @@ import java.io.*;
 import java.util.*;
 
 public class ZipCompress {
-  public static void
-  main(String[] args) throws IOException {
+  public static void main(String[] args) {
     try(
       FileOutputStream f =
         new FileOutputStream("test.zip");
@@ -40,6 +39,8 @@ public class ZipCompress {
       // Checksum valid only after the file is closed!
       System.out.println(
         "Checksum: " + csum.getChecksum().getValue());
+    } catch(IOException e) {
+      throw new RuntimeException(e);
     }
     // Now extract the files:
     System.out.println("Reading file");
@@ -62,6 +63,8 @@ public class ZipCompress {
       if(args.length == 1)
         System.out.println(
           "Checksum: "+csumi.getChecksum().getValue());
+    } catch(IOException e) {
+      throw new RuntimeException(e);
     }
     // Alternative way to open and read Zip files:
     try(
@@ -73,6 +76,8 @@ public class ZipCompress {
         System.out.println("File: " + ze2);
         // ... and extract the data as before
       }
+    } catch(IOException e) {
+      throw new RuntimeException(e);
     }
   }
 }

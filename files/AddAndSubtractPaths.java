@@ -18,7 +18,7 @@ public class AddAndSubtractPaths {
     try {
       System.out.println("RealPath: "
         + result.toRealPath());
-    } catch (IOException e) {
+    } catch(IOException e) {
       System.out.println(e);
     }
   }

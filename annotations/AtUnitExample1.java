@@ -16,14 +16,19 @@ public class AtUnitExample1 {
     System.out.println("This is methodTwo");
     return 2;
   }
-  @Test boolean methodOneTest() {
+  @Test
+  boolean methodOneTest() {
     return methodOne().equals("This is methodOne");
   }
-  @Test boolean m2() { return methodTwo() == 2; }
-  @Test private boolean m3() { return true; }
+  @Test
+  boolean m2() { return methodTwo() == 2; }
+  @Test
+  private boolean m3() { return true; }
   // Shows output for failure:
-  @Test boolean failureTest() { return false; }
-  @Test boolean anotherDisappointment() {
+  @Test
+  boolean failureTest() { return false; }
+  @Test
+  boolean anotherDisappointment() {
     return false;
   }
 }

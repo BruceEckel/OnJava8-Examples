@@ -9,7 +9,7 @@ import onjava.Nap;
 class Frosting {
   private Frosting() {}
   static CompletableFuture<Frosting> make() {
-    new Nap(100);
+    new Nap(0.1);
     return CompletableFuture
       .completedFuture(new Frosting());
   }
@@ -17,7 +17,7 @@ class Frosting {
 
 public class FrostedCake {
   public FrostedCake(Baked baked, Frosting frosting) {
-    new Nap(100);
+    new Nap(0.1);
   }
   @Override
   public String toString() { return "FrostedCake"; }

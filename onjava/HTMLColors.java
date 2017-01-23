@@ -186,7 +186,8 @@ public class HTMLColors {
     Arrays.stream(ARRAY)
       .map(item -> (Integer)item[0])
       .collect(Collectors.toList());
-  public static void show(Map.Entry<Integer,String> e) {
+  public static
+  void show(Map.Entry<Integer,String> e) {
     System.out.format(
       "0x%06X: %s\n", e.getKey(), e.getValue());
   }

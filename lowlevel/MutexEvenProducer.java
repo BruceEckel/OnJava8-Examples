@@ -14,7 +14,7 @@ public class MutexEvenProducer extends IntGenerator {
     lock.lock();
     try {
       ++currentEvenValue;
-      new Nap(10); // Cause failure faster
+      new Nap(0.01); // Cause failure faster
       ++currentEvenValue;
       return currentEvenValue;
     } finally {

@@ -17,7 +17,7 @@ public class QuittingTasks {
         .mapToObj(QuittableTask::new)
         .peek(qt -> es.execute(qt))
         .collect(Collectors.toList());
-    new Nap(1000);
+    new Nap(1);
     tasks.forEach(QuittableTask::quit);
     es.shutdown();
   }

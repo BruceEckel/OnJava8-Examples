@@ -41,7 +41,8 @@ public class CanonicalMapping {
     if(args.length > 0)
       size = new Integer(args[0]);
     Key[] keys = new Key[size];
-    WeakHashMap<Key,Value> map = new WeakHashMap<>();
+    WeakHashMap<Key,Value> map =
+      new WeakHashMap<>();
     for(int i = 0; i < size; i++) {
       Key k = new Key(Integer.toString(i));
       Value v = new Value(Integer.toString(i));

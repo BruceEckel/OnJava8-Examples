@@ -6,7 +6,8 @@
 import java.util.*;
 
 public class Unsupported {
-  static void check(String description, Runnable tst) {
+  static void
+  check(String description, Runnable tst) {
     try {
       tst.run();
     } catch(Exception e) {

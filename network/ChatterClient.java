@@ -3,7 +3,6 @@
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // Starts multiple clients, each of which sends datagrams.
-package network;
 import java.net.*;
 import java.io.*;
 

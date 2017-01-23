@@ -3,14 +3,13 @@
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // Echoes what the client sends.
-package network;
 import java.io.*;
 import java.net.*;
 
 public class SimpleServer implements Runnable {
   // Choose a port outside of the range 1-1024:
   public static final int PORT = 8080;
-
+  @Override
   public void run() {
     try (
       ServerSocket s = new ServerSocket(PORT);
@@ -30,14 +29,16 @@ public class SimpleServer implements Runnable {
       System.out.println("Connection: " + socket);
       in.lines().anyMatch(message->{
         if (message.equals("END")) {
-          System.out.println("Received END. Closing Socket.");
+          System.out.println(
+            "Received END. Closing Socket.");
           return true;
         }
-        System.out.println("Server Response: " + message);
+        System.out.println(
+          "Server Response: " + message);
         out.println(message);
         return false;
       });
-    } catch (IOException e) {
+    } catch(IOException e) {
       throw new RuntimeException(e);
     }
   }

@@ -17,7 +17,7 @@ public class Machina {
   public Machina(int id) { this.id = id; }
   public static Machina work(Machina m) {
     if(!m.state.equals(State.END)){
-      new Nap(100);
+      new Nap(0.1);
       m.state = m.state.step();
     }
     System.out.println(m);
