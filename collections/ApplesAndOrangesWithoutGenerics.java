@@ -32,6 +32,6 @@ public class ApplesAndOrangesWithoutGenerics {
 ___[ Error Output ]___
 Exception in thread "main" java.lang.ClassCastException:
 Orange cannot be cast to Apple
-        at ApplesAndOrangesWithoutGenerics.main(ApplesAndOr
+   at ApplesAndOrangesWithoutGenerics.main(ApplesAndOr
 angesWithoutGenerics.java:23)
 */

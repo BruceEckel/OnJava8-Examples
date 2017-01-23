@@ -35,6 +35,8 @@ public class ChatterServer implements Runnable {
             dp.getAddress(), dp.getPort());
         socket.send(echo);
       }
-    } catch(IOException e) { throw new RuntimeException(e); }
+    } catch(IOException e) {
+      throw new RuntimeException(e);
+    }
   }
 }

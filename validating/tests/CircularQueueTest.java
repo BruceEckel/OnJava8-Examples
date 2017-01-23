@@ -92,7 +92,8 @@ public class CircularQueueTest {
 testNullPut
 put() null item
 testCircularity
-in = 0, out = 0, full() = true, empty() = false, CircularQueue =
+in = 0, out = 0, full() = true, empty() = false,
+CircularQueue =
 [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 0
 1
@@ -104,10 +105,12 @@ in = 0, out = 0, full() = true, empty() = false, CircularQueue =
 7
 8
 9
-in = 0, out = 0, full() = false, empty() = true, CircularQueue =
+in = 0, out = 0, full() = false, empty() = true,
+CircularQueue =
 [null, null, null, null, null, null, null, null, null,
 null]
-in = 0, out = 0, full() = true, empty() = false, CircularQueue =
+in = 0, out = 0, full() = true, empty() = false,
+CircularQueue =
 [10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
 10
 11
@@ -119,16 +122,19 @@ in = 0, out = 0, full() = true, empty() = false, CircularQueue =
 17
 18
 19
-in = 0, out = 0, full() = false, empty() = true, CircularQueue =
+in = 0, out = 0, full() = false, empty() = true,
+CircularQueue =
 [null, null, null, null, null, null, null, null, null,
 null]
 testFull
-in = 5, out = 0, full() = false, empty() = false, CircularQueue =
+in = 5, out = 0, full() = false, empty() = false,
+CircularQueue =
 [0, 1, 2, 3, 4, null, null, null, null, null]
 0
 1
 put() into full CircularQueue
-in = 2, out = 2, full() = true, empty() = false, CircularQueue =
+in = 2, out = 2, full() = true, empty() = false,
+CircularQueue =
 [10, 11, 2, 3, 4, 5, 6, 7, 8, 9]
 testEmpty
 0
@@ -137,7 +143,8 @@ testEmpty
 3
 4
 get() from empty CircularQueue
-in = 5, out = 5, full() = false, empty() = true, CircularQueue =
+in = 5, out = 5, full() = false, empty() = true,
+CircularQueue =
 [null, null, null, null, null, null, null, null, null,
 null]
 */

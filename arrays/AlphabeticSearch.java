@@ -14,12 +14,16 @@ public class AlphabeticSearch {
     show(sa);
     int index = Arrays.binarySearch(sa,
       sa[10], String.CASE_INSENSITIVE_ORDER);
-    System.out.println( "Index: "+ index + "\n"+ sa[index]);
+    System.out.println(
+     "Index: "+ index + "\n"+ sa[index]);
   }
 }
 /* Output:
 [anmkkyh, bhmupju, btpenpc, cjwzmmr, cuxszgv,
-eloztdv, ewcippc, ezdeklu, fcjpthl, fqmlgsh, gmeinne, hyoubzl, jbvlgwc, jlxpqds,
-ljlbynx, mvducuj, qgekgly, skddcat, taprwxz, uybypgp, vjsszkn, vniyapk, vqqakbm,
-vwodhcf, ydpulcq, ygpoalk, yskvett, zehpfmm, zofmmvm, zrxmclh] Index: 10 gmeinne
+eloztdv, ewcippc, ezdeklu, fcjpthl,
+fqmlgsh, gmeinne, hyoubzl, jbvlgwc, jlxpqds,
+ljlbynx, mvducuj, qgekgly, skddcat,
+taprwxz, uybypgp, vjsszkn, vniyapk, vqqakbm,
+vwodhcf, ydpulcq, ygpoalk, yskvett,
+zehpfmm, zofmmvm, zrxmclh] Index: 10 gmeinne
 */

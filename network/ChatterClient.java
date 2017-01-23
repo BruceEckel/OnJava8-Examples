@@ -16,7 +16,8 @@ public class ChatterClient implements Runnable {
 
   public ChatterClient(InetAddress hostAddress) {
     this.hostAddress = hostAddress;
-    System.out.println("ChatterClient #" + id + " starting");
+    System.out.println(
+      "ChatterClient #" + id + " starting");
   }
   public void sendAndEcho(String msg) {
     try (
@@ -42,6 +43,7 @@ public class ChatterClient implements Runnable {
   @Override
   public void run() {
     for(int i = 0; i <= 5; i++)
-      sendAndEcho("Client #" + id + ", message #" + i);
+      sendAndEcho(
+        "Client #" + id + ", message #" + i);
   }
 }

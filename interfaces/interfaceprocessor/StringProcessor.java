@@ -44,6 +44,6 @@ IF SHE WEIGHS THE SAME AS A DUCK, SHE'S MADE OF WOOD
 Using Processor Downcase
 if she weighs the same as a duck, she's made of wood
 Using Processor Splitter
-[If, she, weighs, the, same, as, a, duck,, she's, made, of,
-wood]
+[If, she, weighs, the, same, as, a, duck,, she's, made,
+of, wood]
 */
