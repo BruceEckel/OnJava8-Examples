@@ -7,12 +7,14 @@ import java.util.concurrent.*;
 import onjava.Nap;
 
 public class TestMultiServer {
+  public static final int port = 8080;
   public static void main(String[] args) {
-    CompletableFuture.runAsync(new MultiServer());
+    CompletableFuture.runAsync(
+      new MultiServer(port));
     new Nap(1); // Let the server get started
     for(int i = 0; i < 10; i++) {
       CompletableFuture.runAsync(
-        new SimpleClient(Local.host()));
+        new SimpleClient(Local.host(), port));
     }
     new Nap(4);
     // No exceptions mean success

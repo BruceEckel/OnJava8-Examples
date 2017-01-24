@@ -7,15 +7,18 @@ import java.io.*;
 import java.net.*;
 
 public class SimpleServer implements Runnable {
+  private ServerSocket ss;
+  public SimpleServer(ServerSocket ss) {
+    this.ss = ss;
+  }
   @Override
   public String toString() { return "Server: "; }
   @Override
   public void run() {
+    System.out.println(this + "Running");
     try (
-      ServerSocket s =
-        new ServerSocket(SimpleClient.PORT);
       // Blocks until a connection occurs:
-      Socket socket = s.accept();
+      Socket socket = ss.accept();
       BufferedReader in =
         new BufferedReader(
           new InputStreamReader(
@@ -24,7 +27,7 @@ public class SimpleServer implements Runnable {
         new PrintWriter(
           new BufferedWriter(
             new OutputStreamWriter(
-              // Enable auto-flush:
+              // Boolean enables auto-flush:
               socket.getOutputStream())), true)
     ) {
       System.out.println(this.toString() + socket);

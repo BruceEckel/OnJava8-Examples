@@ -8,14 +8,14 @@ import java.io.*;
 import java.util.concurrent.atomic.*;
 
 public class SimpleClient implements Runnable {
-  // Choose a port outside of the range 1-1024:
-  public static final int PORT = 8080;
+  public final int port;
   private static AtomicInteger idcount =
     new AtomicInteger(0);
   private final int id = idcount.getAndIncrement();
-  private InetAddress hostAddress;
-  public SimpleClient(InetAddress hostAddress) {
-    this.hostAddress = hostAddress;
+  private InetAddress host;
+  public SimpleClient(InetAddress host, int port) {
+    this.host = host;
+    this.port = port;
   }
   @Override
   public String toString() {
@@ -25,7 +25,7 @@ public class SimpleClient implements Runnable {
   public void run() {
     System.out.println(this + "Running");
     try(
-      Socket socket = new Socket(hostAddress, PORT);
+      Socket socket = new Socket(host, port);
       BufferedReader in =
         new BufferedReader(
           new InputStreamReader(

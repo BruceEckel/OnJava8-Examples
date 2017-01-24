@@ -7,15 +7,15 @@ import java.net.*;
 import java.io.*;
 
 public class ChatterClient implements Runnable {
-  private InetAddress hostAddress;
+  private InetAddress host;
   private byte[] buf = new byte[1000];
   private DatagramPacket dp =
     new DatagramPacket(buf, buf.length);
   private static int counter = 0;
   private int id = counter++;
 
-  public ChatterClient(InetAddress hostAddress) {
-    this.hostAddress = hostAddress;
+  public ChatterClient(InetAddress host) {
+    this.host = host;
     System.out.println(
       "ChatterClient #" + id + " starting");
   }
@@ -26,7 +26,7 @@ public class ChatterClient implements Runnable {
     ) {
       // Make and send a datagram:
       s.send(Dgram.toDatagram(
-        msg, hostAddress, ChatterServer.INPORT));
+        msg, host, ChatterServer.INPORT));
       // Block until it echoes back:
       s.receive(dp);
       // Display the echoed contents:
