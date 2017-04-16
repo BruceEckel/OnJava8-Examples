@@ -37,7 +37,7 @@ public class HTMLColorTest {
 0xFFF8DC: Cornsilk
 0xDC143C: Crimson
 0x00FFFF: Cyan
-------------------------------
+******************************
 AliceBlue             0xF0F8FF
 AntiqueWhite          0xFAEBD7
 Aquamarine            0x7FFFD4
@@ -58,7 +58,7 @@ CornflowerBlue        0x6495ED
 Cornsilk              0xFFF8DC
 Crimson               0xDC143C
 Cyan                  0x00FFFF
-------------------------------
+******************************
 AliceBlue
 AntiqueWhite
 Aquamarine
@@ -79,7 +79,7 @@ CornflowerBlue
 Cornsilk
 Crimson
 Cyan
-------------------------------
+******************************
 0xF0F8FF
 0xFAEBD7
 0x7FFFD4

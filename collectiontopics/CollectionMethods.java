@@ -79,10 +79,10 @@ Aquamarine
 Azure
 ten
 eleven
-------------------------------
+******************************
 Collections.max(c) = ten
 Collections.min(c) = AliceBlue
-------------------------------
+******************************
 AliceBlue
 AntiqueWhite
 Aquamarine
@@ -93,7 +93,7 @@ Brown
 BurlyWood
 CadetBlue
 Chartreuse
-------------------------------
+******************************
 AntiqueWhite
 Aquamarine
 Azure
@@ -103,13 +103,13 @@ Brown
 BurlyWood
 CadetBlue
 Chartreuse
-------------------------------
+******************************
 AntiqueWhite
 Aquamarine
 Azure
 ten
 eleven
-------------------------------
+******************************
 AntiqueWhite
 Aquamarine
 Azure
@@ -119,11 +119,11 @@ Brown
 BurlyWood
 CadetBlue
 Chartreuse
-------------------------------
+******************************
 c.contains(Azure) = true
 c.containsAll(c2) = true
 c2.isEmpty() = true
-------------------------------
+******************************
 PapayaWhip
 PeachPuff
 Peru

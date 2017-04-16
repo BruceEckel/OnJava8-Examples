@@ -230,6 +230,7 @@ public class HTMLColors {
     showInv(m, m.size());
   }
   public static void border() {
-    System.out.println("------------------------------");
+    System.out.println(
+      "******************************");
   }
 }

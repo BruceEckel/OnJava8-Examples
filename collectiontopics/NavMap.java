@@ -35,9 +35,9 @@ public class NavMap {
 }
 /* Output:
 0x000000: Black
-------------------------------
+******************************
 0xFFFFFF: White
-------------------------------
+******************************
 0x000000: Black
 0x000080: Navy
 0x00008B: DarkBlue
@@ -51,11 +51,11 @@ public class NavMap {
 0x00CED1: DarkTurquoise
 0x00FA9A: MediumSpringGreen
 0x00FF00: Lime
-------------------------------
+******************************
 0x00BFFF: DeepSkyBlue
-------------------------------
+******************************
 0x008B8B: DarkCyan
-------------------------------
+******************************
 0x00FF00: Lime
 0x00FA9A: MediumSpringGreen
 0x00CED1: DarkTurquoise
@@ -69,7 +69,7 @@ public class NavMap {
 0x00008B: DarkBlue
 0x000080: Navy
 0x000000: Black
-------------------------------
+******************************
 0xFFE4E1: MistyRose
 0xFFEBCD: BlanchedAlmond
 0xFFEFD5: PapayaWhip
@@ -83,7 +83,7 @@ public class NavMap {
 0xFFFFE0: LightYellow
 0xFFFFF0: Ivory
 0xFFFFFF: White
-------------------------------
+******************************
 0xDA70D6: Orchid
 0xDAA520: GoldenRod
 0xDB7093: PaleVioletRed

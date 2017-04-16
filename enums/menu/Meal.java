@@ -12,7 +12,7 @@ public class Meal {
         Food food = course.randomSelection();
         System.out.println(food);
       }
-      System.out.println("---");
+      System.out.println("***");
     }
   }
 }
@@ -21,25 +21,25 @@ SALAD
 VINDALOO
 GELATO
 CAPPUCCINO
----
+***
 SPRING_ROLLS
 BURRITO
 GELATO
 HERB_TEA
----
+***
 SPRING_ROLLS
 BURRITO
 TIRAMISU
 CAPPUCCINO
----
+***
 SPRING_ROLLS
 BURRITO
 BLACK_FOREST_CAKE
 LATTE
----
+***
 SALAD
 PAD_THAI
 GELATO
 TEA
----
+***
 */
