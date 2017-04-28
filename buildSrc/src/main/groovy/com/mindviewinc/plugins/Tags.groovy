@@ -2,7 +2,7 @@ package com.mindviewinc.plugins
 
 class Tags {
     Boolean hasMainMethod = false
-    Boolean compileTimeError = false
+    Boolean willNotCompile = false
     Boolean throwsException = false
     Boolean errorOutputExpected = false
     Boolean validateByHand = false
@@ -33,7 +33,7 @@ class Tags {
                     else
                         args << p
         }
-        compileTimeError = hasTag('CompileTimeError')
+        willNotCompile = hasTag('WillNotCompile')
         throwsException = hasTag('ThrowsException')
         errorOutputExpected = hasTag('ErrorOutputExpected')
         validateByHand = hasTag('ValidateByHand')
@@ -68,7 +68,7 @@ class Tags {
         }
     }
     public boolean hasTags() {
-        return compileTimeError ||
+        return willNotCompile ||
         throwsException ||
         errorOutputExpected ||
         validateByHand ||
@@ -87,7 +87,7 @@ class Tags {
         }
         """
         hasMainMethod
-        compileTimeError
+        willNotCompile
         throwsException
         errorOutputExpected
         validateByHand
