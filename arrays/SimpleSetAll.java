@@ -14,7 +14,7 @@ class Bob {
 
 public class SimpleSetAll {
   public static final int SZ = 8;
-  public static int val = 1;
+  static int val = 1;
   static char[] chars = "abcdefghijklmnopqrstuvwxyz"
     .toCharArray();
   static char getChar(int n) { return chars[n]; }

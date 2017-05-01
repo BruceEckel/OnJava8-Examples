@@ -6,7 +6,7 @@
 import java.io.*;
 
 class Blip1 implements Externalizable {
-  Blip1() {
+  public Blip1() {
     System.out.println("Blip1 Constructor");
   }
   @Override

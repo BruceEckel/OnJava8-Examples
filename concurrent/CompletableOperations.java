@@ -9,7 +9,7 @@ public class CompletableOperations {
   static CompletableFuture<Integer> cfi(int i) {
     return
       CompletableFuture.completedFuture(
-        new Integer(i));
+        Integer.valueOf(i));
   }
   public static void main(String[] args) {
     showr(cfi(1)); // Basic test

@@ -28,7 +28,8 @@ public class AtUnitExample2 {
   }
   @Test
   void exceptionExample() throws IOException {
-    new FileInputStream("nofile.txt"); // Throws
+    try(FileInputStream fis =
+        new FileInputStream("nofile.txt")) {} // Throws
   }
   @Test
   boolean assertAndReturn() {

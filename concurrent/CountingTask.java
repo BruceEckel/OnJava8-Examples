@@ -9,7 +9,7 @@ public class CountingTask implements Callable<Integer> {
   public CountingTask(int id) { this.id = id; }
   @Override
   public Integer call() {
-    Integer val = new Integer(0);
+    Integer val = 0;
     for(int i = 0; i < 100; i++)
       val++;
     System.out.println(id + " " +

@@ -8,7 +8,7 @@ import typeinfo.pets.*;
 import java.util.*;
 
 public class MapOfList {
-  public static Map<Person, List< ? extends Pet>>
+  public static final Map<Person, List< ? extends Pet>>
     petPeople = new HashMap<>();
   static {
     petPeople.put(new Person("Dawn"),

@@ -10,7 +10,7 @@ import java.util.concurrent.atomic.*;
 import java.nio.file.*;
 
 public class ParallelStreamPuzzle2 {
-  public static Deque<String> trace =
+  public static final Deque<String> trace =
     new ConcurrentLinkedDeque<>();
   static class
   IntGenerator implements Supplier<Integer> {

@@ -39,7 +39,7 @@ public class CanonicalMapping {
     int size = 1000;
     // Or, choose size via the command line:
     if(args.length > 0)
-      size = new Integer(args[0]);
+      size = Integer.valueOf(args[0]);
     Key[] keys = new Key[size];
     WeakHashMap<Key,Value> map =
       new WeakHashMap<>();

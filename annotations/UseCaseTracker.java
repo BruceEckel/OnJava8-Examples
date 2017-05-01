@@ -14,7 +14,7 @@ public class UseCaseTracker {
       if(uc != null) {
         System.out.println("Found Use Case " +
           uc.id() + "\n  " + uc.description());
-        useCases.remove(new Integer(uc.id()));
+        useCases.remove(Integer.valueOf(uc.id()));
       }
     }
     useCases.forEach(i ->

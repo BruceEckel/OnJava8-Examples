@@ -5,7 +5,7 @@
 
 public class InterferingTask implements Runnable {
   final int id;
-  private static Integer val = new Integer(0);
+  private static Integer val = 0;
   public InterferingTask(int id) { this.id = id; }
   @Override
   public void run() {

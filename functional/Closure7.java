@@ -7,7 +7,7 @@ import java.util.function.*;
 
 public class Closure7 {
   IntSupplier makeFun(int x) {
-    Integer i = new Integer(0);
+    Integer i = Integer.valueOf(0);
     i = i + 1;
     return () -> x + i;
   }

@@ -46,7 +46,7 @@ public class Equality {
       neq = eqf.make(99, "Bob", 1.618);
     e.test("null", "false", null);
     e.test("same object", "true", e);
-    e.test("different type", "false", new Integer(99));
+    e.test("different type", "false", Integer.valueOf(99));
     e.test("same values", "true", eq);
     e.test("different values", "false", neq);
   }

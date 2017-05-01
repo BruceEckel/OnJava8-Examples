@@ -31,7 +31,7 @@ public class References {
     int size = 10;
     // Or, choose size via the command line:
     if(args.length > 0)
-      size = new Integer(args[0]);
+      size = Integer.valueOf(args[0]);
     LinkedList<SoftReference<VeryBig>> sa =
       new LinkedList<>();
     for(int i = 0; i < size; i++) {
