@@ -153,7 +153,8 @@
 <!--         <module name="InnerAssignment"/> -->
 <!--         <module name="MagicNumber"/> -->
         <module name="MissingSwitchDefault"/>
-        <module name="RedundantThrows"/>
+        <!-- Checkstyle stopped working on the following for some reason: -->
+<!--         <module name="RedundantThrows"/> -->
         <!-- <module name="SimplifyBooleanExpression"/> -->
         <module name="SimplifyBooleanReturn"/>
 
