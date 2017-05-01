@@ -189,7 +189,7 @@ public class HTMLColors {
   public static
   void show(Map.Entry<Integer,String> e) {
     System.out.format(
-      "0x%06X: %s\n", e.getKey(), e.getValue());
+      "0x%06X: %s%n", e.getKey(), e.getValue());
   }
   public static void
   show(Map<Integer,String> m, int count) {
