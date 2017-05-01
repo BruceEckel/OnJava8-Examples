@@ -54,7 +54,7 @@ class Washer extends StateMachine {
     new Wash(), new Spin(),
     new Rinse(), new Spin(),
   };
-  public Washer() { runAll(); }
+  Washer() { runAll(); }
   @Override
   public boolean changeState() {
     if(i < states.length) {

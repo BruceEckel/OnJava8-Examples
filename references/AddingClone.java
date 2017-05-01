@@ -9,7 +9,7 @@ import java.util.stream.*;
 
 class Int2 implements Cloneable {
   private int i;
-  public Int2(int ii) { i = ii; }
+  Int2(int ii) { i = ii; }
   public void increment() { i++; }
   @Override
   public String toString() {
@@ -28,7 +28,7 @@ class Int2 implements Cloneable {
 // Inheritance doesn't remove cloneability:
 class Int3 extends Int2 {
   private int j; // Automatically duplicated
-  public Int3(int i) { super(i); }
+  Int3(int i) { super(i); }
 }
 
 public class AddingClone {

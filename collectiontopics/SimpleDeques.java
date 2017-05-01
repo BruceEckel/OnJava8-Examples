@@ -9,8 +9,8 @@ import java.util.function.*;
 
 class CountString implements Supplier<String> {
   private int n = 0;
-  public CountString() {}
-  public CountString(int start) { n = start; }
+  CountString() {}
+  CountString(int start) { n = start; }
   @Override
   public String get() {
     return Integer.toString(n++);

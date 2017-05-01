@@ -12,7 +12,7 @@ public class MappedIO {
   private static int numOfUbuffInts = 100_000;
   private abstract static class Tester {
     private String name;
-    public Tester(String name) {
+    Tester(String name) {
       this.name = name;
     }
     public void runTest() {

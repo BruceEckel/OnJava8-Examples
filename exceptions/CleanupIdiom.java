@@ -17,7 +17,7 @@ class ConstructionException extends Exception {}
 
 class NeedsCleanup2 extends NeedsCleanup {
   // Construction can fail:
-  public NeedsCleanup2() throws ConstructionException {}
+  NeedsCleanup2() throws ConstructionException {}
 }
 
 public class CleanupIdiom {

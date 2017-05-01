@@ -5,7 +5,7 @@
 
 class DefaultComparison {
   private int i, j, k;
-  public DefaultComparison(int i, int j, int k) {
+  DefaultComparison(int i, int j, int k) {
     this.i = i;
     this.j = j;
     this.k = k;

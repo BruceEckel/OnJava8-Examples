@@ -33,7 +33,7 @@ class TypeMap<T> {
 // from ParseTrash.fillBin():
 class TypeMapAdapter implements Fillable {
   TypeMap<Trash> map;
-  public TypeMapAdapter(TypeMap<Trash> tm) {
+  TypeMapAdapter(TypeMap<Trash> tm) {
     map = tm;
   }
   @Override

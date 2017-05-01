@@ -6,7 +6,7 @@
 
 class Mutable {
   private int data;
-  public Mutable(int initVal) {
+  Mutable(int initVal) {
     data = initVal;
   }
   public Mutable add(int x) {

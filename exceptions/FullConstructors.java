@@ -4,8 +4,8 @@
 // Visit http://OnJava8.com for more book information.
 
 class MyException extends Exception {
-  public MyException() {}
-  public MyException(String msg) { super(msg); }
+  MyException() {}
+  MyException(String msg) { super(msg); }
 }
 
 public class FullConstructors {

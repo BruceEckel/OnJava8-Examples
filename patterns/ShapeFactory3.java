@@ -15,7 +15,6 @@ interface PolymorphicFactory {
 class RandomShapes implements Supplier<Shape> {
   private final PolymorphicFactory[] factories;
   private Random rand = new Random(42);
-  public
   RandomShapes(PolymorphicFactory... factories) {
     this.factories = factories;
   }

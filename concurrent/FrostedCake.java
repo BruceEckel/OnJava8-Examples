@@ -6,7 +6,7 @@ import java.util.concurrent.*;
 import java.util.stream.*;
 import onjava.Nap;
 
-class Frosting {
+final class Frosting {
   private Frosting() {}
   static CompletableFuture<Frosting> make() {
     new Nap(0.1);

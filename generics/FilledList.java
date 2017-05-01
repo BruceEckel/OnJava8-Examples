@@ -6,8 +6,8 @@ import java.util.*;
 import java.util.function.*;
 import onjava.*;
 
-class FilledList<T> extends ArrayList<T> {
-  public FilledList(Supplier<T> gen, int size) {
+public class FilledList<T> extends ArrayList<T> {
+  FilledList(Supplier<T> gen, int size) {
     Suppliers.fill(this, gen, size);
   }
   public FilledList(T t, int size) {

@@ -5,7 +5,7 @@
 
 class Reporter implements AutoCloseable {
   String name = getClass().getSimpleName();
-  public Reporter() {
+  Reporter() {
     System.out.println("Creating " + name);
   }
   public void close() {

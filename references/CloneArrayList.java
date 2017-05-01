@@ -9,7 +9,7 @@ import java.util.stream.*;
 
 class Int {
   private int i;
-  public Int(int ii) { i = ii; }
+  Int(int ii) { i = ii; }
   public void increment() { i++; }
   @Override
   public String toString() {

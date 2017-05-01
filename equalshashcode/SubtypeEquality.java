@@ -11,7 +11,7 @@ class Animal {
   private final int id = counter++;
   private final String name;
   private final Size size;
-  public Animal(String name, Size size) {
+  Animal(String name, Size size) {
     this.name = name;
     this.size = size;
   }
@@ -36,13 +36,13 @@ class Animal {
 }
 
 class Dog extends Animal {
-  public Dog(String name, Size size) {
+  Dog(String name, Size size) {
     super(name, size);
   }
 }
 
 class Pig extends Animal {
-  public Pig(String name, Size size) {
+  Pig(String name, Size size) {
     super(name, size);
   }
 }

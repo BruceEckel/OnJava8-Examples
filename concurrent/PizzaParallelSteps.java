@@ -7,7 +7,7 @@ import java.util.stream.*;
 import onjava.Timer;
 
 public class PizzaParallelSteps {
-  static int QUANTITY = 5;
+  static final int QUANTITY = 5;
   public static void main(String[] args) {
     Timer timer = new Timer();
     IntStream.range(0, QUANTITY)

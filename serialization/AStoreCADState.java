@@ -15,7 +15,7 @@ abstract class Shape implements Serializable {
   private static int counter = 0;
   public abstract void setColor(Color newColor);
   public abstract Color getColor();
-  public Shape(int xVal, int yVal, int dim) {
+  Shape(int xVal, int yVal, int dim) {
     xPos = xVal;
     yPos = yVal;
     dimension = dim;
@@ -40,7 +40,7 @@ abstract class Shape implements Serializable {
 
 class Circle extends Shape {
   private static Color color = Color.RED;
-  public Circle(int xVal, int yVal, int dim) {
+  Circle(int xVal, int yVal, int dim) {
     super(xVal, yVal, dim);
   }
   public void setColor(Color newColor) {
@@ -51,7 +51,7 @@ class Circle extends Shape {
 
 class Square extends Shape {
   private static Color color = Color.RED;
-  public Square(int xVal, int yVal, int dim) {
+  Square(int xVal, int yVal, int dim) {
     super(xVal, yVal, dim);
   }
   public void setColor(Color newColor) {
@@ -70,7 +70,7 @@ class Line extends Shape {
   throws IOException, ClassNotFoundException {
     color = (Color)os.readObject();
   }
-  public Line(int xVal, int yVal, int dim) {
+  Line(int xVal, int yVal, int dim) {
     super(xVal, yVal, dim);
   }
   public void setColor(Color newColor) {

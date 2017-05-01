@@ -12,7 +12,6 @@ class Person {
   public final Optional<String> address;
   // etc.
   public final boolean empty;
-  public
   Person(String first, String last, String address) {
     this.first = Optional.ofNullable(first);
     this.last = Optional.ofNullable(last);
@@ -21,11 +20,11 @@ class Person {
          && !this.last.isPresent()
          && !this.address.isPresent();
   }
-  public Person(String first, String last) {
+  Person(String first, String last) {
     this(first, last, null);
   }
-  public Person(String last) { this(null, last, null); }
-  public Person() { this(null, null, null); }
+  Person(String last) { this(null, last, null); }
+  Person() { this(null, null, null); }
   @Override
   public String toString() {
     if(empty)

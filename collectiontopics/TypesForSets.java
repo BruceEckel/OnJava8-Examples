@@ -6,11 +6,10 @@
 import java.util.*;
 import java.util.function.*;
 import java.util.Objects;
-import onjava.CountMap;
 
 class SetType {
   protected int i;
-  public SetType(int n) { i = n; }
+  SetType(int n) { i = n; }
   @Override
   public boolean equals(Object o) {
     return o instanceof SetType &&
@@ -23,7 +22,7 @@ class SetType {
 }
 
 class HashType extends SetType {
-  public HashType(int n) { super(n); }
+  HashType(int n) { super(n); }
   @Override
   public int hashCode() {
     return Objects.hashCode(i);
@@ -32,7 +31,7 @@ class HashType extends SetType {
 
 class TreeType extends SetType
 implements Comparable<TreeType> {
-  public TreeType(int n) { super(n); }
+  TreeType(int n) { super(n); }
   @Override
   public int compareTo(TreeType arg) {
     return Integer.compare(arg.i, i);

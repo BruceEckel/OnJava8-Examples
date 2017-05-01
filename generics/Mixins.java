@@ -8,7 +8,7 @@ interface TimeStamped { long getStamp(); }
 
 class TimeStampedImp implements TimeStamped {
   private final long timeStamp;
-  public TimeStampedImp() {
+  TimeStampedImp() {
     timeStamp = new Date().getTime();
   }
   @Override

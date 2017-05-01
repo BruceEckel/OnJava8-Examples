@@ -58,15 +58,15 @@ extends AbstractMap<Integer,String> {
         .toCollection(LinkedHashSet::new));
   }
   public static void main(String[] args) {
-    final int LIM = 6;
+    final int size = 6;
     CountMap cm = new CountMap(60);
     System.out.println(cm);
     System.out.println(cm.get(500));
     cm.values().stream()
-      .limit(LIM)
+      .limit(size)
       .forEach(System.out::println);
     System.out.println();
-    new Random(47).ints(LIM, 0, 1000)
+    new Random(47).ints(size, 0, 1000)
       .mapToObj(cm::get)
       .forEach(System.out::println);
   }

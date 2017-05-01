@@ -7,7 +7,7 @@
 class Villain {
   private String name;
   protected void set(String nm) { name = nm; }
-  public Villain(String name) { this.name = name; }
+  Villain(String name) { this.name = name; }
   @Override
   public String toString() {
     return "I'm a Villain and my name is " + name;

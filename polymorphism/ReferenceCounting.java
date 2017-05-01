@@ -8,7 +8,7 @@ class Shared {
   private int refcount = 0;
   private static long counter = 0;
   private final long id = counter++;
-  public Shared() {
+  Shared() {
     System.out.println("Creating " + this);
   }
   public void addRef() { refcount++; }
@@ -26,7 +26,7 @@ class Composing {
   private Shared shared;
   private static long counter = 0;
   private final long id = counter++;
-  public Composing(Shared shared) {
+  Composing(Shared shared) {
     System.out.println("Creating " + this);
     this.shared = shared;
     this.shared.addRef();

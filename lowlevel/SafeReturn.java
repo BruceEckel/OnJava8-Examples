@@ -4,7 +4,6 @@
 // Visit http://OnJava8.com for more book information.
 import java.util.function.*;
 import java.util.concurrent.*;
-import onjava.TimedAbort;
 
 public class SafeReturn extends IntTestable {
   private int i = 0;

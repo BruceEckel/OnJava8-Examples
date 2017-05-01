@@ -9,7 +9,7 @@ import java.util.function.*;
 import static onjava.ConvertTo.*;
 
 public interface Count {
-  public static class Boolean
+  class Boolean
   implements Supplier<java.lang.Boolean> {
     private boolean b = true;
     @Override
@@ -27,7 +27,7 @@ public interface Count {
       return result;
     }
   }
-  public static class Pboolean {
+  class Pboolean {
     private boolean b = true;
     public boolean get() {
       b = !b;
@@ -38,7 +38,7 @@ public interface Count {
       return primitive(new Boolean().array(sz));
     }
   }
-  public static class Byte
+  class Byte
   implements Supplier<java.lang.Byte> {
     private byte b;
     @Override
@@ -53,7 +53,7 @@ public interface Count {
       return result;
     }
   }
-  public static class Pbyte {
+  class Pbyte {
     private byte b;
     public byte get() { return b++; }
     public byte get(int n) { return get(); }
@@ -63,7 +63,7 @@ public interface Count {
   }
   char[] CHARS =
     "abcdefghijklmnopqrstuvwxyz".toCharArray();
-  public static class Character
+  class Character
   implements Supplier<java.lang.Character> {
     private int i;
     @Override
@@ -81,7 +81,7 @@ public interface Count {
       return result;
     }
   }
-  public static class Pchar {
+  class Pchar {
     private int i;
     public char get() {
       i = (i + 1) % CHARS.length;
@@ -92,7 +92,7 @@ public interface Count {
       return primitive(new Character().array(sz));
     }
   }
-  public static class Short
+  class Short
   implements Supplier<java.lang.Short> {
     short s;
     @Override
@@ -107,7 +107,7 @@ public interface Count {
       return result;
     }
   }
-  public static class Pshort {
+  class Pshort {
     short s;
     public short get() { return s++; }
     public short get(int n) { return get(); }
@@ -115,7 +115,7 @@ public interface Count {
       return primitive(new Short().array(sz));
     }
   }
-  public static class Integer
+  class Integer
   implements Supplier<java.lang.Integer> {
     int i;
     @Override
@@ -130,7 +130,7 @@ public interface Count {
       return result;
     }
   }
-  public static class Pint implements IntSupplier {
+  class Pint implements IntSupplier {
     int i;
     public int get() { return i++; }
     public int get(int n) { return get(); }
@@ -140,7 +140,7 @@ public interface Count {
       return primitive(new Integer().array(sz));
     }
   }
-  public static class Long
+  class Long
   implements Supplier<java.lang.Long> {
     private long l;
     @Override
@@ -155,7 +155,6 @@ public interface Count {
       return result;
     }
   }
-  public static
   class Plong implements LongSupplier {
     private long l;
     public long get() { return l++; }
@@ -166,7 +165,7 @@ public interface Count {
       return primitive(new Long().array(sz));
     }
   }
-  public class Float
+  class Float
   implements Supplier<java.lang.Float> {
     private int i;
     @Override
@@ -183,7 +182,7 @@ public interface Count {
       return result;
     }
   }
-  public class Pfloat {
+  class Pfloat {
     private int i;
     public float get() { return i++; }
     public float get(int n) { return get(); }
@@ -191,7 +190,7 @@ public interface Count {
       return primitive(new Float().array(sz));
     }
   }
-  public class Double
+  class Double
   implements Supplier<java.lang.Double> {
     private int i;
     @Override
@@ -208,7 +207,7 @@ public interface Count {
       return result;
     }
   }
-  public class Pdouble implements DoubleSupplier {
+  class Pdouble implements DoubleSupplier {
     private int i;
     public double get() { return i++; }
     public double get(int n) { return get(); }

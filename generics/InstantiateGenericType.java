@@ -6,7 +6,7 @@ import java.util.function.*;
 
 class ClassAsFactory<T> implements Supplier<T> {
   Class<T> kind;
-  public ClassAsFactory(Class<T> kind) {
+  ClassAsFactory(Class<T> kind) {
     this.kind = kind;
   }
   @Override

@@ -7,7 +7,7 @@ import static onjava.ArrayShow.*;
 
 class Bob {
   final int id;
-  public Bob(int n) { id = n; }
+  Bob(int n) { id = n; }
   @Override
   public String toString() { return "Bob" + id; }
 }

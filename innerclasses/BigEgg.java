@@ -11,7 +11,7 @@ class Egg {
       System.out.println("Egg.Yolk()");
     }
   }
-  public Egg() {
+  Egg() {
     System.out.println("New Egg()");
     y = new Yolk();
   }

@@ -17,7 +17,7 @@ interface WhatIWant {
 
 class ProxyAdapter implements WhatIWant {
   WhatIHave whatIHave;
-  public ProxyAdapter(WhatIHave wih) {
+  ProxyAdapter(WhatIHave wih) {
     whatIHave = wih;
   }
   @Override

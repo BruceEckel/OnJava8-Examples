@@ -6,7 +6,7 @@
 import java.util.stream.*;
 
 abstract class ApplicationFramework {
-  public ApplicationFramework() {
+  ApplicationFramework() {
     templateMethod();
   }
   abstract void customize1();

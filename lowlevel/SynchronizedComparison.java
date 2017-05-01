@@ -38,7 +38,7 @@ class CriticalSection extends Guarded {
 
 class Caller implements Runnable {
   private Guarded g;
-  public Caller(Guarded g) { this.g = g; }
+  Caller(Guarded g) { this.g = g; }
   private AtomicLong successfulCalls =
     new AtomicLong();
   private AtomicBoolean stop =

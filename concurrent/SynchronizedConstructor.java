@@ -8,7 +8,7 @@ class SyncConstructor implements HasID {
   private final int id;
   private static Object
     constructorLock = new Object();
-  public SyncConstructor(SharedArg sa) {
+  SyncConstructor(SharedArg sa) {
     synchronized(constructorLock) {
       id = sa.get();
     }

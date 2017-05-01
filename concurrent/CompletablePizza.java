@@ -8,7 +8,7 @@ import java.util.stream.*;
 import onjava.Timer;
 
 public class CompletablePizza {
-  static int QUANTITY = 5;
+  static final int QUANTITY = 5;
   public static CompletableFuture<Pizza>
   makeCF(Pizza za) {
     return CompletableFuture

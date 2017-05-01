@@ -35,7 +35,7 @@ class Bisection extends FindMinima {
 // The "Context" controls the strategy:
 class MinimaSolver {
   private FindMinima strategy;
-  public MinimaSolver(FindMinima strat) {
+  MinimaSolver(FindMinima strat) {
     strategy = strat;
   }
   List<Double> minima(List<Double> line) {

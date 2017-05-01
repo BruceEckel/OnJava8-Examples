@@ -4,7 +4,6 @@
 // Visit http://OnJava8.com for more book information.
 import java.util.concurrent.*;
 import java.util.stream.*;
-import onjava.Nap;
 
 public class StreamExceptions {
   static Stream<Breakable>

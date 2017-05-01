@@ -20,7 +20,7 @@ public class MethodReferences {
   }
   static class Description {
     String about;
-    public Description(String desc) { about = desc; }
+    Description(String desc) { about = desc; }
     void help(String msg) { // [4]
       System.out.println(about + " " + msg);
     }

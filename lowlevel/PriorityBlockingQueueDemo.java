@@ -15,7 +15,7 @@ class Prioritized implements Comparable<Prioritized>  {
   private final int priority;
   private static List<Prioritized> sequence =
     new CopyOnWriteArrayList<>();
-  public Prioritized(int priority) {
+  Prioritized(int priority) {
     this.priority = priority;
     sequence.add(this);
   }
@@ -38,7 +38,7 @@ class Prioritized implements Comparable<Prioritized>  {
     }
   }
   public static class EndSentinel extends Prioritized {
-    public EndSentinel() { super(-1); }
+    EndSentinel() { super(-1); }
   }
 }
 
@@ -48,7 +48,7 @@ class Producer implements Runnable {
   private SplittableRandom rand =
     new SplittableRandom(seed.getAndAdd(10));
   private Queue<Prioritized> queue;
-  public Producer(Queue<Prioritized> q) {
+  Producer(Queue<Prioritized> q) {
     queue = q;
   }
   @Override
@@ -65,7 +65,6 @@ class Consumer implements Runnable {
   private PriorityBlockingQueue<Prioritized> q;
   private SplittableRandom rand =
     new SplittableRandom(47);
-  public
   Consumer(PriorityBlockingQueue<Prioritized> q) {
     this.q = q;
   }

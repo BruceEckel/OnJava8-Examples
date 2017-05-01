@@ -8,7 +8,7 @@ import java.util.*;
 
 class Data implements Serializable {
   private int n;
-  public Data(int n) { this.n = n; }
+  Data(int n) { this.n = n; }
   @Override
   public String toString() {
     return Integer.toString(n);

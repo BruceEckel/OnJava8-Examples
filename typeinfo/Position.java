@@ -9,11 +9,11 @@ class EmptyTitleException extends RuntimeException {}
 class Position {
   private String title;
   private Person person;
-  public Position(String jobTitle, Person employee) {
+  Position(String jobTitle, Person employee) {
     setTitle(jobTitle);
     setPerson(employee);
   }
-  public Position(String jobTitle) {
+  Position(String jobTitle) {
     this(jobTitle, null);
   }
   public String getTitle() { return title; }

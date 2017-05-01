@@ -9,7 +9,7 @@ class FixedSizeStack<T> {
   private final int size;
   private Object[] storage;
   private int index = 0;
-  public FixedSizeStack(int size) {
+  FixedSizeStack(int size) {
     this.size = size;
     storage = new Object[size];
   }

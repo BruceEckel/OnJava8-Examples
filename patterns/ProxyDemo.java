@@ -12,7 +12,7 @@ interface ProxyBase {
 
 class Proxy implements ProxyBase {
   private ProxyBase implementation;
-  public Proxy() {
+  Proxy() {
     implementation = new Implementation();
   }
   // Pass method calls to the implementation:

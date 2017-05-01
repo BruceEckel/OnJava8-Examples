@@ -6,9 +6,9 @@
 
 class MyException2 extends Exception {
   private int x;
-  public MyException2() {}
-  public MyException2(String msg) { super(msg); }
-  public MyException2(String msg, int x) {
+  MyException2() {}
+  MyException2(String msg) { super(msg); }
+  MyException2(String msg, int x) {
     super(msg);
     this.x = x;
   }

@@ -14,7 +14,7 @@ class DelayedTask implements Runnable, Delayed {
   private final long trigger;
   protected static List<DelayedTask> sequence =
     new ArrayList<>();
-  public DelayedTask(int delayInMilliseconds) {
+  DelayedTask(int delayInMilliseconds) {
     delta = delayInMilliseconds;
     trigger = System.nanoTime() +
       NANOSECONDS.convert(delta, MILLISECONDS);
@@ -45,7 +45,7 @@ class DelayedTask implements Runnable, Delayed {
     return String.format("(%d:%d)", id, delta);
   }
   public static class EndTask extends DelayedTask {
-    public EndTask(int delay) { super(delay); }
+    EndTask(int delay) { super(delay); }
     @Override
     public void run() {
       sequence.forEach(dt ->

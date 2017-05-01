@@ -7,7 +7,7 @@ import java.util.*;
 
 class Value {
   int i; // Package access
-  public Value(int i) { this.i = i; }
+  Value(int i) { this.i = i; }
 }
 
 public class FinalData {

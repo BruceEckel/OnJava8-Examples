@@ -7,7 +7,7 @@ import java.lang.reflect.*;
 
 class MethodSelector implements InvocationHandler {
   private Object proxied;
-  public MethodSelector(Object proxied) {
+  MethodSelector(Object proxied) {
     this.proxied = proxied;
   }
   @Override

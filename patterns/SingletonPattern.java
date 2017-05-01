@@ -15,7 +15,7 @@ interface Resource {
 // implements thread-safe lazy initialization:
 
 final class Singleton {
-  private static class
+  private static final class
   ResourceImpl implements Resource {
     private int i;
     private ResourceImpl(int i) {

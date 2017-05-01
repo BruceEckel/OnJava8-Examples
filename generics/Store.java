@@ -11,7 +11,6 @@ class Product {
   private final int id;
   private String description;
   private double price;
-  public
   Product(int idNumber, String descr, double price) {
     id = idNumber;
     description = descr;
@@ -37,13 +36,13 @@ class Product {
 }
 
 class Shelf extends ArrayList<Product> {
-  public Shelf(int nProducts) {
+  Shelf(int nProducts) {
     Suppliers.fill(this, Product.generator, nProducts);
   }
 }
 
 class Aisle extends ArrayList<Shelf> {
-  public Aisle(int nShelves, int nProducts) {
+  Aisle(int nShelves, int nProducts) {
     for(int i = 0; i < nShelves; i++)
       add(new Shelf(nProducts));
   }

@@ -3,9 +3,9 @@
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 
-class A { public A(int x) {} }
-class B { public B(long x) {} }
-class C { public C(double x) {} }
+class A { A(int x) {} }
+class B { B(long x) {} }
+class C { C(double x) {} }
 
 // Other classes that aren't exposed by the
 // facade go here ...

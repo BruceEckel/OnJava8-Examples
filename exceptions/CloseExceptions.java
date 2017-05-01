@@ -7,7 +7,7 @@ class CloseException extends Exception {}
 
 class Reporter2 implements AutoCloseable {
   String name = getClass().getSimpleName();
-  public Reporter2() {
+  Reporter2() {
     System.out.println("Creating " + name);
   }
   public void close() throws CloseException {

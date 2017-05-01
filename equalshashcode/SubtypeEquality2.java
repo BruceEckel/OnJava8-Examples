@@ -5,7 +5,7 @@
 import java.util.*;
 
 class Dog2 extends Animal {
-  public Dog2(String name, Size size) {
+  Dog2(String name, Size size) {
     super(name, size);
   }
   @Override
@@ -16,7 +16,7 @@ class Dog2 extends Animal {
 }
 
 class Pig2 extends Animal {
-  public Pig2(String name, Size size) {
+  Pig2(String name, Size size) {
     super(name, size);
   }
   @Override

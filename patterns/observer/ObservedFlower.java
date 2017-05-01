@@ -11,7 +11,7 @@ class Flower {
   private boolean isOpen;
   private boolean alreadyOpen;
   private boolean alreadyClosed;
-  public Flower() { isOpen = false; }
+  Flower() { isOpen = false; }
   OpenNotifier opening = new OpenNotifier();
   CloseNotifier closing = new CloseNotifier();
   public void open() { // Opens its petals
@@ -48,7 +48,7 @@ class Flower {
 
 class Bee {
   private String name;
-  public Bee(String nm)  { name = nm; }
+  Bee(String nm)  { name = nm; }
   // Observe openings:
   public Observer openObserver() {
     return (ob, a) -> System.out.println(
@@ -63,7 +63,7 @@ class Bee {
 
 class Hummingbird {
   private String name;
-  public Hummingbird(String nm) { name = nm; }
+  Hummingbird(String nm) { name = nm; }
   public Observer openObserver() {
     return (ob, a) -> System.out.println(
       "Hummingbird " + name +

@@ -13,7 +13,7 @@ interface StateBase {
 
 class State implements StateBase {
   private StateBase implementation;
-  public State(StateBase imp) {
+  State(StateBase imp) {
     implementation = imp;
   }
   @Override

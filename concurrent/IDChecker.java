@@ -9,11 +9,11 @@ import java.util.concurrent.*;
 import com.google.common.collect.Sets;
 
 public class IDChecker {
-  public static int SIZE = 100_000;
+  public static final int SIZE = 100_000;
   static class MakeObjects
   implements Supplier<List<Integer>> {
     private Supplier<HasID> gen;
-    public MakeObjects(Supplier<HasID> gen) {
+    MakeObjects(Supplier<HasID> gen) {
       this.gen = gen;
     }
     @Override

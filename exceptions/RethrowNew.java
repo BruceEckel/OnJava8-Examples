@@ -5,11 +5,11 @@
 // Rethrow a different object from the one you caught
 
 class OneException extends Exception {
-  public OneException(String s) { super(s); }
+  OneException(String s) { super(s); }
 }
 
 class TwoException extends Exception {
-  public TwoException(String s) { super(s); }
+  TwoException(String s) { super(s); }
 }
 
 public class RethrowNew {

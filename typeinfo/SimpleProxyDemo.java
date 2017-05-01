@@ -21,7 +21,7 @@ class RealObject implements Interface {
 
 class SimpleProxy implements Interface {
   private Interface proxied;
-  public SimpleProxy(Interface proxied) {
+  SimpleProxy(Interface proxied) {
     this.proxied = proxied;
   }
   @Override

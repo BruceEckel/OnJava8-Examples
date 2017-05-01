@@ -10,7 +10,7 @@ import static onjava.ConvertTo.*;
 
 public interface Rand {
   int MOD = 10_000;
-  public static class Boolean
+  class Boolean
   implements Supplier<java.lang.Boolean> {
     SplittableRandom r = new SplittableRandom(47);
     @Override
@@ -27,12 +27,12 @@ public interface Rand {
       return result;
     }
   }
-  public static class Pboolean {
+  class Pboolean {
     public boolean[] array(int sz) {
       return primitive(new Boolean().array(sz));
     }
   }
-  public static class Byte
+  class Byte
   implements Supplier<java.lang.Byte> {
     SplittableRandom r = new SplittableRandom(47);
     @Override
@@ -49,12 +49,12 @@ public interface Rand {
       return result;
     }
   }
-  public static class Pbyte {
+  class Pbyte {
     public byte[] array(int sz) {
       return primitive(new Byte().array(sz));
     }
   }
-  public static class Character
+  class Character
   implements Supplier<java.lang.Character> {
     SplittableRandom r = new SplittableRandom(47);
     @Override
@@ -71,12 +71,12 @@ public interface Rand {
       return result;
     }
   }
-  public static class Pchar {
+  class Pchar {
     public char[] array(int sz) {
       return primitive(new Character().array(sz));
     }
   }
-  public static class Short
+  class Short
   implements Supplier<java.lang.Short> {
     SplittableRandom r = new SplittableRandom(47);
     @Override
@@ -93,12 +93,12 @@ public interface Rand {
       return result;
     }
   }
-  public static class Pshort {
+  class Pshort {
     public short[] array(int sz) {
       return primitive(new Short().array(sz));
     }
   }
-  public static class Integer
+  class Integer
   implements Supplier<java.lang.Integer> {
     SplittableRandom r = new SplittableRandom(47);
     @Override
@@ -117,7 +117,7 @@ public interface Rand {
       return result;
     }
   }
-  public static class Pint implements IntSupplier {
+  class Pint implements IntSupplier {
     SplittableRandom r = new SplittableRandom(47);
     @Override
     public int getAsInt() {
@@ -128,7 +128,7 @@ public interface Rand {
       return r.ints(sz, 0, MOD).toArray();
     }
   }
-  public static class Long
+  class Long
   implements Supplier<java.lang.Long> {
     SplittableRandom r = new SplittableRandom(47);
     @Override
@@ -147,7 +147,6 @@ public interface Rand {
       return result;
     }
   }
-  public static
   class Plong implements LongSupplier {
     SplittableRandom r = new SplittableRandom(47);
     @Override
@@ -159,7 +158,7 @@ public interface Rand {
       return r.longs(sz, 0, MOD).toArray();
     }
   }
-  public static class Float
+  class Float
   implements Supplier<java.lang.Float> {
     SplittableRandom r = new SplittableRandom(47);
     @Override
@@ -176,7 +175,7 @@ public interface Rand {
       return result;
     }
   }
-  public static class Pfloat {
+  class Pfloat {
     public float[] array(int sz) {
       return primitive(new Float().array(sz));
     }
@@ -185,7 +184,7 @@ public interface Rand {
     return
       ((double)Math.round(d * 1000.0)) / 100.0;
   }
-  public static class Double
+  class Double
   implements Supplier<java.lang.Double> {
     SplittableRandom r = new SplittableRandom(47);
     @Override
@@ -205,7 +204,6 @@ public interface Rand {
       return result;
     }
   }
-  public static
   class Pdouble implements DoubleSupplier {
     SplittableRandom r = new SplittableRandom(47);
     @Override
@@ -222,7 +220,7 @@ public interface Rand {
       return result;
     }
   }
-  public static class String
+  class String
   implements Supplier<java.lang.String> {
     SplittableRandom r = new SplittableRandom(47);
     private int strlen = 7; // Default length

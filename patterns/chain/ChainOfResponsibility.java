@@ -11,11 +11,11 @@ import java.util.function.*;
 class Result {
   boolean success;
   List<Double> line;
-  public Result(List<Double> data) {
+  Result(List<Double> data) {
     success = true;
     line = data;
   }
-  public Result() {
+  Result() {
     success = false;
     line = Collections.<Double>emptyList();
   }

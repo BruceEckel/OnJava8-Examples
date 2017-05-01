@@ -6,7 +6,7 @@
 class CE extends Exception {}
 
 class SecondExcept extends Reporter {
-  public SecondExcept() throws CE {
+  SecondExcept() throws CE {
     super();
     throw new CE();
   }

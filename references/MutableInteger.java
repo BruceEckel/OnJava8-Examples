@@ -8,7 +8,7 @@ import java.util.stream.*;
 
 class IntValue {
   private int n;
-  public IntValue(int x) { n = x; }
+  IntValue(int x) { n = x; }
   public int getValue() { return n; }
   public void setValue(int n) { this.n = n; }
   public void increment() { n++; }

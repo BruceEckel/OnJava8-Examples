@@ -9,7 +9,7 @@ import static onjava.ArrayShow.*;
 
 class Sup { // Superclass
   private int id;
-  public Sup(int n) { id = n; }
+  Sup(int n) { id = n; }
   @Override
   public String toString() {
     return getClass().getSimpleName() + id;
@@ -17,7 +17,7 @@ class Sup { // Superclass
 }
 
 class Sub extends Sup { // Subclass
-  public Sub(int n) { super(n); }
+  Sub(int n) { super(n); }
 }
 
 public class ArrayCopying {

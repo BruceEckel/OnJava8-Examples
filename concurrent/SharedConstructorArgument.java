@@ -23,7 +23,7 @@ class Safe implements SharedArg {
 
 class SharedUser implements HasID {
   private final int id;
-  public SharedUser(SharedArg sa) {
+  SharedUser(SharedArg sa) {
     id = sa.get();
   }
   @Override

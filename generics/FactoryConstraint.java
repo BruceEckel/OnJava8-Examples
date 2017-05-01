@@ -16,7 +16,7 @@ class IntegerFactory implements Supplier<Integer> {
 
 class Widget {
   private int id;
-  public Widget(int n) { id = n; }
+  Widget(int n) { id = n; }
   @Override
   public String toString() {
     return "Widget " + id;
@@ -38,7 +38,7 @@ class Fudge {
 
 class Foo2<T> {
   private List<T> x = new ArrayList<>();
-  public Foo2(Supplier<T> factory) {
+  Foo2(Supplier<T> factory) {
     Suppliers.fill(x, factory, 5);
   }
   @Override

@@ -9,7 +9,7 @@ class ToDoItem implements Comparable<ToDoItem> {
   private char primary;
   private int secondary;
   private String item;
-  public ToDoItem(String td, char pri, int sec) {
+  ToDoItem(String td, char pri, int sec) {
     primary = pri;
     secondary = sec;
     item = td;

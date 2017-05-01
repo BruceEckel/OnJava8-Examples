@@ -8,7 +8,7 @@ import java.util.stream.*;
 
 class IntValue2 {
   public int n;
-  public IntValue2(int n) { this.n = n; }
+  IntValue2(int n) { this.n = n; }
 }
 
 public class SimplerMutableInteger {

@@ -8,7 +8,7 @@ import java.util.stream.*;
 class Pair {
   public final Character c;
   public final Integer i;
-  public Pair(Character c, Integer i) {
+  Pair(Character c, Integer i) {
     this.c = c;
     this.i = i;
   }

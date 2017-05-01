@@ -14,7 +14,7 @@ class Basic {
 
 class Decorator extends Basic {
   protected Basic basic;
-  public Decorator(Basic basic) { this.basic = basic; }
+  Decorator(Basic basic) { this.basic = basic; }
   @Override
   public void set(String val) { basic.set(val); }
   @Override
@@ -23,7 +23,7 @@ class Decorator extends Basic {
 
 class TimeStamped extends Decorator {
   private final long timeStamp;
-  public TimeStamped(Basic basic) {
+  TimeStamped(Basic basic) {
     super(basic);
     timeStamp = new Date().getTime();
   }
@@ -33,7 +33,7 @@ class TimeStamped extends Decorator {
 class SerialNumbered extends Decorator {
   private static long counter = 1;
   private final long serialNumber = counter++;
-  public SerialNumbered(Basic basic) { super(basic); }
+  SerialNumbered(Basic basic) { super(basic); }
   public long getSerialNumber() { return serialNumber; }
 }
 

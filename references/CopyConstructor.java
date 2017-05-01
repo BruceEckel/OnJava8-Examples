@@ -14,13 +14,13 @@ class FruitQualities {
   private int smell;
   // etc.
   // No-arg constructor:
-  public FruitQualities() {
+  FruitQualities() {
     // Do something meaningful...
   }
   // Other constructors:
   // ...
   // Copy constructor:
-  public FruitQualities(FruitQualities f) {
+  FruitQualities(FruitQualities f) {
     weight = f.weight;
     color = f.color;
     firmness = f.firmness;
@@ -32,15 +32,15 @@ class FruitQualities {
 
 class Seed {
   // Members...
-  public Seed() { /* No-arg constructor */ }
-  public Seed(Seed s) { /* Copy constructor */ }
+  Seed() { /* No-arg constructor */ }
+  Seed(Seed s) { /* Copy constructor */ }
 }
 
 class Fruit {
   private FruitQualities fq;
   private int seeds;
   private Seed[] s;
-  public Fruit(FruitQualities q, int seedCount) {
+  Fruit(FruitQualities q, int seedCount) {
     fq = q;
     seeds = seedCount;
     s = new Seed[seeds];
@@ -50,7 +50,7 @@ class Fruit {
   // Other constructors:
   // ...
   // Copy constructor:
-  public Fruit(Fruit f) {
+  Fruit(Fruit f) {
     fq = new FruitQualities(f.fq);
     seeds = f.seeds;
     s = new Seed[seeds];
@@ -70,10 +70,10 @@ class Fruit {
 }
 
 class Tomato extends Fruit {
-  public Tomato() {
+  Tomato() {
     super(new FruitQualities(), 100);
   }
-  public Tomato(Tomato t) { // Copy-constructor
+  Tomato(Tomato t) { // Copy-constructor
     super(t); // Upcast to base copy-constructor
     // Other copy-construction activities...
   }
@@ -82,21 +82,21 @@ class Tomato extends Fruit {
 class ZebraQualities extends FruitQualities {
   private int stripedness;
   // No-arg constructor:
-  public ZebraQualities() {
+  ZebraQualities() {
     super();
     // do something meaningful...
   }
-  public ZebraQualities(ZebraQualities z) {
+  ZebraQualities(ZebraQualities z) {
     super(z);
     stripedness = z.stripedness;
   }
 }
 
 class GreenZebra extends Tomato {
-  public GreenZebra() {
+  GreenZebra() {
     addQualities(new ZebraQualities());
   }
-  public GreenZebra(GreenZebra g) {
+  GreenZebra(GreenZebra g) {
     super(g); // Calls Tomato(Tomato)
     // Restore the right qualities:
     addQualities(new ZebraQualities());

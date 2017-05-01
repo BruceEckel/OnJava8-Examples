@@ -7,7 +7,7 @@
 import java.util.*;
 
 class ReversibleArrayList<T> extends ArrayList<T> {
-  public ReversibleArrayList(Collection<T> c) {
+  ReversibleArrayList(Collection<T> c) {
     super(c);
   }
   public Iterable<T> reversed() {

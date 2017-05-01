@@ -7,7 +7,7 @@ import java.util.*;
 
 class Element {
   private String ident;
-  public Element(String id) { ident = id; }
+  Element(String id) { ident = id; }
   @Override
   public String toString() { return ident; }
   @Override
@@ -27,11 +27,11 @@ class Element {
 }
 
 class Key extends Element {
-  public Key(String id) { super(id); }
+  Key(String id) { super(id); }
 }
 
 class Value extends Element {
-  public Value(String id) { super(id); }
+  Value(String id) { super(id); }
 }
 
 public class CanonicalMapping {

@@ -7,7 +7,7 @@ import java.util.*;
 class Part {
   String ss;
   double dd;
-  public Part(String ss, double dd) {
+  Part(String ss, double dd) {
     this.ss = ss;
     this.dd = dd;
   }

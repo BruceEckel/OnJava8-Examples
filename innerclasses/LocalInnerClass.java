@@ -13,7 +13,7 @@ public class LocalInnerClass {
   Counter getCounter(final String name) {
     // A local inner class:
     class LocalCounter implements Counter {
-      public LocalCounter() {
+      LocalCounter() {
         // Local inner class can have a constructor
         System.out.println("LocalCounter()");
       }

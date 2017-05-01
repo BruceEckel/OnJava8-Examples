@@ -6,7 +6,7 @@ import java.lang.reflect.*;
 
 class DynamicProxyHandler implements InvocationHandler {
   private Object proxied;
-  public DynamicProxyHandler(Object proxied) {
+  DynamicProxyHandler(Object proxied) {
     this.proxied = proxied;
   }
   @Override

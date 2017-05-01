@@ -40,9 +40,8 @@ public class Applicator {
     System.out.println("Using Processor " + p.name());
     System.out.println(p.process(s));
   }
-  public static final String s =
-  "Disagreement with beliefs is by definition incorrect";
   public static void main(String[] args) {
+    String s = "We are such stuff as dreams are made on";
     apply(new Upcase(), s);
     apply(new Downcase(), s);
     apply(new Splitter(), s);
@@ -50,10 +49,9 @@ public class Applicator {
 }
 /* Output:
 Using Processor Upcase
-DISAGREEMENT WITH BELIEFS IS BY DEFINITION INCORRECT
+WE ARE SUCH STUFF AS DREAMS ARE MADE ON
 Using Processor Downcase
-disagreement with beliefs is by definition incorrect
+we are such stuff as dreams are made on
 Using Processor Splitter
-[Disagreement, with, beliefs, is, by, definition,
-incorrect]
+[We, are, such, stuff, as, dreams, are, made, on]
 */

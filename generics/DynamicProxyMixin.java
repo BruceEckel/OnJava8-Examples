@@ -10,7 +10,7 @@ import static onjava.Tuple.*;
 class MixinProxy implements InvocationHandler {
   Map<String, Object> delegatesByMethod;
   @SuppressWarnings("unchecked")
-  public MixinProxy(Tuple2<Object, Class<?>>... pairs) {
+  MixinProxy(Tuple2<Object, Class<?>>... pairs) {
     delegatesByMethod = new HashMap<>();
     for(Tuple2<Object, Class<?>> pair : pairs) {
       for(Method method : pair.a2.getMethods()) {

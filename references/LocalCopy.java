@@ -6,7 +6,7 @@
 
 class Duplo implements Cloneable {
   private int n;
-  public Duplo(int n) { this.n = n; }
+  Duplo(int n) { this.n = n; }
   @Override
   public Duplo clone() { // [1]
     try {

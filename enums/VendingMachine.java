@@ -133,7 +133,7 @@ class RandomInputSupplier implements Supplier<Input> {
 // Create Inputs from a file of ';'-separated strings:
 class FileInputSupplier implements Supplier<Input> {
   private Iterator<String> input;
-  public FileInputSupplier(String fileName) {
+  FileInputSupplier(String fileName) {
     try {
       input = Files.lines(Paths.get(fileName))
         .skip(1) // Skip the comment line

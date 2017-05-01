@@ -4,7 +4,7 @@
 // Visit http://OnJava8.com for more book information.
 import java.util.concurrent.atomic.*;
 
-class SyncFactory implements HasID {
+final class SyncFactory implements HasID {
   private final int id;
   private SyncFactory(SharedArg sa) {
     id = sa.get();

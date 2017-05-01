@@ -8,26 +8,26 @@ class Foo {}
 
 class Bar {
   Foo f;
-  public Bar(Foo f) { this.f = f; }
+  Bar(Foo f) { this.f = f; }
 }
 
 class IBaz {
   int i;
-  public IBaz(int i) {
+  IBaz(int i) {
     this.i = i;
   }
 }
 
 class LBaz {
   long l;
-  public LBaz(long l) {
+  LBaz(long l) {
     this.l = l;
   }
 }
 
 class DBaz {
   double d;
-  public DBaz(double d) {
+  DBaz(double d) {
     this.d = d;
   }
 }
