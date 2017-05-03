@@ -16,8 +16,8 @@ public class GenericReading {
     Fruit f = readExact(fruit);
     f = readExact(apples);
   }
-  // If you have a class, its type is
-  // established when the class is instantiated:
+  // A class type is established
+  // when the class is instantiated:
   static class Reader<T> {
     T readExact(List<T> list) { return list.get(0); }
   }

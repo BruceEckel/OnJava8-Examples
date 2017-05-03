@@ -21,8 +21,8 @@ public class GenericsAndUpcasting {
   }
 }
 /* Output:
-GrannySmith@1db9742
-Gala@106d69c
-Fuji@52e922
-Braeburn@25154f
+GrannySmith@15db9742
+Gala@6d06d69c
+Fuji@7852e922
+Braeburn@4e25154f
 */

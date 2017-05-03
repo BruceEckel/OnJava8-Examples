@@ -27,15 +27,15 @@ public class WorkStealingPool {
   }
 }
 /* Output:
-8
-ForkJoinPool-1-worker-1
-ForkJoinPool-1-worker-2
-ForkJoinPool-1-worker-1
-ForkJoinPool-1-worker-1
-ForkJoinPool-1-worker-4
+4
 ForkJoinPool-1-worker-1
 ForkJoinPool-1-worker-3
-ForkJoinPool-1-worker-5
-ForkJoinPool-1-worker-4
 ForkJoinPool-1-worker-2
+ForkJoinPool-1-worker-2
+ForkJoinPool-1-worker-2
+ForkJoinPool-1-worker-2
+ForkJoinPool-1-worker-2
+ForkJoinPool-1-worker-2
+ForkJoinPool-1-worker-3
+ForkJoinPool-1-worker-1
 */

@@ -67,16 +67,15 @@ public class AtUnitExample4 {
 annotations.AtUnitExample4
   . words 'All'
 (failed)
-  . scramble1 'brontosauruses'
-ntsaueorosurbs
-(failed)
-  . scramble2 'are'
-are
+  . scramble2 'brontosauruses'
+tsaeborornussu
+
+  . scramble1 'are'
+rae
 (failed)
 (3 tests)
 
->>> 3 FAILURES <<<
+>>> 2 FAILURES <<<
   annotations.AtUnitExample4: words
   annotations.AtUnitExample4: scramble1
-  annotations.AtUnitExample4: scramble2
 */

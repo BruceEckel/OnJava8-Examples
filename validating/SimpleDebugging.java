@@ -30,8 +30,8 @@ In foo3
 ___[ Error Output ]___
 Exception in thread "main" java.lang.ArithmeticException: /
 by zero
-        at SimpleDebugging.foo3(SimpleDebugging.java:16)
-        at SimpleDebugging.foo2(SimpleDebugging.java:10)
-        at SimpleDebugging.foo1(SimpleDebugging.java:6)
-        at SimpleDebugging.main(SimpleDebugging.java:19)
+        at SimpleDebugging.foo3(SimpleDebugging.java:17)
+        at SimpleDebugging.foo2(SimpleDebugging.java:11)
+        at SimpleDebugging.foo1(SimpleDebugging.java:7)
+        at SimpleDebugging.main(SimpleDebugging.java:20)
 */

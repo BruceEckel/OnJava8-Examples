@@ -27,11 +27,11 @@ public class UseCaseTracker {
   }
 }
 /* Output:
-Found Use Case 49
-  New passwords can't equal previously used ones
 Found Use Case 47
   Passwords must contain at least one numeric
 Found Use Case 48
   no description
+Found Use Case 49
+  New passwords can't equal previously used ones
 Missing use case 50
 */

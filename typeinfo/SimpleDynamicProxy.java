@@ -46,7 +46,7 @@ Interface.doSomething(), args: null
 doSomething
 **** proxy: class $Proxy0, method: public abstract void
 Interface.somethingElse(java.lang.String), args:
-[Ljava.lang.Object;@1c7c054
+[Ljava.lang.Object;@6bc7c054
   bonobo
 somethingElse bonobo
 */

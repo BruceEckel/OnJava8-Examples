@@ -20,6 +20,6 @@ public class PetCount4 {
 Rat Manx Cymric Mutt Pug Cymric Pug Manx Cymric Rat
 EgyptianMau Hamster EgyptianMau Mutt Mutt Cymric Mouse Pug
 Mouse Cymric
-{EgyptianMau=2, Hamster=1, Pug=3, Manx=7, Cymric=5, Dog=6,
-Pet=20, Mutt=3, Rat=2, Mouse=2, Rodent=5, Cat=9}
+{EgyptianMau=2, Cymric=5, Mutt=3, Cat=9, Rat=2, Pet=20,
+Manx=7, Hamster=1, Pug=3, Rodent=5, Dog=6, Mouse=2}
 */

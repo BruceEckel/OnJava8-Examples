@@ -12,6 +12,6 @@ public class Equivalence {
   }
 }
 /* Output:
-false
 true
+false
 */

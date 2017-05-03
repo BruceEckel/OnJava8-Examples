@@ -135,10 +135,10 @@ public class MappedIO {
   }
 }
 /* Output:
-Stream Write: 0.269
+Stream Write: 0.285
 Mapped Write: 0.022
-Stream Read: 0.262
-Mapped Read: 0.010
-Stream Read/Write: 1.620
-Mapped Read/Write: 0.007
+Stream Read: 0.311
+Mapped Read: 0.009
+Stream Read/Write: 1.368
+Mapped Read/Write: 0.005
 */

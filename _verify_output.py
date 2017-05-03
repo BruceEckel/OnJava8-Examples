@@ -2,6 +2,10 @@
 # Requires Python 3.5
 # Validates output from executable Java programs in "On Java 8."
 # Use chain of responsibility to successively try strategies until one matches
+'''
+Intended to be copied into the ExtractedExamples directory,
+thus it doesn't use config.py
+'''
 from pathlib import Path
 import textwrap
 import re

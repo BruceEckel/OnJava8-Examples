@@ -23,8 +23,8 @@ public class AtUnitComposition {
 }
 /* Output:
 annotations.AtUnitComposition
-  . tMethodOne
   . tMethodTwo This is methodTwo
 
+  . tMethodOne
 OK (2 tests)
 */

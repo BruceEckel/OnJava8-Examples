@@ -9,5 +9,5 @@ public class SerialNumberTest {
   }
 }
 /* Output:
-Duplicate: 4119
+Duplicate: 4687
 */

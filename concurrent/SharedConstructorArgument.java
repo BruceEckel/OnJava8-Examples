@@ -39,6 +39,6 @@ public class SharedConstructorArgument {
   }
 }
 /* Output:
-47747
+48627
 0
 */

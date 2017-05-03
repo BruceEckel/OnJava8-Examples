@@ -81,24 +81,24 @@ public class RoShamBo1 {
   }
 }
 /* Output:
-Scissors vs. Rock: LOSE
+Rock vs. Rock: DRAW
+Paper vs. Rock: WIN
+Paper vs. Rock: WIN
+Paper vs. Rock: WIN
+Scissors vs. Paper: WIN
+Scissors vs. Scissors: DRAW
 Scissors vs. Paper: WIN
 Rock vs. Paper: LOSE
-Rock vs. Rock: DRAW
-Rock vs. Paper: LOSE
-Paper vs. Scissors: LOSE
-Rock vs. Paper: LOSE
-Scissors vs. Scissors: DRAW
-Scissors vs. Rock: LOSE
-Scissors vs. Paper: WIN
-Scissors vs. Rock: LOSE
-Paper vs. Scissors: LOSE
-Rock vs. Rock: DRAW
-Scissors vs. Scissors: DRAW
 Paper vs. Paper: DRAW
-Scissors vs. Paper: WIN
-Scissors vs. Rock: LOSE
-Scissors vs. Paper: WIN
 Rock vs. Paper: LOSE
+Paper vs. Scissors: LOSE
+Paper vs. Scissors: LOSE
 Rock vs. Scissors: WIN
+Rock vs. Paper: LOSE
+Paper vs. Rock: WIN
+Scissors vs. Paper: WIN
+Paper vs. Scissors: LOSE
+Paper vs. Scissors: LOSE
+Paper vs. Scissors: LOSE
+Paper vs. Scissors: LOSE
 */

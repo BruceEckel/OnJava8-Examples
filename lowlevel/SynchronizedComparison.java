@@ -78,12 +78,12 @@ public class SynchronizedComparison {
 /* Output:
 -> 152
 -> 152
--> 153
--> 153
-CriticalSection: 610
--> 44
--> 28
--> 62
+-> 152
+-> 150
+CriticalSection: 606
+-> 72
 -> 24
-SynchronizedMethod: 158
+-> 70
+-> 164
+SynchronizedMethod: 330
 */

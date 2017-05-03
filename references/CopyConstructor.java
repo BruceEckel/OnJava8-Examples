@@ -177,10 +177,12 @@ public class CopyConstructor {
 /* Output:
 In ripen, t is a Tomato
 In slice, f is a Fruit
-In ripen2, t is a Tomato
-In slice2, f is a Tomato
+java.lang.NoSuchMethodException: Tomato.<init>(Tomato)
+java.lang.NoSuchMethodException: Tomato.<init>(Tomato)
 In ripen, t is a Tomato
 In slice, f is a Fruit
-In ripen2, t is a GreenZebra
-In slice2, f is a GreenZebra
+java.lang.NoSuchMethodException:
+GreenZebra.<init>(GreenZebra)
+java.lang.NoSuchMethodException:
+GreenZebra.<init>(GreenZebra)
 */

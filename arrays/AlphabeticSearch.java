@@ -19,11 +19,11 @@ public class AlphabeticSearch {
   }
 }
 /* Output:
-[anmkkyh, bhmupju, btpenpc, cjwzmmr, cuxszgv,
-eloztdv, ewcippc, ezdeklu, fcjpthl,
-fqmlgsh, gmeinne, hyoubzl, jbvlgwc, jlxpqds,
-ljlbynx, mvducuj, qgekgly, skddcat,
-taprwxz, uybypgp, vjsszkn, vniyapk, vqqakbm,
-vwodhcf, ydpulcq, ygpoalk, yskvett,
-zehpfmm, zofmmvm, zrxmclh] Index: 10 gmeinne
+[anmkkyh, bhmupju, btpenpc, cjwzmmr, cuxszgv, eloztdv,
+ewcippc, ezdeklu, fcjpthl, fqmlgsh, gmeinne, hyoubzl,
+jbvlgwc, jlxpqds, ljlbynx, mvducuj, qgekgly, skddcat,
+taprwxz, uybypgp, vjsszkn, vniyapk, vqqakbm, vwodhcf,
+ydpulcq, ygpoalk, yskvett, zehpfmm, zofmmvm, zrxmclh]
+Index: 10
+gmeinne
 */

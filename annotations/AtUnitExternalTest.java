@@ -22,8 +22,8 @@ AtUnitExternalTest extends AtUnitExample1 {
 }
 /* Output:
 annotations.AtUnitExternalTest
+  . tMethodOne
   . tMethodTwo This is methodTwo
 
-  . tMethodOne
 OK (2 tests)
 */

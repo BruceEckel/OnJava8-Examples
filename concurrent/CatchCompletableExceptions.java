@@ -52,11 +52,14 @@ public class CatchCompletableExceptions {
 /* Output:
 **** Failure Mode ****
 Breakable_exceptionally [1]
+Throwing Exception for exceptionally
 result: Breakable_java.lang.RuntimeException:
 Breakable_exceptionally failed [0]
 Breakable_handle [1]
+Throwing Exception for handle
 result: Failure recovery object
 Breakable_whenComplete [1]
+Throwing Exception for whenComplete
 It failed
 **** Success Mode ****
 Breakable_exceptionally [-1]

@@ -27,15 +27,14 @@ public class FileSystemDemo {
 }
 /* Output:
 Windows 10
-File Store: SSD (C:)
+File Store: Teenyverse (C:)
 Root Directory: C:\
-Root Directory: D:\
 Separator: \
 UserPrincipalLookupService:
-sun.nio.fs.WindowsFileSystem$LookupService$1@1db9742
+sun.nio.fs.WindowsFileSystem$LookupService$1@15db9742
 isOpen: true
 isReadOnly: false
 FileSystemProvider:
-sun.nio.fs.WindowsFileSystemProvider@106d69c
+sun.nio.fs.WindowsFileSystemProvider@6d06d69c
 File Attribute Views: [owner, dos, acl, basic, user]
 */

@@ -93,18 +93,17 @@ IllegalStateException
 null
 NullPointerException
 Robert
-IndexOutOfBoundsException: index (6) must be less
-than size (6)
+IndexOutOfBoundsException: index (6) must be less than size
+(6)
 Bob
-IndexOutOfBoundsException: index (6) must be less
-than size (3)
+IndexOutOfBoundsException: index (6) must be less than size
+(3)
 null
 NullPointerException
 Robert
 Success
 Bob
-IndexOutOfBoundsException: index (6)
-must not be greater
+IndexOutOfBoundsException: index (6) must not be greater
 than size (3)
 null
 NullPointerException
@@ -113,15 +112,14 @@ Success
 Hieronymus
 Success
 Hieronymus
-IndexOutOfBoundsException: end index (11)
-must not be greater
-than size (10)
+IndexOutOfBoundsException: end index (11) must not be
+greater than size (10)
 Hieronymus
-IndexOutOfBoundsException: start index (-1)
-must not be negative
+IndexOutOfBoundsException: start index (-1) must not be
+negative
 Hieronymus
-IndexOutOfBoundsException: end index (6)
-must not be less than start index (7)
+IndexOutOfBoundsException: end index (6) must not be less
+than start index (7)
 null
 NullPointerException
 */

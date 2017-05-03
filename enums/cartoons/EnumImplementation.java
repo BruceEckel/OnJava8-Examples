@@ -32,6 +32,6 @@ public class EnumImplementation {
   }
 }
 /* Output:
-SILLY, SPANKY, PUNCHY, BOUNCY, BOB, SLAPPY, SLAPPY, BOB,
-BOB, SLAPPY,
+BOB, PUNCHY, BOB, SPANKY, NUTTY, PUNCHY, SLAPPY, NUTTY,
+NUTTY, SLAPPY,
 */

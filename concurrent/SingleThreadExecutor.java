@@ -26,19 +26,20 @@ public class SingleThreadExecutor {
 /* Output:
 All tasks submitted
 main awaiting termination
+main awaiting termination
 NapTask[0] pool-1-thread-1
 main awaiting termination
 NapTask[1] pool-1-thread-1
 main awaiting termination
 NapTask[2] pool-1-thread-1
-main awaiting termination
 NapTask[3] pool-1-thread-1
+main awaiting termination
 main awaiting termination
 NapTask[4] pool-1-thread-1
 main awaiting termination
 NapTask[5] pool-1-thread-1
-main awaiting termination
 NapTask[6] pool-1-thread-1
+main awaiting termination
 main awaiting termination
 NapTask[7] pool-1-thread-1
 main awaiting termination

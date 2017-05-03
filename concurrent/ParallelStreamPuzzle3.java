@@ -2,6 +2,7 @@
 // (c)2017 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
+// {ValidateByHand}
 import java.util.*;
 import java.util.stream.*;
 
@@ -26,7 +27,7 @@ public class ParallelStreamPuzzle3 {
 2: ForkJoinPool.commonPool-worker-6
 4: ForkJoinPool.commonPool-worker-1
 0: ForkJoinPool.commonPool-worker-4
-7: main
+7: ForkJoinPool.commonPool-worker-1
 9: ForkJoinPool.commonPool-worker-2
 [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 */

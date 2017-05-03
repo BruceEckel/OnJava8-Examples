@@ -22,5 +22,5 @@ public class VarArgs {
 /* Output:
 47 3.14 11.11
 one two three
-A@1db9742 A@106d69c A@52e922
+A@15db9742 A@6d06d69c A@7852e922
 */

@@ -4,6 +4,7 @@
 // Visit http://OnJava8.com for more book information.
 // Locks in the concurrent library allow you
 // to give up on trying to acquire a lock
+// {ValidateByHand} AppVeyor CI has trouble
 import java.util.concurrent.*;
 import java.util.concurrent.locks.*;
 import onjava.Nap;

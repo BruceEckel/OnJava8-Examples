@@ -28,8 +28,8 @@ public class BadMicroBenchmark2 {
   }
 }
 /* Output:
-parallelSetAll: 1360
-setAll: 125
-parallelSetAll: 75
-setAll: 17
+parallelSetAll: 776
+setAll: 120
+parallelSetAll: 72
+setAll: 15
 */

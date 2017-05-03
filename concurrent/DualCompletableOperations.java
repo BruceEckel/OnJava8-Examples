@@ -103,13 +103,11 @@ Workable[AW]
 Workable[CW]
 anyOf
 Workable[BW]
-Workable[DW]
 Workable[AW]
 *****************
-Workable[CW]
+Workable[DW]
 Workable[BW]
-Workable[DW]
+Workable[CW]
 Workable[AW]
 *****************
-allOf
 */

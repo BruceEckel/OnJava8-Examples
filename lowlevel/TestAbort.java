@@ -13,5 +13,5 @@ public class TestAbort {
 }
 /* Output:
 Napping for 4
-TimedAbort 1
+TimedAbort 1.0
 */

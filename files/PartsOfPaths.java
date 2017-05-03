@@ -25,18 +25,18 @@ public class PartsOfPaths {
 /* Output:
 Windows 10
 Users
-Bruce
+bruce
 Documents
-GitHub
+Git
 on-java
 ExtractedExamples
 files
 PartsOfPaths.java
 ends with '.java': false
 Users: false : false
-Bruce: false : false
+bruce: false : false
 Documents: false : false
-GitHub: false : false
+Git: false : false
 on-java: false : false
 ExtractedExamples: false : false
 files: false : false

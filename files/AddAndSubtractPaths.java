@@ -53,35 +53,35 @@ public class AddAndSubtractPaths {
 }
 /* Output:
 Windows 10
-C:\Users\Bruce\Documents\GitHub
+C:\Users\bruce\Documents\Git
 (1)r on-
 java\ExtractedExamples\files\AddAndSubtractPaths.java
-RealPath: C:\Users\Bruce\Documents\GitHub\on-
+RealPath: C:\Users\bruce\Documents\Git\on-
 java\ExtractedExamples\files\AddAndSubtractPaths.java
 (2)r on-java\ExtractedExamples\strings\..\files
-RealPath: C:\Users\Bruce\Documents\GitHub\on-
+RealPath: C:\Users\bruce\Documents\Git\on-
 java\ExtractedExamples\files
 (3)r on-java\ExtractedExamples\files
-RealPath: C:\Users\Bruce\Documents\GitHub\on-
+RealPath: C:\Users\bruce\Documents\Git\on-
 java\ExtractedExamples\files
 (4)  ..\..
-RealPath: C:\Users\Bruce\Documents\GitHub\on-java
+RealPath: C:\Users\bruce\Documents\Git\on-java
 (5)  ..\..
-RealPath: C:\Users\Bruce\Documents\GitHub\on-java
+RealPath: C:\Users\bruce\Documents\Git\on-java
 (6)r on-java
-RealPath: C:\Users\Bruce\Documents\GitHub\on-java
+RealPath: C:\Users\bruce\Documents\Git\on-java
 (7)r on-java\ExtractedExamples\files\.\..\..
-RealPath: C:\Users\Bruce\Documents\GitHub\on-java
+RealPath: C:\Users\bruce\Documents\Git\on-java
 (8)r on-java
-RealPath: C:\Users\Bruce\Documents\GitHub\on-java
+RealPath: C:\Users\bruce\Documents\Git\on-java
 (9)r on-java\ExtractedExamples\files
-RealPath: C:\Users\Bruce\Documents\GitHub\on-
+RealPath: C:\Users\bruce\Documents\Git\on-
 java\ExtractedExamples\files
 (10)r on-java\ExtractedExamples\strings
-RealPath: C:\Users\Bruce\Documents\GitHub\on-
+RealPath: C:\Users\bruce\Documents\Git\on-
 java\ExtractedExamples\strings
 (11)  nonexistent
 java.nio.file.NoSuchFileException:
-C:\Users\Bruce\Documents\GitHub\on-
+C:\Users\bruce\Documents\Git\on-
 java\ExtractedExamples\files\nonexistent
 */

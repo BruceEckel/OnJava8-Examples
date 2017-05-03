@@ -55,6 +55,7 @@ public class CompletableOperations {
 1
 runAsync
 thenRunAsync
+runAsync is static
 99
 thenAcceptAsync: 4
 47
@@ -65,7 +66,7 @@ thenAcceptAsync: 4
 cancelled: true
 completed exceptionally: true
 done: true
-java.util.concurrent.CompletableFuture@404b9385[Completed
+java.util.concurrent.CompletableFuture@6d311334[Completed
 exceptionally]
 777
 dependents: 1

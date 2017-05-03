@@ -48,9 +48,9 @@ Writable: true
 notExists: false
 Hidden: false
 size: 1630
-FileStore: SSD (C:)
-LastModified: : 2016-07-27T15:52:49.898848Z
-Owner: MINDVIEWTOSHIBA\Bruce (User)
+FileStore: Teenyverse (C:)
+LastModified: : 2017-05-02T21:19:06.828604Z
+Owner: TEENYVERSE\bruce (User)
 ContentType: null
 SymbolicLink: false
 */

@@ -20,7 +20,7 @@ public class MoreTasksAfterShutdown {
 /* Output:
 java.util.concurrent.RejectedExecutionException: Task
 NapTask[99] rejected from
-java.util.concurrent.ThreadPoolExecutor@25154f[Shutting
+java.util.concurrent.ThreadPoolExecutor@4e25154f[Shutting
 down, pool size = 1, active threads = 1, queued tasks = 0,
 completed tasks = 0]
 NapTask[1] pool-1-thread-1

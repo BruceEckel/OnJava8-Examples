@@ -39,26 +39,26 @@ public class MapOfList {
   }
 }
 /* Output:
-People: [Person Marilyn, Person Dawn, Person Luke, Person
-Isaac, Person Kate]
-Pets: [[Pug Louie aka Louis Snorkelstein Dupree, Cat
-Stanford aka Stinky el Negro, Cat Pinkola], [Cymric Molly,
-Mutt Spot], [Rat Fuzzy, Rat Fizzy], [Rat Freckly], [Cat
-Shackleton, Cat Elsie May, Dog Margrett]]
-Person Marilyn has:
-    Pug Louie aka Louis Snorkelstein Dupree
-    Cat Stanford aka Stinky el Negro
-    Cat Pinkola
+People: [Person Dawn, Person Kate, Person Isaac, Person
+Marilyn, Person Luke]
+Pets: [[Cymric Molly, Mutt Spot], [Cat Shackleton, Cat
+Elsie May, Dog Margrett], [Rat Freckly], [Pug Louie aka
+Louis Snorkelstein Dupree, Cat Stanford aka Stinky el
+Negro, Cat Pinkola], [Rat Fuzzy, Rat Fizzy]]
 Person Dawn has:
     Cymric Molly
     Mutt Spot
-Person Luke has:
-    Rat Fuzzy
-    Rat Fizzy
-Person Isaac has:
-    Rat Freckly
 Person Kate has:
     Cat Shackleton
     Cat Elsie May
     Dog Margrett
+Person Isaac has:
+    Rat Freckly
+Person Marilyn has:
+    Pug Louie aka Louis Snorkelstein Dupree
+    Cat Stanford aka Stinky el Negro
+    Cat Pinkola
+Person Luke has:
+    Rat Fuzzy
+    Rat Fizzy
 */

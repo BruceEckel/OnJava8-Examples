@@ -16,14 +16,14 @@ public class CachedThreadPool2 {
   }
 }
 /* Output:
-0 pool-1-thread-1 200
-4 pool-1-thread-5 300
-3 pool-1-thread-4 400
-1 pool-1-thread-2 200
-2 pool-1-thread-3 200
-6 pool-1-thread-7 500
-8 pool-1-thread-9 757
-5 pool-1-thread-6 657
-7 pool-1-thread-8 657
-9 pool-1-thread-10 857
+1 pool-1-thread-2 117
+0 pool-1-thread-1 117
+2 pool-1-thread-3 217
+4 pool-1-thread-5 407
+3 pool-1-thread-4 337
+5 pool-1-thread-6 507
+7 pool-1-thread-8 707
+6 pool-1-thread-7 607
+8 pool-1-thread-9 807
+9 pool-1-thread-10 907
 */

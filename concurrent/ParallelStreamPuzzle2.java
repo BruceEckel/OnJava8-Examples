@@ -34,5 +34,5 @@ public class ParallelStreamPuzzle2 {
   }
 }
 /* Output:
-[4, 25, 27, 32, 37, 44, 49, 56, 61, 73]
+[3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
 */

@@ -70,14 +70,11 @@ public class DelayQueueDemo {
   }
 }
 /* Output:
-[128] Task 12 [429] Task 6 [551] Task 13
- [555] Task 2 [693] Task 3 [809] Task 15
- [961] Task 5 [1258] Task 1 [1258] Task 20
-  [1520] Task 19 [1861] Task 4 [1998] T
-ask 17 [2200] Task 8 [2207] Task 10 [2288]
-Task 11 [2522] Task 9 [2589] Task 14
-[2861] Task 18 [2868] Task 7 [3278]
-Task 16 (0:4000)
+[128] Task 12 [429] Task 6 [551] Task 13 [555] Task 2 [693]
+Task 3 [809] Task 15 [961] Task 5 [1258] Task 1 [1258] Task
+20 [1520] Task 19 [1861] Task 4 [1998] Task 17 [2200] Task
+8 [2207] Task 10 [2288] Task 11 [2522] Task 9 [2589] Task
+14 [2861] Task 18 [2868] Task 7 [3278] Task 16 (0:4000)
 (1:1258)
 (2:555)
 (3:693)
