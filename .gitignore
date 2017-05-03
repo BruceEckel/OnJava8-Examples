@@ -107,3 +107,4 @@ buildSrc/
 /standardio/Redirecting.txt
 /threads/PSP2.txt
 /threads/primes.txt
+_*
