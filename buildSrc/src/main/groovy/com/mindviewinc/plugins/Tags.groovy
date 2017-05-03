@@ -3,6 +3,9 @@ package com.mindviewinc.plugins
 class Tags {
     Boolean hasMainMethod = false
     Boolean willNotCompile = false
+    Boolean excludeFromTravisCI = false
+    Boolean excludeFromAppveyorCI = false
+    Boolean excludeFromCI = false
     Boolean throwsException = false
     Boolean errorOutputExpected = false
     Boolean validateByHand = false
@@ -34,6 +37,9 @@ class Tags {
                         args << p
         }
         willNotCompile = hasTag('WillNotCompile')
+        excludeFromTravisCI = hasTag('ExcludeFromTravisCI')
+        excludeFromAppveyorCI = hasTag('ExcludeFromAppveyorCI')
+        excludeFromCI = hasTag('ExcludeFromCI')
         throwsException = hasTag('ThrowsException')
         errorOutputExpected = hasTag('ErrorOutputExpected')
         validateByHand = hasTag('ValidateByHand')
@@ -69,6 +75,9 @@ class Tags {
     }
     public boolean hasTags() {
         return willNotCompile ||
+        excludeFromTravisCI ||
+        excludeFromAppveyorCI ||
+        excludeFromCI ||
         throwsException ||
         errorOutputExpected ||
         validateByHand ||
@@ -88,6 +97,9 @@ class Tags {
         """
         hasMainMethod
         willNotCompile
+        excludeFromTravisCI
+        excludeFromAppveyorCI
+        excludeFromCI
         throwsException
         errorOutputExpected
         validateByHand
