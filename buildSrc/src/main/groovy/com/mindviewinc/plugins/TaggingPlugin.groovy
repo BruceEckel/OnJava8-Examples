@@ -13,6 +13,10 @@ class TaggingPlugin implements Plugin<Project> {
     void apply(Project project) {
         boolean debug = project.hasProperty(DEBUG_PROJECT_PROPERTY_KEY) ? Boolean.valueOf(project.getProperty(DEBUG_PROJECT_PROPERTY_KEY)) : false
         List createdTasks = []
+        boolean runningInCI = System.getenv('CI')
+        boolean runningInTravis = System.getenv('TRAVIS')
+        boolean runningInAppveyor = System.getenv('APPVEYOR')
+        // println "runningInCI: " + runningInCI
 
         project.projectDir.eachFileRecurse { file ->
             if (file.name.endsWith('.java')) {
