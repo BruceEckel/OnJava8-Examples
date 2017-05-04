@@ -25,7 +25,7 @@ class TaggingPlugin implements Plugin<Project> {
                 if(debug && tags.hasTags()) println tags
 
                 // Exclude java sources that will not compile
-                if (tags.willNotCompile) {
+                if (tags.willNotCompile || (tags.lowLevelAppendix && runningInAppveyor)) {
                     project.sourceSets.main.java.excludes.add(file.name)
                 } else {
                     JavaExec javaTask = null

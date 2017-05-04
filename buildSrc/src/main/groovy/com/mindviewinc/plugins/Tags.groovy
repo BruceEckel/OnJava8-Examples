@@ -6,6 +6,7 @@ class Tags {
     Boolean excludeFromTravisCI = false
     Boolean excludeFromAppveyorCI = false
     Boolean excludeFromCI = false
+    Boolean lowLevelAppendix = false
     Boolean throwsException = false
     Boolean errorOutputExpected = false
     Boolean validateByHand = false
@@ -40,6 +41,7 @@ class Tags {
         excludeFromTravisCI = hasTag('ExcludeFromTravisCI')
         excludeFromAppveyorCI = hasTag('ExcludeFromAppveyorCI')
         excludeFromCI = hasTag('ExcludeFromCI')
+        lowLevelAppendix = firstLine.contains("// lowlevel/")
         throwsException = hasTag('ThrowsException')
         errorOutputExpected = hasTag('ErrorOutputExpected')
         validateByHand = hasTag('ValidateByHand')
