@@ -21,7 +21,7 @@ public class MapOfList {
     petPeople.put(new Person("Marilyn"),
       Arrays.asList(
         new Pug("Louie aka Louis Snorkelstein Dupree"),
-        new Cat("Stanford aka Stinky el Negro"),
+        new Cat("Stanford"),
         new Cat("Pinkola")));
     petPeople.put(new Person("Luke"),
       Arrays.asList(new Rat("Fuzzy"), new Rat("Fizzy")));
@@ -43,8 +43,8 @@ People: [Person Dawn, Person Kate, Person Isaac, Person
 Marilyn, Person Luke]
 Pets: [[Cymric Molly, Mutt Spot], [Cat Shackleton, Cat
 Elsie May, Dog Margrett], [Rat Freckly], [Pug Louie aka
-Louis Snorkelstein Dupree, Cat Stanford aka Stinky el
-Negro, Cat Pinkola], [Rat Fuzzy, Rat Fizzy]]
+Louis Snorkelstein Dupree, Cat Stanford, Cat Pinkola],
+[Rat Fuzzy, Rat Fizzy]]
 Person Dawn has:
     Cymric Molly
     Mutt Spot
@@ -56,7 +56,7 @@ Person Isaac has:
     Rat Freckly
 Person Marilyn has:
     Pug Louie aka Louis Snorkelstein Dupree
-    Cat Stanford aka Stinky el Negro
+    Cat Stanford
     Cat Pinkola
 Person Luke has:
     Rat Fuzzy

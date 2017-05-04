@@ -20,7 +20,7 @@ public class IndividualTest {
 Cat Elsie May
 Cat Pinkola
 Cat Shackleton
-Cat Stanford aka Stinky el Negro
+Cat Stanford
 Cymric Molly
 Dog Margrett
 Mutt Spot
