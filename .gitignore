@@ -108,3 +108,4 @@ buildSrc/
 /threads/PSP2.txt
 /threads/primes.txt
 _*
+config.py
