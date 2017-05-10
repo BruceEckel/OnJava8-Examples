@@ -4,8 +4,8 @@
 // Visit http://OnJava8.com for more book information.
 
 public class DatabaseException extends Exception {
-  public DatabaseException(int transactionID, int queryID,
-    String message) {
+  public DatabaseException(int transactionID,
+    int queryID, String message) {
     super(String.format("(t%d, q%d) %s", transactionID,
         queryID, message));
   }

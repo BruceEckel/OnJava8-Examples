@@ -76,14 +76,14 @@ public class SynchronizedComparison {
   }
 }
 /* Output:
--> 152
--> 152
--> 152
--> 150
-CriticalSection: 606
--> 72
--> 24
--> 70
--> 164
-SynchronizedMethod: 330
+-> 243
+-> 243
+-> 243
+-> 243
+CriticalSection: 972
+-> 69
+-> 61
+-> 83
+-> 36
+SynchronizedMethod: 249
 */

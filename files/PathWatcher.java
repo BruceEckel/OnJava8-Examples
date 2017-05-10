@@ -2,6 +2,7 @@
 // (c)2017 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
+// {ValidateByHand}
 import java.io.IOException;
 import java.nio.file.*;
 import static java.nio.file.StandardWatchEventKinds.*;
@@ -34,8 +35,10 @@ public class PathWatcher {
     WatchService watcher =
       FileSystems.getDefault().newWatchService();
     test.register(watcher, ENTRY_DELETE);
-    Executors.newSingleThreadScheduledExecutor().schedule(
-      PathWatcher::delTxtFiles,250,TimeUnit.MILLISECONDS);
+    Executors.newSingleThreadScheduledExecutor()
+      .schedule(
+        PathWatcher::delTxtFiles,
+        250, TimeUnit.MILLISECONDS);
     WatchKey key = watcher.take();
     for(WatchEvent evt : key.pollEvents()) {
       System.out.println(

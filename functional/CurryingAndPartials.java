@@ -21,7 +21,8 @@ public class CurryingAndPartials {
       System.out.println(hi.apply("Ho"));
 
       // Partial application:
-      Function<String, String> sumHi = sum.apply("Hup ");
+      Function<String, String> sumHi =
+        sum.apply("Hup ");
       System.out.println(sumHi.apply("Ho"));
       System.out.println(sumHi.apply("Hey"));
    }

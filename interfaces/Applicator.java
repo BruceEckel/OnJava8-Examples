@@ -30,7 +30,7 @@ class Downcase extends Processor {
 class Splitter extends Processor {
   @Override
   public String process(Object input) {
-    // The split() argument divides a String into pieces:
+    // split() divides a String into pieces:
     return Arrays.toString(((String)input).split(" "));
   }
 }
@@ -41,7 +41,8 @@ public class Applicator {
     System.out.println(p.process(s));
   }
   public static void main(String[] args) {
-    String s = "We are such stuff as dreams are made on";
+    String s =
+      "We are such stuff as dreams are made on";
     apply(new Upcase(), s);
     apply(new Downcase(), s);
     apply(new Splitter(), s);

@@ -31,8 +31,8 @@ public class Optionals {
       System.out.println("Caught " + e);
     }
   }
-  static void
-  test(String testName, Consumer<Optional<String>> cos) {
+  static void test(String testName,
+    Consumer<Optional<String>> cos) {
     System.out.println(" === " + testName + " === ");
     cos.accept(Stream.of("Epithets").findFirst());
     cos.accept(Stream.<String>empty().findFirst());

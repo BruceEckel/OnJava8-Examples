@@ -15,7 +15,7 @@ class WithColor<T extends HasColor> {
 
 class Coord { public int x, y, z; }
 
-// This won't work. Class must be first, then interfaces:
+// This fails. Class must be first, then interfaces:
 // class WithColorCoord<T extends HasColor & Coord> {
 
 // Multiple bounds:

@@ -31,5 +31,5 @@ public class ParallelPrime {
   }
 }
 /* Output:
-1197
+1224
 */

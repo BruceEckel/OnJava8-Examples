@@ -58,8 +58,8 @@ public class ViewBuffers {
   }
 }
 /* Output:
-Byte Buffer 0 -> 0, 1 -> 0, 2 -> 0, 3 -> 0, 4 -> 0, 5 -> 0,
-6 -> 0, 7 -> 97,
+Byte Buffer 0 -> 0, 1 -> 0, 2 -> 0, 3 -> 0, 4 -> 0, 5
+-> 0, 6 -> 0, 7 -> 97,
 Char Buffer 0 -> NUL, 1 -> NUL, 2 -> NUL, 3 -> a,
 Float Buffer 0 -> 0.0, 1 -> 1.36E-43,
 Int Buffer 0 -> 0, 1 -> 97,

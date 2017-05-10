@@ -13,7 +13,8 @@ class OptionalFilter {
   static Stream<String> testStream() {
     return Arrays.stream(elements);
   }
-  static void test(String descr, Predicate<String> pred) {
+  static void
+  test(String descr, Predicate<String> pred) {
     System.out.println(" ---( " + descr + " )---");
     for(int i = 0; i <= elements.length; i++) {
       System.out.println(
@@ -28,7 +29,8 @@ class OptionalFilter {
     test("false", str -> false);
     test("str != \"\"", str -> str != "");
     test("str.length() == 3", str -> str.length() == 3);
-    test("startsWith(\"B\")", str -> str.startsWith("B"));
+    test("startsWith(\"B\")",
+         str -> str.startsWith("B"));
   }
 }
 /* Output:

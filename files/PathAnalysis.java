@@ -47,10 +47,10 @@ RegularFile: true
 Writable: true
 notExists: false
 Hidden: false
-size: 1630
-FileStore: Teenyverse (C:)
-LastModified: : 2017-05-02T21:19:06.828604Z
-Owner: TEENYVERSE\bruce (User)
+size: 1631
+FileStore: SSD (C:)
+LastModified: : 2017-05-09T12:07:00.428366Z
+Owner: MINDVIEWTOSHIBA\Bruce (User)
 ContentType: null
 SymbolicLink: false
 */

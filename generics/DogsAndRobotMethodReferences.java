@@ -33,7 +33,8 @@ public class DogsAndRobotMethodReferences {
     CommunicateA.perform(new RobotA(),
       RobotA::speak, RobotA::sit);
     CommunicateA.perform(new Mime(),
-      Mime::walkAgainstTheWind, Mime::pushInvisibleWalls);
+      Mime::walkAgainstTheWind,
+      Mime::pushInvisibleWalls);
   }
 }
 /* Output:

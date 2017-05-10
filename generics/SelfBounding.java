@@ -22,7 +22,8 @@ class C extends SelfBounded<C> {
 class D {}
 // Can't do this:
 // class E extends SelfBounded<D> {}
-// Compile error: Type parameter D is not within its bound
+// Compile error:
+//   Type parameter D is not within its bound
 
 // Alas, you can do this, so you cannot force the idiom:
 class F extends SelfBounded {}

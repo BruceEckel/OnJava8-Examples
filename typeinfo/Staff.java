@@ -43,19 +43,21 @@ public class Staff extends ArrayList<Position> {
       new Person("Janet", "Planner", "The Burbs"));
     if(staff.positionAvailable("Software Engineer"))
       staff.fillPosition("Software Engineer",
-        new Person("Bob", "Coder", "Bright Light City"));
+        new Person(
+          "Bob", "Coder", "Bright Light City"));
     System.out.println(staff);
   }
 }
 /* Output:
-[Position: President, Employee: Me Last The Top, Lonely At,
-Position: CTO, Employee: <Empty>, Position: Marketing
-Manager, Employee: <Empty>, Position: Product Manager,
-Employee: <Empty>, Position: Project Lead, Employee: Janet
-Planner The Burbs, Position: Software Engineer, Employee:
-Bob Coder Bright Light City, Position: Software Engineer,
-Employee: <Empty>, Position: Software Engineer, Employee:
-<Empty>, Position: Software Engineer, Employee: <Empty>,
+[Position: President, Employee: Me Last The Top, Lonely
+At, Position: CTO, Employee: <Empty>, Position:
+Marketing Manager, Employee: <Empty>, Position: Product
+Manager, Employee: <Empty>, Position: Project Lead,
+Employee: Janet Planner The Burbs, Position: Software
+Engineer, Employee: Bob Coder Bright Light City,
+Position: Software Engineer, Employee: <Empty>,
+Position: Software Engineer, Employee: <Empty>,
+Position: Software Engineer, Employee: <Empty>,
 Position: Test Engineer, Employee: <Empty>, Position:
 Technical Writer, Employee: <Empty>]
 */

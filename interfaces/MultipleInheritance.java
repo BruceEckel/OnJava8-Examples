@@ -9,7 +9,9 @@ interface One {
 }
 
 interface Two {
-  default void second() { System.out.println("second"); }
+  default void second() {
+    System.out.println("second");
+  }
 }
 
 interface Three {

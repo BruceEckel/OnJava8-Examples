@@ -27,8 +27,9 @@ public class FileSystemDemo {
 }
 /* Output:
 Windows 10
-File Store: Teenyverse (C:)
+File Store: SSD (C:)
 Root Directory: C:\
+Root Directory: D:\
 Separator: \
 UserPrincipalLookupService:
 sun.nio.fs.WindowsFileSystem$LookupService$1@15db9742

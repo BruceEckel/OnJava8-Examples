@@ -15,7 +15,9 @@ public class RandomStrings implements Readable {
   private static final char[] VOWELS =
     "aeiou".toCharArray();
   private int count;
-  public RandomStrings(int count) { this.count = count; }
+  public RandomStrings(int count) {
+    this.count = count;
+  }
   @Override
   public int read(CharBuffer cb) {
     if(count-- == 0)

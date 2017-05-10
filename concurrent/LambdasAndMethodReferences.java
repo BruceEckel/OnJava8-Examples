@@ -34,7 +34,7 @@ public class LambdasAndMethodReferences {
 }
 /* Output:
 Lambda1
+NotCallable
 NotRunnable
 Lambda2
-NotCallable
 */

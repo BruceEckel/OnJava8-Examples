@@ -17,7 +17,8 @@ public class VarargType {
     f();
     g(1);
     g();
-    System.out.println("int[]: " + new int[0].getClass());
+    System.out.println("int[]: " +
+      new int[0].getClass());
   }
 }
 /* Output:

@@ -33,7 +33,8 @@ public class GuavaAssertions {
       System.out.println(e.getMessage());
     }
     try {
-      verifyNotNull(s, "Shouldn't be null: %s", "arg s");
+      verifyNotNull(
+        s, "Shouldn't be null: %s", "arg s");
     } catch(VerifyException e) {
       System.out.println(e.getMessage());
     }

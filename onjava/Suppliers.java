@@ -10,8 +10,8 @@ import java.util.stream.*;
 
 public class Suppliers {
   // Create a collection and fill it:
-  public static <T, C extends Collection<T>>
-  C create(Supplier<C> factory, Supplier<T> gen, int n) {
+  public static <T, C extends Collection<T>> C
+  create(Supplier<C> factory, Supplier<T> gen, int n) {
     return Stream.generate(gen)
       .limit(n)
       .collect(factory, C::add, C::addAll);

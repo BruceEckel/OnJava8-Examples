@@ -1,15 +1,15 @@
-// annotations/AtUnitComposition.java
+// annotations/AUComposition.java
 // (c)2017 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // Creating non-embedded tests
 // {java onjava.atunit.AtUnit
-// build/classes/main/annotations/AtUnitComposition.class}
+// build/classes/main/annotations/AUComposition.class}
 package annotations;
 import onjava.atunit.*;
 import onjava.*;
 
-public class AtUnitComposition {
+public class AUComposition {
   AtUnitExample1 testObject = new AtUnitExample1();
   @Test
   boolean tMethodOne() {
@@ -22,7 +22,7 @@ public class AtUnitComposition {
   }
 }
 /* Output:
-annotations.AtUnitComposition
+annotations.AUComposition
   . tMethodTwo This is methodTwo
 
   . tMethodOne

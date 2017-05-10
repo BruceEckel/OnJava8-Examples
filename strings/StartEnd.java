@@ -8,7 +8,8 @@ public class StartEnd {
   public static String input =
     "As long as there is injustice, whenever a\n" +
     "Targathian baby cries out, wherever a distress\n" +
-    "signal sounds among the stars ... We'll be there.\n"+
+    "signal sounds among the stars " +
+    "... We'll be there.\n"+
     "This fine ship, and this fine crew ...\n" +
     "Never give up! Never surrender!";
   private static class Display {
@@ -60,7 +61,8 @@ find() 'wherever' start = 27 end = 35
 T\w+
 find() 'Targathian' start = 0 end = 10
 lookingAt() start = 0 end = 10
-input : signal sounds among the stars ... We'll be there.
+input : signal sounds among the stars ... We'll be
+there.
 \w*ere\w*
 find() 'there' start = 43 end = 48
 input : This fine ship, and this fine crew ...

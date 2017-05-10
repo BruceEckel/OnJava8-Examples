@@ -7,7 +7,9 @@
 package polymorphism;
 
 public class PrivateOverride2 {
-  private void f() { System.out.println("private f()"); }
+  private void f() {
+    System.out.println("private f()");
+  }
   public static void main(String[] args) {
     PrivateOverride2 po = new Derived2();
     po.f();

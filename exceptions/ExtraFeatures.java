@@ -22,15 +22,18 @@ class MyException2 extends Exception {
 
 public class ExtraFeatures {
   public static void f() throws MyException2 {
-    System.out.println("Throwing MyException2 from f()");
+    System.out.println(
+      "Throwing MyException2 from f()");
     throw new MyException2();
   }
   public static void g() throws MyException2 {
-    System.out.println("Throwing MyException2 from g()");
+    System.out.println(
+      "Throwing MyException2 from g()");
     throw new MyException2("Originated in g()");
   }
   public static void h() throws MyException2 {
-    System.out.println("Throwing MyException2 from h()");
+    System.out.println(
+      "Throwing MyException2 from h()");
     throw new MyException2("Originated in h()", 47);
   }
   public static void main(String[] args) {
@@ -55,15 +58,15 @@ public class ExtraFeatures {
 /* Output:
 Throwing MyException2 from f()
 MyException2: Detail Message: 0 null
-        at ExtraFeatures.f(ExtraFeatures.java:23)
-        at ExtraFeatures.main(ExtraFeatures.java:35)
+        at ExtraFeatures.f(ExtraFeatures.java:24)
+        at ExtraFeatures.main(ExtraFeatures.java:38)
 Throwing MyException2 from g()
 MyException2: Detail Message: 0 Originated in g()
-        at ExtraFeatures.g(ExtraFeatures.java:27)
-        at ExtraFeatures.main(ExtraFeatures.java:40)
+        at ExtraFeatures.g(ExtraFeatures.java:29)
+        at ExtraFeatures.main(ExtraFeatures.java:43)
 Throwing MyException2 from h()
 MyException2: Detail Message: 47 Originated in h()
-        at ExtraFeatures.h(ExtraFeatures.java:31)
-        at ExtraFeatures.main(ExtraFeatures.java:45)
+        at ExtraFeatures.h(ExtraFeatures.java:34)
+        at ExtraFeatures.main(ExtraFeatures.java:48)
 e.val() = 47
 */

@@ -5,7 +5,8 @@
 import java.util.*;
 
 public class GenericReading {
-  static List<Apple> apples = Arrays.asList(new Apple());
+  static List<Apple> apples =
+    Arrays.asList(new Apple());
   static List<Fruit> fruit = Arrays.asList(new Fruit());
   static <T> T readExact(List<T> list) {
     return list.get(0);

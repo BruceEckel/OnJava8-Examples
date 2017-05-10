@@ -10,7 +10,8 @@ public class ListIteration {
     List<Pet> pets = Pets.list(8);
     ListIterator<Pet> it = pets.listIterator();
     while(it.hasNext())
-      System.out.print(it.next() + ", " + it.nextIndex() +
+      System.out.print(it.next() +
+        ", " + it.nextIndex() +
         ", " + it.previousIndex() + "; ");
     System.out.println();
     // Backwards:
@@ -27,8 +28,8 @@ public class ListIteration {
   }
 }
 /* Output:
-Rat, 1, 0; Manx, 2, 1; Cymric, 3, 2; Mutt, 4, 3; Pug, 5, 4;
-Cymric, 6, 5; Pug, 7, 6; Manx, 8, 7;
+Rat, 1, 0; Manx, 2, 1; Cymric, 3, 2; Mutt, 4, 3; Pug,
+5, 4; Cymric, 6, 5; Pug, 7, 6; Manx, 8, 7;
 7 6 5 4 3 2 1 0
 [Rat, Manx, Cymric, Mutt, Pug, Cymric, Pug, Manx]
 [Rat, Manx, Cymric, Cymric, Rat, EgyptianMau, Hamster,

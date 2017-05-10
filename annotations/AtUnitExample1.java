@@ -34,11 +34,11 @@ public class AtUnitExample1 {
 }
 /* Output:
 annotations.AtUnitExample1
+  . m3
+  . methodOneTest
   . m2 This is methodTwo
 
-  . m3
   . failureTest (failed)
-  . methodOneTest
   . anotherDisappointment (failed)
 (5 tests)
 

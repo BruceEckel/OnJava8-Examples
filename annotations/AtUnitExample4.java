@@ -4,6 +4,7 @@
 // Visit http://OnJava8.com for more book information.
 // {java onjava.atunit.AtUnit
 // build/classes/main/annotations/AtUnitExample4.class}
+// {VisuallyInspectOutput}
 package annotations;
 import java.util.*;
 import onjava.atunit.*;
@@ -67,15 +68,16 @@ public class AtUnitExample4 {
 annotations.AtUnitExample4
   . words 'All'
 (failed)
-  . scramble2 'brontosauruses'
-tsaeborornussu
-
-  . scramble1 'are'
-rae
+  . scramble1 'brontosauruses'
+ntsaueorosurbs
+(failed)
+  . scramble2 'are'
+are
 (failed)
 (3 tests)
 
->>> 2 FAILURES <<<
+>>> 3 FAILURES <<<
   annotations.AtUnitExample4: words
   annotations.AtUnitExample4: scramble1
+  annotations.AtUnitExample4: scramble2
 */

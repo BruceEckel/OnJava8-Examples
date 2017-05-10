@@ -21,5 +21,6 @@ public class RandomList<T> extends ArrayList<T> {
   }
 }
 /* Output:
-brown over fox quick quick dog brown The brown lazy brown
+brown over fox quick quick dog brown The brown lazy
+brown
 */

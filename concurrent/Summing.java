@@ -41,7 +41,7 @@ public class Summing {
 }
 /* Output:
 5000000050000000
-Sum Stream: 62ms
-Sum Stream Parallel: 42ms
-Sum Iterated: 116ms
+Sum Stream: 167ms
+Sum Stream Parallel: 46ms
+Sum Iterated: 284ms
 */

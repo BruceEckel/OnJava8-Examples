@@ -20,11 +20,12 @@ extends ArrayList<Processor<T, E>> {
 
 class Failure1 extends Exception {}
 
-class Processor1 implements Processor<String, Failure1> {
+class Processor1
+implements Processor<String, Failure1> {
   static int count = 3;
   @Override
-  public void
-  process(List<String> resultCollector) throws Failure1 {
+  public void process(List<String> resultCollector)
+  throws Failure1 {
     if(count-- > 1)
       resultCollector.add("Hep!");
     else
@@ -36,11 +37,12 @@ class Processor1 implements Processor<String, Failure1> {
 
 class Failure2 extends Exception {}
 
-class Processor2 implements Processor<Integer, Failure2> {
+class Processor2
+implements Processor<Integer, Failure2> {
   static int count = 2;
   @Override
-  public void
-  process(List<Integer> resultCollector) throws Failure2 {
+  public void process(List<Integer> resultCollector)
+  throws Failure2 {
     if(count-- == 0)
       resultCollector.add(47);
     else {

@@ -18,7 +18,8 @@ public class LiteralPetCreator extends PetCreator {
       Manx.class, Cymric.class, Rat.class,
       Mouse.class, Hamster.class));
   // Types for random creation:
-  private static final List<Class<? extends Pet>> TYPES =
+  private static final
+  List<Class<? extends Pet>> TYPES =
     ALL_TYPES.subList(ALL_TYPES.indexOf(Mutt.class),
       ALL_TYPES.size());
   @Override
@@ -30,8 +31,9 @@ public class LiteralPetCreator extends PetCreator {
   }
 }
 /* Output:
-[class typeinfo.pets.Mutt, class typeinfo.pets.Pug, class
-typeinfo.pets.EgyptianMau, class typeinfo.pets.Manx, class
-typeinfo.pets.Cymric, class typeinfo.pets.Rat, class
-typeinfo.pets.Mouse, class typeinfo.pets.Hamster]
+[class typeinfo.pets.Mutt, class typeinfo.pets.Pug,
+class typeinfo.pets.EgyptianMau, class
+typeinfo.pets.Manx, class typeinfo.pets.Cymric, class
+typeinfo.pets.Rat, class typeinfo.pets.Mouse, class
+typeinfo.pets.Hamster]
 */

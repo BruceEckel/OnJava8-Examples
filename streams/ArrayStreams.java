@@ -7,7 +7,8 @@ import java.util.stream.*;
 
 public class ArrayStreams {
   public static void main(String[] args) {
-    Arrays.stream(new double[] { 3.14159, 2.718, 1.618 })
+    Arrays.stream(
+      new double[] { 3.14159, 2.718, 1.618 })
       .forEach(n -> System.out.format("%f ", n));
     System.out.println();
     Arrays.stream(new int[] { 1, 3, 5 })

@@ -24,7 +24,7 @@ public class Literals {
     System.out.println(
       "s: " + Integer.toBinaryString(s));
     long n1 = 200L; // long suffix
-    long n2 = 200l; // long suffix (but can be confusing)
+    long n2 = 200l; // long suffix (can be confusing)
     long n3 = 200;
     // Java 7 Binary Literals:
     byte blb = (byte)0b00110101;

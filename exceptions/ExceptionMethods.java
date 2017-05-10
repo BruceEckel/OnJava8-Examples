@@ -27,5 +27,6 @@ getLocalizedMessage():My Exception
 toString():java.lang.Exception: My Exception
 printStackTrace():
 java.lang.Exception: My Exception
-        at ExceptionMethods.main(ExceptionMethods.java:7)
+        at
+ExceptionMethods.main(ExceptionMethods.java:7)
 */

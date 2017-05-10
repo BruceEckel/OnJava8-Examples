@@ -41,7 +41,8 @@ public class Detergent extends Cleanser {
   }
 }
 /* Output:
-Cleanser dilute() apply() Detergent.scrub() scrub() foam()
+Cleanser dilute() apply() Detergent.scrub() scrub()
+foam()
 Testing base class:
 Cleanser dilute() apply() scrub()
 */

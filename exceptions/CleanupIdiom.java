@@ -31,7 +31,8 @@ public class CleanupIdiom {
     }
 
     // [2]:
-    // If construction cannot fail you can group objects:
+    // If construction cannot fail,
+    // you can group objects:
     NeedsCleanup nc2 = new NeedsCleanup();
     NeedsCleanup nc3 = new NeedsCleanup();
     try {

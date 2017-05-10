@@ -11,7 +11,8 @@ public class Prime {
       .noneMatch(i -> n % i == 0);
   }
   public LongStream numbers() {
-    return iterate(2, i -> i + 1).filter(Prime::isPrime);
+    return iterate(2, i -> i + 1)
+      .filter(Prime::isPrime);
   }
   public static void main(String[] args) {
     new Prime().numbers()

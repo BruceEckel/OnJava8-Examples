@@ -123,44 +123,45 @@ public class ListOps {
   }
 }
 /* Output:
-[AliceBlue, AntiqueWhite, Aquamarine, Azure, Beige, Bisque,
-Black, BlanchedAlmond, Blue, BlueViolet]
+[AliceBlue, AntiqueWhite, Aquamarine, Azure, Beige,
+Bisque, Black, BlanchedAlmond, Blue, BlueViolet]
 b = [AliceBlue, AntiqueWhite, Aquamarine, Azure, Beige,
 Bisque, Black, BlanchedAlmond, Blue, BlueViolet]
-[AliceBlue, AntiqueWhite, Aquamarine, Azure, Beige, Bisque,
-Black, BlanchedAlmond, Blue, BlueViolet, AliceBlue,
-AntiqueWhite, Aquamarine, Azure, Beige, Bisque, Black,
-BlanchedAlmond, Blue, BlueViolet, AliceBlue, AntiqueWhite,
-Aquamarine, Azure, Beige, Bisque, Black, BlanchedAlmond,
-Blue, BlueViolet]
-[AliceBlue, AntiqueWhite, Aquamarine, Azure, Beige, Bisque,
-Black, BlanchedAlmond, Blue, BlueViolet, AliceBlue,
-AntiqueWhite, Aquamarine, Azure, Beige, one, Bisque, Black,
-BlanchedAlmond, Blue, BlueViolet, AliceBlue, AntiqueWhite,
-Aquamarine, Azure, Beige, Bisque, Black, BlanchedAlmond,
-Blue, BlueViolet]
+[AliceBlue, AntiqueWhite, Aquamarine, Azure, Beige,
+Bisque, Black, BlanchedAlmond, Blue, BlueViolet,
+AliceBlue, AntiqueWhite, Aquamarine, Azure, Beige,
+Bisque, Black, BlanchedAlmond, Blue, BlueViolet,
+AliceBlue, AntiqueWhite, Aquamarine, Azure, Beige,
+Bisque, Black, BlanchedAlmond, Blue, BlueViolet]
+[AliceBlue, AntiqueWhite, Aquamarine, Azure, Beige,
+Bisque, Black, BlanchedAlmond, Blue, BlueViolet,
+AliceBlue, AntiqueWhite, Aquamarine, Azure, Beige, one,
+Bisque, Black, BlanchedAlmond, Blue, BlueViolet,
+AliceBlue, AntiqueWhite, Aquamarine, Azure, Beige,
+Bisque, Black, BlanchedAlmond, Blue, BlueViolet]
 Bisque
 Black
-[AliceBlue, AntiqueWhite, Aquamarine, Azure, Beige, Bisque,
-Black, BlanchedAlmond, Blue, BlueViolet, AliceBlue,
-AntiqueWhite, Aquamarine, Azure, Beige, one, 47,
-BlanchedAlmond, Blue, BlueViolet, AliceBlue, AntiqueWhite,
-Aquamarine, Azure, Beige, Bisque, Black, BlanchedAlmond,
-Blue, BlueViolet]
+[AliceBlue, AntiqueWhite, Aquamarine, Azure, Beige,
+Bisque, Black, BlanchedAlmond, Blue, BlueViolet,
+AliceBlue, AntiqueWhite, Aquamarine, Azure, Beige, one,
+47, BlanchedAlmond, Blue, BlueViolet, AliceBlue,
+AntiqueWhite, Aquamarine, Azure, Beige, Bisque, Black,
+BlanchedAlmond, Blue, BlueViolet]
 BlueViolet Blue BlanchedAlmond Black Bisque Beige Azure
 Aquamarine AntiqueWhite AliceBlue BlueViolet Blue
-BlanchedAlmond 47 one Beige Azure Aquamarine AntiqueWhite
-AliceBlue BlueViolet Blue BlanchedAlmond Black Bisque Beige
-Azure Aquamarine AntiqueWhite AliceBlue
+BlanchedAlmond 47 one Beige Azure Aquamarine
+AntiqueWhite AliceBlue BlueViolet Blue BlanchedAlmond
+Black Bisque Beige Azure Aquamarine AntiqueWhite
+AliceBlue
 testVisual finished
-[AliceBlue, AntiqueWhite, Aquamarine, Azure, Beige, Bisque,
-Black, BlanchedAlmond, Blue, BlueViolet]
+[AliceBlue, AntiqueWhite, Aquamarine, Azure, Beige,
+Bisque, Black, BlanchedAlmond, Blue, BlueViolet]
 [two, one, AliceBlue, AntiqueWhite, Aquamarine, Azure,
 Beige, Bisque, Black, BlanchedAlmond, Blue, BlueViolet]
 two
 two
 one
 BlueViolet
-[AliceBlue, AntiqueWhite, Aquamarine, Azure, Beige, Bisque,
-Black, BlanchedAlmond, Blue]
+[AliceBlue, AntiqueWhite, Aquamarine, Azure, Beige,
+Bisque, Black, BlanchedAlmond, Blue]
 */

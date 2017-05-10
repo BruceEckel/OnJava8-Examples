@@ -3,6 +3,7 @@
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // {javap -c NotAtomic}
+// {VisuallyInspectOutput}
 
 public class NotAtomic {
   int i;
@@ -17,7 +18,7 @@ public class NotAtomic {
   public NotAtomic();
     Code:
        0: aload_0
-       1: invokespecial #1                  // Method
+       1: invokespecial #1 // Method
 java/lang/Object."<init>":()V
        4: return
 
@@ -25,20 +26,24 @@ java/lang/Object."<init>":()V
     Code:
        0: aload_0
        1: dup
-       2: getfield      #2                  // Field i:I
+       2: getfield      #2 // Field
+i:I
        5: iconst_1
        6: iadd
-       7: putfield      #2                  // Field i:I
+       7: putfield      #2 // Field
+i:I
       10: return
 
   void f2();
     Code:
        0: aload_0
        1: dup
-       2: getfield      #2                  // Field i:I
+       2: getfield      #2 // Field
+i:I
        5: iconst_3
        6: iadd
-       7: putfield      #2                  // Field i:I
+       7: putfield      #2 // Field
+i:I
       10: return
 }
 */

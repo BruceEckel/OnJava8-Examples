@@ -29,7 +29,8 @@ public class FunctionalAnnotation {
     return "Goodbye, " + arg;
   }
   public static void main(String[] args) {
-    FunctionalAnnotation fa = new FunctionalAnnotation();
+    FunctionalAnnotation fa =
+      new FunctionalAnnotation();
     Functional f = fa::goodbye;
     FunctionalNoAnn fna = fa::goodbye;
     // Functional fac = fa; // Incompatible

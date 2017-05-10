@@ -14,7 +14,8 @@ public class LastElement {
     Optional<String> lastobj =
       Stream.of("one", "two", "three")
         .reduce((n1, n2) -> n2);
-    System.out.println(lastobj.orElse("Nothing there!"));
+    System.out.println(
+      lastobj.orElse("Nothing there!"));
   }
 }
 /* Output:

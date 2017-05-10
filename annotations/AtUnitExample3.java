@@ -34,9 +34,9 @@ public class AtUnitExample3 {
 }
 /* Output:
 annotations.AtUnitExample3
-  . methodOneTest
   . initialization
   . m2 This is methodTwo
 
+  . methodOneTest
 OK (3 tests)
 */

@@ -36,7 +36,8 @@ public class RTTI {
 }
 /* Output:
 ___[ Error Output ]___
-Exception in thread "main" java.lang.ClassCastException:
-Useful cannot be cast to MoreUseful
+Exception in thread "main"
+java.lang.ClassCastException: Useful cannot be cast to
+MoreUseful
         at RTTI.main(RTTI.java:31)
 */

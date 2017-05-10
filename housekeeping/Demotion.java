@@ -5,7 +5,9 @@
 // Demotion of primitives
 
 public class Demotion {
-  void f1(double x) { System.out.println("f1(double)"); }
+  void f1(double x) {
+    System.out.println("f1(double)");
+  }
   void f2(float x) { System.out.println("f2(float)"); }
   void f3(long x) { System.out.println("f3(long)"); }
   void f4(int x) { System.out.println("f4(int)"); }

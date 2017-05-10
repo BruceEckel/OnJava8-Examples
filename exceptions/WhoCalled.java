@@ -18,20 +18,20 @@ public class WhoCalled {
   static void h() { g(); }
   public static void main(String[] args) {
     f();
-    System.out.println("-------------------------------");
+    System.out.println("*******");
     g();
-    System.out.println("-------------------------------");
+    System.out.println("*******");
     h();
   }
 }
 /* Output:
 f
 main
--------------------------------
+*******
 f
 g
 main
--------------------------------
+*******
 f
 g
 h

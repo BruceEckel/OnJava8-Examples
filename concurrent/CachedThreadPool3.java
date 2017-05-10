@@ -33,15 +33,15 @@ public class CachedThreadPool3 {
   }
 }
 /* Output:
-2 pool-1-thread-3 100
-0 pool-1-thread-1 100
 1 pool-1-thread-2 100
-3 pool-1-thread-4 100
+0 pool-1-thread-1 100
 4 pool-1-thread-5 100
 5 pool-1-thread-6 100
-6 pool-1-thread-7 100
-7 pool-1-thread-8 100
 8 pool-1-thread-9 100
 9 pool-1-thread-10 100
+2 pool-1-thread-3 100
+3 pool-1-thread-4 100
+6 pool-1-thread-7 100
+7 pool-1-thread-8 100
 sum = 1000
 */

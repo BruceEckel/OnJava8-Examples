@@ -20,7 +20,7 @@ public class PathInfo {
     show("FileName", p.getFileName());
     show("Parent", p.getParent());
     show("Root", p.getRoot());
-    System.out.println("----------------");
+    System.out.println("******************");
   }
   public static void main(String[] args) {
     System.out.println(System.getProperty("os.name"));
@@ -53,7 +53,7 @@ Absolute: true
 FileName: NoFile.txt
 Parent: C:\path\to\nowhere
 Root: C:\
-----------------
+******************
 toString: PathInfo.java
 Exists: true
 RegularFile: true
@@ -62,41 +62,41 @@ Absolute: false
 FileName: PathInfo.java
 Parent: null
 Root: null
-----------------
-toString: C:\Users\bruce\Documents\Git\on-
+******************
+toString: C:\Users\Bruce\Documents\GitHub\on-
 java\ExtractedExamples\files\PathInfo.java
 Exists: true
 RegularFile: true
 Directory: false
 Absolute: true
 FileName: PathInfo.java
-Parent: C:\Users\bruce\Documents\Git\on-
+Parent: C:\Users\Bruce\Documents\GitHub\on-
 java\ExtractedExamples\files
 Root: C:\
-----------------
-toString: C:\Users\bruce\Documents\Git\on-
+******************
+toString: C:\Users\Bruce\Documents\GitHub\on-
 java\ExtractedExamples\files
 Exists: true
 RegularFile: false
 Directory: true
 Absolute: true
 FileName: files
-Parent: C:\Users\bruce\Documents\Git\on-
+Parent: C:\Users\Bruce\Documents\GitHub\on-
 java\ExtractedExamples
 Root: C:\
-----------------
-toString: C:\Users\bruce\Documents\Git\on-
+******************
+toString: C:\Users\Bruce\Documents\GitHub\on-
 java\ExtractedExamples\files\PathInfo.java
 Exists: true
 RegularFile: true
 Directory: false
 Absolute: true
 FileName: PathInfo.java
-Parent: C:\Users\bruce\Documents\Git\on-
+Parent: C:\Users\Bruce\Documents\GitHub\on-
 java\ExtractedExamples\files
 Root: C:\
-----------------
-URI: file:///C:/Users/bruce/Documents/Git/on-
+******************
+URI: file:///C:/Users/Bruce/Documents/GitHub/on-
 java/ExtractedExamples/files/PathInfo.java
 true
 */

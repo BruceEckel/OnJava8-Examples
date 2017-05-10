@@ -23,7 +23,10 @@ public class FillMapTest {
   }
 }
 /* Output:
-{npcc=1, ztdv=6, gvgm=3, btpe=0, einn=4, eelo=5, uxsz=2}
-{npcc=1, ztdv=6, gvgm=3, btpe=0, einn=4, eelo=5, uxsz=2}
-{btpe=0, npcc=1, uxsz=2, gvgm=3, einn=4, eelo=5, ztdv=6}
+{npcc=1, ztdv=6, gvgm=3, btpe=0, einn=4, eelo=5,
+uxsz=2}
+{npcc=1, ztdv=6, gvgm=3, btpe=0, einn=4, eelo=5,
+uxsz=2}
+{btpe=0, npcc=1, uxsz=2, gvgm=3, einn=4, eelo=5,
+ztdv=6}
 */

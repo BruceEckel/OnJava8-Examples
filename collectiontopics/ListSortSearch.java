@@ -2,7 +2,7 @@
 // (c)2017 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
-// Sorting and searching Lists with Collections utilities
+// Sorting/searching Lists with Collections utilities
 import java.util.*;
 
 public class ListSortSearch {
@@ -42,16 +42,16 @@ public class ListSortSearch {
   }
 }
 /* Output:
-[one, Two, three, Four, five, six, one, one, Two, three,
-Four, five, six, one]
+[one, Two, three, Four, five, six, one, one, Two,
+three, Four, five, six, one]
 Shuffled: [Four, five, one, one, Two, six, six, three,
 three, five, Four, Two, one, one]
 Trimmed: [Four, five, one, one, Two, six, six, three,
 three, five]
-Sorted: [Four, Two, five, five, one, one, six, six, three,
-three]
+Sorted: [Four, Two, five, five, one, one, six, six,
+three, three]
 Location of six is 7, list.get(7) = six
-Case-insensitive sorted: [five, five, Four, one, one, six,
-six, three, three, Two]
+Case-insensitive sorted: [five, five, Four, one, one,
+six, six, three, three, Two]
 Location of three is 7, list.get(7) = three
 */

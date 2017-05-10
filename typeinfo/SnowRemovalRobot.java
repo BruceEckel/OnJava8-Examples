@@ -16,13 +16,15 @@ public class SnowRemovalRobot implements Robot {
   private List<Operation> ops = Arrays.asList(
     new Operation(
       () -> name + " can shovel snow",
-      () -> System.out.println(name + " shoveling snow")),
+      () -> System.out.println(
+        name + " shoveling snow")),
     new Operation(
       () -> name + " can chip ice",
       () -> System.out.println(name + " chipping ice")),
     new Operation(
       () -> name + " can clear the roof",
-      () -> System.out.println(name + " clearing roof")));
+      () -> System.out.println(
+        name + " clearing roof")));
   public List<Operation> operations() { return ops; }
   public static void main(String[] args) {
     Robot.test(new SnowRemovalRobot("Slusher"));

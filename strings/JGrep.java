@@ -13,7 +13,8 @@ public class JGrep {
   public static void
   main(String[] args) throws Exception {
     if(args.length < 2) {
-      System.out.println("Usage: java JGrep file regex");
+      System.out.println(
+        "Usage: java JGrep file regex");
       System.exit(0);
     }
     Pattern p = Pattern.compile(args[1]);

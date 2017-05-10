@@ -22,5 +22,5 @@ public class HelloDateDoc {
 }
 /* Output:
 Hello, it's:
-Tue May 02 15:22:28 MDT 2017
+Tue May 09 06:07:27 MDT 2017
 */

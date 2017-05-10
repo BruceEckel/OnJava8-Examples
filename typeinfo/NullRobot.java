@@ -8,7 +8,8 @@ import java.util.*;
 import java.util.stream.*;
 import onjava.*;
 
-class NullRobotProxyHandler implements InvocationHandler {
+class NullRobotProxyHandler
+implements InvocationHandler {
   private String nullName;
   private Robot proxied = new NRobot();
   NullRobotProxyHandler(Class<? extends Robot> type) {

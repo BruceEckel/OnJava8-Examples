@@ -9,5 +9,5 @@ public class TestStaticIDField {
   }
 }
 /* Output:
-47829
+13287
 */

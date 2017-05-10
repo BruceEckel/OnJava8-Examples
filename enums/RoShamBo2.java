@@ -12,7 +12,8 @@ public enum RoShamBo2 implements Competitor<RoShamBo2> {
   SCISSORS(WIN, DRAW, LOSE),
   ROCK(LOSE, WIN, DRAW);
   private Outcome vPAPER, vSCISSORS, vROCK;
-  RoShamBo2(Outcome paper,Outcome scissors,Outcome rock) {
+  RoShamBo2(Outcome paper,
+    Outcome scissors, Outcome rock) {
     this.vPAPER = paper;
     this.vSCISSORS = scissors;
     this.vROCK = rock;

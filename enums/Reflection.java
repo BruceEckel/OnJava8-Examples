@@ -10,9 +10,10 @@ import onjava.*;
 enum Explore { HERE, THERE }
 
 public class Reflection {
-  public static Set<String> analyze(Class<?> enumClass) {
+  public static
+  Set<String> analyze(Class<?> enumClass) {
     System.out.println(
-      "----- Analyzing " + enumClass + " -----");
+      "_____ Analyzing " + enumClass + " _____");
     System.out.println("Interfaces:");
     for(Type t : enumClass.getGenericInterfaces())
       System.out.println(t);
@@ -41,21 +42,22 @@ public class Reflection {
   }
 }
 /* Output:
------ Analyzing class Explore -----
+_____ Analyzing class Explore _____
 Interfaces:
 Base: class java.lang.Enum
 Methods:
-[compareTo, equals, getClass, getDeclaringClass, hashCode,
-name, notify, notifyAll, ordinal, toString, valueOf,
-values, wait]
------ Analyzing class java.lang.Enum -----
+[compareTo, equals, getClass, getDeclaringClass,
+hashCode, name, notify, notifyAll, ordinal, toString,
+valueOf, values, wait]
+_____ Analyzing class java.lang.Enum _____
 Interfaces:
 java.lang.Comparable<E>
 interface java.io.Serializable
 Base: class java.lang.Object
 Methods:
-[compareTo, equals, getClass, getDeclaringClass, hashCode,
-name, notify, notifyAll, ordinal, toString, valueOf, wait]
+[compareTo, equals, getClass, getDeclaringClass,
+hashCode, name, notify, notifyAll, ordinal, toString,
+valueOf, wait]
 Explore.containsAll(Enum)? true
 Explore.removeAll(Enum): [values]
 Compiled from "Reflection.java"

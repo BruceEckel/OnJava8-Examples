@@ -60,6 +60,6 @@ public class DynamicProxyMixin {
 }
 /* Output:
 Hello
-1493760122461
+1494331653339
 1
 */

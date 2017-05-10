@@ -43,7 +43,9 @@ implements TimeStamped, SerialNumbered {
   private SerialNumbered serialNumber =
     new SerialNumberedImp();
   @Override
-  public long getStamp() { return timeStamp.getStamp(); }
+  public long getStamp() {
+    return timeStamp.getStamp();
+  }
   @Override
   public long getSerialNumber() {
     return serialNumber.getSerialNumber();
@@ -64,6 +66,6 @@ public class Mixins {
   }
 }
 /* Output:
-test string 1 1493760126621 1
-test string 2 1493760126621 2
+test string 1 1494331663026 1
+test string 2 1494331663027 2
 */

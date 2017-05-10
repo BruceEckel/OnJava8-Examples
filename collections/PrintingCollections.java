@@ -6,7 +6,8 @@
 import java.util.*;
 
 public class PrintingCollections {
-  static Collection fill(Collection<String> collection) {
+  static Collection
+  fill(Collection<String> collection) {
     collection.add("rat");
     collection.add("cat");
     collection.add("dog");

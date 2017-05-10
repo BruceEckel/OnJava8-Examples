@@ -16,5 +16,5 @@ public class UnsafeReturn extends IntTestable {
   }
 }
 /* Output:
-failed with: 3
+failed with: 79
 */

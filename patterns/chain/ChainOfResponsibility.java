@@ -52,14 +52,15 @@ class FindMinima {
     else
       return new Fail();
   }
-  static List<Function<List<Double>, Result>> algorithms =
-    Arrays.asList(
+  static List<Function<List<Double>, Result>>
+    algorithms = Arrays.asList(
       FindMinima::leastSquares,
       FindMinima::perturbation,
       FindMinima::bisection
     );
   public static Result minima(List<Double> line) {
-    for(Function<List<Double>, Result> alg : algorithms) {
+    for(Function<List<Double>, Result> alg :
+        algorithms) {
       Result result = alg.apply(line);
       if(result.success)
         return result;

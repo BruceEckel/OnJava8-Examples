@@ -22,8 +22,9 @@ public class Wildcards {
     // OK, but type information is lost:
     Object obj = holder.get();
   }
-  // Similar to rawArgs(), but errors instead of warnings:
-  static void unboundedArg(Holder<?> holder, Object arg) {
+  // Like rawArgs(), but errors instead of warnings:
+  static void
+  unboundedArg(Holder<?> holder, Object arg) {
     //- holder.set(arg);
     // error: method set in class Holder<T>
     // cannot be applied to given types;
@@ -68,7 +69,8 @@ public class Wildcards {
     //     <T#1>wildSubtype(Holder<? extends T#1>,T#1)
     //     T#2 extends Object declared in class Holder
     //   where CAP#1 is a fresh type-variable:
-    //     CAP#1 extends T#1 from capture of ? extends T#1
+    //     CAP#1 extends T#1 from
+    //       capture of ? extends T#1
     // 1 error
 
     return holder.get();
@@ -214,7 +216,7 @@ public class Wildcards {
     //   found:    Holder
     //   where T is a type-variable:
     //     T extends Object declared in
-    //       method <T>wildSubtype(Holder<? extends T>,T)
+    //     method <T>wildSubtype(Holder<? extends T>,T)
     // 2 warnings
 
     Long r10 = wildSubtype(qualified, lng);

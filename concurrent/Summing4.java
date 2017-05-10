@@ -12,7 +12,9 @@ public class Summing4 {
     Arrays.parallelSetAll(aL, i -> (long)i);
     Summing.timeTest("Long Parallel",
       Summing3.CHECK, () ->
-      Arrays.stream(aL).parallel().reduce(0L,Long::sum));
+      Arrays.stream(aL)
+        .parallel()
+        .reduce(0L,Long::sum));
   }
 }
 /* Output:

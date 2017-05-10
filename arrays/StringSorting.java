@@ -20,20 +20,20 @@ public class StringSorting {
   }
 }
 /* Output:
-Before sort: [btpenpc, cuxszgv, gmeinne, eloztdv, ewcippc,
-ygpoalk, ljlbynx, taprwxz, bhmupju, cjwzmmr, anmkkyh,
-fcjpthl, skddcat, jbvlgwc, mvducuj, ydpulcq, zehpfmm,
-zrxmclh, qgekgly, hyoubzl]
-After sort: [anmkkyh, bhmupju, btpenpc, cjwzmmr, cuxszgv,
-eloztdv, ewcippc, fcjpthl, gmeinne, hyoubzl, jbvlgwc,
-ljlbynx, mvducuj, qgekgly, skddcat, taprwxz, ydpulcq,
-ygpoalk, zehpfmm, zrxmclh]
-Reverse sort: [zrxmclh, zehpfmm, ygpoalk, ydpulcq, taprwxz,
-skddcat, qgekgly, mvducuj, ljlbynx, jbvlgwc, hyoubzl,
-gmeinne, fcjpthl, ewcippc, eloztdv, cuxszgv, cjwzmmr,
-btpenpc, bhmupju, anmkkyh]
-Case-insensitive sort: [anmkkyh, bhmupju, btpenpc, cjwzmmr,
+Before sort: [btpenpc, cuxszgv, gmeinne, eloztdv,
+ewcippc, ygpoalk, ljlbynx, taprwxz, bhmupju, cjwzmmr,
+anmkkyh, fcjpthl, skddcat, jbvlgwc, mvducuj, ydpulcq,
+zehpfmm, zrxmclh, qgekgly, hyoubzl]
+After sort: [anmkkyh, bhmupju, btpenpc, cjwzmmr,
 cuxszgv, eloztdv, ewcippc, fcjpthl, gmeinne, hyoubzl,
 jbvlgwc, ljlbynx, mvducuj, qgekgly, skddcat, taprwxz,
 ydpulcq, ygpoalk, zehpfmm, zrxmclh]
+Reverse sort: [zrxmclh, zehpfmm, ygpoalk, ydpulcq,
+taprwxz, skddcat, qgekgly, mvducuj, ljlbynx, jbvlgwc,
+hyoubzl, gmeinne, fcjpthl, ewcippc, eloztdv, cuxszgv,
+cjwzmmr, btpenpc, bhmupju, anmkkyh]
+Case-insensitive sort: [anmkkyh, bhmupju, btpenpc,
+cjwzmmr, cuxszgv, eloztdv, ewcippc, fcjpthl, gmeinne,
+hyoubzl, jbvlgwc, ljlbynx, mvducuj, qgekgly, skddcat,
+taprwxz, ydpulcq, ygpoalk, zehpfmm, zrxmclh]
 */

@@ -66,8 +66,8 @@ thenAcceptAsync: 4
 cancelled: true
 completed exceptionally: true
 done: true
-java.util.concurrent.CompletableFuture@6d311334[Completed
-exceptionally]
+java.util.concurrent.CompletableFuture@6d311334[Complet
+ed exceptionally]
 777
 dependents: 1
 dependents: 2

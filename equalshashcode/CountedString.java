@@ -55,10 +55,10 @@ public class CountedString {
   }
 }
 /* Output:
-{String: hi id: 4 hashCode(): 146450=3, String: hi id: 5
-hashCode(): 146451=4, String: hi id: 2 hashCode():
-146448=1, String: hi id: 3 hashCode(): 146449=2, String: hi
-id: 1 hashCode(): 146447=0}
+{String: hi id: 4 hashCode(): 146450=3, String: hi id:
+5 hashCode(): 146451=4, String: hi id: 2 hashCode():
+146448=1, String: hi id: 3 hashCode(): 146449=2,
+String: hi id: 1 hashCode(): 146447=0}
 Looking up String: hi id: 1 hashCode(): 146447
 0
 Looking up String: hi id: 2 hashCode(): 146448

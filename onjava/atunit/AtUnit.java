@@ -20,7 +20,7 @@ public class AtUnit implements ProcessFiles.Strategy {
   public static void
   main(String[] args) throws Exception {
     ClassLoader.getSystemClassLoader()
-      .setDefaultAssertionStatus(true); // Enable asserts
+      .setDefaultAssertionStatus(true); // Enable assert
     new ProcessFiles(new AtUnit(), "class").start(args);
     if(failures == 0)
       System.out.println("OK (" + testsRun + " tests)");
@@ -61,7 +61,8 @@ public class AtUnit implements ProcessFiles.Strategy {
       if(creator == null)
         try {
           if(!Modifier.isPublic(testClass
-             .getDeclaredConstructor().getModifiers())) {
+             .getDeclaredConstructor()
+             .getModifiers())) {
             System.out.println("Error: " + testClass +
               " no-arg constructor must be public");
             System.exit(1);
@@ -112,11 +113,12 @@ public class AtUnit implements ProcessFiles.Strategy {
           m.getReturnType().equals(void.class)))
         throw new RuntimeException("@Test method" +
           " must return boolean or void");
-      m.setAccessible(true); // In case it's private, etc.
+      m.setAccessible(true); // If it's private, etc.
       add(m);
     }
   }
-  private static Method checkForCreatorMethod(Method m) {
+  private static
+  Method checkForCreatorMethod(Method m) {
     if(m.getAnnotation(TestObjectCreate.class) == null)
       return null;
     if(!m.getReturnType().equals(testClass))
@@ -129,7 +131,8 @@ public class AtUnit implements ProcessFiles.Strategy {
     m.setAccessible(true);
     return m;
   }
-  private static Method checkForCleanupMethod(Method m) {
+  private static
+  Method checkForCleanupMethod(Method m) {
     if(m.getAnnotation(TestObjectCleanup.class) == null)
       return null;
     if(!m.getReturnType().equals(void.class))

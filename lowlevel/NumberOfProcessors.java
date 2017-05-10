@@ -10,5 +10,5 @@ public class NumberOfProcessors {
   }
 }
 /* Output:
-4
+8
 */

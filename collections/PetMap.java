@@ -19,8 +19,8 @@ public class PetMap {
   }
 }
 /* Output:
-{My Dog=Dog Ginger, My Cat=Cat Molly, My Hamster=Hamster
-Bosco}
+{My Dog=Dog Ginger, My Cat=Cat Molly, My
+Hamster=Hamster Bosco}
 Dog Ginger
 true
 true

@@ -21,7 +21,7 @@ public class Finding {
 }
 /* Output:
 Evening is full of the linnet s wings
-Evening vening ening ning ing ng g is is s full full ull ll
-l of of f the the he e linnet linnet innet nnet net et t s
-s wings wings ings ngs gs s
+Evening vening ening ning ing ng g is is s full full
+ull ll l of of f the the he e linnet linnet innet nnet
+net et t s s wings wings ings ngs gs s
 */

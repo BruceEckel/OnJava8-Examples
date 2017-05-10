@@ -58,13 +58,16 @@ public class ToyTest {
   }
 }
 /* Output:
-Class name: typeinfo.toys.FancyToy is interface? [false]
+Class name: typeinfo.toys.FancyToy is interface?
+[false]
 Simple name: FancyToy
 Canonical name : typeinfo.toys.FancyToy
-Class name: typeinfo.toys.HasBatteries is interface? [true]
+Class name: typeinfo.toys.HasBatteries is interface?
+[true]
 Simple name: HasBatteries
 Canonical name : typeinfo.toys.HasBatteries
-Class name: typeinfo.toys.Waterproof is interface? [true]
+Class name: typeinfo.toys.Waterproof is interface?
+[true]
 Simple name: Waterproof
 Canonical name : typeinfo.toys.Waterproof
 Class name: typeinfo.toys.Shoots is interface? [true]

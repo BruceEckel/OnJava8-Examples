@@ -40,14 +40,14 @@ public class AtUnitExample2 {
 }
 /* Output:
 annotations.AtUnitExample2
-  . assertExample
   . exceptionExample java.io.FileNotFoundException:
 nofile.txt (The system cannot find the file specified)
 (failed)
+  . assertExample
   . assertAndReturn This is methodTwo
 
-  . assertFailureExample java.lang.AssertionError: What a
-surprise!
+  . assertFailureExample java.lang.AssertionError: What
+a surprise!
 (failed)
 (4 tests)
 

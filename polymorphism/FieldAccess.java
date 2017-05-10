@@ -31,5 +31,6 @@ public class FieldAccess {
 }
 /* Output:
 sup.field = 0, sup.getField() = 1
-sub.field = 1, sub.getField() = 1, sub.getSuperField() = 0
+sub.field = 1, sub.getField() = 1, sub.getSuperField()
+= 0
 */

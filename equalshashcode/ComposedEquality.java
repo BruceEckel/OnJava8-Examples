@@ -30,7 +30,8 @@ public class ComposedEquality extends SuccinctEquality {
   public boolean equals(Object rval) {
     return rval instanceof ComposedEquality &&
       super.equals(rval) &&
-      Objects.equals(part, ((ComposedEquality)rval).part);
+      Objects.equals(part,
+        ((ComposedEquality)rval).part);
   }
   public static void main(String[] args) {
     Equality.testAll( (i, s, d) ->

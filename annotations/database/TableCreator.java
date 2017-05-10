@@ -14,7 +14,8 @@ public class TableCreator {
   public static void
   main(String[] args) throws Exception {
     if(args.length < 1) {
-      System.out.println("arguments: annotated classes");
+      System.out.println(
+        "arguments: annotated classes");
       System.exit(0);
     }
     for(String className : args) {
@@ -22,7 +23,8 @@ public class TableCreator {
       DBTable dbTable = cl.getAnnotation(DBTable.class);
       if(dbTable == null) {
         System.out.println(
-          "No DBTable annotations in class " + className);
+          "No DBTable annotations in class " +
+          className);
         continue;
       }
       String tableName = dbTable.name();
@@ -66,11 +68,12 @@ public class TableCreator {
         String tableCreate = createCommand.substring(
           0, createCommand.length() - 1) + ");";
         System.out.println("Table Creation SQL for " +
-          className + " is :\n" + tableCreate);
+          className + " is:\n" + tableCreate);
       }
     }
   }
-  private static String getConstraints(Constraints con) {
+  private static
+  String getConstraints(Constraints con) {
     String constraints = "";
     if(!con.allowNull())
       constraints += " NOT NULL";
@@ -82,19 +85,19 @@ public class TableCreator {
   }
 }
 /* Output:
-Table Creation SQL for annotations.database.Member is :
+Table Creation SQL for annotations.database.Member is:
 CREATE TABLE MEMBER(
     FIRSTNAME VARCHAR(30));
-Table Creation SQL for annotations.database.Member is :
+Table Creation SQL for annotations.database.Member is:
 CREATE TABLE MEMBER(
     FIRSTNAME VARCHAR(30),
     LASTNAME VARCHAR(50));
-Table Creation SQL for annotations.database.Member is :
+Table Creation SQL for annotations.database.Member is:
 CREATE TABLE MEMBER(
     FIRSTNAME VARCHAR(30),
     LASTNAME VARCHAR(50),
     AGE INT);
-Table Creation SQL for annotations.database.Member is :
+Table Creation SQL for annotations.database.Member is:
 CREATE TABLE MEMBER(
     FIRSTNAME VARCHAR(30),
     LASTNAME VARCHAR(50),

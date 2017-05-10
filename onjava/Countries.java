@@ -230,7 +230,9 @@ public class Countries {
       @Override
       public String getKey() { return DATA[index][0]; }
       @Override
-      public String getValue() { return DATA[index][1]; }
+      public String getValue() {
+        return DATA[index][1];
+      }
       @Override
       public String setValue(String value) {
         throw new UnsupportedOperationException();
@@ -311,7 +313,8 @@ public class Countries {
     System.out.println(capitals(10));
     System.out.println(names(10));
     System.out.println(new HashMap<>(capitals(3)));
-    System.out.println(new LinkedHashMap<>(capitals(3)));
+    System.out.println(
+      new LinkedHashMap<>(capitals(3)));
     System.out.println(new TreeMap<>(capitals(3)));
     System.out.println(new Hashtable<>(capitals(3)));
     System.out.println(new HashSet<>(names(6)));
@@ -327,16 +330,22 @@ public class Countries {
 BOTSWANA=Gaberone, BURKINA FASO=Ouagadougou,
 BURUNDI=Bujumbura, CAMEROON=Yaounde, CAPE VERDE=Praia,
 CENTRAL AFRICAN REPUBLIC=Bangui, CHAD=N'djamena}
-[ALGERIA, ANGOLA, BENIN, BOTSWANA, BURKINA FASO, BURUNDI,
-CAMEROON, CAPE VERDE, CENTRAL AFRICAN REPUBLIC, CHAD]
+[ALGERIA, ANGOLA, BENIN, BOTSWANA, BURKINA FASO,
+BURUNDI, CAMEROON, CAPE VERDE, CENTRAL AFRICAN
+REPUBLIC, CHAD]
 {BENIN=Porto-Novo, ANGOLA=Luanda, ALGERIA=Algiers}
 {ALGERIA=Algiers, ANGOLA=Luanda, BENIN=Porto-Novo}
 {ALGERIA=Algiers, ANGOLA=Luanda, BENIN=Porto-Novo}
 {ALGERIA=Algiers, ANGOLA=Luanda, BENIN=Porto-Novo}
-[BENIN, BOTSWANA, ANGOLA, BURKINA FASO, ALGERIA, BURUNDI]
-[ALGERIA, ANGOLA, BENIN, BOTSWANA, BURKINA FASO, BURUNDI]
-[ALGERIA, ANGOLA, BENIN, BOTSWANA, BURKINA FASO, BURUNDI]
-[ALGERIA, ANGOLA, BENIN, BOTSWANA, BURKINA FASO, BURUNDI]
-[ALGERIA, ANGOLA, BENIN, BOTSWANA, BURKINA FASO, BURUNDI]
+[BENIN, BOTSWANA, ANGOLA, BURKINA FASO, ALGERIA,
+BURUNDI]
+[ALGERIA, ANGOLA, BENIN, BOTSWANA, BURKINA FASO,
+BURUNDI]
+[ALGERIA, ANGOLA, BENIN, BOTSWANA, BURKINA FASO,
+BURUNDI]
+[ALGERIA, ANGOLA, BENIN, BOTSWANA, BURKINA FASO,
+BURUNDI]
+[ALGERIA, ANGOLA, BENIN, BOTSWANA, BURKINA FASO,
+BURUNDI]
 Brasilia
 */

@@ -12,7 +12,8 @@ import onjava.*;
 public class ClassNameFinder {
   public static String thisClass(byte[] classBytes) {
     Map<Integer,Integer> offsetTable = new HashMap<>();
-    Map<Integer,String> classNameTable = new HashMap<>();
+    Map<Integer,String> classNameTable =
+      new HashMap<>();
     try {
       DataInputStream data = new DataInputStream(
         new ByteArrayInputStream(classBytes));
@@ -62,7 +63,8 @@ public class ClassNameFinder {
             data.readShort();
             break;
           default:
-            throw new RuntimeException("Bad tag " + tag);
+            throw
+              new RuntimeException("Bad tag " + tag);
         }
       }
       short accessFlags = data.readShort();

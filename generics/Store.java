@@ -19,7 +19,8 @@ class Product {
   }
   @Override
   public String toString() {
-    return id + ": " + description + ", price: $" + price;
+    return id + ": " + description +
+      ", price: $" + price;
   }
   public void priceChange(double change) {
     price += change;
@@ -30,7 +31,8 @@ class Product {
       @Override
       public Product get() {
         return new Product(rand.nextInt(1000), "Test",
-          Math.round(rand.nextDouble() * 1000.0) + 0.99);
+          Math.round(
+            rand.nextDouble() * 1000.0) + 0.99);
       }
     };
 }
@@ -55,7 +57,8 @@ public class Store extends ArrayList<Aisle> {
   private ArrayList<CheckoutStand> checkouts =
     new ArrayList<>();
   private Office office = new Office();
-  public Store(int nAisles, int nShelves, int nProducts) {
+  public Store(
+    int nAisles, int nShelves, int nProducts) {
     for(int i = 0; i < nAisles; i++)
       add(new Aisle(nShelves, nProducts));
   }

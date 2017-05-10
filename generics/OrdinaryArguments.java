@@ -21,7 +21,8 @@ public class OrdinaryArguments {
     Derived derived = new Derived();
     DerivedSetter ds = new DerivedSetter();
     ds.set(derived);
-    ds.set(base); // Compiles: overloaded, not overridden!
+    // Compiles--overloaded, not overridden!:
+    ds.set(base);
   }
 }
 /* Output:

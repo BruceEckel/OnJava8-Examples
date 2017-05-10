@@ -29,7 +29,8 @@ public class ShowMethods {
       if(args.length == 1) {
         for(Method method : methods)
           System.out.println(
-            p.matcher(method.toString()).replaceAll(""));
+            p.matcher(
+              method.toString()).replaceAll(""));
         for(Constructor ctor : ctors)
           System.out.println(
             p.matcher(ctor.toString()).replaceAll(""));

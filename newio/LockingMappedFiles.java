@@ -53,8 +53,8 @@ public class LockingMappedFiles {
   }
 }
 /* Output:
-Locked: 0 to 50331647
 Locked: 75497471 to 113246206
+Locked: 0 to 50331647
 Released: 75497471 to 113246206
 Released: 0 to 50331647
 */

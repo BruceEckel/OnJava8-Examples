@@ -29,7 +29,7 @@ public class CheckedList {
   }
 }
 /* Output:
-Expected: java.lang.ClassCastException: Attempt to insert
-class typeinfo.pets.Cat element into collection with
-element type class typeinfo.pets.Dog
+Expected: java.lang.ClassCastException: Attempt to
+insert class typeinfo.pets.Cat element into collection
+with element type class typeinfo.pets.Dog
 */

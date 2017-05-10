@@ -101,7 +101,8 @@ public class VendingMachine {
         "next(Input input) for non-transient states");
     }
     void next() {
-      throw new RuntimeException("Only call next() for " +
+      throw new RuntimeException(
+        "Only call next() for " +
         "StateDuration.TRANSIENT states");
     }
     void output() { System.out.println(amount); }

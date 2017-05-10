@@ -21,10 +21,11 @@ public class TreeSetOfWords {
   }
 }
 /* Output:
-[Arrays, Collectors, Exception, Files, Output, Paths, Set,
-String, System, TreeSet, TreeSetOfWords, args, class,
-collect, file, filter, flatMap, get, import, java, length,
-limit, lines, main, map, matches, new, nio, numbers, out,
-println, public, split, static, stream, streams, throws,
-toCollection, trim, util, void, words2]
+[Arrays, Collectors, Exception, Files, Output, Paths,
+Set, String, System, TreeSet, TreeSetOfWords, args,
+class, collect, file, filter, flatMap, get, import,
+java, length, limit, lines, main, map, matches, new,
+nio, numbers, out, println, public, split, static,
+stream, streams, throws, toCollection, trim, util,
+void, words2]
 */

@@ -31,14 +31,16 @@ extends SuperHero<POWER> {
   void see() { power.seeThroughWalls(); }
 }
 
-class CanineHero<POWER extends SuperHearing & SuperSmell>
+class
+CanineHero<POWER extends SuperHearing & SuperSmell>
 extends SuperHero<POWER> {
   CanineHero(POWER power) { super(power); }
   void hear() { power.hearSubtleNoises(); }
   void smell() { power.trackBySmell(); }
 }
 
-class SuperHearSmell implements SuperHearing, SuperSmell {
+class SuperHearSmell
+implements SuperHearing, SuperSmell {
   @Override
   public void hearSubtleNoises() {}
   @Override

@@ -3,6 +3,7 @@
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // When threads collide
+// {ValidateByHand}
 
 public class EvenProducer extends IntGenerator {
   private int currentEvenValue = 0;
@@ -17,6 +18,9 @@ public class EvenProducer extends IntGenerator {
   }
 }
 /* Output:
-303 not even!
-301 not even!
+419 not even!
+425 not even!
+423 not even!
+421 not even!
+417 not even!
 */

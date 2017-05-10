@@ -25,7 +25,8 @@ class OptionalMap {
   public static void main(String[] args) {
 
     // If Optional is not empty, map() first extracts
-    // the contents which it then passes to the function:
+    // the contents which it then passes
+    // to the function:
 
     test("Add brackets", s -> "[" + s + "]");
 

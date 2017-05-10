@@ -98,38 +98,38 @@ public class PriorityBlockingQueueDemo {
   }
 }
 /* Output:
-[17] Prioritized 2
-[18] Prioritized 26
+[15] Prioritized 2
+[17] Prioritized 1
 [17] Prioritized 5
 [16] Prioritized 6
-[16] Prioritized 29
-[15] Prioritized 1
-[15] Prioritized 23
 [14] Prioritized 9
-[14] Prioritized 18
-[13] Prioritized 13
-[12] Prioritized 17
 [12] Prioritized 0
-[12] Prioritized 16
-[11] Prioritized 12
-[11] Prioritized 24
 [11] Prioritized 4
+[11] Prioritized 12
+[13] Prioritized 13
+[12] Prioritized 16
+[14] Prioritized 18
+[15] Prioritized 23
+[18] Prioritized 26
+[16] Prioritized 29
+[12] Prioritized 17
 [11] Prioritized 30
+[11] Prioritized 24
 [10] Prioritized 15
 [10] Prioritized 22
+[8] Prioritized 25
 [8] Prioritized 11
 [8] Prioritized 10
-[8] Prioritized 25
 [6] Prioritized 31
 [3] Prioritized 7
 [2] Prioritized 20
 [1] Prioritized 3
-[0] Prioritized 14
 [0] Prioritized 19
 [0] Prioritized 8
+[0] Prioritized 14
 [0] Prioritized 21
 [-1] Prioritized 28
-(1:15)(0:12)(2:17)(3:1)(4:11)
+(0:12)(2:15)(1:17)(3:1)(4:11)
 (5:17)(6:16)(7:3)(8:0)(9:14)
 (10:8)(11:8)(12:11)(13:13)(14:0)
 (15:10)(16:12)(17:12)(18:14)(19:0)

@@ -24,7 +24,8 @@ public class MapOfList {
         new Cat("Stanford"),
         new Cat("Pinkola")));
     petPeople.put(new Person("Luke"),
-      Arrays.asList(new Rat("Fuzzy"), new Rat("Fizzy")));
+      Arrays.asList(
+        new Rat("Fuzzy"), new Rat("Fizzy")));
     petPeople.put(new Person("Isaac"),
       Arrays.asList(new Rat("Freckly")));
   }

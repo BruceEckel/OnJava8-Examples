@@ -31,8 +31,8 @@ public class Unsupported {
     check("List.set", () -> list.set(0, "X"));
   }
   public static void main(String[] args) {
-    List<String> list =
-      Arrays.asList("A B C D E F G H I J K L".split(" "));
+    List<String> list = Arrays.asList(
+      "A B C D E F G H I J K L".split(" "));
     test("Modifiable Copy", new ArrayList<>(list));
     test("Arrays.asList()", list);
     test("unmodifiableList()",

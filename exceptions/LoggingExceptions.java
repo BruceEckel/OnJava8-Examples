@@ -33,13 +33,13 @@ public class LoggingExceptions {
 }
 /* Output:
 ___[ Error Output ]___
-May 02, 2017 3:21:47 PM LoggingException <init>
+May 09, 2017 6:07:17 AM LoggingException <init>
 SEVERE: LoggingException
         at
 LoggingExceptions.main(LoggingExceptions.java:20)
 
 Caught LoggingException
-May 02, 2017 3:21:47 PM LoggingException <init>
+May 09, 2017 6:07:17 AM LoggingException <init>
 SEVERE: LoggingException
         at
 LoggingExceptions.main(LoggingExceptions.java:25)

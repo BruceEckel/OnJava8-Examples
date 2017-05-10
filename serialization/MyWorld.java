@@ -77,19 +77,23 @@ public class MyWorld {
   }
 }
 /* Output:
-animals: [Bosco the dog[Animal@15db9742], House@6d06d69c
+animals: [Bosco the dog[Animal@15db9742],
+House@6d06d69c
 , Ralph the hamster[Animal@7852e922], House@6d06d69c
 , Molly the cat[Animal@4e25154f], House@6d06d69c
 ]
-animals1: [Bosco the dog[Animal@7ba4f24f], House@3b9a45b3
+animals1: [Bosco the dog[Animal@7ba4f24f],
+House@3b9a45b3
 , Ralph the hamster[Animal@7699a589], House@3b9a45b3
 , Molly the cat[Animal@58372a00], House@3b9a45b3
 ]
-animals2: [Bosco the dog[Animal@7ba4f24f], House@3b9a45b3
+animals2: [Bosco the dog[Animal@7ba4f24f],
+House@3b9a45b3
 , Ralph the hamster[Animal@7699a589], House@3b9a45b3
 , Molly the cat[Animal@58372a00], House@3b9a45b3
 ]
-animals3: [Bosco the dog[Animal@4dd8dc3], House@6d03e736
+animals3: [Bosco the dog[Animal@4dd8dc3],
+House@6d03e736
 , Ralph the hamster[Animal@568db2f2], House@6d03e736
 , Molly the cat[Animal@378bf509], House@6d03e736
 ]

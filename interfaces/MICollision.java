@@ -5,11 +5,15 @@
 import java.util.*;
 
 interface Bob1 {
-  default void bob() { System.out.println("Bob1::bob"); }
+  default void bob() {
+    System.out.println("Bob1::bob");
+  }
 }
 
 interface Bob2 {
-  default void bob() { System.out.println("Bob2::bob"); }
+  default void bob() {
+    System.out.println("Bob2::bob");
+  }
 }
 
 // class Bob implements Bob1, Bob2 {}
@@ -22,18 +26,24 @@ class Bob implements Bob1, Bob2 {}
 */
 
 interface Sam1 {
-  default void sam() { System.out.println("Sam1::sam"); }
+  default void sam() {
+    System.out.println("Sam1::sam");
+  }
 }
 
 interface Sam2 {
-  default void sam(int i) { System.out.println(i * 2); }
+  default void sam(int i) {
+    System.out.println(i * 2);
+  }
 }
 
 // This works because the argument lists are distinct:
 class Sam implements Sam1, Sam2 {}
 
 interface Max1 {
-  default void max() { System.out.println("Max1::max"); }
+  default void max() {
+    System.out.println("Max1::max");
+  }
 }
 
 interface Max2 {

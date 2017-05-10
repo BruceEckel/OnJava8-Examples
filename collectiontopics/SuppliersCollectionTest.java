@@ -50,18 +50,18 @@ public class SuppliersCollectionTest {
   }
 }
 /* Output:
-[strange, women, lying, in, ponds, distributing, swords,
-is, no, basis, for, a, system, of, government]
-[strange, women, lying, in, ponds, distributing, swords,
-is, no, basis, for, a, system, of, government]
-[strange, women, lying, in, ponds, distributing, swords,
-is, no, basis, for, a, system, of, government]
-[ponds, no, a, in, swords, for, is, basis, strange, system,
-government, distributing, of, women, lying]
-[strange, women, lying, in, ponds, distributing, swords,
-is, no, basis, for, a, system, of, government]
-[strange, women, lying, in, ponds, distributing, swords,
-is, no, basis, for, a, system, of, government]
-[strange, women, lying, in, ponds, distributing, swords,
-is, no, basis, for, a, system, of, government]
+[strange, women, lying, in, ponds, distributing,
+swords, is, no, basis, for, a, system, of, government]
+[strange, women, lying, in, ponds, distributing,
+swords, is, no, basis, for, a, system, of, government]
+[strange, women, lying, in, ponds, distributing,
+swords, is, no, basis, for, a, system, of, government]
+[ponds, no, a, in, swords, for, is, basis, strange,
+system, government, distributing, of, women, lying]
+[strange, women, lying, in, ponds, distributing,
+swords, is, no, basis, for, a, system, of, government]
+[strange, women, lying, in, ponds, distributing,
+swords, is, no, basis, for, a, system, of, government]
+[strange, women, lying, in, ponds, distributing,
+swords, is, no, basis, for, a, system, of, government]
 */

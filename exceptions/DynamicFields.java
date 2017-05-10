@@ -31,8 +31,8 @@ public class DynamicFields {
         return i;
     return -1;
   }
-  private int
-  getFieldNumber(String id) throws NoSuchFieldException {
+  private int getFieldNumber(String id)
+  throws NoSuchFieldException {
     int fieldNum = hasField(id);
     if(fieldNum == -1)
       throw new NoSuchFieldException();
@@ -61,9 +61,10 @@ public class DynamicFields {
   public Object setField(String id, Object value)
   throws DynamicFieldsException {
     if(value == null) {
-      // Most exceptions don't have a "cause" constructor.
-      // In these cases you must use initCause(),
-      // available in all Throwable subclasses.
+      // Most exceptions don't have a "cause"
+      // constructor. In these cases you must use
+      // initCause(), available in all
+      // Throwable subclasses.
       DynamicFieldsException dfe =
         new DynamicFieldsException();
       dfe.initCause(new NullPointerException());
@@ -95,7 +96,8 @@ public class DynamicFields {
       System.out.println("df: " + df);
       System.out.println("df.getField(\"d\") : "
         + df.getField("d"));
-      Object field = df.setField("d", null); // Exception
+      Object field =
+        df.setField("d", null); // Exception
     } catch(NoSuchFieldException |
             DynamicFieldsException e) {
       e.printStackTrace(System.out);
@@ -118,9 +120,11 @@ number3: 11
 
 df.getField("d") : A new value for d
 DynamicFieldsException
-        at DynamicFields.setField(DynamicFields.java:64)
-        at DynamicFields.main(DynamicFields.java:95)
+        at
+DynamicFields.setField(DynamicFields.java:65)
+        at DynamicFields.main(DynamicFields.java:97)
 Caused by: java.lang.NullPointerException
-        at DynamicFields.setField(DynamicFields.java:66)
+        at
+DynamicFields.setField(DynamicFields.java:67)
         ... 1 more
 */

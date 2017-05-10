@@ -12,6 +12,6 @@ public class SLF4JLogging {
   }
 }
 /* Output:
-2017-05-02T15:24:11.861
+2017-05-09T06:07:53.418
 [main] INFO  SLF4JLogging - hello logging
 */

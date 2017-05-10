@@ -19,7 +19,8 @@ public class TupleTest {
         new Vehicle(), new Amphibian(), "hi", 47);
   }
   static
-  Tuple5<Vehicle, Amphibian, String, Integer, Double> k() {
+  Tuple5<Vehicle, Amphibian,
+         String, Integer, Double> k() {
     return new
       Tuple5<>(
         new Vehicle(), new Amphibian(), "hi", 47, 11.1);
@@ -35,7 +36,7 @@ public class TupleTest {
 }
 /* Output:
 (hi, 47)
-(Amphibian@4554617c, hi, 47)
-(Vehicle@677327b6, Amphibian@14ae5a5, hi, 47)
-(Vehicle@135fbaa4, Amphibian@45ee12a7, hi, 47, 11.1)
+(Amphibian@1540e19d, hi, 47)
+(Vehicle@7f31245a, Amphibian@6d6f6e28, hi, 47)
+(Vehicle@330bedb4, Amphibian@2503dbd3, hi, 47, 11.1)
 */

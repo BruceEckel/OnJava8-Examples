@@ -1,16 +1,16 @@
-// annotations/AtUnitExternalTest.java
+// annotations/AUExternalTest.java
 // (c)2017 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // Creating non-embedded tests
 // {java onjava.atunit.AtUnit
-// build/classes/main/annotations/AtUnitExternalTest.class}
+// build/classes/main/annotations/AUExternalTest.class}
 package annotations;
 import onjava.atunit.*;
 import onjava.*;
 
 public class
-AtUnitExternalTest extends AtUnitExample1 {
+AUExternalTest extends AtUnitExample1 {
   @Test
   boolean tMethodOne() {
     return methodOne().equals("This is methodOne");
@@ -21,7 +21,7 @@ AtUnitExternalTest extends AtUnitExample1 {
   }
 }
 /* Output:
-annotations.AtUnitExternalTest
+annotations.AUExternalTest
   . tMethodOne
   . tMethodTwo This is methodTwo
 

@@ -34,6 +34,6 @@ public class GenericArray2<T> {
 }
 /* Output:
 0 1 2 3 4 5 6 7 8 9
-java.lang.ClassCastException: [Ljava.lang.Object; cannot be
-cast to [Ljava.lang.Integer;
+java.lang.ClassCastException: [Ljava.lang.Object;
+cannot be cast to [Ljava.lang.Integer;
 */

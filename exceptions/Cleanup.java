@@ -20,7 +20,8 @@ public class Cleanup {
         in.dispose();
       }
     } catch(Exception e) {
-      System.out.println("InputFile construction failed");
+      System.out.println(
+        "InputFile construction failed");
     }
   }
 }

@@ -24,11 +24,13 @@ class OptionalFlatMap {
   }
   public static void main(String[] args) {
 
-    test("Add brackets", s -> Optional.of("[" + s + "]"));
+    test("Add brackets",
+         s -> Optional.of("[" + s + "]"));
 
     test("Increment", s -> {
       try {
-        return Optional.of(Integer.parseInt(s) + 1 + "");
+        return Optional.of(
+          Integer.parseInt(s) + 1 + "");
       } catch(NumberFormatException e) {
         return Optional.of(s);
       }

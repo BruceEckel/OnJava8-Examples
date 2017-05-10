@@ -61,8 +61,8 @@ public class ArrayCopying {
     Sup[] b2 = new Sup[SZ/2];
     Arrays.setAll(b2, Sup::new);
     try {
-      Sub[] d3 =
-        Arrays.copyOf(b2, b2.length, Sub[].class); // [6]
+      Sub[] d3 = Arrays.copyOf(
+        b2, b2.length, Sub[].class); // [6]
     } catch(Exception e) {
       System.out.println(e);
     }

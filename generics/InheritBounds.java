@@ -9,7 +9,8 @@ class HoldItem<T> {
   T getItem() { return item; }
 }
 
-class WithColor2<T extends HasColor> extends HoldItem<T> {
+class WithColor2<T extends HasColor>
+extends HoldItem<T> {
   WithColor2(T item) { super(item); }
   java.awt.Color color() { return item.getColor(); }
 }

@@ -3,14 +3,16 @@
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 
-interface SelfBoundSetter<T extends SelfBoundSetter<T>> {
+interface
+SelfBoundSetter<T extends SelfBoundSetter<T>> {
   void set(T arg);
 }
 
 interface Setter extends SelfBoundSetter<Setter> {}
 
 public class SelfBoundingAndCovariantArguments {
-  void testA(Setter s1, Setter s2, SelfBoundSetter sbs) {
+  void
+  testA(Setter s1, Setter s2, SelfBoundSetter sbs) {
     s1.set(s2);
     //- s1.set(sbs);
     // error: method set in interface SelfBoundSetter<T>

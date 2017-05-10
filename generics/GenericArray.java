@@ -27,5 +27,6 @@ public class GenericArray<T> {
   }
 }
 /* Output:
-[Ljava.lang.Object; cannot be cast to [Ljava.lang.Integer;
+[Ljava.lang.Object; cannot be cast to
+[Ljava.lang.Integer;
 */

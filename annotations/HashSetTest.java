@@ -30,7 +30,7 @@ public class HashSetTest {
 /* Output:
 annotations.HashSetTest
   . initialization
-  . tContains
   . tRemove
+  . tContains
 OK (3 tests)
 */
