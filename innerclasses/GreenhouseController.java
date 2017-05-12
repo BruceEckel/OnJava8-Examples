@@ -3,7 +3,6 @@
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // Configure and execute the greenhouse system
-// {java GreenhouseController 5000}
 import innerclasses.controller.*;
 
 public class GreenhouseController {
@@ -21,10 +20,8 @@ public class GreenhouseController {
       gc.new ThermostatDay(1400)
     };
     gc.addEvent(gc.new Restart(2000, eventList));
-    if(args.length == 1)
-      gc.addEvent(
-        new GreenhouseControls.Terminate(
-          Integer.valueOf(args[0])));
+    gc.addEvent(
+      new GreenhouseControls.Terminate(5000));
     gc.run();
   }
 }
