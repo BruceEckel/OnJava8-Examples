@@ -4,7 +4,7 @@
 // Visit http://OnJava8.com for more book information.
 // Demonstration of Observer pattern using
 // Java's built-in observer classes
-// !!!! CI servers have problems
+// {ExcludeFromTravisCI}
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
