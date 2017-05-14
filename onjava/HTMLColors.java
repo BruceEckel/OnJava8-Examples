@@ -224,7 +224,7 @@ public class HTMLColors {
       .limit(count)
       .forEach(e ->
         System.out.format(
-          "%-20s  0x%06X\n", e.getKey(), e.getValue()));
+          "%-20s  0x%06X%n", e.getKey(), e.getValue()));
   }
   public static void showInv(Map<String,Integer> m) {
     showInv(m, m.size());
