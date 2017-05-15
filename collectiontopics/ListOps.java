@@ -32,7 +32,7 @@ public class ListOps {
     b = a.isEmpty(); // Any elements inside?
     it = a.iterator(); // Ordinary Iterator
     lit = a.listIterator(); // ListIterator
-    lit = a.listIterator(3); // Start at loc 3
+    lit = a.listIterator(3); // Start at location 3
     i = a.lastIndexOf("1"); // Last match
     a.remove(1); // Remove location 1
     a.remove("3"); // Remove this object

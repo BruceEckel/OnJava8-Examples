@@ -12,7 +12,7 @@ public class ArrayOfGenerics {
     ls = (List<String>[])la; // Unchecked cast
     ls[0] = new ArrayList<>();
 
-    // -ls[1] = new ArrayList<Integer>();
+    //- ls[1] = new ArrayList<Integer>();
     // error: incompatible types: ArrayList<Integer>
     // cannot be converted to List<String>
     //     ls[1] = new ArrayList<Integer>();

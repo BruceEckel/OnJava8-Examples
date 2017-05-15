@@ -57,7 +57,7 @@ public interface ConvertTo {
   static Boolean[] boxed(boolean[] in) {
     Boolean[] result = new Boolean[in.length];
     for(int i = 0; i < in.length; i++)
-      result[i] = in[i]; // Autboxing
+      result[i] = in[i]; // Autoboxing
     return result;
   }
   static Character[] boxed(char[] in) {

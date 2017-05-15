@@ -53,7 +53,7 @@ public class ClassNameFinder {
           case 11: // INTERFACE_METHOD_REF
           case 12: // NAME_AND_TYPE
           case 18: // Invoke Dynamic
-            data.readInt(); // discard 4 bytes;
+            data.readInt(); // discard 4 bytes
             break;
           case 15: // Method Handle
             data.readByte();
@@ -86,7 +86,6 @@ public class ClassNameFinder {
     // Walk the entire tree:
     Files.walk(Paths.get("."))
       .filter(matcher::matches)
-      //.peek(System.out::println)
       .map(p -> {
           try {
             return thisClass(Files.readAllBytes(p));

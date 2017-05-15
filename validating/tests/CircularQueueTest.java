@@ -11,7 +11,7 @@ public class CircularQueueTest {
   private int i = 0;
   @BeforeEach
   public void initialize() {
-    while(i < 5) // Preload with some data
+    while(i < 5) // Pre-load with some data
       queue.put(Integer.toString(i++));
   }
   // Support methods:
