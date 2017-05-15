@@ -3,7 +3,7 @@
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // Accidental recursion
-// {ValidateByHand} Throws exception
+// {ValidateByHand} Throws very long exception
 import java.util.*;
 import java.util.stream.*;
 

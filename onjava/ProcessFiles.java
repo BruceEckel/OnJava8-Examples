@@ -2,7 +2,6 @@
 // (c)2017 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
-// {ValidateByHand}
 // {java onjava.ProcessFiles}
 package onjava;
 import java.io.*;
@@ -53,3 +52,26 @@ public class ProcessFiles {
       "java").start(args);
   }
 }
+/* Output: (First and Last 10 Lines)
+.\ArrayShow.java
+.\atunit\AtUnit.java
+.\atunit\ClassNameFinder.java
+.\atunit\Test.java
+.\atunit\TestObjectCleanup.java
+.\atunit\TestObjectCreate.java
+.\atunit\TestProperty.java
+.\BasicSupplier.java
+.\CollectionMethodDifferences.java
+.\ConvertTo.java
+...________...________...________...________...
+.\Stack.java
+.\Suppliers.java
+.\TimedAbort.java
+.\Timer.java
+.\Tuple.java
+.\Tuple2.java
+.\Tuple3.java
+.\Tuple4.java
+.\Tuple5.java
+.\TypeCounter.java
+*/
