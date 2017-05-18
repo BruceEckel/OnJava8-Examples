@@ -3,7 +3,7 @@
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // {java GZIPcompress GZIPcompress.java}
-// {ValidateByHand}
+// {VisuallyInspectOutput}
 import java.util.zip.*;
 import java.io.*;
 

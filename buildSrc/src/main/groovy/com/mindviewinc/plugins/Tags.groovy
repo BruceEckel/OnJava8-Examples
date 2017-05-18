@@ -9,7 +9,7 @@ class Tags {
     Boolean lowLevelAppendix = false
     Boolean throwsException = false
     Boolean errorOutputExpected = false
-    Boolean validateByHand = false
+    Boolean excludeFromGradle = false
     Boolean ignoreOutput = false // This tag isn't used in the build...
     String fileRoot
     String mainClass
@@ -44,7 +44,7 @@ class Tags {
         lowLevelAppendix = firstLine.contains("// lowlevel/")
         throwsException = hasTag('ThrowsException')
         errorOutputExpected = hasTag('ErrorOutputExpected')
-        validateByHand = hasTag('ValidateByHand')
+        excludeFromGradle = hasTag('ExcludeFromGradle')
         ignoreOutput = hasTag('IgnoreOutput')
         javap = extract('javap') // Includes only arguments to command
         runFirst = extract('RunFirst:')
@@ -82,7 +82,7 @@ class Tags {
         excludeFromCI ||
         throwsException ||
         errorOutputExpected ||
-        validateByHand ||
+        excludeFromGradle ||
         ignoreOutput ||
         javaCmd ||
         args ||
@@ -104,7 +104,7 @@ class Tags {
         excludeFromCI
         throwsException
         errorOutputExpected
-        validateByHand
+        excludeFromGradle
         ignoreOutput
         fileRoot
         mainClass

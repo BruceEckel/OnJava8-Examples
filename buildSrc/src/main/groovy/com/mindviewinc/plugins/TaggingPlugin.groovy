@@ -58,7 +58,7 @@ class TaggingPlugin implements Plugin<Project> {
                         File errFile = new File(file.parentFile, baseName + '.err')
 
                         javaTask.configure {
-                            ignoreExitValue = tags.validateByHand || tags.throwsException
+                            ignoreExitValue = tags.excludeFromGradle || tags.throwsException
                             doFirst {
                                 if(outFile.exists())
                                     outFile.delete()
@@ -77,7 +77,7 @@ class TaggingPlugin implements Plugin<Project> {
                            }
                         }
 
-                        if (!tags.validateByHand) {
+                        if (!tags.excludeFromGradle) {
                             // Only add tasks that we know we can run successfully to the task list
                             createdTasks.add(javaTask)
                         }

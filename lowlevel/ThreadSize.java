@@ -2,7 +2,7 @@
 // (c)2017 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
-// {ValidateByHand} Takes a long time or hangs
+// {ExcludeFromGradle} Takes a long time or hangs
 import java.util.concurrent.*;
 import onjava.Nap;
 

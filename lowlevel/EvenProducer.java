@@ -3,7 +3,7 @@
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // When threads collide
-// {ValidateByHand}
+// {VisuallyInspectOutput}
 
 public class EvenProducer extends IntGenerator {
   private int currentEvenValue = 0;
