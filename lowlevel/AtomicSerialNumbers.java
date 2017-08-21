@@ -8,7 +8,7 @@ public class
 AtomicSerialNumbers extends SerialNumbers {
   private AtomicInteger serialNumber =
     new AtomicInteger();
-  public synchronized int nextSerialNumber() {
+  public int nextSerialNumber() {
     return serialNumber.getAndIncrement();
   }
   public static void main(String[] args) {
