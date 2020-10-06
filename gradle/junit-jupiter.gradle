@@ -1,19 +1,15 @@
 import org.apache.tools.ant.util.TeeOutputStream
 
-apply plugin: 'org.junit.platform.gradle.plugin'
-
-ext {
-    junitJupiterVersion  = '5.0.0-M2'
-}
-
 dependencies {
-    testCompile "org.junit.jupiter:junit-jupiter-api:${junitJupiterVersion}"
-    testRuntime "org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}"
+    testImplementation(platform('org.junit:junit-bom:5.7.0'))
+    testImplementation('org.junit.jupiter:junit-jupiter')
 }
 
-junitPlatform {
-    platformVersion '1.0.0-M2'
-    includeClassNamePattern '.*'
+test {
+    useJUnitPlatform()
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
 }
 
 /* NEW: (REQUIRES CODE REWRITES IN BOOK AND TEST CODE)
@@ -45,14 +41,28 @@ junitPlatform {
   JUnit 5's junitPlatformTest runs as a "javaExec" rather than a "test",
   so we can't hook into the before/after test behavior.
 */
-tasks.findByPath(":$name:junitPlatformTest").configure {
+tasks.findByPath(":$name:test").configure {
     File testDir = file("tests")
     if(testDir.exists()) {
         File outFile = new File(testDir, 'report.txt')
+
+        Writer taskOutput
+
         doFirst {
-            standardOutput = new TeeOutputStream(new FileOutputStream(outFile, true), System.out)
+            taskOutput = project.file(outFile).newWriter()
         }
+
+        testLogging.showStandardStreams = true
+
+        onOutput { descriptor, event ->
+            taskOutput.append(event.message)
+        }
+
         doLast {
+            // WARNING: if the task fails, this won't be executed and the file remains open.
+            // The memory cache version doesn't have this problem.
+            taskOutput.close()
+
             if(outFile.size() == 0)
                 outFile.delete()
             else if(outFile.text.contains("0 tests found"))

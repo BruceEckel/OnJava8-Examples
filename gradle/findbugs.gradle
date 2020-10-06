@@ -1,3 +1,4 @@
+/*
 apply plugin: 'findbugs'
 
 findbugs {
@@ -11,3 +12,4 @@ tasks.withType(FindBugs) {
         html.enabled = true
     }
 }
+*/
