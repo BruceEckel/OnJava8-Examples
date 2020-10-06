@@ -8,8 +8,8 @@ interface Resource {
   void setValue(int x);
 }
 
-// Since this isn't inherited from a Cloneable
-// base class and cloneability isn't added,
+// This isn't inherited from a Cloneable
+// base class and cloneability isn't added so
 // making it final prevents cloneability from
 // being added through inheritance. This also
 // implements thread-safe lazy initialization:

@@ -22,7 +22,7 @@ public class StringInverterTests {
   }
   @Test
   void basicInversion2() {
-    expectThrows(Error.class, () -> {
+    assertThrows(Error.class, () -> {
       assertEquals(inverter.invert("X"), "X");
     });
   }
@@ -52,7 +52,7 @@ public class StringInverterTests {
   void lengthNoGreaterThan30() {
     String str = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
     assertTrue(str.length() > 30);
-    expectThrows(RuntimeException.class, () -> {
+    assertThrows(RuntimeException.class, () -> {
       inverter.invert(str);
     });
   }
