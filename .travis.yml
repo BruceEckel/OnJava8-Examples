@@ -1,6 +1,6 @@
 language: java
 jdk:
-  - oraclejdk8
+  - oraclejdk12
 install: true
 script:
   - ./gradlew --no-daemon --stacktrace run
