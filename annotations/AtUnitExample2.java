@@ -4,7 +4,7 @@
 // Visit http://OnJava8.com for more book information.
 // Assertions and exceptions can be used in @Tests
 // {java onjava.atunit.AtUnit
-// build/classes/main/annotations/AtUnitExample2.class}
+// build/classes/java/main/annotations/AtUnitExample2.class}
 package annotations;
 import java.io.*;
 import onjava.atunit.*;

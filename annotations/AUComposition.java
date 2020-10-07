@@ -4,7 +4,7 @@
 // Visit http://OnJava8.com for more book information.
 // Creating non-embedded tests
 // {java onjava.atunit.AtUnit
-// build/classes/main/annotations/AUComposition.class}
+// build/classes/java/main/annotations/AUComposition.class}
 package annotations;
 import onjava.atunit.*;
 import onjava.*;

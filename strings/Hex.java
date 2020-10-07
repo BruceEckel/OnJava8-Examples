@@ -27,7 +27,7 @@ public class Hex {
       // Test by displaying this class file:
       System.out.println(format(
         Files.readAllBytes(Paths.get(
-          "build/classes/main/onjava/Hex.class"))));
+          "build/classes/java/main/onjava/Hex.class"))));
     else
       System.out.println(format(
         Files.readAllBytes(Paths.get(args[0]))));

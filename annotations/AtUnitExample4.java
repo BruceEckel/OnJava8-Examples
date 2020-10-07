@@ -3,7 +3,7 @@
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // {java onjava.atunit.AtUnit
-// build/classes/main/annotations/AtUnitExample4.class}
+// build/classes/java/main/annotations/AtUnitExample4.class}
 // {VisuallyInspectOutput}
 package annotations;
 import java.util.*;
