@@ -3,18 +3,19 @@
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 import java.util.function.*;
+import java.lang.reflect.InvocationTargetException;
 
 class ClassAsFactory<T> implements Supplier<T> {
   Class<T> kind;
   ClassAsFactory(Class<T> kind) {
     this.kind = kind;
   }
+  @SuppressWarnings("deprecation")
   @Override
   public T get() {
     try {
       return kind.newInstance();
-    } catch(InstantiationException |
-            IllegalAccessException e) {
+    } catch(Exception e) {
       throw new RuntimeException(e);
     }
   }

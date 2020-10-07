@@ -44,6 +44,7 @@ class MixinProxy implements InvocationHandler {
 
 public class DynamicProxyMixin {
   public static void main(String[] args) {
+    @SuppressWarnings("unchecked")
     Object mixin = MixinProxy.newInstance(
       tuple(new BasicImp(), Basic.class),
       tuple(new TimeStampedImp(), TimeStamped.class),

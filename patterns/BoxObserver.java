@@ -13,6 +13,7 @@ import onjava.*;
 import onjava.MouseClick;
 
 // You must inherit a new type of Observable:
+@SuppressWarnings("deprecation")
 class BoxObservable extends Observable {
   @Override
   public void notifyObservers(Object b) {
@@ -22,6 +23,7 @@ class BoxObservable extends Observable {
   }
 }
 
+@SuppressWarnings("deprecation")
 public class BoxObserver extends JFrame {
   Observable notifier = new BoxObservable();
   public BoxObserver(int grid) {
@@ -45,6 +47,7 @@ public class BoxObserver extends JFrame {
   }
 }
 
+@SuppressWarnings("deprecation")
 class OCBox extends JPanel implements Observer {
   Observable notifier;
   int x, y; // Locations in grid

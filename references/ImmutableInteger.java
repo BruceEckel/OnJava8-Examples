@@ -8,6 +8,7 @@ import java.util.stream.*;
 
 public class ImmutableInteger {
   public static void main(String[] args) {
+    @SuppressWarnings("deprecation")
     List<Integer> v = IntStream.range(0, 10)
       .mapToObj(Integer::new)
       .collect(Collectors.toList());

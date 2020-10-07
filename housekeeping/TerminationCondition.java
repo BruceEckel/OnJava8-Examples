@@ -14,6 +14,7 @@ class Book {
   void checkIn() {
     checkedOut = false;
   }
+  @SuppressWarnings("deprecation")
   @Override
   public void finalize() {
     if(checkedOut)

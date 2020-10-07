@@ -5,7 +5,6 @@
 import java.util.function.*;
 import java.util.stream.*;
 
-
 class CountedInteger {
   private static long counter;
   private final long id = counter++;
@@ -18,11 +17,11 @@ public class DynamicSupplier<T> implements Supplier<T> {
   public DynamicSupplier(Class<T> type) {
     this.type = type;
   }
+  @SuppressWarnings("deprecation")
   public T get() {
     try {
       return type.newInstance();
-    } catch(InstantiationException |
-            IllegalAccessException e) {
+    } catch(Exception e) {
       throw new RuntimeException(e);
     }
   }

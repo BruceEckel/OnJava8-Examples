@@ -13,6 +13,7 @@ class VeryBig {
   VeryBig(String id) { ident = id; }
   @Override
   public String toString() { return ident; }
+  @SuppressWarnings("deprecation")
   @Override
   protected void finalize() {
     System.out.println("Finalizing " + ident);

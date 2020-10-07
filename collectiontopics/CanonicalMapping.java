@@ -19,6 +19,7 @@ class Element {
     return r instanceof Element &&
       Objects.equals(ident, ((Element)r).ident);
   }
+  @SuppressWarnings("deprecation")
   @Override
   protected void finalize() {
     System.out.println("Finalizing " +

@@ -5,6 +5,7 @@
 // Testing class Class
 // {java typeinfo.toys.ToyTest}
 package typeinfo.toys;
+import java.lang.reflect.InvocationTargetException;
 
 interface HasBatteries {}
 interface Waterproof {}
@@ -31,6 +32,7 @@ public class ToyTest {
     System.out.println(
       "Canonical name : " + cc.getCanonicalName());
   }
+  @SuppressWarnings("deprecation")
   public static void main(String[] args) {
     Class c = null;
     try {
@@ -47,12 +49,9 @@ public class ToyTest {
     try {
       // Requires no-arg constructor:
       obj = up.newInstance();
-    } catch(InstantiationException e) {
-      System.out.println("Cannot instantiate");
-      System.exit(1);
-    } catch(IllegalAccessException e) {
-      System.out.println("Cannot access");
-      System.exit(1);
+    } catch(Exception e) {
+      throw new
+        RuntimeException("Cannot instantiate");
     }
     printInfo(obj.getClass());
   }

@@ -25,9 +25,7 @@ public class ShapeFactory2 implements FactoryMethod {
       return (Shape)factories
         .computeIfAbsent(id, ShapeFactory2::load)
         .newInstance();
-    } catch(InstantiationException |
-            IllegalAccessException |
-            InvocationTargetException e) {
+    } catch(Exception e) {
       throw new BadShapeCreation(id);
     }
   }

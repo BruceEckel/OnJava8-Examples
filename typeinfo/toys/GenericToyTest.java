@@ -7,6 +7,7 @@
 package typeinfo.toys;
 
 public class GenericToyTest {
+  @SuppressWarnings("deprecation")
   public static void
   main(String[] args) throws Exception {
     Class<FancyToy> ftClass = FancyToy.class;

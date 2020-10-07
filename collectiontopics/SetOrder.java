@@ -23,7 +23,7 @@ public class SetOrder {
     for(String type: sets) {
       System.out.format("[-> %s <-]%n",
         type.substring(type.lastIndexOf('.') + 1));
-      @SuppressWarnings("unchecked")
+      @SuppressWarnings({"unchecked", "deprecation"})
       Set<String> set = (Set<String>)
         Class.forName(type).newInstance();
       set.addAll(RLIST);

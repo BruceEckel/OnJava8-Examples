@@ -7,6 +7,7 @@ package generics.coffee;
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
+import java.lang.reflect.InvocationTargetException;
 
 public class CoffeeSupplier
 implements Supplier<Coffee>, Iterable<Coffee> {
@@ -21,10 +22,13 @@ implements Supplier<Coffee>, Iterable<Coffee> {
   public Coffee get() {
     try {
       return (Coffee)
-        types[rand.nextInt(types.length)].newInstance();
+        types[rand.nextInt(types.length)]
+        .getConstructor().newInstance();
       // Report programmer errors at run time:
-    } catch(InstantiationException |
-            IllegalAccessException e) {
+      } catch(InstantiationException |
+              NoSuchMethodException |
+              InvocationTargetException |
+              IllegalAccessException e) {
       throw new RuntimeException(e);
     }
   }

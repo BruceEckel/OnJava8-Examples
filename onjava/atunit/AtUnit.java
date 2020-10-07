@@ -162,8 +162,11 @@ public class AtUnit implements ProcessFiles.Strategy {
       }
     } else { // Use the no-arg constructor:
       try {
-        return testClass.newInstance();
+        return testClass
+          .getConstructor().newInstance();
       } catch(InstantiationException |
+              NoSuchMethodException |
+              InvocationTargetException |
               IllegalAccessException e) {
         throw new RuntimeException(
           "Couldn't create a test object. " +

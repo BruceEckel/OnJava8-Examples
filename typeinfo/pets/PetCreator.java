@@ -6,6 +6,7 @@
 package typeinfo.pets;
 import java.util.*;
 import java.util.function.*;
+import java.lang.reflect.InvocationTargetException;
 
 public abstract
 class PetCreator implements Supplier<Pet> {
@@ -15,8 +16,11 @@ class PetCreator implements Supplier<Pet> {
   public Pet get() { // Create one random Pet
     int n = rand.nextInt(types().size());
     try {
-      return types().get(n).newInstance();
+      return types().get(n)
+             .getConstructor().newInstance();
     } catch(InstantiationException |
+            NoSuchMethodException |
+            InvocationTargetException |
             IllegalAccessException e) {
       throw new RuntimeException(e);
     }

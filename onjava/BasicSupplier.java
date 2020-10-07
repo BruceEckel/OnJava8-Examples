@@ -5,6 +5,7 @@
 // Supplier from a class with a no-arg constructor
 package onjava;
 import java.util.function.*;
+import java.lang.reflect.InvocationTargetException;
 
 public class BasicSupplier<T> implements Supplier<T> {
   private Class<T> type;
@@ -15,8 +16,10 @@ public class BasicSupplier<T> implements Supplier<T> {
   public T get() {
     try {
       // Assumes type is a public class:
-      return type.newInstance();
+      return type.getConstructor().newInstance();
     } catch(InstantiationException |
+            NoSuchMethodException |
+            InvocationTargetException |
             IllegalAccessException e) {
       throw new RuntimeException(e);
     }

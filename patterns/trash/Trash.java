@@ -70,7 +70,8 @@ public abstract class Trash {
             trashType.getConstructor(double.class);
           // Call the constructor to create a
           // new object:
-          return (T)ctor.newInstance(info.data);
+          return
+            (T)ctor.newInstance(info.data);
         } catch(Exception e) {
           throw new CannotCreateTrashException(e);
         }
