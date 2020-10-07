@@ -3,8 +3,8 @@
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // Demonstration of Observer pattern using
-// Java's built-in observer classes
-// {ExcludeFromTravisCI}
+// Java's built-in observer classes.
+// {ExcludeFromGradle} // Won't work under WSL2
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -33,7 +33,8 @@ public class BoxObserver extends JFrame {
         cp.add(new OCBox(x, y, notifier));
   }
   public static void main(String[] args) {
-    new TimedAbort(4);
+    // For automated test runs:
+    // new TimedAbort(4);
     int grid = 8;
     if(args.length > 0)
       grid = Integer.parseInt(args[0]);

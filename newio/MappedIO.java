@@ -2,6 +2,7 @@
 // (c)2020 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
+// {ExcludeFromGradle} Runs too long under WSL2
 import java.util.*;
 import java.nio.*;
 import java.nio.channels.*;
