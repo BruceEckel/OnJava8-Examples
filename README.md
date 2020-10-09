@@ -1,3 +1,5 @@
+Download release from [here](https://github.com/BruceEckel/OnJava8-Examples/releases/tag/v1.0).
+
 To compile and run these programs, you only need JDK 8 installed.
 Invoking `gradlew` will automatically download and install Gradle.
 Gradle will also install all additional libraries necessary to compile
