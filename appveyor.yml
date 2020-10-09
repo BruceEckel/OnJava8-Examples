@@ -1,6 +1,0 @@
-build_script:
-  - gradlew.bat --no-daemon --stacktrace run
-#  - gradlew.bat --parallel --stacktrace run
-#  - gradlew.bat --parallel --stacktrace :validating:jmh
-
-test: off
