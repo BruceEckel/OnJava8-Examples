@@ -1,5 +1,5 @@
 // patterns/observer/ObservedFlower.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // Demonstration of "Observer" pattern
@@ -26,8 +26,7 @@ class Flower {
     alreadyOpen = false;
   }
   class OpenNotifier extends Observable {
-    @Override
-    public void notifyObservers() {
+    @Override public void notifyObservers() {
       if(isOpen && !alreadyOpen) {
         setChanged();
         super.notifyObservers();
@@ -36,8 +35,7 @@ class Flower {
     }
   }
   class CloseNotifier extends Observable{
-    @Override
-    public void notifyObservers() {
+    @Override public void notifyObservers() {
       if(!isOpen && !alreadyClosed) {
         setChanged();
         super.notifyObservers();

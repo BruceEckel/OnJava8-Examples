@@ -1,5 +1,5 @@
 // onjava/CountingIntegerList.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // List of any length, containing sample data
@@ -14,12 +14,10 @@ extends AbstractList<Integer> {
   public CountingIntegerList(int size) {
     this.size = size < 0 ? 0 : size;
   }
-  @Override
-  public Integer get(int index) {
+  @Override public Integer get(int index) {
     return index;
   }
-  @Override
-  public int size() { return size; }
+  @Override public int size() { return size; }
   public static void main(String[] args) {
     List<Integer> cil =
       new CountingIntegerList(30);

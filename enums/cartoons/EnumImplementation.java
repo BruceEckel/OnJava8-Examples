@@ -1,5 +1,5 @@
 // enums/cartoons/EnumImplementation.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // An enum can implement an interface
@@ -14,8 +14,7 @@ implements Supplier<CartoonCharacter> {
   SILLY, BOUNCY, NUTTY, BOB;
   private Random rand =
     new Random(47);
-  @Override
-  public CartoonCharacter get() {
+  @Override public CartoonCharacter get() {
     return values()[rand.nextInt(values().length)];
   }
 }

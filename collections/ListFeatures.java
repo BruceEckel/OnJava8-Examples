@@ -1,5 +1,5 @@
 // collections/ListFeatures.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 import typeinfo.pets.*;
@@ -8,7 +8,7 @@ import java.util.*;
 public class ListFeatures {
   public static void main(String[] args) {
     Random rand = new Random(47);
-    List<Pet> pets = Pets.list(7);
+    List<Pet> pets = new PetCreator().list(7);
     System.out.println("1: " + pets);
     Hamster h = new Hamster();
     pets.add(h); // Automatically resizes
@@ -54,7 +54,7 @@ public class ListFeatures {
     pets.clear(); // Remove all elements
     System.out.println("19: " + pets);
     System.out.println("20: " + pets.isEmpty());
-    pets.addAll(Pets.list(4));
+    pets.addAll(new PetCreator().list(4));
     System.out.println("21: " + pets);
     Object[] o = pets.toArray();
     System.out.println("22: " + o[3]);
@@ -87,7 +87,7 @@ sub: [Mouse, Pug]
 18: false
 19: []
 20: true
-21: [Manx, Cymric, Rat, EgyptianMau]
-22: EgyptianMau
+21: [Rat, Manx, Cymric, Mutt]
+22: Mutt
 23: 14
 */

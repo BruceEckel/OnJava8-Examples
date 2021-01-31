@@ -1,5 +1,5 @@
 // polymorphism/Transmogrify.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // Dynamically changing the behavior of an object
@@ -10,15 +10,13 @@ class Actor {
 }
 
 class HappyActor extends Actor {
-  @Override
-  public void act() {
+  @Override public void act() {
     System.out.println("HappyActor");
   }
 }
 
 class SadActor extends Actor {
-  @Override
-  public void act() {
+  @Override public void act() {
     System.out.println("SadActor");
   }
 }

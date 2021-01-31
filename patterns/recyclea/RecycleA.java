@@ -1,5 +1,5 @@
 // patterns/recyclea/RecycleA.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // Recycling with RTTI
@@ -34,8 +34,7 @@ abstract class Trash {
 class Aluminum extends Trash {
   static double val  = 1.67f;
   Aluminum(double wt) { super(wt); }
-  @Override
-  double value() { return val; }
+  @Override double value() { return val; }
   static void value(double newval) {
     val = newval;
   }
@@ -44,8 +43,7 @@ class Aluminum extends Trash {
 class Paper extends Trash {
   static double val = 0.10f;
   Paper(double wt) { super(wt); }
-  @Override
-  double value() { return val; }
+  @Override double value() { return val; }
   static void value(double newval) {
     val = newval;
   }
@@ -54,8 +52,7 @@ class Paper extends Trash {
 class Glass extends Trash {
   static double val = 0.23f;
   Glass(double wt) { super(wt); }
-  @Override
-  double value() { return val; }
+  @Override double value() { return val; }
   static void value(double newval) {
     val = newval;
   }

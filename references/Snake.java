@@ -1,5 +1,5 @@
 // references/Snake.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // Tests cloning to see if reference
@@ -19,15 +19,13 @@ public class Snake implements Cloneable {
     if(next != null)
       next.increment();
   }
-  @Override
-  public String toString() {
+  @Override public String toString() {
     String s = ":" + c;
     if(next != null)
       s += next.toString();
     return s;
   }
-  @Override
-  public Snake clone() {
+  @Override public Snake clone() {
     try {
       return (Snake)super.clone();
     } catch(CloneNotSupportedException e) {

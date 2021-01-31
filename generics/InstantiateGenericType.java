@@ -1,5 +1,5 @@
 // generics/InstantiateGenericType.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 import java.util.function.*;
@@ -10,11 +10,9 @@ class ClassAsFactory<T> implements Supplier<T> {
   ClassAsFactory(Class<T> kind) {
     this.kind = kind;
   }
-  @SuppressWarnings("deprecation")
-  @Override
-  public T get() {
+  @Override public T get() {
     try {
-      return kind.newInstance();
+      return kind.getConstructor().newInstance();
     } catch(Exception e) {
       throw new RuntimeException(e);
     }
@@ -22,8 +20,10 @@ class ClassAsFactory<T> implements Supplier<T> {
 }
 
 class Employee {
-  @Override
-  public String toString() { return "Employee"; }
+  public Employee() {}
+  @Override public String toString() {
+    return "Employee";
+  }
 }
 
 public class InstantiateGenericType {
@@ -42,5 +42,6 @@ public class InstantiateGenericType {
 }
 /* Output:
 Employee
-java.lang.InstantiationException: java.lang.Integer
+java.lang.NoSuchMethodException:
+java.lang.Integer.<init>()
 */

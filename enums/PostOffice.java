@@ -1,5 +1,5 @@
 // enums/PostOffice.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // Modeling a post office
@@ -20,8 +20,9 @@ class Mail {
   ReturnAddress returnAddress;
   static long counter = 0;
   long id = counter++;
-  @Override
-  public String toString() { return "Mail " + id; }
+  @Override public String toString() {
+    return "Mail " + id;
+  }
   public String details() {
     return toString() +
       ", General Delivery: " + generalDelivery +
@@ -48,15 +49,12 @@ class Mail {
   Iterable<Mail> generator(final int count) {
     return new Iterable<Mail>() {
       int n = count;
-      @Override
-      public Iterator<Mail> iterator() {
+      @Override public Iterator<Mail> iterator() {
         return new Iterator<Mail>() {
-          @Override
-          public boolean hasNext() {
+          @Override public boolean hasNext() {
             return n-- > 0;
           }
-          @Override
-          public Mail next() {
+          @Override public Mail next() {
             return randomMail();
           }
           @Override
@@ -72,8 +70,7 @@ class Mail {
 public class PostOffice {
   enum MailHandler {
     GENERAL_DELIVERY {
-      @Override
-      boolean handle(Mail m) {
+      @Override boolean handle(Mail m) {
         switch(m.generalDelivery) {
           case YES:
             System.out.println(
@@ -84,8 +81,7 @@ public class PostOffice {
       }
     },
     MACHINE_SCAN {
-      @Override
-      boolean handle(Mail m) {
+      @Override boolean handle(Mail m) {
         switch(m.scannability) {
           case UNSCANNABLE: return false;
           default:
@@ -100,8 +96,7 @@ public class PostOffice {
       }
     },
     VISUAL_INSPECTION {
-      @Override
-      boolean handle(Mail m) {
+      @Override boolean handle(Mail m) {
         switch(m.readability) {
           case ILLEGIBLE: return false;
           default:
@@ -116,8 +111,7 @@ public class PostOffice {
       }
     },
     RETURN_TO_SENDER {
-      @Override
-      boolean handle(Mail m) {
+      @Override boolean handle(Mail m) {
         switch(m.returnAddress) {
           case MISSING: return false;
           default:

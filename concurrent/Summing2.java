@@ -1,5 +1,5 @@
 // concurrent/Summing2.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // {ExcludeFromTravisCI}
@@ -37,8 +37,8 @@ public class Summing2 {
 }
 /* Output:
 200000010000000
-Array Stream Sum: 104ms
-Parallel: 81ms
-Basic Sum: 106ms
-parallelPrefix: 265ms
+Array Stream Sum: 166ms
+Parallel: 30ms
+Basic Sum: 45ms
+parallelPrefix: 53ms
 */

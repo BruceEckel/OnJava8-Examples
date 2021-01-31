@@ -1,5 +1,5 @@
 // concurrent/Philosopher.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 
@@ -12,12 +12,10 @@ public class Philosopher implements Runnable {
     this.left = left;
     this.right = right;
   }
-  @Override
-  public String toString() {
+  @Override public String toString() {
     return "P" + seat;
   }
-  @Override
-  public void run() {
+  @Override public void run() {
     while(true) {
       // System.out.println("Thinking");   // [1]
       right.pickUp();

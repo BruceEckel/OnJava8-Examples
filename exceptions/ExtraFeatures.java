@@ -1,5 +1,5 @@
 // exceptions/ExtraFeatures.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // Further embellishment of exception classes
@@ -13,8 +13,7 @@ class MyException2 extends Exception {
     this.x = x;
   }
   public int val() { return x; }
-  @Override
-  public String getMessage() {
+  @Override public String getMessage() {
     return "Detail Message: "+ x
       + " "+ super.getMessage();
   }
@@ -58,15 +57,15 @@ public class ExtraFeatures {
 /* Output:
 Throwing MyException2 from f()
 MyException2: Detail Message: 0 null
-        at ExtraFeatures.f(ExtraFeatures.java:24)
-        at ExtraFeatures.main(ExtraFeatures.java:38)
+        at ExtraFeatures.f(ExtraFeatures.java:23)
+        at ExtraFeatures.main(ExtraFeatures.java:37)
 Throwing MyException2 from g()
 MyException2: Detail Message: 0 Originated in g()
-        at ExtraFeatures.g(ExtraFeatures.java:29)
-        at ExtraFeatures.main(ExtraFeatures.java:43)
+        at ExtraFeatures.g(ExtraFeatures.java:28)
+        at ExtraFeatures.main(ExtraFeatures.java:42)
 Throwing MyException2 from h()
 MyException2: Detail Message: 47 Originated in h()
-        at ExtraFeatures.h(ExtraFeatures.java:34)
-        at ExtraFeatures.main(ExtraFeatures.java:48)
+        at ExtraFeatures.h(ExtraFeatures.java:33)
+        at ExtraFeatures.main(ExtraFeatures.java:47)
 e.val() = 47
 */

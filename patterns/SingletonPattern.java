@@ -1,5 +1,5 @@
 // patterns/SingletonPattern.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 
@@ -21,9 +21,11 @@ final class Singleton {
     private ResourceImpl(int i) {
       this.i = i;
     }
+    @Override
     public synchronized int getValue() {
       return i;
     }
+    @Override
     public synchronized void setValue(int x) {
       i = x;
     }

@@ -1,5 +1,5 @@
 // enums/RoShamBo6.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // Enums using "tables" instead of multiple dispatch
@@ -14,8 +14,7 @@ enum RoShamBo6 implements Competitor<RoShamBo6> {
     { WIN, DRAW, LOSE }, // SCISSORS
     { LOSE, WIN, DRAW }, // ROCK
   };
-  @Override
-  public Outcome compete(RoShamBo6 other) {
+  @Override public Outcome compete(RoShamBo6 other) {
     return table[this.ordinal()][other.ordinal()];
   }
   public static void main(String[] args) {

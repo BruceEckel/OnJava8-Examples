@@ -1,5 +1,5 @@
 // validating/BadMicroBenchmark2.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // Relying on a common resource
@@ -28,8 +28,8 @@ public class BadMicroBenchmark2 {
   }
 }
 /* Output:
-parallelSetAll: 1147
-setAll: 174
-parallelSetAll: 86
-setAll: 39
+parallelSetAll: 1008
+setAll: 294
+parallelSetAll: 78
+setAll: 88
 */

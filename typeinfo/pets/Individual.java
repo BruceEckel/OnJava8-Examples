@@ -1,5 +1,5 @@
 // typeinfo/pets/Individual.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 package typeinfo.pets;
@@ -13,23 +13,19 @@ Individual implements Comparable<Individual> {
   public Individual(String name) { this.name = name; }
   // 'name' is optional:
   public Individual() {}
-  @Override
-  public String toString() {
+  @Override public String toString() {
     return getClass().getSimpleName() +
       (name == null ? "" : " " + name);
   }
   public long id() { return id; }
-  @Override
-  public boolean equals(Object o) {
+  @Override public boolean equals(Object o) {
     return o instanceof Individual &&
       Objects.equals(id, ((Individual)o).id);
   }
-  @Override
-  public int hashCode() {
+  @Override public int hashCode() {
     return Objects.hash(name, id);
   }
-  @Override
-  public int compareTo(Individual arg) {
+  @Override public int compareTo(Individual arg) {
     // Compare by class name first:
     String first = getClass().getSimpleName();
     String argFirst = arg.getClass().getSimpleName();

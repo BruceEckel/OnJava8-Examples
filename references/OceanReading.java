@@ -1,5 +1,5 @@
 // references/OceanReading.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // Cloning a composed object
@@ -13,8 +13,7 @@ public class OceanReading implements Cloneable {
     temperature = new TemperatureReading(tdata);
     depth = new DepthReading(ddata);
   }
-  @Override
-  public OceanReading clone() {
+  @Override public OceanReading clone() {
     OceanReading or = null;
     try {
       or = (OceanReading)super.clone();
@@ -40,8 +39,7 @@ public class OceanReading implements Cloneable {
   public void setDepthReading(DepthReading dr) {
     this.depth = dr;
   }
-  @Override
-  public String toString() {
+  @Override public String toString() {
     return "temperature: " + temperature +
       ", depth: " + depth;
   }

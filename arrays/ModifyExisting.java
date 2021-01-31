@@ -1,5 +1,5 @@
 // arrays/ModifyExisting.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 import java.util.*;
@@ -11,7 +11,7 @@ public class ModifyExisting {
     double[] da = new double[7];
     Arrays.setAll(da, new Rand.Double()::get);
     show(da);
-    Arrays.setAll(da, n -> da[n] / 100); // [1]
+    Arrays.setAll(da, n -> da[n] / 100);       // [1]
     show(da);
   }
 }

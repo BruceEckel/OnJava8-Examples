@@ -1,5 +1,5 @@
 // references/CheckCloneable.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // Check to see if a reference can be cloned
@@ -46,8 +46,7 @@ class BackOn extends NoMore {
     // copy. A dummy copy, just to make a point:
     return new BackOn();
   }
-  @Override
-  public Object clone() {
+  @Override public Object clone() {
     // Doesn't call NoMore.clone():
     return duplicate(this);
   }

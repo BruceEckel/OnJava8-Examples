@@ -1,5 +1,5 @@
 // concurrent/IDChecker.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 import java.util.*;
@@ -16,8 +16,7 @@ public class IDChecker {
     MakeObjects(Supplier<HasID> gen) {
       this.gen = gen;
     }
-    @Override
-    public List<Integer> get() {
+    @Override public List<Integer> get() {
       return
         Stream.generate(gen)
           .limit(SIZE)

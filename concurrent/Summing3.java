@@ -1,5 +1,5 @@
 // concurrent/Summing3.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // {ExcludeFromTravisCI}
@@ -36,7 +36,7 @@ public class Summing3 {
 }
 /* Output:
 50000005000000
-Long Array Stream Reduce: 1038ms
-Long Basic Sum: 21ms
-Long parallelPrefix: 3616ms
+Long Array Stream Reduce: 1510ms
+Long Basic Sum: 35ms
+Long parallelPrefix: 4306ms
 */

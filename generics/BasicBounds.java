@@ -1,5 +1,5 @@
 // generics/BasicBounds.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 
@@ -48,8 +48,7 @@ class Bounded
 extends Coord implements HasColor, Weight {
   @Override
   public java.awt.Color getColor() { return null; }
-  @Override
-  public int weight() { return 0; }
+  @Override public int weight() { return 0; }
 }
 
 public class BasicBounds {

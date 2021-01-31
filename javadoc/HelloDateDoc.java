@@ -1,5 +1,5 @@
 // javadoc/HelloDateDoc.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 import java.util.*;
@@ -22,5 +22,5 @@ public class HelloDateDoc {
 }
 /* Output:
 Hello, it's:
-Tue May 09 06:07:27 MDT 2017
+Sun Jan 24 08:49:10 MST 2021
 */

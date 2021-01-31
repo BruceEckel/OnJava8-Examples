@@ -1,5 +1,5 @@
 // concurrent/ThrowsChecked.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 import java.util.stream.*;
@@ -17,7 +17,7 @@ public class ThrowsChecked {
   static void testStream() {
     Stream.of(new ThrowsChecked())
       .map(ThrowsChecked::nochecked)
-      // .map(ThrowsChecked::withchecked); // [1]
+      // .map(ThrowsChecked::withchecked);        // [1]
       .map(tc -> {
         try {
           return withchecked(tc);
@@ -30,7 +30,7 @@ public class ThrowsChecked {
     CompletableFuture
       .completedFuture(new ThrowsChecked())
       .thenApply(ThrowsChecked::nochecked)
-      // .thenApply(ThrowsChecked::withchecked); // [2]
+      // .thenApply(ThrowsChecked::withchecked);  // [2]
       .thenApply(tc -> {
         try {
           return withchecked(tc);

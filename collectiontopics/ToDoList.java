@@ -1,5 +1,5 @@
 // collectiontopics/ToDoList.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // A more complex use of PriorityQueue
@@ -14,8 +14,7 @@ class ToDoItem implements Comparable<ToDoItem> {
     secondary = sec;
     item = td;
   }
-  @Override
-  public int compareTo(ToDoItem arg) {
+  @Override public int compareTo(ToDoItem arg) {
     if(primary > arg.primary)
       return +1;
     if(primary == arg.primary)
@@ -25,8 +24,7 @@ class ToDoItem implements Comparable<ToDoItem> {
         return 0;
     return -1;
   }
-  @Override
-  public String toString() {
+  @Override public String toString() {
     return Character.toString(primary) +
       secondary + ": " + item;
   }

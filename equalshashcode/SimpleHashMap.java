@@ -1,5 +1,5 @@
 // equalshashcode/SimpleHashMap.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // A demonstration hashed Map
@@ -16,8 +16,7 @@ class SimpleHashMap<K, V> extends AbstractMap<K, V> {
   @SuppressWarnings("unchecked")
   LinkedList<MapEntry<K, V>>[] buckets =
     new LinkedList[SIZE];
-  @Override
-  public V put(K key, V value) {
+  @Override public V put(K key, V value) {
     V oldValue = null;
     int index = Math.abs(key.hashCode()) % SIZE;
     if(buckets[index] == null)
@@ -40,8 +39,7 @@ class SimpleHashMap<K, V> extends AbstractMap<K, V> {
       buckets[index].add(pair);
     return oldValue;
   }
-  @Override
-  public V get(Object key) {
+  @Override public V get(Object key) {
     int index = Math.abs(key.hashCode()) % SIZE;
     if(buckets[index] == null) return null;
     for(MapEntry<K, V> iPair : buckets[index])
@@ -49,8 +47,7 @@ class SimpleHashMap<K, V> extends AbstractMap<K, V> {
         return iPair.getValue();
     return null;
   }
-  @Override
-  public Set<Map.Entry<K, V>> entrySet() {
+  @Override public Set<Map.Entry<K, V>> entrySet() {
     Set<Map.Entry<K, V>> set= new HashSet<>();
     for(LinkedList<MapEntry<K, V>> bucket : buckets) {
       if(bucket == null) continue;

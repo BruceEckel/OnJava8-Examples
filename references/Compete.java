@@ -1,5 +1,5 @@
 // references/Compete.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 import java.io.*;
@@ -11,8 +11,7 @@ class Thing2 implements Serializable {
 }
 
 class Thing3 implements Cloneable {
-  @Override
-  public Thing3 clone() {
+  @Override public Thing3 clone() {
     try {
       return (Thing3)super.clone();
     } catch(CloneNotSupportedException e) {
@@ -23,8 +22,7 @@ class Thing3 implements Cloneable {
 
 class Thing4 implements Cloneable {
   private Thing3 t3 = new Thing3();
-  @Override
-  public Thing4 clone() {
+  @Override public Thing4 clone() {
     Thing4 t4 = null;
     try {
       t4 = (Thing4)super.clone();
@@ -84,6 +82,6 @@ public class Compete {
   }
 }
 /* Output:
-Duplication via serialization: 516 Milliseconds
-Duplication via cloning: 71 Milliseconds
+Duplication via serialization: 385 Milliseconds
+Duplication via cloning: 38 Milliseconds
 */

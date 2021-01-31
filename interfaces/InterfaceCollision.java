@@ -1,5 +1,5 @@
 // interfaces/InterfaceCollision.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 
@@ -22,8 +22,7 @@ class C3 extends C implements I2 {
 
 class C4 extends C implements I3 {
   // Identical, no problem:
-  @Override
-  public int f() { return 1; }
+  @Override public int f() { return 1; }
 }
 
 // Methods differ only by return type:

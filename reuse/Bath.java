@@ -1,5 +1,5 @@
 // reuse/Bath.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // Constructor initialization with composition
@@ -10,8 +10,7 @@ class Soap {
     System.out.println("Soap()");
     s = "Constructed";
   }
-  @Override
-  public String toString() { return s; }
+  @Override public String toString() { return s; }
 }
 
 public class Bath {
@@ -30,8 +29,7 @@ public class Bath {
   }
   // Instance initialization:
   { i = 47; }
-  @Override
-  public String toString() {
+  @Override public String toString() {
     if(s4 == null) // Delayed initialization:
       s4 = "Joy";
     return

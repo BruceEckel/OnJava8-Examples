@@ -1,5 +1,5 @@
 // lowlevel/PriorityBlockingQueueDemo.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 import java.util.*;
@@ -19,13 +19,11 @@ class Prioritized implements Comparable<Prioritized>  {
     this.priority = priority;
     sequence.add(this);
   }
-  @Override
-  public int compareTo(Prioritized arg) {
+  @Override public int compareTo(Prioritized arg) {
     return priority < arg.priority ? 1 :
       (priority > arg.priority ? -1 : 0);
   }
-  @Override
-  public String toString() {
+  @Override public String toString() {
     return String.format(
       "[%d] Prioritized %d", priority, id);
   }
@@ -51,8 +49,7 @@ class Producer implements Runnable {
   Producer(Queue<Prioritized> q) {
     queue = q;
   }
-  @Override
-  public void run() {
+  @Override public void run() {
     rand.ints(10, 0, 20)
       .mapToObj(Prioritized::new)
       .peek(p -> new Nap(rand.nextDouble() / 10))
@@ -68,8 +65,7 @@ class Consumer implements Runnable {
   Consumer(PriorityBlockingQueue<Prioritized> q) {
     this.q = q;
   }
-  @Override
-  public void run() {
+  @Override public void run() {
     while(true) {
       try {
         Prioritized pt = q.take();
@@ -98,21 +94,21 @@ public class PriorityBlockingQueueDemo {
   }
 }
 /* Output:
-[15] Prioritized 2
-[17] Prioritized 1
+[15] Prioritized 1
+[17] Prioritized 0
 [17] Prioritized 5
 [16] Prioritized 6
 [14] Prioritized 9
-[12] Prioritized 0
+[12] Prioritized 2
 [11] Prioritized 4
 [11] Prioritized 12
 [13] Prioritized 13
 [12] Prioritized 16
-[14] Prioritized 18
+[14] Prioritized 17
 [15] Prioritized 23
 [18] Prioritized 26
 [16] Prioritized 29
-[12] Prioritized 17
+[12] Prioritized 18
 [11] Prioritized 30
 [11] Prioritized 24
 [10] Prioritized 15
@@ -129,10 +125,10 @@ public class PriorityBlockingQueueDemo {
 [0] Prioritized 14
 [0] Prioritized 21
 [-1] Prioritized 28
-(0:12)(2:15)(1:17)(3:1)(4:11)
+(0:17)(1:15)(2:12)(3:1)(4:11)
 (5:17)(6:16)(7:3)(8:0)(9:14)
 (10:8)(11:8)(12:11)(13:13)(14:0)
-(15:10)(16:12)(17:12)(18:14)(19:0)
+(15:10)(16:12)(17:14)(18:12)(19:0)
 (20:2)(21:0)(22:10)(23:15)(24:11)
 (25:8)(26:18)(27:-1)(28:-1)(29:16)
 (30:11)(31:6)(32:-1)

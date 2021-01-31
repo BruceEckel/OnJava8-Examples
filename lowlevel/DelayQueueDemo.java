@@ -1,5 +1,5 @@
 // lowlevel/DelayQueueDemo.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 import java.util.*;
@@ -20,24 +20,20 @@ class DelayedTask implements Runnable, Delayed {
       NANOSECONDS.convert(delta, MILLISECONDS);
     sequence.add(this);
   }
-  @Override
-  public long getDelay(TimeUnit unit) {
+  @Override public long getDelay(TimeUnit unit) {
     return unit.convert(
       trigger - System.nanoTime(), NANOSECONDS);
   }
-  @Override
-  public int compareTo(Delayed arg) {
+  @Override public int compareTo(Delayed arg) {
     DelayedTask that = (DelayedTask)arg;
     if(trigger < that.trigger) return -1;
     if(trigger > that.trigger) return 1;
     return 0;
   }
-  @Override
-  public void run() {
+  @Override public void run() {
     System.out.print(this + " ");
   }
-  @Override
-  public String toString() {
+  @Override public String toString() {
     return
       String.format("[%d] Task %d", delta, id);
   }
@@ -46,8 +42,7 @@ class DelayedTask implements Runnable, Delayed {
   }
   public static class EndTask extends DelayedTask {
     EndTask(int delay) { super(delay); }
-    @Override
-    public void run() {
+    @Override public void run() {
       sequence.forEach(dt ->
         System.out.println(dt.summary()));
     }
@@ -70,7 +65,7 @@ public class DelayQueueDemo {
   }
 }
 /* Output:
-[128] Task 12 [429] Task 6 [551] Task 13 [555] Task 2
+[128] Task 12 [429] Task 6 [555] Task 2 [551] Task 13
 [693] Task 3 [809] Task 15 [961] Task 5 [1258] Task 1
 [1258] Task 20 [1520] Task 19 [1861] Task 4 [1998] Task
 17 [2200] Task 8 [2207] Task 10 [2288] Task 11 [2522]

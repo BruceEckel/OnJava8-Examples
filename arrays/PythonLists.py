@@ -1,5 +1,5 @@
 # arrays/PythonLists.py
-# (c)2020 MindView LLC: see Copyright.txt
+# (c)2021 MindView LLC: see Copyright.txt
 # We make no guarantees that this code is fit for any purpose.
 # Visit http://OnJava8.com for more book information.
 
@@ -20,7 +20,7 @@ class MyList(list): # Inherit from list
         reversed.reverse() # Built-in list method
         return reversed
 
-# No 'new' necessary for object creation:
+# No 'new' necessary for object creation: {#24-no-new-necessary-for-object-creation}
 list2 = MyList(aList)
 print(type(list2)) # <class '__main__.MyList'>
 print(list2.getReversed()) # [8, 7, 6, 5, 4, 3, 2, 1]

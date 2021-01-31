@@ -1,5 +1,5 @@
 // patterns/abstractfactory/GameEnvironment.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // An example of the Abstract Factory pattern
@@ -32,15 +32,13 @@ class KungFuGuy implements Player {
 }
 
 class Puzzle implements Obstacle {
-  @Override
-  public void action() {
+  @Override public void action() {
     System.out.println("Puzzle");
   }
 }
 
 class NastyWeapon implements Obstacle {
-  @Override
-  public void action() {
+  @Override public void action() {
     System.out.println("NastyWeapon");
   }
 }

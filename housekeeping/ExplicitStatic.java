@@ -1,5 +1,5 @@
 // housekeeping/ExplicitStatic.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // Explicit static initialization with "static" clause
@@ -28,7 +28,7 @@ class Cups {
 public class ExplicitStatic {
   public static void main(String[] args) {
     System.out.println("Inside main()");
-    Cups.cup1.f(99);  // [1]
+    Cups.cup1.f(99);                  // [1]
   }
   // static Cups cups1 = new Cups();  // [2]
   // static Cups cups2 = new Cups();  // [2]

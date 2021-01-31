@@ -1,5 +1,5 @@
 // polymorphism/Frog.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // Cleanup and inheritance
@@ -49,8 +49,7 @@ class Animal extends LivingCreature {
   private Description t =
     new Description("Animal not Vegetable");
   Animal() { System.out.println("Animal()"); }
-  @Override
-  protected void dispose() {
+  @Override protected void dispose() {
     System.out.println("Animal dispose");
     t.dispose();
     p.dispose();
@@ -66,8 +65,7 @@ class Amphibian extends Animal {
   Amphibian() {
     System.out.println("Amphibian()");
   }
-  @Override
-  protected void dispose() {
+  @Override protected void dispose() {
     System.out.println("Amphibian dispose");
     t.dispose();
     p.dispose();
@@ -80,8 +78,7 @@ public class Frog extends Amphibian {
     new Characteristic("Croaks");
   private Description t = new Description("Eats Bugs");
   public Frog() { System.out.println("Frog()"); }
-  @Override
-  protected void dispose() {
+  @Override protected void dispose() {
     System.out.println("Frog dispose");
     t.dispose();
     p.dispose();

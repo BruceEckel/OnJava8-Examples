@@ -1,5 +1,5 @@
 // patterns/doubledispatch/DoubleDispatch.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // Using multiple dispatching to handle more
@@ -10,29 +10,25 @@ import patterns.trash.*;
 import java.util.*;
 
 class AluminumBin extends TypedBin {
-  @Override
-  public boolean add(Aluminum a) {
+  @Override public boolean add(Aluminum a) {
     return addIt(a);
   }
 }
 
 class PaperBin extends TypedBin {
-  @Override
-  public boolean add(Paper a) {
+  @Override public boolean add(Paper a) {
     return addIt(a);
   }
 }
 
 class GlassBin extends TypedBin {
-  @Override
-  public boolean add(Glass a) {
+  @Override public boolean add(Glass a) {
     return addIt(a);
   }
 }
 
 class CardboardBin extends TypedBin {
-  @Override
-  public boolean add(Cardboard a) {
+  @Override public boolean add(Cardboard a) {
     return addIt(a);
   }
 }

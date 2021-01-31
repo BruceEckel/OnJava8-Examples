@@ -1,5 +1,5 @@
 // lowlevel/MutexEvenProducer.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // Preventing thread collisions with mutexes
@@ -9,8 +9,7 @@ import onjava.Nap;
 public class MutexEvenProducer extends IntGenerator {
   private int currentEvenValue = 0;
   private Lock lock = new ReentrantLock();
-  @Override
-  public int next() {
+  @Override public int next() {
     lock.lock();
     try {
       ++currentEvenValue;

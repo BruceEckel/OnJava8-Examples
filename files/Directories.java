@@ -1,5 +1,5 @@
 // files/Directories.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 import java.util.*;
@@ -59,7 +59,7 @@ Nope, that doesn't work.
 test\bag
 test\bar
 test\baz
-test\DIR_5142667942049986036
+test\DIR_8683707748599240459
 test\foo
 test\Hello.txt
 *********
@@ -68,27 +68,27 @@ test\bag
 test\bag\foo
 test\bag\foo\bar
 test\bag\foo\bar\baz
-test\bag\foo\bar\baz\8279660869874696036.tmp
+test\bag\foo\bar\baz\4316127347949967230.tmp
 test\bag\foo\bar\baz\File.txt
 test\bar
 test\bar\baz
 test\bar\baz\bag
 test\bar\baz\bag\foo
-test\bar\baz\bag\foo\1274043134240426261.tmp
+test\bar\baz\bag\foo\1223263495976065729.tmp
 test\bar\baz\bag\foo\File.txt
 test\baz
 test\baz\bag
 test\baz\bag\foo
 test\baz\bag\foo\bar
-test\baz\bag\foo\bar\6130572530014544105.tmp
+test\baz\bag\foo\bar\6666183168609095028.tmp
 test\baz\bag\foo\bar\File.txt
-test\DIR_5142667942049986036
-test\DIR_5142667942049986036\pre7704286843227113253.non
+test\DIR_8683707748599240459
+test\DIR_8683707748599240459\pre6366626804787365549.non
 test\foo
 test\foo\bar
 test\foo\bar\baz
 test\foo\bar\baz\bag
-test\foo\bar\baz\bag\5412864507741775436.tmp
+test\foo\bar\baz\bag\4712324129011589115.tmp
 test\foo\bar\baz\bag\File.txt
 test\Hello.txt
 */

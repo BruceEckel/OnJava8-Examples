@@ -1,5 +1,5 @@
 // patterns/adapt/Adapter.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // Variations on the Adapter pattern
@@ -20,8 +20,7 @@ class ProxyAdapter implements WhatIWant {
   ProxyAdapter(WhatIHave wih) {
     whatIHave = wih;
   }
-  @Override
-  public void f() {
+  @Override public void f() {
     // Implement behavior using
     // methods in WhatIHave:
     whatIHave.g();
@@ -45,8 +44,7 @@ class WhatIUse2 extends WhatIUse {
 // Approach 3: build adapter into WhatIHave:
 class WhatIHave2 extends WhatIHave
 implements WhatIWant {
-  @Override
-  public void f() {
+  @Override public void f() {
     g();
     h();
   }
@@ -55,8 +53,7 @@ implements WhatIWant {
 // Approach 4: use an inner class:
 class WhatIHave3 extends WhatIHave {
   private class InnerAdapter implements WhatIWant{
-    @Override
-    public void f() {
+    @Override public void f() {
       g();
       h();
     }

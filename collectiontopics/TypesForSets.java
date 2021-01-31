@@ -1,5 +1,5 @@
 // collectiontopics/TypesForSets.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // Methods necessary to put your own type in a Set
@@ -10,21 +10,18 @@ import java.util.Objects;
 class SetType {
   protected int i;
   SetType(int n) { i = n; }
-  @Override
-  public boolean equals(Object o) {
+  @Override public boolean equals(Object o) {
     return o instanceof SetType &&
       Objects.equals(i, ((SetType)o).i);
   }
-  @Override
-  public String toString() {
+  @Override public String toString() {
     return Integer.toString(i);
   }
 }
 
 class HashType extends SetType {
   HashType(int n) { super(n); }
-  @Override
-  public int hashCode() {
+  @Override public int hashCode() {
     return Objects.hashCode(i);
   }
 }
@@ -32,8 +29,7 @@ class HashType extends SetType {
 class TreeType extends SetType
 implements Comparable<TreeType> {
   TreeType(int n) { super(n); }
-  @Override
-  public int compareTo(TreeType arg) {
+  @Override public int compareTo(TreeType arg) {
     return Integer.compare(arg.i, i);
     // Equivalent to:
     // return arg.i < i ? -1 : (arg.i == i ? 0 : 1);
@@ -80,10 +76,10 @@ public class TypesForSets {
 [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 [10, 9, 8, 7, 6, 5, 0, 1, 2, 3, 4]
 [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
-[1, 6, 8, 6, 2, 7, 8, 9, 4, 10, 7, 5, 1, 3, 4, 9, 9,
-10, 5, 3, 2, 0, 4, 1, 2, 0, 8, 3, 0, 10, 6, 5, 7]
-[3, 1, 4, 8, 7, 6, 9, 5, 3, 0, 10, 5, 5, 10, 7, 8, 8,
-9, 1, 4, 10, 2, 6, 9, 1, 6, 0, 3, 2, 0, 7, 2, 4]
+[4, 1, 5, 1, 0, 5, 6, 8, 7, 0, 2, 8, 4, 9, 6, 10, 6, 7,
+2, 9, 10, 3, 8, 4, 10, 3, 9, 5, 3, 7, 1, 2, 0]
+[9, 8, 4, 8, 5, 0, 1, 6, 2, 9, 3, 7, 2, 2, 7, 0, 9, 5,
+5, 6, 4, 7, 10, 1, 6, 4, 1, 10, 3, 3, 0, 10, 8]
 [10, 9, 8, 7, 6, 5, 0, 1, 2, 3, 4, 10, 9, 8, 7, 6, 5,
 0, 1, 2, 3, 4, 10, 9, 8, 7, 6, 5, 0, 1, 2, 3, 4]
 [10, 9, 8, 7, 6, 5, 0, 1, 2, 3, 4, 10, 9, 8, 7, 6, 5,

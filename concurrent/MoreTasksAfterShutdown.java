@@ -1,5 +1,5 @@
 // concurrent/MoreTasksAfterShutdown.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 import java.util.concurrent.*;
@@ -20,8 +20,7 @@ public class MoreTasksAfterShutdown {
 /* Output:
 java.util.concurrent.RejectedExecutionException: Task
 NapTask[99] rejected from java.util.concurrent.ThreadPo
-olExecutor@4e25154f[Shutting down, pool size = 1,
-active threads = 1, queued tasks = 0, completed tasks =
-0]
+olExecutor@106d69c[Shutting down, pool size = 1, active
+threads = 1, queued tasks = 0, completed tasks = 0]
 NapTask[1] pool-1-thread-1
 */

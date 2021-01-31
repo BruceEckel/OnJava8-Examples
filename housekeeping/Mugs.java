@@ -1,5 +1,5 @@
 // housekeeping/Mugs.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // Instance initialization
@@ -13,7 +13,7 @@ class Mug {
 public class Mugs {
   Mug mug1;
   Mug mug2;
-  { // [1]
+  {                                         // [1]
     mug1 = new Mug(1);
     mug2 = new Mug(2);
     System.out.println("mug1 & mug2 initialized");

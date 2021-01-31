@@ -1,5 +1,5 @@
 // onjava/Count.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // Generate incremental values of different types
@@ -12,8 +12,7 @@ public interface Count {
   class Boolean
   implements Supplier<java.lang.Boolean> {
     private boolean b = true;
-    @Override
-    public java.lang.Boolean get() {
+    @Override public java.lang.Boolean get() {
       b = !b;
       return java.lang.Boolean.valueOf(b);
     }
@@ -66,8 +65,7 @@ public interface Count {
   class Character
   implements Supplier<java.lang.Character> {
     private int i;
-    @Override
-    public java.lang.Character get() {
+    @Override public java.lang.Character get() {
       i = (i + 1) % CHARS.length;
       return CHARS[i];
     }
@@ -168,8 +166,7 @@ public interface Count {
   class Float
   implements Supplier<java.lang.Float> {
     private int i;
-    @Override
-    public java.lang.Float get() {
+    @Override public java.lang.Float get() {
       return java.lang.Float.valueOf(i++);
     }
     public java.lang.Float get(int n) {
@@ -193,8 +190,7 @@ public interface Count {
   class Double
   implements Supplier<java.lang.Double> {
     private int i;
-    @Override
-    public java.lang.Double get() {
+    @Override public java.lang.Double get() {
       return java.lang.Double.valueOf(i++);
     }
     public java.lang.Double get(int n) {

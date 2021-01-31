@@ -1,5 +1,5 @@
 // generics/Holder.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 import java.util.Objects;
@@ -10,13 +10,11 @@ public class Holder<T> {
   public Holder(T val) { value = val; }
   public void set(T val) { value = val; }
   public T get() { return value; }
-  @Override
-  public boolean equals(Object o) {
+  @Override public boolean equals(Object o) {
     return o instanceof Holder &&
       Objects.equals(value, ((Holder)o).value);
   }
-  @Override
-  public int hashCode() {
+  @Override public int hashCode() {
     return Objects.hashCode(value);
   }
   public static void main(String[] args) {

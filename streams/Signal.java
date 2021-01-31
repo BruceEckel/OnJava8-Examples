@@ -1,5 +1,5 @@
 // streams/Signal.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 import java.util.*;
@@ -10,8 +10,7 @@ public class Signal {
   private final String msg;
   public Signal(String msg) { this.msg = msg; }
   public String getMsg() { return msg; }
-  @Override
-  public String toString() {
+  @Override public String toString() {
     return "Signal(" + msg + ")";
   }
   static Random rand = new Random(47);

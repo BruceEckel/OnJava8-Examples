@@ -1,5 +1,5 @@
 // polymorphism/PolyConstructors.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // Constructors and polymorphism
@@ -21,8 +21,7 @@ class RoundGlyph extends Glyph {
     System.out.println(
       "RoundGlyph.RoundGlyph(), radius = " + radius);
   }
-  @Override
-  void draw() {
+  @Override void draw() {
     System.out.println(
       "RoundGlyph.draw(), radius = " + radius);
   }

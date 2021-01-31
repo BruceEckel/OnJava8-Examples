@@ -1,5 +1,5 @@
 // functional/CtorReference.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 
@@ -25,9 +25,9 @@ interface Make2Args {
 
 public class CtorReference {
   public static void main(String[] args) {
-    MakeNoArgs mna = Dog::new; // [1]
-    Make1Arg m1a = Dog::new;   // [2]
-    Make2Args m2a = Dog::new;  // [3]
+    MakeNoArgs mna = Dog::new;        // [1]
+    Make1Arg m1a = Dog::new;          // [2]
+    Make2Args m2a = Dog::new;         // [3]
 
     Dog dn = mna.make();
     Dog d1 = m1a.make("Comet");

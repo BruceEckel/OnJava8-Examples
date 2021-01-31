@@ -1,5 +1,5 @@
 // collectiontopics/References.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // Demonstrates Reference objects
@@ -11,11 +11,9 @@ class VeryBig {
   private long[] la = new long[SIZE];
   private String ident;
   VeryBig(String id) { ident = id; }
-  @Override
-  public String toString() { return ident; }
+  @Override public String toString() { return ident; }
   @SuppressWarnings("deprecation")
-  @Override
-  protected void finalize() {
+  @Override protected void finalize() {
     System.out.println("Finalizing " + ident);
   }
 }
@@ -68,25 +66,25 @@ public class References {
   }
 }
 /* Output: (First and Last 10 Lines)
-Just created: java.lang.ref.SoftReference@15db9742
-Just created: java.lang.ref.SoftReference@6d06d69c
-Just created: java.lang.ref.SoftReference@7852e922
-Just created: java.lang.ref.SoftReference@4e25154f
-Just created: java.lang.ref.SoftReference@70dea4e
-Just created: java.lang.ref.SoftReference@5c647e05
-Just created: java.lang.ref.SoftReference@33909752
-Just created: java.lang.ref.SoftReference@55f96302
-Just created: java.lang.ref.SoftReference@3d4eac69
-Just created: java.lang.ref.SoftReference@42a57993
+Just created: java.lang.ref.SoftReference@19e0bfd
+Just created: java.lang.ref.SoftReference@139a55
+Just created: java.lang.ref.SoftReference@1db9742
+Just created: java.lang.ref.SoftReference@106d69c
+Just created: java.lang.ref.SoftReference@52e922
+Just created: java.lang.ref.SoftReference@25154f
+Just created: java.lang.ref.SoftReference@10dea4e
+Just created: java.lang.ref.SoftReference@647e05
+Just created: java.lang.ref.SoftReference@1909752
+Just created: java.lang.ref.SoftReference@1f96302
 ...________...________...________...________...
-Just created: java.lang.ref.PhantomReference@45ee12a7
+Just created: java.lang.ref.PhantomReference@16f6e28
 In queue: null
-Just created: java.lang.ref.PhantomReference@330bedb4
+Just created: java.lang.ref.PhantomReference@15fbaa4
 In queue: null
-Just created: java.lang.ref.PhantomReference@2503dbd3
+Just created: java.lang.ref.PhantomReference@1ee12a7
 In queue: null
-Just created: java.lang.ref.PhantomReference@4b67cf4d
+Just created: java.lang.ref.PhantomReference@10bedb4
 In queue: null
-Just created: java.lang.ref.PhantomReference@7ea987ac
+Just created: java.lang.ref.PhantomReference@103dbd3
 In queue: null
 */

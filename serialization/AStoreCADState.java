@@ -1,5 +1,5 @@
 // serialization/AStoreCADState.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // Saving the state of a fictitious CAD system
@@ -20,7 +20,7 @@ abstract class Shape implements Serializable {
     yPos = yVal;
     dimension = dim;
   }
-  public String toString() {
+  @Override public String toString() {
     return getClass() + "color[" + getColor() +
       "] xPos[" + xPos + "] yPos[" + yPos +
       "] dim[" + dimension + "]\n";
@@ -43,10 +43,10 @@ class Circle extends Shape {
   Circle(int xVal, int yVal, int dim) {
     super(xVal, yVal, dim);
   }
-  public void setColor(Color newColor) {
+  @Override public void setColor(Color newColor) {
     color = newColor;
   }
-  public Color getColor() { return color; }
+  @Override public Color getColor() { return color; }
 }
 
 class Square extends Shape {
@@ -54,10 +54,10 @@ class Square extends Shape {
   Square(int xVal, int yVal, int dim) {
     super(xVal, yVal, dim);
   }
-  public void setColor(Color newColor) {
+  @Override public void setColor(Color newColor) {
     color = newColor;
   }
-  public Color getColor() { return color; }
+  @Override public Color getColor() { return color; }
 }
 
 class Line extends Shape {
@@ -73,10 +73,10 @@ class Line extends Shape {
   Line(int xVal, int yVal, int dim) {
     super(xVal, yVal, dim);
   }
-  public void setColor(Color newColor) {
+  @Override public void setColor(Color newColor) {
     color = newColor;
   }
-  public Color getColor() { return color; }
+  @Override public Color getColor() { return color; }
 }
 
 public class AStoreCADState {

@@ -1,12 +1,11 @@
 // lowlevel/CaptureUncaughtException.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 import java.util.concurrent.*;
 
 class ExceptionThread2 implements Runnable {
-  @Override
-  public void run() {
+  @Override public void run() {
     Thread t = Thread.currentThread();
     System.out.println("run() by " + t.getName());
     System.out.println(
@@ -24,8 +23,7 @@ Thread.UncaughtExceptionHandler {
 }
 
 class HandlerThreadFactory implements ThreadFactory {
-  @Override
-  public Thread newThread(Runnable r) {
+  @Override public Thread newThread(Runnable r) {
     System.out.println(this + " creating new Thread");
     Thread t = new Thread(r);
     System.out.println("created " + t);
@@ -47,10 +45,10 @@ public class CaptureUncaughtException {
   }
 }
 /* Output:
-HandlerThreadFactory@4e25154f creating new Thread
+HandlerThreadFactory@106d69c creating new Thread
 created Thread[Thread-0,5,main]
-eh = MyUncaughtExceptionHandler@70dea4e
+eh = MyUncaughtExceptionHandler@52e922
 run() by Thread-0
-eh = MyUncaughtExceptionHandler@70dea4e
+eh = MyUncaughtExceptionHandler@52e922
 caught java.lang.RuntimeException
 */

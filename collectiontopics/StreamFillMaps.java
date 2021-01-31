@@ -1,5 +1,5 @@
 // collectiontopics/StreamFillMaps.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 import java.util.*;
@@ -11,8 +11,7 @@ class Letters
 implements Supplier<Pair<Integer,String>> {
   private int number = 1;
   private char letter = 'A';
-  @Override
-  public Pair<Integer,String> get() {
+  @Override public Pair<Integer,String> get() {
     return new Pair<>(number++, "" + letter++);
   }
 }

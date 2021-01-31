@@ -1,5 +1,5 @@
 // interfaces/AdaptedRandomDoubles.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // Creating an adapter with inheritance
@@ -12,8 +12,7 @@ implements RandomDoubles, Readable {
   public AdaptedRandomDoubles(int count) {
     this.count = count;
   }
-  @Override
-  public int read(CharBuffer cb) {
+  @Override public int read(CharBuffer cb) {
     if(count-- == 0)
       return -1;
     String result = Double.toString(next()) + " ";

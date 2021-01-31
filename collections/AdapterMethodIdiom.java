@@ -1,5 +1,5 @@
 // collections/AdapterMethodIdiom.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // The "Adapter Method" idiom uses for-in
@@ -15,10 +15,12 @@ class ReversibleArrayList<T> extends ArrayList<T> {
       public Iterator<T> iterator() {
         return new Iterator<T>() {
           int current = size() - 1;
-          public boolean hasNext() {
+          @Override public boolean hasNext() {
             return current > -1;
           }
+          @Override
           public T next() { return get(current--); }
+          @Override
           public void remove() { // Not implemented
             throw new UnsupportedOperationException();
           }

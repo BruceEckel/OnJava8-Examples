@@ -1,5 +1,5 @@
 // typeinfo/ClassInitialization.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 import java.util.*;
@@ -35,9 +35,9 @@ public class ClassInitialization {
     System.out.println("After creating Initable ref");
     // Does not trigger initialization:
     System.out.println(Initable.STATIC_FINAL);
-    // Does trigger initialization:
+    // Triggers initialization:
     System.out.println(Initable.STATIC_FINAL2);
-    // Does trigger initialization:
+    // Triggers initialization:
     System.out.println(Initable2.staticNonFinal);
     Class initable3 = Class.forName("Initable3");
     System.out.println("After creating Initable3 ref");

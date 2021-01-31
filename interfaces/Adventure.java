@@ -1,5 +1,5 @@
 // interfaces/Adventure.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // Multiple interfaces
@@ -22,8 +22,8 @@ class ActionCharacter {
 
 class Hero extends ActionCharacter
     implements CanFight, CanSwim, CanFly {
-  public void swim() {}
-  public void fly() {}
+  @Override public void swim() {}
+  @Override public void fly() {}
 }
 
 public class Adventure {

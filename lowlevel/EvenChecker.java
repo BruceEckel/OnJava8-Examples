@@ -1,5 +1,5 @@
 // lowlevel/EvenChecker.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 import java.util.*;
@@ -14,8 +14,7 @@ public class EvenChecker implements Runnable {
     this.generator = generator;
     this.id = id;
   }
-  @Override
-  public void run() {
+  @Override public void run() {
     while(!generator.isCanceled()) {
       int val = generator.next();
       if(val % 2 != 0) {

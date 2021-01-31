@@ -1,5 +1,5 @@
 // collectiontopics/AssociativeArray.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // Associates keys with values
@@ -22,8 +22,7 @@ public class AssociativeArray<K, V> {
         return (V)pairs[i][1];
     return null; // Did not find key
   }
-  @Override
-  public String toString() {
+  @Override public String toString() {
     StringBuilder result = new StringBuilder();
     for(int i = 0; i < index; i++) {
       result.append(pairs[i][0].toString());

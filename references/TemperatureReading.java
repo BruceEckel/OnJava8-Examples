@@ -1,5 +1,5 @@
 // references/TemperatureReading.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // Cloning a composed object
@@ -12,8 +12,7 @@ public class TemperatureReading implements Cloneable {
     time = System.currentTimeMillis();
     this.temperature = temperature;
   }
-  @Override
-  public TemperatureReading clone() {
+  @Override public TemperatureReading clone() {
     try {
       return (TemperatureReading)super.clone();
     } catch(CloneNotSupportedException e) {
@@ -26,8 +25,7 @@ public class TemperatureReading implements Cloneable {
   public void setTemperature(double temp) {
     this.temperature = temp;
   }
-  @Override
-  public String toString() {
+  @Override public String toString() {
     return String.valueOf(temperature);
   }
 }

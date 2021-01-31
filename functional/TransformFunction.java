@@ -1,17 +1,15 @@
 // functional/TransformFunction.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 import java.util.function.*;
 
 class I {
-  @Override
-  public String toString() { return "I"; }
+  @Override public String toString() { return "I"; }
 }
 
 class O {
-  @Override
-  public String toString() { return "O"; }
+  @Override public String toString() { return "O"; }
 }
 
 public class TransformFunction {

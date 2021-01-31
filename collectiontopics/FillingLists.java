@@ -1,5 +1,5 @@
 // collectiontopics/FillingLists.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // Collections.fill() & Collections.nCopies()
@@ -8,8 +8,7 @@ import java.util.*;
 class StringAddress {
   private String s;
   StringAddress(String s) { this.s = s; }
-  @Override
-  public String toString() {
+  @Override public String toString() {
     return super.toString() + " " + s;
   }
 }
@@ -26,10 +25,10 @@ public class FillingLists {
   }
 }
 /* Output:
-[StringAddress@15db9742 Hello, StringAddress@15db9742
-Hello, StringAddress@15db9742 Hello,
-StringAddress@15db9742 Hello]
-[StringAddress@6d06d69c World!, StringAddress@6d06d69c
-World!, StringAddress@6d06d69c World!,
-StringAddress@6d06d69c World!]
+[StringAddress@19e0bfd Hello, StringAddress@19e0bfd
+Hello, StringAddress@19e0bfd Hello,
+StringAddress@19e0bfd Hello]
+[StringAddress@139a55 World!, StringAddress@139a55
+World!, StringAddress@139a55 World!,
+StringAddress@139a55 World!]
 */

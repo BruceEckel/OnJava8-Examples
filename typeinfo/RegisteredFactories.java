@@ -1,5 +1,5 @@
 // typeinfo/RegisteredFactories.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // Registering Factories in the base class
@@ -8,8 +8,7 @@ import java.util.function.*;
 import java.util.stream.*;
 
 class Part implements Supplier<Part> {
-  @Override
-  public String toString() {
+  @Override public String toString() {
     return getClass().getSimpleName();
   }
   static List<Supplier<? extends Part>> prototypes =
@@ -23,7 +22,7 @@ class Part implements Supplier<Part> {
       new GeneratorBelt()
     );
   private static Random rand = new Random(47);
-  public Part get() {
+  @Override public Part get() {
     int n = rand.nextInt(prototypes.size());
     return prototypes.get(n).get();
   }
@@ -42,8 +41,7 @@ class AirFilter extends Filter {
 }
 
 class CabinAirFilter extends Filter {
-  @Override
-  public CabinAirFilter get() {
+  @Override public CabinAirFilter get() {
     return new CabinAirFilter();
   }
 }
@@ -61,15 +59,13 @@ class FanBelt extends Belt {
 }
 
 class GeneratorBelt extends Belt {
-  @Override
-  public GeneratorBelt get() {
+  @Override public GeneratorBelt get() {
     return new GeneratorBelt();
   }
 }
 
 class PowerSteeringBelt extends Belt {
-  @Override
-  public PowerSteeringBelt get() {
+  @Override public PowerSteeringBelt get() {
     return new PowerSteeringBelt();
   }
 }

@@ -1,5 +1,5 @@
 // annotations/ifx/IfaceExtractorProcessor.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // javac-based annotation processing
@@ -21,14 +21,12 @@ extends AbstractProcessor {
     interfaceMethods = new ArrayList<>();
   Elements elementUtils;
   private ProcessingEnvironment processingEnv;
-  @Override
-  public void init(
+  @Override public void init(
     ProcessingEnvironment processingEnv) {
     this.processingEnv = processingEnv;
     elementUtils = processingEnv.getElementUtils();
   }
-  @Override
-  public boolean process(
+  @Override public boolean process(
     Set<? extends TypeElement> annotations,
     RoundEnvironment env) {
     for(Element elem:env.getElementsAnnotatedWith(

@@ -1,11 +1,11 @@
-// typeinfo/pets/ForNameCreator.java
-// (c)2020 MindView LLC: see Copyright.txt
+// typeinfo/pets/ForNamePetCreator.java
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 package typeinfo.pets;
 import java.util.*;
 
-public class ForNameCreator extends PetCreator {
+public class ForNamePetCreator extends Creator {
   private static List<Class<? extends Pet>> types =
     new ArrayList<>();
   // Types you want randomly created:
@@ -30,8 +30,7 @@ public class ForNameCreator extends PetCreator {
     }
   }
   static { loader(); }
-  @Override
-  public List<Class<? extends Pet>> types() {
+  @Override public List<Class<? extends Pet>> types() {
     return types;
   }
 }

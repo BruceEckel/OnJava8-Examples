@@ -1,5 +1,5 @@
 // patterns/StateDemo.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // Simple demonstration of the State pattern
@@ -30,16 +30,13 @@ class State implements StateBase {
 }
 
 class Implementation1 implements StateBase {
-  @Override
-  public void f() {
+  @Override public void f() {
     System.out.println("Implementation1.f()");
   }
-  @Override
-  public void g() {
+  @Override public void g() {
     System.out.println("Implementation1.g()");
   }
-  @Override
-  public void h() {
+  @Override public void h() {
     System.out.println("Implementation1.h()");
   }
   @Override
@@ -47,16 +44,13 @@ class Implementation1 implements StateBase {
 }
 
 class Implementation2 implements StateBase {
-  @Override
-  public void f() {
+  @Override public void f() {
     System.out.println("Implementation2.f()");
   }
-  @Override
-  public void g() {
+  @Override public void g() {
     System.out.println("Implementation2.g()");
   }
-  @Override
-  public void h() {
+  @Override public void h() {
     System.out.println("Implementation2.h()");
   }
   @Override

@@ -1,5 +1,5 @@
 // lowlevel/SerialNumberChecker.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // Test SerialNumbers implementations for thread-safety
@@ -12,8 +12,7 @@ public class SerialNumberChecker implements Runnable {
   public SerialNumberChecker(SerialNumbers producer) {
     this.producer = producer;
   }
-  @Override
-  public void run() {
+  @Override public void run() {
     while(true) {
       int serial = producer.nextSerialNumber();
       if(serials.contains(serial)) {

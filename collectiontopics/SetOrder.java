@@ -1,5 +1,5 @@
 // collectiontopics/SetOrder.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 import java.util.*;
@@ -23,9 +23,9 @@ public class SetOrder {
     for(String type: sets) {
       System.out.format("[-> %s <-]%n",
         type.substring(type.lastIndexOf('.') + 1));
-      @SuppressWarnings({"unchecked", "deprecation"})
+      @SuppressWarnings("unchecked")
       Set<String> set = (Set<String>)
-        Class.forName(type).newInstance();
+        Class.forName(type).getConstructor().newInstance();
       set.addAll(RLIST);
       set.stream()
         .limit(10)

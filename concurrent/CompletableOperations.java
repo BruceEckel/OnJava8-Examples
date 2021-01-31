@@ -1,5 +1,5 @@
 // concurrent/CompletableOperations.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 import java.util.concurrent.*;
@@ -66,8 +66,8 @@ thenAcceptAsync: 4
 cancelled: true
 completed exceptionally: true
 done: true
-java.util.concurrent.CompletableFuture@6d311334[Complet
-ed exceptionally]
+java.util.concurrent.CompletableFuture@1629346[Complete
+d exceptionally]
 777
 dependents: 1
 dependents: 2

@@ -1,5 +1,5 @@
 // onjava/Countries.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // "Flyweight" Maps and Lists of sample data
@@ -218,23 +218,19 @@ public class Countries {
     implements Map.Entry<String,String> {
       int index;
       Entry(int index) { this.index = index; }
-      @Override
-      public boolean equals(Object o) {
+      @Override public boolean equals(Object o) {
         return o instanceof FlyweightMap &&
           Objects.equals(DATA[index][0], o);
       }
-      @Override
-      public int hashCode() {
+      @Override public int hashCode() {
         return Objects.hashCode(DATA[index][0]);
       }
       @Override
       public String getKey() { return DATA[index][0]; }
-      @Override
-      public String getValue() {
+      @Override public String getValue() {
         return DATA[index][1];
       }
-      @Override
-      public String setValue(String value) {
+      @Override public String setValue(String value) {
         throw new UnsupportedOperationException();
       }
     }
@@ -251,14 +247,12 @@ public class Countries {
         else
           this.size = size;
       }
-      @Override
-      public int size() { return size; }
+      @Override public int size() { return size; }
       private class Iter
       implements Iterator<Map.Entry<String,String>> {
         // Only one Entry object per Iterator:
         private Entry entry = new Entry(-1);
-        @Override
-        public boolean hasNext() {
+        @Override public boolean hasNext() {
           return entry.index < size - 1;
         }
         @Override
@@ -266,13 +260,11 @@ public class Countries {
           entry.index++;
           return entry;
         }
-        @Override
-        public void remove() {
+        @Override public void remove() {
           throw new UnsupportedOperationException();
         }
       }
-      @Override
-      public
+      @Override public
       Iterator<Map.Entry<String,String>> iterator() {
         return new Iter();
       }

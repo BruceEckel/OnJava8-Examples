@@ -1,5 +1,5 @@
 // equalshashcode/ComposedEquality.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 import java.util.*;
@@ -11,8 +11,7 @@ class Part {
     this.ss = ss;
     this.dd = dd;
   }
-  @Override
-  public boolean equals(Object rval) {
+  @Override public boolean equals(Object rval) {
     return rval instanceof Part &&
       Objects.equals(ss, ((Part)rval).ss) &&
       Objects.equals(dd, ((Part)rval).dd);
@@ -26,8 +25,7 @@ public class ComposedEquality extends SuccinctEquality {
     part = new Part(s, d);
     System.out.println("made 'ComposedEquality'");
   }
-  @Override
-  public boolean equals(Object rval) {
+  @Override public boolean equals(Object rval) {
     return rval instanceof ComposedEquality &&
       super.equals(rval) &&
       Objects.equals(part,

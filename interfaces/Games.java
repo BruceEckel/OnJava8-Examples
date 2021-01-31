@@ -1,5 +1,5 @@
 // interfaces/Games.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // A Game framework using Factory Methods
@@ -10,8 +10,7 @@ interface GameFactory { Game getGame(); }
 class Checkers implements Game {
   private int moves = 0;
   private static final int MOVES = 3;
-  @Override
-  public boolean move() {
+  @Override public boolean move() {
     System.out.println("Checkers move " + moves);
     return ++moves != MOVES;
   }
@@ -25,8 +24,7 @@ class CheckersFactory implements GameFactory {
 class Chess implements Game {
   private int moves = 0;
   private static final int MOVES = 4;
-  @Override
-  public boolean move() {
+  @Override public boolean move() {
     System.out.println("Chess move " + moves);
     return ++moves != MOVES;
   }

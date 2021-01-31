@@ -1,5 +1,5 @@
 // references/AddingClone.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // You must go through a few gyrations
@@ -11,12 +11,10 @@ class Int2 implements Cloneable {
   private int i;
   Int2(int ii) { i = ii; }
   public void increment() { i++; }
-  @Override
-  public String toString() {
+  @Override public String toString() {
     return Integer.toString(i);
   }
-  @Override
-  public Int2 clone() {
+  @Override public Int2 clone() {
     try {
       return (Int2)super.clone();
     } catch(CloneNotSupportedException e) {

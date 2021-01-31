@@ -1,5 +1,5 @@
 // files/FileSystemDemo.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 import java.nio.file.*;
@@ -26,16 +26,20 @@ public class FileSystemDemo {
   }
 }
 /* Output:
-Windows 10
-File Store: SSD (C:)
+Windows 8.1
+File Store: (C:)
+File Store: System Reserved (E:)
+File Store: (F:)
 Root Directory: C:\
 Root Directory: D:\
+Root Directory: E:\
+Root Directory: F:\
 Separator: \
 UserPrincipalLookupService:
-sun.nio.fs.WindowsFileSystem$LookupService$1@15db9742
+sun.nio.fs.WindowsFileSystem$LookupService$1@19e0bfd
 isOpen: true
 isReadOnly: false
 FileSystemProvider:
-sun.nio.fs.WindowsFileSystemProvider@6d06d69c
+sun.nio.fs.WindowsFileSystemProvider@139a55
 File Attribute Views: [owner, dos, acl, basic, user]
 */

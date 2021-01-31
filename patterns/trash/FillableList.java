@@ -1,5 +1,5 @@
 // patterns/trash/FillableList.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // Adapter that makes a List Fillable
@@ -12,6 +12,5 @@ implements Fillable<T> {
   public FillableList(List<T> vv) {
     v = vv;
   }
-  @Override
-  public void addTrash(T t) { v.add(t); }
+  @Override public void addTrash(T t) { v.add(t); }
 }

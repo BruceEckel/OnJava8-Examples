@@ -1,5 +1,5 @@
 // generics/TupleTest.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 import onjava.*;
@@ -36,7 +36,7 @@ public class TupleTest {
 }
 /* Output:
 (hi, 47)
-(Amphibian@1540e19d, hi, 47)
-(Vehicle@7f31245a, Amphibian@6d6f6e28, hi, 47)
-(Vehicle@330bedb4, Amphibian@2503dbd3, hi, 47, 11.1)
+(Amphibian@1c7c054, hi, 47)
+(Vehicle@14991ad, Amphibian@d93b30, hi, 47)
+(Vehicle@a14482, Amphibian@140e19d, hi, 47, 11.1)
 */

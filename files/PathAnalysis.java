@@ -1,5 +1,5 @@
 // files/PathAnalysis.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 import java.nio.file.*;
@@ -38,7 +38,7 @@ public class PathAnalysis {
   }
 }
 /* Output:
-Windows 10
+Windows 8.1
 Exists: true
 Directory: false
 Executable: true
@@ -47,10 +47,10 @@ RegularFile: true
 Writable: true
 notExists: false
 Hidden: false
-size: 1631
-FileStore: SSD (C:)
-LastModified: : 2017-05-09T12:07:00.428366Z
-Owner: MINDVIEWTOSHIBA\Bruce (User)
+size: 1617
+FileStore: (C:)
+LastModified: : 2021-01-24T15:48:37.461504Z
+Owner: GROOT\Bruce (User)
 ContentType: null
 SymbolicLink: false
 */

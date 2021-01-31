@@ -1,5 +1,5 @@
 // exceptions/DynamicFields.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // A Class that dynamically adds fields to itself to
@@ -14,8 +14,7 @@ public class DynamicFields {
     for(int i = 0; i < initialSize; i++)
       fields[i] = new Object[] { null, null };
   }
-  @Override
-  public String toString() {
+  @Override public String toString() {
     StringBuilder result = new StringBuilder();
     for(Object[] obj : fields) {
       result.append(obj[0]);
@@ -121,10 +120,10 @@ number3: 11
 df.getField("d") : A new value for d
 DynamicFieldsException
         at
-DynamicFields.setField(DynamicFields.java:65)
-        at DynamicFields.main(DynamicFields.java:97)
+DynamicFields.setField(DynamicFields.java:64)
+        at DynamicFields.main(DynamicFields.java:96)
 Caused by: java.lang.NullPointerException
         at
-DynamicFields.setField(DynamicFields.java:67)
+DynamicFields.setField(DynamicFields.java:66)
         ... 1 more
 */

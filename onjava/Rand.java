@@ -1,5 +1,5 @@
 // onjava/Rand.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // Generate random values of different types
@@ -13,8 +13,7 @@ public interface Rand {
   class Boolean
   implements Supplier<java.lang.Boolean> {
     SplittableRandom r = new SplittableRandom(47);
-    @Override
-    public java.lang.Boolean get() {
+    @Override public java.lang.Boolean get() {
       return r.nextBoolean();
     }
     public java.lang.Boolean get(int n) {
@@ -35,8 +34,7 @@ public interface Rand {
   class Byte
   implements Supplier<java.lang.Byte> {
     SplittableRandom r = new SplittableRandom(47);
-    @Override
-    public java.lang.Byte get() {
+    @Override public java.lang.Byte get() {
       return (byte)r.nextInt(MOD);
     }
     public java.lang.Byte get(int n) {
@@ -57,8 +55,7 @@ public interface Rand {
   class Character
   implements Supplier<java.lang.Character> {
     SplittableRandom r = new SplittableRandom(47);
-    @Override
-    public java.lang.Character get() {
+    @Override public java.lang.Character get() {
       return (char)r.nextInt('a', 'z' + 1);
     }
     public java.lang.Character get(int n) {
@@ -79,8 +76,7 @@ public interface Rand {
   class Short
   implements Supplier<java.lang.Short> {
     SplittableRandom r = new SplittableRandom(47);
-    @Override
-    public java.lang.Short get() {
+    @Override public java.lang.Short get() {
       return (short)r.nextInt(MOD);
     }
     public java.lang.Short get(int n) {
@@ -101,8 +97,7 @@ public interface Rand {
   class Integer
   implements Supplier<java.lang.Integer> {
     SplittableRandom r = new SplittableRandom(47);
-    @Override
-    public java.lang.Integer get() {
+    @Override public java.lang.Integer get() {
       return r.nextInt(MOD);
     }
     public java.lang.Integer get(int n) {
@@ -119,8 +114,7 @@ public interface Rand {
   }
   class Pint implements IntSupplier {
     SplittableRandom r = new SplittableRandom(47);
-    @Override
-    public int getAsInt() {
+    @Override public int getAsInt() {
       return r.nextInt(MOD);
     }
     public int get(int n) { return getAsInt(); }
@@ -131,8 +125,7 @@ public interface Rand {
   class Long
   implements Supplier<java.lang.Long> {
     SplittableRandom r = new SplittableRandom(47);
-    @Override
-    public java.lang.Long get() {
+    @Override public java.lang.Long get() {
       return r.nextLong(MOD);
     }
     public java.lang.Long get(int n) {
@@ -149,8 +142,7 @@ public interface Rand {
   }
   class Plong implements LongSupplier {
     SplittableRandom r = new SplittableRandom(47);
-    @Override
-    public long getAsLong() {
+    @Override public long getAsLong() {
       return r.nextLong(MOD);
     }
     public long get(int n) { return getAsLong(); }
@@ -161,8 +153,7 @@ public interface Rand {
   class Float
   implements Supplier<java.lang.Float> {
     SplittableRandom r = new SplittableRandom(47);
-    @Override
-    public java.lang.Float get() {
+    @Override public java.lang.Float get() {
       return (float)trim(r.nextDouble());
     }
     public java.lang.Float get(int n) {
@@ -187,8 +178,7 @@ public interface Rand {
   class Double
   implements Supplier<java.lang.Double> {
     SplittableRandom r = new SplittableRandom(47);
-    @Override
-    public java.lang.Double get() {
+    @Override public java.lang.Double get() {
       return trim(r.nextDouble());
     }
     public java.lang.Double get(int n) {
@@ -206,8 +196,7 @@ public interface Rand {
   }
   class Pdouble implements DoubleSupplier {
     SplittableRandom r = new SplittableRandom(47);
-    @Override
-    public double getAsDouble() {
+    @Override public double getAsDouble() {
       return trim(r.nextDouble());
     }
     public double get(int n) {
@@ -228,8 +217,7 @@ public interface Rand {
     public String(int strLength) {
       strlen = strLength;
     }
-    @Override
-    public java.lang.String get() {
+    @Override public java.lang.String get() {
       return r.ints(strlen, 'a', 'z' + 1)
         .collect(StringBuilder::new,
                  StringBuilder::appendCodePoint,

@@ -1,5 +1,5 @@
 // interfaces/RandomStrings.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // Implementing an interface to conform to a method
@@ -18,8 +18,7 @@ public class RandomStrings implements Readable {
   public RandomStrings(int count) {
     this.count = count;
   }
-  @Override
-  public int read(CharBuffer cb) {
+  @Override public int read(CharBuffer cb) {
     if(count-- == 0)
       return -1; // Indicates end of input
     cb.append(CAPITALS[rand.nextInt(CAPITALS.length)]);

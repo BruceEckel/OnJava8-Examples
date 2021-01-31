@@ -1,5 +1,5 @@
 // generics/IterableFibonacci.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // Adapt the Fibonacci class to make it Iterable
@@ -9,13 +9,11 @@ public class IterableFibonacci
 extends Fibonacci implements Iterable<Integer> {
   private int n;
   public IterableFibonacci(int count) { n = count; }
-  @Override
-  public Iterator<Integer> iterator() {
+  @Override public Iterator<Integer> iterator() {
     return new Iterator<Integer>() {
       @Override
       public boolean hasNext() { return n > 0; }
-      @Override
-      public Integer next() {
+      @Override public Integer next() {
         n--;
         return IterableFibonacci.this.get();
       }

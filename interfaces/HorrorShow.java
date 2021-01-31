@@ -1,5 +1,5 @@
 // interfaces/HorrorShow.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // Extending an interface with inheritance
@@ -17,10 +17,8 @@ interface Lethal {
 }
 
 class DragonZilla implements DangerousMonster {
-  @Override
-  public void menace() {}
-  @Override
-  public void destroy() {}
+  @Override public void menace() {}
+  @Override public void destroy() {}
 }
 
 interface Vampire extends DangerousMonster, Lethal {
@@ -28,14 +26,10 @@ interface Vampire extends DangerousMonster, Lethal {
 }
 
 class VeryBadVampire implements Vampire {
-  @Override
-  public void menace() {}
-  @Override
-  public void destroy() {}
-  @Override
-  public void kill() {}
-  @Override
-  public void drinkBlood() {}
+  @Override public void menace() {}
+  @Override public void destroy() {}
+  @Override public void kill() {}
+  @Override public void drinkBlood() {}
 }
 
 public class HorrorShow {

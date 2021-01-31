@@ -1,5 +1,5 @@
 // patterns/visitor/BeeAndFlowers.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // Demonstration of "visitor" pattern
@@ -38,34 +38,27 @@ class Chrysanthemum implements Flower {
 // Add the ability to produce a String:
 class StringVal implements Visitor {
   String s;
-  @Override
-  public String toString() { return s; }
-  @Override
-  public void visit(Gladiolus g) {
+  @Override public String toString() { return s; }
+  @Override public void visit(Gladiolus g) {
     s = "Gladiolus";
   }
-  @Override
-  public void visit(Renuculus r) {
+  @Override public void visit(Renuculus r) {
     s = "Renuculus";
   }
-  @Override
-  public void visit(Chrysanthemum c) {
+  @Override public void visit(Chrysanthemum c) {
     s = "Chrysanthemum";
   }
 }
 
 // Add the ability to do "Bee" activities:
 class Bee implements Visitor {
-  @Override
-  public void visit(Gladiolus g) {
+  @Override public void visit(Gladiolus g) {
     System.out.println("Bee and Gladiolus");
   }
-  @Override
-  public void visit(Renuculus r) {
+  @Override public void visit(Renuculus r) {
     System.out.println("Bee and Renuculus");
   }
-  @Override
-  public void visit(Chrysanthemum c) {
+  @Override public void visit(Chrysanthemum c) {
     System.out.println("Bee and Chrysanthemum");
   }
 }

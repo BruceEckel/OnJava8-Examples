@@ -1,5 +1,5 @@
 // interfaces/Factories.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 
@@ -14,34 +14,32 @@ interface ServiceFactory {
 
 class Service1 implements Service {
   Service1() {} // Package access
-  public void method1() {
+  @Override public void method1() {
     System.out.println("Service1 method1");
   }
-  public void method2() {
+  @Override public void method2() {
     System.out.println("Service1 method2");
   }
 }
 
 class Service1Factory implements ServiceFactory {
-  @Override
-  public Service getService() {
+  @Override public Service getService() {
     return new Service1();
   }
 }
 
 class Service2 implements Service {
   Service2() {} // Package access
-  public void method1() {
+  @Override public void method1() {
     System.out.println("Service2 method1");
   }
-  public void method2() {
+  @Override public void method2() {
     System.out.println("Service2 method2");
   }
 }
 
 class Service2Factory implements ServiceFactory {
-  @Override
-  public Service getService() {
+  @Override public Service getService() {
     return new Service2();
   }
 }

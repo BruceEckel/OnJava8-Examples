@@ -1,5 +1,5 @@
 // typeinfo/toys/ToyTest.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // Testing class Class
@@ -14,13 +14,13 @@ interface Shoots {}
 class Toy {
   // Comment out the following no-arg
   // constructor to see NoSuchMethodError
-  Toy() {}
-  Toy(int i) {}
+  public Toy() {}
+  public Toy(int i) {}
 }
 
 class FancyToy extends Toy
 implements HasBatteries, Waterproof, Shoots {
-  FancyToy() { super(1); }
+  public FancyToy() { super(1); }
 }
 
 public class ToyTest {
@@ -47,7 +47,7 @@ public class ToyTest {
     Class up = c.getSuperclass();
     Object obj = null;
     try {
-      // Requires no-arg constructor:
+      // Requires public no-arg constructor:
       obj = up.newInstance();
     } catch(Exception e) {
       throw new

@@ -1,5 +1,5 @@
 // generics/Mixins.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 import java.util.*;
@@ -42,12 +42,10 @@ implements TimeStamped, SerialNumbered {
   private TimeStamped timeStamp = new TimeStampedImp();
   private SerialNumbered serialNumber =
     new SerialNumberedImp();
-  @Override
-  public long getStamp() {
+  @Override public long getStamp() {
     return timeStamp.getStamp();
   }
-  @Override
-  public long getSerialNumber() {
+  @Override public long getSerialNumber() {
     return serialNumber.getSerialNumber();
   }
 }
@@ -66,6 +64,6 @@ public class Mixins {
   }
 }
 /* Output:
-test string 1 1494331663026 1
-test string 2 1494331663027 2
+test string 1 1611503367257 1
+test string 2 1611503367258 2
 */

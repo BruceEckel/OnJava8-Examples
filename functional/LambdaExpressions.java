@@ -1,5 +1,5 @@
 // functional/LambdaExpressions.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 
@@ -17,15 +17,15 @@ interface Multi {
 
 public class LambdaExpressions {
 
-  static Body bod = h -> h + " No Parens!"; // [1]
+  static Body bod = h -> h + " No Parens!";      // [1]
 
   static Body bod2 = (h) -> h + " More details"; // [2]
 
-  static Description desc = () -> "Short info"; // [3]
+  static Description desc = () -> "Short info";  // [3]
 
-  static Multi mult = (h, n) -> h + n; // [4]
+  static Multi mult = (h, n) -> h + n;           // [4]
 
-  static Description moreLines = () -> { // [5]
+  static Description moreLines = () -> {         // [5]
     System.out.println("moreLines()");
     return "from moreLines()";
   };

@@ -1,5 +1,5 @@
 // reuse/FinalData.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // The effect of final on fields
@@ -27,8 +27,7 @@ public class FinalData {
   private static final Value VAL_3 = new Value(33);
   // Arrays:
   private final int[] a = { 1, 2, 3, 4, 5, 6 };
-  @Override
-  public String toString() {
+  @Override public String toString() {
     return id + ": " + "i4 = " + i4
       + ", INT_5 = " + INT_5;
   }

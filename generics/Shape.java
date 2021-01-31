@@ -1,13 +1,12 @@
 // generics/Shape.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 
 public class Shape {
   private static long counter = 0;
   private final long id = counter++;
-  @Override
-  public String toString() {
+  @Override public String toString() {
     return getClass().getSimpleName() + " " + id;
   }
   public void rotate() {

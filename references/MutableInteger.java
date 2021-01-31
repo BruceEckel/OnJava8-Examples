@@ -1,5 +1,5 @@
 // references/MutableInteger.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // A changeable wrapper class
@@ -12,8 +12,7 @@ class IntValue {
   public int getValue() { return n; }
   public void setValue(int n) { this.n = n; }
   public void increment() { n++; }
-  @Override
-  public String toString() {
+  @Override public String toString() {
     return Integer.toString(n);
   }
 }

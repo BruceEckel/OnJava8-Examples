@@ -1,5 +1,5 @@
 // validating/SLF4JLogging.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 import org.slf4j.*;
@@ -12,6 +12,6 @@ public class SLF4JLogging {
   }
 }
 /* Output:
-2017-05-09T06:07:53.418
+2021-01-24T08:49:38.496
 [main] INFO  SLF4JLogging - hello logging
 */

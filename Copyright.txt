@@ -1,5 +1,5 @@
 // Copyright.txt
-This computer source code is Copyright ©2020 MindView LLC.
+This computer source code is Copyright ©2021 MindView LLC.
 All Rights Reserved.
 
 Permission to use, copy, modify, and distribute this

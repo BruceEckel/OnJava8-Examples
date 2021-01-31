@@ -1,5 +1,5 @@
 // references/LocalCopy.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // Creating local copies with clone()
@@ -7,8 +7,7 @@
 class Duplo implements Cloneable {
   private int n;
   Duplo(int n) { this.n = n; }
-  @Override
-  public Duplo clone() { // [1]
+  @Override public Duplo clone() {              // [1]
     try {
       return (Duplo)super.clone();
     } catch(CloneNotSupportedException e) {
@@ -18,8 +17,7 @@ class Duplo implements Cloneable {
   public int getValue() { return n; }
   public void setValue(int n) { this.n = n; }
   public void increment() { n++; }
-  @Override
-  public String toString() {
+  @Override public String toString() {
     return Integer.toString(n);
   }
 }
@@ -31,7 +29,7 @@ public class LocalCopy {
     return v;
   }
   public static Duplo f(Duplo v) {
-    v = v.clone(); // [2] Local copy
+    v = v.clone(); // Local copy                // [2]
     v.increment();
     return v;
   }

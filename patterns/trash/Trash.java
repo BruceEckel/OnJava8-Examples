@@ -1,5 +1,5 @@
 // patterns/trash/Trash.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // Base class for Trash recycling examples
@@ -28,8 +28,7 @@ public abstract class Trash {
     });
     System.out.println("Total value = " + val);
   }
-  @Override
-  public String toString() {
+  @Override public String toString() {
     // Print correct subclass name:
     return getClass().getName() +
       " w:" + weight() + " v:" +

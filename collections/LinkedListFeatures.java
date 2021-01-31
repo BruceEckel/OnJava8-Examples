@@ -1,5 +1,5 @@
 // collections/LinkedListFeatures.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 import typeinfo.pets.*;
@@ -8,7 +8,7 @@ import java.util.*;
 public class LinkedListFeatures {
   public static void main(String[] args) {
     LinkedList<Pet> pets =
-      new LinkedList<>(Pets.list(5));
+      new LinkedList<>(new PetCreator().list(5));
     System.out.println(pets);
     // Identical:
     System.out.println(
@@ -27,9 +27,9 @@ public class LinkedListFeatures {
     System.out.println(pets);
     pets.addFirst(new Rat());
     System.out.println("After addFirst(): " + pets);
-    pets.offer(Pets.get());
+    pets.offer(new PetCreator().get());
     System.out.println("After offer(): " + pets);
-    pets.add(Pets.get());
+    pets.add(new PetCreator().get());
     System.out.println("After add(): " + pets);
     pets.addLast(new Hamster());
     System.out.println("After addLast(): " + pets);
@@ -47,8 +47,8 @@ pets.removeFirst(): Manx
 pets.poll(): Cymric
 [Mutt, Pug]
 After addFirst(): [Rat, Mutt, Pug]
-After offer(): [Rat, Mutt, Pug, Cymric]
-After add(): [Rat, Mutt, Pug, Cymric, Pug]
-After addLast(): [Rat, Mutt, Pug, Cymric, Pug, Hamster]
+After offer(): [Rat, Mutt, Pug, Rat]
+After add(): [Rat, Mutt, Pug, Rat, Rat]
+After addLast(): [Rat, Mutt, Pug, Rat, Rat, Hamster]
 pets.removeLast(): Hamster
 */

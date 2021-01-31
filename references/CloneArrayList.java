@@ -1,5 +1,5 @@
 // references/CloneArrayList.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // The clone() operation works for only a few
@@ -11,8 +11,7 @@ class Int {
   private int i;
   Int(int ii) { i = ii; }
   public void increment() { i++; }
-  @Override
-  public String toString() {
+  @Override public String toString() {
     return Integer.toString(i);
   }
 }

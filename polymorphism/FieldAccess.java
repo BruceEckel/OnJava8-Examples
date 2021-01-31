@@ -1,5 +1,5 @@
 // polymorphism/FieldAccess.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // Direct field access is determined at compile time
@@ -11,8 +11,7 @@ class Super {
 
 class Sub extends Super {
   public int field = 1;
-  @Override
-  public int getField() { return field; }
+  @Override public int getField() { return field; }
   public int getSuperField() { return super.field; }
 }
 

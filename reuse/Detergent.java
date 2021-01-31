@@ -1,5 +1,5 @@
 // reuse/Detergent.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // Inheritance syntax & properties
@@ -10,8 +10,7 @@ class Cleanser {
   public void dilute() { append(" dilute()"); }
   public void apply() { append(" apply()"); }
   public void scrub() { append(" scrub()"); }
-  @Override
-  public String toString() { return s; }
+  @Override public String toString() { return s; }
   public static void main(String[] args) {
     Cleanser x = new Cleanser();
     x.dilute(); x.apply(); x.scrub();
@@ -21,8 +20,7 @@ class Cleanser {
 
 public class Detergent extends Cleanser {
   // Change a method:
-  @Override
-  public void scrub() {
+  @Override public void scrub() {
     append(" Detergent.scrub()");
     super.scrub(); // Call base-class version
   }

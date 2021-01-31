@@ -1,5 +1,5 @@
 // collections/GenericsAndUpcasting.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 import java.util.*;
@@ -21,8 +21,8 @@ public class GenericsAndUpcasting {
   }
 }
 /* Output:
-GrannySmith@15db9742
-Gala@6d06d69c
-Fuji@7852e922
-Braeburn@4e25154f
+GrannySmith@19e0bfd
+Gala@139a55
+Fuji@1db9742
+Braeburn@106d69c
 */

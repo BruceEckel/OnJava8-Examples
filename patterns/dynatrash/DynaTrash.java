@@ -1,5 +1,5 @@
 // patterns/dynatrash/DynaTrash.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // Using a Map of Lists and RTTI to automatically
@@ -61,11 +61,11 @@ weight of patterns.trash.Paper = 91.0
 weight of patterns.trash.Paper = 80.0
 weight of patterns.trash.Paper = 66.0
 ...________...________...________...________...
-weight of patterns.trash.Aluminum = 81.0
-weight of patterns.trash.Aluminum = 36.0
-weight of patterns.trash.Aluminum = 93.0
-weight of patterns.trash.Aluminum = 36.0
-Total value = 860.0499778985977
+weight of patterns.trash.Glass = 93.0
+weight of patterns.trash.Glass = 36.0
+weight of patterns.trash.Glass = 12.0
+weight of patterns.trash.Glass = 60.0
+Total value = 150.1900027245283
 weight of patterns.trash.Cardboard = 96.0
 weight of patterns.trash.Cardboard = 44.0
 weight of patterns.trash.Cardboard = 12.0

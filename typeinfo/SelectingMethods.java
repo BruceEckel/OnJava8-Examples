@@ -1,5 +1,5 @@
 // typeinfo/SelectingMethods.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // Looking for particular methods in a dynamic proxy
@@ -10,8 +10,7 @@ class MethodSelector implements InvocationHandler {
   MethodSelector(Object proxied) {
     this.proxied = proxied;
   }
-  @Override
-  public Object
+  @Override public Object
   invoke(Object proxy, Method method, Object[] args)
   throws Throwable {
     if(method.getName().equals("interesting"))
@@ -29,20 +28,16 @@ interface SomeMethods {
 }
 
 class Implementation implements SomeMethods {
-  @Override
-  public void boring1() {
+  @Override public void boring1() {
     System.out.println("boring1");
   }
-  @Override
-  public void boring2() {
+  @Override public void boring2() {
     System.out.println("boring2");
   }
-  @Override
-  public void interesting(String arg) {
+  @Override public void interesting(String arg) {
     System.out.println("interesting " + arg);
   }
-  @Override
-  public void boring3() {
+  @Override public void boring3() {
     System.out.println("boring3");
   }
 }

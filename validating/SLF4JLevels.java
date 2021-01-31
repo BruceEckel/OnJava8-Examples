@@ -1,5 +1,5 @@
 // validating/SLF4JLevels.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 import org.slf4j.*;
@@ -16,14 +16,14 @@ public class SLF4JLevels {
   }
 }
 /* Output:
-2017-05-09T06:07:52.846
+2021-01-24T08:49:37.658
 [main] TRACE SLF4JLevels - Hello
-2017-05-09T06:07:52.849
+2021-01-24T08:49:37.661
 [main] DEBUG SLF4JLevels - Logging
-2017-05-09T06:07:52.849
+2021-01-24T08:49:37.661
 [main] INFO  SLF4JLevels - Using
-2017-05-09T06:07:52.850
+2021-01-24T08:49:37.661
 [main] WARN  SLF4JLevels - the SLF4J
-2017-05-09T06:07:52.851
+2021-01-24T08:49:37.661
 [main] ERROR SLF4JLevels - Facade
 */

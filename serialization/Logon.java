@@ -1,5 +1,5 @@
 // serialization/Logon.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // Demonstrates the "transient" keyword
@@ -16,8 +16,7 @@ public class Logon implements Serializable {
     username = name;
     password = pwd;
   }
-  @Override
-  public String toString() {
+  @Override public String toString() {
     return "logon info: \n   username: " +
       username + "\n   date: " + date +
       "\n   password: " + password;
@@ -52,11 +51,11 @@ public class Logon implements Serializable {
 /* Output:
 logon a = logon info:
    username: Hulk
-   date: Tue May 09 06:07:47 MDT 2017
+   date: Sun Jan 24 08:49:30 MST 2021
    password: myLittlePony
-Recovering object at Tue May 09 06:07:49 MDT 2017
+Recovering object at Sun Jan 24 08:49:31 MST 2021
 logon a = logon info:
    username: Hulk
-   date: Tue May 09 06:07:47 MDT 2017
+   date: Sun Jan 24 08:49:30 MST 2021
    password: null
 */

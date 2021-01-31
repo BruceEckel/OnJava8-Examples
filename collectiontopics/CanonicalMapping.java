@@ -1,5 +1,5 @@
 // collectiontopics/CanonicalMapping.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // Demonstrates WeakHashMap
@@ -8,20 +8,16 @@ import java.util.*;
 class Element {
   private String ident;
   Element(String id) { ident = id; }
-  @Override
-  public String toString() { return ident; }
-  @Override
-  public int hashCode() {
+  @Override public String toString() { return ident; }
+  @Override public int hashCode() {
     return Objects.hashCode(ident);
   }
-  @Override
-  public boolean equals(Object r) {
+  @Override public boolean equals(Object r) {
     return r instanceof Element &&
       Objects.equals(ident, ((Element)r).ident);
   }
   @SuppressWarnings("deprecation")
-  @Override
-  protected void finalize() {
+  @Override protected void finalize() {
     System.out.println("Finalizing " +
       getClass().getSimpleName() + " " + ident);
   }

@@ -1,5 +1,5 @@
 // equalshashcode/SubtypeEquality2.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 import java.util.*;
@@ -8,8 +8,7 @@ class Dog2 extends Animal {
   Dog2(String name, Size size) {
     super(name, size);
   }
-  @Override
-  public boolean equals(Object rval) {
+  @Override public boolean equals(Object rval) {
     return rval instanceof Dog2 &&
       super.equals(rval);
   }
@@ -19,8 +18,7 @@ class Pig2 extends Animal {
   Pig2(String name, Size size) {
     super(name, size);
   }
-  @Override
-  public boolean equals(Object rval) {
+  @Override public boolean equals(Object rval) {
     return rval instanceof Pig2 &&
       super.equals(rval);
   }
@@ -35,6 +33,6 @@ public class SubtypeEquality2 {
   }
 }
 /* Output:
-Dog2[0]: Ralph MEDIUM a752aeee
-Pig2[1]: Ralph MEDIUM a752aeee
+Dog2[0]: Ralph MEDIUM 931523a9
+Pig2[1]: Ralph MEDIUM 931523a9
 */

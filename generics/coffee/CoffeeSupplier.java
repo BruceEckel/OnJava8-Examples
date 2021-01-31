@@ -1,5 +1,5 @@
 // generics/coffee/CoffeeSupplier.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // {java generics.coffee.CoffeeSupplier}
@@ -18,8 +18,7 @@ implements Supplier<Coffee>, Iterable<Coffee> {
   // For iteration:
   private int size = 0;
   public CoffeeSupplier(int sz) { size = sz; }
-  @Override
-  public Coffee get() {
+  @Override public Coffee get() {
     try {
       return (Coffee)
         types[rand.nextInt(types.length)]
@@ -36,8 +35,7 @@ implements Supplier<Coffee>, Iterable<Coffee> {
     int count = size;
     @Override
     public boolean hasNext() { return count > 0; }
-    @Override
-    public Coffee next() {
+    @Override public Coffee next() {
       count--;
       return CoffeeSupplier.this.get();
     }
@@ -46,8 +44,7 @@ implements Supplier<Coffee>, Iterable<Coffee> {
       throw new UnsupportedOperationException();
     }
   }
-  @Override
-  public Iterator<Coffee> iterator() {
+  @Override public Iterator<Coffee> iterator() {
     return new CoffeeIterator();
   }
   public static void main(String[] args) {

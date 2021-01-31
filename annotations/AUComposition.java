@@ -1,5 +1,5 @@
 // annotations/AUComposition.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // Creating non-embedded tests
@@ -23,8 +23,8 @@ public class AUComposition {
 }
 /* Output:
 annotations.AUComposition
+  . tMethodOne
   . tMethodTwo This is methodTwo
 
-  . tMethodOne
 OK (2 tests)
 */

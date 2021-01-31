@@ -1,5 +1,5 @@
 // files/PathInfo.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 import java.nio.file.*;
@@ -44,7 +44,7 @@ public class PathInfo {
   }
 }
 /* Output:
-Windows 10
+Windows 8.1
 toString: C:\path\to\nowhere\NoFile.txt
 Exists: false
 RegularFile: false
@@ -63,40 +63,36 @@ FileName: PathInfo.java
 Parent: null
 Root: null
 ******************
-toString: C:\Users\Bruce\Documents\GitHub\on-
-java\ExtractedExamples\files\PathInfo.java
+toString:
+C:\Git\OnJava8\ExtractedExamples\files\PathInfo.java
 Exists: true
 RegularFile: true
 Directory: false
 Absolute: true
 FileName: PathInfo.java
-Parent: C:\Users\Bruce\Documents\GitHub\on-
-java\ExtractedExamples\files
+Parent: C:\Git\OnJava8\ExtractedExamples\files
 Root: C:\
 ******************
-toString: C:\Users\Bruce\Documents\GitHub\on-
-java\ExtractedExamples\files
+toString: C:\Git\OnJava8\ExtractedExamples\files
 Exists: true
 RegularFile: false
 Directory: true
 Absolute: true
 FileName: files
-Parent: C:\Users\Bruce\Documents\GitHub\on-
-java\ExtractedExamples
+Parent: C:\Git\OnJava8\ExtractedExamples
 Root: C:\
 ******************
-toString: C:\Users\Bruce\Documents\GitHub\on-
-java\ExtractedExamples\files\PathInfo.java
+toString:
+C:\Git\OnJava8\ExtractedExamples\files\PathInfo.java
 Exists: true
 RegularFile: true
 Directory: false
 Absolute: true
 FileName: PathInfo.java
-Parent: C:\Users\Bruce\Documents\GitHub\on-
-java\ExtractedExamples\files
+Parent: C:\Git\OnJava8\ExtractedExamples\files
 Root: C:\
 ******************
-URI: file:///C:/Users/Bruce/Documents/GitHub/on-
-java/ExtractedExamples/files/PathInfo.java
+URI: file:///C:/Git/OnJava8/ExtractedExamples/files/Pat
+hInfo.java
 true
 */

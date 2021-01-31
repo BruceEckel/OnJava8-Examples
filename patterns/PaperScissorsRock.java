@@ -1,5 +1,5 @@
 // patterns/PaperScissorsRock.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // Demonstration of multiple dispatching
@@ -19,66 +19,57 @@ interface Item {
 }
 
 class Paper implements Item {
-  @Override
-  public Outcome compete(Item it) {
+  @Override public Outcome compete(Item it) {
     return it.eval(this);
   }
-  @Override
-  public Outcome eval(Paper p) {
+  @Override public Outcome eval(Paper p) {
     return Outcome.DRAW;
   }
-  @Override
-  public Outcome eval(Scissors s) {
+  @Override public Outcome eval(Scissors s) {
     return Outcome.WIN;
   }
-  @Override
-  public Outcome eval(Rock r) {
+  @Override public Outcome eval(Rock r) {
     return Outcome.LOSE;
   }
-  @Override
-  public String toString() { return "Paper"; }
+  @Override public String toString() {
+    return "Paper";
+  }
 }
 
 class Scissors implements Item {
-  @Override
-  public Outcome compete(Item it) {
+  @Override public Outcome compete(Item it) {
     return it.eval(this);
   }
-  @Override
-  public Outcome eval(Paper p) {
+  @Override public Outcome eval(Paper p) {
     return Outcome.LOSE;
   }
-  @Override
-  public Outcome eval(Scissors s) {
+  @Override public Outcome eval(Scissors s) {
     return Outcome.DRAW;
   }
-  @Override
-  public Outcome eval(Rock r) {
+  @Override public Outcome eval(Rock r) {
     return Outcome.WIN;
   }
-  @Override
-  public String toString() { return "Scissors"; }
+  @Override public String toString() {
+    return "Scissors";
+  }
 }
 
 class Rock implements Item {
-  @Override
-  public Outcome compete(Item it) {
+  @Override public Outcome compete(Item it) {
     return it.eval(this);
   }
-  @Override
-  public Outcome eval(Paper p) {
+  @Override public Outcome eval(Paper p) {
     return Outcome.WIN;
   }
-  @Override
-  public Outcome eval(Scissors s) {
+  @Override public Outcome eval(Scissors s) {
     return Outcome.LOSE;
   }
-  @Override
-  public Outcome eval(Rock r) {
+  @Override public Outcome eval(Rock r) {
     return Outcome.DRAW;
   }
-  @Override
-  public String toString() { return "Rock"; }
+  @Override public String toString() {
+    return "Rock";
+  }
 }
 
 class ItemFactory {

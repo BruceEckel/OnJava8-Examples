@@ -1,5 +1,5 @@
-// typeinfo/PetCount3.java
-// (c)2020 MindView LLC: see Copyright.txt
+// typeinfo/PetCounter3.java
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // Using isInstance()
@@ -8,12 +8,12 @@ import java.util.stream.*;
 import onjava.*;
 import typeinfo.pets.*;
 
-public class PetCount3 {
+public class PetCounter3 {
   static class Counter extends
-  LinkedHashMap<Class<? extends Pet>, Integer> {
+  HashMap<Class<? extends Pet>, Integer> {
     Counter() {
-      super(LiteralPetCreator.ALL_TYPES.stream()
-        .map(lpc -> Pair.make(lpc, 0))
+      super(PetCreator.ALL_TYPES.stream()
+        .map(type -> Pair.make(type, 0))
         .collect(
           Collectors.toMap(Pair::key, Pair::value)));
     }
@@ -24,8 +24,7 @@ public class PetCount3 {
         .forEach(pair ->
           put(pair.getKey(), pair.getValue() + 1));
     }
-    @Override
-    public String toString() {
+    @Override public String toString() {
       String result = entrySet().stream()
         .map(pair -> String.format("%s=%s",
           pair.getKey().getSimpleName(),
@@ -36,7 +35,7 @@ public class PetCount3 {
   }
   public static void main(String[] args) {
     Counter petCount = new Counter();
-    Pets.stream()
+    new PetCreator().stream()
       .limit(20)
       .peek(petCount::count)
       .forEach(p -> System.out.print(
@@ -48,6 +47,7 @@ public class PetCount3 {
 Rat Manx Cymric Mutt Pug Cymric Pug Manx Cymric Rat
 EgyptianMau Hamster EgyptianMau Mutt Mutt Cymric Mouse
 Pug Mouse Cymric
-{Rat=2, Pug=3, Mutt=3, Mouse=2, Cat=9, Dog=6, Cymric=5,
-EgyptianMau=2, Rodent=5, Hamster=1, Manx=7, Pet=20}
+{EgyptianMau=2, Mouse=2, Pet=20, Cymric=5, Rat=2,
+Dog=6, Mutt=3, Hamster=1, Cat=9, Manx=7, Rodent=5,
+Pug=3}
 */

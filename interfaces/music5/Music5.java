@@ -1,5 +1,5 @@
 // interfaces/music5/Music5.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // {java interfaces.music5.Music5}
@@ -18,28 +18,33 @@ interface Instrument {
 }
 
 class Wind implements Instrument {
-  @Override
-  public String toString() { return "Wind"; }
+  @Override public String toString() {
+    return "Wind";
+  }
 }
 
 class Percussion implements Instrument {
-  @Override
-  public String toString() { return "Percussion"; }
+  @Override public String toString() {
+    return "Percussion";
+  }
 }
 
 class Stringed implements Instrument {
-  @Override
-  public String toString() { return "Stringed"; }
+  @Override public String toString() {
+    return "Stringed";
+  }
 }
 
 class Brass extends Wind {
-  @Override
-  public String toString() { return "Brass"; }
+  @Override public String toString() {
+    return "Brass";
+  }
 }
 
 class Woodwind extends Wind {
-  @Override
-  public String toString() { return "Woodwind"; }
+  @Override public String toString() {
+    return "Woodwind";
+  }
 }
 
 public class Music5 {

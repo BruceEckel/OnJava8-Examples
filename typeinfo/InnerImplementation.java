@@ -1,5 +1,5 @@
 // typeinfo/InnerImplementation.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // Private inner classes can't hide from reflection
@@ -7,7 +7,7 @@ import typeinfo.interfacea.*;
 
 class InnerA {
   private static class C implements A {
-    public void f() {
+    @Override public void f() {
       System.out.println("public C.f()");
     }
     public void g() {

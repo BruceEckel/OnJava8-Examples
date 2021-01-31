@@ -1,5 +1,5 @@
 // arrays/RaggedArray.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 import java.util.*;
@@ -14,7 +14,7 @@ public class RaggedArray {
       a[i] = new int[rand.nextInt(5)][];
       for(int j = 0; j < a[i].length; j++) {
         a[i][j] = new int[rand.nextInt(5)];
-        Arrays.setAll(a[i][j], n -> val++); // [1]
+        Arrays.setAll(a[i][j], n -> val++);     // [1]
       }
     }
     System.out.println(Arrays.deepToString(a));

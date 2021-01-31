@@ -1,5 +1,5 @@
 // enums/VendingMachine.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // {java VendingMachine VendingMachineInput.txt}
@@ -37,8 +37,7 @@ public class VendingMachine {
   enum StateDuration { TRANSIENT } // Tagging enum
   enum State {
     RESTING {
-      @Override
-      void next(Input input) {
+      @Override void next(Input input) {
         switch(Category.categorize(input)) {
           case MONEY:
             amount += input.amount();
@@ -51,8 +50,7 @@ public class VendingMachine {
       }
     },
     ADDING_MONEY {
-      @Override
-      void next(Input input) {
+      @Override void next(Input input) {
         switch(Category.categorize(input)) {
           case MONEY:
             amount += input.amount();
@@ -74,16 +72,14 @@ public class VendingMachine {
       }
     },
     DISPENSING(StateDuration.TRANSIENT) {
-      @Override
-      void next() {
+      @Override void next() {
         System.out.println("here is your " + selection);
         amount -= selection.amount();
         state = GIVING_CHANGE;
       }
     },
     GIVING_CHANGE(StateDuration.TRANSIENT) {
-      @Override
-      void next() {
+      @Override void next() {
         if(amount > 0) {
           System.out.println("Your change: " + amount);
           amount = 0;
@@ -125,8 +121,7 @@ public class VendingMachine {
 
 // For a basic sanity check:
 class RandomInputSupplier implements Supplier<Input> {
-  @Override
-  public Input get() {
+  @Override public Input get() {
     return Input.randomSelection();
   }
 }
@@ -146,8 +141,7 @@ class FileInputSupplier implements Supplier<Input> {
       throw new RuntimeException(e);
     }
   }
-  @Override
-  public Input get() {
+  @Override public Input get() {
     if(!input.hasNext())
       return null;
     return Enum.valueOf(

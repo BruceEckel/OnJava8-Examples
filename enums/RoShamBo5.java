@@ -1,5 +1,5 @@
 // enums/RoShamBo5.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // Multiple dispatching using an EnumMap of EnumMaps
@@ -27,8 +27,7 @@ enum RoShamBo5 implements Competitor<RoShamBo5> {
     row.put(RoShamBo5.SCISSORS, vSCISSORS);
     row.put(RoShamBo5.ROCK, vROCK);
   }
-  @Override
-  public Outcome compete(RoShamBo5 it) {
+  @Override public Outcome compete(RoShamBo5 it) {
     return table.get(this).get(it);
   }
   public static void main(String[] args) {

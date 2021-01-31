@@ -1,5 +1,5 @@
 // exceptions/StreamsAreAutoCloseable.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 import java.io.*;
@@ -13,12 +13,12 @@ public class StreamsAreAutoCloseable {
       Stream<String> in = Files.lines(
         Paths.get("StreamsAreAutoCloseable.java"));
       PrintWriter outfile = new PrintWriter(
-        "Results.txt"); // [1]
+        "Results.txt");                         // [1]
     ) {
       in.skip(5)
         .limit(1)
         .map(String::toLowerCase)
         .forEachOrdered(outfile::println);
-    } // [2]
+    }                                           // [2]
   }
 }

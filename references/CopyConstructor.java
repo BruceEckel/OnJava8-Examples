@@ -1,5 +1,5 @@
 // references/CopyConstructor.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // A constructor to copy an object of the same
@@ -112,12 +112,12 @@ class GreenZebra extends Tomato {
 public class CopyConstructor {
   public static void ripen(Tomato t) {
     // Use the "copy constructor":
-    t = new Tomato(t); // [1]
+    t = new Tomato(t);                           // [1]
     System.out.println("In ripen, t is a " +
       t.getClass().getName());
   }
   public static void slice(Fruit f) {
-    f = new Fruit(f); // [2] Hmmm... will this work?
+    f = new Fruit(f); // Hmmm... will this work? // [2]
     System.out.println("In slice, f is a " +
       f.getClass().getName());
   }

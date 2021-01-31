@@ -1,13 +1,12 @@
 // lowlevel/WorkStealingPool.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 import java.util.stream.*;
 import java.util.concurrent.*;
 
 class ShowThread implements Runnable {
-  @Override
-  public void run() {
+  @Override public void run() {
     System.out.println(
       Thread.currentThread().getName());
   }
@@ -28,14 +27,14 @@ public class WorkStealingPool {
 }
 /* Output:
 8
-ForkJoinPool-1-worker-2
 ForkJoinPool-1-worker-1
-ForkJoinPool-1-worker-2
-ForkJoinPool-1-worker-3
 ForkJoinPool-1-worker-2
 ForkJoinPool-1-worker-1
 ForkJoinPool-1-worker-3
-ForkJoinPool-1-worker-1
+ForkJoinPool-1-worker-4
 ForkJoinPool-1-worker-4
 ForkJoinPool-1-worker-2
+ForkJoinPool-1-worker-3
+ForkJoinPool-1-worker-5
+ForkJoinPool-1-worker-1
 */

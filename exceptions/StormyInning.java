@@ -1,5 +1,5 @@
 // exceptions/StormyInning.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // Overridden methods can throw only the exceptions
@@ -43,15 +43,12 @@ class StormyInning extends Inning implements Storm {
   //- public void event() throws RainedOut {}
   // If the method doesn't already exist in the
   // base class, the exception is OK:
-  @Override
-  public void rainHard() throws RainedOut {}
+  @Override public void rainHard() throws RainedOut {}
   // You can choose to not throw any exceptions,
   // even if the base version does:
-  @Override
-  public void event() {}
+  @Override public void event() {}
   // Overridden methods can throw inherited exceptions:
-  @Override
-  public void atBat() throws PopFoul {}
+  @Override public void atBat() throws PopFoul {}
   public static void main(String[] args) {
     try {
       StormyInning si = new StormyInning();

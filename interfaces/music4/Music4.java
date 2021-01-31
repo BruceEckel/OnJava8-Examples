@@ -1,5 +1,5 @@
 // interfaces/music4/Music4.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // Abstract classes and methods
@@ -15,62 +15,51 @@ abstract class Instrument {
 }
 
 class Wind extends Instrument {
-  @Override
-  public void play(Note n) {
+  @Override public void play(Note n) {
     System.out.println("Wind.play() " + n);
   }
-  @Override
-  public String what() { return "Wind"; }
-  @Override
-  public void adjust() {
+  @Override public String what() { return "Wind"; }
+  @Override public void adjust() {
     System.out.println("Adjusting Wind");
   }
 }
 
 class Percussion extends Instrument {
-  @Override
-  public void play(Note n) {
+  @Override public void play(Note n) {
     System.out.println("Percussion.play() " + n);
   }
-  @Override
-  public String what() { return "Percussion"; }
-  @Override
-  public void adjust() {
+  @Override public String what() {
+    return "Percussion";
+  }
+  @Override public void adjust() {
     System.out.println("Adjusting Percussion");
   }
 }
 
 class Stringed extends Instrument {
-  @Override
-  public void play(Note n) {
+  @Override public void play(Note n) {
     System.out.println("Stringed.play() " + n);
   }
-  @Override
-  public String what() { return "Stringed"; }
-  @Override
-  public void adjust() {
+  @Override public String what() { return "Stringed"; }
+  @Override public void adjust() {
     System.out.println("Adjusting Stringed");
   }
 }
 
 class Brass extends Wind {
-  @Override
-  public void play(Note n) {
+  @Override public void play(Note n) {
     System.out.println("Brass.play() " + n);
   }
-  @Override
-  public void adjust() {
+  @Override public void adjust() {
     System.out.println("Adjusting Brass");
   }
 }
 
 class Woodwind extends Wind {
-  @Override
-  public void play(Note n) {
+  @Override public void play(Note n) {
     System.out.println("Woodwind.play() " + n);
   }
-  @Override
-  public String what() { return "Woodwind"; }
+  @Override public String what() { return "Woodwind"; }
 }
 
 public class Music4 {

@@ -1,5 +1,5 @@
 // operators/Underscores.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 
@@ -9,7 +9,7 @@ public class Underscores {
     System.out.println(d);
     int bin = 0b0010_1111_1010_1111_1010_1111_1010_1111;
     System.out.println(Integer.toBinaryString(bin));
-    System.out.printf("%x%n", bin);  // [1]
+    System.out.printf("%x%n", bin);               // [1]
     long hex = 0x7f_e9_b7_aa;
     System.out.printf("%x%n", hex);
   }

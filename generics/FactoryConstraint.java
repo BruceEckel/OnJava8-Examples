@@ -1,5 +1,5 @@
 // generics/FactoryConstraint.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 import java.util.*;
@@ -8,8 +8,7 @@ import onjava.*;
 
 class IntegerFactory implements Supplier<Integer> {
   private int i = 0;
-  @Override
-  public Integer get() {
+  @Override public Integer get() {
     return ++i;
   }
 }
@@ -17,8 +16,7 @@ class IntegerFactory implements Supplier<Integer> {
 class Widget {
   private int id;
   Widget(int n) { id = n; }
-  @Override
-  public String toString() {
+  @Override public String toString() {
     return "Widget " + id;
   }
   public static
@@ -32,8 +30,9 @@ class Widget {
 class Fudge {
   private static int count = 1;
   private int n = count++;
-  @Override
-  public String toString() { return "Fudge " + n; }
+  @Override public String toString() {
+    return "Fudge " + n;
+  }
 }
 
 class Foo2<T> {
@@ -41,8 +40,9 @@ class Foo2<T> {
   Foo2(Supplier<T> factory) {
     Suppliers.fill(x, factory, 5);
   }
-  @Override
-  public String toString() { return x.toString(); }
+  @Override public String toString() {
+    return x.toString();
+  }
 }
 
 public class FactoryConstraint {

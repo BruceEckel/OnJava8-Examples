@@ -1,5 +1,5 @@
 // generics/DogsAndRobots.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // No (direct) latent typing in Java
@@ -14,7 +14,9 @@ class PerformingDog extends Dog implements Performs {
 }
 
 class Robot implements Performs {
+  @Override
   public void speak() { System.out.println("Click!"); }
+  @Override
   public void sit() { System.out.println("Clank!"); }
   public void oilChange() {}
 }

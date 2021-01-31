@@ -1,5 +1,5 @@
 // exceptions/CloseExceptions.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 
@@ -10,6 +10,7 @@ class Reporter2 implements AutoCloseable {
   Reporter2() {
     System.out.println("Creating " + name);
   }
+  @Override
   public void close() throws CloseException {
     System.out.println("Closing " + name);
   }

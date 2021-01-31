@@ -1,5 +1,5 @@
 // arrays/CompType.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // Implementing Comparable in a class
@@ -16,15 +16,13 @@ public class CompType implements Comparable<CompType> {
     i = n1;
     j = n2;
   }
-  @Override
-  public String toString() {
+  @Override public String toString() {
     String result = "[i = " + i + ", j = " + j + "]";
     if(count++ % 3 == 0)
       result += "\n";
     return result;
   }
-  @Override
-  public int compareTo(CompType rv) {
+  @Override public int compareTo(CompType rv) {
     return (i < rv.i ? -1 : (i == rv.i ? 0 : 1));
   }
   private static SplittableRandom r =

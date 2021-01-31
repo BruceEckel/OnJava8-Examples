@@ -1,5 +1,5 @@
 // enums/CarWash.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 import java.util.*;
@@ -7,44 +7,37 @@ import java.util.*;
 public class CarWash {
   public enum Cycle {
     UNDERBODY {
-      @Override
-      void action() {
+      @Override void action() {
         System.out.println("Spraying the underbody");
       }
     },
     WHEELWASH {
-      @Override
-      void action() {
+      @Override void action() {
         System.out.println("Washing the wheels");
       }
     },
     PREWASH {
-      @Override
-      void action() {
+      @Override void action() {
         System.out.println("Loosening the dirt");
       }
     },
     BASIC {
-      @Override
-      void action() {
+      @Override void action() {
         System.out.println("The basic wash");
       }
     },
     HOTWAX {
-      @Override
-      void action() {
+      @Override void action() {
         System.out.println("Applying hot wax");
       }
     },
     RINSE {
-      @Override
-      void action() {
+      @Override void action() {
         System.out.println("Rinsing");
       }
     },
     BLOWDRY {
-      @Override
-      void action() {
+      @Override void action() {
         System.out.println("Blowing dry");
       }
     };
@@ -59,8 +52,7 @@ public class CarWash {
     for(Cycle c : cycles)
       c.action();
   }
-  @Override
-  public String toString() {
+  @Override public String toString() {
     return cycles.toString();
   }
   public static void main(String[] args) {

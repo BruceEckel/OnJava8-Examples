@@ -1,5 +1,5 @@
 // exceptions/LoggingExceptions.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // An exception that reports through a Logger
@@ -33,13 +33,13 @@ public class LoggingExceptions {
 }
 /* Output:
 ___[ Error Output ]___
-May 09, 2017 6:07:17 AM LoggingException <init>
+Jan 24, 2021 8:48:54 AM LoggingException <init>
 SEVERE: LoggingException
         at
 LoggingExceptions.main(LoggingExceptions.java:20)
 
 Caught LoggingException
-May 09, 2017 6:07:17 AM LoggingException <init>
+Jan 24, 2021 8:48:54 AM LoggingException <init>
 SEVERE: LoggingException
         at
 LoggingExceptions.main(LoggingExceptions.java:25)

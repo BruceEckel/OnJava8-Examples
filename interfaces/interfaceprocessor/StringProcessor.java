@@ -1,5 +1,5 @@
 // interfaces/interfaceprocessor/StringProcessor.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // {java interfaces.interfaceprocessor.StringProcessor}
@@ -8,11 +8,11 @@ import java.util.*;
 
 interface StringProcessor extends Processor {
   @Override
-  String process(Object input);  // [1]
-  String S = // [2]
+  String process(Object input);        // [1]
+  String S =                           // [2]
   "If she weighs the same as a duck, " +
   "she's made of wood";
-  static void main(String[] args) { // [3]
+  static void main(String[] args) {    // [3]
     Applicator.apply(new Upcase(), S);
     Applicator.apply(new Downcase(), S);
     Applicator.apply(new Splitter(), S);

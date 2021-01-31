@@ -1,5 +1,5 @@
 // patterns/ShapeFactory1.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // A simple static factory method
@@ -8,7 +8,7 @@ import java.util.stream.*;
 import patterns.shapes.*;
 
 public class ShapeFactory1 implements FactoryMethod {
-  public Shape create(String type) {
+  @Override public Shape create(String type) {
     switch(type) {
       case "Circle": return new Circle();
       case "Square": return new Square();

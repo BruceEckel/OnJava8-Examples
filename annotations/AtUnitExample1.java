@@ -1,5 +1,5 @@
 // annotations/AtUnitExample1.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // {java onjava.atunit.AtUnit
@@ -34,15 +34,15 @@ public class AtUnitExample1 {
 }
 /* Output:
 annotations.AtUnitExample1
-  . m3
+  . anotherDisappointment (failed)
   . methodOneTest
+  . failureTest (failed)
   . m2 This is methodTwo
 
-  . failureTest (failed)
-  . anotherDisappointment (failed)
+  . m3
 (5 tests)
 
 >>> 2 FAILURES <<<
-  annotations.AtUnitExample1: failureTest
   annotations.AtUnitExample1: anotherDisappointment
+  annotations.AtUnitExample1: failureTest
 */

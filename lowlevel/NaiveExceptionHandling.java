@@ -1,5 +1,5 @@
 // lowlevel/NaiveExceptionHandling.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // {ThrowsException}
@@ -23,7 +23,7 @@ public class NaiveExceptionHandling {
 ___[ Error Output ]___
 Exception in thread "pool-1-thread-1"
 java.lang.RuntimeException
-        at ExceptionThread.run(ExceptionThread.java:8)
+        at ExceptionThread.run(ExceptionThread.java:7)
         at java.util.concurrent.ThreadPoolExecutor.runW
 orker(ThreadPoolExecutor.java:1142)
         at java.util.concurrent.ThreadPoolExecutor$Work

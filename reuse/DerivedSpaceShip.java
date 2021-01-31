@@ -1,5 +1,5 @@
 // reuse/DerivedSpaceShip.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 
@@ -9,8 +9,9 @@ DerivedSpaceShip extends SpaceShipControls {
   public DerivedSpaceShip(String name) {
     this.name = name;
   }
-  @Override
-  public String toString() { return name; }
+  @Override public String toString() {
+    return name;
+  }
   public static void main(String[] args) {
     DerivedSpaceShip protector =
         new DerivedSpaceShip("NSEA Protector");

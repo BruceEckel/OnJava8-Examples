@@ -1,5 +1,5 @@
 // control/IfElse.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 
@@ -8,7 +8,7 @@ public class IfElse {
   static void test(int testval, int target) {
     if(testval > target)
       result = +1;
-    else if(testval < target) // [1]
+    else if(testval < target)           // [1]
       result = -1;
     else
       result = 0; // Match

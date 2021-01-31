@@ -1,5 +1,5 @@
 // files/AddAndSubtractPaths.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 import java.nio.file.*;
@@ -52,36 +52,31 @@ public class AddAndSubtractPaths {
   }
 }
 /* Output:
-Windows 10
-C:\Users\Bruce\Documents\GitHub
-(1)r on-
-java\ExtractedExamples\files\AddAndSubtractPaths.java
-RealPath: C:\Users\Bruce\Documents\GitHub\on-
-java\ExtractedExamples\files\AddAndSubtractPaths.java
-(2)r on-java\ExtractedExamples\strings\..\files
-RealPath: C:\Users\Bruce\Documents\GitHub\on-
-java\ExtractedExamples\files
-(3)r on-java\ExtractedExamples\files
-RealPath: C:\Users\Bruce\Documents\GitHub\on-
-java\ExtractedExamples\files
+Windows 8.1
+C:\Git
+(1)r OnJava8\ExtractedExamples\files\AddAndSubtractPath
+s.java
+RealPath: C:\Git\OnJava8\ExtractedExamples\files\AddAnd
+SubtractPaths.java
+(2)r OnJava8\ExtractedExamples\strings\..\files
+RealPath: C:\Git\OnJava8\ExtractedExamples\files
+(3)r OnJava8\ExtractedExamples\files
+RealPath: C:\Git\OnJava8\ExtractedExamples\files
 (4)  ..\..
-RealPath: C:\Users\Bruce\Documents\GitHub\on-java
+RealPath: C:\Git\OnJava8
 (5)  ..\..
-RealPath: C:\Users\Bruce\Documents\GitHub\on-java
-(6)r on-java
-RealPath: C:\Users\Bruce\Documents\GitHub\on-java
-(7)r on-java\ExtractedExamples\files\.\..\..
-RealPath: C:\Users\Bruce\Documents\GitHub\on-java
-(8)r on-java
-RealPath: C:\Users\Bruce\Documents\GitHub\on-java
-(9)r on-java\ExtractedExamples\files
-RealPath: C:\Users\Bruce\Documents\GitHub\on-
-java\ExtractedExamples\files
-(10)r on-java\ExtractedExamples\strings
-RealPath: C:\Users\Bruce\Documents\GitHub\on-
-java\ExtractedExamples\strings
+RealPath: C:\Git\OnJava8
+(6)r OnJava8
+RealPath: C:\Git\OnJava8
+(7)r OnJava8\ExtractedExamples\files\.\..\..
+RealPath: C:\Git\OnJava8
+(8)r OnJava8
+RealPath: C:\Git\OnJava8
+(9)r OnJava8\ExtractedExamples\files
+RealPath: C:\Git\OnJava8\ExtractedExamples\files
+(10)r OnJava8\ExtractedExamples\strings
+RealPath: C:\Git\OnJava8\ExtractedExamples\strings
 (11)  nonexistent
 java.nio.file.NoSuchFileException:
-C:\Users\Bruce\Documents\GitHub\on-
-java\ExtractedExamples\files\nonexistent
+C:\Git\OnJava8\ExtractedExamples\files\nonexistent
 */

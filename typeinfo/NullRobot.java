@@ -1,5 +1,5 @@
 // typeinfo/NullRobot.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // Using a dynamic proxy to create an Optional
@@ -20,13 +20,11 @@ implements InvocationHandler {
     public String name() { return nullName; }
     @Override
     public String model() { return nullName; }
-    @Override
-    public List<Operation> operations() {
+    @Override public List<Operation> operations() {
       return Collections.emptyList();
     }
   }
-  @Override
-  public Object
+  @Override public Object
   invoke(Object proxy, Method method, Object[] args)
   throws Throwable {
     return method.invoke(proxied, args);
@@ -43,8 +41,8 @@ public class NullRobot {
   }
   public static void main(String[] args) {
     Stream.of(
-      new SnowRemovalRobot("SnowBee"),
-      newNullRobot(SnowRemovalRobot.class)
+      new SnowRobot("SnowBee"),
+      newNullRobot(SnowRobot.class)
     ).forEach(Robot::test);
   }
 }
@@ -58,6 +56,6 @@ SnowBee chipping ice
 SnowBee can clear the roof
 SnowBee clearing roof
 [Null Robot]
-Robot name: SnowRemovalRobot NullRobot
-Robot model: SnowRemovalRobot NullRobot
+Robot name: SnowRobot NullRobot
+Robot model: SnowRobot NullRobot
 */

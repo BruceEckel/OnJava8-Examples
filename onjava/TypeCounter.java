@@ -1,5 +1,5 @@
 // onjava/TypeCounter.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // Counts instances of a type family
@@ -26,11 +26,11 @@ TypeCounter extends HashMap<Class<?>, Integer> {
     put(type, quantity == null ? 1 : quantity + 1);
     Class<?> superClass = type.getSuperclass();
     if(superClass != null &&
-       baseType.isAssignableFrom(superClass))
+       baseType.isAssignableFrom(superClass)) {
       countClass(superClass);
+    }
   }
-  @Override
-  public String toString() {
+  @Override public String toString() {
     String result = entrySet().stream()
       .map(pair -> String.format("%s=%s",
         pair.getKey().getSimpleName(),

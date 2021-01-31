@@ -1,5 +1,5 @@
 // housekeeping/TerminationCondition.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // Using finalize() to detect an object that
@@ -15,8 +15,7 @@ class Book {
     checkedOut = false;
   }
   @SuppressWarnings("deprecation")
-  @Override
-  public void finalize() {
+  @Override public void finalize() {
     if(checkedOut)
       System.out.println("Error: checked out");
     // Normally, you'll also do this:

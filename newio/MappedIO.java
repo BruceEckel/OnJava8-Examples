@@ -1,5 +1,5 @@
 // newio/MappedIO.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // {ExcludeFromGradle} Runs too long under WSL2
@@ -27,8 +27,7 @@ public class MappedIO {
   }
   private static Tester[] tests = {
     new Tester("Stream Write") {
-      @Override
-      public void test() {
+      @Override public void test() {
         try(
           DataOutputStream dos =
             new DataOutputStream(
@@ -44,8 +43,7 @@ public class MappedIO {
       }
     },
     new Tester("Mapped Write") {
-      @Override
-      public void test() {
+      @Override public void test() {
         try(
           FileChannel fc =
             new RandomAccessFile("temp.tmp", "rw")
@@ -62,8 +60,7 @@ public class MappedIO {
       }
     },
     new Tester("Stream Read") {
-      @Override
-      public void test() {
+      @Override public void test() {
         try(
           DataInputStream dis =
             new DataInputStream(
@@ -78,8 +75,7 @@ public class MappedIO {
       }
     },
     new Tester("Mapped Read") {
-      @Override
-      public void test() {
+      @Override public void test() {
         try(
           FileChannel fc = new FileInputStream(
             new File("temp.tmp")).getChannel()
@@ -95,8 +91,7 @@ public class MappedIO {
       }
     },
     new Tester("Stream Read/Write") {
-      @Override
-      public void test() {
+      @Override public void test() {
         try(
           RandomAccessFile raf =
             new RandomAccessFile(
@@ -113,8 +108,7 @@ public class MappedIO {
       }
     },
     new Tester("Mapped Read/Write") {
-      @Override
-      public void test() {
+      @Override public void test() {
         try(
           FileChannel fc = new RandomAccessFile(
             new File("temp.tmp"), "rw").getChannel()

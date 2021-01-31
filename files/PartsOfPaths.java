@@ -1,5 +1,5 @@
 // files/PartsOfPaths.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 import java.nio.file.*;
@@ -23,21 +23,15 @@ public class PartsOfPaths {
   }
 }
 /* Output:
-Windows 10
-Users
-Bruce
-Documents
-GitHub
-on-java
+Windows 8.1
+Git
+OnJava8
 ExtractedExamples
 files
 PartsOfPaths.java
 ends with '.java': false
-Users: false : false
-Bruce: false : false
-Documents: false : false
-GitHub: false : false
-on-java: false : false
+Git: false : false
+OnJava8: false : false
 ExtractedExamples: false : false
 files: false : false
 PartsOfPaths.java: false : true

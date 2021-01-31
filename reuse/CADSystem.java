@@ -1,5 +1,5 @@
 // reuse/CADSystem.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // Ensuring proper cleanup
@@ -20,8 +20,7 @@ class Circle extends Shape {
     super(i);
     System.out.println("Drawing Circle");
   }
-  @Override
-  void dispose() {
+  @Override void dispose() {
     System.out.println("Erasing Circle");
     super.dispose();
   }
@@ -32,8 +31,7 @@ class Triangle extends Shape {
     super(i);
     System.out.println("Drawing Triangle");
   }
-  @Override
-  void dispose() {
+  @Override void dispose() {
     System.out.println("Erasing Triangle");
     super.dispose();
   }
@@ -48,8 +46,7 @@ class Line extends Shape {
     System.out.println(
       "Drawing Line: " + start + ", " + end);
   }
-  @Override
-  void dispose() {
+  @Override void dispose() {
     System.out.println(
       "Erasing Line: " + start + ", " + end);
     super.dispose();
@@ -68,8 +65,7 @@ public class CADSystem extends Shape {
     t = new Triangle(1);
     System.out.println("Combined constructor");
   }
-  @Override
-  public void dispose() {
+  @Override public void dispose() {
     System.out.println("CADSystem.dispose()");
     // The order of cleanup is the reverse
     // of the order of initialization:

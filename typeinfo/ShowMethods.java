@@ -1,5 +1,5 @@
 // typeinfo/ShowMethods.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // Using reflection to show all the methods of a class,
@@ -56,11 +56,11 @@ public class ShowMethods {
 }
 /* Output:
 public static void main(String[])
-public final void wait() throws InterruptedException
 public final void wait(long,int) throws
 InterruptedException
 public final native void wait(long) throws
 InterruptedException
+public final void wait() throws InterruptedException
 public boolean equals(Object)
 public String toString()
 public native int hashCode()

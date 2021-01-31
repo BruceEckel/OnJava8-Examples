@@ -1,5 +1,5 @@
 // patterns/BoxObserver.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // Demonstration of Observer pattern using
@@ -72,8 +72,7 @@ class OCBox extends JPanel implements Observer {
     addMouseListener((MouseClick)
       e -> notifier.notifyObservers(OCBox.this));
   }
-  @Override
-  public void paintComponent(Graphics g) {
+  @Override public void paintComponent(Graphics g) {
     super.paintComponent(g);
     g.setColor(cColor);
     Dimension s = getSize();

@@ -1,5 +1,5 @@
 // streams/MapCollector.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 import java.util.*;
@@ -14,8 +14,7 @@ class Pair {
   }
   public Character getC() { return c; }
   public Integer getI() { return i; }
-  @Override
-  public String toString() {
+  @Override public String toString() {
     return "Pair(" + c + ", " + i + ")";
   }
 }

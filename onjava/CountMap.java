@@ -1,5 +1,5 @@
 // onjava/CountMap.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // Unlimited-length Map containing sample data
@@ -21,31 +21,25 @@ extends AbstractMap<Integer,String> {
   public CountMap(int size) {
     this.size = size < 0 ? 0 : size;
   }
-  @Override
-  public String get(Object key) {
+  @Override public String get(Object key) {
     return value((Integer)key);
   }
   private static class Entry
   implements Map.Entry<Integer,String> {
     int index;
     Entry(int index) { this.index = index; }
-    @Override
-    public boolean equals(Object o) {
+    @Override   public boolean equals(Object o) {
       return o instanceof Entry &&
         Objects.equals(index, ((Entry)o).index);
     }
-    @Override
-    public Integer getKey() { return index; }
-    @Override
-    public String getValue() {
+    @Override public Integer getKey() { return index; }
+    @Override public String getValue() {
       return value(index);
     }
-    @Override
-    public String setValue(String value) {
+    @Override public String setValue(String value) {
       throw new UnsupportedOperationException();
     }
-    @Override
-    public int hashCode() {
+    @Override public int hashCode() {
       return Objects.hashCode(index);
     }
   }

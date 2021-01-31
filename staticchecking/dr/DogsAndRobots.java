@@ -1,5 +1,5 @@
 // staticchecking/dr/DogsAndRobots.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // {java staticchecking.dr.DogsAndRobots}
@@ -8,14 +8,14 @@ package staticchecking.dr;
 interface Speaks { void talk(); }
 
 class Dog implements Speaks {
-  public void talk() {
+  @Override public void talk() {
     System.out.println("Woof!");
   }
   public void reproduce() { }
 }
 
 class Robot implements Speaks {
-  public void talk() {
+  @Override public void talk() {
     System.out.println("Click!");
   }
   public void oilChange() { }

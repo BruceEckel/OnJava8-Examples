@@ -1,5 +1,5 @@
 // innerclasses/Callbacks.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // Using inner classes for callbacks
@@ -13,8 +13,7 @@ interface Incrementable {
 // Very simple to just implement the interface:
 class Callee1 implements Incrementable {
   private int i = 0;
-  @Override
-  public void increment() {
+  @Override public void increment() {
     i++;
     System.out.println(i);
   }
@@ -31,15 +30,13 @@ class MyIncrement {
 // some other way, you must use an inner class:
 class Callee2 extends MyIncrement {
   private int i = 0;
-  @Override
-  public void increment() {
+  @Override public void increment() {
     super.increment();
     i++;
     System.out.println(i);
   }
   private class Closure implements Incrementable {
-    @Override
-    public void increment() {
+    @Override public void increment() {
       // Specify outer-class method, otherwise
       // you'll get an infinite recursion:
       Callee2.this.increment();

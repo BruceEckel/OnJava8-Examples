@@ -1,5 +1,5 @@
 // enums/ConstantSpecificMethod.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 import java.util.*;
@@ -7,22 +7,19 @@ import java.text.*;
 
 public enum ConstantSpecificMethod {
   DATE_TIME {
-    @Override
-    String getInfo() {
+    @Override String getInfo() {
       return
         DateFormat.getDateInstance()
           .format(new Date());
     }
   },
   CLASSPATH {
-    @Override
-    String getInfo() {
+    @Override String getInfo() {
       return System.getenv("CLASSPATH");
     }
   },
   VERSION {
-    @Override
-    String getInfo() {
+    @Override String getInfo() {
       return System.getProperty("java.version");
     }
   };
@@ -33,9 +30,8 @@ public enum ConstantSpecificMethod {
   }
 }
 /* Output:
-May 9, 2017
-C:\Users\Bruce\Documents\GitHub\on-
-java\ExtractedExamples\\gradle\wrapper\gradle-
-wrapper.jar
-1.8.0_112
+Jan 24, 2021
+C:\Git\OnJava8\ExtractedExamples\\gradle\wrapper\gradle
+-wrapper.jar
+1.8.0_41
 */

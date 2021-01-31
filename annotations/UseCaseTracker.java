@@ -1,5 +1,5 @@
 // annotations/UseCaseTracker.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 import java.util.*;
@@ -27,11 +27,11 @@ public class UseCaseTracker {
   }
 }
 /* Output:
+Found Use Case 49
+  New passwords can't equal previously used ones
 Found Use Case 48
   no description
 Found Use Case 47
   Passwords must contain at least one numeric
-Found Use Case 49
-  New passwords can't equal previously used ones
 Missing use case 50
 */

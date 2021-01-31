@@ -1,5 +1,5 @@
 // collectiontopics/SuppliersCollectionTest.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 import java.util.*;
@@ -13,8 +13,7 @@ class Government implements Supplier<String> {
     "distributing swords is no basis " +
     "for a system of government").split(" ");
   private int index;
-  @Override
-  public String get() {
+  @Override public String get() {
     return foundation[index++];
   }
 }

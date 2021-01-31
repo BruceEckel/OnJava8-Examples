@@ -1,5 +1,5 @@
 // equalshashcode/CountedString.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // Creating a good hashCode()
@@ -19,13 +19,11 @@ public class CountedString {
       if(s2.equals(s))
         id++;
   }
-  @Override
-  public String toString() {
+  @Override public String toString() {
     return "String: " + s + " id: " + id +
       " hashCode(): " + hashCode();
   }
-  @Override
-  public int hashCode() {
+  @Override public int hashCode() {
     // The very simple approach:
     // return s.hashCode() * id;
     // Using Joshua Bloch's recipe:
@@ -34,8 +32,7 @@ public class CountedString {
     result = 37 * result + id;
     return result;
   }
-  @Override
-  public boolean equals(Object o) {
+  @Override public boolean equals(Object o) {
     return o instanceof CountedString &&
       Objects.equals(s, ((CountedString)o).s) &&
       Objects.equals(id, ((CountedString)o).id);

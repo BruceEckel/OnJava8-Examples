@@ -1,5 +1,5 @@
 // functional/CurryingAndPartials.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 import java.util.function.*;
@@ -12,12 +12,12 @@ public class CurryingAndPartials {
    public static void main(String[] args) {
       // Curried function:
       Function<String, Function<String, String>> sum =
-         a -> b -> a + b; // [1]
+         a -> b -> a + b;                         // [1]
 
       System.out.println(uncurried("Hi ", "Ho"));
 
       Function<String, String>
-        hi = sum.apply("Hi "); // [2]
+        hi = sum.apply("Hi ");                    // [2]
       System.out.println(hi.apply("Ho"));
 
       // Partial application:

@@ -1,5 +1,5 @@
 // generics/Store.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // Building a complex model using generic collections
@@ -17,8 +17,7 @@ class Product {
     this.price = price;
     System.out.println(toString());
   }
-  @Override
-  public String toString() {
+  @Override public String toString() {
     return id + ": " + description +
       ", price: $" + price;
   }
@@ -28,8 +27,7 @@ class Product {
   public static Supplier<Product> generator =
     new Supplier<Product>() {
       private Random rand = new Random(47);
-      @Override
-      public Product get() {
+      @Override public Product get() {
         return new Product(rand.nextInt(1000), "Test",
           Math.round(
             rand.nextDouble() * 1000.0) + 0.99);
@@ -62,8 +60,7 @@ public class Store extends ArrayList<Aisle> {
     for(int i = 0; i < nAisles; i++)
       add(new Aisle(nShelves, nProducts));
   }
-  @Override
-  public String toString() {
+  @Override public String toString() {
     StringBuilder result = new StringBuilder();
     for(Aisle a : this)
       for(Shelf s : a)

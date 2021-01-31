@@ -1,5 +1,5 @@
 // concurrent/Pizza.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 import java.util.function.*;
@@ -41,8 +41,7 @@ public class Pizza {
   public boolean complete() {
     return step.equals(Step.BOXED);
   }
-  @Override
-  public String toString() {
+  @Override public String toString() {
     return "Pizza" + id + ": " +
       (step.equals(Step.BOXED)? "complete" : step);
   }

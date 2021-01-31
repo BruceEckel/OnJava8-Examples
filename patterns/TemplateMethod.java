@@ -1,5 +1,5 @@
 // patterns/TemplateMethod.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // Simple demonstration of Template Method
@@ -20,12 +20,10 @@ abstract class ApplicationFramework {
 
 // Create a new "application":
 class MyApp extends ApplicationFramework {
-  @Override
-  void customize1() {
+  @Override void customize1() {
     System.out.print("Hello ");
   }
-  @Override
-  void customize2() {
+  @Override void customize2() {
     System.out.println("World!");
   }
 }

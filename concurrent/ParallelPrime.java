@@ -1,5 +1,5 @@
 // concurrent/ParallelPrime.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 import java.util.*;
@@ -20,7 +20,7 @@ public class ParallelPrime {
     Timer timer = new Timer();
     List<String> primes =
       iterate(2, i -> i + 1)
-        .parallel()              // [1]
+        .parallel()                       // [1]
         .filter(ParallelPrime::isPrime)
         .limit(COUNT)
         .mapToObj(Long::toString)
@@ -31,5 +31,5 @@ public class ParallelPrime {
   }
 }
 /* Output:
-1224
+1635
 */

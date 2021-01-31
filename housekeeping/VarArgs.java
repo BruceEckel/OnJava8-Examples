@@ -1,5 +1,5 @@
 // housekeeping/VarArgs.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // Using array syntax to create variable argument lists
@@ -22,5 +22,5 @@ public class VarArgs {
 /* Output:
 47 3.14 11.11
 one two three
-A@15db9742 A@6d06d69c A@7852e922
+A@19e0bfd A@139a55 A@1db9742
 */

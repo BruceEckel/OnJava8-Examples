@@ -1,5 +1,5 @@
 // patterns/trashvisitor/TrashVisitor.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // {java patterns.trashvisitor.TrashVisitor}
@@ -17,32 +17,27 @@ class PriceVisitor implements Visitor {
   public static void show(String s) {
     System.out.println(s);
   }
-  @Override
-  public void visit(Aluminum al) {
+  @Override public void visit(Aluminum al) {
     double v = al.weight() * al.value();
     show("value of Aluminum= " + v);
     alSum += v;
   }
-  @Override
-  public void visit(Paper p) {
+  @Override public void visit(Paper p) {
     double v = p.weight() * p.value();
     show("value of Paper= " + v);
     pSum += v;
   }
-  @Override
-  public void visit(Glass g) {
+  @Override public void visit(Glass g) {
     double v = g.weight() * g.value();
     show("value of Glass= " + v);
     gSum += v;
   }
-  @Override
-  public void visit(Cardboard c) {
+  @Override public void visit(Cardboard c) {
     double v = c.weight() * c.value();
     show("value of Cardboard = " + v);
     cSum += v;
   }
-  @Override
-  public void total() {
+  @Override public void total() {
     show(
       "Total Aluminum: $" + alSum + "\n" +
       "Total Paper: $" + pSum + "\n" +
@@ -59,28 +54,23 @@ class WeightVisitor implements Visitor {
   public static void show(String s) {
     System.out.println(s);
   }
-  @Override
-  public void visit(Aluminum al) {
+  @Override public void visit(Aluminum al) {
     alSum += al.weight();
     show("Aluminum weight = " + al.weight());
   }
-  @Override
-  public void visit(Paper p) {
+  @Override public void visit(Paper p) {
     pSum += p.weight();
     show("Paper weight = " + p.weight());
   }
-  @Override
-  public void visit(Glass g) {
+  @Override public void visit(Glass g) {
     gSum += g.weight();
     show("Glass weight = " + g.weight());
   }
-  @Override
-  public void visit(Cardboard c) {
+  @Override public void visit(Cardboard c) {
     cSum += c.weight();
     show("Cardboard weight = " + c.weight());
   }
-  @Override
-  public void total() {
+  @Override public void total() {
     show("Total weight Aluminum:" + alSum);
     show("Total weight Paper:" + pSum);
     show("Total weight Glass:" + gSum);

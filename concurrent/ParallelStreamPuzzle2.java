@@ -1,5 +1,5 @@
 // concurrent/ParallelStreamPuzzle2.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 import java.util.*;
@@ -16,7 +16,7 @@ public class ParallelStreamPuzzle2 {
   IntGenerator implements Supplier<Integer> {
     private AtomicInteger current =
       new AtomicInteger();
-    public Integer get() {
+    @Override public Integer get() {
       trace.add(current.get() + ": " +
         Thread.currentThread().getName());
       return current.getAndIncrement();
@@ -34,5 +34,5 @@ public class ParallelStreamPuzzle2 {
   }
 }
 /* Output:
-[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+[1, 5, 7, 8, 9, 11, 13, 15, 18, 21]
 */

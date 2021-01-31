@@ -1,5 +1,5 @@
 // typeinfo/SimpleDynamicProxy.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 import java.lang.reflect.*;
@@ -9,8 +9,7 @@ class DynamicProxyHandler implements InvocationHandler {
   DynamicProxyHandler(Object proxied) {
     this.proxied = proxied;
   }
-  @Override
-  public Object
+  @Override public Object
   invoke(Object proxy, Method method, Object[] args)
   throws Throwable {
     System.out.println(
@@ -47,7 +46,7 @@ Interface.doSomething(), args: null
 doSomething
 **** proxy: class $Proxy0, method: public abstract void
 Interface.somethingElse(java.lang.String), args:
-[Ljava.lang.Object;@6bc7c054
+[Ljava.lang.Object;@1b84c92
   bonobo
 somethingElse bonobo
 */

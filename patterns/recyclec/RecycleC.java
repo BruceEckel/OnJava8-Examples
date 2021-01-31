@@ -1,5 +1,5 @@
 // patterns/recyclec/RecycleC.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // Adding more objects to the recycling problem
@@ -26,14 +26,14 @@ class Tbin<T extends Trash> extends ArrayList<T> {
 }
 
 class TbinList<T extends Trash>
-extends ArrayList<Tbin<? extends T>> { // [1]
+extends ArrayList<Tbin<? extends T>> {        // [1]
   boolean sort(T t) {
     for(Tbin<? extends T> ts : this)
       if(ts.grab(t))
         return true;
     return false; // bin not found for t
   }
-  void sortBin(Tbin<T> bin) { // [2]
+  void sortBin(Tbin<T> bin) {                 // [2]
     for(T aBin : bin)
       if(!sort(aBin))
         System.err.println("Bin not found");
@@ -50,10 +50,10 @@ public class RecycleC {
     trashBins.add(new Tbin<>(Aluminum.class));
     trashBins.add(new Tbin<>(Paper.class));
     trashBins.add(new Tbin<>(Glass.class));
-    // add one line here: [*3*]
+    // add one line here:                     // [3]
     trashBins.add(new Tbin<>(Cardboard.class));
 
-    trashBins.sortBin(bin); // [4]
+    trashBins.sortBin(bin);                   // [4]
 
     trashBins.forEach(Trash::sumValue);
     Trash.sumValue(bin);

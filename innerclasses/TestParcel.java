@@ -1,13 +1,12 @@
 // innerclasses/TestParcel.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 
 class Parcel4 {
   private class PContents implements Contents {
     private int i = 11;
-    @Override
-    public int value() { return i; }
+    @Override public int value() { return i; }
   }
   protected final class
   PDestination implements Destination {

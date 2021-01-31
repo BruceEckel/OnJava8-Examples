@@ -1,5 +1,5 @@
 // newio/AvailableCharSets.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // Displays Charsets and aliases
@@ -33,11 +33,9 @@ EUC-JP: csEUCPkdFmtjapanese, x-euc-jp, eucjis,
 Extended_UNIX_Code_Packed_Format_for_Japanese, euc_jp,
 eucjp, x-eucjp
 EUC-KR: ksc5601-1987, csEUCKR, ksc5601_1987, ksc5601,
-5601,
-euc_kr, ksc_5601, ks_c_5601-1987, euckr
+5601, euc_kr, ksc_5601, ks_c_5601-1987, euckr
 GB18030: gb18030-2000
 GB2312: gb2312, euc-cn, x-EUC-CN, euccn, EUC_CN,
-gb2312-80,
-gb2312-1980
+gb2312-80, gb2312-1980
                   ...
 */

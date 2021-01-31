@@ -1,5 +1,5 @@
 // innerclasses/LocalInnerClass.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // Holds a sequence of Objects
@@ -17,8 +17,7 @@ public class LocalInnerClass {
         // Local inner class can have a constructor
         System.out.println("LocalCounter()");
       }
-      @Override
-      public int next() {
+      @Override public int next() {
         System.out.print(name); // Access local final
         return count++;
       }
@@ -33,8 +32,7 @@ public class LocalInnerClass {
       {
         System.out.println("Counter()");
       }
-      @Override
-      public int next() {
+      @Override public int next() {
         System.out.print(name); // Access local final
         return count++;
       }

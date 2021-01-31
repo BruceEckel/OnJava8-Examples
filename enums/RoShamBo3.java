@@ -1,5 +1,5 @@
 // enums/RoShamBo3.java
-// (c)2020 MindView LLC: see Copyright.txt
+// (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // Using constant-specific methods
@@ -9,8 +9,7 @@ import static enums.Outcome.*;
 
 public enum RoShamBo3 implements Competitor<RoShamBo3> {
   PAPER {
-    @Override
-    public Outcome compete(RoShamBo3 it) {
+    @Override public Outcome compete(RoShamBo3 it) {
       switch(it) {
         default: // To placate the compiler
         case PAPER: return DRAW;
@@ -20,8 +19,7 @@ public enum RoShamBo3 implements Competitor<RoShamBo3> {
     }
   },
   SCISSORS {
-    @Override
-    public Outcome compete(RoShamBo3 it) {
+    @Override public Outcome compete(RoShamBo3 it) {
       switch(it) {
         default:
         case PAPER: return WIN;
@@ -31,8 +29,7 @@ public enum RoShamBo3 implements Competitor<RoShamBo3> {
     }
   },
   ROCK {
-    @Override
-    public Outcome compete(RoShamBo3 it) {
+    @Override public Outcome compete(RoShamBo3 it) {
       switch(it) {
         default:
         case PAPER: return LOSE;
