@@ -17,7 +17,7 @@ subprojects {
     apply from: "$rootProject.projectDir/gradle/jmh.gradle"
     // apply from: "$rootProject.projectDir/gradle/checkstyle.gradle"
     apply from: "$rootProject.projectDir/gradle/findbugs.gradle"
-    // apply plugin: 'com.mindviewinc.tagging'
+    apply plugin: 'com.mindviewinc.tagging'
 }
 
 apply from: 'gradle/subprojects.gradle'
