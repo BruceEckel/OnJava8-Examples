@@ -1,6 +1,6 @@
 # Example Source Code for the Book "On Java 8" by Bruce Eckel
 
-Download release from [here](https://github.com/BruceEckel/OnJava8-Examples/releases/tag/v1.0).
+Download the latest release from [here](https://github.com/BruceEckel/OnJava8-Examples/releases/).
 
 To compile and run these programs, you only need JDK 8 installed.
 Invoking `gradlew` will automatically download and install Gradle.
