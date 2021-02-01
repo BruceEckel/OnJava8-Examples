@@ -32,7 +32,7 @@ public class Overloading {
       t.info();
       t.info("overloaded method");
     }
-    // Overloaded constructor:
+    // Calls overloaded constructor:
     new Tree();
   }
 }
