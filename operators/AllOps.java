@@ -6,7 +6,7 @@
 // to show which ones are accepted by the Java compiler
 
 public class AllOps {
-  // To accept the results of a boolean test:
+  // To accept the results of a Boolean test:
   void f(boolean b) {}
   void boolTest(boolean x, boolean y) {
     // Arithmetic operators:
