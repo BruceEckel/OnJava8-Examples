@@ -25,6 +25,7 @@ public class DoubleEquivalence {
   }
   public static void main(String[] args) {
     test(0, Double.MIN_VALUE);
+    System.out.println("------------------------");
     test(Double.MAX_VALUE,
       Double.MAX_VALUE - Double.MIN_VALUE * 1_000_000);
   }
@@ -37,6 +38,7 @@ new Double():
 0.000000e+00==4.900000e-324 false false
 Double.valueOf():
 0.000000e+00==4.900000e-324 false false
+------------------------
 1.797693e+308==1.797693e+308 true
 Automatic:
 1.797693e+308==1.797693e+308 false true
