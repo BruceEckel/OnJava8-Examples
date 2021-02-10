@@ -1,8 +1,6 @@
 def isSubproject = { File file ->
     file.isDirectory() &&
-    !file.name.contains('.git') &&
-    !file.name.contains('.gradle') &&
-    !file.name.contains('.idea') &&
+    !file.name.startsWith('.') &&
     !file.name.contains('build') &&
     !file.name.contains('gradle') &&
     !file.name.contains('test')
