@@ -130,7 +130,7 @@ public class Countries {
     {"MOLDOVA","Chisinau"},
     {"RUSSIA","Moscow"},
     {"TAJIKISTAN","Dushanbe"},
-    {"TURKMENISTAN","Ashkabad"},
+    {"TURKMENISTAN","Ashkhabad"},
     {"UKRAINE","Kyiv"},
     {"UZBEKISTAN","Tashkent"},
     // Europe

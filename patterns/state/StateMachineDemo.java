@@ -2,9 +2,10 @@
 // (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
-// The StateMachine pattern and Template method
+// The State Machine pattern.
 // {java patterns.state.StateMachineDemo}
 package patterns.state;
+import java.util.*;
 import onjava.Nap;
 
 interface State {
@@ -16,7 +17,7 @@ abstract class StateMachine {
   protected abstract boolean changeState();
   // Template method:
   protected final void runAll() {
-    while(changeState()) // Customizable
+    while(changeState())
       currentState.run();
   }
 }
@@ -46,20 +47,19 @@ class Rinse implements State {
 
 class Washer extends StateMachine {
   private int i = 0;
-  // The state table:
-  private State[] states = {
-    new Wash(), new Spin(),
-    new Rinse(), new Spin(),
-  };
+  private Iterator<State> states =
+    Arrays.asList(
+      new Wash(), new Spin(),
+      new Rinse(), new Spin()
+    ).iterator();
   Washer() { runAll(); }
   @Override public boolean changeState() {
-    if(i < states.length) {
-      // Change the state by setting the
-      // surrogate reference to a new object:
-      currentState = states[i++];
-      return true;
-    } else
+    if(!states.hasNext())
       return false;
+    // Set the surrogate reference
+    // to a new State object:
+    currentState = states.next();
+    return true;
   }
 }
 

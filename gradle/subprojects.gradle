@@ -6,7 +6,7 @@ project(':validating') {
 
 project(':equalshashcode') {
     dependencies {
-        compile project(':typeinfo')
+        compile project(':reflection')
         compile project(':collections')
     }
 }
@@ -48,13 +48,13 @@ project(':hiding') {
 
 project(':generics') {
     dependencies {
-        compile project(':typeinfo')
+        compile project(':reflection')
     }
 }
 
 project(':collections') {
     dependencies {
-        compile project(':typeinfo')
+        compile project(':reflection')
     }
 }
 

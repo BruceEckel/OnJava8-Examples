@@ -5,10 +5,12 @@
 package patterns.trash;
 
 public class Paper extends Trash {
-  private static double val = 0.10f;
   public Paper(double wt) { super(wt); }
-  @Override public double value() { return val; }
-  public static void value(double newVal) {
-    val = newVal;
+  @Override public double price() {
+    return Price.PAPER;
+  }
+  // Ignore for now; to be used later:
+  @Override public void accept(Visitor v) {
+    v.visit(this);
   }
 }

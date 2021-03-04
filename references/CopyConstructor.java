@@ -13,7 +13,7 @@ class FruitQualities {
   private int ripeness;
   private int smell;
   // etc.
-  // No-arg constructor:
+  // Zero-argument constructor:
   FruitQualities() {
     // Do something meaningful...
   }
@@ -32,7 +32,7 @@ class FruitQualities {
 
 class Seed {
   // Members...
-  Seed() { /* No-arg constructor */ }
+  Seed() { /* Zero-argument constructor */ }
   Seed(Seed s) { /* Copy constructor */ }
 }
 
@@ -81,7 +81,7 @@ class Tomato extends Fruit {
 
 class ZebraQualities extends FruitQualities {
   private int stripedness;
-  // No-arg constructor:
+  // Zero-argument constructor:
   ZebraQualities() {
     super();
     // do something meaningful...
@@ -117,7 +117,7 @@ public class CopyConstructor {
       t.getClass().getName());
   }
   public static void slice(Fruit f) {
-    f = new Fruit(f); // Hmmm... will this work? // [2]
+    f = new Fruit(f); // Hmm... will this work? // [2]
     System.out.println("In slice, f is a " +
       f.getClass().getName());
   }

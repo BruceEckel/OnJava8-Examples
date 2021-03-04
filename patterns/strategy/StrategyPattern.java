@@ -9,13 +9,14 @@ import java.util.*;
 
 // The common strategy base type:
 class FindMinima {
+  protected
   Function<List<Double>, List<Double>> algorithm;
 }
 
-// The various strategies:
+// The various strategies, each producing dummy data:
 class LeastSquares extends FindMinima {
   LeastSquares() {
-    // Line is a sequence of points (Dummy data):
+    // Line is a sequence of points:
     algorithm = (line) -> Arrays.asList(1.1, 2.2);
   }
 }
@@ -35,8 +36,8 @@ class Bisection extends FindMinima {
 // The "Context" controls the strategy:
 class MinimaSolver {
   private FindMinima strategy;
-  MinimaSolver(FindMinima strat) {
-    strategy = strat;
+  MinimaSolver(FindMinima strategy) {
+    this.strategy = strategy;
   }
   List<Double> minima(List<Double> line) {
     return strategy.algorithm.apply(line);
@@ -54,11 +55,14 @@ public class StrategyPattern {
       1.0, 2.0, 1.0, 2.0, -1.0,
       3.0, 4.0, 5.0, 4.0 );
     System.out.println(solver.minima(line));
+    solver.changeAlgorithm(new Perturbation());
+    System.out.println(solver.minima(line));
     solver.changeAlgorithm(new Bisection());
     System.out.println(solver.minima(line));
   }
 }
 /* Output:
 [1.1, 2.2]
+[3.3, 4.4]
 [5.5, 6.6]
 */

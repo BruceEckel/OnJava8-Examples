@@ -4,16 +4,23 @@
 // Visit http://OnJava8.com for more book information.
 import java.util.*;
 
+class Command {
+  public final String msg;
+  public Command(String msg) {
+    this.msg = msg;
+  }
+}
+
 public class CommandPattern {
+  public static void show(Command cmd) {
+    System.out.println(cmd.msg);
+  }
   public static void main(String[] args) {
-    List<Runnable> macro = Arrays.asList(
-      () -> System.out.print("Hello "),
-      () -> System.out.print("World! "),
-      () -> System.out.print("I'm the command pattern!")
-    );
-    macro.forEach(Runnable::run);
+    show(new Command("First Command"));
+    show(new Command("Second Command"));
   }
 }
 /* Output:
-Hello World! I'm the command pattern!
+First Command
+Second Command
 */

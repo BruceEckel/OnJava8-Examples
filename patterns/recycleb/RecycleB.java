@@ -10,47 +10,43 @@ import java.util.*;
 public class RecycleB {
   public static void main(String[] args) {
     List<Trash> bin = new ArrayList<>();
-    // Fill up the Trash bin:
     ParseTrash.fillBin("trash", bin);
-    List<Glass> glassBin = new ArrayList<>();
-    List<Paper> paperBin = new ArrayList<>();
-    List<Aluminum> alBin = new ArrayList<>();
-    // Sort the Trash:
-    bin.forEach( t -> {
-      // RTTI to discover Trash type:
-      if(t instanceof Aluminum)
-        alBin.add((Aluminum)t);
-      if(t instanceof Paper)
-        paperBin.add((Paper)t);
-      if(t instanceof Glass)
-        glassBin.add((Glass)t);
-    });
-    Trash.sumValue(alBin);
-    Trash.sumValue(paperBin);
-    Trash.sumValue(glassBin);
-    Trash.sumValue(bin);
+    Bins bins = new Bins(bin);
+    bins.show();
   }
 }
-/* Output: (First and Last 10 Lines)
-Loading patterns.trash.Glass
+/* Output:
+Loading patterns.trash.Cardboard
 Loading patterns.trash.Paper
 Loading patterns.trash.Aluminum
-Loading patterns.trash.Cardboard
-weight of patterns.trash.Aluminum = 89.0
-weight of patterns.trash.Aluminum = 76.0
-weight of patterns.trash.Aluminum = 25.0
-weight of patterns.trash.Aluminum = 34.0
-weight of patterns.trash.Aluminum = 27.0
-weight of patterns.trash.Aluminum = 18.0
-...________...________...________...________...
-weight of patterns.trash.Aluminum = 93.0
-weight of patterns.trash.Glass = 93.0
-weight of patterns.trash.Paper = 80.0
-weight of patterns.trash.Glass = 36.0
-weight of patterns.trash.Glass = 12.0
-weight of patterns.trash.Glass = 60.0
-weight of patterns.trash.Paper = 66.0
-weight of patterns.trash.Aluminum = 36.0
-weight of patterns.trash.Cardboard = 22.0
-Total value = 1086.0599818825722
+Loading patterns.trash.Glass
+Aluminum weight: 1.80 * price: 1.67 = 3.01
+Aluminum weight: 3.40 * price: 1.67 = 5.68
+Aluminum weight: 2.70 * price: 1.67 = 4.51
+Total Aluminum value = 13.19
+Paper weight: 8.00 * price: 0.10 = 0.80
+Paper weight: 6.60 * price: 0.10 = 0.66
+Paper weight: 9.10 * price: 0.10 = 0.91
+Total Paper value = 2.37
+Glass weight: 5.40 * price: 0.23 = 1.24
+Glass weight: 4.30 * price: 0.23 = 0.99
+Glass weight: 3.60 * price: 0.23 = 0.83
+Total Glass value = 3.06
+Cardboard weight: 4.40 * price: 0.11 = 0.48
+Cardboard weight: 2.20 * price: 0.11 = 0.24
+Cardboard weight: 1.20 * price: 0.11 = 0.13
+Total Cardboard value = 0.86
+Cardboard weight: 4.40 * price: 0.11 = 0.48
+Paper weight: 8.00 * price: 0.10 = 0.80
+Aluminum weight: 1.80 * price: 1.67 = 3.01
+Glass weight: 5.40 * price: 0.23 = 1.24
+Aluminum weight: 3.40 * price: 1.67 = 5.68
+Cardboard weight: 2.20 * price: 0.11 = 0.24
+Glass weight: 4.30 * price: 0.23 = 0.99
+Cardboard weight: 1.20 * price: 0.11 = 0.13
+Paper weight: 6.60 * price: 0.10 = 0.66
+Aluminum weight: 2.70 * price: 1.67 = 4.51
+Paper weight: 9.10 * price: 0.10 = 0.91
+Glass weight: 3.60 * price: 0.23 = 0.83
+Total Trash value = 19.48
 */

@@ -2,55 +2,32 @@
 // (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
-// Using the Functional interface
 // {java patterns.chain.ChainOfResponsibility}
 package patterns.chain;
 import java.util.*;
 import java.util.function.*;
-
-class Result {
-  boolean success;
-  List<Double> line;
-  Result(List<Double> data) {
-    success = true;
-    line = data;
-  }
-  Result() {
-    success = false;
-    line = Collections.<Double>emptyList();
-  }
-}
-
-class Fail extends Result {}
 
 interface Algorithm {
   Result algorithm(List<Double> line);
 }
 
 class FindMinima {
-  public static Result leastSquares(List<Double> line) {
-    System.out.println("LeastSquares.algorithm");
-    boolean weSucceed = false;
-    if(weSucceed) // Actual test/calculation here
-      return new Result(Arrays.asList(1.1, 2.2));
+  public static Result test(
+    boolean success, String id, double d1, double d2) {
+    System.out.println(id);
+    if(success) // Actual test/calculation here
+      return new Result(Arrays.asList(d1, d2));
     else // Try the next one in the chain:
-      return new Fail();
+      return Result.fail;
+  }
+  public static Result leastSquares(List<Double> line) {
+    return test(false, "LeastSquares", 1.1, 2.2);
   }
   public static Result perturbation(List<Double> line) {
-    System.out.println("Perturbation.algorithm");
-    boolean weSucceed = false;
-    if(weSucceed) // Actual test/calculation here
-      return new Result(Arrays.asList(3.3, 4.4));
-    else
-      return new Fail();
+    return test(false, "Perturbation", 3.3, 4.4);
   }
   public static Result bisection(List<Double> line) {
-    System.out.println("Bisection.algorithm");
-    boolean weSucceed = true;
-    if(weSucceed) // Actual test/calculation here
-      return new Result(Arrays.asList(5.5, 6.6));
-    else
-      return new Fail();
+    return test(true, "Bisection", 5.5, 6.6);
   }
   static List<Function<List<Double>, Result>>
     algorithms = Arrays.asList(
@@ -65,7 +42,7 @@ class FindMinima {
       if(result.success)
         return result;
     }
-    return new Fail();
+    return Result.fail;
   }
 }
 
@@ -83,8 +60,8 @@ public class ChainOfResponsibility {
   }
 }
 /* Output:
-LeastSquares.algorithm
-Perturbation.algorithm
-Bisection.algorithm
+LeastSquares
+Perturbation
+Bisection
 [5.5, 6.6]
 */

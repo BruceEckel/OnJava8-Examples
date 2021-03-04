@@ -21,7 +21,7 @@ public enum Meal2 {
     }
     enum MainCourse implements Food {
       LASAGNE, BURRITO, PAD_THAI,
-      LENTILS, HUMMOUS, VINDALOO;
+      LENTILS, HUMMUS, VINDALOO;
     }
     enum Dessert implements Food {
       TIRAMISU, GELATO, BLACK_FOREST_CAKE,

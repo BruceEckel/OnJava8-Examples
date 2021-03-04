@@ -16,7 +16,7 @@ public class Blip3 implements Externalizable {
     System.out.println("Blip3(String x, int a)");
     s = x;
     i = a;
-    // s & i initialized only in non-no-arg constructor.
+    // s & i initialized only in non-zero-argument constructor.
   }
   @Override public String toString() { return s + i; }
   @Override public void writeExternal(ObjectOutput out)

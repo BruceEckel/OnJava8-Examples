@@ -31,7 +31,7 @@ public class Worm implements Serializable {
       next = new Worm(i, (char)(x + 1));
   }
   public Worm() {
-    System.out.println("No-arg constructor");
+    System.out.println("Zero-argument constructor");
   }
   @Override public String toString() {
     StringBuilder result = new StringBuilder(":");

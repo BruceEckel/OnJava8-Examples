@@ -26,7 +26,7 @@ public class Flower {
   }
   Flower() {
     this("hi", 47);
-    System.out.println("no-arg constructor");
+    System.out.println("Zero-argument constructor");
   }
   void printPetalCount() {
     //- this(11); // Not inside non-constructor!
@@ -41,6 +41,6 @@ public class Flower {
 /* Output:
 Constructor w/ int arg only, petalCount= 47
 String & int args
-no-arg constructor
+Zero-argument constructor
 petalCount = 47 s = hi
 */

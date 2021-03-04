@@ -4,7 +4,7 @@
 // Visit http://OnJava8.com for more book information.
 // {java collections.MapOfList}
 package collections;
-import typeinfo.pets.*;
+import reflection.pets.*;
 import java.util.*;
 
 public class MapOfList {

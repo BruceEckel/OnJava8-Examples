@@ -21,7 +21,7 @@ abstract class Shape implements Serializable {
     dimension = dim;
   }
   @Override public String toString() {
-    return getClass() + "color[" + getColor() +
+    return getClass() + "Color[" + getColor() +
       "] xPos[" + xPos + "] yPos[" + yPos +
       "] dim[" + dimension + "]\n";
   }
@@ -106,15 +106,15 @@ public class AStoreCADState {
   }
 }
 /* Output:
-[class Circlecolor[GREEN] xPos[58] yPos[55] dim[93]
-, class Squarecolor[GREEN] xPos[61] yPos[61] dim[29]
-, class Linecolor[GREEN] xPos[68] yPos[0] dim[22]
-, class Circlecolor[GREEN] xPos[7] yPos[88] dim[28]
-, class Squarecolor[GREEN] xPos[51] yPos[89] dim[9]
-, class Linecolor[GREEN] xPos[78] yPos[98] dim[61]
-, class Circlecolor[GREEN] xPos[20] yPos[58] dim[16]
-, class Squarecolor[GREEN] xPos[40] yPos[11] dim[22]
-, class Linecolor[GREEN] xPos[4] yPos[83] dim[6]
-, class Circlecolor[GREEN] xPos[75] yPos[10] dim[42]
+[class CircleColor[GREEN] xPos[58] yPos[55] dim[93]
+, class SquareColor[GREEN] xPos[61] yPos[61] dim[29]
+, class LineColor[GREEN] xPos[68] yPos[0] dim[22]
+, class CircleColor[GREEN] xPos[7] yPos[88] dim[28]
+, class SquareColor[GREEN] xPos[51] yPos[89] dim[9]
+, class LineColor[GREEN] xPos[78] yPos[98] dim[61]
+, class CircleColor[GREEN] xPos[20] yPos[58] dim[16]
+, class SquareColor[GREEN] xPos[40] yPos[11] dim[22]
+, class LineColor[GREEN] xPos[4] yPos[83] dim[6]
+, class CircleColor[GREEN] xPos[75] yPos[10] dim[42]
 ]
 */

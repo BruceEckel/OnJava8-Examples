@@ -2,13 +2,13 @@
 // (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
-// Aluminum for double dispatching
+// Aluminum with double dispatching.
 package patterns.doubledispatch;
 import patterns.trash.*;
 import java.util.*;
 
 public class Aluminum extends patterns.trash.Aluminum
-    implements TypedBinMember {
+implements TypedBinMember {
   public Aluminum(double wt) { super(wt); }
   @Override
   public boolean addToBin(List<TypedBin> tbins) {

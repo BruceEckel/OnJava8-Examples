@@ -33,7 +33,7 @@ class ReversibleArrayList<T> extends ArrayList<T> {
 public class AdapterMethodIdiom {
   public static void main(String[] args) {
     ReversibleArrayList<String> ral =
-      new ReversibleArrayList<String>(
+      new ReversibleArrayList<>(
         Arrays.asList("To be or not to be".split(" ")));
     // Grabs the ordinary iterator via iterator():
     for(String s : ral)

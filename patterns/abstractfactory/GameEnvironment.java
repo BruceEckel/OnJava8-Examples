@@ -2,7 +2,7 @@
 // (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
-// An example of the Abstract Factory pattern
+// An example of the Abstract Factory pattern.
 // {java patterns.abstractfactory.GameEnvironment}
 package patterns.abstractfactory;
 import java.util.function.*;
@@ -23,10 +23,10 @@ class Kitty implements Player {
   }
 }
 
-class KungFuGuy implements Player {
+class Fighter implements Player {
   @Override
   public void interactWith(Obstacle ob) {
-    System.out.print("KungFuGuy now battles a ");
+    System.out.print("Fighter now battles a ");
     ob.action();
   }
 }
@@ -37,9 +37,9 @@ class Puzzle implements Obstacle {
   }
 }
 
-class NastyWeapon implements Obstacle {
+class Weapon implements Obstacle {
   @Override public void action() {
-    System.out.println("NastyWeapon");
+    System.out.println("Weapon");
   }
 }
 
@@ -58,11 +58,11 @@ extends GameElementFactory {
   }
 }
 
-class KillAndDismember
+class Melee
 extends GameElementFactory {
-  KillAndDismember() {
-    player = KungFuGuy::new;
-    obstacle = NastyWeapon::new;
+  Melee() {
+    player = Fighter::new;
+    obstacle = Weapon::new;
   }
 }
 
@@ -80,15 +80,15 @@ public class GameEnvironment {
   public static void main(String[] args) {
     GameElementFactory
       kp = new KittiesAndPuzzles(),
-      kd = new KillAndDismember();
+      ml = new Melee();
     GameEnvironment
       g1 = new GameEnvironment(kp),
-      g2 = new GameEnvironment(kd);
+      g2 = new GameEnvironment(ml);
     g1.play();
     g2.play();
   }
 }
 /* Output:
 Kitty has encountered a Puzzle
-KungFuGuy now battles a NastyWeapon
+Fighter now battles a Weapon
 */

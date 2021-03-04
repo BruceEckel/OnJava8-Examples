@@ -2,83 +2,105 @@
 // (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
-// Adding more objects to the recycling problem
 // {java patterns.recyclec.RecycleC}
 package patterns.recyclec;
 import patterns.trash.*;
 import java.util.*;
 
-// A List that admits only the right type:
-class Tbin<T extends Trash> extends ArrayList<T> {
-  Class<T> binType;
-  Tbin(Class<T> type) {
-    binType = type;
+// A List that only admits the right type:
+class
+TrashBin<T extends Trash> extends ArrayList<T> {
+  final Class<T> binType;
+  TrashBin(Class<T> binType) {
+    this.binType = binType;
   }
   @SuppressWarnings("unchecked")
   boolean grab(Trash t) {
-    // Comparing class types:
+    // Compare class types:
     if(t.getClass().equals(binType)) {
-      add((T)t); // Downcast to this TBin's type
-      return true; // Object grabbed
+      add((T)t); // Downcast to this TrashBin type
+      return true; // Trash grabbed
     }
-    return false; // Object not grabbed
+    return false; // Trash not grabbed
   }
 }
 
-class TbinList<T extends Trash>
-extends ArrayList<Tbin<? extends T>> {        // [1]
-  boolean sort(T t) {
-    for(Tbin<? extends T> ts : this)
+class TrashBinList<T extends Trash>
+extends ArrayList<TrashBin<? extends T>> {    // [1]
+  @SuppressWarnings("unchecked")
+  public TrashBinList(Class<? extends T>... types) {
+    for(Class<? extends T> type : types)
+      add(new TrashBin<>(type));
+  }
+  public boolean sort(T t) {
+    for(TrashBin<? extends T> ts : this)
       if(ts.grab(t))
         return true;
-    return false; // bin not found for t
+    return false; // TrashBin not found for t
   }
-  void sortBin(Tbin<T> bin) {                 // [2]
-    for(T aBin : bin)
-      if(!sort(aBin))
-        System.err.println("Bin not found");
+  public void sortBin(TrashBin<T> bin) {      // [2]
+    for(T trash : bin)
+      if(!sort(trash))
+        throw new RuntimeException(
+          "Bin not found for " + trash);
+  }
+  public void show() {
+    for(TrashBin<? extends T> tbin : this) {
+      String typeName = tbin.binType.getSimpleName();
+      TrashValue.sum(tbin, typeName);
+    }
   }
 }
 
 public class RecycleC {
-  static Tbin<Trash> bin = new Tbin<>(Trash.class);
   public static void main(String[] args) {
-    // Fill up the Trash bin:
+    TrashBin<Trash> bin =
+      new TrashBin<>(Trash.class);
     ParseTrash.fillBin("trash", bin);
-
-    TbinList<Trash> trashBins = new TbinList<>();
-    trashBins.add(new Tbin<>(Aluminum.class));
-    trashBins.add(new Tbin<>(Paper.class));
-    trashBins.add(new Tbin<>(Glass.class));
-    // add one line here:                     // [3]
-    trashBins.add(new Tbin<>(Cardboard.class));
-
+    @SuppressWarnings("unchecked")
+    TrashBinList<Trash> trashBins =
+      new TrashBinList<>(
+        Aluminum.class, Paper.class, Glass.class,
+        // Add one item:
+        Cardboard.class                       // [3]
+      );
     trashBins.sortBin(bin);                   // [4]
-
-    trashBins.forEach(Trash::sumValue);
-    Trash.sumValue(bin);
+    trashBins.show();
+    TrashValue.sum(bin, "Trash");
   }
 }
-/* Output: (First and Last 10 Lines)
-Loading patterns.trash.Glass
+/* Output:
+Loading patterns.trash.Cardboard
 Loading patterns.trash.Paper
 Loading patterns.trash.Aluminum
-Loading patterns.trash.Cardboard
-weight of patterns.trash.Aluminum = 89.0
-weight of patterns.trash.Aluminum = 76.0
-weight of patterns.trash.Aluminum = 25.0
-weight of patterns.trash.Aluminum = 34.0
-weight of patterns.trash.Aluminum = 27.0
-weight of patterns.trash.Aluminum = 18.0
-...________...________...________...________...
-weight of patterns.trash.Aluminum = 93.0
-weight of patterns.trash.Glass = 93.0
-weight of patterns.trash.Paper = 80.0
-weight of patterns.trash.Glass = 36.0
-weight of patterns.trash.Glass = 12.0
-weight of patterns.trash.Glass = 60.0
-weight of patterns.trash.Paper = 66.0
-weight of patterns.trash.Aluminum = 36.0
-weight of patterns.trash.Cardboard = 22.0
-Total value = 1086.0599818825722
+Loading patterns.trash.Glass
+Aluminum weight: 1.80 * price: 1.67 = 3.01
+Aluminum weight: 3.40 * price: 1.67 = 5.68
+Aluminum weight: 2.70 * price: 1.67 = 4.51
+Total Aluminum value = 13.19
+Paper weight: 8.00 * price: 0.10 = 0.80
+Paper weight: 6.60 * price: 0.10 = 0.66
+Paper weight: 9.10 * price: 0.10 = 0.91
+Total Paper value = 2.37
+Glass weight: 5.40 * price: 0.23 = 1.24
+Glass weight: 4.30 * price: 0.23 = 0.99
+Glass weight: 3.60 * price: 0.23 = 0.83
+Total Glass value = 3.06
+Cardboard weight: 4.40 * price: 0.11 = 0.48
+Cardboard weight: 2.20 * price: 0.11 = 0.24
+Cardboard weight: 1.20 * price: 0.11 = 0.13
+Total Cardboard value = 0.86
+Cardboard weight: 4.40 * price: 0.11 = 0.48
+Paper weight: 8.00 * price: 0.10 = 0.80
+Aluminum weight: 1.80 * price: 1.67 = 3.01
+Glass weight: 5.40 * price: 0.23 = 1.24
+Aluminum weight: 3.40 * price: 1.67 = 5.68
+Cardboard weight: 2.20 * price: 0.11 = 0.24
+Glass weight: 4.30 * price: 0.23 = 0.99
+Cardboard weight: 1.20 * price: 0.11 = 0.13
+Paper weight: 6.60 * price: 0.10 = 0.66
+Aluminum weight: 2.70 * price: 1.67 = 4.51
+Paper weight: 9.10 * price: 0.10 = 0.91
+Glass weight: 3.60 * price: 0.23 = 0.83
+Total Trash value = 19.48
 */

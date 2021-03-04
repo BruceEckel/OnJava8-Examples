@@ -8,9 +8,9 @@ import java.util.stream.*;
 import patterns.shapes.*;
 
 public class ShapeFactory2 implements FactoryMethod {
-  Map<String, Constructor> factories =
+  private Map<String, Constructor> factories =
     new HashMap<>();
-  static Constructor load(String id) {
+  private static Constructor load(String id) {
     System.out.println("loading " + id);
     try {
       return Class.forName("patterns.shapes." + id)

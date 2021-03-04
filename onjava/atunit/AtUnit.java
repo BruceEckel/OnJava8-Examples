@@ -63,11 +63,11 @@ public class AtUnit implements ProcessFiles.Strategy {
              .getDeclaredConstructor()
              .getModifiers())) {
             System.out.println("Error: " + testClass +
-              " no-arg constructor must be public");
+              " zero-argument constructor must be public");
             System.exit(1);
           }
         } catch(NoSuchMethodException e) {
-          // Synthesized no-arg constructor; OK
+          // Synthesized zero-argument constructor; OK
         }
       System.out.println(testClass.getName());
     }
@@ -159,7 +159,7 @@ public class AtUnit implements ProcessFiles.Strategy {
         throw new RuntimeException("Couldn't run " +
           "@TestObject (creator) method.");
       }
-    } else { // Use the no-arg constructor:
+    } else { // Use the zero-argument constructor:
       try {
         return testClass
           .getConstructor().newInstance();

@@ -2,7 +2,7 @@
 // (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
-// Demonstration of "visitor" pattern
+// Demonstration of the Visitor pattern.
 // {java patterns.visitor.BeeAndFlowers}
 package patterns.visitor;
 import java.util.*;
@@ -11,7 +11,7 @@ import java.util.stream.*;
 
 interface Visitor {
   void visit(Gladiolus g);
-  void visit(Renuculus r);
+  void visit(Ranunculus r);
   void visit(Chrysanthemum c);
 }
 
@@ -25,7 +25,7 @@ class Gladiolus implements Flower {
   public void accept(Visitor v) { v.visit(this);}
 }
 
-class Renuculus implements Flower {
+class Ranunculus implements Flower {
   @Override
   public void accept(Visitor v) { v.visit(this);}
 }
@@ -37,13 +37,13 @@ class Chrysanthemum implements Flower {
 
 // Add the ability to produce a String:
 class StringVal implements Visitor {
-  String s;
+  private String s;
   @Override public String toString() { return s; }
   @Override public void visit(Gladiolus g) {
     s = "Gladiolus";
   }
-  @Override public void visit(Renuculus r) {
-    s = "Renuculus";
+  @Override public void visit(Ranunculus r) {
+    s = "Ranunculus";
   }
   @Override public void visit(Chrysanthemum c) {
     s = "Chrysanthemum";
@@ -55,8 +55,8 @@ class Bee implements Visitor {
   @Override public void visit(Gladiolus g) {
     System.out.println("Bee and Gladiolus");
   }
-  @Override public void visit(Renuculus r) {
-    System.out.println("Bee and Renuculus");
+  @Override public void visit(Ranunculus r) {
+    System.out.println("Bee and Ranunculus");
   }
   @Override public void visit(Chrysanthemum c) {
     System.out.println("Bee and Chrysanthemum");
@@ -66,7 +66,7 @@ class Bee implements Visitor {
 class FlowerFactory {
   static List<Supplier<Flower>> flowers =
     Arrays.asList(Gladiolus::new,
-      Renuculus::new, Chrysanthemum::new);
+      Ranunculus::new, Chrysanthemum::new);
   static final int SZ = flowers.size();
   private static SplittableRandom rand =
     new SplittableRandom(47);
@@ -95,21 +95,21 @@ public class BeeAndFlowers {
 Gladiolus
 Chrysanthemum
 Gladiolus
-Renuculus
+Ranunculus
 Chrysanthemum
-Renuculus
+Ranunculus
 Chrysanthemum
 Chrysanthemum
 Chrysanthemum
-Renuculus
+Ranunculus
 Bee and Gladiolus
 Bee and Chrysanthemum
 Bee and Gladiolus
-Bee and Renuculus
+Bee and Ranunculus
 Bee and Chrysanthemum
-Bee and Renuculus
+Bee and Ranunculus
 Bee and Chrysanthemum
 Bee and Chrysanthemum
 Bee and Chrysanthemum
-Bee and Renuculus
+Bee and Ranunculus
 */
