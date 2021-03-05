@@ -58,6 +58,12 @@ project(':collections') {
     }
 }
 
+project(':patterns') {
+    dependencies {
+        compile project(':enums')
+    }
+}
+
 configure(subprojects - project(':onjava')) {
     dependencies {
         compile project(':onjava')
