@@ -24,7 +24,7 @@ includes tests to verify that the code in the book is correct.
     + [Basic Shell Operations](#basic-shell-operations)
     + [Unpacking a Zip Archive](#unpacking-a-zip-archive)
 - [Appendix B: Testing](#appendix-b-testing)
-- [Troubleshooting](#troubleshooting)
+- [Appendix C: Troubleshooting](#appendix-c-troubleshooting)
 
 # Building From the Command Line: Quick Version
 
@@ -344,7 +344,7 @@ installed, and where you find the `gradlew` script.
 
 You can learn about other options by just typing `gradlew` with no arguments.
 
-# Troubleshooting
+# Appendix C: Troubleshooting
 
 If any terminology or processes described here remain unclear to you, you can
 usually find explanations or answers through [Google](https://www.google.com/).
