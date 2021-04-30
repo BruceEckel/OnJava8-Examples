@@ -4,7 +4,7 @@
 // Visit http://OnJava8.com for more book information.
 
 class Person {
-  public void eat(Apple apple) {
+  void eat(Apple apple) {
     Apple peeled = apple.getPeeled();
     System.out.println("Yummy");
   }
@@ -13,7 +13,7 @@ class Person {
 class Peeler {
   static Apple peel(Apple apple) {
     // ... remove peel
-    return apple; // Peeled
+    return apple; // peeled
   }
 }
 
