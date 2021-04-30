@@ -4,6 +4,8 @@
 // Visit http://OnJava8.com for more book information.
 // Default equals() does not compare contents
 
+import java.util.Objects;
+
 class ValA {
   int i;
 }
@@ -33,3 +35,41 @@ public class EqualsMethod {
 false
 true
 */
+
+// my extension code
+
+class Man {
+  int age;
+  String name;
+  public Man(int age, String name) {
+    this.age = age;
+    this.name = name;
+  }
+}
+
+class Woman {
+  int age;
+  String name;
+  public Woman(int age, String name) {
+    this.age = age;
+    this.name = name;
+  }
+  public boolean equals(Object o) {
+    Woman woman = (Woman) o;
+    return age == woman.age && Objects.equals(name, woman.name);
+  }
+}
+
+class TestClass {
+  public static void main(String[] args) {
+    Man man1 = new Man(20, "man");
+    Man man2 = new Man(20, "man");
+    System.out.println(man1.equals(man2)); // false
+    Woman woman1 = new Woman(20, "woman");
+    Woman woman2 = new Woman(20, "woman");
+    System.out.println(woman1.equals(woman2)); // true
+  }
+}
+
+
+
