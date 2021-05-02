@@ -17,7 +17,7 @@ public class PrivateOverride2 {
 }
 
 class Derived2 extends PrivateOverride2 {
-  @Override public void f() {
-    System.out.println("public f()");
-  }
+//  @Override public void f() {
+//    System.out.println("public f()");
+//  }
 }

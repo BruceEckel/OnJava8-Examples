@@ -31,7 +31,9 @@ class Percussion extends Instrument {
   @Override void play(Note n) {
     System.out.println("Percussion.play() " + n);
   }
-  @Override String what() { return "Percussion"; }
+  @Override String what() {
+    return "Percussion";
+  }
   @Override void adjust() {
     System.out.println("Adjusting Percussion");
   }
@@ -70,10 +72,12 @@ public class Music3 {
     // ...
     i.play(Note.MIDDLE_C);
   }
+
   public static void tuneAll(Instrument[] e) {
     for(Instrument i : e)
       tune(i);
   }
+
   public static void main(String[] args) {
     // Upcasting during addition to the array:
     Instrument[] orchestra = {

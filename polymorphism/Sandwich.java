@@ -11,7 +11,9 @@ class Meal {
 }
 
 class Bread {
-  Bread() { System.out.println("Bread()"); }
+  Bread() {
+    System.out.println("Bread");
+  }
 }
 
 class Cheese {
