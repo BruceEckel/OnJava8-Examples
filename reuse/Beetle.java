@@ -11,6 +11,7 @@ class Insect {
     System.out.println("i = " + i + ", j = " + j);
     j = 39;
   }
+   final int f = 11;
   // order1
   private static int x1 =
     printInit("static Insect.x1 initialized");
@@ -26,6 +27,7 @@ public class Beetle extends Insect {
     System.out.println("k = " + k);
     System.out.println("j = " + j);
   }
+  static final int ff = 22;
   // order2
   private static int x2 =
     printInit("static Beetle.x2 initialized");

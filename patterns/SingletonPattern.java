@@ -7,7 +7,8 @@ final class IntegerSingleton
   implements Resource<Integer> {
   private static IntegerSingleton value =
     new IntegerSingleton();
-  private Integer i = Integer.valueOf(0);
+  private static Integer i = Integer.valueOf(0);
+  private Object o = new Object();
   private IntegerSingleton() {
     System.out.println("IntegerSingleton()");
   }
