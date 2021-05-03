@@ -58,6 +58,7 @@ public class Music5 {
     for(Instrument i : e)
       tune(i);
   }
+
   public static void main(String[] args) {
     // Upcasting during addition to the array:
     Instrument[] orchestra = {

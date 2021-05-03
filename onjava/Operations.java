@@ -13,4 +13,5 @@ public interface Operations {
   static void show(String msg) {
     System.out.println(msg);
   }
+
 }

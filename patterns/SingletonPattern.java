@@ -9,6 +9,11 @@ final class IntegerSingleton
     new IntegerSingleton();
   private static Integer i = Integer.valueOf(0);
   private Object o = new Object();
+  static final int f = 11;
+  final int ff = 22;
+  final Integer fff = new Integer(33);
+  static final Object oo = new Object();
+  static final IntegerSingleton ffff = new IntegerSingleton();
   private IntegerSingleton() {
     System.out.println("IntegerSingleton()");
   }
