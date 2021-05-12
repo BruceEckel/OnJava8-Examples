@@ -10,18 +10,12 @@ public class Parcel2 {
     public int value() { return i; }
   }
   class Destination {
-    private String label;
-    Destination(String whereTo) {
-      label = whereTo;
-    }
-    String readLabel() { return label; }
+    private String lable;
+    Destination(String whereTo) { lable = whereTo; }
+    String readLabel() { return lable; }
   }
-  public Destination to(String s) {
-    return new Destination(s);
-  }
-  public Contents contents() {
-    return new Contents();
-  }
+  public Destination to(String s) { return new Destination(s); }
+  public Contents contents() { return new Contents(); }
   public void ship(String dest) {
     Contents c = contents();
     Destination d = to(dest);

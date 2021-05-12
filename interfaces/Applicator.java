@@ -20,6 +20,7 @@ class Upcase extends Processor {
   }
 }
 
+
 class Downcase extends Processor {
   @Override
   public String process(Object input) {
@@ -56,3 +57,4 @@ we are such stuff as dreams are made on
 Using Processor Splitter
 [We, are, such, stuff, as, dreams, are, made, on]
 */
+

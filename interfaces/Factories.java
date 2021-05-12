@@ -45,8 +45,7 @@ class Service2Factory implements ServiceFactory {
 }
 
 public class Factories {
-  public static void
-  serviceConsumer(ServiceFactory fact) {
+  public static void serviceConsumer(ServiceFactory fact) {
     Service s = fact.getService();
     s.method1();
     s.method2();
@@ -63,3 +62,61 @@ Service1 method2
 Service2 method1
 Service2 method2
 */
+
+// My simulation
+interface Computer {
+  void playMusic();
+  void coding();
+}
+
+interface ComputerFactory {
+  Computer getComputer();
+}
+
+class MicrosoftComputer implements Computer {
+  @Override public void playMusic() {
+    System.out.println("MicrosoftComputer playMusic");
+  }
+  @Override public void coding() {
+    System.out.println("MicrosoftComputer coding");
+  }
+}
+
+class MicrosoftComputerFacotry implements ComputerFactory {
+  @Override public Computer getComputer() {
+    return new MicrosoftComputer();
+  }
+}
+
+class AppleComputer implements Computer {
+  @Override public void playMusic() {
+    System.out.println("AppleComputer playMusic");
+  }
+  @Override public void coding() {
+    System.out.println("AppleComputer coding");
+  }
+}
+
+class AppleComputerFactory implements ComputerFactory {
+  @Override public Computer getComputer() {
+    return new AppleComputer();
+  }
+}
+
+ class Test {
+  public static void show(ComputerFactory fact) {
+    Computer c = fact.getComputer();
+    c.playMusic();
+    c.coding();
+  }
+
+   public static void main(String[] args) {
+     show(new AppleComputerFactory());
+     show(new MicrosoftComputerFacotry());
+   }
+}
+
+
+
+
+

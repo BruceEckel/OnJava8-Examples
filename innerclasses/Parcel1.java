@@ -4,6 +4,9 @@
 // Visit http://OnJava8.com for more book information.
 // Creating inner classes
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Parcel1 {
   class Contents {
     private int i = 11;
@@ -31,3 +34,26 @@ public class Parcel1 {
 /* Output:
 Tasmania
 */
+
+// My simulation
+class Email {
+  class Contents {
+    private String str = "hello world";
+    public String getStr() { return str; }
+  }
+  class Destination {
+    private String receiveAdrr;
+    Destination(String receiveAdrr) { this.receiveAdrr = receiveAdrr; }
+    public String getReceiveAdrr() { return receiveAdrr; }
+  }
+  public void car(String dest) {
+    Contents c = new Contents();
+    Destination d = new Destination(dest);
+    System.out.println(d.getReceiveAdrr());
+  }
+
+  public static void main(String[] args) {
+    Email e = new Email();
+    e.car("suzhou sixianlou");
+  }
+}

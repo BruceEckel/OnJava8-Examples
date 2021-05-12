@@ -22,3 +22,4 @@ public class DotThis {
 /* Output:
 DotThis.f()
 */
+
