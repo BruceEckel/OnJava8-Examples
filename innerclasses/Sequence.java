@@ -9,11 +9,6 @@ interface Selector {
   Object current();
   void next();
 }
-interface Iterator {
-  boolean end();
-  Object current();
-  void next();
-}
 
 public class Sequence {
   private Object[] items;
@@ -53,6 +48,12 @@ public class Sequence {
 */
 
 // My simulation code
+interface Iterator {
+  boolean end();
+  Object current();
+  void next();
+}
+
 class Container {
   private Object[] items;
   private int next = 0;
