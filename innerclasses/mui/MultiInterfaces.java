@@ -4,8 +4,6 @@
 // Visit http://OnJava8.com for more book information.
 // Two ways a class can implement multiple interfaces
 // {java innerclasses.mui.MultiInterfaces}
-package innerclasses.mui;
-
 interface A {}
 interface B {}
 
@@ -30,3 +28,33 @@ public class MultiInterfaces {
     takesB(y.makeB());
   }
 }
+
+// My simulation code
+interface C {}
+interface D { void show(); }
+
+class W implements C, D {
+  public void show() {
+    System.out.println("W");
+  }
+}
+class Z implements C {
+  D makeD() {
+    return new D() { public void show() {
+      System.out.println("Z.D");
+    }};
+  }
+}
+class Test {
+  public static void takeC(C c) {}
+  public static void takeD(D d) {}
+  public static void main(String[] args) {
+    W w = new W();
+    Z z = new Z();
+    takeC(w);
+    takeD(w);
+    takeC(z);
+    takeD(z.makeD());
+  }
+}
+

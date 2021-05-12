@@ -53,7 +53,6 @@ interface Iterator {
   Object current();
   void next();
 }
-
 class Container {
   private Object[] items;
   private int next = 0;
