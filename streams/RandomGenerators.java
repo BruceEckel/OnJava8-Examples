@@ -84,3 +84,20 @@ public class RandomGenerators {
 12.196509449817267
 ++++++++
 */
+
+class RandomGeneratorTest {
+  public static <T> void show(Stream<T> stream) {
+    stream
+        .limit(4)
+        .forEach(System.out::println);
+    System.out.println("--------");
+  }
+  public static void main(String[] args) {
+    Random rand = new Random(1);
+    show(rand.ints().boxed());
+    show(rand.longs().boxed());
+    show(rand.doubles().boxed());
+    List<Integer> list = new ArrayList<>();
+    list.stream().mapToInt(e -> e).toArray();
+  }
+}
