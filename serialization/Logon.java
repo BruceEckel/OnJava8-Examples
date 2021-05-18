@@ -20,17 +20,17 @@ public class Logon implements Serializable {
     @Override
     public String toString() {
         return "logon info: \n   username: " +
-                username + "\n   date: " + date +
-                "\n   password: " + password;
+            username + "\n   date: " + date +
+            "\n   password: " + password;
     }
 
     public static void main(String[] args) {
         Logon a = new Logon("Hulk", "myLittlePony");
         System.out.println("logon a = " + a);
         try (
-                ObjectOutputStream o =
-                        new ObjectOutputStream(
-                                new FileOutputStream("Logon.txt"))
+            ObjectOutputStream o =
+                new ObjectOutputStream(
+                    new FileOutputStream("Logon.txt"))
         ) {
             o.writeObject(a);
         } catch (IOException e) {
@@ -39,11 +39,11 @@ public class Logon implements Serializable {
 //    new Nap(1);
         // Now get them back:
         try (
-                ObjectInputStream in = new ObjectInputStream(
-                        new FileInputStream("Logon.txt"))
+            ObjectInputStream in = new ObjectInputStream(
+                new FileInputStream("Logon.txt"))
         ) {
             System.out.println(
-                    "Recovering object at " + new Date());
+                "Recovering object at " + new Date());
             a = (Logon) in.readObject();
         } catch (IOException | ClassNotFoundException e) {
             throw new RuntimeException(e);
@@ -76,32 +76,32 @@ class TransientTest implements Serializable {
     }
 
     public String toString() {
-      return "{ age = " + age + ", name = " + name + ", psw = " + password + " }";
+        return "{ age = " + age + ", name = " + name + ", psw = " + password + " }";
     }
 
     public static void main(String[] args) {
-      TransientTest t = new TransientTest(24, "yangwu", "185530");
-      System.out.println("Original: " + t);
+        TransientTest t = new TransientTest(24, "yangwu", "185530");
+        System.out.println("Original: " + t);
         try (
-                ObjectOutputStream o =
-                        new ObjectOutputStream(
-                                new FileOutputStream("person.txt"))
+            ObjectOutputStream o =
+                new ObjectOutputStream(
+                    new FileOutputStream("person.txt"))
         ) {
-          o.writeObject(t);
+            o.writeObject(t);
         } catch (IOException e) {
-          throw new RuntimeException(e);
+            throw new RuntimeException(e);
         }
 
-      System.out.println("Recovering from disk");
+        System.out.println("Recovering from disk");
         try (
-                ObjectInputStream in =
-                        new ObjectInputStream(
-                                new FileInputStream("person.txt"))
+            ObjectInputStream in =
+                new ObjectInputStream(
+                    new FileInputStream("person.txt"))
         ) {
-          t = (TransientTest) in.readObject();
+            t = (TransientTest) in.readObject();
         } catch (IOException | ClassNotFoundException e) {
-          throw new RuntimeException(e);
+            throw new RuntimeException(e);
         }
-      System.out.println("Recovering: " + t);
+        System.out.println("Recovering: " + t);
     }
 }
