@@ -47,3 +47,43 @@ Implementation.f()
 Implementation.g()
 Implementation.h()
 */
+
+// my code
+interface MyBaseProxy {
+  void foo();
+  void bar();
+}
+
+class MyProxy implements MyBaseProxy {
+
+  private MyImpl impl;
+  MyProxy() { impl = new MyImpl(); }
+  @Override
+  public void foo() {
+    impl.foo();
+  }
+
+  @Override
+  public void bar() {
+    impl.bar();
+  }
+}
+
+class MyImpl implements MyBaseProxy {
+
+  @Override
+  public void foo() {
+    System.out.println("impl foo()");
+  }
+
+  @Override
+  public void bar() {
+    System.out.println("impl bar()");
+  }
+
+  public static void main(String[] args) {
+    MyProxy proxy = new MyProxy();
+    proxy.bar();
+    proxy.foo();
+  }
+}

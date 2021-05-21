@@ -72,6 +72,7 @@ class MySingleton1 {
     System.out.println(single == single2);
   }
 }
+
 // double check version
 class MySingleton2 {
   private static MySingleton2 instance = null;

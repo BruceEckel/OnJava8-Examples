@@ -40,3 +40,35 @@ customize1 2 customize2 2
 customize1 3 customize2 3
 customize1 4 customize2 4
 */
+
+// my code
+abstract class MyTemplate {
+  MyTemplate() {
+    init();
+  }
+  // template method are private
+  private void init() {
+    foo();
+    bar();
+    System.out.println("App has initialized");
+  }
+  abstract void foo();
+  abstract void bar();
+}
+
+class App extends MyTemplate {
+
+  @Override
+  void foo() {
+    System.out.println("foo method");
+  }
+
+  @Override
+  void bar() {
+    System.out.println("bar method");
+  }
+
+  public static void main(String[] args) {
+    new App();
+  }
+}
