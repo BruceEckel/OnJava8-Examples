@@ -10,6 +10,7 @@ class Tags {
     Boolean throwsException = false
     Boolean errorOutputExpected = false
     Boolean excludeFromGradle = false
+    Boolean newFeature = false // For language feature introduced after Java 8
     Boolean ignoreOutput = false // This tag isn't used in the build...
     String fileRoot
     String mainClass
@@ -45,6 +46,7 @@ class Tags {
         throwsException = hasTag('ThrowsException')
         errorOutputExpected = hasTag('ErrorOutputExpected')
         excludeFromGradle = hasTag('ExcludeFromGradle')
+        newFeature = hasTag('NewFeature')
         ignoreOutput = hasTag('IgnoreOutput')
         javap = extract('javap') // Includes only arguments to command
         runFirst = extract('RunFirst:')
@@ -83,6 +85,7 @@ class Tags {
         throwsException ||
         errorOutputExpected ||
         excludeFromGradle ||
+        newFeature ||
         ignoreOutput ||
         javaCmd ||
         args ||
@@ -105,6 +108,7 @@ class Tags {
         throwsException
         errorOutputExpected
         excludeFromGradle
+        newFeature
         ignoreOutput
         fileRoot
         mainClass

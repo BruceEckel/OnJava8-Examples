@@ -26,6 +26,7 @@ class TaggingPlugin implements Plugin<Project> {
 
                 // Exclude java sources that will not compile
                 if (tags.willNotCompile
+                    || tags.newFeature // Uses a feature introduced after Java 8
                     || (tags.lowLevelAppendix && runningInAppveyor) // Exclude entire lowlevel appendix
                     || (tags.excludeFromAppveyorCI && runningInAppveyor)
                     || (tags.excludeFromTravisCI && runningInTravis)
