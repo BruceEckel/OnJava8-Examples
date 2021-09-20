@@ -13,7 +13,7 @@ public class TryWithResources {
       int contents = in.read();
       // Process contents
     } catch(IOException e) {
-      // Handle the error
+      // Handle errors
     }
   }
 }

@@ -37,7 +37,7 @@ interface Sam2 {
   }
 }
 
-// This works because the argument lists are distinct:
+// Works because the argument lists are distinct:
 class Sam implements Sam1, Sam2 {}
 
 interface Max1 {

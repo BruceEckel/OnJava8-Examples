@@ -14,11 +14,11 @@ public class Equivalence {
     Integer i1 = value;                             // [1]
     Integer i2 = value;
     show("Automatic", i1, i2);
-    // Old way, deprecated in Java 9 and on:
+    // Old way, deprecated since Java 9:
     Integer r1 = new Integer(value);                // [2]
     Integer r2 = new Integer(value);
     show("new Integer()", r1, r2);
-    // Preferred in Java 9 and on:
+    // Preferred since Java 9:
     Integer v1 = Integer.valueOf(value);            // [3]
     Integer v2 = Integer.valueOf(value);
     show("Integer.valueOf()", v1, v2);

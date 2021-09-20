@@ -17,7 +17,7 @@ public class Literals {
     char c = 0xffff; // max char hex value
     System.out.println(
       "c: " + Integer.toBinaryString(c));
-    byte b = 0x7f; // max byte hex value 10101111;
+    byte b = 0x7f; // max byte hex value 0111111;
     System.out.println(
       "b: " + Integer.toBinaryString(b));
     short s = 0x7fff; // max short hex value
