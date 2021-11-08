@@ -8,6 +8,7 @@ includes tests to verify that the code in the book is correct.
 
 > NOTE: Do not attempt to use JDK 16 or greater with gradle. 
 > This produces a `BUG!` message from Gradle, which is broken for those versions.
+> To test new Java features in JDK 16 or 17 you must compile and run those examples by hand.
 
 ## Contents
 

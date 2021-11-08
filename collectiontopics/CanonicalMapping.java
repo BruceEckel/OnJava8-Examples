@@ -4,49 +4,29 @@
 // Visit http://OnJava8.com for more book information.
 // Demonstrates WeakHashMap
 import java.util.*;
-
-class Element {
-  private String ident;
-  Element(String id) { ident = id; }
-  @Override public String toString() { return ident; }
-  @Override public int hashCode() {
-    return Objects.hashCode(ident);
-  }
-  @Override public boolean equals(Object r) {
-    return r instanceof Element &&
-      Objects.equals(ident, ((Element)r).ident);
-  }
-  @SuppressWarnings("deprecation")
-  @Override protected void finalize() {
-    System.out.println("Finalizing " +
-      getClass().getSimpleName() + " " + ident);
-  }
-}
-
-class Key extends Element {
-  Key(String id) { super(id); }
-}
-
-class Value extends Element {
-  Value(String id) { super(id); }
-}
+import java.util.stream.*;
 
 public class CanonicalMapping {
+  static void showKeys(Map<String, String> m) {
+    // Display sorted keys
+    List<String> keys = new ArrayList<>(m.keySet());
+    Collections.sort(keys);
+    System.out.println(keys);
+  }
   public static void main(String[] args) {
-    int size = 1000;
-    // Or, choose size via the command line:
-    if(args.length > 0)
-      size = Integer.valueOf(args[0]);
-    Key[] keys = new Key[size];
-    WeakHashMap<Key,Value> map =
+    int size = 100;
+    String[] savedKeys = new String[size];
+    WeakHashMap<String,String> map =
       new WeakHashMap<>();
     for(int i = 0; i < size; i++) {
-      Key k = new Key(Integer.toString(i));
-      Value v = new Value(Integer.toString(i));
+      String key = String.format("%03d", i);
+      String value = Integer.toString(i);
       if(i % 3 == 0)
-        keys[i] = k; // Save as "real" references
-      map.put(k, v);
+        savedKeys[i] = key; // Save as "real" references
+      map.put(key, value);
     }
+    showKeys(map);
     System.gc();
+    showKeys(map);
   }
 }

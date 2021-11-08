@@ -10,7 +10,7 @@ public class ForTypeInference {
       System.out.println(s);
   }
 }
-/* Ouput:
+/* Output:
 NOT
 MILD
 MEDIUM

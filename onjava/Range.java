@@ -9,7 +9,7 @@ public class Range {
   // Produce sequence [start..end) incrementing by step
   public static
   int[] range(int start, int end, int step) {
-    if (step == 0)
+    if(step == 0)
       throw new
         IllegalArgumentException("Step cannot be zero");
     int sz = Math.max(0, step >= 0 ?

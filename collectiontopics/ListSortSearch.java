@@ -13,9 +13,9 @@ public class ListSortSearch {
     System.out.println(list);
     Collections.shuffle(list, new Random(47));
     System.out.println("Shuffled: " + list);
-    // Use ListIterator to trim off last elements:
-    ListIterator<String> it = list.listIterator(10);
-    while(it.hasNext()) {
+    ListIterator<String> it =
+      list.listIterator(10);               // [1]
+    while(it.hasNext()) {                  // [2]
       it.next();
       it.remove();
     }

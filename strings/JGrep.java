@@ -4,7 +4,7 @@
 // Visit http://OnJava8.com for more book information.
 // A very simple version of the "grep" program
 // {java JGrep
-// WhitherStringBuilder.java 'return|for|String'}
+// WhitherStringBuilder.java "return|for|String"}
 import java.util.regex.*;
 import java.nio.file.*;
 import java.util.stream.*;
@@ -18,19 +18,33 @@ public class JGrep {
       System.exit(0);
     }
     Pattern p = Pattern.compile(args[1]);
-    // Iterate through the lines of the input file:
-    int index = 0;
     Matcher m = p.matcher("");
-    for(String line :
-        Files.readAllLines(Paths.get(args[0]))) {
-      m.reset(line);
-      while(m.find())
-        System.out.println(index++ + ": " +
-          m.group() + ": " + m.start());
-    }
+    // Iterate through the lines of the input file:
+    Files.readAllLines(Paths.get(args[0])).forEach(
+      line -> {
+        m.reset(line);
+        while(m.find())
+          System.out.println(
+            m.group() + ": " + m.start());
+      }
+    );
   }
 }
 /* Output:
-0: for: 4
-1: for: 4
+String: 18
+String: 20
+String: 9
+String: 25
+String: 4
+for: 4
+String: 8
+return: 4
+String: 9
+String: 25
+String: 4
+String: 31
+for: 4
+String: 8
+return: 4
+String: 20
 */
