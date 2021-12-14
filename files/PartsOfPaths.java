@@ -23,7 +23,7 @@ public class PartsOfPaths {
   }
 }
 /* Output:
-Windows 8.1
+Windows 10
 Git
 OnJava8
 ExtractedExamples

@@ -52,13 +52,12 @@ public class AddAndSubtractPaths {
   }
 }
 /* Output:
-Windows 8.1
+Windows 10
 C:\Git
-(1)r OnJava8\ExtractedExamples\files\AddAndSubtractPath
-s.java
-RealPath: C:\Git\OnJava8\ExtractedExamples\files\AddAnd
-SubtractPaths.java
-(2)r OnJava8\ExtractedExamples\strings\..\files
+(1)r OnJava8\ExtractedExamples\files\AddAndSubtractPaths.java
+RealPath:
+C:\Git\OnJava8\ExtractedExamples\files\AddAndSubtractPaths.java
+(2)r OnJava8\ExtractedExamples\files
 RealPath: C:\Git\OnJava8\ExtractedExamples\files
 (3)r OnJava8\ExtractedExamples\files
 RealPath: C:\Git\OnJava8\ExtractedExamples\files
@@ -68,7 +67,7 @@ RealPath: C:\Git\OnJava8
 RealPath: C:\Git\OnJava8
 (6)r OnJava8
 RealPath: C:\Git\OnJava8
-(7)r OnJava8\ExtractedExamples\files\.\..\..
+(7)r OnJava8
 RealPath: C:\Git\OnJava8
 (8)r OnJava8
 RealPath: C:\Git\OnJava8

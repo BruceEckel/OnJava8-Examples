@@ -24,7 +24,7 @@ public class ApplesAndOrangesWithoutGenerics {
     apples.add(new Orange());
     for(Object apple : apples) {
       ((Apple) apple).id();
-      // Orange is detected only at run time
+      // Orange is detected only at runtime
     }
   }
 }

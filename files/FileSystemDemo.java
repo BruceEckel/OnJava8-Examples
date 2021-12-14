@@ -26,20 +26,22 @@ public class FileSystemDemo {
   }
 }
 /* Output:
-Windows 8.1
+Windows 10
 File Store: (C:)
 File Store: System Reserved (E:)
 File Store: (F:)
+File Store: Google Drive (G:)
 Root Directory: C:\
 Root Directory: D:\
 Root Directory: E:\
 Root Directory: F:\
+Root Directory: G:\
 Separator: \
 UserPrincipalLookupService:
-sun.nio.fs.WindowsFileSystem$LookupService$1@19e0bfd
+sun.nio.fs.WindowsFileSystem$LookupService$1@1bd4fdd
 isOpen: true
 isReadOnly: false
 FileSystemProvider:
-sun.nio.fs.WindowsFileSystemProvider@139a55
+sun.nio.fs.WindowsFileSystemProvider@55183b20
 File Attribute Views: [owner, dos, acl, basic, user]
 */

@@ -38,7 +38,7 @@ public class PathAnalysis {
   }
 }
 /* Output:
-Windows 8.1
+Windows 10
 Exists: true
 Directory: false
 Executable: true
@@ -49,8 +49,8 @@ notExists: false
 Hidden: false
 size: 1617
 FileStore: (C:)
-LastModified: : 2021-01-24T15:48:37.461504Z
+LastModified: : 2021-11-08T00:34:52.693768Z
 Owner: GROOT\Bruce (User)
-ContentType: null
+ContentType: text/plain
 SymbolicLink: false
 */

@@ -23,7 +23,7 @@ implements Supplier<Coffee>, Iterable<Coffee> {
       return (Coffee)
         types[rand.nextInt(types.length)]
         .getConstructor().newInstance();
-      // Report programmer errors at run time:
+      // Report programmer errors at runtime:
       } catch(InstantiationException |
               NoSuchMethodException |
               InvocationTargetException |

@@ -9,17 +9,17 @@ import java.io.IOException;
 
 public class PathInfo {
   static void show(String id, Object p) {
-    System.out.println(id + ": " + p);
+    System.out.println(id + p);
   }
   static void info(Path p) {
-    show("toString", p);
-    show("Exists", Files.exists(p));
-    show("RegularFile", Files.isRegularFile(p));
-    show("Directory", Files.isDirectory(p));
-    show("Absolute", p.isAbsolute());
-    show("FileName", p.getFileName());
-    show("Parent", p.getParent());
-    show("Root", p.getRoot());
+    show("toString:\n ", p);
+    show("Exists: ", Files.exists(p));
+    show("RegularFile: ", Files.isRegularFile(p));
+    show("Directory: ", Files.isDirectory(p));
+    show("Absolute: ", p.isAbsolute());
+    show("FileName: ", p.getFileName());
+    show("Parent: ", p.getParent());
+    show("Root: ", p.getRoot());
     System.out.println("******************");
   }
   public static void main(String[] args) {
@@ -37,15 +37,16 @@ public class PathInfo {
       System.out.println(e);
     }
     URI u = p.toUri();
-    System.out.println("URI: " + u);
+    System.out.println("URI:\n" + u);
     Path puri = Paths.get(u);
     System.out.println(Files.exists(puri));
     File f = ap.toFile(); // Don't be fooled
   }
 }
 /* Output:
-Windows 8.1
-toString: C:\path\to\nowhere\NoFile.txt
+Windows 10
+toString:
+ C:\path\to\nowhere\NoFile.txt
 Exists: false
 RegularFile: false
 Directory: false
@@ -54,7 +55,8 @@ FileName: NoFile.txt
 Parent: C:\path\to\nowhere
 Root: C:\
 ******************
-toString: PathInfo.java
+toString:
+ PathInfo.java
 Exists: true
 RegularFile: true
 Directory: false
@@ -64,7 +66,7 @@ Parent: null
 Root: null
 ******************
 toString:
-C:\Git\OnJava8\ExtractedExamples\files\PathInfo.java
+ C:\Git\OnJava8\ExtractedExamples\files\PathInfo.java
 Exists: true
 RegularFile: true
 Directory: false
@@ -73,7 +75,8 @@ FileName: PathInfo.java
 Parent: C:\Git\OnJava8\ExtractedExamples\files
 Root: C:\
 ******************
-toString: C:\Git\OnJava8\ExtractedExamples\files
+toString:
+ C:\Git\OnJava8\ExtractedExamples\files
 Exists: true
 RegularFile: false
 Directory: true
@@ -83,7 +86,7 @@ Parent: C:\Git\OnJava8\ExtractedExamples
 Root: C:\
 ******************
 toString:
-C:\Git\OnJava8\ExtractedExamples\files\PathInfo.java
+ C:\Git\OnJava8\ExtractedExamples\files\PathInfo.java
 Exists: true
 RegularFile: true
 Directory: false
@@ -92,7 +95,7 @@ FileName: PathInfo.java
 Parent: C:\Git\OnJava8\ExtractedExamples\files
 Root: C:\
 ******************
-URI: file:///C:/Git/OnJava8/ExtractedExamples/files/Pat
-hInfo.java
+URI:
+file:///C:/Git/OnJava8/ExtractedExamples/files/PathInfo.java
 true
 */
