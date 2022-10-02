@@ -7,10 +7,6 @@ package patterns.chain;
 import java.util.*;
 import java.util.function.*;
 
-interface Algorithm {
-  Result algorithm(List<Double> line);
-}
-
 class FindMinima {
   public static Result test(
     boolean success, String id, double d1, double d2) {
