@@ -4,25 +4,24 @@
 // Visit http://OnJava8.com for more book information.
 import java.util.*;
 import java.util.stream.*;
-
 public class UsingStringBuilder {
   public static String string1() {
     Random rand = new Random(47);
-    StringBuilder result = new StringBuilder("[");
-    for(int i = 0; i < 25; i++) {
+    StringBuilder result = new StringBuilder("[");  
+    for (int i = 0; i < 25; i++) {
       result.append(rand.nextInt(100));
       result.append(", ");
-    }
-    result.delete(result.length()-2, result.length());
-    result.append("]");
+    }    
+    result.delete(result.length() - 2, result.length()); // Remove the extra comma and space
+    result.append("]");  
     return result.toString();
-  }
+  }  
   public static String string2() {
     String result = new Random(47)
-      .ints(25, 0, 100)
-      .mapToObj(Integer::toString)
-      .collect(Collectors.joining(", "));
-    return "[" + result + "]";
+      .ints(25, 0, 100) // Generate 25 random integers between 0 and 99
+      .mapToObj(Integer::toString) // Convert each integer to its string representation
+      .collect(Collectors.joining(", ")); // Join the strings with a comma and space separator   
+    return "[" + result + "]"; // Wrap the result in square brackets
   }
   public static void main(String[] args) {
     System.out.println(string1());
