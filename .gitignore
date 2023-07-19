@@ -64,6 +64,7 @@ io/test.gz
 io/X.file
 *.pyc
 
+bin
 *.out
 *.err
 /files/bytes.dat
